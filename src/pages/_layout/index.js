@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
 import "./utils.css";
+import {menuLeftData} from "./data";
 
 const MasterLayout = ({ children }) => {
   let fullHeight = () => {
@@ -11,29 +12,53 @@ const MasterLayout = ({ children }) => {
     });
   };
   fullHeight();
-  const toggle = () => {
+
+  const toggleLeftMenu = () => {
     window.$("#sidebar").toggleClass("active");
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleOpen = () => setIsOpen(!isOpen);
+  const [menuLefts, setMenuLefts] = useState(menuLeftData);
 
-  const showLefMenu = (e) => {
+  const showMenuLeft = (id) => (e) => {
     e.preventDefault();
-    toggleOpen();
-  }
-
-  const menuLeftClass = `collapse list-unstyled${isOpen ? " show" : ""}`;
+    const menuTemp = [...menuLefts];
+    menuTemp[id - 1].active = true;
+    menuTemp[id - 1].open = !menuTemp[id - 1].open;
+    menuTemp[id - 1].linkClass = menuTemp[id - 1].open ? "dropdown-toggle" : "dropdown-toggle collapsed";
+    menuTemp[id - 1].ulClass = menuTemp[id - 1].open ? "collapse list-unstyled show" : "collapse list-unstyled";
+    setMenuLefts(menuTemp)
+  };
 
   return (
     <>
       <div className="wrapper d-flex align-items-stretch">
         <nav id="sidebar">
           <div className="p-4 pt-5">
-            <Link to={""} className="img logo rounded-circle mb-5" style={{backgroundImage: `url("images/logo.jpg")`}}></Link>
+            <Link to={""} className="img logo rounded-circle mb-5" style={{ backgroundImage: `url("images/logo.jpg")` }}></Link>
             <ul className="list-unstyled components mb-5">
-              <li className="active">
-              <Link to={""} className="dropdown-toggle" data-toggle="collapse" aria-expanded="false" onClick={showLefMenu}>Home</Link>
+              {menuLefts.map((menu, key) => (
+                <li key={key} className={menu.active ? "active" : ""}>
+                  {menu.children?.length > 0 ? (
+                    <Fragment>
+                      <Link to={""} className={menu.linkClass} data-toggle="collapse" aria-expanded="false" onClick={showMenuLeft(menu.id)}>
+                        {menu.text}
+                      </Link>
+                      <ul className={menu.ulClass} id="homeSubmenu">
+                        {menu.children.map((child, keyChild) => (
+                          <li key={keyChild}>
+                            <Link to={"/"}>{child.text}</Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </Fragment>
+                  ) : (
+                    <Link to={"/"}>{menu.text}</Link>
+                  )}
+                </li>
+              ))}
+
+              {/* <li className="active">
+              <Link to={""} className="dropdown-toggle" data-toggle="collapse" aria-expanded="false" onClick={showMenuLeft}>Home</Link>
                 <ul className={menuLeftClass} id="homeSubmenu">
                   <li>
                     <Link to={"/"}>Home 1</Link>
@@ -47,7 +72,7 @@ const MasterLayout = ({ children }) => {
                 <Link to={"/"}>About</Link>
               </li>
               <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">
+                <a href="" data-toggle="collapse" aria-expanded="false" className="dropdown-toggle">
                   Pages
                 </a>
                 <ul className="collapse list-unstyled" id="pageSubmenu">
@@ -66,7 +91,7 @@ const MasterLayout = ({ children }) => {
               </li>
               <li>
                 <Link to={"/"}>Contact</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>
@@ -75,7 +100,7 @@ const MasterLayout = ({ children }) => {
         <div id="content" className="p-4 p-md-5">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid" style={{ minWidth: "7rem" }}>
-              <button type="button" id="sidebarCollapse" className="btn btn-primary" onClick={toggle}>
+              <button type="button" id="sidebarCollapse" className="btn btn-primary" onClick={toggleLeftMenu}>
                 <i className="fa fa-bars"></i>
                 <span className="sr-only">Toggle Menu</span>
               </button>
