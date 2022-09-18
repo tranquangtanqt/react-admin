@@ -1,0 +1,72 @@
+/* ---------- */
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: normal;
+  background: #fafafa;
+  /* color: gray; */
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.tab-1 {
+  padding-left: 4em;
+}
+.tab-2 {
+  padding-left: 8em;
+}
+.tab-3 {
+  padding-left: 12em;
+}
+.tab-4 {
+  padding-left: 16em;
+}
+.tab-5 {
+  padding-left: 20em;
+}
+.tab-6 {
+  padding-left: 24em;
+}
+.tab-7 {
+  padding-left: 28em;
+}
+.tab-8 {
+  padding-left: 32em;
+}
+.tab-9 {
+  padding-left: 36em;
+}
+.tab-10 {
+  padding-left: 40em;
+}
+.tab-11 {
+  padding-left: 44em;
+}
+.tab-12 {
+  padding-left: 48em;
+}
+.tab-13 {
+  padding-left: 52em;
+}
+.tab-14 {
+  padding-left: 56em;
+}
+.tab-15 {
+  padding-left: 60em;
+}
+.tab-16 {
+  padding-left: 64em;
+}
+
+/* --- */
+.text-indent-1 {
+  text-indent: 4em;
+}
+.text-indent-2 {
+  text-indent: 8em;
+}
+.text-indent-3 {
+  text-indent: 16em;
+}

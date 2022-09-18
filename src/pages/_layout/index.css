@@ -1,13 +1,3 @@
-/* ---------- */
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.8;
-  font-weight: normal;
-  background: #fafafa;
-  /* color: gray; */
-}
-
 #sidebar a {
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
@@ -157,12 +147,12 @@ a[data-toggle="collapse"] {
 }
 
 
-#content .btn.btn-primary {
+#content .btn.btn-yellow {
   background: #f8b739;
   border-color: #f8b739;
 }
-#content .btn.btn-primary:hover,
-#content .btn.btn-primary:focus {
+#content .btn.btn-yellow:hover,
+#content .btn.btn-yellow:focus {
   background: #f8b739 !important;
   border-color: #f8b739 !important;
 }
