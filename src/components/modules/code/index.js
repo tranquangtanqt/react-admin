@@ -3,16 +3,9 @@ import Editor from "react-prism-editor";
 const Code = ({ code, language }) => {
   return (
     <>
-      <Editor
-        language={language}
-        theme="okaidia"
-        code={code}
-        lineNumber
-        readOnly
-        clipboard
-        showLanguage
-      />
-      <br />
+      <div className="mt-2 mb-2">
+        <Editor language={language} theme="okaidia" code={code} lineNumber readOnly clipboard showLanguage />
+      </div>
     </>
   );
 };

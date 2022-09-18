@@ -9,6 +9,9 @@ export const TAGS = [
     text: "b",
   },
   {
+    text: "i",
+  },
+  {
     text: "h1",
   },
   {
@@ -40,6 +43,9 @@ export const LANGUAGES = [
   },
   {
     name: "csharp",
+  },
+  {
+    name: "java",
   },
   {
     name: "php",

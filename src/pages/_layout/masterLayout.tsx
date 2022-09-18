@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState, Fragment, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 import "./utils.css";
@@ -15,6 +15,17 @@ export const MasterLayout = (props: masterLayoutProps) => {
   const [isSidebarActive, setIsSidebarActive] = useState(false);
 
   const [navbarLefts, setNavbarLefts] = useState(NAVBAR_LEFT);
+
+  const [showLoading, setShowLoading] = useState(true);
+
+  const handleLoading = () => {
+    setShowLoading(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("load", handleLoading);
+    return () => window.removeEventListener("load", handleLoading);
+  }, []);
 
   let navigate = useNavigate();
 
@@ -76,7 +87,7 @@ export const MasterLayout = (props: masterLayoutProps) => {
     el.children[childId].active = true;
     setNavbarLefts(navbarLeftTemp);
     return navigate(childLink);
-  }
+  };
 
   const toggleLeftMenu = () => {
     setIsSidebarActive(!isSidebarActive);
@@ -105,7 +116,9 @@ export const MasterLayout = (props: masterLayoutProps) => {
                       <ul className={navbar.ulClass}>
                         {navbar.children.map((child, keyChild) => (
                           <li key={keyChild} className={child.active ? "active" : ""}>
-                            <Link to={child.link} onClick={() => addLinkActiveChildDropDownLeft(navbar.id, child.id, child.link)}>{child.text}</Link>
+                            <Link to={child.link} onClick={() => addLinkActiveChildDropDownLeft(navbar.id, child.id, child.link)}>
+                              {child.text}
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -122,7 +135,7 @@ export const MasterLayout = (props: masterLayoutProps) => {
         </nav>
 
         {/* <!-- Page Content  --> */}
-        <div id="content" className="p-4 p-md-5">
+        <div id="content" className="pt-4 pb-4 ps-1 pe-1 p-md-5">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid" style={{ minWidth: "7rem" }}>
               <button type="button" id="sidebarCollapse" className="btn btn-yellow" onClick={toggleLeftMenu}>
@@ -152,7 +165,14 @@ export const MasterLayout = (props: masterLayoutProps) => {
             </div>
           </nav>
 
-          <div className="container-fluid">{props.children}</div>
+          <div className={showLoading ? "container-fluid" : "container-fluid d-none"}>
+            <div className="row">
+              <div className="min-height-30vh">
+                <div className="loading-spinner"></div>
+              </div>
+            </div>
+          </div>
+          <div className={!showLoading ? "container-fluid" : "container-fluid d-none"}>{props.children}</div>
         </div>
       </div>
     </>

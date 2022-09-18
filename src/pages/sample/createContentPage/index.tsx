@@ -17,8 +17,10 @@ export const CreateContentPage = () => {
   const onChangeTag = (value: string) => {
     if (value === "code") {
       setDisplayLanguage(true);
+      setTab("1");
     } else {
       setDisplayLanguage(false);
+      setTab("0");
     }
 
     if (value === "list") {
@@ -48,11 +50,14 @@ export const CreateContentPage = () => {
     let outputStr = output;
     if (input.trim() === "") return;
     let inputCurrentValue = input;
-    inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "{", `{"{"###?###`);
-    inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "}", `{"}"}`);
-    inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "###?###", `}`);
-    inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "<", `{"<"}`);
-    inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, ">", `{">"}`);
+    if(tag !== "code") {
+      inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "{", `{"{"###?###`);
+      inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "}", `{"}"}`);
+      inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "###?###", `}`);
+      inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "<", `{"<"}`);
+      inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, ">", `{">"}`);
+    }
+    
 
     outputStr += startWithTabAndTextIndent();
 
@@ -70,6 +75,12 @@ export const CreateContentPage = () => {
           outputStr += `<li>${val}</li>\n`;
         });
         outputStr += `</${listType}>\n`;
+        break;
+      case "p":
+        let elp = inputCurrentValue.split("\n");
+        elp.forEach((val) => {
+          outputStr += `<p>${val}</p>\n`;
+        });
         break;
       default:
         outputStr += `<${tag}>${inputCurrentValue}</${tag}>`;
@@ -108,13 +119,13 @@ export const CreateContentPage = () => {
 
   const makeTableStr = (_input: string) => {
     let result = "";
-    result += `<table class="table table-striped table-hover table-bordered table-sm">\n`;
+    result += `<table className="table table-striped table-hover table-bordered table-sm">\n`;
     let rows = _input.split("\n");
     rows.forEach((item, index) => {
       let cells = item.split(CONSTANTS.TABLE_SEPARATOR);
       if (index === 0) {
         result += `<thead>\n`;
-        result += `<tr class="table-dark">\n`;
+        result += `<tr className="table-dark">\n`;
 
         cells.forEach((cell) => {
           result += `<th>${cell}</th>\n`;
@@ -143,8 +154,10 @@ export const CreateContentPage = () => {
   const clearContent = () => {
     setInput("");
     setOutput("");
-    setTab("1");
+    setTab("0");
     setTag("p");
+    setDisplayLanguage(false);
+    setDisplayList(false);
   };
 
   return (
