@@ -1,13 +1,47 @@
 {
   "files": {
-    "main.css": "/react-admin/static/css/main.6e830b55.css",
-    "main.js": "/react-admin/static/js/main.dd73f2b8.js",
+    "main.css": "/react-admin/static/css/main.63928682.css",
+    "main.js": "/react-admin/static/js/main.5cf320c0.js",
+    "static/media/CSharp1.jpg": "/react-admin/static/media/CSharp1.2622dab89258473a5a73.jpg",
+    "static/media/2.jpg": "/react-admin/static/media/2.a76ad9c57e6a0aea64a7.jpg",
+    "static/media/1.jpg": "/react-admin/static/media/1.c3f997ad6dda6b07c2e5.jpg",
+    "static/media/Trich_8.jpg": "/react-admin/static/media/Trich_8.6634caa9c2b7b4e26c45.jpg",
+    "static/media/9.jpg": "/react-admin/static/media/9.82f3d3be11230d16f1cb.jpg",
+    "static/media/Trich_9.jpg": "/react-admin/static/media/Trich_9.1e0e7f7d3b32f01586ad.jpg",
+    "static/media/10.jpg": "/react-admin/static/media/10.ca5e511bdf3924109cff.jpg",
+    "static/media/Trich_7.jpg": "/react-admin/static/media/Trich_7.52d254d58d5cb6c9302f.jpg",
+    "static/media/7.jpg": "/react-admin/static/media/7.338bd4d52ed60de2c951.jpg",
+    "static/media/18.jpg": "/react-admin/static/media/18.89e9d7fa9c75fc9b7a0f.jpg",
+    "static/media/Trich_5.jpg": "/react-admin/static/media/Trich_5.b104a9f0823f937fcd9d.jpg",
+    "static/media/16.jpg": "/react-admin/static/media/16.6fe329958eb49c13c6c8.jpg",
+    "static/media/Trich_6.jpg": "/react-admin/static/media/Trich_6.95c961a79b56fb97aae8.jpg",
+    "static/media/13.jpg": "/react-admin/static/media/13.cf622058fb65dec3cb66.jpg",
+    "static/media/Trich_1.jpg": "/react-admin/static/media/Trich_1.0b5a505226dc68913c27.jpg",
+    "static/media/20.jpg": "/react-admin/static/media/20.3a901f261e699150c547.jpg",
+    "static/media/5.jpg": "/react-admin/static/media/5.147d9d0f2a7f1d2dcc04.jpg",
+    "static/media/11.jpg": "/react-admin/static/media/11.82ee701904de976581f6.jpg",
+    "static/media/21.jpg": "/react-admin/static/media/21.0bd1e8eac2377d30aec8.jpg",
+    "static/media/22.jpg": "/react-admin/static/media/22.d7722c66e0801ed8f205.jpg",
+    "static/media/4.jpg": "/react-admin/static/media/4.2e77595a9380329d16f5.jpg",
+    "static/media/12.jpg": "/react-admin/static/media/12.c5f3901367bdc235e552.jpg",
+    "static/media/24.jpg": "/react-admin/static/media/24.ba76072e9301060d23b9.jpg",
+    "static/media/14.jpg": "/react-admin/static/media/14.620fb1ee4dac77386cf0.jpg",
+    "static/media/8.jpg": "/react-admin/static/media/8.bfeef28b4e4a61e6daa5.jpg",
+    "static/media/6.jpg": "/react-admin/static/media/6.d1856e2f61b033b9554c.jpg",
+    "static/media/3.jpg": "/react-admin/static/media/3.ac385d22f42c7aa03838.jpg",
+    "static/media/Trich_4.jpg": "/react-admin/static/media/Trich_4.6ef20d12ca756cda6fce.jpg",
+    "static/media/Trich_2.jpg": "/react-admin/static/media/Trich_2.69ca8851ddd29c43579f.jpg",
+    "static/media/Trich_3.jpg": "/react-admin/static/media/Trich_3.69ca8851ddd29c43579f.jpg",
+    "static/media/23.jpg": "/react-admin/static/media/23.3aa7cb303581b5d44147.jpg",
+    "static/media/17.jpg": "/react-admin/static/media/17.0c901ccebb312c233359.jpg",
+    "static/media/19.jpg": "/react-admin/static/media/19.07e13e345891ae8655a6.jpg",
+    "static/media/15.jpg": "/react-admin/static/media/15.b2974b2efda88c031363.jpg",
     "index.html": "/react-admin/index.html",
-    "main.6e830b55.css.map": "/react-admin/static/css/main.6e830b55.css.map",
-    "main.dd73f2b8.js.map": "/react-admin/static/js/main.dd73f2b8.js.map"
+    "main.63928682.css.map": "/react-admin/static/css/main.63928682.css.map",
+    "main.5cf320c0.js.map": "/react-admin/static/js/main.5cf320c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e830b55.css",
-    "static/js/main.dd73f2b8.js"
+    "static/css/main.63928682.css",
+    "static/js/main.5cf320c0.js"
   ]
 }
