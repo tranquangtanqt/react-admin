@@ -33,6 +33,9 @@ import { PHPConvertUnicode } from "./pages/programming/PHP/convertUnicode";
 import { PHPDeleteFile } from "./pages/programming/PHP/phpDeleteFile";
 import { PHPSubstringEllipses } from "./pages/programming/PHP/substringEllipses";
 import { CreateContentPage } from "./pages/sample/createContentPage";
+import { Software } from "./pages/software";
+import { VisualStudioCodeAddHotkey } from "./pages/software/visualStudioCode/addHotkey";
+import { VisualStudioCodeExtention } from "./pages/software/visualStudioCode/extention";
 import { MasterLayout } from "./pages/_layout/masterLayout";
 
 export const RoutesRoot = () => {
@@ -80,6 +83,10 @@ export const RoutesRoot = () => {
 
           <Route path="/programming-batch" element={<ProgrammingBatch />} />
           <Route path="/programming-batch/if-else" element={<BatchIfElse />} />
+
+          <Route path="/software" element={<Software />} />
+          <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
+          <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
         </Routes>
       </MasterLayout>
     </HashRouter>

@@ -45,8 +45,11 @@ export const MasterLayout = (props: masterLayoutProps) => {
   fullHeight();
 
   const showDropDownLeft = (event: React.MouseEvent, id: number) => {
-    event.preventDefault();
     let navbarLeftTemp = [...navbarLefts];
+    if(navbarLeftTemp[id].link === ""){
+      event.preventDefault();
+    } 
+    
     for (let i = 0; i < navbarLeftTemp.length; i++) {
       navbarLeftTemp[i].active = false;
       // apply for drop down

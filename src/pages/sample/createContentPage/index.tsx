@@ -57,7 +57,6 @@ export const CreateContentPage = () => {
       inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "<", `{"<"}`);
       inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, ">", `{">"}`);
     }
-    
 
     outputStr += startWithTabAndTextIndent();
 

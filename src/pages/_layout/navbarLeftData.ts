@@ -60,8 +60,8 @@ export const NAVBAR_LEFT = [
   {
     id: 2,
     active: false,
-    link: "",
-    text: "No Home",
+    link: "/software",
+    text: "Software",
     children: [],
   },
   {
