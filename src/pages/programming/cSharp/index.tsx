@@ -44,13 +44,13 @@ export const ProgrammingCSharp = () => {
         {
           text: "EPPLUS",
           path: "/programming-csharp/ep-plus",
-        }
+        },
       ],
     },
   ];
   return (
     <>
-    <PageTitle title="C Sharp"></PageTitle>
+      <PageTitle title="C Sharp"></PageTitle>
       <div className="row">
         <CardList cardData={cardData}></CardList>
       </div>

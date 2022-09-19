@@ -55,6 +55,12 @@ export const NAVBAR_LEFT = [
         text: "Batch",
         active: false,
       },
+      {
+        id: 4,
+        link: "/programming-excel",
+        text: "Excel",
+        active: false,
+      },
     ],
   },
   {
@@ -66,6 +72,14 @@ export const NAVBAR_LEFT = [
   },
   {
     id: 3,
+    active: false,
+    open: false,
+    link: "utilities",
+    text: "Utilities",
+    children: [ ],
+  },
+  {
+    id: 4,
     active: false,
     open: false,
     link: "",

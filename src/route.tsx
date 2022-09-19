@@ -20,6 +20,10 @@ import { CSharpEPPlus } from "./pages/programming/cSharp/epplus";
 import { CSharpGetAllFileInFolder } from "./pages/programming/cSharp/getAllFileInFolder";
 import { CSharpNameControlWinform } from "./pages/programming/cSharp/nameControlWinform";
 import { CSharpReadFileExcel } from "./pages/programming/cSharp/readFileExcel";
+import { ProgrammingExcel } from "./pages/programming/excel";
+import { ExcelCharactersInExcel } from "./pages/programming/excel/charactersInExcel";
+import { ExcelFilter1 } from "./pages/programming/excel/sortAndFilter/filter1";
+import { ExcelSwapDataTwoCell } from "./pages/programming/excel/swapDataTwoCell";
 import { ProgrammingJava } from "./pages/programming/java";
 import { JavaDeleteData1 } from "./pages/programming/java/deleteData1";
 import { JavaInsertData1 } from "./pages/programming/java/insertData1";
@@ -36,6 +40,9 @@ import { CreateContentPage } from "./pages/sample/createContentPage";
 import { Software } from "./pages/software";
 import { VisualStudioCodeAddHotkey } from "./pages/software/visualStudioCode/addHotkey";
 import { VisualStudioCodeExtention } from "./pages/software/visualStudioCode/extention";
+import { Utilities } from "./pages/utilities";
+import { UtilitiesListFileSelected } from "./pages/utilities/file/listFileSelected";
+import { UtilitiesReadContentMultiFile } from "./pages/utilities/file/readContentMultiFile";
 import { MasterLayout } from "./pages/_layout/masterLayout";
 
 export const RoutesRoot = () => {
@@ -59,6 +66,9 @@ export const RoutesRoot = () => {
           <Route path="/database/oracle/tips/system" element={<OracleSystem />} />
           <Route path="/database/oracle/tips-sql-developer" element={<OracleTipsSQLDeveloper />} />
 
+          <Route path="/programming-batch" element={<ProgrammingBatch />} />
+          <Route path="/programming-batch/if-else" element={<BatchIfElse />} />
+
           <Route path="/programming-csharp" element={<ProgrammingCSharp />} />
           <Route path="/programming-csharp/connect-oracle" element={<CSharpConnectOracle/>} />
           <Route path="/programming-csharp/connect-postgresql" element={<CSharpConnectPostgresql />} />
@@ -66,6 +76,11 @@ export const RoutesRoot = () => {
           <Route path="/programming-csharp/get-all-file-in-folder" element={<CSharpGetAllFileInFolder />} />
           <Route path="/programming-csharp/name-control-winform" element={<CSharpNameControlWinform />} />
           <Route path="/programming-csharp/read-file-excel" element={<CSharpReadFileExcel />} />
+
+          <Route path="/programming-excel" element={<ProgrammingExcel />} />
+          <Route path="/programming-excel/characters-in-excel" element={<ExcelCharactersInExcel />} />
+          <Route path="/programming-excel/filter1" element={<ExcelFilter1 />} />
+          <Route path="/programming-excel/swap-data-two-cell" element={<ExcelSwapDataTwoCell />} />
 
           <Route path="/programming-java" element={<ProgrammingJava />} />
           <Route path="/programming-java/delete-data-1" element={<JavaDeleteData1 />} />
@@ -81,12 +96,25 @@ export const RoutesRoot = () => {
           <Route path="/programming-php/substring-ellipses" element={<PHPSubstringEllipses />} />
           <Route path="/programming-php/delete-file" element={<PHPDeleteFile />} />
 
-          <Route path="/programming-batch" element={<ProgrammingBatch />} />
-          <Route path="/programming-batch/if-else" element={<BatchIfElse />} />
-
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
+
+          <Route path="/utilities" element={<Utilities />} />
+          <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
+          <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
+          {/* <Route path="/utilities/createTableFromExcel" element={<CreateTableFromExcel />} />
+          <Route path="/utilities/findDifferentTwoList" element={<FindDifferentTwoList />} />
+          <Route path="/utilities/findTextColumnJP_EN" element={<FindTextColumnJPEN />} />*/}
+          
+          {/* <Route path="/utilities/randomInsertSQL" element={<RandomInsertSQL />} />
+          <Route path="/utilities/textRepeat" element={<TextRepeat />} />*/}
+          
+          {/*  <Route path="/utilities/textReplace" element={<TextReplace />} />
+          <Route path="/utilities/textCommon" element={<TextCommon />} />
+          <Route path="/utilities/textSpecial" element={<TextSpecial />} />
+          <Route path="/utilities/tinyMCE" element={<TinyMCE />} />
+          <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */}
         </Routes>
       </MasterLayout>
     </HashRouter>
