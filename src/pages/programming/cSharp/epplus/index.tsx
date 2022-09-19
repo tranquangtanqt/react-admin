@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const EPPlus = () => {
+export const CSharpEPPlus = () => {
   return (
     <>
       <PageTitle title="EPPlus"></PageTitle>

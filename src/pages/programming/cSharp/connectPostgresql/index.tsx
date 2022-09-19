@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ConnectPostgresqlCsharp = () => {
+export const CSharpConnectPostgresql = () => {
   return (
     <>
       <PageTitle title="Connect and Select Postgresql"></PageTitle>

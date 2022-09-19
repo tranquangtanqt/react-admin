@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const InsertData1 = () => {
+export const JavaInsertData1 = () => {
   return (
     <>
       <PageTitle title="Insert dữ liệu"></PageTitle>

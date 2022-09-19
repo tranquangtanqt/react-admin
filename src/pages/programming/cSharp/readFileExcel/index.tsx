@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ReadFileExcel = () => {
+export const CSharpReadFileExcel = () => {
   return (
     <>
       <PageTitle title="Read File Excel"></PageTitle>

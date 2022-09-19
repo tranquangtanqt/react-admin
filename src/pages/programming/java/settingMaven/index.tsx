@@ -1,6 +1,6 @@
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const SettingMaven = () => {
+export const JavaSettingMaven = () => {
   return (
     <>
       <PageTitle title="Cài đặt maven và tạo project"></PageTitle>

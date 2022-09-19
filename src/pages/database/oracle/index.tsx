@@ -8,11 +8,11 @@ export const DatabaseOracle = () => {
       links: [
         {
           text: "Change Language Oracle SQL Developer",
-          path: "/database/oracle/changeLanguageOracleSQLDeveloper",
+          path: "/database/oracle/change-language-oracle-sql-developer",
         },
         {
           text: "Tips for oracle SQL developer",
-          path: "/database/oracle/tipsForOracleSQLDeveloper",
+          path: "/database/oracle/tips-sql-developer",
         },
       ],
     },
@@ -21,11 +21,11 @@ export const DatabaseOracle = () => {
       links: [
         {
           text: "Import file dump Oracle Full",
-          path: "/database/oracle/dumpFull",
+          path: "/database/oracle/dump-full",
         },
         {
           text: "Import file dump Oracle",
-          path: "/database/oracle/importDumpOracle",
+          path: "/database/oracle/import-dump",
         },
       ],
     },
@@ -38,11 +38,11 @@ export const DatabaseOracle = () => {
         },
         {
           text: "Listener and Tnsnames",
-          path: "/database/oracle/listenerAndTnsnames",
+          path: "/database/oracle/listener-and-tnsnames",
         },
         {
           text: "Sqltext Session Process",
-          path: "/database/oracle/sqltextSessionProcess",
+          path: "/database/oracle/sql-text-session-process",
         },
       ],
     },

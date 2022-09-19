@@ -1,6 +1,6 @@
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const TipsForOracleSQLDeveloper = () => {
+export const OracleTipsSQLDeveloper = () => {
   return (
     <>
       <PageTitle title="Tips For Oracle SQL Developer"></PageTitle>

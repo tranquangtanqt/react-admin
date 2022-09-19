@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const SelectData2 = () => {
+export const JavaSelectData2 = () => {
   return (
     <>
       <PageTitle title="Select dữ liệu 2"></PageTitle>

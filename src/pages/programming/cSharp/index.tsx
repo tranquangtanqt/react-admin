@@ -8,7 +8,7 @@ export const ProgrammingCSharp = () => {
       links: [
         {
           text: "Name Control Winform",
-          path: "/programming-csharp/nameControlWinform",
+          path: "/programming-csharp/name-control-winform",
         },
       ],
     },
@@ -17,11 +17,11 @@ export const ProgrammingCSharp = () => {
       links: [
         {
           text: "Get all file in folder",
-          path: "/programming-csharp/getAllFileInFolder",
+          path: "/programming-csharp/get-all-file-in-folder",
         },
         {
           text: "Read file excel",
-          path: "/programming-csharp/readFileExcel",
+          path: "/programming-csharp/read-file-excel",
         },
       ],
     },
@@ -30,11 +30,11 @@ export const ProgrammingCSharp = () => {
       links: [
         {
           text: "Connect and select Postgresql",
-          path: "/programming-csharp/connectPostgresql",
+          path: "/programming-csharp/connect-postgresql",
         },
         {
           text: "Connect and select Oracle",
-          path: "/programming-csharp/connectOracle",
+          path: "/programming-csharp/connect-oracle",
         },
       ],
     },
@@ -43,7 +43,7 @@ export const ProgrammingCSharp = () => {
       links: [
         {
           text: "EPPLUS",
-          path: "/programming-csharp/EPPlus",
+          path: "/programming-csharp/ep-plus",
         }
       ],
     },

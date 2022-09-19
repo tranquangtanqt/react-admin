@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const DeleteData1 = () => {
+export const JavaDeleteData1 = () => {
   return (
     <>
       <PageTitle title="Delete dữ liệu"></PageTitle>

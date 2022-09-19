@@ -8,27 +8,27 @@ export const ProgrammingJava = () => {
       links: [
         {
           text: "Cài đặt maven và tạo project",
-          path: "/programming-java/settingMaven",
+          path: "/programming-java/setting-maven",
         },
         {
           text: "Select dữ liệu",
-          path: "/programming-java/selectData1",
+          path: "/programming-java/select-data-1",
         },
         {
           text: "Insert dữ liệu",
-          path: "/programming-java/insertData1",
+          path: "/programming-java/insert-data-1",
         },
         {
           text: "Update dữ liệu",
-          path: "/programming-java/updateData1",
+          path: "/programming-java/update-data-1",
         },
         {
           text: "Delete dữ liệu",
-          path: "/programming-java/deleteData1",
+          path: "/programming-java/delete-data-1",
         },
         {
           text: "Select dữ liệu",
-          path: "/programming-java/selectData2",
+          path: "/programming-java/select-data-2",
         }       
       ],
     },

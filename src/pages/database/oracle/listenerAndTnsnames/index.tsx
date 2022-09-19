@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ListenerAndTnsnames = () => {
+export const OracleListenerAndTnsnames = () => {
   return (
     <>
       <PageTitle title="Listener And Tnsnames"></PageTitle>

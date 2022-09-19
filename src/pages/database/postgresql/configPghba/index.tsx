@@ -2,7 +2,7 @@
 import { PageTitle } from "../../../../components/modules/pageTitle";
 import Code from "../../../../components/modules/code";
 
-export const ConfigPghba = () => {
+export const PostgresqlConfigPghba = () => {
   return (
     <>
       <PageTitle title="Database config"></PageTitle>

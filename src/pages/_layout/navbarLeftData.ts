@@ -49,6 +49,12 @@ export const NAVBAR_LEFT = [
         text: "PHP",
         active: false,
       },
+      {
+        id: 3,
+        link: "/programming-batch",
+        text: "Batch",
+        active: false,
+      },
     ],
   },
   {

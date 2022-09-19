@@ -1,6 +1,6 @@
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ChangeLanguageOracleSQLDeveloper = () => {
+export const OracleChangeLanguageOracleSQLDeveloper = () => {
   return (
     <>
       <PageTitle title="Change Language Oracle SQL Developer"></PageTitle>

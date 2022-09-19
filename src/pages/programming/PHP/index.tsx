@@ -8,19 +8,19 @@ export const ProgrammingPHP = () => {
       links: [
         {
           text: "Chuyển đổi Datetime",
-          path: "/programming-php/convertDatetimen",
+          path: "/programming-php/convert-datetime",
         },
         {
           text: "Chuyển chuỗi Unicode thành chuỗi không dấu",
-          path: "/programming-php/convertUnicode",
+          path: "/programming-php/convert-unicode",
         },
         {
           text: "Cắt chuỗi với dấu ba chấm (ellipses)",
-          path: "/programming-php/substringEllipses",
+          path: "/programming-php/substring-ellipses",
         },
         {
           text: "Xóa tệp",
-          path: "/programming-php/phpDeleteFile",
+          path: "/programming-php/delete-file",
         },
       ],
     },

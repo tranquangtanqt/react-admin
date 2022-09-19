@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const GetAllFileInFolder = () => {
+export const CSharpGetAllFileInFolder = () => {
   return (
     <>
       <PageTitle title="Get All File In Folder"></PageTitle>

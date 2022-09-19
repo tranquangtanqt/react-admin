@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const SqltextSessionProcess = () => {
+export const OracleSqltextSessionProcess = () => {
   return (
     <>
       <PageTitle title="Sqltext Session Process"></PageTitle>

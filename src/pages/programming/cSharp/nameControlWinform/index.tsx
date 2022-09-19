@@ -1,6 +1,6 @@
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const NameControlWinform = () => {
+export const CSharpNameControlWinform = () => {
   return (
     <>
       <PageTitle title="Name Control In Winform"></PageTitle>

@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ImportDumpOracle = () => {
+export const OracleImportDump = () => {
   return (
     <>
       <PageTitle title="Import file dump Oracle"></PageTitle>

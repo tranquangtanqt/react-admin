@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const ConnectOracleCSharp = () => {
+export const CSharpConnectOracle = () => {
   return (
     <>
       <PageTitle title="Connect and Select from database Oracle"></PageTitle>

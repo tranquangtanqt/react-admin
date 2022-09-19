@@ -1,7 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const SystemOracle = () => {
+export const OracleSystem = () => {
   return (
     <>
       <PageTitle title="Tips System"></PageTitle>
