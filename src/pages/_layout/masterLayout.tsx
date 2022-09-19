@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 import "./utils.css";
@@ -15,17 +15,6 @@ export const MasterLayout = (props: masterLayoutProps) => {
   const [isSidebarActive, setIsSidebarActive] = useState(false);
 
   const [navbarLefts, setNavbarLefts] = useState(NAVBAR_LEFT);
-
-  const [showLoading, setShowLoading] = useState(true);
-
-  const handleLoading = () => {
-    setShowLoading(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("load", handleLoading);
-    return () => window.removeEventListener("load", handleLoading);
-  }, []);
 
   let navigate = useNavigate();
 
@@ -53,6 +42,8 @@ export const MasterLayout = (props: masterLayoutProps) => {
     );
   };
 
+  fullHeight();
+
   const showDropDownLeft = (event: React.MouseEvent, id: number) => {
     event.preventDefault();
     let navbarLeftTemp = [...navbarLefts];
@@ -75,8 +66,6 @@ export const MasterLayout = (props: masterLayoutProps) => {
     setNavbarLefts(navbarLeftTemp);
   };
 
-  fullHeight();
-
   const addLinkActiveChildDropDownLeft = (id: number, childId: number, childLink: string) => {
     let navbarLeftTemp = [...navbarLefts];
     let el = navbarLeftTemp[id];
@@ -98,8 +87,15 @@ export const MasterLayout = (props: masterLayoutProps) => {
       <div className="wrapper d-flex align-items-stretch">
         <nav id="sidebar" className={isSidebarActive ? "active" : ""}>
           <div className="p-4 pt-5">
-            <Link to={""} className="img logo rounded-circle mb-5" style={{ backgroundImage: `url("images/logo2.jpg")` }}></Link>
-            <ul className="list-unstyled components mb-5">
+            <Link to={""}>
+              <input
+                type="image"
+                src={require("../../resources/img/_layout/logo2.jpg")}
+                className="img logo rounded-circle"
+                alt="description image"
+              />
+            </Link>
+            <ul className="list-unstyled components mb-5 mt-5">
               {navbarLefts.map((navbar, key) => (
                 <li key={key} className={navbar.active ? "active" : ""}>
                   {navbar.children?.length > 0 ? (
@@ -116,7 +112,10 @@ export const MasterLayout = (props: masterLayoutProps) => {
                       <ul className={navbar.ulClass}>
                         {navbar.children.map((child, keyChild) => (
                           <li key={keyChild} className={child.active ? "active" : ""}>
-                            <Link to={child.link} onClick={() => addLinkActiveChildDropDownLeft(navbar.id, child.id, child.link)}>
+                            <Link
+                              to={child.link}
+                              onClick={() => addLinkActiveChildDropDownLeft(navbar.id, child.id, child.link)}
+                            >
                               {child.text}
                             </Link>
                           </li>
@@ -165,14 +164,7 @@ export const MasterLayout = (props: masterLayoutProps) => {
             </div>
           </nav>
 
-          <div className={showLoading ? "container-fluid" : "container-fluid d-none"}>
-            <div className="row">
-              <div className="min-height-30vh">
-                <div className="loading-spinner"></div>
-              </div>
-            </div>
-          </div>
-          <div className={!showLoading ? "container-fluid" : "container-fluid d-none"}>{props.children}</div>
+          <div className="container-fluid">{props.children}</div>
         </div>
       </div>
     </>
