@@ -1,7 +1,7 @@
-import { Col, Divider, Row } from "antd";
 import { Fragment } from "react";
+import { PageTitle } from "../../../../components/modules/pageTitle";
 
-const TextSpecial = () => {
+export const UtilitiesTextSpecial = () => {
   const tableData = [
     {
       jp: `対応しました。`,
@@ -46,16 +46,18 @@ const TextSpecial = () => {
   ];
   return (
     <>
-      <Divider orientation="left">Text Special</Divider>
-      <Row justify="start">
-        <Col span={24}>
-          <h2>●→↑↓←～※■</h2>
-          <h2>①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳</h2>
-          <h2>㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿</h2>
-        </Col>
+      <PageTitle title="Text Special"></PageTitle>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <h5>●→↑↓←～※■</h5>
+          <h5>①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳</h5>
+          <h5>㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿</h5>
+        </div>
+      </div>
 
-        <Col span={12} offset={1}>
-          <table className="table-custom">
+      <div className="row mt-2">
+        <div className="col-12 col-sm-6 col-md-6">
+          <table className="table table-striped table-hover table-bordered table-sm">
             <thead>
               <tr>
                 <th>JP</th>
@@ -73,10 +75,8 @@ const TextSpecial = () => {
               ))}
             </tbody>
           </table>
-        </Col>
-      </Row>
+        </div>
+      </div>
     </>
   );
 };
-
-export default TextSpecial;

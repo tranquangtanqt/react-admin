@@ -1,7 +1,7 @@
-import { Button, Col, Divider, Row } from "antd";
 import { useState } from "react";
+import { PageTitle } from "../../../../components/modules/pageTitle";
 
-const FindTextColumnJPEN = () => {
+export const UtilitiesTextFindTextColumnJPEN = () => {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
   const [output, setOutput] = useState("");
@@ -30,48 +30,56 @@ const FindTextColumnJPEN = () => {
 
   return (
     <>
-      <Divider orientation="left">Find Column</Divider>
-      <Row justify="start">
-        <Col span={6}>
-          <Divider orientation="left">List JP</Divider>
+      <PageTitle title="Find JP - EN"></PageTitle>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="input1" className="form-label">
+            List JP
+          </label>
           <textarea
+            id="input1"
+            className="form-control"
             value={input1}
             onChange={(e) => setInput1(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
+        </div>
 
-        <Col span={18}>
-          <Divider orientation="left">List JP-EN</Divider>
+        <div className="col-12 col-sm-8 col-md-8">
+          <label htmlFor="input2" className="form-label">
+            List JP-EN
+          </label>
           <textarea
+            id="input2"
+            className="form-control"
             value={input2}
             onChange={(e) => setInput2(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <button type="button" className="btn btn-primary btn-sm" onClick={() => findText()}>
+            Find
+          </button>
+        </div>
+      </div>
 
-      <Row justify="start">
-        <Col span={18}>
-          <Divider orientation="left">
-            <Button type="primary" onClick={() => findText()}>
-              Find
-            </Button>
-          </Divider>
-        </Col>
-      </Row>
-
-      <Row justify="start">
-        <Col span={6}>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="output" className="form-label">
+            List JP
+          </label>
           <textarea
+            id="output"
+            className="form-control"
             value={output}
             onChange={(e) => setOutput(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
     </>
   );
 };
-
-export default FindTextColumnJPEN;

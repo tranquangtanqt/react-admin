@@ -43,9 +43,14 @@ import { VisualStudioCodeExtention } from "./pages/software/visualStudioCode/ext
 import { Utilities } from "./pages/utilities";
 import { UtilitiesListFileSelected } from "./pages/utilities/file/listFileSelected";
 import { UtilitiesReadContentMultiFile } from "./pages/utilities/file/readContentMultiFile";
+import { UtilitiesMakeInsertSQL } from "./pages/utilities/sql/makeInsertSQL";
 import { UtilitiesTextCommon } from "./pages/utilities/text/common";
 import { UtilitiesTextFindDifferentTwoList } from "./pages/utilities/text/findDifferentTwoList";
-// import { UtilitiesTextCommon } from "./pages/utilities/text/common";
+import { UtilitiesTextFindTextColumnJPEN } from "./pages/utilities/text/findTextColumnJpEn";
+import { UtilitiesTextRepeat } from "./pages/utilities/text/repeat";
+import { UtilitiesTextReplace } from "./pages/utilities/text/replace";
+import { UtilitiesTextSpecial } from "./pages/utilities/text/special";
+import { UtilitiesTinyMCE } from "./pages/utilities/tinyMCE";
 import { MasterLayout } from "./pages/_layout/masterLayout";
 
 export const RoutesRoot = () => {
@@ -73,7 +78,7 @@ export const RoutesRoot = () => {
           <Route path="/programming-batch/if-else" element={<BatchIfElse />} />
 
           <Route path="/programming-csharp" element={<ProgrammingCSharp />} />
-          <Route path="/programming-csharp/connect-oracle" element={<CSharpConnectOracle/>} />
+          <Route path="/programming-csharp/connect-oracle" element={<CSharpConnectOracle />} />
           <Route path="/programming-csharp/connect-postgresql" element={<CSharpConnectPostgresql />} />
           <Route path="/programming-csharp/ep-plus" element={<CSharpEPPlus />} />
           <Route path="/programming-csharp/get-all-file-in-folder" element={<CSharpGetAllFileInFolder />} />
@@ -108,18 +113,15 @@ export const RoutesRoot = () => {
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
           <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
           <Route path="/utilities/text/find-different-two-list" element={<UtilitiesTextFindDifferentTwoList />} />
-          {/* <Route path="/utilities/createTableFromExcel" element={<CreateTableFromExcel />} />
-          
-          <Route path="/utilities/findTextColumnJP_EN" element={<FindTextColumnJPEN />} />*/}
-          
-          {/* <Route path="/utilities/randomInsertSQL" element={<RandomInsertSQL />} />
-          <Route path="/utilities/textRepeat" element={<TextRepeat />} />*/}
-          
-          {/*  <Route path="/utilities/textReplace" element={<TextReplace />} />
-          
-          <Route path="/utilities/textSpecial" element={<TextSpecial />} />
-          <Route path="/utilities/tinyMCE" element={<TinyMCE />} />
-          <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */}
+          <Route path="/utilities/text/find-text-column-jp-en" element={<UtilitiesTextFindTextColumnJPEN />} />
+          <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
+          <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
+          <Route path="/utilities/text/special" element={<UtilitiesTextSpecial />} />
+          <Route path="/utilities/tinyMCE" element={<UtilitiesTinyMCE />} />
+          <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
+
+          {/* // <Route path="/utilities/createTableFromExcel" element={<CreateTableFromExcel />} />
+          // <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */} 
         </Routes>
       </MasterLayout>
     </HashRouter>

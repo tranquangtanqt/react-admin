@@ -29,19 +29,19 @@ export const Utilities = () => {
         },
         {
           text: "Find Text ColumnJP_EN",
-          path: "/utilities/findTextColumnJP_EN",
+          path: "/utilities/text/find-text-column-jp-en",
         },
         {
           text: "Repeat",
-          path: "/utilities/textRepeat",
+          path: "/utilities/text/repeat",
         },
         {
           text: "Replace",
-          path: "/utilities/textReplace",
+          path: "/utilities/text/replace",
         },
         {
           text: "Special",
-          path: "/utilities/textSpecial",
+          path: "/utilities/text/special",
         },
         {
           text: "Tiny MCE",
@@ -54,7 +54,7 @@ export const Utilities = () => {
       links: [
         {
           text: "Random Insert SQL",
-          path: "/utilities/sql/random-insert-sql",
+          path: "/utilities/sql/random-insert",
         },
         {
           text: "Create Table From Excel",
