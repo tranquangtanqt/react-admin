@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/react-admin/static/css/main.63928682.css",
-    "main.js": "/react-admin/static/js/main.9fbf1cdc.js",
+    "main.css": "/react-admin/static/css/main.06032f81.css",
+    "main.js": "/react-admin/static/js/main.2fdecbe5.js",
     "static/media/CSharp1.jpg": "/react-admin/static/media/CSharp1.2622dab89258473a5a73.jpg",
     "static/media/2.jpg": "/react-admin/static/media/2.a76ad9c57e6a0aea64a7.jpg",
+    "static/media/logo.jpg": "/react-admin/static/media/logo.ae3a9c5039a1d4700c44.jpg",
     "static/media/1.jpg": "/react-admin/static/media/1.c3f997ad6dda6b07c2e5.jpg",
-    "static/media/logo2.jpg": "/react-admin/static/media/logo2.18079292dff9cb2d9e7f.jpg",
     "static/media/Trich_8.jpg": "/react-admin/static/media/Trich_8.6634caa9c2b7b4e26c45.jpg",
     "static/media/9.jpg": "/react-admin/static/media/9.82f3d3be11230d16f1cb.jpg",
     "static/media/Trich_9.jpg": "/react-admin/static/media/Trich_9.1e0e7f7d3b32f01586ad.jpg",
@@ -29,22 +29,26 @@
     "static/media/24.jpg": "/react-admin/static/media/24.ba76072e9301060d23b9.jpg",
     "static/media/14.jpg": "/react-admin/static/media/14.620fb1ee4dac77386cf0.jpg",
     "static/media/8.jpg": "/react-admin/static/media/8.bfeef28b4e4a61e6daa5.jpg",
+    "static/media/excel_2.png": "/react-admin/static/media/excel_2.0340c3ee5d6a09e9e044.png",
     "static/media/6.jpg": "/react-admin/static/media/6.d1856e2f61b033b9554c.jpg",
     "static/media/3.jpg": "/react-admin/static/media/3.ac385d22f42c7aa03838.jpg",
     "static/media/Trich_4.jpg": "/react-admin/static/media/Trich_4.6ef20d12ca756cda6fce.jpg",
+    "static/media/excel_5.png": "/react-admin/static/media/excel_5.d6a30ed729fa66a3e9a3.png",
     "static/media/Trich_2.jpg": "/react-admin/static/media/Trich_2.69ca8851ddd29c43579f.jpg",
     "static/media/Trich_3.jpg": "/react-admin/static/media/Trich_3.69ca8851ddd29c43579f.jpg",
+    "static/media/excel_3.png": "/react-admin/static/media/excel_3.b38311583768b077e968.png",
+    "static/media/excel_1.png": "/react-admin/static/media/excel_1.ac06e64d5d049e1940c4.png",
     "static/media/23.jpg": "/react-admin/static/media/23.3aa7cb303581b5d44147.jpg",
     "static/media/17.jpg": "/react-admin/static/media/17.0c901ccebb312c233359.jpg",
     "static/media/19.jpg": "/react-admin/static/media/19.07e13e345891ae8655a6.jpg",
     "static/media/15.jpg": "/react-admin/static/media/15.b2974b2efda88c031363.jpg",
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
-    "main.63928682.css.map": "/react-admin/static/css/main.63928682.css.map",
-    "main.9fbf1cdc.js.map": "/react-admin/static/js/main.9fbf1cdc.js.map"
+    "main.06032f81.css.map": "/react-admin/static/css/main.06032f81.css.map",
+    "main.2fdecbe5.js.map": "/react-admin/static/js/main.2fdecbe5.js.map"
   },
   "entrypoints": [
-    "static/css/main.63928682.css",
-    "static/js/main.9fbf1cdc.js"
+    "static/css/main.06032f81.css",
+    "static/js/main.2fdecbe5.js"
   ]
 }
