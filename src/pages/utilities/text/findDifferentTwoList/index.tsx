@@ -1,7 +1,7 @@
-import { Button, Col, Divider, Row } from "antd";
 import { useState } from "react";
+import { PageTitle } from "../../../../components/modules/pageTitle";
 
-const FindDifferentTwoList = () => {
+export const UtilitiesTextFindDifferentTwoList = () => {
   const [input1, setInput1] = useState(`1
 2
 3
@@ -39,8 +39,8 @@ const FindDifferentTwoList = () => {
 
     if (len1 >= len2) {
       for (let i = 0; i < len1; i++) {
-        if(i < len2){
-          if(input1Arr[i] !== input2Arr[i]){
+        if (i < len2) {
+          if (input1Arr[i] !== input2Arr[i]) {
             indexStr += i + "\n";
             difference1 += input1Arr[i] + "\n";
             difference2 += input2Arr[i] + "\n";
@@ -52,8 +52,8 @@ const FindDifferentTwoList = () => {
       }
     } else {
       for (let i = 0; i < len2; i++) {
-        if(i < len1){
-          if(input2Arr[i] !== input1Arr[i]){
+        if (i < len1) {
+          if (input2Arr[i] !== input1Arr[i]) {
             indexStr += i + "\n";
             difference1 += input1Arr[i] + "\n";
             difference2 += input2Arr[i] + "\n";
@@ -75,98 +75,118 @@ const FindDifferentTwoList = () => {
 
   return (
     <>
-      <Divider orientation="left">
-        Finding the Differences Between Two Lists
-      </Divider>
-      <Row justify="start">
-        <Col span={7}>
-          <Divider orientation="left">List 1</Divider>
+      <PageTitle title="Finding the Differences Between Two Lists"></PageTitle>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="list1" className="form-label">
+            List 1
+          </label>
           <textarea
+            id="list1"
+            className="form-control"
             value={input1}
             onChange={(e) => setInput1(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-
-        <Col span={1}></Col>
-        <Col span={7}>
-          <Divider orientation="left">List 2</Divider>
+        </div>
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="list2" className="form-label">
+            List 2
+          </label>
           <textarea
+            id="list2"
+            className="form-control"
             value={input2}
             onChange={(e) => setInput2(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row justify="start">
-        <Col span={24}>
-          <Divider orientation="left">
-            <Button type="primary" onClick={() => findText()}>
-              Find
-            </Button>
-          </Divider>
-        </Col>
-      </Row>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <button type="submit" className="btn btn-primary btn-sm" onClick={() => findText()}>
+            Find
+          </button>
+        </div>
+      </div>
 
-      <Row justify="start">
-        <Col span={7}>
-          <h1>Same</h1>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="same" className="form-label">
+            Same
+          </label>
           <textarea
+            id="same"
+            className="form-control"
             value={output3}
             onChange={(e) => setOutput3(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-        <Col span={1}></Col>
-
-        <Col span={7}>
-          <h1>Difference 1</h1>
+        </div>
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="difference1" className="form-label">
+            Difference 1
+          </label>
           <textarea
+            id="difference1"
+            className="form-control"
             value={output1}
             onChange={(e) => setOutput1(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-        <Col span={1}></Col>
-        <Col span={7}>
-          <h1>Difference 2</h1>
+        </div>
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="difference2" className="form-label">
+            Difference 2
+          </label>
           <textarea
+            id="difference2"
+            className="form-control"
             value={output2}
-            onChange={(e) => setOutput2(e.target.value)}
+            onChange={(e) => setOutput1(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-      </Row>
-
-      <Row justify="start">
-        <Col span={1}>
-          <h1>Index</h1>
+        </div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-2 col-sm-1 col-md-1">
+          <label htmlFor="index" className="form-label">
+            Index
+          </label>
           <textarea
+            id="index"
+            className="form-control"
             value={indexList}
             onChange={(e) => setIndexList(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-        <Col span={5}>
-          <h1>Difference List 1</h1>
+        </div>
+        <div className="col-4 col-sm-3 col-md-3">
+          <label htmlFor="difference-list-1" className="form-label">
+          Difference List 1
+          </label>
           <textarea
+            id="difference-list-1"
+            className="form-control"
             value={difference1List}
             onChange={(e) => setDifference1List(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-        <Col span={5}>
-          <h1>Difference List 2 </h1>
+        </div>
+        <div className="col-4 col-sm-3 col-md-3">
+          <label htmlFor="difference-list-2" className="form-label">
+          Difference List 2
+          </label>
           <textarea
+            id="difference-list-2"
+            className="form-control"
             value={difference2List}
             onChange={(e) => setDifference2List(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
-        </Col>
-      </Row>
+        </div>
+      </div>
     </>
   );
 };
-
-export default FindDifferentTwoList;

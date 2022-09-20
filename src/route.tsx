@@ -43,6 +43,9 @@ import { VisualStudioCodeExtention } from "./pages/software/visualStudioCode/ext
 import { Utilities } from "./pages/utilities";
 import { UtilitiesListFileSelected } from "./pages/utilities/file/listFileSelected";
 import { UtilitiesReadContentMultiFile } from "./pages/utilities/file/readContentMultiFile";
+import { UtilitiesTextCommon } from "./pages/utilities/text/common";
+import { UtilitiesTextFindDifferentTwoList } from "./pages/utilities/text/findDifferentTwoList";
+// import { UtilitiesTextCommon } from "./pages/utilities/text/common";
 import { MasterLayout } from "./pages/_layout/masterLayout";
 
 export const RoutesRoot = () => {
@@ -103,15 +106,17 @@ export const RoutesRoot = () => {
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
+          <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
+          <Route path="/utilities/text/find-different-two-list" element={<UtilitiesTextFindDifferentTwoList />} />
           {/* <Route path="/utilities/createTableFromExcel" element={<CreateTableFromExcel />} />
-          <Route path="/utilities/findDifferentTwoList" element={<FindDifferentTwoList />} />
+          
           <Route path="/utilities/findTextColumnJP_EN" element={<FindTextColumnJPEN />} />*/}
           
           {/* <Route path="/utilities/randomInsertSQL" element={<RandomInsertSQL />} />
           <Route path="/utilities/textRepeat" element={<TextRepeat />} />*/}
           
           {/*  <Route path="/utilities/textReplace" element={<TextReplace />} />
-          <Route path="/utilities/textCommon" element={<TextCommon />} />
+          
           <Route path="/utilities/textSpecial" element={<TextSpecial />} />
           <Route path="/utilities/tinyMCE" element={<TinyMCE />} />
           <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */}

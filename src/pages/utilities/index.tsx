@@ -21,11 +21,11 @@ export const Utilities = () => {
       links: [
         {
           text: "Common",
-          path: "/utilities/textCommon",
+          path: "/utilities/text/common",
         },
         {
           text: "Find Different Two List",
-          path: "/utilities/findDifferentTwoList",
+          path: "/utilities/text/find-different-two-list",
         },
         {
           text: "Find Text ColumnJP_EN",
