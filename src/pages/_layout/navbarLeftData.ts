@@ -70,8 +70,26 @@ export const NAVBAR_LEFT = [
     text: "Software",
     children: [],
   },
+  
   {
     id: 3,
+    active: false,
+    open: false,
+    link: "",
+    text: "Tutorials",
+    linkClass: "dropdown-toggle collapsed",
+    ulClass: "collapse list-unstyled",
+    children: [
+      {
+        id: 0,
+        link: "/tutorial/postgreSQL",
+        text: "PostgreSQL",
+        active: false,
+      },
+    ],
+  },
+  {
+    id: 4,
     active: false,
     open: false,
     link: "utilities",
@@ -79,7 +97,7 @@ export const NAVBAR_LEFT = [
     children: [ ],
   },
   {
-    id: 4,
+    id: 5,
     active: false,
     open: false,
     link: "",

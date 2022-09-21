@@ -54,6 +54,12 @@ import { UtilitiesTextReplace } from "./pages/utilities/text/replace";
 import { UtilitiesTextSpecial } from "./pages/utilities/text/special";
 import { UtilitiesTinyMCE } from "./pages/utilities/tinyMCE";
 import { MasterLayout } from "./pages/_layout/masterLayout";
+import { TutorialPostgreSQL } from "./pages/tutorials/postgreSQL";
+import { TutorialPostgreSQLChapter1 } from "./pages/tutorials/postgreSQL/1_10/chapter1";
+import { TutorialPostgreSQLChapter2 } from "./pages/tutorials/postgreSQL/1_10/chapter2";
+import { TutorialPostgreSQLChapter3 } from "./pages/tutorials/postgreSQL/1_10/chapter3";
+import { TutorialPostgreSQLChapter4 } from "./pages/tutorials/postgreSQL/1_10/chapter4";
+import { TutorialPostgreSQLChapter5 } from "./pages/tutorials/postgreSQL/1_10/chapter5";
 
 export const RoutesRoot = () => {
   return (
@@ -109,6 +115,37 @@ export const RoutesRoot = () => {
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
+
+          <Route path="/tutorial/postgreSQL" element={<TutorialPostgreSQL />} />
+          <Route path="/tutorial/postgreSQL/chapter1" element={<TutorialPostgreSQLChapter1 />} />
+          <Route path="/tutorial/postgreSQL/chapter2" element={<TutorialPostgreSQLChapter2 />} />
+          <Route path="/tutorial/postgreSQL/chapter3" element={<TutorialPostgreSQLChapter3 />} />
+          <Route path="/tutorial/postgreSQL/chapter4" element={<TutorialPostgreSQLChapter4 />} />
+          <Route path="/tutorial/postgreSQL/chapter5" element={<TutorialPostgreSQLChapter5 />} />
+          {/*
+          <Route path="/tutorial/postgreSQL/chapter6" element={<TutorialPostgreSQLChapter6 />} />
+          <Route path="/tutorial/postgreSQL/chapter7" element={<TutorialPostgreSQLChapter7 />} />
+          <Route path="/tutorial/postgreSQL/chapter8" element={<TutorialPostgreSQLChapter8 />} />
+          <Route path="/tutorial/postgreSQL/chapter9" element={<TutorialPostgreSQLChapter9 />} />
+          <Route path="/tutorial/postgreSQL/chapter10" element={<TutorialPostgreSQLChapter10 />} />
+          <Route path="/tutorial/postgreSQL/chapter11" element={<TutorialPostgreSQLChapter11 />} />
+          <Route path="/tutorial/postgreSQL/chapter12" element={<TutorialPostgreSQLChapter12 />} />
+          <Route path="/tutorial/postgreSQL/chapter13" element={<TutorialPostgreSQLChapter13 />} />
+          <Route path="/tutorial/postgreSQL/chapter14" element={<TutorialPostgreSQLChapter14 />} />
+          <Route path="/tutorial/postgreSQL/chapter15" element={<TutorialPostgreSQLChapter15 />} />
+          <Route path="/tutorial/postgreSQL/chapter16" element={<TutorialPostgreSQLChapter16 />} />
+          <Route path="/tutorial/postgreSQL/chapter17" element={<TutorialPostgreSQLChapter17 />} />
+          <Route path="/tutorial/postgreSQL/chapter18" element={<TutorialPostgreSQLChapter18 />} />
+          <Route path="/tutorial/postgreSQL/chapter19" element={<TutorialPostgreSQLChapter19 />} />
+          <Route path="/tutorial/postgreSQL/chapter20" element={<TutorialPostgreSQLChapter20 />} />
+          <Route path="/tutorial/postgreSQL/chapter21" element={<TutorialPostgreSQLChapter21 />} />
+          <Route path="/tutorial/postgreSQL/chapter22" element={<TutorialPostgreSQLChapter22 />} />
+          <Route path="/tutorial/postgreSQL/chapter23" element={<TutorialPostgreSQLChapter23 />} />
+          <Route path="/tutorial/postgreSQL/chapter24" element={<TutorialPostgreSQLChapter24 />} />
+          <Route path="/tutorial/postgreSQL/chapter25" element={<TutorialPostgreSQLChapter25 />} />
+          <Route path="/tutorial/postgreSQL/chapter26" element={<TutorialPostgreSQLChapter26 />} />
+          <Route path="/tutorial/postgreSQL/chapter27" element={<TutorialPostgreSQLChapter27 />} />
+          <Route path="/tutorial/postgreSQL/chapter28" element={<TutorialPostgreSQLChapter28 />} /> */}
 
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />

@@ -107,3 +107,6 @@ a {
 .form-control {
   font-size: 14px;
 }
+ul.list-style-type-none {
+  list-style-type: none;
+}
