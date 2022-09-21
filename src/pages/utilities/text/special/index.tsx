@@ -43,6 +43,14 @@ export const UtilitiesTextSpecial = () => {
       jp: `LOT_NOの値を取得する。`,
       vn: `lấy giá trị của LOT_NO`,
     },
+    {
+      jp: `旧`,
+      vn: `Cũ`,
+    },
+    {
+      jp: `新`,
+      vn: `Mới`,
+    },
   ];
   return (
     <>
