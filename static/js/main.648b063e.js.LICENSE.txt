@@ -20,6 +20,8 @@
  * Licensed under the MIT License.
  */
 
+/*! sheetjs (C) 2013-present SheetJS -- http://sheetjs.com */
+
 /**
  * @license React
  * react-dom-server-legacy.browser.production.min.js
