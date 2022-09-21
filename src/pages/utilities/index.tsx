@@ -53,8 +53,12 @@ export const Utilities = () => {
       title: "SQL",
       links: [
         {
-          text: "Random Insert SQL",
-          path: "/utilities/sql/random-insert",
+          text: "Make Insert SQL",
+          path: "/utilities/sql/make-insert",
+        },
+        {
+          text: "Make Insert SQL from procedure",
+          path: "/utilities/sql/make-insert-from-procedure",
         },
         {
           text: "Create Table From Excel",

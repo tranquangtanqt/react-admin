@@ -1,9 +1,7 @@
 import Code from "../../../../components/modules/code";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 import { useState } from "react";
-// import CopyToClipboard from "react-copy-to-clipboard";
 // import Code from "../../../../components/modules/code";
-// import { readContentMultiFileData } from "./data";
 
 export const UtilitiesReadContentMultiFile = () => {
   const [files, setFiles] = useState([]);
@@ -205,38 +203,6 @@ function copyText(ele, str){
           </div>
         </div>
       </div>
-
-      {/* 
-        <Col span={6}>
-          <CopyToClipboard
-            text={output}
-            onCopy={() => {
-              openNotification();
-            }}
-          >
-            <Button type="success" style={{ background: "#fffb8f" }}>
-              Copy to clipboard
-            </Button>
-          </CopyToClipboard>
-        </Col>
-      </Row>
-
-      <Row justify="start">
-        <Col span={24}>
-          
-        </Col>
-      </Row>
-
-      <Divider orientation="left">Source code</Divider>
-
-      <Row justify="start">
-        <Col span={24}>
-          <p>- index.html</p>
-          <Code code={readContentMultiFileData.index} language="html" />
-          <p>- script.js</p>
-          <Code code={readContentMultiFileData.script} language="javascript" />
-        </Col>
-      </Row> */}
     </>
   );
 };

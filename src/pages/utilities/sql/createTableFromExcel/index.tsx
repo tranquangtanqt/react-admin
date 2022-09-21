@@ -1,195 +1,179 @@
 // import { Button, Col, Divider, Input, Row } from "antd";
-// import { useState } from "react";
+import { useState } from "react";
 import * as XLSX from "xlsx";
-// import ExportExcel from "../../../components/modules/exportExcel";
+import { PageTitle } from "../../../../components/modules/pageTitle";
+import ExportExcel from "../../../../components/modules/exportExcel";
 
 export const UtilitiesCreateTableFromExcel = () => {
-  // const [fileInput, setfileInput] = useState([]);
-  // const [output, setOutput] = useState("");
-  // const [tableName, setTableName] = useState("DEMO");
+  const [fileInput, setfileInput] = useState();
+  const [output, setOutput] = useState("");
+  const [tableName, setTableName] = useState("DEMO");
 
-  // const createTable = () => {
-  //   let outputStr = "CREATE TABLE " + tableName + " (\n";
+  const createTable = () => {
+    let outputStr = "CREATE TABLE " + tableName + " (\n";
+    console.log(fileInput);
+    let arrayBuffer: any;
+    let fileReader = new FileReader();
+    fileReader.onload = (e) => {
+      arrayBuffer = fileReader.result;
+      let dataBuffer = new Uint8Array(arrayBuffer);
+      let arr = [];
+      for (let i = 0; i !== dataBuffer.length; ++i) arr[i] = String.fromCharCode(dataBuffer[i]);
+      let bstr = arr.join("");
+      let workbook = XLSX.read(bstr, { type: "binary" });
+      let first_sheet_name = workbook.SheetNames[0];
+      let worksheet = workbook.Sheets[first_sheet_name];
+      console.log(XLSX.utils.sheet_to_json(worksheet, { raw: true }));
+      let data: any = XLSX.utils.sheet_to_json(worksheet, { raw: true });
 
-  //   const reader = new FileReader();
+      try {
+        for (let i = 0; i < data.length; i++) {
+          let element = data[i];
+          console.log(element.level);
+          if (element.level === 0 || element.level === "0" || element.level === 1 || element.level === "1") {
+            outputStr += "\t" + element.item_name + " ";
+            if (element.type === "C") {
+              //Character
+              if (element.digit === 1) {
+                outputStr += "CHAR(1) ";
+              } else {
+                outputStr += "VARCHAR2(" + element.digit + " CHAR) ";
+              }
+            } else if (element.type === "N") {
+              //NUMBER
+              if (element.digit.toString().includes(",")) {
+                let split = element.digit.toString().split(",");
+                outputStr += "NUMBER(" + split[0] + "," + split[1] + ") ";
+              } else {
+                outputStr += "NUMBER(" + element.digit + ") ";
+              }
+            } else if (element.type === "D") {
+              //Date
+              outputStr += "DATE ";
+            } else if (element.type === "F") {
+              outputStr += "CHAR(1) ";
+            }
 
-  //   reader.onload = (evt) => {
-  //     const bstr = evt.target.result;
-  //     const wb = XLSX.read(bstr, { type: "binary" });
-  //     const wsname = wb.SheetNames[0];
-  //     const ws = wb.Sheets[wsname];
-  //     const data = XLSX.utils.sheet_to_row_object_array(ws, { header: 1 });
-  //     // console.log(data);
+            // DEFAULT
+            if (!(element.default === undefined || element.default === null || element.default === "")) {
+              if (element.default.toString().trim() === "NULL_VAL") {
+                outputStr += "DEFAULT '*' ";
+              } else {
+                outputStr += "DEFAULT " + element.default + " ";
+              }
+            }
 
-  //     for (let i = 0; i < data.length; i++) {
-  //       const element = data[i];
-  //       console.log(element[0]);
-  //       if (
-  //         element[0] === 0 ||
-  //         element[0] === "0" ||
-  //         element[0] === 1 ||
-  //         element[0] === "1"
-  //       ) {
-  //         outputStr += "\t" + element[1] + " ";
-  //         if (element[2] === "C") {
-  //           //Character
-  //           if (element[3] === 1) {
-  //             outputStr += "CHAR(1) ";
-  //           } else {
-  //             outputStr += "VARCHAR2(" + element[3] + " CHAR) ";
-  //           }
-  //         } else if (element[2] === "N") {
-  //           //NUMBER
-  //           if (element[3].includes(",")) {
-  //             let split = element[3].split(",");
-  //             outputStr += "NUMBER(" + split[0] + "," + split[1] + ") ";
-  //           } else {
-  //             outputStr += "NUMBER(" + element[3] + ") ";
-  //           }
-  //         } else if (element[2] === "D") {
-  //           //Date
-  //           outputStr += "DATE ";
-  //         } else if (element[2] === "F") {
-  //           outputStr += "CHAR(1) ";
-  //         }
+            // NULL OR NOTNULL
+            if (element.null === "N") {
+              outputStr += "NOT NULL ";
+            }
 
-  //         // DEFAULT
-  //         if (
-  //           !(
-  //             element[5] === undefined ||
-  //             element[5] === null ||
-  //             element[5] === ""
-  //           )
-  //         ) {
-  //           if (element[5].trim() === "NULL_VAL") {
-  //             outputStr += "DEFAULT '*' ";
-  //           } else {
-  //             outputStr += "DEFAULT " + element[5] + " ";
-  //           }
-  //         }
+            outputStr += ",\n";
+          }
+        }
 
-  //         // NULL OR NOTNULL
-  //         if (element[4] === "N") {
-  //           outputStr += "NOT NULL ";
-  //         }
+        let count = 0;
+        for (let i = 0; i < data.length; i++) {
+          const element = data[i];
+          if (element.level === 0 || element.level === "0") {
+            count++;
+            if (count === 1) {
+              outputStr += "\tCONSTRAINT _PK PRIMARY KEY (";
+            }
+            outputStr += element.item_name + ", ";
+          }
+        }
 
-  //         outputStr += ",\n";
-  //       }
-  //     }
+        outputStr = outputStr.slice(0, outputStr.lastIndexOf(","));
+        outputStr += "\n); \n";
+        //COMMENT
+        for (let i = 0; i < data.length; i++) {
+          const element = data[i];
+          if (element.level === 0 || element.level === "0" || element.level === 1 || element.level === "1") {
+            outputStr += "COMMENT ON COLUMN " + tableName + "." + element.item_name + " IS '" + element.japanese + "';\n";
+          }
+        }
 
-  //     let count = 0;
-  //     for (let i = 0; i < data.length; i++) {
-  //       const element = data[i];
-  //       if (element[0] === 0 || element[0] === "0") {
-  //         count++;
-  //         if (count === 1) {
-  //           outputStr += "\tCONSTRAINT _PK PRIMARY KEY (";
-  //         }
-  //         outputStr += element[1] + ", ";
-  //       }
-  //     }
+        setOutput(outputStr);
+      } catch (e) {
+        if (e instanceof Error) {
+          console.log(e.message);
+        }
+      }
+    };
 
-  //     outputStr = outputStr.slice(0, outputStr.lastIndexOf(","));
-  //     outputStr += "\n); \n";
-  //     //COMMENT
-  //     for (let i = 0; i < data.length; i++) {
-  //       const element = data[i];
-  //       if (
-  //         element[0] === 0 ||
-  //         element[0] === "0" ||
-  //         element[0] === 1 ||
-  //         element[0] === "1"
-  //       ) {
-  //         outputStr += "COMMENT ON COLUMN " + tableName + "." + element[1] + " IS '" + element[6] + "';\n";
-  //       }
-  //     }
+    fileReader.readAsArrayBuffer(fileInput || new Blob());
+  };
 
-  //     setOutput(outputStr);
-  //   };
+  const onChange = (event: any) => {
+    setfileInput(event.target.files[0]);
+  };
 
-  //   reader.readAsBinaryString(fileInput[0]);
-  // };
+  const [header] = useState(customersData());
 
-  // const onChange = (e) => {
-  //   setfileInput([...fileInput, e.target.files[0]]);
-  // };
+  function customersData() {
+    const custs = [];
+    custs[0] = {
+      level: `level`,
+      item_name: `item_name`,
+      type: `type`,
+      digit: `digit`,
+      null: `null`,
+      default: `default`,
+      japanese: `japanese`,
+    };
 
-  // // eslint-disable-next-line
-  // const [header, setHeader] = useState(customersData());
+    return custs;
+  }
 
-  // function customersData() {
-  //   const custs = [];
-  //   custs[0] = {
-  //     level: `Level`,
-  //     item_name: `Item name`,
-  //     type: `Type`,
-  //     digit: `Digit`,
-  //     null: `Null (y/n)`,
-  //     default: `Default`,
-  //     japanese: `Japanese`,
-  //   };
-
-  //   return custs;
-  // }
-
-  // const wscols = [
-  //   //width column
-  //   { wch: Math.max(...header.map((customer) => customer.level.length)) },
-  //   { wch: Math.max(...header.map((customer) => customer.item_name.length)) },
-  //   { wch: Math.max(...header.map((customer) => customer.type.length)) },
-  //   { wch: Math.max(...header.map((customer) => customer.null.length)) },
-  //   { wch: Math.max(...header.map((customer) => customer.default.length)) },
-  //   { wch: Math.max(...header.map((customer) => customer.japanese.length)) },
-  // ];
+  const wscols = [
+    //width column
+    { wch: Math.max(...header.map((customer) => customer.level.length)) },
+    { wch: Math.max(...header.map((customer) => customer.item_name.length)) },
+    { wch: Math.max(...header.map((customer) => customer.type.length)) },
+    { wch: Math.max(...header.map((customer) => customer.null.length)) },
+    { wch: Math.max(...header.map((customer) => customer.default.length)) },
+    { wch: Math.max(...header.map((customer) => customer.japanese.length)) },
+  ];
 
   return (
     <>
-      {/* <Divider orientation="left">Create Table From Excel</Divider>
-      <Row justify="start">
-        <Col span={12}>
-          <input type="file" onChange={onChange} />
-        </Col>
+      <PageTitle title="Create Table From Excel"></PageTitle>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-6 col-md-6">
+          <label htmlFor="file" className="form-label">
+            Choose file
+          </label>
+          <input type="file" className="form-control" id="file" onChange={(e) => onChange(e)}></input>
+        </div>
 
-        <Col span={12}>
+        <div className="col-12 col-sm-6 col-md-6 mt-4">
           <ExportExcel csvData={header} fileName="Demo" wscols={wscols} />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <label htmlFor="table-name" className="form-label">
+            Table name
+          </label>
+          <input type="text" className="form-control" id="table-name" value={tableName} onChange={(e) => setTableName(e.target.value)}></input>
+        </div>
+      </div>
 
-      <Divider orientation="left">Table name</Divider>
-      <Row justify="start">
-        <Col span={24}>
-            <Input
-            placeholder="Enter table name"
-            value={tableName}
-            onChange={(e) => setTableName(e.target.value)}
-          />
-        </Col>
-      </Row>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <button type="button" className="btn btn-primary btn-sm" onClick={() => createTable()}>
+            Create
+          </button>
+        </div>
+      </div>
 
-      <Row justify="start">
-        <Col span={24}>
-          <Divider orientation="left">
-            <Button type="primary" onClick={() => createTable()}>
-              Create
-            </Button>
-          </Divider>
-        </Col>
-      </Row>
-
-      <Divider orientation="left">Output</Divider>
-      <Row justify="start">
-        <Col span={24}>
-          <textarea
-            value={output}
-            onChange={(e) => setOutput(e.target.value)}
-            style={{ height: 400, width: "100%" }}
-          />
-        </Col>
-      </Row> */}
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: "100%" }} />
+        </div>
+      </div>
     </>
   );
 };
-
-

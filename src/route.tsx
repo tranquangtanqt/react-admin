@@ -43,7 +43,9 @@ import { VisualStudioCodeExtention } from "./pages/software/visualStudioCode/ext
 import { Utilities } from "./pages/utilities";
 import { UtilitiesListFileSelected } from "./pages/utilities/file/listFileSelected";
 import { UtilitiesReadContentMultiFile } from "./pages/utilities/file/readContentMultiFile";
+import { UtilitiesCreateTableFromExcel } from "./pages/utilities/sql/createTableFromExcel";
 import { UtilitiesMakeInsertSQL } from "./pages/utilities/sql/makeInsertSQL";
+import { UtilitiesMakeInsertSQLFromProcedure } from "./pages/utilities/sql/makeInsertProcedure";
 import { UtilitiesTextCommon } from "./pages/utilities/text/common";
 import { UtilitiesTextFindDifferentTwoList } from "./pages/utilities/text/findDifferentTwoList";
 import { UtilitiesTextFindTextColumnJPEN } from "./pages/utilities/text/findTextColumnJpEn";
@@ -119,8 +121,10 @@ export const RoutesRoot = () => {
           <Route path="/utilities/text/special" element={<UtilitiesTextSpecial />} />
           <Route path="/utilities/tinyMCE" element={<UtilitiesTinyMCE />} />
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
+          <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
+          <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
 
-          {/* // <Route path="/utilities/createTableFromExcel" element={<CreateTableFromExcel />} />
+          {/* // 
           // <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */} 
         </Routes>
       </MasterLayout>

@@ -49,7 +49,7 @@ export const UtilitiesMakeInsertSQL = () => {
           } else if (rowArr[rowArr.length - 1] === ",") {
             rowArr = rowArr.slice(0, -1);
           }
-          
+
           // join row array to string
           let rowString = rowArr.join("");
           let arrSeparatorSpace = rowString.trim().split(" ");
@@ -59,7 +59,6 @@ export const UtilitiesMakeInsertSQL = () => {
             let value = "";
 
             if (rowString.toLowerCase().includes("default")) {
-              console.log("123");
               let arrSeparatorSpaceLower = arrSeparatorSpace.map((val) => {
                 return val.toLowerCase();
               });
@@ -98,12 +97,12 @@ export const UtilitiesMakeInsertSQL = () => {
               let limit = rowString.substring(left + 1, right);
               let limitArr = limit.split(",");
               if (limitArr.length > 1) {
-                let natural = Math.floor(Math.random() * Math.pow(10, Number(limitArr[0])- Number(limitArr[1])));
+                let natural = Math.floor(Math.random() * Math.pow(10, Number(limitArr[0]) - Number(limitArr[1])));
                 let decimal = Math.floor(Math.random() * Math.pow(10, Number(limitArr[1])));
                 value = natural + "." + decimal;
                 outputStr += "" + value + ", ";
               } else if (limitArr.length > 0) {
-                let natural = Math.floor(Math.random() * Math.pow(10,  Number(limitArr[0])));
+                let natural = Math.floor(Math.random() * Math.pow(10, Number(limitArr[0])));
                 outputStr += "" + natural + ", ";
               }
             } else if (rowString.toLowerCase().includes("date")) {
@@ -161,7 +160,7 @@ export const UtilitiesMakeInsertSQL = () => {
           <label htmlFor="end" className="form-label">
             End
           </label>
-          <input type="text" className="form-control" id="start" value={end} onChange={(e) => setEnd(e.target.value)}></input>
+          <input type="text" className="form-control" id="end" value={end} onChange={(e) => setEnd(e.target.value)}></input>
         </div>
       </div>
 
