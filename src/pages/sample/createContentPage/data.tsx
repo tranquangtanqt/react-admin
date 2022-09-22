@@ -1,12 +1,12 @@
 export const TAGS = [
   {
+    text: "b",
+  },
+  {
     text: "p",
   },
   {
     text: "code",
-  },
-  {
-    text: "b",
   },
   {
     text: "i",
@@ -45,7 +45,7 @@ export const LANGUAGES = [
     name: "csharp",
   },
   {
-    name: "java",
+    name: "javascript",
   },
   {
     name: "php",

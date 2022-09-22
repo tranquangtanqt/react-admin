@@ -83,7 +83,7 @@ export const TutorialPostgreSQL = () => {
       links: [
         {
           text: "COALESCE",
-          path: "tutorial/postgreSQL/chapter6",
+          path: "/tutorial/postgreSQL/chapter6",
           contents: [
             {
               text: "Single non null argument",
@@ -452,12 +452,10 @@ export const TutorialPostgreSQL = () => {
   
   return (
     <>
-      <>
-        <PageTitle title="PostgreSQL"></PageTitle>
-        <div className="row">
-          <CardList cardData={cardData} startWith={1}></CardList>
-        </div>
-      </>
+      <PageTitle title="PostgreSQL"></PageTitle>
+      <div className="row">
+        <CardList cardData={cardData} startWith={1}></CardList>
+      </div>
     </>
   );
 };

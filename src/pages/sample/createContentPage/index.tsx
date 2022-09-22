@@ -4,7 +4,7 @@ import StringUtils from "../../../utils/StringUtils";
 import { TAGS, LANGUAGES, LIST } from "./data";
 
 export const CreateContentPage = () => {
-  const [tag, setTag] = useState("p");
+  const [tag, setTag] = useState("b");
   const [language, setLanguage] = useState("sql");
   const [displaylanguage, setDisplayLanguage] = useState(false);
   const [listType, setListType] = useState("ul");
@@ -17,6 +17,9 @@ export const CreateContentPage = () => {
   const onChangeTag = (value: string) => {
     if (value === "code") {
       setDisplayLanguage(true);
+      setTab("2");
+    } else if (value === "p") {
+      setDisplayLanguage(false);
       setTab("1");
     } else {
       setDisplayLanguage(false);
@@ -24,33 +27,43 @@ export const CreateContentPage = () => {
     }
 
     if (value === "list") {
+      setTab("2");
       setDisplayList(true);
     } else {
       setDisplayList(false);
     }
 
+    if (value === "table") {
+      setTab("2");
+    }
+
     setTag(value);
+    document.getElementById("input")?.focus();
   };
   const onChangeLanguage = (value: string) => {
     setLanguage(value);
+    document.getElementById("input")?.focus();
   };
   const onChangeList = (value: string) => {
     setListType(value);
+    document.getElementById("input")?.focus();
   };
 
   const handleChangeCol = (value: string) => {
     setTab(value);
+    document.getElementById("input")?.focus();
   };
 
   const handleChangeTextIndent = (value: string) => {
     setTextIndent(value);
+    document.getElementById("input")?.focus();
   };
 
   const addContent = () => {
     let outputStr = output;
     if (input.trim() === "") return;
     let inputCurrentValue = input;
-    if(tag !== "code") {
+    if (tag !== "code") {
       inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "{", `{"{"###?###`);
       inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "}", `{"}"}`);
       inputCurrentValue = StringUtils.replaceAll(inputCurrentValue, "###?###", `}`);
@@ -71,14 +84,18 @@ export const CreateContentPage = () => {
         let element = inputCurrentValue.split("\n");
         outputStr += `<${listType}>\n`;
         element.forEach((val) => {
-          outputStr += `<li>${val}</li>\n`;
+          if (val.trim() !== "") {
+            outputStr += `<li>${val}</li>\n`;
+          }
         });
         outputStr += `</${listType}>\n`;
         break;
       case "p":
         let elp = inputCurrentValue.split("\n");
         elp.forEach((val) => {
-          outputStr += `<p>${val}</p>\n`;
+          if (val.trim() !== "") {
+            outputStr += `<p>${val}</p>\n`;
+          }
         });
         break;
       default:
@@ -154,7 +171,7 @@ export const CreateContentPage = () => {
     setInput("");
     setOutput("");
     setTab("0");
-    setTag("p");
+    setTag("b");
     setDisplayLanguage(false);
     setDisplayList(false);
   };
@@ -162,7 +179,7 @@ export const CreateContentPage = () => {
   return (
     <>
       <div className="row">
-        <div className="col-2 col-sm-1 col-md-1">
+        <div className="col-2 col-sm-2 col-md-1">
           <b>Tab</b>
           <select className="form-select form-select-sm" value={tab} onChange={(e) => handleChangeCol(e.target.value)}>
             {Array.from(Array(12), (e, i) => {
@@ -174,7 +191,7 @@ export const CreateContentPage = () => {
             })}
           </select>
         </div>
-        <div className="col-2 col-sm-1 col-md-1">
+        <div className="col-2 col-sm-2 col-md-1">
           <b>Text Indent</b>
           <select className="form-select form-select-sm" value={textIndent} onChange={(e) => handleChangeTextIndent(e.target.value)}>
             {Array.from(Array(5), (e, i) => {
@@ -264,7 +281,7 @@ export const CreateContentPage = () => {
 
       <div className="row">
         <div className="col-12 col-sm-12 col-md-12 mt-2">
-          <textarea value={input} onChange={(e) => setInput(e.target.value)} style={{ height: 100, width: "100%" }} />
+          <textarea value={input} id="input" onChange={(e) => setInput(e.target.value)} style={{ height: 100, width: "100%" }} />
         </div>
       </div>
 

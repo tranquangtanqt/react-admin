@@ -1,0 +1,24 @@
+import Code from "../../../../../components/modules/code";
+import { PageTitle } from "../../../../../components/modules/pageTitle";
+
+export const TutorialPostgreSQLChapter2 = () => {
+  return (
+    <>
+      <PageTitle title=""></PageTitle>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12"></div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12"></div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12"></div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12"></div>
+      </div>
+    </>
+  );
+};
+
+

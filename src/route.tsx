@@ -60,6 +60,30 @@ import { TutorialPostgreSQLChapter2 } from "./pages/tutorials/postgreSQL/1_10/ch
 import { TutorialPostgreSQLChapter3 } from "./pages/tutorials/postgreSQL/1_10/chapter3";
 import { TutorialPostgreSQLChapter4 } from "./pages/tutorials/postgreSQL/1_10/chapter4";
 import { TutorialPostgreSQLChapter5 } from "./pages/tutorials/postgreSQL/1_10/chapter5";
+import { TutorialPostgreSQLChapter6 } from "./pages/tutorials/postgreSQL/1_10/chapter6";
+import { TutorialPostgreSQLChapter7 } from "./pages/tutorials/postgreSQL/1_10/chapter7";
+import { TutorialPostgreSQLChapter8 } from "./pages/tutorials/postgreSQL/1_10/chapter8";
+import { TutorialPostgreSQLChapter9 } from "./pages/tutorials/postgreSQL/1_10/chapter9";
+import { TutorialPostgreSQLChapter10 } from "./pages/tutorials/postgreSQL/1_10/chapter10";
+import { TutorialPostgreSQLChapter11 } from "./pages/tutorials/postgreSQL/11_20/chapter11";
+import { TutorialPostgreSQLChapter12 } from "./pages/tutorials/postgreSQL/11_20/chapter12";
+import { TutorialPostgreSQLChapter13 } from "./pages/tutorials/postgreSQL/11_20/chapter13";
+import { TutorialPostgreSQLChapter14 } from "./pages/tutorials/postgreSQL/11_20/chapter14";
+import { TutorialPostgreSQLChapter15 } from "./pages/tutorials/postgreSQL/11_20/chapter15";
+import { TutorialPostgreSQLChapter16 } from "./pages/tutorials/postgreSQL/11_20/chapter16";
+import { TutorialPostgreSQLChapter17 } from "./pages/tutorials/postgreSQL/11_20/chapter17";
+import { TutorialPostgreSQLChapter18 } from "./pages/tutorials/postgreSQL/11_20/chapter18";
+import { TutorialPostgreSQLChapter19 } from "./pages/tutorials/postgreSQL/11_20/chapter19";
+import { TutorialPostgreSQLChapter20 } from "./pages/tutorials/postgreSQL/11_20/chapter20";
+import { TutorialPostgreSQLChapter21 } from "./pages/tutorials/postgreSQL/21_28/chapter21";
+import { TutorialPostgreSQLChapter22 } from "./pages/tutorials/postgreSQL/21_28/chapter22";
+import { TutorialPostgreSQLChapter23 } from "./pages/tutorials/postgreSQL/21_28/chapter23";
+import { TutorialPostgreSQLChapter24 } from "./pages/tutorials/postgreSQL/21_28/chapter24";
+import { TutorialPostgreSQLChapter25 } from "./pages/tutorials/postgreSQL/21_28/chapter25";
+import { TutorialPostgreSQLChapter26 } from "./pages/tutorials/postgreSQL/21_28/chapter26";
+import { TutorialPostgreSQLChapter27 } from "./pages/tutorials/postgreSQL/21_28/chapter27";
+import { TutorialPostgreSQLChapter28 } from "./pages/tutorials/postgreSQL/21_28/chapter28";
+import { TutorialNetAngular } from "./pages/tutorials/netAngular";
 
 export const RoutesRoot = () => {
   return (
@@ -116,13 +140,15 @@ export const RoutesRoot = () => {
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
 
+          <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
+
+
           <Route path="/tutorial/postgreSQL" element={<TutorialPostgreSQL />} />
           <Route path="/tutorial/postgreSQL/chapter1" element={<TutorialPostgreSQLChapter1 />} />
           <Route path="/tutorial/postgreSQL/chapter2" element={<TutorialPostgreSQLChapter2 />} />
           <Route path="/tutorial/postgreSQL/chapter3" element={<TutorialPostgreSQLChapter3 />} />
           <Route path="/tutorial/postgreSQL/chapter4" element={<TutorialPostgreSQLChapter4 />} />
           <Route path="/tutorial/postgreSQL/chapter5" element={<TutorialPostgreSQLChapter5 />} />
-          {/*
           <Route path="/tutorial/postgreSQL/chapter6" element={<TutorialPostgreSQLChapter6 />} />
           <Route path="/tutorial/postgreSQL/chapter7" element={<TutorialPostgreSQLChapter7 />} />
           <Route path="/tutorial/postgreSQL/chapter8" element={<TutorialPostgreSQLChapter8 />} />
@@ -145,7 +171,7 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/postgreSQL/chapter25" element={<TutorialPostgreSQLChapter25 />} />
           <Route path="/tutorial/postgreSQL/chapter26" element={<TutorialPostgreSQLChapter26 />} />
           <Route path="/tutorial/postgreSQL/chapter27" element={<TutorialPostgreSQLChapter27 />} />
-          <Route path="/tutorial/postgreSQL/chapter28" element={<TutorialPostgreSQLChapter28 />} /> */}
+          <Route path="/tutorial/postgreSQL/chapter28" element={<TutorialPostgreSQLChapter28 />} />
 
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
