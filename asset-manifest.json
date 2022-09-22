@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.38638975.css",
-    "main.js": "/react-admin/static/js/main.2028e1eb.js",
+    "main.js": "/react-admin/static/js/main.5f066189.js",
     "static/media/CSharp1.jpg": "/react-admin/static/media/CSharp1.2622dab89258473a5a73.jpg",
     "static/media/2.jpg": "/react-admin/static/media/2.a76ad9c57e6a0aea64a7.jpg",
     "static/media/1.jpg": "/react-admin/static/media/1.c3f997ad6dda6b07c2e5.jpg",
@@ -45,10 +45,10 @@
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.38638975.css.map": "/react-admin/static/css/main.38638975.css.map",
-    "main.2028e1eb.js.map": "/react-admin/static/js/main.2028e1eb.js.map"
+    "main.5f066189.js.map": "/react-admin/static/js/main.5f066189.js.map"
   },
   "entrypoints": [
     "static/css/main.38638975.css",
-    "static/js/main.2028e1eb.js"
+    "static/js/main.5f066189.js"
   ]
 }
