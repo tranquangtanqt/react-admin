@@ -1,7 +1,7 @@
 import Code from "../../../../../components/modules/code";
 import { PageTitle } from "../../../../../components/modules/pageTitle";
 
-export const TutorialNetAngularLesson = () => {
+export const TutorialJavaLesson = () => {
   return (
     <>
       <PageTitle title=""></PageTitle>
@@ -20,3 +20,14 @@ export const TutorialNetAngularLesson = () => {
     </>
   );
 };
+
+
+
+<div className="tab-2">
+  <input
+    type="image"
+    src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_1.jpg")}
+    className="img-thumbnail"
+    alt=""
+  />
+</div>

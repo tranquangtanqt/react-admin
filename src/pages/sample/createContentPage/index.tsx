@@ -106,6 +106,18 @@ export const CreateContentPage = () => {
     outputStr += endWithTabAndTextIndent();
     setOutput(outputStr);
     setInput("");
+
+    switch (tag) {
+        case "p":
+        setTab("2");
+        setTag("code");
+        break;
+      default:
+        setTab("1");
+        setTag("p");
+        break;
+    }
+    document.getElementById("input")?.focus();
   };
 
   const startWithTabAndTextIndent = () => {
@@ -179,7 +191,7 @@ export const CreateContentPage = () => {
   return (
     <>
       <div className="row">
-        <div className="col-2 col-sm-2 col-md-1">
+        <div className="col-2 col-sm-2 col-md-2">
           <b>Tab</b>
           <select className="form-select form-select-sm" value={tab} onChange={(e) => handleChangeCol(e.target.value)}>
             {Array.from(Array(12), (e, i) => {
@@ -191,7 +203,7 @@ export const CreateContentPage = () => {
             })}
           </select>
         </div>
-        <div className="col-2 col-sm-2 col-md-1">
+        <div className="col-2 col-sm-2 col-md-2">
           <b>Text Indent</b>
           <select className="form-select form-select-sm" value={textIndent} onChange={(e) => handleChangeTextIndent(e.target.value)}>
             {Array.from(Array(5), (e, i) => {

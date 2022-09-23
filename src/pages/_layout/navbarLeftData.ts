@@ -82,12 +82,18 @@ export const NAVBAR_LEFT = [
     children: [
       {
         id: 0,
+        link: "/tutorial/java",
+        text: "Java",
+        active: false,
+      },
+      {
+        id: 1,
         link: "/tutorial/net-angular",
         text: "Net - Angular",
         active: false,
       },
       {
-        id: 1,
+        id: 2,
         link: "/tutorial/postgreSQL",
         text: "PostgreSQL",
         active: false,

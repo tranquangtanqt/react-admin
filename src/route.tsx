@@ -93,6 +93,13 @@ import { TutorialNetAngularLesson6 } from "./pages/tutorials/netAngular/1_10/les
 import { TutorialNetAngularLesson7 } from "./pages/tutorials/netAngular/1_10/lesson7";
 import { TutorialNetAngularLesson8 } from "./pages/tutorials/netAngular/1_10/lesson8";
 import { TutorialNetAngularLesson9 } from "./pages/tutorials/netAngular/1_10/lesson9";
+import { TutorialJava } from "./pages/tutorials/java";
+import { TutorialJavaLesson1 } from "./pages/tutorials/java/1_10/lesson1";
+import { TutorialJavaLesson2 } from "./pages/tutorials/java/1_10/lesson2";
+import { TutorialJavaLesson3 } from "./pages/tutorials/java/1_10/lesson3";
+import { TutorialJavaLesson4 } from "./pages/tutorials/java/1_10/lesson4";
+import { TutorialJavaLesson5 } from "./pages/tutorials/java/1_10/lesson5";
+import { TutorialJavaLesson6 } from "./pages/tutorials/java/1_10/lesson6";
 
 export const RoutesRoot = () => {
   return (
@@ -148,6 +155,14 @@ export const RoutesRoot = () => {
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
+
+          <Route path="/tutorial/java" element={<TutorialJava />} />
+          <Route path="/tutorial/java/lesson1" element={<TutorialJavaLesson1 />} />
+          <Route path="/tutorial/java/lesson2" element={<TutorialJavaLesson2 />} />
+          <Route path="/tutorial/java/lesson3" element={<TutorialJavaLesson3 />} />
+          <Route path="/tutorial/java/lesson4" element={<TutorialJavaLesson4 />} />
+          <Route path="/tutorial/java/lesson5" element={<TutorialJavaLesson5 />} />
+          <Route path="/tutorial/java/lesson6" element={<TutorialJavaLesson6 />} />
 
           <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
           <Route path="/tutorial/net-angular/lesson1" element={<TutorialNetAngularLesson1 />} />
