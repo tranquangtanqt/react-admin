@@ -84,6 +84,15 @@ import { TutorialPostgreSQLChapter26 } from "./pages/tutorials/postgreSQL/21_28/
 import { TutorialPostgreSQLChapter27 } from "./pages/tutorials/postgreSQL/21_28/chapter27";
 import { TutorialPostgreSQLChapter28 } from "./pages/tutorials/postgreSQL/21_28/chapter28";
 import { TutorialNetAngular } from "./pages/tutorials/netAngular";
+import { TutorialNetAngularLesson1 } from "./pages/tutorials/netAngular/1_10/lesson1";
+import { TutorialNetAngularLesson2 } from "./pages/tutorials/netAngular/1_10/lesson2";
+import { TutorialNetAngularLesson3 } from "./pages/tutorials/netAngular/1_10/lesson3";
+import { TutorialNetAngularLesson4 } from "./pages/tutorials/netAngular/1_10/lesson4";
+import { TutorialNetAngularLesson5 } from "./pages/tutorials/netAngular/1_10/lesson5";
+import { TutorialNetAngularLesson6 } from "./pages/tutorials/netAngular/1_10/lesson6";
+import { TutorialNetAngularLesson7 } from "./pages/tutorials/netAngular/1_10/lesson7";
+import { TutorialNetAngularLesson8 } from "./pages/tutorials/netAngular/1_10/lesson8";
+import { TutorialNetAngularLesson9 } from "./pages/tutorials/netAngular/1_10/lesson9";
 
 export const RoutesRoot = () => {
   return (
@@ -141,7 +150,15 @@ export const RoutesRoot = () => {
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
 
           <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
-
+          <Route path="/tutorial/net-angular/lesson1" element={<TutorialNetAngularLesson1 />} />
+          <Route path="/tutorial/net-angular/lesson2" element={<TutorialNetAngularLesson2 />} />
+          <Route path="/tutorial/net-angular/lesson3" element={<TutorialNetAngularLesson3 />} />
+          <Route path="/tutorial/net-angular/lesson4" element={<TutorialNetAngularLesson4 />} />
+          <Route path="/tutorial/net-angular/lesson5" element={<TutorialNetAngularLesson5 />} />
+          <Route path="/tutorial/net-angular/lesson6" element={<TutorialNetAngularLesson6 />} />
+          <Route path="/tutorial/net-angular/lesson7" element={<TutorialNetAngularLesson7 />} />
+          <Route path="/tutorial/net-angular/lesson8" element={<TutorialNetAngularLesson8 />} />
+          <Route path="/tutorial/net-angular/lesson9" element={<TutorialNetAngularLesson9 />} />
 
           <Route path="/tutorial/postgreSQL" element={<TutorialPostgreSQL />} />
           <Route path="/tutorial/postgreSQL/chapter1" element={<TutorialPostgreSQLChapter1 />} />

@@ -56,8 +56,6 @@ export const TutorialNetAngular = () => {
     },
   ];
 
-  let count = 1;
-
   return (
     <>
       <PageTitle title="Net-Angular"></PageTitle>

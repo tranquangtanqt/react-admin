@@ -1,7 +1,7 @@
 import Code from "../../../../../components/modules/code";
 import { PageTitle } from "../../../../../components/modules/pageTitle";
 
-export const TutorialPostgreSQLChapter2 = () => {
+export const TutorialNetAngularLesson = () => {
   return (
     <>
       <PageTitle title=""></PageTitle>
@@ -20,5 +20,3 @@ export const TutorialPostgreSQLChapter2 = () => {
     </>
   );
 };
-
-
