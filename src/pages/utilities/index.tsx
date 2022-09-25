@@ -71,7 +71,7 @@ export const Utilities = () => {
       links: [
         {
           text: "Todo",
-          path: "/utilities/todoApp",
+          path: "/utilities/app/todo",
         },
       ],
     },

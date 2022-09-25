@@ -100,6 +100,8 @@ import { TutorialJavaLesson3 } from "./pages/tutorials/java/1_10/lesson3";
 import { TutorialJavaLesson4 } from "./pages/tutorials/java/1_10/lesson4";
 import { TutorialJavaLesson5 } from "./pages/tutorials/java/1_10/lesson5";
 import { TutorialJavaLesson6 } from "./pages/tutorials/java/1_10/lesson6";
+import { UtilitieAppTodo } from "./pages/utilities/app/todo";
+import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
 
 export const RoutesRoot = () => {
   return (
@@ -219,6 +221,8 @@ export const RoutesRoot = () => {
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
 
+          <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
+          <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
           {/* // 
           // <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */} 
         </Routes>
