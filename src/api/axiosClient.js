@@ -3,7 +3,7 @@ import axios from "axios";
 
 const AxiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
-  // baseURL: "http://localhost:8081/api",
+  //baseURL: "http://localhost:8081/api",
   headers: {
     "content-type": "application/json",
   },
@@ -30,9 +30,7 @@ AxiosClient.interceptors.response.use(
        * The request was made and the server responded with a
        * status code that falls out of the range of 2xx
        */
-      console.log(error.response.data);
-      console.log(error.response.status);
-      console.log(error.response.headers);
+      console.log(error.response);
     } else if (error.request) {
       /*
        * The request was made but no response was received, `error.request`
@@ -44,13 +42,7 @@ AxiosClient.interceptors.response.use(
       // Something happened in setting up the request and triggered an Error
       console.log("Error", error.message);
     }
-    console.log(error);
-    // if(error.response?.data?.code === 417){
-    //   // message.error(error.response.data.status);
-    // } else {
-    //   // message.error(error?.response.status);
-    // }
-    // throw error;
+    console.log(error.message);
   }
 );
 
