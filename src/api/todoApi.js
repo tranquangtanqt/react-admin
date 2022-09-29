@@ -10,12 +10,12 @@ const todoApi = {
     const url = `/todo/${id}`;
     return axiosClient.get(url);
   },
- 
+
   /**
    *  create Todo Detail
    * @param {*} id : id todo
    * @param {*} params : {d_title: , d_content: }
-   * @returns 
+   * @returns
    */
   createTodoDetail: (id, params) => {
     const url = `/todo/${id}/create-detail`;
@@ -25,24 +25,46 @@ const todoApi = {
   /**
    * update todo detail
    * @param {*} id : id todo
-   * @param {*} params : {_id: , d_title: , d_content: }
-   * @returns 
+   * @param {*} params : {_id: , d_title: , d_content}
+   * @returns
    */
   updateTodoDetail: (id, params) => {
     const url = `/todo/${id}/update-detail`;
     return axiosClient.put(url, params);
   },
-  
+
   /**
    * delete todo detail
    * @param {*} id : id todo
    * @param {*} params : {_id:}
-   * @returns 
+   * @returns
    */
   deleteTodoDetail: (id, params) => {
     const url = `/todo/${id}/delete-detail`;
     return axiosClient.put(url, params);
-  } 
+  },
+
+  /**
+   *  create Todo Task
+   * @param {*} id : id todo
+   * @param {*} params : {t_content: , t_status, t_left, t_right}
+   * @returns
+   */
+  createTodoTask: (id, params) => {
+    const url = `/todo/${id}/create-task`;
+    return axiosClient.put(url, params);
+  },
+
+  /**
+   * update todo Task
+   * @param {*} id : id todo
+   * @param {*} params : {_id: , t_status: , t_left, t_right}
+   * @returns
+   */
+   updateStatusTask: (id, params) => {
+    const url = `/todo/${id}/update-status-task`;
+    return axiosClient.put(url, params);
+  },
 };
 
 export default todoApi;

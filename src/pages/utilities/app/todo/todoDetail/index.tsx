@@ -16,6 +16,14 @@ interface ITodoDetail {
   collapse: boolean;
 }
 
+interface ITodoTask {
+  _id: String;
+  t_content: String;
+  t_status: Number;
+  t_left: Number;
+  t_right: Number;
+}
+
 export const UtilitieAppTodoDetail = () => {
   let params = useParams();
   const [todo, setTodo] = useState<ITodo>();
@@ -26,6 +34,15 @@ export const UtilitieAppTodoDetail = () => {
   const [detailId, setDetailId] = useState("");
   const [notificationMessage, setNotificationMessage] = useState("");
 
+  const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>();
+  const [taskInComplete, setTaskInComplete] = useState<ITodoTask[]>();
+  const [taskMaxLeft, setTaskMaxLeft] = useState(0);
+  const [taskId, setTaskId] = useState("");
+  const [taskContent, setTaskContent] = useState("");
+  const [taskLeft, setTaskLeft] = useState(0);
+  const [taskRight, setTaskRight] = useState(0);
+  const [taskStatus, setTaskStatus] = useState(0);
+
   /**
    * fetchTodoList
    * @param _id
@@ -34,14 +51,35 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoApi.getById(_id);
     if (response) {
       let detailMapApi: ITodoDetail[] = [];
+      let taskCompletedMapApi: ITodoTask[] = [];
+      let taskInCompleteMapApi: ITodoTask[] = [];
+
       if (response.status) {
         let todoDetails = Array.from(response.data.details);
 
         todoDetails.forEach((item: any, index) => {
           detailMapApi.push({ _id: item._id, d_title: item.d_title, d_content: item.d_content, collapse: false } as ITodoDetail);
         });
+
         setTodo(response.data);
         setDetails(detailMapApi);
+
+        let todoTasks = Array.from(response.data.tasks);
+        let taskMaxLeftTemp = taskMaxLeft;
+        todoTasks.forEach((item: any, index) => {
+          if (item.t_status === 0) {
+            taskInCompleteMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
+            if (item.t_left > taskMaxLeftTemp) {
+              taskMaxLeftTemp = item.t_left;
+            }
+          } else if (item.t_status === 1) {
+            taskCompletedMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
+          }
+        });
+
+        setTaskCompleted(taskCompletedMapApi);
+        setTaskInComplete(taskInCompleteMapApi);
+        setTaskMaxLeft(taskMaxLeftTemp);
         setIsLoading(false);
       }
     }
@@ -205,13 +243,133 @@ export const UtilitieAppTodoDetail = () => {
     }
   };
 
+  /**
+   * showModalCreateTask
+   */
+  const showModalCreateTask = () => {
+    setTaskId("");
+    setTaskContent("");
+    setTaskStatus(0);
+    setTaskLeft(0);
+    setTaskRight(0);
+    ($("#modal-task-add") as any).modal("show");
+  };
+
+  /**
+   * createTask
+   */
+  const createTask = async () => {
+    let task = {
+      t_content: taskContent,
+      t_status: 0,
+      t_left: 0,
+      t_right: 0,
+    };
+
+    if(taskMaxLeft === 0){
+      task.t_left = 1;
+      task.t_right = 2;
+    } else {
+      task.t_left = taskMaxLeft + 1;
+      task.t_right = taskMaxLeft + 2;
+    }
+    
+    const response = await todoApi.createTodoTask(todo?._id, task);
+
+    console.log(response);
+    if (response?.status) {
+      if (response.data) {
+        getTaskDataRender(response.data, "Thêm dữ liệu thành công");
+        ($("#modal-task-add") as any).modal("hide");
+      }
+    }
+  };
+
+  /**
+   * updateStatusTask
+   */
+  const updateStatusToCompletedTask = async (_id: String) => {
+    let task = {
+      _id: _id,
+      t_status: 1,
+      t_left: 0,
+      t_right: 0
+    };
+
+    const response = await todoApi.updateStatusTask(todo?._id, task);
+
+    console.log(response);
+    if (response?.status) {
+      if (response.data) {
+        getTaskDataRender(response.data, "Cập nhật dữ liệu thành công");
+      }
+    }
+  };
+
+   /**
+   * updateStatusTask
+   */
+    const updateStatusToInCompleteTask = async (_id: String) => {
+      let task = {
+        _id: _id,
+        t_status: 0,
+        t_left: 0,
+        t_right: 0
+      };
+
+      if(taskMaxLeft === 0){
+        task.t_left = 1;
+        task.t_right = 2;
+      } else {
+        task.t_left = taskMaxLeft + 1;
+        task.t_right = taskMaxLeft + 2;
+      }
+  
+      const response = await todoApi.updateStatusTask(todo?._id, task);
+  
+      console.log(response);
+      if (response?.status) {
+        if (response.data) {
+          getTaskDataRender(response.data, "Cập nhật dữ liệu thành công");
+        }
+      }
+    };
+
+  const getTaskDataRender = (data: any, message: string) => {
+    setTodo(data);
+    let taskCompletedMapApi: ITodoTask[] = [];
+    let taskInCompleteMapApi: ITodoTask[] = [];
+    let todoTasks = Array.from(data.tasks);
+    let taskMaxLeftTemp = taskMaxLeft;
+    todoTasks.forEach((item: any) => {
+      if (item.t_status === 0) {
+        taskInCompleteMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
+        if (item.t_left > taskMaxLeftTemp) {
+          taskMaxLeftTemp = item.t_left;
+        }
+      } else if (item.t_status === 1) {
+        taskCompletedMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
+      }
+    });
+
+    setTaskCompleted(taskCompletedMapApi);
+    setTaskInComplete(taskInCompleteMapApi);
+    setTaskMaxLeft(taskMaxLeftTemp);
+
+    setNotificationMessage(message);
+    ($("#modal-notification") as any).modal("show");
+    setTimeout(() => {
+      ($("#modal-notification") as any).modal("hide");
+    }, 1000);
+  }
+
   const functionDumy = () => {
     setNotificationMessage("Function temp");
 
     ($("#modal-notification") as any).modal("show");
     setTimeout(() => {
       ($("#modal-notification") as any).modal("hide");
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -259,40 +417,67 @@ export const UtilitieAppTodoDetail = () => {
 
         <div className="col-12 col-sm-4 col-md-4">
           <div className="d-flex flex-row-reverse">
-            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => functionDumy()} />
+            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateTask()} />
           </div>
           <div className="card mt-2">
             <div className="card-header">Danh sách nhiệm vụ</div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                <div className="d-flex justify-content-between">
-                  <div>Nhiệm vụ 1</div>
-                  <div></div>
-                  <div>
-                    <button className="btn pe-0 text-success" onClick={() => functionDumy()}>
-                      <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    </button>
-                    <button className="btn pe-0 text-danger" onClick={() => functionDumy()}>
-                      <i className="fa fa-trash" aria-hidden="true"></i>
-                    </button>
-                    <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
-                      <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-                    </button>
-                    <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
-                      <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
-                    </button>
+              {taskInComplete?.map((task, key) => (
+                <li className="list-group-item" key={key}>
+                  <div className="d-flex justify-content-between">
+                    <div className="cursor-pointer">
+                      <i className="fa fa-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToCompletedTask(task._id)}></i> 
+                      {task.t_content}
+                      </div>
+                    <div></div>
+                    <div>
+                      <button className="btn pe-0 text-success" onClick={() => functionDumy()}>
+                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-danger" onClick={() => functionDumy()}>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
+                        <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
+                        <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </li>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="card mt-2">
             <div className="card-header">Hoàn thành</div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">An item</li>
-              <li className="list-group-item">A second item</li>
-              <li className="list-group-item">A third item</li>
+              {taskCompleted?.map((task, key) => (
+                <li className="list-group-item" key={key}>
+                  <div className="d-flex justify-content-between">
+                    <div className="text-secondary cursor-pointer">
+                      <i className="fa fa-check-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToInCompleteTask(task._id)}></i>
+                      <s>{task.t_content}</s>
+                    </div>
+                    <div></div>
+                    <div>
+                      <button className="btn pe-0 text-success" onClick={() => functionDumy()}>
+                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-danger" onClick={() => functionDumy()}>
+                        <i className="fa fa-trash" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
+                        <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                      </button>
+                      <button className="btn pe-0 text-info" onClick={() => functionDumy()}>
+                        <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -415,6 +600,37 @@ export const UtilitieAppTodoDetail = () => {
             <div className="modal-footer">
               <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
               <input type="button" className="btn btn-primary" onClick={() => deleteDetail()} value="Lưu" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="modal fade" id="modal-task-add" aria-labelledby="modal-task-add1" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered modal-lg">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="modal-task-add1">
+                Thêm nhiệm vụ
+              </h5>
+              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+            </div>
+            <div className="modal-body">
+              <div>
+                <label htmlFor="task-content-add" className="form-label">
+                  Nội dung
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="task-content-add"
+                  value={taskContent}
+                  onChange={(e) => setTaskContent(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="modal-footer">
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-primary" onClick={() => createTask()} value="Lưu" />
             </div>
           </div>
         </div>
