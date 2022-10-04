@@ -20,8 +20,7 @@ interface ITodoTask {
   _id: String;
   t_content: String;
   t_status: Number;
-  t_left: Number;
-  t_right: Number;
+  t_order_number: Number;
 }
 
 export const UtilitieAppTodoDetail = () => {
@@ -36,11 +35,10 @@ export const UtilitieAppTodoDetail = () => {
 
   const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>();
   const [taskInComplete, setTaskInComplete] = useState<ITodoTask[]>();
-  const [taskMaxLeft, setTaskMaxLeft] = useState(0);
+  const [taskMaxOrderNumber, setTaskMaxOrderNumber] = useState(0);
+  const [taskMinOrderNumber, setTaskMinOrderNumber] = useState(0);
   const [taskId, setTaskId] = useState("");
   const [taskContent, setTaskContent] = useState("");
-  const [taskLeft, setTaskLeft] = useState(0);
-  const [taskRight, setTaskRight] = useState(0);
   const [taskStatus, setTaskStatus] = useState(0);
 
   /**
@@ -49,10 +47,11 @@ export const UtilitieAppTodoDetail = () => {
    */
   const fetchTodoList = async (_id: any) => {
     const response = await todoApi.getById(_id);
+    
     if (response) {
+      setTodo(response.data);
+
       let detailMapApi: ITodoDetail[] = [];
-      let taskCompletedMapApi: ITodoTask[] = [];
-      let taskInCompleteMapApi: ITodoTask[] = [];
 
       if (response.status) {
         let todoDetails = Array.from(response.data.details);
@@ -61,25 +60,9 @@ export const UtilitieAppTodoDetail = () => {
           detailMapApi.push({ _id: item._id, d_title: item.d_title, d_content: item.d_content, collapse: false } as ITodoDetail);
         });
 
-        setTodo(response.data);
         setDetails(detailMapApi);
 
-        let todoTasks = Array.from(response.data.tasks);
-        let taskMaxLeftTemp = taskMaxLeft;
-        todoTasks.forEach((item: any, index) => {
-          if (item.t_status === 0) {
-            taskInCompleteMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
-            if (item.t_left > taskMaxLeftTemp) {
-              taskMaxLeftTemp = item.t_left;
-            }
-          } else if (item.t_status === 1) {
-            taskCompletedMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
-          }
-        });
-
-        setTaskCompleted(taskCompletedMapApi);
-        setTaskInComplete(taskInCompleteMapApi);
-        setTaskMaxLeft(taskMaxLeftTemp);
+        taskDataRender(response.data.tasks, "");
         setIsLoading(false);
       }
     }
@@ -250,8 +233,6 @@ export const UtilitieAppTodoDetail = () => {
     setTaskId("");
     setTaskContent("");
     setTaskStatus(0);
-    setTaskLeft(0);
-    setTaskRight(0);
     ($("#modal-task-add") as any).modal("show");
   };
 
@@ -259,27 +240,24 @@ export const UtilitieAppTodoDetail = () => {
    * createTask
    */
   const createTask = async () => {
+    let taskMaxOrderNumberTemp = taskMaxOrderNumber;
+    if(taskMaxOrderNumber === 0){
+      taskMaxOrderNumberTemp = 1;
+    } else {
+      taskMaxOrderNumberTemp = taskMaxOrderNumberTemp + 1;
+    }
+
     let task = {
       t_content: taskContent,
-      t_status: 0,
-      t_left: 0,
-      t_right: 0,
+      t_status: taskStatus,
+      t_order_number: taskMaxOrderNumberTemp,
     };
-
-    if(taskMaxLeft === 0){
-      task.t_left = 1;
-      task.t_right = 2;
-    } else {
-      task.t_left = taskMaxLeft + 1;
-      task.t_right = taskMaxLeft + 2;
-    }
     
     const response = await todoApi.createTodoTask(todo?._id, task);
 
-    console.log(response);
     if (response?.status) {
       if (response.data) {
-        getTaskDataRender(response.data, "Thêm dữ liệu thành công");
+        taskDataRender(response.data.tasks, "Thêm dữ liệu thành công");
         ($("#modal-task-add") as any).modal("hide");
       }
     }
@@ -292,8 +270,7 @@ export const UtilitieAppTodoDetail = () => {
     let task = {
       _id: _id,
       t_status: 1,
-      t_left: 0,
-      t_right: 0
+      t_order_number: taskMinOrderNumber - 1
     };
 
     const response = await todoApi.updateStatusTask(todo?._id, task);
@@ -301,7 +278,7 @@ export const UtilitieAppTodoDetail = () => {
     console.log(response);
     if (response?.status) {
       if (response.data) {
-        getTaskDataRender(response.data, "Cập nhật dữ liệu thành công");
+        taskDataRender(response.data, "Cập nhật dữ liệu thành công");
       }
     }
   };
@@ -317,12 +294,12 @@ export const UtilitieAppTodoDetail = () => {
         t_right: 0
       };
 
-      if(taskMaxLeft === 0){
+      if(taskMaxOrderNumber === 0){
         task.t_left = 1;
         task.t_right = 2;
       } else {
-        task.t_left = taskMaxLeft + 1;
-        task.t_right = taskMaxLeft + 2;
+        task.t_left = taskMaxOrderNumber + 1;
+        task.t_right = taskMaxOrderNumber + 2;
       }
   
       const response = await todoApi.updateStatusTask(todo?._id, task);
@@ -330,37 +307,47 @@ export const UtilitieAppTodoDetail = () => {
       console.log(response);
       if (response?.status) {
         if (response.data) {
-          getTaskDataRender(response.data, "Cập nhật dữ liệu thành công");
+          taskDataRender(response.data, "Cập nhật dữ liệu thành công");
         }
       }
     };
 
-  const getTaskDataRender = (data: any, message: string) => {
-    setTodo(data);
+  const taskDataRender = (data: any, message: string) => {
+    
     let taskCompletedMapApi: ITodoTask[] = [];
     let taskInCompleteMapApi: ITodoTask[] = [];
-    let todoTasks = Array.from(data.tasks);
-    let taskMaxLeftTemp = taskMaxLeft;
-    todoTasks.forEach((item: any) => {
+    let taskMaxOrderNumberTemp = taskMaxOrderNumber;
+    let taskMinOrderNumberTemp = taskMinOrderNumber;
+    let todoTasks = Array.from(data);
+
+    todoTasks.forEach((item: any, index) => {
       if (item.t_status === 0) {
-        taskInCompleteMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
-        if (item.t_left > taskMaxLeftTemp) {
-          taskMaxLeftTemp = item.t_left;
+        taskInCompleteMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_order_number: item.t_order_number } as ITodoTask);
+        if (item.t_order_number > taskMaxOrderNumberTemp) {
+          taskMaxOrderNumberTemp = item.t_order_number;
         }
       } else if (item.t_status === 1) {
-        taskCompletedMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_left: item.t_left, t_right: item.t_right } as ITodoTask);
+        taskCompletedMapApi.push({ _id: item._id, t_content: item.t_content, t_status: item.t_status, t_order_number: item.t_order_number } as ITodoTask);
+        if (item.t_order_number < taskMinOrderNumberTemp) {
+          taskMinOrderNumberTemp = item.t_order_number;
+        }
       }
     });
 
+    taskInCompleteMapApi.sort((a: any, b: any) => a.t_order_number - b.t_order_number);
+
     setTaskCompleted(taskCompletedMapApi);
     setTaskInComplete(taskInCompleteMapApi);
-    setTaskMaxLeft(taskMaxLeftTemp);
+    setTaskMaxOrderNumber(taskMaxOrderNumberTemp);
+    setTaskMinOrderNumber(taskMinOrderNumberTemp);
 
+   if(message.trim().length > 0) {
     setNotificationMessage(message);
     ($("#modal-notification") as any).modal("show");
     setTimeout(() => {
       ($("#modal-notification") as any).modal("hide");
     }, 1000);
+   }
   }
 
   const functionDumy = () => {
