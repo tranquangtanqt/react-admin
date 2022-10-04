@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-admin/static/css/main.521aacae.css",
-    "main.js": "/react-admin/static/js/main.41795200.js",
+    "main.css": "/react-admin/static/css/main.4d3c85c1.css",
+    "main.js": "/react-admin/static/js/main.542de374.js",
     "static/media/CSharp1.jpg": "/react-admin/static/media/CSharp1.2622dab89258473a5a73.jpg",
     "static/media/2.jpg": "/react-admin/static/media/2.a76ad9c57e6a0aea64a7.jpg",
     "static/media/1.jpg": "/react-admin/static/media/1.c3f997ad6dda6b07c2e5.jpg",
@@ -54,11 +54,11 @@
     "static/media/15.jpg": "/react-admin/static/media/15.b2974b2efda88c031363.jpg",
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
-    "main.521aacae.css.map": "/react-admin/static/css/main.521aacae.css.map",
-    "main.41795200.js.map": "/react-admin/static/js/main.41795200.js.map"
+    "main.4d3c85c1.css.map": "/react-admin/static/css/main.4d3c85c1.css.map",
+    "main.542de374.js.map": "/react-admin/static/js/main.542de374.js.map"
   },
   "entrypoints": [
-    "static/css/main.521aacae.css",
-    "static/js/main.41795200.js"
+    "static/css/main.4d3c85c1.css",
+    "static/js/main.542de374.js"
   ]
 }
