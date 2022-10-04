@@ -65,6 +65,27 @@ const todoApi = {
     const url = `/todo/${id}/update-status-task`;
     return axiosClient.put(url, params);
   },
+
+  /**
+   * delete todo task
+   * @param {*} id : id todo
+   * @param {*} params : {_id:}
+   * @returns
+   */
+   deleteTodoTask: (id, params) => {
+    const url = `/todo/${id}/delete-task`;
+    return axiosClient.put(url, params);
+  },
+  /**
+   * update todo task
+   * @param {*} id : id todo
+   * @param {*} params : {_id: , t_content}
+   * @returns
+   */
+   updateTodoTaskContent: (id, params) => {
+    const url = `/todo/${id}/update-task-content`;
+    return axiosClient.put(url, params);
+  },
 };
 
 export default todoApi;
