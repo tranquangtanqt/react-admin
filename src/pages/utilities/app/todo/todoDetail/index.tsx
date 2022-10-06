@@ -71,7 +71,7 @@ export const UtilitieAppTodoDetail = () => {
           }
         });
 
-        detailMapApi.sort((a: any, b: any) => b.d_order_number - a.d_order_number);
+        detailMapApi.sort((a: any, b: any) => a.d_order_number - b.d_order_number);
 
         setDetails(detailMapApi);
         setMaxDetailrderNumber(max);
