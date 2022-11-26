@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const UtilitiesTextFindDifferentTwoList = () => {
+export const UtilitiesTextFindDifferentTwoList1 = () => {
   const [input1, setInput1] = useState(`1
 2
 3
@@ -112,7 +112,7 @@ export const UtilitiesTextFindDifferentTwoList = () => {
       </div>
 
       <div className="row mt-2">
-        <div className="col-12 col-sm-6 col-md-6">
+        <div className="col-12 col-sm-4 col-md-4">
           <label htmlFor="same" className="form-label">
             Same
           </label>
@@ -121,6 +121,68 @@ export const UtilitiesTextFindDifferentTwoList = () => {
             className="form-control"
             value={output3}
             onChange={(e) => setOutput3(e.target.value)}
+            style={{ height: 400, width: "100%" }}
+          />
+        </div>
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="difference1" className="form-label">
+            Difference 1
+          </label>
+          <textarea
+            id="difference1"
+            className="form-control"
+            value={output1}
+            onChange={(e) => setOutput1(e.target.value)}
+            style={{ height: 400, width: "100%" }}
+          />
+        </div>
+        <div className="col-12 col-sm-4 col-md-4">
+          <label htmlFor="difference2" className="form-label">
+            Difference 2
+          </label>
+          <textarea
+            id="difference2"
+            className="form-control"
+            value={output2}
+            onChange={(e) => setOutput1(e.target.value)}
+            style={{ height: 400, width: "100%" }}
+          />
+        </div>
+      </div>
+      <div className="row mt-2">
+        <div className="col-2 col-sm-1 col-md-1">
+          <label htmlFor="index" className="form-label">
+            Index
+          </label>
+          <textarea
+            id="index"
+            className="form-control"
+            value={indexList}
+            onChange={(e) => setIndexList(e.target.value)}
+            style={{ height: 400, width: "100%" }}
+          />
+        </div>
+        <div className="col-4 col-sm-3 col-md-3">
+          <label htmlFor="difference-list-1" className="form-label">
+          Difference List 1
+          </label>
+          <textarea
+            id="difference-list-1"
+            className="form-control"
+            value={difference1List}
+            onChange={(e) => setDifference1List(e.target.value)}
+            style={{ height: 400, width: "100%" }}
+          />
+        </div>
+        <div className="col-4 col-sm-3 col-md-3">
+          <label htmlFor="difference-list-2" className="form-label">
+          Difference List 2
+          </label>
+          <textarea
+            id="difference-list-2"
+            className="form-control"
+            value={difference2List}
+            onChange={(e) => setDifference2List(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
         </div>

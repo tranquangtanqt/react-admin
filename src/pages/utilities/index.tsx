@@ -28,6 +28,10 @@ export const Utilities = () => {
           path: "/utilities/text/find-different-two-list",
         },
         {
+          text: "Find Different Two List 1",
+          path: "/utilities/text/find-different-two-list-1",
+        },
+        {
           text: "Find Text ColumnJP_EN",
           path: "/utilities/text/find-text-column-jp-en",
         },

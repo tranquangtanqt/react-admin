@@ -48,6 +48,7 @@ import { UtilitiesMakeInsertSQL } from "./pages/utilities/sql/makeInsertSQL";
 import { UtilitiesMakeInsertSQLFromProcedure } from "./pages/utilities/sql/makeInsertProcedure";
 import { UtilitiesTextCommon } from "./pages/utilities/text/common";
 import { UtilitiesTextFindDifferentTwoList } from "./pages/utilities/text/findDifferentTwoList";
+import { UtilitiesTextFindDifferentTwoList1 } from "./pages/utilities/text/findDifferentTwoList1";
 import { UtilitiesTextFindTextColumnJPEN } from "./pages/utilities/text/findTextColumnJpEn";
 import { UtilitiesTextRepeat } from "./pages/utilities/text/repeat";
 import { UtilitiesTextReplace } from "./pages/utilities/text/replace";
@@ -215,6 +216,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
           <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
           <Route path="/utilities/text/find-different-two-list" element={<UtilitiesTextFindDifferentTwoList />} />
+          <Route path="/utilities/text/find-different-two-list-1" element={<UtilitiesTextFindDifferentTwoList1 />} />
           <Route path="/utilities/text/find-text-column-jp-en" element={<UtilitiesTextFindTextColumnJPEN />} />
           <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
           <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
