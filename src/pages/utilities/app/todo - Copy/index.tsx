@@ -9,13 +9,23 @@ export const UtilitieAppTodo = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [todoId, setTodoId] = useState("");
   const [todoTitle, setTodoTitle] = useState("");
+  const [maxOrderNumber, setMaxOrderNumber] = useState(0);
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const fetchTodoList = async () => {
     const response = await todoApi.getAll();
     if (response.status) {
+      response.data.sort((a: any, b: any) => b["order_number"] - a["order_number"]);
       setTodos(response.data);
+      let max = 0;
+      response.data.forEach((element: any) => {
+        if (element["order_number"] > max) {
+          max = element["order_number"];
+        }
+      });
+
       setIsLoading(false);
+      setMaxOrderNumber(max);
     }
   };
 
@@ -29,28 +39,22 @@ export const UtilitieAppTodo = () => {
     ($("#modal-todo-create") as any).modal("show");
   };
 
-  /**
-   * 
-   */
   const createTodo = async () => {
     setIsLoading(true);
     let todo = {
       title: todoTitle,
+      order_number: maxOrderNumber + 1
     };
 
     const response = await todoApi.createTodo(todo);
-    if (response?.status) {
+    if (response.status) {
       fetchTodoList();
       showModalNotification("Thêm dữ liệu thành công");
       setIsLoading(false);
-      ($("#modal-todo-create") as any).modal("hide");
     }
+    ($("#modal-todo-create") as any).modal("hide");
   };
 
-  /**
-   * 
-   * @param message 
-   */
   const showModalNotification = (message: string) => {
     if (message.trim().length > 0) {
       setNotificationMessage(message);
@@ -62,65 +66,19 @@ export const UtilitieAppTodo = () => {
   };
 
   /**
-   * showModalUpdateTodo
-   */
-  const showModalUpdateTodo = (id: String) => {
-    let todo = todos?.filter((x) => x["_id"] === id).shift();
-    if (todo) {
-      setTodoId(todo["_id"]);
-      setTodoTitle(todo["title"]);
-      ($("#modal-todo-update") as any).modal("show");
-    }
-  };
-
-  const updateTodo = async () => {
-    let params = {
-      _id: todoId,
-      title: todoTitle,
-    };
-
-    const response = await todoApi.updateTitle(params);
-
-    if (response?.status) {
-      if (response.data) {
-        fetchTodoList();
-        ($("#modal-todo-update") as any).modal("hide");
-        showModalNotification("Cập nhật dữ liệu thành công");
-      }
-    }
-  };
-
-  const updateOrderNumber = async (id: number, isUp: boolean) => {
-    let params = {
-      _id: id,
-      isUp: isUp
-    }
-
-    const response = await todoApi.updateOrderNumber(params);
-    if (response?.status) {
-      fetchTodoList();
-      ($("#modal-todo-update") as any).modal("hide");
-      showModalNotification("Cập nhật dữ liệu thành công");
-    }
-  };
-
-  /**
    * showModalDeleteTodo
    */
-   const showModalDeleteTodo = (id: String) => {
+  const showModalDeleteTodo = (id: String) => {
     setTodoId(id.toString() || "");
     ($("#modal-todo-delete") as any).modal("show");
   };
 
-  /**
-   * deleteTodo
-   */
   const deleteTodo = async () => {
-    let params = {
+    let todo = {
       _id: todoId,
     };
 
-    const response = await todoApi.deleteTodo(params);
+    const response = await todoApi.deleteTodo(todo);
 
     if (response?.status) {
       if (response.data) {
@@ -130,6 +88,76 @@ export const UtilitieAppTodo = () => {
       }
     }
   };
+
+  /**
+   * showModalUpdateTodo
+   */
+   const showModalUpdateTodo = (id: String) => {
+    
+    let todo = todos?.filter((x) => x["_id"] === id).shift();
+    if(todo) {
+      setTodoId(todo["_id"]);
+      setTodoTitle(todo["title"]);
+      ($("#modal-todo-update") as any).modal("show");
+    }
+  };
+
+  const updateTodo = async () => {
+    let todo = {
+      _id: todoId,
+      title: todoTitle
+    };
+
+    // const response = await todoApi.updateTodoTitle(todo);
+
+    // if (response?.status) {
+    //   if (response.data) {
+    //     fetchTodoList();
+    //     ($("#modal-todo-update") as any).modal("hide");
+    //     showModalNotification("Cập nhật dữ liệu thành công");
+    //   }
+    // }
+  };
+
+  const updateOrderNumber = async (indexOfTodos: number, isUp: boolean) => {
+    let todo1: any;
+    let todo2: any;
+    if(isUp) {
+      todos.forEach((item, index) => {
+        if(index === indexOfTodos) {
+          todo1 = item;
+        }
+        if(index === indexOfTodos - 1) {
+          todo2 = item;
+        }
+      });
+    } else {
+      todos.forEach((item, index) => {
+        if(index === indexOfTodos) {
+          todo1 = item;
+        }
+        if(index === indexOfTodos + 1) {
+          todo2 = item;
+        }
+      });
+    }
+   
+    let temp = todo1["order_number"];
+    todo1["order_number"] = todo2["order_number"];
+    todo2["order_number"] = temp;
+    
+    // const response1 = await todoApi.updateTodoOrderNumber(todo1);
+    // if (response1?.status) {
+    //   const response2 = await todoApi.updateTodoOrderNumber(todo2);
+    //   if (response2?.status) {
+    //     if (response2.data) {
+    //       fetchTodoList();
+    //       ($("#modal-todo-update") as any).modal("hide");
+    //       showModalNotification("Cập nhật dữ liệu thành công");
+    //     }
+    //   }
+    // }
+  }
 
   return (
     <>
@@ -160,15 +188,15 @@ export const UtilitieAppTodo = () => {
                     </div>
                     <div></div>
                     <div>
-                      {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(item["_id"], true)}>
+                    {key > 0 ? (
+                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(key, true)}>
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < todos.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(item["_id"], false)}>
+                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(key, false)}>
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (

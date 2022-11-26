@@ -33,6 +33,7 @@ export const UtilitieAppTodoDetail = () => {
   const [detailContent, setDetailContent] = useState("");
   const [detailTitle, setDetailTitle] = useState("");
   const [detailId, setDetailId] = useState("");
+  const [maxDetailOrderNumber, setMaxDetailrderNumber] = useState(0);
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>([]);
@@ -57,26 +58,32 @@ export const UtilitieAppTodoDetail = () => {
 
       if (response.status) {
         let todoDetails = Array.from(response.data.details);
-        console.log(response.data.details);
+        let max = 0;
         todoDetails.forEach((item: any, index) => {
           detailMapApi.push({
             _id: item._id,
             d_title: item.d_title,
             d_content: item.d_content,
             collapse: false,
-            d_order_number: item.d_order_number,
+            d_order_number: item.d_order_number
           } as ITodoDetail);
+          if(item.d_order_number > max) {
+            max = item.d_order_number;
+          }
         });
 
+        detailMapApi.sort((a: any, b: any) => a.d_order_number - b.d_order_number);
+
         setDetails(detailMapApi);
-        renderTask(response.data.tasks);
+        setMaxDetailrderNumber(max);
+
+        taskDataRender(response.data.tasks, "");
         setIsLoading(false);
       }
     }
   };
 
   useEffect(() => {
-    // <em>fetchTodoList(params.todo_id)</em>;
     fetchTodoList(params.todo_id);
   }, [params]);
 
@@ -160,6 +167,7 @@ export const UtilitieAppTodoDetail = () => {
     let detail = {
       d_title: detailTitle,
       d_content: detailContent,
+      d_order_number: maxDetailOrderNumber + 1
     };
 
     const response = await todoDetailApi.createTodoDetail(todo?._id, detail);
@@ -178,24 +186,52 @@ export const UtilitieAppTodoDetail = () => {
     }
   };
 
-  const updateTodoDetailOrderNumber = async (id: String, isUp: boolean) => {
-    let params = {
-      _id: id,
-      isUp: isUp,
-    };
+  const updateTodoDetailOrderNumber = async (index: number, isUp: boolean) => {
+    let detail1: any;
+    let detail2: any;
+    if (isUp) {
+      detail1 = {
+        _id: details[index]._id,
+        d_content: details[index - 1].d_content,
+        d_order_number: details[index - 1].d_order_number,
+      };
 
-    const response = await todoDetailApi.updateOrderNumber(todo?._id, params);
+      detail2 = {
+        _id: details[index - 1]._id,
+        d_content: details[index].d_content,
+        d_order_number: details[index].d_order_number,
+      };
+    } else {
+      detail1 = {
+        _id: details[index]._id,
+        d_content: details[index + 1].d_content,
+        d_order_number: details[index + 1].d_order_number,
+      };
 
-    if (response?.status) {
-      fetchTodoList(todo?._id);
-      setNotificationMessage("Cập nhật dữ liệu thành công");
-
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 2000);
+      detail2 = {
+        _id: details[index + 1]._id,
+        d_content: details[index].d_content,
+        d_order_number: details[index].d_order_number,
+      };
     }
-  };
+
+    // const response1 = await todoDetailApi.updateTodoDetailOrderNumber(todo?._id, detail1);
+
+    // if (response1?.status) {
+    //   const response2 = await todoDetailApi.updateTodoDetailOrderNumber(todo?._id, detail2);
+    //   if (response2?.status) {
+    //     if (response2.data) {
+    //       fetchTodoList(todo?._id);
+    //       setNotificationMessage("Cập nhật dữ liệu thành công");
+
+    //       ($("#modal-notification") as any).modal("show");
+    //       setTimeout(() => {
+    //         ($("#modal-notification") as any).modal("hide");
+    //       }, 2000);
+    //     }
+    //   }
+    // }
+  }
 
   /**
    * showModalDeleteDetail
@@ -216,14 +252,16 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoDetailApi.deleteTodoDetail(todo?._id, detail);
 
     if (response?.status) {
-      fetchTodoList(todo?._id);
-      setNotificationMessage("Xóa dữ liệu thành công");
+      if (response.data) {
+        fetchTodoList(todo?._id);
+        setNotificationMessage("Xóa dữ liệu thành công");
 
-      ($("#modal-detail-delete") as any).modal("hide");
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 2000);
+        ($("#modal-detail-delete") as any).modal("hide");
+        ($("#modal-notification") as any).modal("show");
+        setTimeout(() => {
+          ($("#modal-notification") as any).modal("hide");
+        }, 2000);
+      }
     }
   };
 
@@ -241,16 +279,26 @@ export const UtilitieAppTodoDetail = () => {
    * createTask
    */
   const createTask = async () => {
+    let taskMaxOrderNumberTemp = taskMaxOrderNumber;
+    if (taskMaxOrderNumber === 0) {
+      taskMaxOrderNumberTemp = 1;
+    } else {
+      taskMaxOrderNumberTemp = taskMaxOrderNumberTemp + 1;
+    }
+
     let task = {
       t_content: taskContent,
       t_status: taskStatus,
+      t_order_number: taskMaxOrderNumberTemp,
     };
 
     const response = await todoApi.createTodoTask(todo?._id, task);
 
     if (response?.status) {
-      showMesage("Thêm dữ liệu thành công");
-      fetchTodoList(todo?._id);
+      if (response.data) {
+        taskDataRender(response.data.tasks, "Thêm dữ liệu thành công");
+        ($("#modal-task-add") as any).modal("hide");
+      }
     }
   };
 
@@ -261,13 +309,15 @@ export const UtilitieAppTodoDetail = () => {
     let task = {
       _id: _id,
       t_status: 1,
+      t_order_number: taskMinOrderNumber - 1,
     };
 
     const response = await todoApi.updateStatusTask(todo?._id, task);
 
     if (response?.status) {
-      showMesage("Cập nhật dữ liệu thành công");
-      fetchTodoList(todo?._id);
+      if (response.data) {
+        taskDataRender(response.data.tasks, "Cập nhật dữ liệu thành công");
+      }
     }
   };
 
@@ -277,14 +327,17 @@ export const UtilitieAppTodoDetail = () => {
   const updateStatusToInCompleteTask = async (_id: String) => {
     let task = {
       _id: _id,
-      t_status: 0
+      t_status: 0,
+      t_order_number: taskMaxOrderNumber + 1,
     };
 
     const response = await todoApi.updateStatusTask(todo?._id, task);
 
+    console.log(response);
     if (response?.status) {
-      showMesage("Cập nhật dữ liệu thành công");
-      fetchTodoList(todo?._id);
+      if (response.data) {
+        taskDataRender(response.data.tasks, "Cập nhật dữ liệu thành công");
+      }
     }
   };
 
@@ -385,32 +438,6 @@ export const UtilitieAppTodoDetail = () => {
     }
   };
 
-  const renderTask = (tasks: any) => {
-    let taskCompletedMapApi: ITodoTask[] = [];
-    let taskInCompleteMapApi: ITodoTask[] = [];
-
-    tasks.forEach((item: any) => {
-      if (item.t_status === 0) {
-        taskInCompleteMapApi.push({
-          _id: item._id,
-          t_content: item.t_content,
-          t_status: item.t_status,
-          t_order_number: item.t_order_number,
-        } as ITodoTask);
-      } else if (item.t_status === 1) {
-        taskCompletedMapApi.push({
-          _id: item._id,
-          t_content: item.t_content,
-          t_status: item.t_status,
-          t_order_number: item.t_order_number,
-        } as ITodoTask);
-      }
-    });
-
-    setTaskCompleted(taskCompletedMapApi);
-    setTaskInComplete(taskInCompleteMapApi);
-  };
-
   const taskDataRender = (data: any, message: string) => {
     let taskCompletedMapApi: ITodoTask[] = [];
     let taskInCompleteMapApi: ITodoTask[] = [];
@@ -426,6 +453,9 @@ export const UtilitieAppTodoDetail = () => {
           t_status: item.t_status,
           t_order_number: item.t_order_number,
         } as ITodoTask);
+        if (item.t_order_number > taskMaxOrderNumberTemp) {
+          taskMaxOrderNumberTemp = item.t_order_number;
+        }
       } else if (item.t_status === 1) {
         taskCompletedMapApi.push({
           _id: item._id,
@@ -465,24 +495,14 @@ export const UtilitieAppTodoDetail = () => {
     }
   };
 
-  const showMesage = (message: string) => {
-    if (message.trim().length > 0) {
-      setNotificationMessage(message);
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 1000);
-    }
+  const functionDumy = () => {
+    setNotificationMessage("Function temp");
+
+    ($("#modal-notification") as any).modal("show");
+    setTimeout(() => {
+      ($("#modal-notification") as any).modal("hide");
+    }, 1000);
   };
-
-  // const functionDumy = () => {
-  //   setNotificationMessage("Function temp");
-
-  //   ($("#modal-notification") as any).modal("show");
-  //   setTimeout(() => {
-  //     ($("#modal-notification") as any).modal("hide");
-  //   }, 1000);
-  // };
 
   return (
     <>
@@ -507,16 +527,15 @@ export const UtilitieAppTodoDetail = () => {
                       <input className="btn btn-link btn-link-custom font-size-14" type="button" value={detail.d_title.toString() || ""} />
                     </p>
                     <div>
-                      {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(detail._id, true)}>
+                    {key > 0 ? (
+                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(key, true)}>
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-                          {detail._id}
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < details.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(detail._id, false)}>
+                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(key, false)}>
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
