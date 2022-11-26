@@ -7,7 +7,7 @@ const todoDetailApi = {
    * @param {*} params : {d_title: , d_content: }
    * @returns
    */
-  createTodoDetail: (id, params) => {
+  createDetail: (id, params) => {
     const url = `/todo/${id}/create-detail`;
     return axiosClient.put(url, params);
   },
@@ -18,7 +18,7 @@ const todoDetailApi = {
    * @param {*} params : {_id: , d_title: , d_content}
    * @returns
    */
-  updateTodoDetail: (id, params) => {
+  updateDetail: (id, params) => {
     const url = `/todo/${id}/update-detail`;
     return axiosClient.put(url, params);
   },
@@ -29,7 +29,7 @@ const todoDetailApi = {
    * @param {*} params : {_id: , isUp}
    * @returns
    */
-   updateOrderNumber: (id, params) => {
+   updateDetailOrderNumber: (id, params) => {
     const url = `/todo/${id}/update-detail-order-number`;
     return axiosClient.put(url, params);
   },
@@ -40,7 +40,7 @@ const todoDetailApi = {
    * @param {*} params : {_id:}
    * @returns
    */
-  deleteTodoDetail: (id, params) => {
+  deleteDetail: (id, params) => {
     const url = `/todo/${id}/delete-detail`;
     return axiosClient.put(url, params);
   },

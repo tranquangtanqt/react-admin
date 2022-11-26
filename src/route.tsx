@@ -115,7 +115,10 @@ export const RoutesRoot = () => {
           <Route path="/database/postgresql/config-pghba" element={<PostgresqlConfigPghba />} />
 
           <Route path="/database/oracle" element={<DatabaseOracle />} />
-          <Route path="/database/oracle/change-language-oracle-sql-developer" element={<OracleChangeLanguageOracleSQLDeveloper />} />
+          <Route
+            path="/database/oracle/change-language-oracle-sql-developer"
+            element={<OracleChangeLanguageOracleSQLDeveloper />}
+          />
           <Route path="/database/oracle/import-dump" element={<OracleImportDump />} />
           <Route path="/database/oracle/dump-full" element={<OracleDumpFull />} />
           <Route path="/database/oracle/listener-and-tnsnames" element={<OracleListenerAndTnsnames />} />
@@ -223,8 +226,6 @@ export const RoutesRoot = () => {
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
-          {/* // 
-          // <Route path="/utilities/todoApp/:todo_id" element={<TodoApp />} /> */} 
         </Routes>
       </MasterLayout>
     </HashRouter>

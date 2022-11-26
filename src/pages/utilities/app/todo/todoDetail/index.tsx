@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import todoApi from "../../../../../api/todoApi";
 import todoDetailApi from "../../../../../api/todoDetailApi";
+import todoTaskApi from "../../../../../api/todoTaskApi";
 import { PageTitle } from "../../../../../components/modules/pageTitle";
 import { Editor } from "@tinymce/tinymce-react";
 
@@ -37,8 +38,6 @@ export const UtilitieAppTodoDetail = () => {
 
   const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>([]);
   const [taskInComplete, setTaskInComplete] = useState<ITodoTask[]>([]);
-  const [taskMaxOrderNumber, setTaskMaxOrderNumber] = useState(0);
-  const [taskMinOrderNumber, setTaskMinOrderNumber] = useState(0);
   const [taskId, setTaskId] = useState("");
   const [taskContent, setTaskContent] = useState("");
   const [taskStatus, setTaskStatus] = useState(0);
@@ -57,7 +56,6 @@ export const UtilitieAppTodoDetail = () => {
 
       if (response.status) {
         let todoDetails = Array.from(response.data.details);
-        console.log(response.data.details);
         todoDetails.forEach((item: any, index) => {
           detailMapApi.push({
             _id: item._id,
@@ -78,6 +76,7 @@ export const UtilitieAppTodoDetail = () => {
   useEffect(() => {
     // <em>fetchTodoList(params.todo_id)</em>;
     fetchTodoList(params.todo_id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
 
   /**
@@ -119,6 +118,9 @@ export const UtilitieAppTodoDetail = () => {
     ($("#modal-detail-update") as any).modal("show");
   };
 
+  /**
+   * 
+   */
   const updateDetail = async () => {
     let detail = {
       _id: detailId,
@@ -126,20 +128,14 @@ export const UtilitieAppTodoDetail = () => {
       d_content: detailContent,
     };
 
-    const response = await todoDetailApi.updateTodoDetail(todo?._id, detail);
+    const response = await todoDetailApi.updateDetail(todo?._id, detail);
 
     if (response?.status) {
       if (response.data) {
         fetchTodoList(todo?._id);
+        ($("#modal-detail-update") as any).modal("hide");
+        showMesage("Cập nhật dữ liệu thành công");
       }
-      ($("#modal-detail-update") as any).modal("hide");
-      setNotificationMessage("Cập nhật dữ liệu thành công");
-
-      ($("#modal-detail-update") as any).modal("hide");
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 2000);
     }
   };
 
@@ -162,43 +158,39 @@ export const UtilitieAppTodoDetail = () => {
       d_content: detailContent,
     };
 
-    const response = await todoDetailApi.createTodoDetail(todo?._id, detail);
+    const response = await todoDetailApi.createDetail(todo?._id, detail);
 
     if (response?.status) {
       if (response.data) {
         fetchTodoList(todo?._id);
-        setNotificationMessage("Thêm dữ liệu thành công");
-
         ($("#modal-detail-add") as any).modal("hide");
-        ($("#modal-notification") as any).modal("show");
-        setTimeout(() => {
-          ($("#modal-notification") as any).modal("hide");
-        }, 2000);
+        showMesage("Thêm dữ liệu thành công");
       }
     }
   };
 
-  const updateTodoDetailOrderNumber = async (id: String, isUp: boolean) => {
+  /**
+   * updateDetailOrderNumber
+   * @param id 
+   * @param isUp 
+   */
+  const updateDetailOrderNumber = async (id: String, isUp: boolean) => {
     let params = {
       _id: id,
       isUp: isUp,
     };
 
-    const response = await todoDetailApi.updateOrderNumber(todo?._id, params);
+    const response = await todoDetailApi.updateDetailOrderNumber(todo?._id, params);
 
     if (response?.status) {
       fetchTodoList(todo?._id);
-      setNotificationMessage("Cập nhật dữ liệu thành công");
-
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 2000);
+      showMesage("Cập nhật dữ liệu thành công");
     }
   };
 
   /**
    * showModalDeleteDetail
+   * @param id 
    */
   const showModalDeleteDetail = (id: String) => {
     setDetailId(id.toString() || "");
@@ -213,17 +205,12 @@ export const UtilitieAppTodoDetail = () => {
       _id: detailId,
     };
 
-    const response = await todoDetailApi.deleteTodoDetail(todo?._id, detail);
+    const response = await todoDetailApi.deleteDetail(todo?._id, detail);
 
     if (response?.status) {
       fetchTodoList(todo?._id);
-      setNotificationMessage("Xóa dữ liệu thành công");
-
       ($("#modal-detail-delete") as any).modal("hide");
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 2000);
+      showMesage("Xóa dữ liệu thành công");
     }
   };
 
@@ -246,7 +233,7 @@ export const UtilitieAppTodoDetail = () => {
       t_status: taskStatus,
     };
 
-    const response = await todoApi.createTodoTask(todo?._id, task);
+    const response = await todoTaskApi.createTask(todo?._id, task);
 
     if (response?.status) {
       showMesage("Thêm dữ liệu thành công");
@@ -263,7 +250,7 @@ export const UtilitieAppTodoDetail = () => {
       t_status: 1,
     };
 
-    const response = await todoApi.updateStatusTask(todo?._id, task);
+    const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
 
     if (response?.status) {
       showMesage("Cập nhật dữ liệu thành công");
@@ -277,10 +264,10 @@ export const UtilitieAppTodoDetail = () => {
   const updateStatusToInCompleteTask = async (_id: String) => {
     let task = {
       _id: _id,
-      t_status: 0
+      t_status: 0,
     };
 
-    const response = await todoApi.updateStatusTask(todo?._id, task);
+    const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
 
     if (response?.status) {
       showMesage("Cập nhật dữ liệu thành công");
@@ -288,43 +275,22 @@ export const UtilitieAppTodoDetail = () => {
     }
   };
 
-  const updateOrderNumberInComplete = async (index: number, isup: boolean) => {
-    let task1: any;
-    let task2: any;
-    if (isup) {
-      task1 = {
-        _id: taskInComplete[index]._id,
-        t_status: 0,
-        t_order_number: taskInComplete[index - 1].t_order_number,
-      };
+  /**
+   * updateTaskCompleteOrderNumber
+   * @param id 
+   * @param isUp 
+   */
+  const updateTaskCompleteOrderNumber = async (id: String, isUp: boolean) => {
+    let params = {
+      _id: id,
+      isUp: isUp,
+    };
 
-      task2 = {
-        _id: taskInComplete[index - 1]._id,
-        t_status: 0,
-        t_order_number: taskInComplete[index].t_order_number,
-      };
-    } else {
-      task1 = {
-        _id: taskInComplete[index]._id,
-        t_status: 0,
-        t_order_number: taskInComplete[index + 1].t_order_number,
-      };
+    const response = await todoTaskApi.updateTaskOrderNumber(todo?._id, params);
 
-      task2 = {
-        _id: taskInComplete[index + 1]._id,
-        t_status: 0,
-        t_order_number: taskInComplete[index].t_order_number,
-      };
-    }
-
-    const response1 = await todoApi.updateStatusTask(todo?._id, task1);
-    if (response1?.status) {
-      const response2 = await todoApi.updateStatusTask(todo?._id, task2);
-      if (response2?.status) {
-        if (response2.data) {
-          taskDataRender(response2.data.tasks, "Cập nhật dữ liệu thành công");
-        }
-      }
+    if (response?.status) {
+      fetchTodoList(todo?._id);
+      showMesage("Cập nhật dữ liệu thành công");
     }
   };
 
@@ -344,17 +310,21 @@ export const UtilitieAppTodoDetail = () => {
       _id: taskId,
     };
 
-    const response = await todoApi.deleteTodoTask(todo?._id, task);
+    const response = await todoTaskApi.deleteTask(todo?._id, task);
 
     if (response?.status) {
-      if (response.data) {
-        ($("#modal-task-delete") as any).modal("hide");
-        taskDataRender(response.data.tasks, "Xóa dữ liệu thành công");
-      }
+      ($("#modal-task-delete") as any).modal("hide");
+      showMesage("Xóa dữ liệu thành công");
+      fetchTodoList(todo?._id);
     }
   };
 
-  const showModalUpdateTask = (id: String, isComplete: boolean) => {
+  /**
+   * showModalUpdateTaskContent
+   * @param id 
+   * @param isComplete 
+   */
+  const showModalUpdateTaskContent = (id: String, isComplete: boolean) => {
     let task;
     if (isComplete) {
       task = taskCompleted?.filter((x) => x._id === id).shift();
@@ -369,19 +339,21 @@ export const UtilitieAppTodoDetail = () => {
     ($("#modal-task-update") as any).modal("show");
   };
 
+  /**
+   * updateTaskContent
+   */
   const updateTaskContent = async () => {
     let task = {
       _id: taskId,
       t_content: taskContent,
     };
 
-    const response = await todoApi.updateTodoTaskContent(todo?._id, task);
+    const response = await todoTaskApi.updateTaskContent(todo?._id, task);
 
     if (response?.status) {
-      if (response.data) {
-        taskDataRender(response.data.tasks, "Cập nhật dữ liệu thành công");
-        ($("#modal-task-update") as any).modal("hide");
-      }
+      ($("#modal-task-update") as any).modal("hide");
+      showMesage("Cập nhật dữ liệu thành công");
+      fetchTodoList(todo?._id);
     }
   };
 
@@ -411,60 +383,10 @@ export const UtilitieAppTodoDetail = () => {
     setTaskInComplete(taskInCompleteMapApi);
   };
 
-  const taskDataRender = (data: any, message: string) => {
-    let taskCompletedMapApi: ITodoTask[] = [];
-    let taskInCompleteMapApi: ITodoTask[] = [];
-    let taskMaxOrderNumberTemp = taskMaxOrderNumber;
-    let taskMinOrderNumberTemp = taskMinOrderNumber;
-    let todoTasks = Array.from(data);
-
-    todoTasks.forEach((item: any) => {
-      if (item.t_status === 0) {
-        taskInCompleteMapApi.push({
-          _id: item._id,
-          t_content: item.t_content,
-          t_status: item.t_status,
-          t_order_number: item.t_order_number,
-        } as ITodoTask);
-      } else if (item.t_status === 1) {
-        taskCompletedMapApi.push({
-          _id: item._id,
-          t_content: item.t_content,
-          t_status: item.t_status,
-          t_order_number: item.t_order_number,
-        } as ITodoTask);
-        if (item.t_order_number < taskMinOrderNumberTemp) {
-          taskMinOrderNumberTemp = item.t_order_number;
-        }
-      }
-    });
-
-    taskInCompleteMapApi.sort((a: any, b: any) => a.t_order_number - b.t_order_number);
-    taskCompletedMapApi.sort((a: any, b: any) => a.t_order_number - b.t_order_number);
-
-    setTaskCompleted(taskCompletedMapApi);
-    setTaskInComplete(taskInCompleteMapApi);
-
-    if (taskCompletedMapApi.length === 0) {
-      setTaskMinOrderNumber(0);
-    } else {
-      setTaskMinOrderNumber(taskMinOrderNumberTemp);
-    }
-    if (taskInCompleteMapApi.length === 0) {
-      setTaskMaxOrderNumber(0);
-    } else {
-      setTaskMaxOrderNumber(taskMaxOrderNumberTemp);
-    }
-
-    if (message.trim().length > 0) {
-      setNotificationMessage(message);
-      ($("#modal-notification") as any).modal("show");
-      setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
-      }, 1000);
-    }
-  };
-
+  /**
+   * showMesage
+   * @param message 
+   */
   const showMesage = (message: string) => {
     if (message.trim().length > 0) {
       setNotificationMessage(message);
@@ -486,16 +408,26 @@ export const UtilitieAppTodoDetail = () => {
 
   return (
     <>
-      {todo?.title?.toString() ? <PageTitle title={todo?.title?.toString()}></PageTitle> : <PageTitle title={"..."}></PageTitle>}
+      {todo?.title?.toString() ? (
+        <PageTitle title={todo?.title?.toString()}></PageTitle>
+      ) : (
+        <PageTitle title={"..."}></PageTitle>
+      )}
       <div className={isLoading ? "row mt-2" : "row mt-2 d-none"}>
         <div style={{ minHeight: "30vh" }}>
           <div className="loading-spinner"></div>
         </div>
       </div>
+
       <div className={!isLoading ? "row mt-2" : "row mt-2 d-none"}>
         <div className="col-12 col-sm-8 col-md-8">
           <div className="d-flex flex-row-reverse">
-            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateDetail()} />
+            <input
+              className="btn btn-primary float-end btn-sm"
+              type="button"
+              value={"Thêm"}
+              onClick={() => showModalCreateDetail()}
+            />
           </div>
 
           <div className="accordion mt-2" id="accordionExample">
@@ -504,19 +436,28 @@ export const UtilitieAppTodoDetail = () => {
                 <div className="card-header" id={detail._id.toString()}>
                   <div className="d-flex justify-content-between">
                     <p className="mb-0" onClick={() => changeCollapse(detail._id)}>
-                      <input className="btn btn-link btn-link-custom font-size-14" type="button" value={detail.d_title.toString() || ""} />
+                      <input
+                        className="btn btn-link btn-link-custom font-size-14"
+                        type="button"
+                        value={detail.d_title.toString() || ""}
+                      />
                     </p>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(detail._id, true)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateDetailOrderNumber(detail._id, true)}
+                        >
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
-                          {detail._id}
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < details.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTodoDetailOrderNumber(detail._id, false)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateDetailOrderNumber(detail._id, false)}
+                        >
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
@@ -544,7 +485,12 @@ export const UtilitieAppTodoDetail = () => {
 
         <div className="col-12 col-sm-4 col-md-4">
           <div className="d-flex flex-row-reverse">
-            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateTask()} />
+            <input
+              className="btn btn-primary float-end btn-sm"
+              type="button"
+              value={"Thêm"}
+              onClick={() => showModalCreateTask()}
+            />
           </div>
           <div className="card mt-2">
             <div className="card-header">Danh sách nhiệm vụ</div>
@@ -553,26 +499,30 @@ export const UtilitieAppTodoDetail = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div className="cursor-pointer">
-                      <i className="fa fa-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToCompletedTask(task._id)}></i>
+                      <i
+                        className="fa fa-circle-o me-2"
+                        aria-hidden="true"
+                        onClick={() => updateStatusToCompletedTask(task._id)}
+                      ></i>
                       {task.t_content}
                     </div>
                     <div></div>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumberInComplete(key, true)}>
+                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task._id, true)}>
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < taskInComplete.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumberInComplete(key, false)}>
+                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task._id, false)}>
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task._id, false)}>
+                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task._id, false)}>
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
@@ -592,12 +542,16 @@ export const UtilitieAppTodoDetail = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div className="text-secondary cursor-pointer">
-                      <i className="fa fa-check-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToInCompleteTask(task._id)}></i>
+                      <i
+                        className="fa fa-check-circle-o me-2"
+                        aria-hidden="true"
+                        onClick={() => updateStatusToInCompleteTask(task._id)}
+                      ></i>
                       <s>{task.t_content}</s>
                     </div>
                     <div></div>
                     <div>
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task._id, true)}>
+                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task._id, true)}>
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
@@ -623,11 +577,23 @@ export const UtilitieAppTodoDetail = () => {
             </div>
             <div className="modal-body">
               <div>
-                <input type="hidden" className="form-control" id="detail-id" value={detailId} onChange={(e) => setDetailId(e.target.value)} />
+                <input
+                  type="hidden"
+                  className="form-control"
+                  id="detail-id"
+                  value={detailId}
+                  onChange={(e) => setDetailId(e.target.value)}
+                />
                 <label htmlFor="detail-title" className="form-label">
                   Tiêu đề
                 </label>
-                <input type="text" className="form-control" id="detail-title" value={detailTitle} onChange={(e) => setDetailTitle(e.target.value)} />
+                <input
+                  type="text"
+                  className="form-control"
+                  id="detail-title"
+                  value={detailTitle}
+                  onChange={(e) => setDetailTitle(e.target.value)}
+                />
               </div>
 
               <div className="mt-2">
@@ -723,7 +689,13 @@ export const UtilitieAppTodoDetail = () => {
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              <input type="hidden" className="form-control" id="detail-id" value={detailId} onChange={(e) => setDetailId(e.target.value)} />
+              <input
+                type="hidden"
+                className="form-control"
+                id="detail-id"
+                value={detailId}
+                onChange={(e) => setDetailId(e.target.value)}
+              />
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
@@ -744,7 +716,13 @@ export const UtilitieAppTodoDetail = () => {
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              <input type="hidden" className="form-control" id="task-id" value={taskId} onChange={(e) => setTaskId(e.target.value)} />
+              <input
+                type="hidden"
+                className="form-control"
+                id="task-id"
+                value={taskId}
+                onChange={(e) => setTaskId(e.target.value)}
+              />
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
@@ -796,7 +774,13 @@ export const UtilitieAppTodoDetail = () => {
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
             <div className="modal-body">
-              <input type="hidden" className="form-control" id="task-id" value={taskId} onChange={(e) => setTaskId(e.target.value)} />
+              <input
+                type="hidden"
+                className="form-control"
+                id="task-id"
+                value={taskId}
+                onChange={(e) => setTaskId(e.target.value)}
+              />
               <label htmlFor="task-content-update" className="form-label">
                 Nội dung
               </label>
