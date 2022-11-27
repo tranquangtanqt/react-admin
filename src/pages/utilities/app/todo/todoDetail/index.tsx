@@ -56,14 +56,14 @@ export const UtilitieAppTodoDetail = () => {
 
       if (response.status) {
         let todoDetails = Array.from(response.data.details);
-        todoDetails.forEach((item: any, index) => {
+        todoDetails.forEach((item: any) => {
           detailMapApi.push({
             _id: item._id,
             d_title: item.d_title,
             d_content: item.d_content,
             collapse: false,
             d_order_number: item.d_order_number,
-          } as ITodoDetail);
+          });
         });
 
         setDetails(detailMapApi);

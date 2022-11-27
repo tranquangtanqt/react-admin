@@ -1,76 +1,209 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
+interface IDiff {
+  no: Number;
+  text: string;
+  isSame: boolean;
+  isDisplay: boolean;
+  className: string;
+}
+
 export const UtilitiesTextFindDifferentTwoList = () => {
-  const [input1, setInput1] = useState(`1
-2
-3
-4
-5`);
-  const [input2, setInput2] = useState(`5
-2
-1
-6`);
-  const [output1, setOutput1] = useState("");
-  const [output2, setOutput2] = useState("");
-  const [output3, setOutput3] = useState("");
-  const [indexList, setIndexList] = useState("");
-  const [difference1List, setDifference1List] = useState("");
-  const [difference2List, setDifference2List] = useState("");
+  const [lefts, setLefts] = useState(``);
+  const [rights, setRights] = useState(``);
 
-  const findText = () => {
-    let outputStr1 = "";
-    let outputStr2 = "";
-    let outputStr3 = "";
-    let indexStr = "";
-    let difference1 = "";
-    let difference2 = "";
+  const [diffLefts, setDiffLefts] = useState<IDiff[]>([]);
+  const [diffRights, setDiffRights] = useState<IDiff[]>([]);
 
-    let input1Arr = input1.split("\n");
-    input1Arr = input1Arr.map((x) => x.trim());
-    let input2Arr = input2.split("\n");
-    input2Arr = input2Arr.map((x) => x.trim());
+  /**
+   * searchAll
+   */
+  const searchAll = () => {
+    setDiffLefts([]);
+    setDiffRights([]);
 
-    outputStr1 = input1Arr.filter((x) => !input2Arr.includes(x)).join("\n");
-    outputStr2 = input2Arr.filter((x) => !input1Arr.includes(x)).join("\n");
-    outputStr3 = input1Arr.filter((x) => input2Arr.includes(x)).join("\n");
-    let len1 = input1Arr.length;
-    let len2 = input2Arr.length;
+    let diffLeftTemps: IDiff[] = [];
+    let diffRightTemps: IDiff[] = [];
 
-    if (len1 >= len2) {
-      for (let i = 0; i < len1; i++) {
-        if (i < len2) {
-          if (input1Arr[i] !== input2Arr[i]) {
-            indexStr += i + "\n";
-            difference1 += input1Arr[i] + "\n";
-            difference2 += input2Arr[i] + "\n";
-          }
-        } else {
-          indexStr += i + "\n";
-          difference1 += input1Arr[i] + "\n";
-        }
+    let leftArr = lefts.split("\n");
+    leftArr = leftArr.map((x) => x.trim());
+    leftArr.forEach((item, index) => {
+      diffLeftTemps?.push({
+        no: index,
+        text: item,
+        isSame: false,
+        isDisplay: true,
+        className: "",
+      });
+    });
+
+    let rightArr = rights.split("\n");
+    rightArr = rightArr.map((x) => x.trim());
+
+    rightArr.forEach((item, index) => {
+      diffRightTemps.push({
+        no: index,
+        text: item,
+        isSame: false,
+        isDisplay: true,
+        className: "",
+      });
+    });
+
+    diffLeftTemps.forEach((item) => {
+      if (diffRightTemps.map((x) => x.text).includes(item.text)) {
+        item.isSame = true;
+        item.className = "table-warning cursor-pointer";
       }
+
+      diffRightTemps
+        .filter((x) => x.text === item.text)
+        .forEach((item) => {
+          item.isSame = true;
+          item.className = "table-warning cursor-pointer";
+        });
+    });
+
+    setDiffLefts(diffLeftTemps);
+    setDiffRights(diffRightTemps);
+  };
+
+  /**
+   * searchSame
+   * if isSame: search Same
+   * else search Different
+   */
+  const searchSame = (isSame: boolean) => {
+    setDiffLefts([]);
+    setDiffRights([]);
+
+    let diffLeftTemps: IDiff[] = [];
+    let diffRightTemps: IDiff[] = [];
+
+    let leftArr = lefts.split("\n");
+    leftArr = leftArr.map((x) => x.trim());
+    leftArr.forEach((item, index) => {
+      diffLeftTemps?.push({
+        no: index,
+        text: item,
+        isSame: false,
+        isDisplay: true,
+        className: "",
+      });
+    });
+
+    let rightArr = rights.split("\n");
+    rightArr = rightArr.map((x) => x.trim());
+
+    rightArr.forEach((item, index) => {
+      diffRightTemps.push({
+        no: index,
+        text: item,
+        isSame: false,
+        isDisplay: true,
+        className: "",
+      });
+    });
+
+    diffLeftTemps.forEach((item) => {
+      if (diffRightTemps.map((x) => x.text).includes(item.text)) {
+        item.isSame = true;
+        item.className = "table-warning cursor-pointer";
+      }
+
+      diffRightTemps
+        .filter((x) => x.text === item.text)
+        .forEach((item) => {
+          item.isSame = true;
+          item.className = "table-warning cursor-pointer";
+        });
+    });
+
+    if (isSame) {
+      diffLeftTemps = diffLeftTemps.filter((item) => item.isSame);
+      diffRightTemps = diffRightTemps.filter((item) => item.isSame);
     } else {
-      for (let i = 0; i < len2; i++) {
-        if (i < len1) {
-          if (input2Arr[i] !== input1Arr[i]) {
-            indexStr += i + "\n";
-            difference1 += input1Arr[i] + "\n";
-            difference2 += input2Arr[i] + "\n";
-          }
-        } else {
-          indexStr += i + "\n";
-          difference2 += input2Arr[i] + "\n";
-        }
-      }
+      diffLeftTemps = diffLeftTemps.filter((item) => !item.isSame);
+      diffRightTemps = diffRightTemps.filter((item) => !item.isSame);
     }
 
-    setOutput1(outputStr1);
-    setOutput2(outputStr2);
-    setOutput3(outputStr3);
-    setIndexList(indexStr);
-    setDifference1List(difference1);
-    setDifference2List(difference2);
+    setDiffLefts(diffLeftTemps);
+    setDiffRights(diffRightTemps);
+  };
+
+  /**
+   * item same => background: red
+   * @param index
+   * @returns
+   */
+  const onItemLeft = (index: number) => {
+    let diffLeftTemps = [...(diffLefts || [])];
+    if (!diffLeftTemps[index].isSame) {
+      return;
+    }
+
+    diffLeftTemps.forEach((item) => {
+      if (item.isSame) {
+        item.className = "table-warning cursor-pointer";
+      }
+    });
+    diffLeftTemps[index].className = "table-danger cursor-pointer";
+
+    setDiffLefts(diffLeftTemps);
+
+    let textSame = diffLeftTemps[index].text;
+    let diffRightTemps = [...(diffRights || [])];
+
+    diffRightTemps.forEach((item) => {
+      if (item.isSame) {
+        item.className = "table-warning cursor-pointer";
+      }
+    });
+    diffRightTemps
+      .filter((x) => x.text === textSame)
+      .forEach((item) => {
+        item.isSame = true;
+        item.className = "table-danger cursor-pointer";
+      });
+    setDiffRights(diffRightTemps);
+  };
+
+  /**
+   * item same => background: red
+   * @param index
+   * @returns
+   */
+  const onItemRight = (index: number) => {
+    let diffRightTemps = [...(diffRights || [])];
+    if (!diffRightTemps[index].isSame) {
+      return;
+    }
+
+    diffRightTemps.forEach((item) => {
+      if (item.isSame) {
+        item.className = "table-warning cursor-pointer";
+      }
+    });
+    diffRightTemps[index].className = "table-danger cursor-pointer";
+
+    setDiffRights(diffRightTemps);
+
+    let textSame = diffRightTemps[index].text;
+    let diffLeftTemps = [...(diffLefts || [])];
+
+    diffLeftTemps.forEach((item) => {
+      if (item.isSame) {
+        item.className = "table-warning cursor-pointer";
+      }
+    });
+    diffLeftTemps
+      .filter((x) => x.text === textSame)
+      .forEach((item) => {
+        item.isSame = true;
+        item.className = "table-danger cursor-pointer";
+      });
+    setDiffLefts(diffLeftTemps);
   };
 
   return (
@@ -84,8 +217,8 @@ export const UtilitiesTextFindDifferentTwoList = () => {
           <textarea
             id="list1"
             className="form-control"
-            value={input1}
-            onChange={(e) => setInput1(e.target.value)}
+            value={lefts}
+            onChange={(e) => setLefts(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
         </div>
@@ -96,8 +229,8 @@ export const UtilitiesTextFindDifferentTwoList = () => {
           <textarea
             id="list2"
             className="form-control"
-            value={input2}
-            onChange={(e) => setInput2(e.target.value)}
+            value={rights}
+            onChange={(e) => setRights(e.target.value)}
             style={{ height: 400, width: "100%" }}
           />
         </div>
@@ -105,24 +238,67 @@ export const UtilitiesTextFindDifferentTwoList = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="submit" className="btn btn-primary btn-sm" onClick={() => findText()}>
-            Find
+          <button type="button" className="btn btn-primary btn-sm" onClick={() => searchAll()}>
+            Search
+          </button>
+          <button type="button" className="btn btn-primary btn-sm m-l-20" onClick={() => searchSame(true)}>
+            Same
+          </button>
+          <button type="button" className="btn btn-primary btn-sm m-l-20" onClick={() => searchSame(false)}>
+            Different
           </button>
         </div>
       </div>
 
       <div className="row mt-2">
-        <div className="col-12 col-sm-6 col-md-6">
-          <label htmlFor="same" className="form-label">
-            Same
-          </label>
-          <textarea
-            id="same"
-            className="form-control"
-            value={output3}
-            onChange={(e) => setOutput3(e.target.value)}
-            style={{ height: 400, width: "100%" }}
-          />
+        <div className="col-12 col-sm-12 col-md-12">
+          {diffLefts.length >= diffRights.length ? (
+            <table className="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style={{ width: "40px", textAlign: "center" }}>#</th>
+                  <th>LEFT</th>
+                  <th>RIGHT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {diffLefts.map((item, key) => (
+                  <tr key={key}>
+                    <th>{key}</th>
+                    <td className={item.className} onClick={() => onItemLeft(key)}>
+                      {item.text}
+                    </td>
+                    <td className={diffRights[key]?.className} onClick={() => onItemRight(key)}>
+                      {diffRights[key]?.text}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <table className="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th style={{ width: "40px", textAlign: "center" }}>#</th>
+                  <th>LEFT</th>
+                  <th>RIGHT</th>
+                </tr>
+              </thead>
+              <tbody>
+                {diffRights.map((item, key) => (
+                  <tr key={key}>
+                    <th>{key}</th>
+                    <td className={diffLefts[key]?.className} onClick={() => onItemLeft(key)}>
+                      {diffLefts[key]?.text}
+                    </td>
+                    <td className={item.className} onClick={() => onItemRight(key)}>
+                      {item.text}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
     </>
