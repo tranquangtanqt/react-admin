@@ -79,6 +79,15 @@ export const Utilities = () => {
         },
       ],
     },
+    {
+      title: "General",
+      links: [
+        {
+          text: "Collapse all button in git change",
+          path: "/utilities/general/collapse-git",
+        },
+      ],
+    },
   ];
 
   return (

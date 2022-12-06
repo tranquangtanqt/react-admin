@@ -103,6 +103,7 @@ import { TutorialJavaLesson5 } from "./pages/tutorials/java/1_10/lesson5";
 import { TutorialJavaLesson6 } from "./pages/tutorials/java/1_10/lesson6";
 import { UtilitieAppTodo } from "./pages/utilities/app/todo";
 import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
+import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
 
 export const RoutesRoot = () => {
   return (
@@ -228,6 +229,7 @@ export const RoutesRoot = () => {
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
+          <Route path="/utilities/general/collapse-git" element={<UtilitiesGeneralCollapseGit />} />
         </Routes>
       </MasterLayout>
     </HashRouter>

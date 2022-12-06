@@ -21,9 +21,45 @@ export const Home = () => {
                     office365
                   </a>
                 </li>
-                <li><Link to={"/utilities/textSpecial"}>{"Special"}</Link></li>
-                <li><a href="http://172.30.5.100/pe4j" target="_blank" rel="noopener noreferrer">WT</a></li>
-                <li><a href="http://pe/pe4j/" target="_blank" rel="noopener noreferrer">WR</a></li>
+                <li>
+                  <Link to={"/utilities/textSpecial"}>{"Special"}</Link>
+                </li>
+                <li>
+                  <a href="http://172.30.5.100/pe4j" target="_blank" rel="noopener noreferrer">
+                    WT
+                  </a>
+                </li>
+                <li>
+                  <a href="http://pe/pe4j/" target="_blank" rel="noopener noreferrer">
+                    WR
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Algorithm</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a href="https://projecteuler.net/" target="_blank" rel="noopener noreferrer">
+                    Project Euler
+                  </a>
+                </li>
+                <li>
+                  <a href="http://oj.husc.edu.vn/" target="_blank" rel="noopener noreferrer">
+                    Husc
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.techiedelight.com/" target="_blank" rel="noopener noreferrer">
+                    techiedelight
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -35,9 +71,15 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://dbfiddle.uk/" target="_blank" rel="noopener noreferrer">dbfiddle</a>
+                <li>
+                  <a href="https://dbfiddle.uk/" target="_blank" rel="noopener noreferrer">
+                    dbfiddle
+                  </a>
                 </li>
-                <li><a href="https://www.mockaroo.com/" target="_blank" rel="noopener noreferrer">mockaroo</a>
+                <li>
+                  <a href="https://www.mockaroo.com/" target="_blank" rel="noopener noreferrer">
+                    mockaroo
+                  </a>
                 </li>
               </ol>
             </div>
@@ -50,21 +92,11 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://www.usebubbles.com/" target="_blank" rel="noopener noreferrer">usebubbles _ screen</a></li>
-              </ol>
-            </div>
-          </div>
-        </div>
-        <div className="col-12 col-sm-12 col-md-3">
-          <div className="card">
-            <div className="card-header font-size-16">
-              <b>Algorithm</b>
-            </div>
-            <div className="card-body">
-              <ol>
-                <li><a href="https://projecteuler.net/" target="_blank" rel="noopener noreferrer">Project Euler</a></li>
-                <li><a href="http://oj.husc.edu.vn/" target="_blank" rel="noopener noreferrer">Husc</a></li>
-                <li><a href="https://www.techiedelight.com/" target="_blank" rel="noopener noreferrer">techiedelight</a></li>
+                <li>
+                  <a href="https://www.usebubbles.com/" target="_blank" rel="noopener noreferrer">
+                    usebubbles _ screen
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -79,7 +111,11 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://github.com/thangchung/awesome-dotnet-core" target="_blank" rel="noopener noreferrer">Awesome dotnet core</a></li>
+                <li>
+                  <a href="https://github.com/thangchung/awesome-dotnet-core" target="_blank" rel="noopener noreferrer">
+                    Awesome dotnet core
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -91,8 +127,16 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener noreferrer">Awesome java</a></li>
-                <li><a href="https://github.com/Blankj/awesome-java-leetcode" target="_blank" rel="noopener noreferrer">Awesome java leetcode</a></li>
+                <li>
+                  <a href="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener noreferrer">
+                    Awesome java
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Blankj/awesome-java-leetcode" target="_blank" rel="noopener noreferrer">
+                    Awesome java leetcode
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -104,7 +148,11 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://github.com/sorrycc/awesome-javascript" target="_blank" rel="noopener noreferrer">Awesome javascript</a></li>
+                <li>
+                  <a href="https://github.com/sorrycc/awesome-javascript" target="_blank" rel="noopener noreferrer">
+                    Awesome javascript
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -116,7 +164,11 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://books.goalkicker.com/" target="_blank" rel="noopener noreferrer">goalkicker</a></li>
+                <li>
+                  <a href="https://books.goalkicker.com/" target="_blank" rel="noopener noreferrer">
+                    goalkicker
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -131,7 +183,11 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">figma</a></li>
+                <li>
+                  <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
+                    figma
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
@@ -143,7 +199,37 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
-                <li><a href="https://refactoring.guru/design-patterns/" target="_blank" rel="noopener noreferrer">refactoring</a></li>
+                <li>
+                  <a href="https://refactoring.guru/design-patterns/" target="_blank" rel="noopener noreferrer">
+                    refactoring
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Deploy</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">
+                    Heroku
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://dashboard.render.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="tranquangtanqt1990@gmail.com&#10;beautiful@1190"
+                  >
+                    Render
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
