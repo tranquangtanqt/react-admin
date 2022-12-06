@@ -2,8 +2,9 @@ import axios from "axios";
 // import queryString from "query-string";
 
 const AxiosClient = axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
-  // baseURL: "http://localhost:8081/api",
+  // baseURL: process.env.REACT_APP_API_URL_HEROKU,
+  // baseURL: process.env.REACT_APP_API_URL_LOCAL,
+  baseURL: process.env.REACT_APP_API_URL_RENDER,
   headers: {
     "content-type": "application/json",
   },
