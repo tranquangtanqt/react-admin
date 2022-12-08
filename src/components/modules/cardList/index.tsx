@@ -10,8 +10,6 @@ type Props = {
 
 export const CardList: React.FC<Props> = ({ cardData, startWith }) => {
   let count = startWith ? startWith : 0;
-  console.log(count);
-  console.log(startWith && startWith > 0);
   return (
     <> 
     {startWith && startWith > 0

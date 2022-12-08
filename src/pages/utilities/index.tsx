@@ -88,6 +88,15 @@ export const Utilities = () => {
         },
       ],
     },
+    {
+      title: "Excel",
+      links: [
+        {
+          text: "Make Json Vocabulary Japanese",
+          path: "/utilities/excel/make-json-vocabulary-japanese",
+        },
+      ],
+    },
   ];
 
   return (

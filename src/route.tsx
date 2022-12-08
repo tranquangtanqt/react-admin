@@ -104,6 +104,7 @@ import { TutorialJavaLesson6 } from "./pages/tutorials/java/1_10/lesson6";
 import { UtilitieAppTodo } from "./pages/utilities/app/todo";
 import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
 import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
+import { UtilitiesMakeJsonVocabulary } from "./pages/utilities/excel/makeJsonVocabulary";
 
 export const RoutesRoot = () => {
   return (
@@ -226,6 +227,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
+          <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
