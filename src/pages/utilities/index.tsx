@@ -14,6 +14,10 @@ export const Utilities = () => {
           text: "Read content multi file",
           path: "/utilities/file/read-content-multi-file",
         },
+        {
+          text: "Make json from excel",
+          path: "/utilities/file/make-json-from-excel",
+        },
       ],
     },
     {
@@ -54,19 +58,11 @@ export const Utilities = () => {
       ],
     },
     {
-      title: "SQL",
+      title: "Japan",
       links: [
         {
-          text: "Make Insert SQL",
-          path: "/utilities/sql/make-insert",
-        },
-        {
-          text: "Make Insert SQL from procedure",
-          path: "/utilities/sql/make-insert-from-procedure",
-        },
-        {
-          text: "Create Table From Excel",
-          path: "/utilities/sql/create-table-from-excel",
+          text: "Từ vựng",
+          path: "/utilities/japan/vocabulary",
         },
       ],
     },
@@ -94,6 +90,23 @@ export const Utilities = () => {
         {
           text: "Make Json Vocabulary Japanese",
           path: "/utilities/excel/make-json-vocabulary-japanese",
+        },
+      ],
+    },
+    {
+      title: "SQL",
+      links: [
+        {
+          text: "Make Insert SQL",
+          path: "/utilities/sql/make-insert",
+        },
+        {
+          text: "Make Insert SQL from procedure",
+          path: "/utilities/sql/make-insert-from-procedure",
+        },
+        {
+          text: "Create Table From Excel",
+          path: "/utilities/sql/create-table-from-excel",
         },
       ],
     },

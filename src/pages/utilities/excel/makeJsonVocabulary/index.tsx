@@ -1,4 +1,3 @@
-// import { Button, Col, Divider, Input, Row } from "antd";
 import { useState } from "react";
 import * as XLSX from "xlsx";
 import { PageTitle } from "../../../../components/modules/pageTitle";
@@ -25,9 +24,9 @@ export const UtilitiesMakeJsonVocabulary = () => {
         let worksheet = workbook.Sheets[worksheetName];
         let data: any = XLSX.utils.sheet_to_json(worksheet, { raw: true });
        
-        let arr = new Array();
+        let arr = [];
         for (let i = 0; i < data.length; i++) {
-          let obj: any = new Object();
+          let obj: any = {};
           let item = data[i];
           
           if (item.no === 1) {

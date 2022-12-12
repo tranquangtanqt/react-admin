@@ -105,6 +105,8 @@ import { UtilitieAppTodo } from "./pages/utilities/app/todo";
 import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
 import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
 import { UtilitiesMakeJsonVocabulary } from "./pages/utilities/excel/makeJsonVocabulary";
+import { UtilitiesJapanVocabulary } from "./pages/utilities/japan/vocabulary";
+import { UtilitiesFileMakeJsonFromExcel } from "./pages/utilities/file/makeJsonFromExcel";
 
 export const RoutesRoot = () => {
   return (
@@ -216,6 +218,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
+          <Route path="/utilities/file/make-json-from-excel" element={<UtilitiesFileMakeJsonFromExcel />} />
           <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
           <Route path="/utilities/text/find-different-two-list" element={<UtilitiesTextFindDifferentTwoList />} />
           <Route path="/utilities/text/find-different-two-list-1" element={<UtilitiesTextFindDifferentTwoList1 />} />
@@ -228,6 +231,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
+          <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
