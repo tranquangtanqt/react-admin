@@ -110,6 +110,7 @@ import { UtilitiesFileMakeJsonFromExcel } from "./pages/utilities/file/makeJsonF
 import { UtilitiesGeneralGit } from "./pages/utilities/general/git";
 import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFontDompdf";
 import { BatchStartEndProgram } from "./pages/programming/batch/startEndProgram";
+import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary/unit";
 
 export const RoutesRoot = () => {
   return (
@@ -238,6 +239,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
           <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
+          <Route path="/utilities/japan/vocabulary/unit" element={<UtilitiesJapanVocabularyUnit />} />
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
