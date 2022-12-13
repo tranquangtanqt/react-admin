@@ -1,0 +1,1 @@
+SELECT DISTINCT(lo_get(t.loid)) AS data FROM pg_largeobject t WHERE t.loid IN ( SELECT body FROM QT2_BINARY_DATA where DOCID='963')

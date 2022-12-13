@@ -10,6 +10,10 @@ export const ProgrammingBatch = () => {
           text: "If...Else...",
           path: "/programming-batch/if-else",
         },
+        {
+          text: "Start, end program",
+          path: "/programming-batch/start-end-program",
+        },
       ],
     },
   ];

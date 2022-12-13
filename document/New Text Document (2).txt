@@ -1,0 +1,23 @@
+https://stackoverflow.com/questions/35965275/how-do-i-edit-multiple-input-controlled-components-in-react
+
+https://github.com/PanJiaChen/awesome-bookmarks
+
+
+https://www.sergevandenoever.nl/git-getting-list-of-changed-files-into-zip-file/
+
+https://www.codegrepper.com/code-examples/javascript/how+to+get+all+files+in+a+directory+react
+
+
+-----Thay doi thong tin DB: fe2c552f 
+git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt
+- Xuất ra file: more diff-filelist.txt | zip -@ files.zip
+
+
+git reset --hard fe2c552f
+
+git push --force origin develop
+
+
+common-database:
+git diff-tree -r --name-only fe2c552f 577ee1fd  > diff-filelist-common-database.txt
+more diff-filelist-common-database.txt | zip -@ common-database.zip
