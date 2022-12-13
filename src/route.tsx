@@ -107,6 +107,8 @@ import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseG
 import { UtilitiesMakeJsonVocabulary } from "./pages/utilities/excel/makeJsonVocabulary";
 import { UtilitiesJapanVocabulary } from "./pages/utilities/japan/vocabulary";
 import { UtilitiesFileMakeJsonFromExcel } from "./pages/utilities/file/makeJsonFromExcel";
+import { UtilitiesGeneralGit } from "./pages/utilities/general/git";
+import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFontDompdf";
 
 export const RoutesRoot = () => {
   return (
@@ -157,10 +159,11 @@ export const RoutesRoot = () => {
           <Route path="/programming-java/update-data-1" element={<JavaUpdateData1 />} />
 
           <Route path="/programming-php" element={<ProgrammingPHP />} />
-          <Route path="/programming-php/convert-datetime" element={<PHPConvertDatetime />} />
-          <Route path="/programming-php/convert-unicode" element={<PHPConvertUnicode />} />
-          <Route path="/programming-php/substring-ellipses" element={<PHPSubstringEllipses />} />
-          <Route path="/programming-php/delete-file" element={<PHPDeleteFile />} />
+          <Route path="/programming-php/convert/convert-datetime" element={<PHPConvertDatetime />} />
+          <Route path="/programming-php/convert/convert-unicode" element={<PHPConvertUnicode />} />
+          <Route path="/programming-php/convert/substring-ellipses" element={<PHPSubstringEllipses />} />
+          <Route path="/programming-php/convert/delete-file" element={<PHPDeleteFile />} />
+          <Route path="/programming-php/lavavel/install-font-dompdf" element={<PHPLaravelInstallFontDompdf />} />
 
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
@@ -236,6 +239,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
           <Route path="/utilities/general/collapse-git" element={<UtilitiesGeneralCollapseGit />} />
+          <Route path="/utilities/general/git" element={<UtilitiesGeneralGit />} />
         </Routes>
       </MasterLayout>
     </HashRouter>

@@ -79,6 +79,10 @@ export const Utilities = () => {
       title: "General",
       links: [
         {
+          text: "GIT",
+          path: "/utilities/general/git",
+        },
+        {
           text: "Collapse all button in git change",
           path: "/utilities/general/collapse-git",
         },

@@ -8,20 +8,29 @@ export const ProgrammingPHP = () => {
       links: [
         {
           text: "Chuyển đổi Datetime",
-          path: "/programming-php/convert-datetime",
+          path: "/programming-php/convert/convert-datetime",
         },
         {
           text: "Chuyển chuỗi Unicode thành chuỗi không dấu",
-          path: "/programming-php/convert-unicode",
+          path: "/programming-php/convert/convert-unicode",
         },
         {
           text: "Cắt chuỗi với dấu ba chấm (ellipses)",
-          path: "/programming-php/substring-ellipses",
+          path: "/programming-php/convert/substring-ellipses",
         },
         {
           text: "Xóa tệp",
-          path: "/programming-php/delete-file",
+          path: "/programming-php/convert/delete-file",
         },
+      ],
+    },
+    {
+      title: "Laravel",
+      links: [
+        {
+          text: "Cài đặt font cho dompdf",
+          path: "/programming-php/lavavel/install-font-dompdf",
+        }
       ],
     },
   ];
