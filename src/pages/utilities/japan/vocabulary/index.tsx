@@ -17,6 +17,7 @@ export const UtilitiesJapanVocabulary = () => {
     return unitN5;
   });
   const [checked, setChecked] = useState<string[]>([]);
+  const [level, setLevel] = useState("N5");
 
   /**
    * Add/Remove checked item from list
@@ -28,7 +29,6 @@ export const UtilitiesJapanVocabulary = () => {
     } else {
       updatedList.splice(checked.indexOf(event.target.value), 1);
     }
-    console.log(updatedList);
     setChecked(updatedList);
   };
 
@@ -42,10 +42,12 @@ export const UtilitiesJapanVocabulary = () => {
       }
     });
     setUnits(unitTemp);
+    setLevel(value);
   };
 
   const openUnitPage = () => {
     localStorage.setItem("japan-unit", JSON.stringify(checked));
+    localStorage.setItem("japan-level", level);
     navigate("/utilities/japan/vocabulary/unit");
   };
 
@@ -70,7 +72,7 @@ export const UtilitiesJapanVocabulary = () => {
               item.isShow === 1 && (
                 <div key={index} className="form-check">
                   <input
-                    value={item.level + "-" + item.unit}
+                    value={item.unit}
                     type="checkbox"
                     className="form-check-input"
                     id={"checkbox-unit-" + index}
