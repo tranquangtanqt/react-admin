@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { PageTitle } from "../../../../components/modules/pageTitle";
 
-export const UtilitiesTextSpecial = () => {
+export const UtilitiesJapanSpecial = () => {
   const tableData = [
     {
       jp: `対応しました。`,

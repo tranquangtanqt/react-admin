@@ -52,7 +52,7 @@ import { UtilitiesTextFindDifferentTwoList1 } from "./pages/utilities/text/findD
 import { UtilitiesTextFindTextColumnJPEN } from "./pages/utilities/text/findTextColumnJpEn";
 import { UtilitiesTextRepeat } from "./pages/utilities/text/repeat";
 import { UtilitiesTextReplace } from "./pages/utilities/text/replace";
-import { UtilitiesTextSpecial } from "./pages/utilities/text/special";
+import { UtilitiesJapanSpecial } from "./pages/utilities/japan/special";
 import { UtilitiesTinyMCE } from "./pages/utilities/tinyMCE";
 import { MasterLayout } from "./pages/_layout/masterLayout";
 import { TutorialPostgreSQL } from "./pages/tutorials/postgreSQL";
@@ -111,6 +111,7 @@ import { UtilitiesGeneralGit } from "./pages/utilities/general/git";
 import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFontDompdf";
 import { BatchStartEndProgram } from "./pages/programming/batch/startEndProgram";
 import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary/unit";
+import { UtilitiesEnglishSpecial } from "./pages/utilities/english/special";
 
 export const RoutesRoot = () => {
   return (
@@ -232,7 +233,6 @@ export const RoutesRoot = () => {
           <Route path="/utilities/text/find-text-column-jp-en" element={<UtilitiesTextFindTextColumnJPEN />} />
           <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
           <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
-          <Route path="/utilities/text/special" element={<UtilitiesTextSpecial />} />
           <Route path="/utilities/tinyMCE" element={<UtilitiesTinyMCE />} />
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
@@ -240,6 +240,9 @@ export const RoutesRoot = () => {
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
           <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
           <Route path="/utilities/japan/vocabulary/unit" element={<UtilitiesJapanVocabularyUnit />} />
+          <Route path="/utilities/japan/special" element={<UtilitiesJapanSpecial />} />
+          <Route path="/utilities/english/special" element={<UtilitiesEnglishSpecial />} />
+          
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />

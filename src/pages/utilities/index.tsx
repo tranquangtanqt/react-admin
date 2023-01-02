@@ -48,10 +48,6 @@ export const Utilities = () => {
           path: "/utilities/text/replace",
         },
         {
-          text: "Special",
-          path: "/utilities/text/special",
-        },
-        {
           text: "Tiny MCE",
           path: "/utilities/tinyMCE",
         },
@@ -61,8 +57,12 @@ export const Utilities = () => {
       title: "Japan",
       links: [
         {
-          text: "Từ vựng",
+          text: "Vocabulary",
           path: "/utilities/japan/vocabulary",
+        },
+        {
+          text: "Special",
+          path: "/utilities/japan/special",
         },
       ],
     },
@@ -111,6 +111,15 @@ export const Utilities = () => {
         {
           text: "Create Table From Excel",
           path: "/utilities/sql/create-table-from-excel",
+        },
+      ],
+    },
+    {
+      title: "English",
+      links: [
+        {
+          text: "Special",
+          path: "/utilities/english/special",
         },
       ],
     },

@@ -1,6 +1,18 @@
 import { Link } from "react-router-dom";
 
 export const Home = () => {
+  // const tableData = [
+  //   {
+  //     title: "Me",
+  //     content: {
+  //       text: `office365`,
+  //       links: {
+  //         href: "https://portal.office365.com",
+  //         title: "office365(E3): tantq@mitani.com&#10;Email: tantq@mitani.co.jp",
+  //       },
+  //     },
+  //   },
+  // ];
   return (
     <>
       <div className="row">
@@ -153,6 +165,18 @@ export const Home = () => {
                     Awesome javascript
                   </a>
                 </li>
+                <li>
+                  <a href="https://github.com/anonystick/anonystick" target="_blank" rel="noopener noreferrer">
+                    Anonystick
+                  </a>
+                </li>
+                <li>
+                  <a href="https://completejavascript.com/" target="_blank" rel="noopener noreferrer">
+                    Complete Javascript
+                  </a>
+                </li>
+
+               
               </ol>
             </div>
           </div>
@@ -228,6 +252,27 @@ export const Home = () => {
                     title="tranquangtanqt1990@gmail.com&#10;beautiful@1190"
                   >
                     Render
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Japan</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://quizlet.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="tranquangtan1109&#10;beautiful@1190"
+                  >
+                    quizlet
                   </a>
                 </li>
               </ol>
