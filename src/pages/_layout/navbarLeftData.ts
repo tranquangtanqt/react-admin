@@ -45,18 +45,24 @@ export const NAVBAR_LEFT = [
       },
       {
         id: 2,
+        link: "/programming-javascript",
+        text: "Javascript",
+        active: false,
+      },
+      {
+        id: 3,
         link: "/programming-php",
         text: "PHP",
         active: false,
       },
       {
-        id: 3,
+        id: 4,
         link: "/programming-batch",
         text: "Batch",
         active: false,
       },
       {
-        id: 4,
+        id: 5,
         link: "/programming-excel",
         text: "Excel",
         active: false,

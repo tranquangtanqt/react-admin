@@ -115,6 +115,7 @@ export const Home = () => {
         </div>
       </div>
 
+
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-3">
           <div className="card">
@@ -175,8 +176,6 @@ export const Home = () => {
                     Complete Javascript
                   </a>
                 </li>
-
-               
               </ol>
             </div>
           </div>
@@ -273,6 +272,48 @@ export const Home = () => {
                     title="tranquangtan1109&#10;beautiful@1190"
                   >
                     quizlet
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>TODO</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://github.com/SiVi-Code/sell-source"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   sell-source
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Social Networking Site</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://slack.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title="tranquangtanqt1990@gmail.com&#10;"
+                  >
+                   slack
                   </a>
                 </li>
               </ol>

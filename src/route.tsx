@@ -112,6 +112,8 @@ import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFont
 import { BatchStartEndProgram } from "./pages/programming/batch/startEndProgram";
 import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary/unit";
 import { UtilitiesEnglishSpecial } from "./pages/utilities/english/special";
+import { ProgrammingJavascript } from "./pages/programming/javascript";
+import { ProgrammingJavascriptTipsTips } from "./pages/programming/javascript/tips/tips";
 
 export const RoutesRoot = () => {
   return (
@@ -170,6 +172,10 @@ export const RoutesRoot = () => {
           <Route path="/programming-php/convert/delete-file" element={<PHPDeleteFile />} />
           <Route path="/programming-php/lavavel/install-font-dompdf" element={<PHPLaravelInstallFontDompdf />} />
 
+          <Route path="/programming-javascript" element={<ProgrammingJavascript />} />
+          <Route path="/programming-javascript/tips/tips" element={<ProgrammingJavascriptTipsTips />} />
+          
+          
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
