@@ -206,6 +206,43 @@ export const UtilitiesTextFindDifferentTwoList = () => {
     setDiffLefts(diffLeftTemps);
   };
 
+  /**
+   *
+   */
+  const removeEmptyLine = () => {
+    setDiffLefts([]);
+    setDiffRights([]);
+
+    let leftArr = lefts.split("\n");
+    leftArr = leftArr.map((x) => x.trim());
+    leftArr = leftArr.filter((x) => x !== "");
+
+    let rightArr = rights.split("\n");
+    rightArr = rightArr.map((x) => x.trim());
+    rightArr = rightArr.filter((x) => x !== "");
+
+    setLefts(leftArr.join("\n"));
+    setRights(rightArr.join("\n"));
+  };
+
+  /**
+   * 
+   */
+  const orderByTwoList = () => {
+    setDiffLefts([]);
+    setDiffRights([]);
+    let leftArr = lefts.split("\n");
+    leftArr = leftArr.map((x) => x.trim());
+    leftArr.sort();
+
+    let rightArr = rights.split("\n");
+    rightArr = rightArr.map((x) => x.trim());
+    rightArr.sort();
+
+    setLefts(leftArr.join("\n"));
+    setRights(rightArr.join("\n"));
+  }
+
   return (
     <>
       <PageTitle title="Finding the Differences Between Two List"></PageTitle>
@@ -246,6 +283,12 @@ export const UtilitiesTextFindDifferentTwoList = () => {
           </button>
           <button type="button" className="btn btn-primary btn-sm m-l-20" onClick={() => searchSame(false)}>
             Different
+          </button>
+          <button type="button" className="btn btn-primary btn-sm m-l-20 float-end" onClick={() => orderByTwoList()}>
+            Order By Two List
+          </button>
+          <button type="button" className="btn btn-primary btn-sm m-l-20 float-end" onClick={() => removeEmptyLine()}>
+            Remove Empty Lines
           </button>
         </div>
       </div>
