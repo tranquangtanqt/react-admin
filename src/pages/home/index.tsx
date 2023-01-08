@@ -295,6 +295,33 @@ export const Home = () => {
                    sell-source
                   </a>
                 </li>
+				<li>
+                  <a
+                    href="https://docs.nestjs.com/security/authentication"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   authentication
+                  </a>
+                </li>
+				<li>
+                  <a
+                    href="https://github.com/topics/nestjs-best-practices"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   nestjs-best-practices
+                  </a>
+                </li>
+				<li>
+                  <a
+                    href="https://github.com/lujakob/nestjs-realworld-example-app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   nestjs-realworld-example-app
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
