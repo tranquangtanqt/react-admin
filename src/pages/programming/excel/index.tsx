@@ -13,7 +13,7 @@ export const ProgrammingExcel = () => {
       ],
     },
     {
-      title: "Sort and Filter",
+      title: "Sort và Filter",
       links: [
         {
           text: "Filter 1",
@@ -25,8 +25,12 @@ export const ProgrammingExcel = () => {
       title: "Tips",
       links: [
         {
-          text: "Swap data two cell",
-          path: "/programming-excel/swap-data-two-cell",
+          text: "Hoán đổi dữ liệu 2 ô",
+          path: "/programming-excel/tips/swap-data-two-cell",
+        },
+        {
+          text: "Tô màu dòng xen kẽ",
+          path: "/programming-excel/tips/color-row-of-table",
         },
       ],
     },

@@ -4,7 +4,7 @@ import { PageTitle } from "../../../../components/modules/pageTitle";
 export const ExcelSwapDataTwoCell = () => {
   return (
     <>
-      <PageTitle title="Swap Data Two Cell"></PageTitle>
+      <PageTitle title="Hoán đổi dữ liệu 2 ô"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
         <ol>

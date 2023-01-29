@@ -104,6 +104,12 @@ export const NAVBAR_LEFT = [
         text: "PostgreSQL",
         active: false,
       },
+      {
+        id: 3,
+        link: "/tutorial/japan",
+        text: "Japan",
+        active: false,
+      },
     ],
   },
   {

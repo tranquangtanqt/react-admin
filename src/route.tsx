@@ -101,6 +101,22 @@ import { TutorialJavaLesson3 } from "./pages/tutorials/java/1_10/lesson3";
 import { TutorialJavaLesson4 } from "./pages/tutorials/java/1_10/lesson4";
 import { TutorialJavaLesson5 } from "./pages/tutorials/java/1_10/lesson5";
 import { TutorialJavaLesson6 } from "./pages/tutorials/java/1_10/lesson6";
+import { TutorialJapan } from "./pages/tutorials/japan";
+import { TutorialJapanVocabularyLesson1 } from "./pages/tutorials/japan/1_10/lesson1";
+import { TutorialJapanVocabularyLesson2 } from "./pages/tutorials/japan/1_10/lesson2";
+import { TutorialJapanVocabularyLesson3 } from "./pages/tutorials/japan/1_10/lesson3";
+import { TutorialJapanVocabularyLesson4 } from "./pages/tutorials/japan/1_10/lesson4";
+import { TutorialJapanVocabularyLesson5 } from "./pages/tutorials/japan/1_10/lesson5";
+import { TutorialJapanVocabularyLesson6 } from "./pages/tutorials/japan/1_10/lesson6";
+import { TutorialJapanVocabularyLesson7 } from "./pages/tutorials/japan/1_10/lesson7";
+import { TutorialJapanVocabularyLesson8 } from "./pages/tutorials/japan/1_10/lesson8";
+import { TutorialJapanVocabularyLesson9 } from "./pages/tutorials/japan/1_10/lesson9";
+import { TutorialJapanVocabularyLesson10 } from "./pages/tutorials/japan/1_10/lesson10";
+import { TutorialJapanVocabularyLesson11 } from "./pages/tutorials/japan/11_20/lesson11";
+import { TutorialJapanVocabularyLesson12 } from "./pages/tutorials/japan/11_20/lesson12";
+import { TutorialJapanVocabularyLesson13 } from "./pages/tutorials/japan/11_20/lesson13";
+import { TutorialJapanVocabularyLesson14 } from "./pages/tutorials/japan/11_20/lesson14";
+import { TutorialJapanVocabularyLesson15 } from "./pages/tutorials/japan/11_20/lesson15";
 import { UtilitieAppTodo } from "./pages/utilities/app/todo";
 import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
 import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
@@ -114,6 +130,26 @@ import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary
 import { UtilitiesEnglishSpecial } from "./pages/utilities/english/special";
 import { ProgrammingJavascript } from "./pages/programming/javascript";
 import { ProgrammingJavascriptTipsTips } from "./pages/programming/javascript/tips/tips";
+import { TutorialJapanVocabularyLesson16 } from "./pages/tutorials/japan/11_20/lesson16";
+import { TutorialJapanVocabularyLesson17 } from "./pages/tutorials/japan/11_20/lesson17";
+import { TutorialJapanVocabularyLesson18 } from "./pages/tutorials/japan/11_20/lesson18";
+import { TutorialJapanVocabularyLesson19 } from "./pages/tutorials/japan/11_20/lesson19";
+import { TutorialJapanVocabularyLesson20 } from "./pages/tutorials/japan/11_20/lesson20";
+import { TutorialJapanVocabularyLesson21 } from "./pages/tutorials/japan/21-25/lesson21";
+import { TutorialJapanVocabularyLesson22 } from "./pages/tutorials/japan/21-25/lesson22";
+import { TutorialJapanVocabularyLesson23 } from "./pages/tutorials/japan/21-25/lesson23";
+import { TutorialJapanVocabularyLesson24 } from "./pages/tutorials/japan/21-25/lesson24";
+import { TutorialJapanVocabularyLesson25 } from "./pages/tutorials/japan/21-25/lesson25";
+import { TutorialJapanVocabularyLessonCommon } from "./pages/tutorials/japan/general/lesson-common";
+import { TutorialJapanVocabularyLessonSpecialize } from "./pages/tutorials/japan/general/lesson-specialize";
+import { TutorialJapanVocabularyLessonJob } from "./pages/tutorials/japan/general/lesson-job";
+import { TutorialJapanVocabularyLessonFood } from "./pages/tutorials/japan/general/lesson-food";
+import { TutorialJapanVocabularyLessonFood1 } from "./pages/tutorials/japan/general/lesson-food1";
+import { TutorialJapanVocabularyLessonSpice } from "./pages/tutorials/japan/general/lesson-spice";
+import { TutorialJapanVocabularyLessonBody } from "./pages/tutorials/japan/general/lesson-body";
+import { ExcelColorRowOfTable } from "./pages/programming/excel/colorRowOfTable";
+
+
 
 export const RoutesRoot = () => {
   return (
@@ -155,7 +191,8 @@ export const RoutesRoot = () => {
           <Route path="/programming-excel" element={<ProgrammingExcel />} />
           <Route path="/programming-excel/characters-in-excel" element={<ExcelCharactersInExcel />} />
           <Route path="/programming-excel/filter1" element={<ExcelFilter1 />} />
-          <Route path="/programming-excel/swap-data-two-cell" element={<ExcelSwapDataTwoCell />} />
+          <Route path="/programming-excel/tips/swap-data-two-cell" element={<ExcelSwapDataTwoCell />} />
+          <Route path="/programming-excel/tips/color-row-of-table" element={<ExcelColorRowOfTable />} />
 
           <Route path="/programming-java" element={<ProgrammingJava />} />
           <Route path="/programming-java/delete-data-1" element={<JavaDeleteData1 />} />
@@ -228,6 +265,40 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/postgreSQL/chapter26" element={<TutorialPostgreSQLChapter26 />} />
           <Route path="/tutorial/postgreSQL/chapter27" element={<TutorialPostgreSQLChapter27 />} />
           <Route path="/tutorial/postgreSQL/chapter28" element={<TutorialPostgreSQLChapter28 />} />
+
+          <Route path="/tutorial/japan" element={<TutorialJapan />} />
+          <Route path="/tutorial/japan/vocabulary/lesson1" element={<TutorialJapanVocabularyLesson1 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson2" element={<TutorialJapanVocabularyLesson2 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson3" element={<TutorialJapanVocabularyLesson3 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson4" element={<TutorialJapanVocabularyLesson4 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson5" element={<TutorialJapanVocabularyLesson5 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson6" element={<TutorialJapanVocabularyLesson6 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson7" element={<TutorialJapanVocabularyLesson7 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson8" element={<TutorialJapanVocabularyLesson8 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson9" element={<TutorialJapanVocabularyLesson9 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson10" element={<TutorialJapanVocabularyLesson10 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson11" element={<TutorialJapanVocabularyLesson11 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson12" element={<TutorialJapanVocabularyLesson12 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson13" element={<TutorialJapanVocabularyLesson13 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson14" element={<TutorialJapanVocabularyLesson14 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson15" element={<TutorialJapanVocabularyLesson15 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson16" element={<TutorialJapanVocabularyLesson16 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson17" element={<TutorialJapanVocabularyLesson17 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson18" element={<TutorialJapanVocabularyLesson18 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson19" element={<TutorialJapanVocabularyLesson19 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson20" element={<TutorialJapanVocabularyLesson20 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson21" element={<TutorialJapanVocabularyLesson21 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson22" element={<TutorialJapanVocabularyLesson22 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson23" element={<TutorialJapanVocabularyLesson23 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson24" element={<TutorialJapanVocabularyLesson24 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson25" element={<TutorialJapanVocabularyLesson25 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-common" element={<TutorialJapanVocabularyLessonCommon />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-specialize" element={<TutorialJapanVocabularyLessonSpecialize />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-job" element={<TutorialJapanVocabularyLessonJob />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-food" element={<TutorialJapanVocabularyLessonFood />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-food1" element={<TutorialJapanVocabularyLessonFood1 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson-spice" element={<TutorialJapanVocabularyLessonSpice/>} />
+          <Route path="/tutorial/japan/vocabulary/lesson-body" element={<TutorialJapanVocabularyLessonBody/>} />
 
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
