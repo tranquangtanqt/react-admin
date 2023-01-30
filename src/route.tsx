@@ -117,19 +117,6 @@ import { TutorialJapanVocabularyLesson12 } from "./pages/tutorials/japan/11_20/l
 import { TutorialJapanVocabularyLesson13 } from "./pages/tutorials/japan/11_20/lesson13";
 import { TutorialJapanVocabularyLesson14 } from "./pages/tutorials/japan/11_20/lesson14";
 import { TutorialJapanVocabularyLesson15 } from "./pages/tutorials/japan/11_20/lesson15";
-import { UtilitieAppTodo } from "./pages/utilities/app/todo";
-import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
-import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
-import { UtilitiesMakeJsonVocabulary } from "./pages/utilities/excel/makeJsonVocabulary";
-import { UtilitiesJapanVocabulary } from "./pages/utilities/japan/vocabulary";
-import { UtilitiesFileMakeJsonFromExcel } from "./pages/utilities/file/makeJsonFromExcel";
-import { UtilitiesGeneralGit } from "./pages/utilities/general/git";
-import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFontDompdf";
-import { BatchStartEndProgram } from "./pages/programming/batch/startEndProgram";
-import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary/unit";
-import { UtilitiesEnglishSpecial } from "./pages/utilities/english/special";
-import { ProgrammingJavascript } from "./pages/programming/javascript";
-import { ProgrammingJavascriptTipsTips } from "./pages/programming/javascript/tips/tips";
 import { TutorialJapanVocabularyLesson16 } from "./pages/tutorials/japan/11_20/lesson16";
 import { TutorialJapanVocabularyLesson17 } from "./pages/tutorials/japan/11_20/lesson17";
 import { TutorialJapanVocabularyLesson18 } from "./pages/tutorials/japan/11_20/lesson18";
@@ -147,7 +134,26 @@ import { TutorialJapanVocabularyLessonFood } from "./pages/tutorials/japan/gener
 import { TutorialJapanVocabularyLessonFood1 } from "./pages/tutorials/japan/general/lesson-food1";
 import { TutorialJapanVocabularyLessonSpice } from "./pages/tutorials/japan/general/lesson-spice";
 import { TutorialJapanVocabularyLessonBody } from "./pages/tutorials/japan/general/lesson-body";
+import { TutorialJapanVocabularyKanjiN501 } from "./pages/tutorials/japan/kanji/N5_01";
+
+import { UtilitieAppTodo } from "./pages/utilities/app/todo";
+import { UtilitieAppTodoDetail } from "./pages/utilities/app/todo/todoDetail";
+import { UtilitiesGeneralCollapseGit } from "./pages/utilities/general/collapseGit";
+import { UtilitiesMakeJsonVocabulary } from "./pages/utilities/excel/makeJsonVocabulary";
+import { UtilitiesJapanVocabulary } from "./pages/utilities/japan/vocabulary";
+import { UtilitiesFileMakeJsonFromExcel } from "./pages/utilities/file/makeJsonFromExcel";
+import { UtilitiesGeneralGit } from "./pages/utilities/general/git";
+import { PHPLaravelInstallFontDompdf } from "./pages/programming/PHP/installFontDompdf";
+import { BatchStartEndProgram } from "./pages/programming/batch/startEndProgram";
+import { UtilitiesJapanVocabularyUnit } from "./pages/utilities/japan/vocabulary/unit";
+import { UtilitiesEnglishSpecial } from "./pages/utilities/english/special";
+import { ProgrammingJavascript } from "./pages/programming/javascript";
+import { ProgrammingJavascriptTipsTips } from "./pages/programming/javascript/tips/tips";
 import { ExcelColorRowOfTable } from "./pages/programming/excel/colorRowOfTable";
+import { ExcelColorColumnHoliday } from "./pages/programming/excel/colorColumnHoliday";
+import { ExcelTimekeepingCalendar } from "./pages/programming/excel/timekeepingCalendar";
+import { ExcelConvertDayOfBirthToAge } from "./pages/programming/excel/convertDayOfBirthToAge";
+
 
 
 
@@ -193,6 +199,9 @@ export const RoutesRoot = () => {
           <Route path="/programming-excel/filter1" element={<ExcelFilter1 />} />
           <Route path="/programming-excel/tips/swap-data-two-cell" element={<ExcelSwapDataTwoCell />} />
           <Route path="/programming-excel/tips/color-row-of-table" element={<ExcelColorRowOfTable />} />
+          <Route path="/programming-excel/tips/timekeeping-calendar" element={<ExcelTimekeepingCalendar />} />
+          <Route path="/programming-excel/tips/color-column-holiday" element={<ExcelColorColumnHoliday />} />
+          <Route path="/programming-excel/tips/convert-day-of-birth-to-age" element={<ExcelConvertDayOfBirthToAge />} />
 
           <Route path="/programming-java" element={<ProgrammingJava />} />
           <Route path="/programming-java/delete-data-1" element={<JavaDeleteData1 />} />
@@ -211,7 +220,6 @@ export const RoutesRoot = () => {
 
           <Route path="/programming-javascript" element={<ProgrammingJavascript />} />
           <Route path="/programming-javascript/tips/tips" element={<ProgrammingJavascriptTipsTips />} />
-          
           
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
@@ -299,6 +307,7 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/japan/vocabulary/lesson-food1" element={<TutorialJapanVocabularyLessonFood1 />} />
           <Route path="/tutorial/japan/vocabulary/lesson-spice" element={<TutorialJapanVocabularyLessonSpice/>} />
           <Route path="/tutorial/japan/vocabulary/lesson-body" element={<TutorialJapanVocabularyLessonBody/>} />
+          <Route path="/tutorial/japan/vocabulary/kanji/N5-01" element={<TutorialJapanVocabularyKanjiN501/>} />
 
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />

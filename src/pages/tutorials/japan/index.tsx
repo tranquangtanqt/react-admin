@@ -146,6 +146,15 @@ export const TutorialJapan = () => {
         },
       ],
     },
+    {
+      title: "Từ vựng Kanji",
+      links: [
+        {
+          text: "N5 - 01",
+          path: "/tutorial/japan/vocabulary/kanji/N5-01",
+        },
+      ],
+    },
   ];
 
   return (
