@@ -46,6 +46,15 @@ export const ProgrammingExcel = () => {
         },
       ],
     },
+    {
+      title: "VBA",
+      links: [
+        {
+          text: "001. Tạo hyperlink đến toàn bộ các sheet của workbook",
+          path: "/programming-excel/vba/001",
+        },
+      ],
+    },
   ];
   return (
     <>

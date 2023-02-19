@@ -34,13 +34,9 @@ export const TutorialJapanVocabularyKanjiN501 = () => {
               "2023-01-30 23 36 56.jpg",
               "2023-01-30 23 38 19.jpg",
               
-
               "2023-01-30 23 36 13.jpg",
               "2023-01-30 23 37 58.jpg",
               "2023-01-30 23 37 36.jpg",
-              
-
-
             ];
   return (
     <>

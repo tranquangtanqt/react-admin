@@ -153,6 +153,7 @@ import { ExcelColorRowOfTable } from "./pages/programming/excel/colorRowOfTable"
 import { ExcelColorColumnHoliday } from "./pages/programming/excel/colorColumnHoliday";
 import { ExcelTimekeepingCalendar } from "./pages/programming/excel/timekeepingCalendar";
 import { ExcelConvertDayOfBirthToAge } from "./pages/programming/excel/convertDayOfBirthToAge";
+import { PogrammingExcelVBA001 } from "./pages/programming/excel/VBA/1-10/lession1";
 
 
 
@@ -202,6 +203,7 @@ export const RoutesRoot = () => {
           <Route path="/programming-excel/tips/timekeeping-calendar" element={<ExcelTimekeepingCalendar />} />
           <Route path="/programming-excel/tips/color-column-holiday" element={<ExcelColorColumnHoliday />} />
           <Route path="/programming-excel/tips/convert-day-of-birth-to-age" element={<ExcelConvertDayOfBirthToAge />} />
+          <Route path="/programming-excel/vba/001" element={<PogrammingExcelVBA001 />} />
 
           <Route path="/programming-java" element={<ProgrammingJava />} />
           <Route path="/programming-java/delete-data-1" element={<JavaDeleteData1 />} />
