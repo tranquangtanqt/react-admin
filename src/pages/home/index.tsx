@@ -278,7 +278,7 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <hr />
+
         <div className="col-12 col-sm-12 col-md-3">
           <div className="card">
             <div className="card-header font-size-16">
@@ -343,10 +343,83 @@ export const Home = () => {
                    slack
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://web.skype.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   skype
+                  </a>
+                </li>
               </ol>
             </div>
           </div>
         </div>
+
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Note</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://www.notion.so/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   notion.so
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Cheatsheet</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://thachnguyenp.github.io/git-command/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   Git
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Reference</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://codecanyon.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                   codecanyon.net
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
       </div>
     </>
   );

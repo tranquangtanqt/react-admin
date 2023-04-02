@@ -154,8 +154,8 @@ import { ExcelColorColumnHoliday } from "./pages/programming/excel/colorColumnHo
 import { ExcelTimekeepingCalendar } from "./pages/programming/excel/timekeepingCalendar";
 import { ExcelConvertDayOfBirthToAge } from "./pages/programming/excel/convertDayOfBirthToAge";
 import { PogrammingExcelVBA001 } from "./pages/programming/excel/VBA/1-10/lession1";
-
-
+import { UtilitieAppProjectInfo } from "./pages/utilities/app/projectInfo";
+import { UtilitieAppProjectDetail } from "./pages/utilities/app/projectInfo/projectDetail";
 
 
 export const RoutesRoot = () => {
@@ -333,7 +333,9 @@ export const RoutesRoot = () => {
           
 
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
+          <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
+          <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetail />} />
           <Route path="/utilities/general/collapse-git" element={<UtilitiesGeneralCollapseGit />} />
           <Route path="/utilities/general/git" element={<UtilitiesGeneralGit />} />
         </Routes>

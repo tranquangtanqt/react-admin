@@ -73,6 +73,10 @@ export const Utilities = () => {
           text: "Todo",
           path: "/utilities/app/todo",
         },
+        {
+          text: "Project Info",
+          path: "/utilities/app/project-info",
+        },
       ],
     },
     {
