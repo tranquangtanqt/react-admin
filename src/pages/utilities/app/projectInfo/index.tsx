@@ -7,6 +7,16 @@ interface IProject {
   id: number;
   title: string;
   order: number;
+  details: IProjectDetail[]
+}
+
+interface IProjectDetail {
+  id: number;
+  project_id: number;
+  title: String;
+  content: String;
+  collapse: boolean;
+  order: number;
 }
 
 export const UtilitieAppProjectInfo = () => {
@@ -16,7 +26,8 @@ export const UtilitieAppProjectInfo = () => {
 
   const refId = useRef<HTMLInputElement>(null);
   const refTitle = useRef<HTMLInputElement>(null);
-  const [projects, setProjects] = useState(() => {
+
+  const [projects, setProjects] = useState<IProject[]>(() => {
     return info.sort(function (a, b) {
       return b.order - a.order;
     });
@@ -62,7 +73,6 @@ export const UtilitieAppProjectInfo = () => {
   const showModalUpdateTodo = (id: number) => {
     setMode(MODE_EDIT);
     let todo = projects?.filter((x) => x.id === id).shift();
-    console.log(todo);
     if (todo) {
       if (refId.current != null) {
         refId.current.value = todo.id.toString();

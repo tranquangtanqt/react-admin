@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { useParams } from "react-router-dom";
-import todoApi from "../../../../../api/todoApi";
-import todoDetailApi from "../../../../../api/todoDetailApi";
-import todoTaskApi from "../../../../../api/todoTaskApi";
 import { PageTitle } from "../../../../../components/modules/pageTitle";
 import { Editor } from "@tinymce/tinymce-react";
 import detailJson from "./project-details.json";
@@ -31,7 +28,16 @@ interface ITodoTask {
 }
 
 export const UtilitieAppProjectDetail = () => {
+  const MODE_NOMAL = 0;
+  const MODE_CREATE = 1;
+  const MODE_EDIT = 2;
+
   let params = useParams();
+
+  const refDetailId = useRef<HTMLInputElement>(null);
+  const refDetailTitle = useRef<HTMLInputElement>(null);
+  const refDetailContent = useRef<HTMLInputElement>(null);
+
   const [todo, setTodo] = useState<IProject>();
   // const [details, setDetails] = useState<IProjectDetail[]>([]);
   const [details, setDetails] = useState(() => {
@@ -40,6 +46,8 @@ export const UtilitieAppProjectDetail = () => {
       return b.order - a.order;
     });
   });
+
+  const [mode, setMode] = useState(MODE_NOMAL); // 1: create, 2: edit
 
   const [detailContent, setDetailContent] = useState("");
   const [detailTitle, setDetailTitle] = useState("");
@@ -51,7 +59,6 @@ export const UtilitieAppProjectDetail = () => {
   const [taskId, setTaskId] = useState("");
   const [taskContent, setTaskContent] = useState("");
   const [taskStatus, setTaskStatus] = useState(0);
-
 
   const ascDetail = (data: IProjectDetail[]) => {
     return data.sort(function (a, b) {
@@ -95,13 +102,6 @@ export const UtilitieAppProjectDetail = () => {
     // }
   };
 
-  useEffect(() => {
-    console.log(params);
-    // <em>fetchTodoList(params.todo_id)</em>;
-    // fetchTodoList(params.todo_id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [params]);
-
   /**
    * // remove tinyMCE
    */
@@ -118,14 +118,45 @@ export const UtilitieAppProjectDetail = () => {
    * @param id
    */
   const changeCollapse = (id: number) => {
-    // let detailTemp = [...(details || [])];
-    // detailTemp?.forEach((item) => {
-    //   if (item._id === id) {
-    //     item.collapse = !item.collapse;
-    //   }
-    // });
-    // setDetails(detailTemp);
+    let detailTemp = [...(details || [])];
+    detailTemp?.forEach((item) => {
+      if (item.id === id) {
+        item.collapse = !item.collapse;
+      }
+    });
+    setDetails(detailTemp);
   };
+
+  /**
+   * showModalCreateDetail
+   */
+  const showModalCreateDetail = () => {
+    setDetailId("");
+    setDetailContent("");
+    setDetailTitle("");
+    ($("#modal-detail-add-update") as any).modal("show");
+  };
+
+  /**
+   * createDetail
+   */
+  const createDetail = async () => {
+    // let detail = {
+    //   d_title: detailTitle,
+    //   d_content: detailContent,
+    // };
+
+    // const response = await todoDetailApi.createDetail(todo?._id, detail);
+
+    // if (response?.status) {
+    //   if (response.data) {
+    //     fetchTodoList(todo?._id);
+    //     ($("#modal-detail-add-update") as any).modal("hide");
+    //     showMesage("Thêm dữ liệu thành công");
+    //   }
+    // }
+  };
+
 
   const handleOnchangeContent = (content: any, editor: any) => {
     setDetailContent(content);
@@ -162,35 +193,7 @@ export const UtilitieAppProjectDetail = () => {
     // }
   };
 
-  /**
-   * showModalCreateDetail
-   */
-  const showModalCreateDetail = () => {
-    setDetailId("");
-    setDetailContent("");
-    setDetailTitle("");
-    ($("#modal-detail-add") as any).modal("show");
-  };
-
-  /**
-   * createDetail
-   */
-  const createDetail = async () => {
-    // let detail = {
-    //   d_title: detailTitle,
-    //   d_content: detailContent,
-    // };
-
-    // const response = await todoDetailApi.createDetail(todo?._id, detail);
-
-    // if (response?.status) {
-    //   if (response.data) {
-    //     fetchTodoList(todo?._id);
-    //     ($("#modal-detail-add") as any).modal("hide");
-    //     showMesage("Thêm dữ liệu thành công");
-    //   }
-    // }
-  };
+  
 
   /**
    * updateDetailOrderNumber
@@ -644,11 +647,11 @@ export const UtilitieAppProjectDetail = () => {
         </div>
       </div> */}
 
-      <div className="modal fade" id="modal-detail-add" aria-labelledby="modal-detail-add1" aria-hidden="true">
+      <div className="modal fade" id="modal-detail-add-update" aria-labelledby="modal-detail-add-update1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="modal-detail-add1">
+              <h5 className="modal-title" id="modal-detail-add-update1">
                 Thêm chi tiết
               </h5>
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
