@@ -31,9 +31,8 @@ jobs:
       run: |
         git config --global user.name tranquangtanqt
         git config --global user.email tranquangtanqt1990@gmail.com
-        git remote set-url origin https://${github_token}@github.com/${repository}
+        git remote set-url origin https://tranquangtanqt:${github_token}@github.com/tranquangtanqt/react-admin.git
         npm run deploy
       env:
         CI: false
         github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-        repository: ${{ github.repository }}
