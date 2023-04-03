@@ -33,3 +33,5 @@ jobs:
         git config --global user.email tranquangtanqt1990@gmail.com
         git remote set-url origin https://github.com/tranquangtanqt/react-admin
         npm run deploy
+      env:
+        CI: false
