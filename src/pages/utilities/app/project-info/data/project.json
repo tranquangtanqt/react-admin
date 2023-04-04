@@ -61,10 +61,18 @@
         {
           "id": 1,
           "project_id": 10,
-          "title": "String title",
-          "content": "String content",
+          "title": "String title 1",
+          "content": "String content 1",
           "collapse": false,
           "order": 1
+        },
+        {
+          "id": 2,
+          "project_id": 10,
+          "title": "String title 2",
+          "content": "String content 2",
+          "collapse": false,
+          "order": 2
         }
       ]
     }

@@ -75,30 +75,30 @@ export const UtilitieAppProjectInfo = () => {
    */
   const createOrUpdateTodo = async () => {
     if (mode === MODE_CREATE) {
-      let newTodo = {} as IProject;
-      newTodo.id = Math.max(...projects.map((x) => x.id)) + 1;
-      newTodo.order = Math.max(...projects.map((x) => x.order)) + 1;
+      let newProject = {} as IProject;
+      newProject.id = Math.max(...projects.map((x) => x.id)) + 1;
+      newProject.order = Math.max(...projects.map((x) => x.order)) + 1;
       if (refTitle.current != null) {
-        newTodo.title = refTitle.current.value;
+        newProject.title = refTitle.current.value;
       }
 
       let temp = [...projects];
       temp = asc(temp);
-      temp.push(newTodo);
+      temp.push(newProject);
       setProjects(desc(temp));
       showModalNotification("Thêm dữ liệu thành công");
     } else if (mode === MODE_EDIT) {
       if (refId.current !== null) {
         let id = Number(refId.current.value);
 
-        let todo = projects.filter(function (c) {
+        let project = projects.filter(function (c) {
           return c.id === Number(id);
         })[0];
 
         let updatedObj: IProject;
         if (refTitle.current !== null) {
-          updatedObj = Object.assign({}, todo, { title: refTitle.current.value });
-          let index = projects.indexOf(todo);
+          updatedObj = Object.assign({}, project, { title: refTitle.current.value });
+          let index = projects.indexOf(project);
           let arr = [...projects.slice(0, index), updatedObj, ...projects.slice(index + 1)];
           setProjects(arr);
           showModalNotification("Cập nhật dữ liệu thành công");
