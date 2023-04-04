@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PageTitle } from "../../../../components/modules/pageTitle";
+import { PageTitle } from "../../../../components/modules/page-title";
 import unit from "../../../../resources/json/japan/JapanUnit.json";
 
 export const UtilitiesJapanVocabulary = () => {

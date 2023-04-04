@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../../../components/modules/pageTitle";
+import { PageTitle } from "../../../../../components/modules/page-title";
 
 export const TutorialJapanVocabularyKanjiN501 = () => {
   let data = ["2023-01-30 23 23 29.jpg",

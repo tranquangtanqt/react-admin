@@ -1,5 +1,5 @@
-import { CardList } from "../../../components/modules/cardList";
-import { PageTitle } from "../../../components/modules/pageTitle";
+import { CardList } from "../../../components/modules/card-list";
+import { PageTitle } from "../../../components/modules/page-title";
 
 export const TutorialJapan = () => {
   const cardData = [

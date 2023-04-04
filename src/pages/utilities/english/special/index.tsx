@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { PageTitle } from "../../../../components/modules/pageTitle";
+import { PageTitle } from "../../../../components/modules/page-title";
 
 export const UtilitiesEnglishSpecial = () => {
   const tableData = [

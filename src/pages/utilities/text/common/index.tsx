@@ -1,5 +1,5 @@
-import StringUtils from "../../../../utils/StringUtils";
-import { PageTitle } from "../../../../components/modules/pageTitle";
+import StringUtils from "../../../../utils/string-utils";
+import { PageTitle } from "../../../../components/modules/page-title";
 import { useState } from "react";
 
 export const UtilitiesTextCommon = () => {

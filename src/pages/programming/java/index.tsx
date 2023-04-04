@@ -1,5 +1,5 @@
-import { PageTitle } from "../../../components/modules/pageTitle";
-import { CardList } from "../../../components/modules/cardList";
+import { PageTitle } from "../../../components/modules/page-title";
+import { CardList } from "../../../components/modules/card-list";
 
 export const ProgrammingJava = () => {
   const cardData = [

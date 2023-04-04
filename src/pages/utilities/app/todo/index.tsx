@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import todoApi from "../../../../api/todoApi";
-import { PageTitle } from "../../../../components/modules/pageTitle";
+import todoApi from "../../../../api/todo-api";
+import { PageTitle } from "../../../../components/modules/page-title";
 
 export const UtilitieAppTodo = () => {
   const [todos, setTodos] = useState([]);

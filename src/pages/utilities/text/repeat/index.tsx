@@ -1,6 +1,6 @@
 import { useState } from "react";
-import StringUtils from "../../../../utils/StringUtils";
-import { PageTitle } from "../../../../components/modules/pageTitle";
+import StringUtils from "../../../../utils/string-utils";
+import { PageTitle } from "../../../../components/modules/page-title";
 
 export const UtilitiesTextRepeat = () => {
   const [input, setInput] = useState("###repeat###");
