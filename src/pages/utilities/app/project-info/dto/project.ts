@@ -1,8 +1,10 @@
-import IProjectDetail from "./project-detail";
+import { IProjectDetail } from "./project-detail";
+import { IProjectTask } from "./project-task";
 
-export default interface IProject {
-    id: number;
-    title: string;
-    order: number;
-    details: IProjectDetail[]
-  }
+export interface IProject {
+  id: number;
+  title: string;
+  order: number;
+  details: IProjectDetail[];
+  tasks: IProjectTask[];
+}

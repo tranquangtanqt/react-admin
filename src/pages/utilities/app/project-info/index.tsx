@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { PageTitle } from "../../../../components/modules/page-title";
-import IProject from "./dto/project";
+import { IProject } from "./dto/project";
 import info from "./data/project.json";
 
 export const UtilitieAppProjectInfo = () => {
@@ -13,24 +13,18 @@ export const UtilitieAppProjectInfo = () => {
   const refTitle = useRef<HTMLInputElement>(null);
 
   const [projects, setProjects] = useState<IProject[]>(() => {
-    return info.sort(function (a, b) {
-      return b.order - a.order;
-    });
+    return info.sort((a, b) => b.order - a.order);
   });
 
   const [notificationMessage, setNotificationMessage] = useState("");
   const [mode, setMode] = useState(MODE_NOMAL); // 1: create, 2: edit
 
   const asc = (data: IProject[]) => {
-    return data.sort(function (a, b) {
-      return a.order - b.order;
-    });
+    return data.sort((a, b) => a.order - b.order);
   };
 
   const desc = (data: IProject[]) => {
-    return data.sort(function (a, b) {
-      return b.order - a.order;
-    });
+    return data.sort((a, b) => b.order - a.order);
   };
 
   const exportData = () => {
@@ -110,35 +104,33 @@ export const UtilitieAppProjectInfo = () => {
   };
 
   /**
-   * 
+   *
    */
   const updateOrderNumber = async (id: number, isUp: boolean) => {
-    let todoCurrent = projects.filter(function (c) {
-      return c.id === Number(id);
-    })[0];
+    let projectCurrent = projects.filter((c) => c.id === Number(id))[0];
 
-    let index = projects.indexOf(todoCurrent);
+    let index = projects.indexOf(projectCurrent);
 
-    if(isUp) {
+    if (isUp) {
       let todoUp = projects[index - 1];
 
       //swap order number
       let orderTemp = todoUp.order;
-      todoUp.order = todoCurrent.order;
-      todoCurrent.order = orderTemp;
+      todoUp.order = projectCurrent.order;
+      projectCurrent.order = orderTemp;
 
-      let arr = [...projects.slice(0, index - 1), todoUp, todoCurrent, ...projects.slice(index + 1)]
-      setProjects(desc(arr))
+      let arr = [...projects.slice(0, index - 1), todoUp, projectCurrent, ...projects.slice(index + 1)];
+      setProjects(desc(arr));
     } else {
       let todoDown = projects[index + 1];
 
       //swap order number
       let orderTemp = todoDown.order;
-      todoDown.order = todoCurrent.order;
-      todoCurrent.order = orderTemp;
+      todoDown.order = projectCurrent.order;
+      projectCurrent.order = orderTemp;
 
-      let arr = [...projects.slice(0, index), todoCurrent, todoDown, ...projects.slice(index + 2)]
-      setProjects(desc(arr))
+      let arr = [...projects.slice(0, index), projectCurrent, todoDown, ...projects.slice(index + 2)];
+      setProjects(desc(arr));
     }
     showModalNotification("Cập nhật dữ liệu thành công");
   };

@@ -1,7 +1,7 @@
-export default interface IProjectDetail {
+export interface IProjectDetail {
     id: number;
     project_id: number;
-    title: String;
+    title: string;
     content: String;
     collapse: boolean;
     order: number;

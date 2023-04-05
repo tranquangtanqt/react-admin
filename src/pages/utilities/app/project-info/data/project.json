@@ -1,79 +1,94 @@
 [
-    {
-      "id": 1,
-      "title": "Me",
-      "order": 1,
-      "details": []
-    },
-    {
-      "id": 2,
-      "title": "202208 - MCF7 - Fukubi",
-      "order": 2,
-      "details": []
-    },
-    {
-      "id": 3,
-      "order": 3,
-      "title": "202209 - MCF7 - ABLIC",
-      "details": []
-    },
-    {
-      "id": 4,
-      "order": 4,
-      "title": "202210 - MCF7 - OHKI",
-      "details": []
-    },
-    {
-      "id": 5,
-      "order": 5,
-      "title": "202210 - ENE",
-      "details": []
-    },
-    {
-      "id": 6,
-      "order": 6,
-      "title": "202211 - MCF7 - Ohki Shindo - Master",
-      "details": []
-    },
-    {
-      "id": 7,
-      "order": 7,
-      "title": "202212 - MCF7 - Ohki Shindo - Report",
-      "details": []
-    },
-    {
-      "id": 8,
-      "order": 8,
-      "title": "202301 - VBS",
-      "details": []
-    },
-    {
-      "id": 9,
-      "order": 9,
-      "title": "202302 - MCF7 Ohki Shindo - Custom",
-      "details": []
-    },
-    {
-      "id": 10,
-      "order": 10,
-      "title": "202303 - MCF7 - Tsukibishi",
-      "details": [
-        {
-          "id": 1,
-          "project_id": 10,
-          "title": "String title 1",
-          "content": "String content 1",
-          "collapse": false,
-          "order": 1
-        },
-        {
-          "id": 2,
-          "project_id": 10,
-          "title": "String title 2",
-          "content": "String content 2",
-          "collapse": false,
-          "order": 2
-        }
-      ]
-    }
-  ]
+  {
+    "id": 1,
+    "title": "Me",
+    "order": 1,
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 2,
+    "title": "202208 - MCF7 - Fukubi",
+    "order": 2,
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 3,
+    "order": 3,
+    "title": "202209 - MCF7 - ABLIC",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 4,
+    "order": 4,
+    "title": "202210 - MCF7 - OHKI",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 5,
+    "order": 5,
+    "title": "202210 - ENE",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 6,
+    "order": 6,
+    "title": "202211 - MCF7 - Ohki Shindo - Master",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 7,
+    "order": 7,
+    "title": "202212 - MCF7 - Ohki Shindo - Report",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 8,
+    "order": 8,
+    "title": "202301 - VBS",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 9,
+    "order": 9,
+    "title": "202302 - MCF7 Ohki Shindo - Custom",
+    "details": [],
+    "tasks": []
+  },
+  {
+    "id": 10,
+    "order": 10,
+    "title": "202303 - MCF7 - Tsukibishi",
+    "details": [
+      {
+        "id": 1,
+        "project_id": 10,
+        "title": "String title 1",
+        "content": "String content 1",
+        "collapse": false,
+        "order": 1
+      },
+      {
+        "id": 2,
+        "project_id": 10,
+        "title": "String title 2",
+        "content": "String content 2",
+        "collapse": false,
+        "order": 2
+      }
+    ],
+    "tasks": [
+      { "id": 1, "content": "task 1", "status": 1, "order": 1 },
+      { "id": 2, "content": "task 2", "status": 1, "order": 2 },
+      { "id": 3, "content": "task 3", "status": 0, "order": 3 },
+      { "id": 4, "content": "task 4", "status": 0, "order": 4 }
+    ]
+  }
+]
