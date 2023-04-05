@@ -42,8 +42,6 @@ export const UtilitieAppProjectDetail = () => {
   const [mode, setMode] = useState(MODE_NOMAL); // 1: create, 2: edit
 
   const [detailContent, setDetailContent] = useState("");
-  const [detailTitle, setDetailTitle] = useState("");
-  const [detailId, setDetailId] = useState("");
   const [notificationMessage, setNotificationMessage] = useState("");
 
   const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>([]);
@@ -90,15 +88,19 @@ export const UtilitieAppProjectDetail = () => {
   };
 
   const exportData = () => {
+    let data: IProject = projects.filter((x) => x.id === Number(params.project_id))[0];
+    ascDetail(data.details);
+    data.details.forEach((x) => x.collapse = false);
+    updateProjects(data.details);
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(projects))}`;
     const link = document.createElement("a");
     link.href = jsonString;
-    link.download = "todo.json";
+    link.download = "data.json";
     link.click();
   };
 
   /**
-   * showModalCreateDetail
+   * 
    */
   const showModalCreateDetail = () => {
     setMode(MODE_CREATE);
@@ -110,7 +112,7 @@ export const UtilitieAppProjectDetail = () => {
   };
 
   /**
-   * createDetail
+   * 
    */
   const createOrUpdateDetail = async () => {
     if (mode === MODE_CREATE) {
@@ -121,6 +123,7 @@ export const UtilitieAppProjectDetail = () => {
       if (refDetailTitle.current != null) {
         newDetail.title = refDetailTitle.current.value;
       }
+      newDetail.content = detailContent;
       newDetail.order = Math.max(...details.map((x) => x.order)) + 1;
 
       let updDetails: IProjectDetail[] = [...details];
@@ -134,9 +137,14 @@ export const UtilitieAppProjectDetail = () => {
     }
   };
 
+  /**
+   * 
+   * @param detailsNew 
+   */
   const updateProjects = (detailsNew: IProjectDetail[]) => {
     let updatedProject: IProject;
-    updatedProject = Object.assign({}, project, { details: detailsNew });
+    let newObject: IProjectDetail[] = [...detailsNew];
+    updatedProject = Object.assign({}, project, { details: ascDetail(newObject) });
     let index = projects.findIndex(x => x.id === project.id)
     let arr = [...projects.slice(0, index), updatedProject, ...projects.slice(index + 1)];
     setProjects(arr);
@@ -197,7 +205,7 @@ export const UtilitieAppProjectDetail = () => {
    * @param id
    */
   const showModalDeleteDetail = (id: number) => {
-    setDetailId(id.toString() || "");
+    // setDetailId(id.toString() || "");
     ($("#modal-detail-delete") as any).modal("show");
   };
 
@@ -444,7 +452,7 @@ export const UtilitieAppProjectDetail = () => {
                 </div>
 
                 <div id="collapseOne" className={detail.collapse ? "collapse show" : "collapse"}>
-                  <div className="card-body">{/* <div dangerouslySetInnerHTML={{ __html: detail.content.toString() || "" }} /> */}</div>
+                  <div className="card-body"><div dangerouslySetInnerHTML={{ __html: detail.content.toString() || "" }} /></div>
                 </div>
               </div>
             ))}
