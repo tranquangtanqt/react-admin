@@ -1,6 +1,6 @@
 export interface IProjectTask {
     id: number;
-    content: String;
+    content: string;
     status: number;
     order: number;
 }

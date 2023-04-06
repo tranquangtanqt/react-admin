@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PageTitle } from "../../../../../components/modules/page-title";
 import { Editor } from "@tinymce/tinymce-react";
@@ -17,7 +17,6 @@ export const UtilitieAppProjectDetail = () => {
 
   const refDetailId = useRef<HTMLInputElement>(null);
   const refDetailTitle = useRef<HTMLInputElement>(null);
-
   const refTaskId = useRef<HTMLInputElement>(null);
   const refTaskContent = useRef<HTMLInputElement>(null);
 
@@ -71,19 +70,19 @@ export const UtilitieAppProjectDetail = () => {
     return data.sort((a, b) => b.order - a.order);
   };
 
-  /**
-   * // remove tinyMCE
-   */
-  const removeMessageTinyMCE = () => {
-    setTimeout(() => {
+  useEffect(() => {
+    let count = 0;
+    let myInterval = setInterval(() => {
       document.querySelectorAll(".tox-tinymce-aux").forEach((e) => e.remove());
+      count++;
+      if (count === 5) {
+        clearInterval(myInterval);
+      }
     }, 1000);
-  };
-
-  removeMessageTinyMCE();
+  }, []);
 
   /**
-   * changeCollapse
+   *
    * @param id
    */
   const changeCollapse = (id: number) => {
@@ -107,7 +106,7 @@ export const UtilitieAppProjectDetail = () => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(projects))}`;
     const link = document.createElement("a");
     link.href = jsonString;
-    link.download = "data.json";
+    link.download = "project.json";
     link.click();
   };
 
@@ -228,7 +227,7 @@ export const UtilitieAppProjectDetail = () => {
   };
 
   /**
-   * updateDetailOrderNumber
+   *
    * @param id
    * @param isUp
    */
@@ -262,7 +261,7 @@ export const UtilitieAppProjectDetail = () => {
   };
 
   /**
-   * showModalDeleteDetail
+   *
    * @param id
    */
   const showModalDeleteDetail = (id: number) => {
@@ -273,7 +272,7 @@ export const UtilitieAppProjectDetail = () => {
   };
 
   /**
-   * createDetail
+   *
    */
   const deleteDetail = async () => {
     if (refDetailId.current != null) {
@@ -302,6 +301,31 @@ export const UtilitieAppProjectDetail = () => {
 
   /**
    *
+   * @param id
+   * @param isComplete
+   */
+  const showModalUpdateTask = (id: number, isComplete: boolean) => {
+    setMode(MODE_EDIT);
+    let task;
+    if (isComplete) {
+      task = taskCompleted?.filter((x) => x.id === id).shift();
+    } else {
+      task = taskInComplete?.filter((x) => x.id === id).shift();
+    }
+    if (task) {
+      if (refTaskId.current !== null) {
+        refTaskId.current.value = task.id.toString();
+      }
+
+      if (refTaskContent.current !== null) {
+        refTaskContent.current.value = task.content.toString();
+      }
+      ($("#modal-task-create-update") as any).modal("show");
+    }
+  };
+
+  /**
+   *
    */
   const createOrUpdateTask = async () => {
     if (mode === MODE_CREATE) {
@@ -317,168 +341,140 @@ export const UtilitieAppProjectDetail = () => {
       if (refTaskContent.current != null) {
         task.content = refTaskContent.current.value;
       }
+      task.status = 0;
 
       let updTaskInComs: IProjectTask[] = [...taskInComplete];
       updTaskInComs.push(task);
-      descTask(updTaskInComs)
+      descTask(updTaskInComs);
       setTaskInComplete(updTaskInComs);
-      
+
       let arr = [...taskCompleted, ...updTaskInComs];
       setTasks(arr);
-      console.log(arr);
       updateProjectTask(arr);
 
       ($("#modal-task-create-update") as any).modal("hide");
       showMesage("Thêm dữ liệu thành công");
     } else if (mode === MODE_EDIT) {
-      // if (refDetailId.current != null) {
-      //   let id = Number(refDetailId.current.value);
-      //   let detail = details?.filter((x) => x.id === id)[0];
-      //   if (refDetailTitle.current != null) {
-      //     detail.title = refDetailTitle.current.value;
-      //   }
-      //   detail.content = detailContent;
+      if (refTaskId.current != null) {
+        let id = Number(refTaskId.current.value);
+        let task = tasks?.filter((x) => x.id === id)[0];
+        if (refTaskContent.current != null) {
+          task.content = refTaskContent.current.value;
+        }
 
-      //   let index = details.findIndex((x) => x.id === id);
-      //   let arr = [...details.slice(0, index), detail, ...details.slice(index + 1)];
-      //   setDetails(descDetail(arr));
-      //   updateProjects(arr);
-      //   ($("#modal-detail-create-update") as any).modal("hide");
-      //   showMesage("Cập nhật dữ liệu thành công");
-      // }
+        updateTask(task, id);
+
+        ($("#modal-task-create-update") as any).modal("hide");
+        showMesage("Cập nhật dữ liệu thành công");
+      }
     }
   };
 
   /**
-   * updateStatusTask
+   *
+   * @param task
+   * @param id
    */
-  const updateStatusToCompletedTask = async (_id: number) => {
-    // let task = {
-    //   _id: _id,
-    //   t_status: 1,
-    // };
-    // const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
-    // if (response?.status) {
-    //   showMesage("Cập nhật dữ liệu thành công");
-    //   fetchTodoList(todo?._id);
-    // }
+  const updateTask = (task: IProjectTask, id: number) => {
+    let index = tasks.findIndex((x) => x.id === id);
+    let arr: IProjectTask[] = [...tasks.slice(0, index), task, ...tasks.slice(index + 1)];
+
+    updTasks(arr);
+  };
+
+  const updTasks = (arr: IProjectTask[]) => {
+    let updTaskIncoms: IProjectTask[];
+    updTaskIncoms = arr.filter((x) => x.status === 0);
+    descTask(updTaskIncoms);
+    setTaskInComplete(updTaskIncoms);
+
+    let updTaskComs: IProjectTask[] = arr.filter((x) => x.status === 1);
+    ascTask(updTaskComs);
+    setTaskCompleted(updTaskComs);
+
+    let updTasks = [...updTaskComs, ...updTaskIncoms];
+    setTasks(updTasks);
+    updateProjectTask(updTasks);
   };
 
   /**
-   * updateStatusTask
+   *
    */
-  const updateStatusToInCompleteTask = async (_id: number) => {
-    // let task = {
-    //   _id: _id,
-    //   t_status: 0,
-    // };
-    // const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
-    // if (response?.status) {
-    //   showMesage("Cập nhật dữ liệu thành công");
-    //   fetchTodoList(todo?._id);
-    // }
+  const updateStatusToCompletedTask = async (id: number) => {
+    let task = tasks?.filter((x) => x.id === id)[0];
+    task.status = 1;
+    updateTask(task, id);
   };
 
   /**
-   * updateTaskCompleteOrderNumber
+   *
+   */
+  const updateStatusToInCompleteTask = async (id: number) => {
+    let task = tasks?.filter((x) => x.id === id)[0];
+    task.status = 0;
+    updateTask(task, id);
+  };
+
+  /**
+   *
    * @param id
    * @param isUp
    */
   const updateTaskCompleteOrderNumber = async (id: number, isUp: boolean) => {
-    // let params = {
-    //   _id: id,
-    //   isUp: isUp,
-    // };
-    // const response = await todoTaskApi.updateTaskOrderNumber(todo?._id, params);
-    // if (response?.status) {
-    //   fetchTodoList(todo?._id);
-    //   showMesage("Cập nhật dữ liệu thành công");
-    // }
+    let taskCurrent = tasks.filter((c) => c.id === id)[0];
+    let index = tasks.indexOf(taskCurrent);
+    let arr: IProjectTask[];
+    if (isUp) {
+      let up = tasks[index - 1];
+
+      //swap order number
+      let orderTemp = up.order;
+      up.order = taskCurrent.order;
+      taskCurrent.order = orderTemp;
+
+      arr = [...tasks.slice(0, index - 1), up, taskCurrent, ...tasks.slice(index + 1)];
+    } else {
+      let down = tasks[index + 1];
+
+      //swap order number
+      let orderTemp = down.order;
+      down.order = taskCurrent.order;
+      taskCurrent.order = orderTemp;
+
+      arr = [...tasks.slice(0, index), taskCurrent, down, ...tasks.slice(index + 2)];
+    }
+
+    updTasks(arr);
   };
 
   /**
-   * showModalDeleteTask
+   *
    */
   const showModalDeleteTask = (id: number) => {
+    if (refTaskId.current !== null) {
+      refTaskId.current.value = id.toString();
+    }
     ($("#modal-task-delete") as any).modal("show");
   };
 
   /**
-   * createDetail
+   *
    */
   const deleteTask = async () => {
-    // let task = {
-    //   _id: taskId,
-    // };
-    // const response = await todoTaskApi.deleteTask(todo?._id, task);
-    // if (response?.status) {
-    //   ($("#modal-task-delete") as any).modal("hide");
-    //   showMesage("Xóa dữ liệu thành công");
-    //   fetchTodoList(todo?._id);
-    // }
+    if (refTaskId.current !== null) {
+      let id = Number(refTaskId.current.value);
+      let index = tasks.findIndex((x) => x.id === id);
+      let arr = [...tasks.slice(0, index), ...tasks.slice(index + 1)];
+
+      updTasks(arr);
+
+      ($("#modal-task-delete") as any).modal("hide");
+      showMesage("Xóa dữ liệu thành công");
+    }
   };
 
   /**
-   * showModalUpdateTaskContent
-   * @param id
-   * @param isComplete
-   */
-  const showModalUpdateTaskContent = (id: number, isComplete: boolean) => {
-    // let task;
-    // if (isComplete) {
-    //   task = taskCompleted?.filter((x) => x._id === id).shift();
-    // } else {
-    //   task = taskInComplete?.filter((x) => x._id === id).shift();
-    // }
-    // if (task) {
-    //   setTaskContent(task.t_content.toString());
-    //   setTaskId(task._id.toString());
-    // }
-    // ($("#modal-task-update") as any).modal("show");
-  };
-
-  /**
-   * updateTaskContent
-   */
-  const updateTaskContent = async () => {
-    // let task = {
-    //   _id: taskId,
-    //   t_content: taskContent,
-    // };
-    // const response = await todoTaskApi.updateTaskContent(todo?._id, task);
-    // if (response?.status) {
-    //   ($("#modal-task-update") as any).modal("hide");
-    //   showMesage("Cập nhật dữ liệu thành công");
-    //   fetchTodoList(todo?._id);
-    // }
-  };
-
-  const renderTask = (tasks: any) => {
-    // let taskCompletedMapApi: IProjectTask[] = [];
-    // let taskInCompleteMapApi: IProjectTask[] = [];
-    // tasks.forEach((item: any) => {
-    //   if (item.t_status === 0) {
-    //     taskInCompleteMapApi.push({
-    //       _id: item._id,
-    //       t_content: item.t_content,
-    //       t_status: item.t_status,
-    //       t_order_number: item.t_order_number,
-    //     } as IProjectTask);
-    //   } else if (item.t_status === 1) {
-    //     taskCompletedMapApi.push({
-    //       _id: item._id,
-    //       t_content: item.t_content,
-    //       t_status: item.t_status,
-    //       t_order_number: item.t_order_number,
-    //     } as IProjectTask);
-    //   }
-    // });
-    // setTaskCompleted(taskCompletedMapApi);
-    // setTaskInComplete(taskInCompleteMapApi);
-  };
-
-  /**
-   * showMesage
+   *
    * @param message
    */
   const showMesage = (message: string) => {
@@ -487,18 +483,9 @@ export const UtilitieAppProjectDetail = () => {
       ($("#modal-notification") as any).modal("show");
       setTimeout(() => {
         ($("#modal-notification") as any).modal("hide");
-      }, 1000);
+      }, 700);
     }
   };
-
-  // const functionDumy = () => {
-  //   setNotificationMessage("Function temp");
-
-  //   ($("#modal-notification") as any).modal("show");
-  //   setTimeout(() => {
-  //     ($("#modal-notification") as any).modal("hide");
-  //   }, 1000);
-  // };
 
   return (
     <>
@@ -587,7 +574,7 @@ export const UtilitieAppProjectDetail = () => {
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task.id, false)}>
+                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task.id, false)}>
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task.id)}>
@@ -612,7 +599,7 @@ export const UtilitieAppProjectDetail = () => {
                     </div>
                     <div></div>
                     <div>
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task.id, true)}>
+                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task.id, true)}>
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task.id)}>
@@ -732,7 +719,6 @@ export const UtilitieAppProjectDetail = () => {
         </div>
       </div>
 
-      {/* 
       <div className="modal fade" id="modal-task-delete" aria-labelledby="modal-task-delete1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
@@ -742,16 +728,7 @@ export const UtilitieAppProjectDetail = () => {
               </h5>
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
             </div>
-            <div className="modal-body">
-              <input
-                type="hidden"
-                className="form-control"
-                id="task-id"
-                value={taskId}
-                onChange={(e) => setTaskId(e.target.value)}
-              />
-              Bạn có chắc chắn muốn xóa chi tiết?
-            </div>
+            <div className="modal-body">Bạn có chắc chắn muốn xóa chi tiết?</div>
             <div className="modal-footer">
               <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
               <input type="button" className="btn btn-primary" onClick={() => deleteTask()} value="Lưu" />
@@ -759,8 +736,6 @@ export const UtilitieAppProjectDetail = () => {
           </div>
         </div>
       </div>
-
-      */}
 
       <div className="modal fade" id="modal-notification" aria-labelledby="modal-notification" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-sm">

@@ -27,18 +27,21 @@ export const UtilitieAppProjectInfo = () => {
     return data.sort((a, b) => b.order - a.order);
   };
 
+  /**
+   *
+   */
   const exportData = () => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(asc(projects)))}`;
     const link = document.createElement("a");
     link.href = jsonString;
-    link.download = "todo.json";
+    link.download = "project.json";
     link.click();
   };
 
   /**
    *
    */
-  const showModalCreateTodo = () => {
+  const showModalCreateProject = () => {
     setMode(MODE_CREATE);
     if (refTitle.current != null) {
       refTitle.current.value = "";
@@ -47,18 +50,18 @@ export const UtilitieAppProjectInfo = () => {
   };
 
   /**
-   * showModalUpdateTodo
+   *
    */
-  const showModalUpdateTodo = (id: number) => {
+  const showModalUpdateProject = (id: number) => {
     setMode(MODE_EDIT);
-    let todo = projects?.filter((x) => x.id === id).shift();
-    if (todo) {
+    let project = projects?.filter((x) => x.id === id).shift();
+    if (project) {
       if (refId.current != null) {
-        refId.current.value = todo.id.toString();
+        refId.current.value = project.id.toString();
       }
 
       if (refTitle.current != null) {
-        refTitle.current.value = todo.title;
+        refTitle.current.value = project.title;
       }
       ($("#modal-create-update") as any).modal("show");
     }
@@ -67,7 +70,7 @@ export const UtilitieAppProjectInfo = () => {
   /**
    *
    */
-  const createOrUpdateTodo = async () => {
+  const createOrUpdateProject = async () => {
     if (mode === MODE_CREATE) {
       let newProject = {} as IProject;
       newProject.id = Math.max(...projects.map((x) => x.id)) + 1;
@@ -75,6 +78,8 @@ export const UtilitieAppProjectInfo = () => {
       if (refTitle.current != null) {
         newProject.title = refTitle.current.value;
       }
+      newProject.details = [];
+      newProject.tasks = [];
 
       let temp = [...projects];
       temp = asc(temp);
@@ -112,54 +117,53 @@ export const UtilitieAppProjectInfo = () => {
     let index = projects.indexOf(projectCurrent);
 
     if (isUp) {
-      let todoUp = projects[index - 1];
+      let projectUp = projects[index - 1];
 
       //swap order number
-      let orderTemp = todoUp.order;
-      todoUp.order = projectCurrent.order;
+      let orderTemp = projectUp.order;
+      projectUp.order = projectCurrent.order;
       projectCurrent.order = orderTemp;
 
-      let arr = [...projects.slice(0, index - 1), todoUp, projectCurrent, ...projects.slice(index + 1)];
+      let arr = [...projects.slice(0, index - 1), projectUp, projectCurrent, ...projects.slice(index + 1)];
       setProjects(desc(arr));
     } else {
-      let todoDown = projects[index + 1];
+      let projectDown = projects[index + 1];
 
       //swap order number
-      let orderTemp = todoDown.order;
-      todoDown.order = projectCurrent.order;
+      let orderTemp = projectDown.order;
+      projectDown.order = projectCurrent.order;
       projectCurrent.order = orderTemp;
 
-      let arr = [...projects.slice(0, index), projectCurrent, todoDown, ...projects.slice(index + 2)];
+      let arr = [...projects.slice(0, index), projectCurrent, projectDown, ...projects.slice(index + 2)];
       setProjects(desc(arr));
     }
-    showModalNotification("Cập nhật dữ liệu thành công");
   };
 
   /**
-   * showModalDeleteTodo
+   *
    */
-  const showModalDeleteTodo = (id: number) => {
+  const showModalDeleteProject = (id: number) => {
     if (refId.current !== null) {
       refId.current.value = id.toString();
     }
-    ($("#modal-todo-delete") as any).modal("show");
+    ($("#modal-project-delete") as any).modal("show");
   };
 
   /**
-   * deleteTodo
+   *
    */
-  const deleteTodo = async () => {
+  const deleteProject = async () => {
     if (refId.current !== null) {
       let id = Number(refId.current.value);
 
-      let todo = projects.filter(function (c) {
+      let project = projects.filter(function (c) {
         return c.id === Number(id);
       })[0];
 
-      let index = projects.indexOf(todo);
+      let index = projects.indexOf(project);
       let arr = [...projects.slice(0, index), ...projects.slice(index + 1)];
       setProjects(arr);
-      ($("#modal-todo-delete") as any).modal("hide");
+      ($("#modal-project-delete") as any).modal("hide");
       showModalNotification("Xóa dữ liệu thành công");
     }
   };
@@ -174,7 +178,7 @@ export const UtilitieAppProjectInfo = () => {
       ($("#modal-notification") as any).modal("show");
       setTimeout(() => {
         ($("#modal-notification") as any).modal("hide");
-      }, 800);
+      }, 700);
     }
   };
 
@@ -193,7 +197,7 @@ export const UtilitieAppProjectInfo = () => {
                 <div>Danh sách</div>
                 <div></div>
                 <div>
-                  <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateTodo()} />
+                  <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateProject()} />
                 </div>
               </div>
             </div>
@@ -220,10 +224,10 @@ export const UtilitieAppProjectInfo = () => {
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTodo(item.id)}>
+                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateProject(item.id)}>
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTodo(item.id)}>
+                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteProject(item.id)}>
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -235,16 +239,16 @@ export const UtilitieAppProjectInfo = () => {
         </div>
       </div>
 
-      <div className="modal fade" id="modal-create-update" aria-labelledby="modal-todo-create1" aria-hidden="true">
+      <div className="modal fade" id="modal-create-update" aria-labelledby="modal-project-create1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               {mode === MODE_CREATE ? (
-                <h5 className="modal-title" id="modal-todo-create1">
+                <h5 className="modal-title" id="modal-project-create1">
                   Thêm công việc
                 </h5>
               ) : (
-                <h5 className="modal-title" id="modal-todo-create1">
+                <h5 className="modal-title" id="modal-project-create1">
                   Chỉnh sửa công việc
                 </h5>
               )}
@@ -252,24 +256,24 @@ export const UtilitieAppProjectInfo = () => {
             </div>
             <div className="modal-body">
               <input ref={refId} type="hidden" className="form-control" />
-              <label htmlFor="todo-title-create" className="form-label">
+              <label htmlFor="project-title-create" className="form-label">
                 Nội dung
               </label>
-              <input ref={refTitle} type="text" className="form-control" id="todo-title-create" />
+              <input ref={refTitle} type="text" className="form-control" id="project-title-create" />
             </div>
             <div className="modal-footer">
               <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
-              <input type="button" className="btn btn-primary" value="Lưu" onClick={() => createOrUpdateTodo()} />
+              <input type="button" className="btn btn-primary" value="Lưu" onClick={() => createOrUpdateProject()} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-todo-delete" aria-labelledby="modal-todo-delete1" aria-hidden="true">
+      <div className="modal fade" id="modal-project-delete" aria-labelledby="modal-project-delete1" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="modal-todo-delete1">
+              <h5 className="modal-title" id="modal-project-delete1">
                 Xóa công việc
               </h5>
               <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
@@ -277,7 +281,7 @@ export const UtilitieAppProjectInfo = () => {
             <div className="modal-body">Bạn có chắc chắn muốn xóa công việc?</div>
             <div className="modal-footer">
               <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteTodo()} value="Lưu" />
+              <input type="button" className="btn btn-primary" onClick={() => deleteProject()} value="Lưu" />
             </div>
           </div>
         </div>
