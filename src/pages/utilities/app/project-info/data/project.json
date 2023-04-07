@@ -35,8 +35,7 @@
         "title": "Môi trường",
         "content": "<p>SVN:&nbsp;<br>&nbsp; &nbsp; &nbsp; http://svn.aureole-it.vn/svn/MITANI/MCF7_株式會社月星製作所_mcframe7PCM導入<br>GIT:<br>&nbsp; &nbsp; http://git.aureole-it.vn/dev/tsukiboshi-branch.git<br>&nbsp; &nbsp; (Lưu &yacute;: đặt source đ&uacute;ng folder [C:\\Project\\Tsukiboshi_branch])</p>\n<p>Eclipse:&nbsp;<br>&nbsp; &nbsp; N:\\(BiMat)Projects\\(Bi mat) MCFrame\\MCF7_株式會社月星製作所_mcframe7PCM導入\\10.ENV<br>&nbsp; &nbsp; &nbsp; &nbsp; (copy về giải n&eacute;n ở thư mục C:\\Project\\Tsukiboshi_branch)</p>\n<p>Th&ocirc;ng tin database:<br>&nbsp; &nbsp; Host: 192.168.145.133<br>&nbsp; &nbsp; Port: 1521<br>&nbsp; &nbsp; SID: ORCL<br>&nbsp; &nbsp; User: mcfuser<br>&nbsp; &nbsp; Pass: mcframe</p>",
         "collapse": false
-      },
-      { "id": 5, "order": 5, "project_id": 10, "title": "test", "content": "<p>123</p>", "collapse": false }
+      }
     ],
     "tasks": []
   },
@@ -252,17 +251,79 @@
     "id": 2,
     "order": 2,
     "title": "202208 - MCF7 - Fukubi",
+    "details": [{ "id": 1, "order": 1, "project_id": 2, "title": "Thông tin VPN", "content": "<p>tantq</p>\n<p>X7uSqm(M</p>", "collapse": false }],
+    "tasks": []
+  },
+  {
+    "id": 1,
+    "title": "MCF7",
+    "order": 1,
     "details": [
       {
-        "id": 1,
+        "id": 5,
         "order": 1,
-        "project_id": 2,
-        "title": "Thông tin VPN",
-        "content": "<p>tantq</p>\n<p>X7uSqm(M</p>",
+        "project_id": 1,
+        "title": "CMD export file zip",
+        "content": "<p>common-database:<br>git diff-tree -r --name-only fe2c552f 577ee1fd &nbsp;&gt; diff-filelist-common-database.txt<br>more diff-filelist-common-database.txt | zip -@ common-database.zip</p>",
+        "collapse": false
+      },
+      {
+        "id": 3,
+        "order": 2,
+        "project_id": 1,
+        "title": "Comment",
+        "content": "<p>プロジェクト名： 大木伸銅 mcframe 7 アドオン開発<br>フェーズ： PG<br>機能ID： COMMON<br>機能名： 共通<br>概要： DB、ListLogic、Const、....<br>MS.MSBBLA0080.Srch01</p>",
+        "collapse": false
+      },
+      {
+        "id": 4,
+        "order": 3,
+        "project_id": 1,
+        "title": "Báo cáo tiến độ",
+        "content": "<p>Tantq: B&aacute;o c&aacute;o tiến độ thứ XX ng&agrave;y YYYY/MM/DD<br>※Tiến độ h&ocirc;m qua (09/26):<br>&nbsp; &nbsp; + ...<br>※Dự định h&ocirc;m nay (09/27):<br>&nbsp; &nbsp; + ....</p>",
+        "collapse": false
+      },
+      {
+        "id": 8,
+        "order": 4,
+        "project_id": 1,
+        "title": "Báo giá",
+        "content": "<p>Dựa v&agrave;o template b&aacute;o gi&aacute;<br>Cột F: Độ kh&oacute; dễ<br>PG 32H:<br>&nbsp; &nbsp; + 10% giờ E (hiện tại bỏ)<br>&nbsp; &nbsp; + 15% review<br>&nbsp; &nbsp; + 0.75 PG<br>&nbsp; &nbsp; + cột AJ l&agrave; ẩn<br>Giờ quản l&yacute;:&nbsp;<br>&nbsp; &nbsp; + Support x&agrave;i 30%</p>",
+        "collapse": false
+      },
+      {
+        "id": 7,
+        "order": 5,
+        "project_id": 1,
+        "title": "git commit",
+        "content": "<p>git log --oneline --graph --no-merges</p>\n<p>git add development/MA/frm/<br>git add development/MA/jar/<br>git add development/MA/repository/<br>git add development/MA/resource/<br>git add development/MA/spec/<br>git add development/MA/src/<br>git add development/MA/patchList.txt<br>git add development/MA/template/<br>git add development/MA/tools/</p>\n<p>git add development/MB/<br>git add development/MCF_HOME/</p>\n<p>git add development/MG/frm/<br>git add development/MG/jar/<br>git add development/MG/repository/<br>git add development/MG/resource/<br>git add development/MG/SCa/<br>git add development/MG/spec/<br>git add development/MG/src/<br>git add development/MG/patchList.txt<br>git add development/MG/template/<br>git add development/MG/tools/</p>\n<p><br>git add development/MS/frm/<br>git add development/MS/jar/<br>git add development/MS/MRPea/<br>git add development/MS/repository/<br>git add development/MS/resource/<br>git add development/MS/spec/<br>git add development/MS/src/<br>git add development/MS/patchList.txt<br>git add development/MS/template/<br>git add development/MS/tools/</p>\n<p>git add development/PF/<br>git add patch/work/<br>git add patch/</p>\n<p>---<br>ohki<br>git commit -m \"\"<br>git commit -m \"Add source original: development/AW_HOME/, development/MA: frm, jar, repository\"<br>git commit -m \"Add source original: development/MA: resource, spec\"<br>git commit -m \"Add source original: development/MA: src\"<br>git commit -m \"Add source original: development/MA: template, tools\"<br>git commit -m \"Add source original: development/MB/\"<br>git commit -m \"Add source original: development/MCF_HOME/\"<br>git commit -m \"Add source original: development/MG: frm, jar, repository, resource\"<br>git commit -m \"Add source original: development/MG: SCa, spec\"<br>git commit -m \"Add source original: development/MG: src\"<br>git commit -m \"Add source original: development/MG: template, tools\"<br>git commit -m \"Add source original: development/PC/, development/PF/\"<br>git commit -m \"Add source original: development/MS: frm, jar, MRPea, repository\"<br>git commit -m \"Add source original: development/MS: repository\"<br>git commit -m \"Add source original: development/MS: resource, spec\"<br>git commit -m \"Add source original: development/MS: src\"<br>git commit -m \"Add source original: development/MS: template, tools, patchList.txt\"<br>git commit -m \"Add source original: development/PF\"<br>git commit -m \"Add source original: patch/work/\"</p>\n<p><br>git add development/MG/frm<br>git add development/MG/jar/<br>git add development/MG/repository/<br>git add development/MG/resource/<br>git add development/MG/SCa/<br>git add development/MG/spec/</p>\n<p>git add development/MS/frm/<br>git add development/MS/jar/<br>git add development/MS/MRPea/<br>git add development/MS/repository/<br>git add development/MS/resource/<br>git add development/MS/spec/<br>git add development/MS/src/</p>",
+        "collapse": false
+      },
+      {
+        "id": 2,
+        "order": 6,
+        "project_id": 1,
+        "title": "Tiêu chí PG UT",
+        "content": "<p><strong>1. PG</strong></p>\n<p>&nbsp; &nbsp; Thực hiện programing theo t&agrave;i liệu thiết kế, bảo đảm chương tr&igrave;nh chạy đ&uacute;ng theo t&agrave;i liệu v&agrave; tu&acirc;n thủ c&aacute;c quy định của dự &aacute;n.</p>\n<p>Ti&ecirc;u ch&iacute; ho&agrave;n th&agrave;nh:&nbsp;<br>&nbsp;・ Chạy đ&uacute;ng theo TLTK.<br>&nbsp;・ CheckPG v&agrave;o TLTK.<br>&nbsp;・ Check v&agrave;o CmnChecksheet ((MCF7_CmnChecksheet)_機能ID_機能名.xlsx)<br>&nbsp;・ Kiểm tra qua 1 lượt theo c&aacute;c testcase của TL UT (KH&Ocirc;NG lấy evidence).</p>\n<p><strong>2. PGR</strong></p>\n<p>Ti&ecirc;u ch&iacute; review<br>&nbsp;・ Thực hiện check lại souce code theo ti&ecirc;u chuẩn MCF7<br>&nbsp;・ Kiểm tra ho&agrave;n th&agrave;nh 2 file PGCheck v&agrave; CmnChecksheet chưa.<br>&nbsp;・ Kiểm tra comment source/commit đ&uacute;ng rule dự &aacute;n (28/9 sẽ họp KH thống nhất rule)<br>&nbsp;・ CẤM chỉnh sửa source file xxx_MC.java (xem log svn)<br>&nbsp;・ Review những chổ source kh&oacute; hiểu/thiếu t&iacute;nh maintenace.<br>&nbsp;・ Kiểm tra commit đủ source (FW MCF7 mỗi 1 m&agrave;n h&igrave;nh sẽ c&oacute; nhiều file li&ecirc;n quan).&nbsp;<br>&nbsp;・ Chạy qua 1 lượt c&aacute;c chức năng ch&iacute;nh (hiển thị m&agrave;n h&igrave;nh, thao t&aacute;c searh/đăng k&yacute; xem c&oacute; bất thường g&igrave; kh&ocirc;ng.</p>\n<p><strong>3. UT</strong><br>&nbsp;・ Thực hiện test chương tr&igrave;nh, lấy evidence theo t&agrave;i liệu test.<br>&nbsp;・ Sẽ nhờ KH cung cấp evidence mẫu, để chụp theo mẫu của KH.<br>&nbsp;・ Ng&agrave;y 2022/10/12 sẽ gửi trước prototype để KH review.</p>\n<p><strong>4. UTR</strong></p>\n<p>\"アドホックテストを実施し、UT工程で作成されたエビデンスが単体テスト仕様書の内容に従って正しく十分であることをレビューして確認する。<br>Thực hiện test adhoc, x&aacute;c nhận c&aacute;c evidence được tạo ở c&ocirc;ng đoạn UT l&agrave; đ&uacute;ng v&agrave; đủ theo t&agrave;i liệu test\" &nbsp; &nbsp;</p>",
+        "collapse": false
+      },
+      {
+        "id": 1,
+        "order": 7,
+        "project_id": 1,
+        "title": "Oracle Query",
+        "content": "<p>--CALL FCPA_CONTEXT.SET_CO_CD('J0001'); &nbsp; &nbsp;<br>--CALL FCPA_CONTEXT.SET_LOCALE('ja_JP');</p>\n<p>--SELECT * from FCT_LOGIN where user_id = 'demo16'<br>--CALL FCPA_CONTEXT.SET_LOGIN_SEQ('91A8TK7H-VE4QKDO9-170M1FT8-JG567OO1')</p>\n<p><br>--SELECT * FROM all_tab_comments WHERE comments LIKE '需要情報%' AND TABLE_TYPE = 'VIEW'&nbsp;<br>--SELECT * FROM all_col_comments WHERE table_name = 'MAVM_CNTRY_MST' AND comments LIKE '%国名%';</p>",
+        "collapse": false
+      },
+      {
+        "id": 6,
+        "order": 8,
+        "project_id": 1,
+        "title": "JS export file from gitlab",
+        "content": "<p>function save(text){<br>&nbsp; &nbsp; var link = document.createElement('a');<br>&nbsp; &nbsp; link.href = 'data:text/plain;charset=UTF-8,' + escape(text);<br>&nbsp; &nbsp; link.download = 'output.txt';<br>&nbsp; &nbsp; link.click();<br>};<br>var fileNameAll = \"\";<br>$(\".file-title-name\").each(function (i) {<br>&nbsp; //console.log(this.innerHTML);<br>&nbsp; fileNameAll += this.innerHTML + \"\\n\";<br>});<br>var arr = fileNameAll.split(\"\\n\");<br>arr = arr.filter(item =&gt; item.trim() !== \"\");<br>save(arr.join(\"\\n\"));</p>",
         "collapse": false
       }
     ],
     "tasks": []
-  },
-  { "id": 1, "title": "Me", "order": 1, "details": [], "tasks": [] }
+  }
 ]
