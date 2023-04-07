@@ -35,7 +35,8 @@
         "title": "Môi trường",
         "content": "<p>SVN:&nbsp;<br>&nbsp; &nbsp; &nbsp; http://svn.aureole-it.vn/svn/MITANI/MCF7_株式會社月星製作所_mcframe7PCM導入<br>GIT:<br>&nbsp; &nbsp; http://git.aureole-it.vn/dev/tsukiboshi-branch.git<br>&nbsp; &nbsp; (Lưu &yacute;: đặt source đ&uacute;ng folder [C:\\Project\\Tsukiboshi_branch])</p>\n<p>Eclipse:&nbsp;<br>&nbsp; &nbsp; N:\\(BiMat)Projects\\(Bi mat) MCFrame\\MCF7_株式會社月星製作所_mcframe7PCM導入\\10.ENV<br>&nbsp; &nbsp; &nbsp; &nbsp; (copy về giải n&eacute;n ở thư mục C:\\Project\\Tsukiboshi_branch)</p>\n<p>Th&ocirc;ng tin database:<br>&nbsp; &nbsp; Host: 192.168.145.133<br>&nbsp; &nbsp; Port: 1521<br>&nbsp; &nbsp; SID: ORCL<br>&nbsp; &nbsp; User: mcfuser<br>&nbsp; &nbsp; Pass: mcframe</p>",
         "collapse": false
-      }
+      },
+      { "id": 5, "order": 5, "project_id": 10, "title": "test", "content": "<p>123</p>", "collapse": false }
     ],
     "tasks": []
   },
