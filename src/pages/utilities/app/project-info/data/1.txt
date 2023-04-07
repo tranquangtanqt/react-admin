@@ -1,0 +1,144 @@
+検査実績一覧登録  #34
+検査実績登録   #34
+検査指図リスト                        #97
+製品マスタ送信ＩＦ                      #8
+部材マスタ送信ＩＦ                      #9
+計画用工程マスタ送信ＩＦ                #10
+資源マスタ送信ＩＦ                      #12
+需要情報一覧登録                    #2
+需要消込状況照会                    #2
+需給調整                            #2
+顧客期間内示登録                    #2
+月次販売計画一覧照会                 #2
+受注登録                           #35
+出荷予定変更登録                    #112
+入荷実績一覧登録 
+在庫送信ＩＦ                          #13
+
+#2 月次販売計画一覧照会
+#2 顧客期間内示登録
+#2 需給調整
+#2 需要消込状況照会
+#2 需要情報一覧登録
+#8 製品マスタ送信ＩＦ
+#9 部材マスタ送信ＩＦ
+#10 計画用工程マスタ送信ＩＦ
+#12 資源マスタ送信ＩＦ
+#13 在庫送信ＩＦ
+#34 検査実績一覧登録
+#34 検査実績登録
+#35 受注登録
+#97 検査指図リスト
+#112 出荷予定変更登録
+入荷実績一覧登録
+
+Trường hợp check trùng khi đăng ký => Với các cột check trùng thì để dữ liệu 
+
+
+check ngày:
+適用開始日(新規行) = 適用終了日(現在行)
+適用終了日(新規行) = 適用開始日(現在行)
+適用開始日(現在行) < 適用開始日(新規行) < 適用終了日(現在行)
+適用終了日(現在行) > 適用終了日(新規行) > 適用開始日(現在行)
+· 適用開始日(新規行) < 適用開始日(現在行) 
+· 適用終了日(新規行) > 適用終了日(現在行)
+
+
+
+No.3.3.7.1
+No.3.3.7.2
+No.3.3.7.3
+No.3.3.7.4
+No.3.3.7.5
+
+Tên no của case No.3.3.7.5 bị sai
+
+
+- Nếu 2 input là số => so sánh số
+- Nếu 1 trong 2 input của 
+- Nếu 1 trong 4 input là chuỗi => so sánh chuỗi
+
+
+
+
+select CAST(MIN_VAL AS NUMBER DEFAULT 0 ON CONVERSION ERROR) AS AA from MAMA_SAL_PRI_ITM_ALL
+
+
+1. Nếu trường hợp type không nhập => QA
+2. Nhập là 1: 
+	+ 1 trong 2 min_val hoặc mã_val không convert được => lỗi
+	+ 1 trong 2 min_val hoặc mã_val không được nhập => QA
+	+ cả 2 OK => check > 0 và min <= max
+
+3. Nhập là 2: check min <= max
+
+1. Trường hợp check ngày tháng thôi
+
+
+FXUCL_DataUtil.class
+
+
+((FXUCL_DataUtil)MCRequestObject.object(CLAZZ))._isNumberStr(str)
+
+
+
+
+--12/21
+
+chỉ đúng với trường hợp batch chỉ thực hiện 1 lần/ngày.
+Trường hợp thực hiện batch từ 2 lần/ngày thì việc cập nhật sẽ xảy ra trường hợp start > end
+
+
+
+
+Hiện tượng kadai cho Ohki
+
+
+
+-----------Dựa vào template báo giá
+Cột F: Độ khó dễ
+PG 32H:
+	+ 10% giờ E (hiện tại bỏ)
+	+ 15% review
+	+ 0.75 PG
+	+ cột AJ là dấu
+Giờ quản lý: 
+	+ Support xài 30%
+	
+2 xử lý 1.1, 1.2
+ - logic bình thường level 1
+ - nhiều xử lý nhỏ thì chia ra
+ 
+ 
+ 
+ search lần đầu => sau khi search không hiển thị insert
+
+
+---------------
+Dim monthRange = Math.Abs(Month(vm.fillingDateFrom) - Month(vm.fillingDateTo)) + 12 * (Year(vm.fillingDateTo) - Year(vm.fillingDateFrom))
+
+
+----
+- check toonf taji trước khi insert
+- --原料パターン別単価マスタの更新
+UPDATE (SELECT
+			*
+		FROM
+			MAMA_MTR_PTN_PRI
+		WHERE
+			ST_DT = (SELECT MAX(ST_DT)
+						FROM MAMA_MTR_PTN_PRI
+						WHERE MPTN_CD = :MPTN_CD
+						AND ST_DT <= TRUNC(SYSDATE)))
+SET
+	END_DT = SYSDATE
+	
+	
+	=> END_DT =TRUNC(SYSDATE)
+
+0080:
++ orderby 
++ set null xuất message
++ nếu lấy data sẽ lấy dòng đầu tiên
+
+

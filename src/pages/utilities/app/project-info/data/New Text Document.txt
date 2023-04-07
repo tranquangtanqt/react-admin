@@ -1,0 +1,79 @@
+git log --oneline --graph --no-merges
+
+git add development/MA/frm/
+git add development/MA/jar/
+git add development/MA/repository/
+git add development/MA/resource/
+git add development/MA/spec/
+git add development/MA/src/
+git add development/MA/patchList.txt
+git add development/MA/template/
+git add development/MA/tools/
+
+git add development/MB/
+git add development/MCF_HOME/
+
+git add development/MG/frm/
+git add development/MG/jar/
+git add development/MG/repository/
+git add development/MG/resource/
+git add development/MG/SCa/
+git add development/MG/spec/
+git add development/MG/src/
+git add development/MG/patchList.txt
+git add development/MG/template/
+git add development/MG/tools/
+
+
+git add development/MS/frm/
+git add development/MS/jar/
+git add development/MS/MRPea/
+git add development/MS/repository/
+git add development/MS/resource/
+git add development/MS/spec/
+git add development/MS/src/
+git add development/MS/patchList.txt
+git add development/MS/template/
+git add development/MS/tools/
+
+git add development/PF/
+git add patch/work/
+git add patch/
+
+---
+ohki
+git commit -m ""
+git commit -m "Add source original: development/AW_HOME/, development/MA: frm, jar, repository"
+git commit -m "Add source original: development/MA: resource, spec"
+git commit -m "Add source original: development/MA: src"
+git commit -m "Add source original: development/MA: template, tools"
+git commit -m "Add source original: development/MB/"
+git commit -m "Add source original: development/MCF_HOME/"
+git commit -m "Add source original: development/MG: frm, jar, repository, resource"
+git commit -m "Add source original: development/MG: SCa, spec"
+git commit -m "Add source original: development/MG: src"
+git commit -m "Add source original: development/MG: template, tools"
+git commit -m "Add source original: development/PC/, development/PF/"
+git commit -m "Add source original: development/MS: frm, jar, MRPea, repository"
+git commit -m "Add source original: development/MS: repository"
+git commit -m "Add source original: development/MS: resource, spec"
+git commit -m "Add source original: development/MS: src"
+git commit -m "Add source original: development/MS: template, tools, patchList.txt"
+git commit -m "Add source original: development/PF"
+git commit -m "Add source original: patch/work/"
+
+
+git add development/MG/frm
+git add development/MG/jar/
+git add development/MG/repository/
+git add development/MG/resource/
+git add development/MG/SCa/
+git add development/MG/spec/
+
+git add development/MS/frm/
+git add development/MS/jar/
+git add development/MS/MRPea/
+git add development/MS/repository/
+git add development/MS/resource/
+git add development/MS/spec/
+git add development/MS/src/
