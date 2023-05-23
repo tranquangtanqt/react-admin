@@ -33,6 +33,18 @@ save(arr.join("\\n"));`}
             language="javascript"
           />
         </div>
+        <div className="col-12 col-sm-12 col-md-12">
+          <b>3. </b>
+          <Code
+            code={`git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt`}
+            language="sql"
+          />
+          <b>4. Export file</b>
+          <Code
+            code={`more diff-filelist.txt | zip -@ files.zip`}
+            language="sql"
+          />
+        </div>
       </div>
     </>
   );

@@ -7,6 +7,32 @@ export const UtilitiesGeneralGit = () => {
       <PageTitle title="Git"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
+          <b>1. Collapse Git</b>
+          <div className="tab-1">
+            <Code
+              code={`$(".diff-file").find("div.nothing-here-block").each(function(i) {
+    if (!$(this).is(":visible")) {
+        $(this).parents("div.file-holder").find("div.file-title-flex-parent").trigger("click");
+    }
+});`}
+              language="javascript"
+            />
+          </div>
+          <b>.gitconfig</b>
+          <div className="tab-1">
+            <Code
+              code={`[user]
+	name = tantq
+	email = tantq@abc.com
+[core]
+	autocrlf = false
+[http]
+	postBuffer = 524288000
+[core]
+  editor = 'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin`}
+              language="sql"
+            />
+          </div>
           <b>Tạo nhánh mới</b>
           <div className="tab-2">
             <Code code={`git checkout -b <Tên_nhánh_mới>`} language="sql" />

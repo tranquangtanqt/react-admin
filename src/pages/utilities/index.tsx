@@ -90,10 +90,6 @@ export const Utilities = () => {
           text: "Collapse all button in git change",
           path: "/utilities/general/collapse-git",
         },
-        {
-          text: "Collapse all button in git change",
-          path: "/utilities/general/collapse-git",
-        },
       ],
     },
     {
