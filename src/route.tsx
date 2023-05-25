@@ -157,6 +157,8 @@ import { ExcelConvertDayOfBirthToAge } from "./pages/programming/excel/convert-d
 import { PogrammingExcelVBA001 } from "./pages/programming/excel/VBA/1-10/lession1";
 import { UtilitieAppProjectInfo } from "./pages/utilities/app/project-info";
 import { UtilitieAppProjectDetail } from "./pages/utilities/app/project-info/project-detail";
+import { OraclePasswordHasExpired } from "./pages/database/oracle/tips/password-has-expired";
+import { PostgresqlRunAllSqlInAFolder } from "./pages/database/postgresql/run-all-sql-in-folder";
 
 export const RoutesRoot = () => {
   return (
@@ -168,6 +170,7 @@ export const RoutesRoot = () => {
 
           <Route path="/database/postgresql" element={<DatabasePostgresql />} />
           <Route path="/database/postgresql/config-pghba" element={<PostgresqlConfigPghba />} />
+          <Route path="/database/postgresql/run-all-sql-in-folder" element={<PostgresqlRunAllSqlInAFolder />} />
 
           <Route path="/database/oracle" element={<DatabaseOracle />} />
           <Route
@@ -181,6 +184,7 @@ export const RoutesRoot = () => {
           <Route path="/database/oracle/tips/string" element={<OracleString />} />
           <Route path="/database/oracle/tips/system" element={<OracleSystem />} />
           <Route path="/database/oracle/tips-sql-developer" element={<OracleTipsSQLDeveloper />} />
+          <Route path="/database/oracle/the-password-has-expired" element={<OraclePasswordHasExpired />} />
 
           <Route path="/programming-batch" element={<ProgrammingBatch />} />
           <Route path="/programming-batch/if-else" element={<BatchIfElse />} />

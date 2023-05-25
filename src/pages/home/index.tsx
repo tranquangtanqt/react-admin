@@ -129,6 +129,11 @@ export const Home = () => {
                     Awesome dotnet core
                   </a>
                 </li>
+                <li>
+                  <a href="https://github.com/fullstackhero" target="_blank" rel="noopener noreferrer">
+                    fullstack hero
+                  </a>
+                </li>
               </ol>
             </div>
           </div>

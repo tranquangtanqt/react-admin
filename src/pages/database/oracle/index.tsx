@@ -44,6 +44,10 @@ export const DatabaseOracle = () => {
           text: "Sqltext Session Process",
           path: "/database/oracle/sql-text-session-process",
         },
+        {
+          text: "The password has expired oracle",
+          path: "/database/oracle/the-password-has-expired",
+        },
       ],
     },
     {

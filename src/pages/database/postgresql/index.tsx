@@ -10,6 +10,14 @@ export const DatabasePostgresql = () => {
           text: "Configure PostgreSQL to accept all incoming connections",
           path: "/database/postgresql/config-pghba",
         },
+        {
+          text: "Run all SQL in a folder",
+          path: "/database/postgresql/run-all-sql-in-folder",
+        },
+        {
+          text: "Tip and Tricks 1",
+          path: "/tutorial/postgreSQL/chapter28",
+        },
       ],
     },
   ];
