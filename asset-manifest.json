@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.1b869f7c.css",
-    "main.js": "/react-admin/static/js/main.8a89f860.js",
+    "main.js": "/react-admin/static/js/main.97f935a2.js",
     "static/media/2023-01-29 22 36 09.jpg": "/react-admin/static/media/2023-01-29 22 36 09.d4f9920cfe0729d8a7ee.jpg",
     "static/media/2023-01-29 22 58 18.jpg": "/react-admin/static/media/2023-01-29 22 58 18.5888906ec35a9538978d.jpg",
     "static/media/2023-02-19 05.jpg": "/react-admin/static/media/2023-02-19 05.4c38a3304b6c3189bfdf.jpg",
@@ -64,8 +64,10 @@
     "static/media/2023-01-30 22 42 00.jpg": "/react-admin/static/media/2023-01-30 22 42 00.f8ee1d264bee3748c54f.jpg",
     "static/media/Trich_8.jpg": "/react-admin/static/media/Trich_8.6634caa9c2b7b4e26c45.jpg",
     "static/media/9.jpg": "/react-admin/static/media/9.82f3d3be11230d16f1cb.jpg",
+    "static/media/the-password-has-expired-oracle_2.jpg": "/react-admin/static/media/the-password-has-expired-oracle_2.ad7f9de7732c771450e4.jpg",
     "static/media/Trich_9.jpg": "/react-admin/static/media/Trich_9.1e0e7f7d3b32f01586ad.jpg",
     "static/media/10.jpg": "/react-admin/static/media/10.ca5e511bdf3924109cff.jpg",
+    "static/media/the-password-has-expired-oracle_3.jpg": "/react-admin/static/media/the-password-has-expired-oracle_3.390d2b00340f5e6c5f8e.jpg",
     "static/media/Trich_7.jpg": "/react-admin/static/media/Trich_7.52d254d58d5cb6c9302f.jpg",
     "static/media/7.jpg": "/react-admin/static/media/7.338bd4d52ed60de2c951.jpg",
     "static/media/18.jpg": "/react-admin/static/media/18.89e9d7fa9c75fc9b7a0f.jpg",
@@ -105,6 +107,7 @@
     "static/media/Net_Angular_9.jpg": "/react-admin/static/media/Net_Angular_9.a1bba71917967d59514e.jpg",
     "static/media/23.jpg": "/react-admin/static/media/23.3aa7cb303581b5d44147.jpg",
     "static/media/Net_Angular_4.jpg": "/react-admin/static/media/Net_Angular_4.6b4d9faed334c9312875.jpg",
+    "static/media/the-password-has-expired-oracle_1.jpg": "/react-admin/static/media/the-password-has-expired-oracle_1.d7d64e2ce1effa558ef4.jpg",
     "static/media/Net_Angular_1.jpg": "/react-admin/static/media/Net_Angular_1.42c838b3cb2daea6df26.jpg",
     "static/media/17.jpg": "/react-admin/static/media/17.0c901ccebb312c233359.jpg",
     "static/media/19.jpg": "/react-admin/static/media/19.07e13e345891ae8655a6.jpg",
@@ -113,10 +116,10 @@
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.1b869f7c.css.map": "/react-admin/static/css/main.1b869f7c.css.map",
-    "main.8a89f860.js.map": "/react-admin/static/js/main.8a89f860.js.map"
+    "main.97f935a2.js.map": "/react-admin/static/js/main.97f935a2.js.map"
   },
   "entrypoints": [
     "static/css/main.1b869f7c.css",
-    "static/js/main.8a89f860.js"
+    "static/js/main.97f935a2.js"
   ]
 }
