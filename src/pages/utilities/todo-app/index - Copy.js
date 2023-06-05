@@ -1,8 +1,8 @@
-import { Button, Col, Form, Input, Row } from "antd";
-import React, { Fragment, useEffect, useState } from "react";
-import "./index.scss";
+import { Button, Col, Form, Input, Row } from 'antd';
+import React, { Fragment, useEffect, useState } from 'react';
+import './index.scss';
 
-import TodoApi from "../../../api/todo-api";
+import TodoApi from '../../../api/todo-api';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);
@@ -20,12 +20,12 @@ const TodoApp = () => {
           // _limit: 10,
         };
         const response = await TodoApi.getAll(params);
-        if (response.status === "OK") {
+        if (response.status === 'OK') {
           setTodos(response);
           setTodoDetails(response.data[0].todoDetail);
         }
       } catch (error) {
-        console.log("Failed to fetch todo list: ", error);
+        console.log('Failed to fetch todo list: ', error);
       }
     };
     fetchTodoList();

@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import todoApi from "../../../../../api/todo-api";
-import todoDetailApi from "../../../../../api/todo-detail-api";
-import todoTaskApi from "../../../../../api/todo-task-api";
-import { PageTitle } from "../../../../../components/modules/page-title";
-import { Editor } from "@tinymce/tinymce-react";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import todoApi from '../../../../../api/todo-api';
+import todoDetailApi from '../../../../../api/todo-detail-api';
+import todoTaskApi from '../../../../../api/todo-task-api';
+import { PageTitle } from '../../../../../components/modules/page-title';
+import { Editor } from '@tinymce/tinymce-react';
 
 interface ITodo {
-  _id: String;
-  title: String;
+  _id: string;
+  title: string;
 }
 
 interface ITodoDetail {
-  _id: String;
-  d_title: String;
-  d_content: String;
+  _id: string;
+  d_title: string;
+  d_content: string;
   collapse: boolean;
   d_order_number: Number;
 }
@@ -31,15 +31,15 @@ export const UtilitieAppTodoDetail = () => {
   const [todo, setTodo] = useState<ITodo>();
   const [details, setDetails] = useState<ITodoDetail[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [detailContent, setDetailContent] = useState("");
-  const [detailTitle, setDetailTitle] = useState("");
-  const [detailId, setDetailId] = useState("");
-  const [notificationMessage, setNotificationMessage] = useState("");
+  const [detailContent, setDetailContent] = useState('');
+  const [detailTitle, setDetailTitle] = useState('');
+  const [detailId, setDetailId] = useState('');
+  const [notificationMessage, setNotificationMessage] = useState('');
 
   const [taskCompleted, setTaskCompleted] = useState<ITodoTask[]>([]);
   const [taskInComplete, setTaskInComplete] = useState<ITodoTask[]>([]);
-  const [taskId, setTaskId] = useState("");
-  const [taskContent, setTaskContent] = useState("");
+  const [taskId, setTaskId] = useState('');
+  const [taskContent, setTaskContent] = useState('');
   const [taskStatus, setTaskStatus] = useState(0);
 
   /**
@@ -84,7 +84,7 @@ export const UtilitieAppTodoDetail = () => {
    */
   const removeMessageTinyMCE = () => {
     setTimeout(() => {
-      document.querySelectorAll(".tox-tinymce-aux").forEach((e) => e.remove());
+      document.querySelectorAll('.tox-tinymce-aux').forEach((e) => e.remove());
     }, 1000);
   };
 
@@ -115,11 +115,11 @@ export const UtilitieAppTodoDetail = () => {
       setDetailContent(detail.d_content.toString());
       setDetailId(detail._id.toString());
     }
-    ($("#modal-detail-update") as any).modal("show");
+    ($('#modal-detail-update') as any).modal('show');
   };
 
   /**
-   * 
+   *
    */
   const updateDetail = async () => {
     let detail = {
@@ -133,8 +133,8 @@ export const UtilitieAppTodoDetail = () => {
     if (response?.status) {
       if (response.data) {
         fetchTodoList(todo?._id);
-        ($("#modal-detail-update") as any).modal("hide");
-        showMesage("Cập nhật dữ liệu thành công");
+        ($('#modal-detail-update') as any).modal('hide');
+        showMesage('Cập nhật dữ liệu thành công');
       }
     }
   };
@@ -143,10 +143,10 @@ export const UtilitieAppTodoDetail = () => {
    * showModalCreateDetail
    */
   const showModalCreateDetail = () => {
-    setDetailId("");
-    setDetailContent("");
-    setDetailTitle("");
-    ($("#modal-detail-add") as any).modal("show");
+    setDetailId('');
+    setDetailContent('');
+    setDetailTitle('');
+    ($('#modal-detail-add') as any).modal('show');
   };
 
   /**
@@ -163,16 +163,16 @@ export const UtilitieAppTodoDetail = () => {
     if (response?.status) {
       if (response.data) {
         fetchTodoList(todo?._id);
-        ($("#modal-detail-add") as any).modal("hide");
-        showMesage("Thêm dữ liệu thành công");
+        ($('#modal-detail-add') as any).modal('hide');
+        showMesage('Thêm dữ liệu thành công');
       }
     }
   };
 
   /**
    * updateDetailOrderNumber
-   * @param id 
-   * @param isUp 
+   * @param id
+   * @param isUp
    */
   const updateDetailOrderNumber = async (id: String, isUp: boolean) => {
     let params = {
@@ -184,17 +184,17 @@ export const UtilitieAppTodoDetail = () => {
 
     if (response?.status) {
       fetchTodoList(todo?._id);
-      showMesage("Cập nhật dữ liệu thành công");
+      showMesage('Cập nhật dữ liệu thành công');
     }
   };
 
   /**
    * showModalDeleteDetail
-   * @param id 
+   * @param id
    */
   const showModalDeleteDetail = (id: String) => {
-    setDetailId(id.toString() || "");
-    ($("#modal-detail-delete") as any).modal("show");
+    setDetailId(id.toString() || '');
+    ($('#modal-detail-delete') as any).modal('show');
   };
 
   /**
@@ -209,8 +209,8 @@ export const UtilitieAppTodoDetail = () => {
 
     if (response?.status) {
       fetchTodoList(todo?._id);
-      ($("#modal-detail-delete") as any).modal("hide");
-      showMesage("Xóa dữ liệu thành công");
+      ($('#modal-detail-delete') as any).modal('hide');
+      showMesage('Xóa dữ liệu thành công');
     }
   };
 
@@ -218,10 +218,10 @@ export const UtilitieAppTodoDetail = () => {
    * showModalCreateTask
    */
   const showModalCreateTask = () => {
-    setTaskId("");
-    setTaskContent("");
+    setTaskId('');
+    setTaskContent('');
     setTaskStatus(0);
-    ($("#modal-task-add") as any).modal("show");
+    ($('#modal-task-add') as any).modal('show');
   };
 
   /**
@@ -236,7 +236,7 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoTaskApi.createTask(todo?._id, task);
 
     if (response?.status) {
-      showMesage("Thêm dữ liệu thành công");
+      showMesage('Thêm dữ liệu thành công');
       fetchTodoList(todo?._id);
     }
   };
@@ -253,7 +253,7 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
 
     if (response?.status) {
-      showMesage("Cập nhật dữ liệu thành công");
+      showMesage('Cập nhật dữ liệu thành công');
       fetchTodoList(todo?._id);
     }
   };
@@ -270,15 +270,15 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoTaskApi.updateTaskStatus(todo?._id, task);
 
     if (response?.status) {
-      showMesage("Cập nhật dữ liệu thành công");
+      showMesage('Cập nhật dữ liệu thành công');
       fetchTodoList(todo?._id);
     }
   };
 
   /**
    * updateTaskCompleteOrderNumber
-   * @param id 
-   * @param isUp 
+   * @param id
+   * @param isUp
    */
   const updateTaskCompleteOrderNumber = async (id: String, isUp: boolean) => {
     let params = {
@@ -290,7 +290,7 @@ export const UtilitieAppTodoDetail = () => {
 
     if (response?.status) {
       fetchTodoList(todo?._id);
-      showMesage("Cập nhật dữ liệu thành công");
+      showMesage('Cập nhật dữ liệu thành công');
     }
   };
 
@@ -298,8 +298,8 @@ export const UtilitieAppTodoDetail = () => {
    * showModalDeleteTask
    */
   const showModalDeleteTask = (id: String) => {
-    setTaskId(id.toString() || "");
-    ($("#modal-task-delete") as any).modal("show");
+    setTaskId(id.toString() || '');
+    ($('#modal-task-delete') as any).modal('show');
   };
 
   /**
@@ -313,16 +313,16 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoTaskApi.deleteTask(todo?._id, task);
 
     if (response?.status) {
-      ($("#modal-task-delete") as any).modal("hide");
-      showMesage("Xóa dữ liệu thành công");
+      ($('#modal-task-delete') as any).modal('hide');
+      showMesage('Xóa dữ liệu thành công');
       fetchTodoList(todo?._id);
     }
   };
 
   /**
    * showModalUpdateTaskContent
-   * @param id 
-   * @param isComplete 
+   * @param id
+   * @param isComplete
    */
   const showModalUpdateTaskContent = (id: String, isComplete: boolean) => {
     let task;
@@ -336,7 +336,7 @@ export const UtilitieAppTodoDetail = () => {
       setTaskContent(task.t_content.toString());
       setTaskId(task._id.toString());
     }
-    ($("#modal-task-update") as any).modal("show");
+    ($('#modal-task-update') as any).modal('show');
   };
 
   /**
@@ -351,8 +351,8 @@ export const UtilitieAppTodoDetail = () => {
     const response = await todoTaskApi.updateTaskContent(todo?._id, task);
 
     if (response?.status) {
-      ($("#modal-task-update") as any).modal("hide");
-      showMesage("Cập nhật dữ liệu thành công");
+      ($('#modal-task-update') as any).modal('hide');
+      showMesage('Cập nhật dữ liệu thành công');
       fetchTodoList(todo?._id);
     }
   };
@@ -385,14 +385,14 @@ export const UtilitieAppTodoDetail = () => {
 
   /**
    * showMesage
-   * @param message 
+   * @param message
    */
   const showMesage = (message: string) => {
     if (message.trim().length > 0) {
       setNotificationMessage(message);
-      ($("#modal-notification") as any).modal("show");
+      ($('#modal-notification') as any).modal('show');
       setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
+        ($('#modal-notification') as any).modal('hide');
       }, 1000);
     }
   };
@@ -411,21 +411,21 @@ export const UtilitieAppTodoDetail = () => {
       {todo?.title?.toString() ? (
         <PageTitle title={todo?.title?.toString()}></PageTitle>
       ) : (
-        <PageTitle title={"..."}></PageTitle>
+        <PageTitle title={'...'}></PageTitle>
       )}
-      <div className={isLoading ? "row mt-2" : "row mt-2 d-none"}>
-        <div style={{ minHeight: "30vh" }}>
+      <div className={isLoading ? 'row mt-2' : 'row mt-2 d-none'}>
+        <div style={{ minHeight: '30vh' }}>
           <div className="loading-spinner"></div>
         </div>
       </div>
 
-      <div className={!isLoading ? "row mt-2" : "row mt-2 d-none"}>
+      <div className={!isLoading ? 'row mt-2' : 'row mt-2 d-none'}>
         <div className="col-12 col-sm-8 col-md-8">
           <div className="d-flex flex-row-reverse">
             <input
               className="btn btn-primary float-end btn-sm"
               type="button"
-              value={"Thêm"}
+              value={'Thêm'}
               onClick={() => showModalCreateDetail()}
             />
           </div>
@@ -439,7 +439,7 @@ export const UtilitieAppTodoDetail = () => {
                       <input
                         className="btn btn-link btn-link-custom font-size-14"
                         type="button"
-                        value={detail.d_title.toString() || ""}
+                        value={detail.d_title.toString() || ''}
                       />
                     </p>
                     <div>
@@ -473,9 +473,9 @@ export const UtilitieAppTodoDetail = () => {
                   </div>
                 </div>
 
-                <div id="collapseOne" className={detail.collapse ? "collapse show" : "collapse"}>
+                <div id="collapseOne" className={detail.collapse ? 'collapse show' : 'collapse'}>
                   <div className="card-body">
-                    <div dangerouslySetInnerHTML={{ __html: detail.d_content.toString() || "" }} />
+                    <div dangerouslySetInnerHTML={{ __html: detail.d_content.toString() || '' }} />
                   </div>
                 </div>
               </div>
@@ -488,7 +488,7 @@ export const UtilitieAppTodoDetail = () => {
             <input
               className="btn btn-primary float-end btn-sm"
               type="button"
-              value={"Thêm"}
+              value={'Thêm'}
               onClick={() => showModalCreateTask()}
             />
           </div>
@@ -509,20 +509,29 @@ export const UtilitieAppTodoDetail = () => {
                     <div></div>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task._id, true)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateTaskCompleteOrderNumber(task._id, true)}
+                        >
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < taskInComplete.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task._id, false)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateTaskCompleteOrderNumber(task._id, false)}
+                        >
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task._id, false)}>
+                      <button
+                        className="btn pe-0 text-success"
+                        onClick={() => showModalUpdateTaskContent(task._id, false)}
+                      >
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
@@ -551,7 +560,10 @@ export const UtilitieAppTodoDetail = () => {
                     </div>
                     <div></div>
                     <div>
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTaskContent(task._id, true)}>
+                      <button
+                        className="btn pe-0 text-success"
+                        onClick={() => showModalUpdateTaskContent(task._id, true)}
+                      >
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </button>
                       <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
@@ -609,17 +621,17 @@ export const UtilitieAppTodoDetail = () => {
                     height: 300,
                     menubar: false,
                     toolbar:
-                      "undo redo | formatselect | " +
-                      "bold italic backcolor | alignleft aligncenter " +
-                      "alignright alignjustify | bullist numlist outdent indent | " +
-                      "removeformat | help",
-                    content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                      'undo redo | formatselect | ' +
+                      'bold italic backcolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => updateDetail()} value="Lưu" />
             </div>
           </div>
@@ -662,17 +674,17 @@ export const UtilitieAppTodoDetail = () => {
                     height: 300,
                     menubar: false,
                     toolbar:
-                      "undo redo | formatselect | " +
-                      "bold italic backcolor | alignleft aligncenter " +
-                      "alignright alignjustify | bullist numlist outdent indent | " +
-                      "removeformat | help",
-                    content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                      'undo redo | formatselect | ' +
+                      'bold italic backcolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => createDetail()} value="Lưu" />
             </div>
           </div>
@@ -699,7 +711,7 @@ export const UtilitieAppTodoDetail = () => {
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => deleteDetail()} value="Lưu" />
             </div>
           </div>
@@ -726,7 +738,7 @@ export const UtilitieAppTodoDetail = () => {
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => deleteTask()} value="Lưu" />
             </div>
           </div>
@@ -757,7 +769,7 @@ export const UtilitieAppTodoDetail = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => createTask()} value="Lưu" />
             </div>
           </div>
@@ -793,7 +805,7 @@ export const UtilitieAppTodoDetail = () => {
               />
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => updateTaskContent()} value="Lưu" />
             </div>
           </div>
@@ -811,7 +823,7 @@ export const UtilitieAppTodoDetail = () => {
             </div>
             <div className="modal-body">{notificationMessage}</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
             </div>
           </div>
         </div>

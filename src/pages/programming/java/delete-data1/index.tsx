@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const JavaDeleteData1 = () => {
   return (
@@ -15,7 +15,7 @@ export const JavaDeleteData1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/11.jpg")}
+              src={require('../../../../resources/img/programming/java/11.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -554,7 +554,7 @@ Java
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/12.jpg")}
+              src={require('../../../../resources/img/programming/java/12.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -566,7 +566,7 @@ Java
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/13.jpg")}
+              src={require('../../../../resources/img/programming/java/13.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -585,7 +585,7 @@ Java
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/19.jpg")}
+              src={require('../../../../resources/img/programming/java/19.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -597,7 +597,7 @@ Java
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/20.jpg")}
+              src={require('../../../../resources/img/programming/java/20.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

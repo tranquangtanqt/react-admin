@@ -1,4 +1,4 @@
-import axiosClient from "./axios-client";
+import axiosClient from './axios-client';
 
 const todoDetailApi = {
   /**
@@ -29,7 +29,7 @@ const todoDetailApi = {
    * @param {*} params : {_id: , isUp}
    * @returns
    */
-   updateDetailOrderNumber: (id, params) => {
+  updateDetailOrderNumber: (id, params) => {
     const url = `/todo/${id}/update-detail-order-number`;
     return axiosClient.put(url, params);
   },

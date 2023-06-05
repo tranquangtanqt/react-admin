@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter24 = () => {
   return (
@@ -9,27 +9,47 @@ export const TutorialPostgreSQLChapter24 = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>1. Accessing PostgreSQL with the C-API</b>
           <div className="tab-1">
-            <p>The C-API is the most powerful way to access PostgreSQL and it is surprisingly comfortable.</p>
+            <p>
+              The C-API is the most powerful way to access PostgreSQL and it is
+              surprisingly comfortable.
+            </p>
             <b>Compilation and linking</b>
             <p>
-              During compilation, you have to add the PostgreSQL include directory, which can be found with pg_config -- includedir, to the include
-              path.
+              During compilation, you have to add the PostgreSQL include
+              directory, which can be found with pg_config -- includedir, to the
+              include path.
             </p>
             <p>
-              You must link with the PostgreSQL client shared library (libpq.so on UNIX, libpq.dll on Windows). This library is in the PostgreSQL
+              You must link with the PostgreSQL client shared library (libpq.so
+              on UNIX, libpq.dll on Windows). This library is in the PostgreSQL
               library directory, which can be found with pg_config --libdir.
             </p>
-            <p>Note: For historical reason, the library is called libpq.soand not libpg.so, which is a popular trap for beginners.</p>
-            <p>Given that the below code sample is in file coltype.c, compilation and linking would be done with</p>
+            <p>
+              Note: For historical reason, the library is called libpq.soand not
+              libpg.so, which is a popular trap for beginners.
+            </p>
+            <p>
+              Given that the below code sample is in file coltype.c, compilation
+              and linking would be done with
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`gcc -Wall -I "$(pg_config --includedir)" -L "$(pg_config --libdir)" -o coltype coltype.c -lpq`} language="sql" />
+            <Code
+              code={`gcc -Wall -I "$(pg_config --includedir)" -L "$(pg_config --libdir)" -o coltype coltype.c -lpq`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>with the GNU C compiler (consider adding -Wl,-rpath,"$(pg_config --libdir)" to add the library search path) or with</p>
+            <p>
+              with the GNU C compiler (consider adding -Wl,-rpath,"$(pg_config
+              --libdir)" to add the library search path) or with
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`cl /MT /W4 /I <include directory> coltype.c <path TO libpq.lib>`} language="sql" />
+            <Code
+              code={`cl /MT /W4 /I <include directory> coltype.c <path TO libpq.lib>`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>on Windows with Microsoft Visual C.</p>
@@ -175,10 +195,14 @@ int main(int argc, char **argv) {
           <b>2. Accessing PostgreSQL from python using psycopg2</b>
           <div className="tab-1">
             <p>
-              You can find description of the driver{" "}
-              <a href="http://initd.org/psycopg/docs/" target={"_blank"} rel="noreferrer">
+              You can find description of the driver{' '}
+              <a
+                href="http://initd.org/psycopg/docs/"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 here
-              </a>{" "}
+              </a>{' '}
               .
             </p>
             <p>The quick example is:</p>
@@ -206,7 +230,10 @@ print(cur.fetchall())`}
             <p>Will result:</p>
           </div>
           <div className="tab-2">
-            <Code code={`[{'id': 2, 'fruit': 'apple'}, {'id': 3, 'fruit': 'orange'}]`} language="sql" />
+            <Code
+              code={`[{'id': 2, 'fruit': 'apple'}, {'id': 3, 'fruit': 'orange'}]`}
+              language="sql"
+            />
           </div>
         </div>
       </div>
@@ -215,10 +242,14 @@ print(cur.fetchall())`}
           <b>3. Accessing PostgreSQL from .NET using the Npgsql provider</b>
           <div className="tab-1">
             <p>
-              One of the more popular .NET providers for Postgresql is Npgsql, which is ADO.NET compatible and is used nearly identically as other
-              .NET database providers.
+              One of the more popular .NET providers for Postgresql is Npgsql,
+              which is ADO.NET compatible and is used nearly identically as
+              other .NET database providers.
             </p>
-            <p>A typical query is performed by creating a command, binding parameters, and then executing the command. In C#:</p>
+            <p>
+              A typical query is performed by creating a command, binding
+              parameters, and then executing the command. In C#:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -271,10 +302,14 @@ using (var conn = new NpgsqlConnection(connString))
           <b>4. Accessing PostgreSQL from PHP using Pomm2</b>
           <div className="tab-1">
             <p>
-              On the shoulders of the low level drivers, there is pomm. It proposes a modular approach, data converters, listen/notify support,
-              database inspector and much more
+              On the shoulders of the low level drivers, there is pomm. It
+              proposes a modular approach, data converters, listen/notify
+              support, database inspector and much more
             </p>
-            <p>Assuming, Pomm has been installed using composer, here is a complete example:</p>
+            <p>
+              Assuming, Pomm has been installed using composer, here is a
+              complete example:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -320,9 +355,11 @@ if ($comments->isEmpty()) {
           </div>
           <div className="tab-1">
             <p>
-              Pomm’s query manager module escapes query arguments to prevent SQL injection. When the arguments are cast, it also converts them from a
-              PHP representation to valid Postgres values. The result is an iterator, it uses a cursor internally. Every row is converted on the fly,
-              booleans to booleans, timestamps to \DateTime etc.
+              Pomm’s query manager module escapes query arguments to prevent SQL
+              injection. When the arguments are cast, it also converts them from
+              a PHP representation to valid Postgres values. The result is an
+              iterator, it uses a cursor internally. Every row is converted on
+              the fly, booleans to booleans, timestamps to \DateTime etc.
             </p>
           </div>
         </div>

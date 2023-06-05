@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter3 = () => {
   return (
@@ -9,7 +9,10 @@ export const TutorialPostgreSQLChapter3 = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.1 Show table definition</b>
           <div className="tab-1">
-            <p>Open the psql command line tool connected to the database where your table is. Then type the following command:</p>
+            <p>
+              Open the psql command line tool connected to the database where
+              your table is. Then type the following command:
+            </p>
           </div>
           <div className="tab-2">
             <Code code={`\\d tablename`} language="sql" />
@@ -21,7 +24,10 @@ export const TutorialPostgreSQLChapter3 = () => {
             <Code code={`\\d+ tablename`} language="sql" />
           </div>
           <div className="tab-1">
-            <p>If you have forgotten the name of the table, just type \d into psql to obtain a list of tables and views in the current database.</p>
+            <p>
+              If you have forgotten the name of the table, just type \d into
+              psql to obtain a list of tables and views in the current database.
+            </p>
           </div>
         </div>
       </div>
@@ -61,8 +67,9 @@ SQL
           <b>1.3 Create unlogged table</b>
           <div className="tab-1">
             <p>
-              You can create unlogged tables so that you can make the tables considerably faster. Unlogged table skips writing WRITE-ahead log which
-              means it's not crash-safe and unable to replicate.
+              You can create unlogged tables so that you can make the tables
+              considerably faster. Unlogged table skips writing WRITE-ahead log
+              which means it's not crash-safe and unable to replicate.
             </p>
           </div>
           <div className="tab-2">
@@ -96,7 +103,10 @@ SQL
             />
           </div>
           <div className="tab-1">
-            <p>Alternatively, you can place the PRIMARY KEY constraint directly in the column definition:</p>
+            <p>
+              Alternatively, you can place the PRIMARY KEY constraint directly
+              in the column definition:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -112,8 +122,11 @@ SQL
           </div>
           <div className="tab-1">
             <p>
-              It is recommended that you use lower case names for the table and as well as all the columns. If you use upper case names such as Person
-              you would have to wrap that name in double quotes ("Person") in each and every query because PostgreSQL enforces case folding.
+              It is recommended that you use lower case names for the table and
+              as well as all the columns. If you use upper case names such as
+              Person you would have to wrap that name in double quotes
+              ("Person") in each and every query because PostgreSQL enforces
+              case folding.
             </p>
           </div>
         </div>
@@ -122,7 +135,10 @@ SQL
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.5 Create a table that references other table</b>
           <div className="tab-1">
-            <p>In this example, User Table will have a column that references the Agency table.</p>
+            <p>
+              In this example, User Table will have a column that references the
+              Agency table.
+            </p>
           </div>
           <div className="tab-2">
             <Code

@@ -1,25 +1,25 @@
-import { useState } from "react";
-import { PageTitle } from "../../../../components/modules/page-title";
+import { useState } from 'react';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const UtilitiesTextFindTextColumnJPEN = () => {
-  const [input1, setInput1] = useState("");
-  const [input2, setInput2] = useState("");
-  const [output, setOutput] = useState("");
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+  const [output, setOutput] = useState('');
 
   const findText = () => {
-    let outputStr = "";
-    let input1Arr = input1.split("\n");
+    let outputStr = '';
+    let input1Arr = input1.split('\n');
     input1Arr = input1Arr.map((x) => x.trim());
 
-    let input2Arr = input2.split("\n");
+    let input2Arr = input2.split('\n');
     input2Arr = input2Arr.map((x) => x.trim());
 
     for (let i = 0; i < input1Arr.length; i++) {
       if (input1Arr[i].trim().length > 0) {
         for (let j = 0; j < input2Arr.length; j++) {
-          let row = input2Arr[j].split("\t");
+          const row = input2Arr[j].split('\t');
           if (row.includes(input1Arr[i])) {
-            outputStr += row[1] + "\n";
+            outputStr += row[1] + '\n';
           }
         }
       }
@@ -41,7 +41,7 @@ export const UtilitiesTextFindTextColumnJPEN = () => {
             className="form-control"
             value={input1}
             onChange={(e) => setInput1(e.target.value)}
-            style={{ height: 400, width: "100%" }}
+            style={{ height: 400, width: '100%' }}
           />
         </div>
 
@@ -54,13 +54,17 @@ export const UtilitiesTextFindTextColumnJPEN = () => {
             className="form-control"
             value={input2}
             onChange={(e) => setInput2(e.target.value)}
-            style={{ height: 400, width: "100%" }}
+            style={{ height: 400, width: '100%' }}
           />
         </div>
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="button" className="btn btn-primary btn-sm" onClick={() => findText()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={() => findText()}
+          >
             Find
           </button>
         </div>
@@ -76,7 +80,7 @@ export const UtilitiesTextFindTextColumnJPEN = () => {
             className="form-control"
             value={output}
             onChange={(e) => setOutput(e.target.value)}
-            style={{ height: 400, width: "100%" }}
+            style={{ height: 400, width: '100%' }}
           />
         </div>
       </div>

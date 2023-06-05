@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter28 = () => {
   return (
@@ -44,7 +44,10 @@ WHERE
               language="sql"
             />
           </div>
-          <b>4. Update query with join between two tables alternative since Postresql does not support join in update query</b>
+          <b>
+            4. Update query with join between two tables alternative since Postresql does not support join in update
+            query
+          </b>
           <div className="tab-1">
             <Code
               code={`UPDATE <SCHEMA_NAME>.<TABLE_NAME_1> AS A
@@ -76,7 +79,10 @@ FROM dbo."Table1"`}
             <p>Yearwise difference between two dates(timestamp)(timestamp)</p>
           </div>
           <div className="tab-1">
-            <Code code={`SELECT (DATE_PART('year', AgeonDate) - DATE_PART('year', tmpdate)) FROM dbo."Table1"`} language="sql" />
+            <Code
+              code={`SELECT (DATE_PART('year', AgeonDate) - DATE_PART('year', tmpdate)) FROM dbo."Table1"`}
+              language="sql"
+            />
           </div>
           <b>6. Query to Copy/Move/Transafer table data from one database to other database table with same schema</b>
           <div className="tab-1">

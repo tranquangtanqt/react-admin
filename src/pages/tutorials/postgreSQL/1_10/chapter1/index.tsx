@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter1 = () => {
   return (
@@ -41,13 +41,19 @@ export const TutorialPostgreSQLChapter1 = () => {
                   <td>DECIMAL</td>
                   <td>variable</td>
                   <td>user-specified precision, exact</td>
-                  <td>up to 131072 digits before the decimal point; up to 16383 digits after the decimal point</td>
+                  <td>
+                    up to 131072 digits before the decimal point; up to 16383
+                    digits after the decimal point
+                  </td>
                 </tr>
                 <tr>
                   <td>NUMERIC</td>
                   <td>variable</td>
                   <td>user-specified precision, exact</td>
-                  <td>up to 131072 digits before the decimal point; up to 16383 digits after the decimal point</td>
+                  <td>
+                    up to 131072 digits before the decimal point; up to 16383
+                    digits after the decimal point
+                  </td>
                 </tr>
                 <tr>
                   <td>REAL</td>
@@ -226,7 +232,7 @@ export const TutorialPostgreSQLChapter1 = () => {
                   <td>32 bytes</td>
                   <td>Infinite line</td>
                   <td>
-                    {"{"}(A, B, C){"}"}
+                    {'{'}(A, B, C){'}'}
                   </td>
                 </tr>
                 <tr>
@@ -337,8 +343,9 @@ export const TutorialPostgreSQLChapter1 = () => {
           <b>1.6 : Arrays</b>
           <div className="tab-1">
             <p>
-              In PostgreSQL you can create Arrays of any built-in, user-defined or enum type. In default there is no limit to an Array, but you can
-              specify it.
+              In PostgreSQL you can create Arrays of any built-in, user-defined
+              or enum type. In default there is no limit to an Array, but you
+              can specify it.
             </p>
           </div>
           <div className="tab-1">
@@ -372,8 +379,9 @@ SELECT ARRAY[ARRAY[0,1],ARRAY[1,2]];`}
           </div>
           <div className="tab-2">
             <p>
-              By default PostgreSQL uses a one-based numbering convention for arrays, that is, an array of n elements starts with ARRAY[1] and ends
-              with ARRAY[n].
+              By default PostgreSQL uses a one-based numbering convention for
+              arrays, that is, an array of n elements starts with ARRAY[1] and
+              ends with ARRAY[n].
             </p>
           </div>
           <div className="tab-2">

@@ -1,4 +1,4 @@
-import axiosClient from "./axios-client";
+import axiosClient from './axios-client';
 
 const todoTaskApi = {
   /**
@@ -7,7 +7,7 @@ const todoTaskApi = {
    * @param {*} params : {t_content: , t_status, t_left, t_right}
    * @returns
    */
-   createTask: (id, params) => {
+  createTask: (id, params) => {
     const url = `/todo/${id}/create-task`;
     return axiosClient.put(url, params);
   },
@@ -18,7 +18,7 @@ const todoTaskApi = {
    * @param {*} params : {_id: , t_status: , t_left, t_right}
    * @returns
    */
-   updateTaskStatus: (id, params) => {
+  updateTaskStatus: (id, params) => {
     const url = `/todo/${id}/update-task-status`;
     return axiosClient.put(url, params);
   },
@@ -45,7 +45,7 @@ const todoTaskApi = {
    * @param {*} params : {_id:}
    * @returns
    */
-   deleteTask: (id, params) => {
+  deleteTask: (id, params) => {
     const url = `/todo/${id}/delete-task`;
     return axiosClient.put(url, params);
   },

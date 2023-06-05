@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter13 = () => {
   return (
@@ -21,8 +21,12 @@ SELECT SUM(n) FROM t;`}
           </div>
           <div className="tab-1">
             <p>
-              {" "}
-              <a href="https://www.postgresql.org/docs/current/functions-window.html" target={"_blank"} rel="noreferrer">
+              {' '}
+              <a
+                href="https://www.postgresql.org/docs/current/functions-window.html"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 Link to Documentation
               </a>
             </p>

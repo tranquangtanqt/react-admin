@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const CSharpConnectOracle = () => {
   return (
@@ -16,7 +16,7 @@ export const CSharpConnectOracle = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/csharp/CSharp1.jpg")}
+              src={require('../../../../resources/img/programming/csharp/CSharp1.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -28,7 +28,10 @@ export const CSharpConnectOracle = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <p>Using</p>
           <div className="tab-1">
-            <Code code={`using Oracle.ManagedDataAccess.Client;`} language="csharp" />
+            <Code
+              code={`using Oracle.ManagedDataAccess.Client;`}
+              language="csharp"
+            />
           </div>
           <p>Function</p>
           <div className="tab-1">

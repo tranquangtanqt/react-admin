@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialJavaLesson3 = () => {
   return (
@@ -21,8 +21,8 @@ String text = obj.toString(); // 'obj' is dereferenced.`}
 
           <div className="tab-1">
             <p>
-              Dereferencing follows the memory address stored in a reference, to the place in memory where the actual object resides. When an object
-              has been found, the requested method is called (toString in this case).
+              Dereferencing follows the memory address stored in a reference, to the place in memory where the actual
+              object resides. When an object has been found, the requested method is called (toString in this case).
             </p>
             <p>When a reference has the value null, dereferencing results in a NullPointerException:</p>
           </div>
@@ -35,8 +35,8 @@ obj.toString(); // Throws a NullpointerException when this statement is executed
           </div>
           <div className="tab-1">
             <p>
-              null indicates the absence of a value, i.e. following the memory address leads nowhere. So there is no object on which the requested
-              method can be called.
+              null indicates the absence of a value, i.e. following the memory address leads nowhere. So there is no
+              object on which the requested method can be called.
             </p>
           </div>
         </div>

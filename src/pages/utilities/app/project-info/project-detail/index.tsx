@@ -1,12 +1,12 @@
-import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
-import { PageTitle } from "../../../../../components/modules/page-title";
-import { Editor } from "@tinymce/tinymce-react";
-import projectJson from "./../data/project.json";
+import { useEffect, useRef, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { PageTitle } from '../../../../../components/modules/page-title';
+import { Editor } from '@tinymce/tinymce-react';
+import projectJson from './../data/project.json';
 
-import { IProject } from "../dto/project";
-import { IProjectDetail } from "../dto/project-detail";
-import { IProjectTask } from "../dto/project-task";
+import { IProject } from '../dto/project';
+import { IProjectDetail } from '../dto/project-detail';
+import { IProjectTask } from '../dto/project-task';
 
 export const UtilitieAppProjectDetail = () => {
   const MODE_NOMAL = 0;
@@ -34,8 +34,8 @@ export const UtilitieAppProjectDetail = () => {
     return data.details.sort((a, b) => b.order - a.order);
   });
 
-  const [detailContent, setDetailContent] = useState("");
-  const [notificationMessage, setNotificationMessage] = useState("");
+  const [detailContent, setDetailContent] = useState('');
+  const [notificationMessage, setNotificationMessage] = useState('');
 
   const [tasks, setTasks] = useState<IProjectTask[]>(() => {
     let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
@@ -73,7 +73,7 @@ export const UtilitieAppProjectDetail = () => {
   useEffect(() => {
     let count = 0;
     let myInterval = setInterval(() => {
-      document.querySelectorAll(".tox-tinymce-aux").forEach((e) => e.remove());
+      document.querySelectorAll('.tox-tinymce-aux').forEach((e) => e.remove());
       count++;
       if (count === 5) {
         clearInterval(myInterval);
@@ -104,9 +104,9 @@ export const UtilitieAppProjectDetail = () => {
     data.details.forEach((x) => (x.collapse = false));
     updateProjectDetail(data.details);
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(projects))}`;
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = jsonString;
-    link.download = "project.json";
+    link.download = 'project.json';
     link.click();
   };
 
@@ -116,10 +116,10 @@ export const UtilitieAppProjectDetail = () => {
   const showModalCreateDetail = () => {
     setMode(MODE_CREATE);
     if (refDetailTitle.current !== null) {
-      refDetailTitle.current.value = "";
+      refDetailTitle.current.value = '';
     }
-    setDetailContent("");
-    ($("#modal-detail-create-update") as any).modal("show");
+    setDetailContent('');
+    ($('#modal-detail-create-update') as any).modal('show');
   };
 
   /**
@@ -140,7 +140,7 @@ export const UtilitieAppProjectDetail = () => {
       }
       setDetailContent(detail.content.toString());
     }
-    ($("#modal-detail-create-update") as any).modal("show");
+    ($('#modal-detail-create-update') as any).modal('show');
   };
 
   /**
@@ -170,8 +170,8 @@ export const UtilitieAppProjectDetail = () => {
       setDetails(descDetail(updDetails));
 
       updateProjectDetail(updDetails);
-      ($("#modal-detail-create-update") as any).modal("hide");
-      showMesage("Thêm dữ liệu thành công");
+      ($('#modal-detail-create-update') as any).modal('hide');
+      showMesage('Thêm dữ liệu thành công');
     } else if (mode === MODE_EDIT) {
       if (refDetailId.current != null) {
         let id = Number(refDetailId.current.value);
@@ -185,8 +185,8 @@ export const UtilitieAppProjectDetail = () => {
         let arr = [...details.slice(0, index), detail, ...details.slice(index + 1)];
         setDetails(descDetail(arr));
         updateProjectDetail(arr);
-        ($("#modal-detail-create-update") as any).modal("hide");
-        showMesage("Cập nhật dữ liệu thành công");
+        ($('#modal-detail-create-update') as any).modal('hide');
+        showMesage('Cập nhật dữ liệu thành công');
       }
     }
   };
@@ -257,7 +257,7 @@ export const UtilitieAppProjectDetail = () => {
       setDetails(descDetail(arr));
       updateProjectDetail(arr);
     }
-    showMesage("Cập nhật dữ liệu thành công");
+    showMesage('Cập nhật dữ liệu thành công');
   };
 
   /**
@@ -267,7 +267,7 @@ export const UtilitieAppProjectDetail = () => {
   const showModalDeleteDetail = (id: number) => {
     if (refDetailId.current != null) {
       refDetailId.current.value = id.toString();
-      ($("#modal-detail-delete") as any).modal("show");
+      ($('#modal-detail-delete') as any).modal('show');
     }
   };
 
@@ -283,8 +283,8 @@ export const UtilitieAppProjectDetail = () => {
       setDetails(descDetail(arr));
       updateProjectDetail(arr);
 
-      ($("#modal-detail-delete") as any).modal("hide");
-      showMesage("Xóa dữ liệu thành công");
+      ($('#modal-detail-delete') as any).modal('hide');
+      showMesage('Xóa dữ liệu thành công');
     }
   };
 
@@ -294,9 +294,9 @@ export const UtilitieAppProjectDetail = () => {
   const showModalCreateTask = () => {
     setMode(MODE_CREATE);
     if (refTaskContent.current !== null) {
-      refTaskContent.current.value = "";
+      refTaskContent.current.value = '';
     }
-    ($("#modal-task-create-update") as any).modal("show");
+    ($('#modal-task-create-update') as any).modal('show');
   };
 
   /**
@@ -320,7 +320,7 @@ export const UtilitieAppProjectDetail = () => {
       if (refTaskContent.current !== null) {
         refTaskContent.current.value = task.content.toString();
       }
-      ($("#modal-task-create-update") as any).modal("show");
+      ($('#modal-task-create-update') as any).modal('show');
     }
   };
 
@@ -352,8 +352,8 @@ export const UtilitieAppProjectDetail = () => {
       setTasks(arr);
       updateProjectTask(arr);
 
-      ($("#modal-task-create-update") as any).modal("hide");
-      showMesage("Thêm dữ liệu thành công");
+      ($('#modal-task-create-update') as any).modal('hide');
+      showMesage('Thêm dữ liệu thành công');
     } else if (mode === MODE_EDIT) {
       if (refTaskId.current != null) {
         let id = Number(refTaskId.current.value);
@@ -364,8 +364,8 @@ export const UtilitieAppProjectDetail = () => {
 
         updateTask(task, id);
 
-        ($("#modal-task-create-update") as any).modal("hide");
-        showMesage("Cập nhật dữ liệu thành công");
+        ($('#modal-task-create-update') as any).modal('hide');
+        showMesage('Cập nhật dữ liệu thành công');
       }
     }
   };
@@ -454,7 +454,7 @@ export const UtilitieAppProjectDetail = () => {
     if (refTaskId.current !== null) {
       refTaskId.current.value = id.toString();
     }
-    ($("#modal-task-delete") as any).modal("show");
+    ($('#modal-task-delete') as any).modal('show');
   };
 
   /**
@@ -468,8 +468,8 @@ export const UtilitieAppProjectDetail = () => {
 
       updTasks(arr);
 
-      ($("#modal-task-delete") as any).modal("hide");
-      showMesage("Xóa dữ liệu thành công");
+      ($('#modal-task-delete') as any).modal('hide');
+      showMesage('Xóa dữ liệu thành công');
     }
   };
 
@@ -480,25 +480,34 @@ export const UtilitieAppProjectDetail = () => {
   const showMesage = (message: string) => {
     if (message.trim().length > 0) {
       setNotificationMessage(message);
-      ($("#modal-notification") as any).modal("show");
+      ($('#modal-notification') as any).modal('show');
       setTimeout(() => {
-        ($("#modal-notification") as any).modal("hide");
+        ($('#modal-notification') as any).modal('hide');
       }, 700);
     }
   };
 
   return (
     <>
-      {project?.title?.toString() ? <PageTitle title={project?.title?.toString()}></PageTitle> : <PageTitle title={"..."}></PageTitle>}
+      {project?.title?.toString() ? (
+        <PageTitle title={project?.title?.toString()}></PageTitle>
+      ) : (
+        <PageTitle title={'...'}></PageTitle>
+      )}
 
       <button type="button" className="btn btn-primary btn-sm" onClick={exportData}>
         Export Data
       </button>
 
-      <div className={"row mt-2"}>
+      <div className={'row mt-2'}>
         <div className="col-12 col-sm-8 col-md-8">
           <div className="d-flex flex-row-reverse">
-            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateDetail()} />
+            <input
+              className="btn btn-primary float-end btn-sm"
+              type="button"
+              value={'Thêm'}
+              onClick={() => showModalCreateDetail()}
+            />
           </div>
 
           <div className="accordion mt-2" id="accordionExample">
@@ -507,7 +516,11 @@ export const UtilitieAppProjectDetail = () => {
                 <div className="card-header" id={detail.id.toString()}>
                   <div className="d-flex justify-content-between">
                     <p className="mb-0" onClick={() => changeCollapse(detail.id)}>
-                      <input className="btn btn-link btn-link-custom font-size-14" type="button" value={detail.title.toString() || ""} />
+                      <input
+                        className="btn btn-link btn-link-custom font-size-14"
+                        type="button"
+                        value={detail.title.toString() || ''}
+                      />
                     </p>
                     <div>
                       {key > 0 ? (
@@ -518,7 +531,10 @@ export const UtilitieAppProjectDetail = () => {
                         <button className="btn cursor-default"></button>
                       )}
                       {key < details.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateDetailOrderNumber(detail.id, false)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateDetailOrderNumber(detail.id, false)}
+                        >
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
@@ -534,9 +550,9 @@ export const UtilitieAppProjectDetail = () => {
                   </div>
                 </div>
 
-                <div id="collapseOne" className={detail.collapse ? "collapse show" : "collapse"}>
+                <div id="collapseOne" className={detail.collapse ? 'collapse show' : 'collapse'}>
                   <div className="card-body">
-                    <div dangerouslySetInnerHTML={{ __html: detail.content.toString() || "" }} />
+                    <div dangerouslySetInnerHTML={{ __html: detail.content.toString() || '' }} />
                   </div>
                 </div>
               </div>
@@ -546,7 +562,12 @@ export const UtilitieAppProjectDetail = () => {
 
         <div className="col-12 col-sm-4 col-md-4">
           <div className="d-flex flex-row-reverse">
-            <input className="btn btn-primary float-end btn-sm" type="button" value={"Thêm"} onClick={() => showModalCreateTask()} />
+            <input
+              className="btn btn-primary float-end btn-sm"
+              type="button"
+              value={'Thêm'}
+              onClick={() => showModalCreateTask()}
+            />
           </div>
           <div className="card mt-2">
             <div className="card-header">Danh sách nhiệm vụ</div>
@@ -555,20 +576,30 @@ export const UtilitieAppProjectDetail = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div className="cursor-pointer">
-                      <i className="fa fa-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToCompletedTask(task.id)}></i>
+                      <i
+                        className="fa fa-circle-o me-2"
+                        aria-hidden="true"
+                        onClick={() => updateStatusToCompletedTask(task.id)}
+                      ></i>
                       {task.content}
                     </div>
                     <div></div>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task.id, true)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateTaskCompleteOrderNumber(task.id, true)}
+                        >
                           <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < taskInComplete.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateTaskCompleteOrderNumber(task.id, false)}>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateTaskCompleteOrderNumber(task.id, false)}
+                        >
                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
                         </button>
                       ) : (
@@ -594,7 +625,11 @@ export const UtilitieAppProjectDetail = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div className="text-secondary cursor-pointer">
-                      <i className="fa fa-check-circle-o me-2" aria-hidden="true" onClick={() => updateStatusToInCompleteTask(task.id)}></i>
+                      <i
+                        className="fa fa-check-circle-o me-2"
+                        aria-hidden="true"
+                        onClick={() => updateStatusToInCompleteTask(task.id)}
+                      ></i>
                       <s>{task.content}</s>
                     </div>
                     <div></div>
@@ -614,7 +649,12 @@ export const UtilitieAppProjectDetail = () => {
         </div>
       </div>
 
-      <div className="modal fade" id="modal-detail-create-update" aria-labelledby="modal-detail-create-update1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-detail-create-update"
+        aria-labelledby="modal-detail-create-update1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
             <div className="modal-header">
@@ -652,17 +692,17 @@ export const UtilitieAppProjectDetail = () => {
                     height: 300,
                     menubar: false,
                     toolbar:
-                      "undo redo | formatselect | " +
-                      "bold italic backcolor | alignleft aligncenter " +
-                      "alignright alignjustify | bullist numlist outdent indent | " +
-                      "removeformat | help",
-                    content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
+                      'undo redo | formatselect | ' +
+                      'bold italic backcolor | alignleft aligncenter ' +
+                      'alignright alignjustify | bullist numlist outdent indent | ' +
+                      'removeformat | help',
+                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => createOrUpdateDetail()} value="Lưu" />
             </div>
           </div>
@@ -680,14 +720,19 @@ export const UtilitieAppProjectDetail = () => {
             </div>
             <div className="modal-body">Bạn có chắc chắn muốn xóa chi tiết?</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => deleteDetail()} value="Lưu" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-task-create-update" aria-labelledby="modal-task-create-update1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-task-create-update"
+        aria-labelledby="modal-task-create-update1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
@@ -712,7 +757,7 @@ export const UtilitieAppProjectDetail = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => createOrUpdateTask()} value="Lưu" />
             </div>
           </div>
@@ -730,7 +775,7 @@ export const UtilitieAppProjectDetail = () => {
             </div>
             <div className="modal-body">Bạn có chắc chắn muốn xóa chi tiết?</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
               <input type="button" className="btn btn-primary" onClick={() => deleteTask()} value="Lưu" />
             </div>
           </div>
@@ -748,7 +793,7 @@ export const UtilitieAppProjectDetail = () => {
             </div>
             <div className="modal-body">{notificationMessage}</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={"Đóng"} />
+              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
             </div>
           </div>
         </div>

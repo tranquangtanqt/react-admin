@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const OracleSystem = () => {
   return (
@@ -9,11 +9,17 @@ export const OracleSystem = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>1. Kết nối DB</b>
           <div className="tab-1">
-            <Code code={`sqlplus myusername/mypassword@host/ORCL`} language="sql" />
+            <Code
+              code={`sqlplus myusername/mypassword@host/ORCL`}
+              language="sql"
+            />
           </div>
           <b>2. Hiển thị toàn bộ comments của table và view</b>
           <div className="tab-1">
-            <Code code={`SELECT * FROM all_tab_comments WHERE comments LIKE '%%';`} language="sql" />
+            <Code
+              code={`SELECT * FROM all_tab_comments WHERE comments LIKE '%%';`}
+              language="sql"
+            />
           </div>
           <b>3. Hiển thị toàn bộ comments của column</b>
           <div className="tab-1">
@@ -24,7 +30,10 @@ export const OracleSystem = () => {
           </div>
           <b>4. Thư mục lưu file tablespace</b>
           <div className="tab-1">
-            <Code code={`D:\\app\\tantq\\virtual\\product\\12.2.0\\dbhome_1\\database`} language="sql" />
+            <Code
+              code={`D:\\app\\tantq\\virtual\\product\\12.2.0\\dbhome_1\\database`}
+              language="sql"
+            />
           </div>
           <b>5. Kiểm tra user đang sử dụng</b>
           <div className="tab-1">

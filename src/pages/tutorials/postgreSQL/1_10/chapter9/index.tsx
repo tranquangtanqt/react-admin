@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter9 = () => {
   return (
@@ -8,8 +8,11 @@ export const TutorialPostgreSQLChapter9 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            JSON - Java Script Object Notation , Postgresql support JSON Data type since 9.2 version. There are some predefined function and operators
-            to access the JSON data. The -{">"} operator returns the key of JSON column. The -{">"} operator returns the value of JSON Column
+            JSON - Java Script Object Notation , Postgresql support JSON Data
+            type since 9.2 version. There are some predefined function and
+            operators to access the JSON data. The -{'>'} operator returns the
+            key of JSON column. The -{'>'} operator returns the value of JSON
+            Column
           </p>
 
           <b>1. Using JSONb operators</b>
@@ -74,31 +77,35 @@ CREATE TABLE books (
                   <td>1</td>
                   <td>Joe</td>
                   <td>
-                    {"{"}"title": "Siddhartha", "author": {"{"}"last_name": "Hesse", "first_name": "Herman"{"}"}
-                    {"}"}
+                    {'{'}"title": "Siddhartha", "author": {'{'}"last_name":
+                    "Hesse", "first_name": "Herman"{'}'}
+                    {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>2</td>
                   <td>Jenny</td>
                   <td>
-                    {"{"}"title": "Dharma Bums", "author": {"{"}"last_name": "Kerouac", "first_name": "Jack"{"}"}
-                    {"}"}
+                    {'{'}"title": "Dharma Bums", "author": {'{'}"last_name":
+                    "Kerouac", "first_name": "Jack"{'}'}
+                    {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>3</td>
                   <td>Jenny</td>
                   <td>
-                    {"{"}"title": "100 años de soledad", "author": {"{"}"last_name": "Marquéz", "first_name": "Gabo"{"}"}
-                    {"}"}
+                    {'{'}"title": "100 años de soledad", "author": {'{'}
+                    "last_name": "Marquéz", "first_name": "Gabo"
+                    {'}'}
+                    {'}'}
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="tab-1">
-            <p>-{">"} operator returns values out of JSON columns</p>
+            <p>-{'>'} operator returns values out of JSON columns</p>
           </div>
           <div className="tab-1">
             <p>Selecting 1 column:</p>
@@ -166,21 +173,21 @@ FROM books;`}
                   <td>Joe</td>
                   <td>"Siddhartha"</td>
                   <td>
-                    {"{"}"last_name": "Hesse", "first_name": "Herman"{"}"}
+                    {'{'}"last_name": "Hesse", "first_name": "Herman"{'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>Jenny</td>
                   <td>"Dharma Bums"</td>
                   <td>
-                    {"{"}"last_name": "Kerouac", "first_name": "Jack"{"}"}
+                    {'{'}"last_name": "Kerouac", "first_name": "Jack"{'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>Jenny</td>
                   <td>"100 años de soledad"</td>
                   <td>
-                    {"{"}"last_name": "Marquéz", "first_name": "Gabo"{"}"}
+                    {'{'}"last_name": "Marquéz", "first_name": "Gabo"{'}'}
                   </td>
                 </tr>
               </tbody>
@@ -188,21 +195,25 @@ FROM books;`}
           </div>
           <div className="tab-1">
             <p>
-              -{">"} vs -{">"}
-              {">"}
+              -{'>'} vs -{'>'}
+              {'>'}
             </p>
           </div>
           <div className="tab-1">
             <p>
-              The -{">"} operator returns the original JSON type (which might be an object), whereas -{">"}
-              {">"} returns text.
+              The -{'>'} operator returns the original JSON type (which might be
+              an object), whereas -{'>'}
+              {'>'} returns text.
             </p>
           </div>
           <div className="tab-1">
             <b>Return NESTED objects</b>
           </div>
           <div className="tab-1">
-            <p>You can use the -{">"} to return a nested object and thus chain the operators:</p>
+            <p>
+              You can use the -{'>'} to return a nested object and thus chain
+              the operators:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -256,12 +267,15 @@ FROM books
             />
           </div>
           <div className="tab-1">
-            <p>Notice WHERE uses -{">"} so we must compare to JSON '"Dharma Bums"'</p>
+            <p>
+              Notice WHERE uses -{'>'} so we must compare to JSON '"Dharma
+              Bums"'
+            </p>
           </div>
           <div className="tab-1">
             <p>
-              Or we could use -{">"}
-              {">"} and compare to 'Dharma Bums'
+              Or we could use -{'>'}
+              {'>'} and compare to 'Dharma Bums'
             </p>
             <p>Output:</p>
           </div>
@@ -342,9 +356,11 @@ FROM books
           </div>
           <div className="tab-1">
             <p>
-              We’re going to store events in this table, like pageviews. Each event has properties, which could be anything (e.g. current page) and
-              also sends information about the browser (like OS, screen resolution, etc). Both of these are completely free form and could change over
-              time (as we think of extra stuff to track).
+              We’re going to store events in this table, like pageviews. Each
+              event has properties, which could be anything (e.g. current page)
+              and also sends information about the browser (like OS, screen
+              resolution, etc). Both of these are completely free form and could
+              change over time (as we think of extra stuff to track).
             </p>
           </div>
           <div className="tab-2">
@@ -402,60 +418,66 @@ FROM books
                   <td>pageview</td>
                   <td>1</td>
                   <td>
-                    {"{"} "page": "/" {"}"}
+                    {'{'} "page": "/" {'}'}
                   </td>
                   <td>
-                    {"{"} "name": "Chrome", "os": "Mac", "resolution": {"{"} "x": 1440, "y": 900 {"}"} {"}"}
+                    {'{'} "name": "Chrome", "os": "Mac", "resolution": {'{'}{' '}
+                    "x": 1440, "y": 900 {'}'} {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>pageview</td>
                   <td>2</td>
                   <td>
-                    {"{"} "page": "/" {"}"}
+                    {'{'} "page": "/" {'}'}
                   </td>
                   <td>
-                    {"{"} "name": "Firefox", "os": "Windows", "resolution": {"{"} "x": 1920, "y": 1200 {"}"} {"}"}
+                    {'{'} "name": "Firefox", "os": "Windows", "resolution":{' '}
+                    {'{'} "x": 1920, "y": 1200 {'}'} {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>pageview</td>
                   <td>1</td>
                   <td>
-                    {"{"} "page": "/account" {"}"}
+                    {'{'} "page": "/account" {'}'}
                   </td>
                   <td>
-                    {"{"} "name": "Chrome", "os": "Mac", "resolution": {"{"} "x": 1440, "y": 900 {"}"} {"}"}
+                    {'{'} "name": "Chrome", "os": "Mac", "resolution": {'{'}{' '}
+                    "x": 1440, "y": 900 {'}'} {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>purchase</td>
                   <td>5</td>
                   <td>
-                    {"{"} "amount": 10 {"}"}
+                    {'{'} "amount": 10 {'}'}
                   </td>
                   <td>
-                    {"{"} "name": "Firefox", "os": "Windows", "resolution": {"{"} "x": 1024, "y": 768 {"}"} {"}"}
-                  </td>
-                </tr>
-                <tr>
-                  <td>purchase</td>
-                  <td>15</td>
-                  <td>
-                    {"{"} "amount": 200 {"}"}
-                  </td>
-                  <td>
-                    {"{"} "name": "Firefox", "os": "Windows", "resolution": {"{"} "x": 1280, "y": 800 {"}"} {"}"}
+                    {'{'} "name": "Firefox", "os": "Windows", "resolution":{' '}
+                    {'{'} "x": 1024, "y": 768 {'}'} {'}'}
                   </td>
                 </tr>
                 <tr>
                   <td>purchase</td>
                   <td>15</td>
                   <td>
-                    {"{"} "amount": 500 {"}"}
+                    {'{'} "amount": 200 {'}'}
                   </td>
                   <td>
-                    {"{"} "name": "Firefox", "os": "Windows", "resolution": {"{"} "x": 1280, "y": 800 {"}"} {"}"}
+                    {'{'} "name": "Firefox", "os": "Windows", "resolution":{' '}
+                    {'{'} "x": 1280, "y": 800 {'}'} {'}'}
+                  </td>
+                </tr>
+                <tr>
+                  <td>purchase</td>
+                  <td>15</td>
+                  <td>
+                    {'{'} "amount": 500 {'}'}
+                  </td>
+                  <td>
+                    {'{'} "name": "Firefox", "os": "Windows", "resolution":{' '}
+                    {'{'} "x": 1280, "y": 800 {'}'} {'}'}
                   </td>
                 </tr>
               </tbody>
@@ -470,8 +492,9 @@ FROM books
           </div>
           <div className="tab-1">
             <p>
-              Using the JSON operators, combined with traditional PostgreSQL aggregate functions, we can pull out whatever we want. You have the full
-              might of an RDBMS at your disposal.
+              Using the JSON operators, combined with traditional PostgreSQL
+              aggregate functions, we can pull out whatever we want. You have
+              the full might of an RDBMS at your disposal.
             </p>
             <p>Lets see browser usage:</p>
           </div>
@@ -578,13 +601,21 @@ FROM events;`}
             <p>
               More examples and documentation:
               <br />
-              <a href="https://schinckel.net/2014/05/25/querying-json-in-postgres/" target={"_blank"} rel="noreferrer">
+              <a
+                href="https://schinckel.net/2014/05/25/querying-json-in-postgres/"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 https://schinckel.net/2014/05/25/querying-json-in-postgres/
-              </a>{" "}
+              </a>{' '}
               <br />
-              <a href="https://clarkdave.net/2013/06/what-can-you-do-with-postgresql-and-json/" target={"_blank"} rel="noreferrer">
+              <a
+                href="https://clarkdave.net/2013/06/what-can-you-do-with-postgresql-and-json/"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 https://clarkdave.net/2013/06/what-can-you-do-with-postgresql-and-json/
-              </a>{" "}
+              </a>{' '}
             </p>
           </div>
         </div>
@@ -616,7 +647,10 @@ VALUES
             <p>Query for a top-level element:</p>
           </div>
           <div className="tab-2">
-            <Code code={`CREATE INDEX mytable_idx ON mytable USING gin (DATA jsonb_path_ops);`} language="sql" />
+            <Code
+              code={`CREATE INDEX mytable_idx ON mytable USING gin (DATA jsonb_path_ops);`}
+              language="sql"
+            />
           </div>
         </div>
       </div>
@@ -626,30 +660,41 @@ VALUES
             <p>Query for a simple item in an array:</p>
           </div>
           <div className="tab-2">
-            <Code code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"emails":["alice1@test.com"]}';`} language="sql" />
+            <Code
+              code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"emails":["alice1@test.com"]}';`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Query for an object in an array</p>
           </div>
           <div className="tab-2">
-            <Code code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"events":[{"type":"anniversary"}]}';`} language="sql" />
+            <Code
+              code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"events":[{"type":"anniversary"}]}';`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Query for a nested object:</p>
           </div>
           <div className="tab-2">
-            <Code code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"locations":{"home":{"city":"London"}}}';`} language="sql" />
+            <Code
+              code={`SELECT DATA->>'name' FROM mytable WHERE DATA @> '{"locations":{"home":{"city":"London"}}}';`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <b>
-              Performance of @{">"} compared to -{">"} and -{">"}
-              {">"}
+              Performance of @{'>'} compared to -{'>'} and -{'>'}
+              {'>'}
             </b>
           </div>
           <div className="tab-1">
             <p>
-              It is important to understand the performance difference between using @{">"}, -{">"} and -{">"}
-              {">"} in the WHERE part of the query. Although these two queries appear to be broadly equivalent:
+              It is important to understand the performance difference between
+              using @{'>'}, -{'>'} and -{'>'}
+              {'>'} in the WHERE part of the query. Although these two queries
+              appear to be broadly equivalent:
             </p>
           </div>
           <div className="tab-2">
@@ -661,8 +706,14 @@ SELECT DATA FROM mytable WHERE DATA->>'name' = 'Alice';`}
             />
           </div>
           <div className="tab-1">
-            <p>the first statement will use the index created above whereas the latter two will not, requiring a complete table scan.</p>
-            <p>It is still allowable to use the -{">"} operator when obtaining resultant data, so the following queries will also use the index:</p>
+            <p>
+              the first statement will use the index created above whereas the
+              latter two will not, requiring a complete table scan.
+            </p>
+            <p>
+              It is still allowable to use the -{'>'} operator when obtaining
+              resultant data, so the following queries will also use the index:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -677,19 +728,31 @@ SELECT DATA->'locations'->'work'->>'city' FROM mytable WHERE DATA @> '{"name":"A
         <div className="col-12 col-sm-12 col-md-12">
           <b>3. Creating a pure JSON table</b>
           <div className="tab-1">
-            <p>To create a pure JSON table you need to provide a single field with the type JSONB:</p>
+            <p>
+              To create a pure JSON table you need to provide a single field
+              with the type JSONB:
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`CREATE TABLE mytable (DATA JSONB NOT NULL);`} language="sql" />
+            <Code
+              code={`CREATE TABLE mytable (DATA JSONB NOT NULL);`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>You should also create a basic index:</p>
           </div>
           <div className="tab-2">
-            <Code code={`CREATE INDEX mytable_idx ON mytable USING gin (DATA jsonb_path_ops);`} language="sql" />
+            <Code
+              code={`CREATE INDEX mytable_idx ON mytable USING gin (DATA jsonb_path_ops);`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>At this point you can insert data in to the table and query it efficiently.</p>
+            <p>
+              At this point you can insert data in to the table and query it
+              efficiently.
+            </p>
           </div>
         </div>
       </div>

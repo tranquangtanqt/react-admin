@@ -1,8 +1,8 @@
-import { Fragment, useState } from "react";
-import { PageTitle } from "../../../../components/modules/page-title";
+import { useState } from 'react';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 interface IDiff {
-  no: Number;
+  no: number;
   text: string;
   isSame: boolean;
   isDisplay: boolean;
@@ -23,10 +23,10 @@ export const UtilitiesTextFindDifferentTwoList = () => {
     setDiffLefts([]);
     setDiffRights([]);
 
-    let diffLeftTemps: IDiff[] = [];
-    let diffRightTemps: IDiff[] = [];
+    const diffLeftTemps: IDiff[] = [];
+    const diffRightTemps: IDiff[] = [];
 
-    let leftArr = lefts.split("\n");
+    let leftArr = lefts.split('\n');
     leftArr = leftArr.map((x) => x.trim());
     leftArr.forEach((item, index) => {
       diffLeftTemps?.push({
@@ -34,11 +34,11 @@ export const UtilitiesTextFindDifferentTwoList = () => {
         text: item,
         isSame: false,
         isDisplay: true,
-        className: "",
+        className: '',
       });
     });
 
-    let rightArr = rights.split("\n");
+    let rightArr = rights.split('\n');
     rightArr = rightArr.map((x) => x.trim());
 
     rightArr.forEach((item, index) => {
@@ -47,21 +47,21 @@ export const UtilitiesTextFindDifferentTwoList = () => {
         text: item,
         isSame: false,
         isDisplay: true,
-        className: "",
+        className: '',
       });
     });
 
     diffLeftTemps.forEach((item) => {
       if (diffRightTemps.map((x) => x.text).includes(item.text)) {
         item.isSame = true;
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
 
       diffRightTemps
         .filter((x) => x.text === item.text)
         .forEach((item) => {
           item.isSame = true;
-          item.className = "table-warning cursor-pointer";
+          item.className = 'table-warning cursor-pointer';
         });
     });
 
@@ -81,7 +81,7 @@ export const UtilitiesTextFindDifferentTwoList = () => {
     let diffLeftTemps: IDiff[] = [];
     let diffRightTemps: IDiff[] = [];
 
-    let leftArr = lefts.split("\n");
+    let leftArr = lefts.split('\n');
     leftArr = leftArr.map((x) => x.trim());
     leftArr.forEach((item, index) => {
       diffLeftTemps?.push({
@@ -89,11 +89,11 @@ export const UtilitiesTextFindDifferentTwoList = () => {
         text: item,
         isSame: false,
         isDisplay: true,
-        className: "",
+        className: '',
       });
     });
 
-    let rightArr = rights.split("\n");
+    let rightArr = rights.split('\n');
     rightArr = rightArr.map((x) => x.trim());
 
     rightArr.forEach((item, index) => {
@@ -102,21 +102,21 @@ export const UtilitiesTextFindDifferentTwoList = () => {
         text: item,
         isSame: false,
         isDisplay: true,
-        className: "",
+        className: '',
       });
     });
 
     diffLeftTemps.forEach((item) => {
       if (diffRightTemps.map((x) => x.text).includes(item.text)) {
         item.isSame = true;
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
 
       diffRightTemps
         .filter((x) => x.text === item.text)
         .forEach((item) => {
           item.isSame = true;
-          item.className = "table-warning cursor-pointer";
+          item.className = 'table-warning cursor-pointer';
         });
     });
 
@@ -138,33 +138,33 @@ export const UtilitiesTextFindDifferentTwoList = () => {
    * @returns
    */
   const onItemLeft = (index: number) => {
-    let diffLeftTemps = [...(diffLefts || [])];
+    const diffLeftTemps = [...(diffLefts || [])];
     if (!diffLeftTemps[index].isSame) {
       return;
     }
 
     diffLeftTemps.forEach((item) => {
       if (item.isSame) {
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
     });
-    diffLeftTemps[index].className = "table-danger cursor-pointer";
+    diffLeftTemps[index].className = 'table-danger cursor-pointer';
 
     setDiffLefts(diffLeftTemps);
 
-    let textSame = diffLeftTemps[index].text;
-    let diffRightTemps = [...(diffRights || [])];
+    const textSame = diffLeftTemps[index].text;
+    const diffRightTemps = [...(diffRights || [])];
 
     diffRightTemps.forEach((item) => {
       if (item.isSame) {
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
     });
     diffRightTemps
       .filter((x) => x.text === textSame)
       .forEach((item) => {
         item.isSame = true;
-        item.className = "table-danger cursor-pointer";
+        item.className = 'table-danger cursor-pointer';
       });
     setDiffRights(diffRightTemps);
   };
@@ -175,33 +175,33 @@ export const UtilitiesTextFindDifferentTwoList = () => {
    * @returns
    */
   const onItemRight = (index: number) => {
-    let diffRightTemps = [...(diffRights || [])];
+    const diffRightTemps = [...(diffRights || [])];
     if (!diffRightTemps[index].isSame) {
       return;
     }
 
     diffRightTemps.forEach((item) => {
       if (item.isSame) {
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
     });
-    diffRightTemps[index].className = "table-danger cursor-pointer";
+    diffRightTemps[index].className = 'table-danger cursor-pointer';
 
     setDiffRights(diffRightTemps);
 
-    let textSame = diffRightTemps[index].text;
-    let diffLeftTemps = [...(diffLefts || [])];
+    const textSame = diffRightTemps[index].text;
+    const diffLeftTemps = [...(diffLefts || [])];
 
     diffLeftTemps.forEach((item) => {
       if (item.isSame) {
-        item.className = "table-warning cursor-pointer";
+        item.className = 'table-warning cursor-pointer';
       }
     });
     diffLeftTemps
       .filter((x) => x.text === textSame)
       .forEach((item) => {
         item.isSame = true;
-        item.className = "table-danger cursor-pointer";
+        item.className = 'table-danger cursor-pointer';
       });
     setDiffLefts(diffLeftTemps);
   };
@@ -213,35 +213,35 @@ export const UtilitiesTextFindDifferentTwoList = () => {
     setDiffLefts([]);
     setDiffRights([]);
 
-    let leftArr = lefts.split("\n");
+    let leftArr = lefts.split('\n');
     leftArr = leftArr.map((x) => x.trim());
-    leftArr = leftArr.filter((x) => x !== "");
+    leftArr = leftArr.filter((x) => x !== '');
 
-    let rightArr = rights.split("\n");
+    let rightArr = rights.split('\n');
     rightArr = rightArr.map((x) => x.trim());
-    rightArr = rightArr.filter((x) => x !== "");
+    rightArr = rightArr.filter((x) => x !== '');
 
-    setLefts(leftArr.join("\n"));
-    setRights(rightArr.join("\n"));
+    setLefts(leftArr.join('\n'));
+    setRights(rightArr.join('\n'));
   };
 
   /**
-   * 
+   *
    */
   const orderByTwoList = () => {
     setDiffLefts([]);
     setDiffRights([]);
-    let leftArr = lefts.split("\n");
+    let leftArr = lefts.split('\n');
     leftArr = leftArr.map((x) => x.trim());
     leftArr.sort();
 
-    let rightArr = rights.split("\n");
+    let rightArr = rights.split('\n');
     rightArr = rightArr.map((x) => x.trim());
     rightArr.sort();
 
-    setLefts(leftArr.join("\n"));
-    setRights(rightArr.join("\n"));
-  }
+    setLefts(leftArr.join('\n'));
+    setRights(rightArr.join('\n'));
+  };
 
   return (
     <>
@@ -256,7 +256,7 @@ export const UtilitiesTextFindDifferentTwoList = () => {
             className="form-control"
             value={lefts}
             onChange={(e) => setLefts(e.target.value)}
-            style={{ height: 400, width: "100%" }}
+            style={{ height: 400, width: '100%' }}
           />
         </div>
         <div className="col-12 col-sm-4 col-md-4">
@@ -268,26 +268,46 @@ export const UtilitiesTextFindDifferentTwoList = () => {
             className="form-control"
             value={rights}
             onChange={(e) => setRights(e.target.value)}
-            style={{ height: 400, width: "100%" }}
+            style={{ height: 400, width: '100%' }}
           />
         </div>
       </div>
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="button" className="btn btn-primary btn-sm" onClick={() => searchAll()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={() => searchAll()}
+          >
             Search
           </button>
-          <button type="button" className="btn btn-primary btn-sm m-l-20" onClick={() => searchSame(true)}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm m-l-20"
+            onClick={() => searchSame(true)}
+          >
             Same
           </button>
-          <button type="button" className="btn btn-primary btn-sm m-l-20" onClick={() => searchSame(false)}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm m-l-20"
+            onClick={() => searchSame(false)}
+          >
             Different
           </button>
-          <button type="button" className="btn btn-primary btn-sm m-l-20 float-end" onClick={() => orderByTwoList()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm m-l-20 float-end"
+            onClick={() => orderByTwoList()}
+          >
             Order By Two List
           </button>
-          <button type="button" className="btn btn-primary btn-sm m-l-20 float-end" onClick={() => removeEmptyLine()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm m-l-20 float-end"
+            onClick={() => removeEmptyLine()}
+          >
             Remove Empty Lines
           </button>
         </div>
@@ -299,7 +319,7 @@ export const UtilitiesTextFindDifferentTwoList = () => {
             <table className="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style={{ width: "40px", textAlign: "center" }}>#</th>
+                  <th style={{ width: '40px', textAlign: 'center' }}>#</th>
                   <th>LEFT</th>
                   <th>RIGHT</th>
                 </tr>
@@ -308,10 +328,16 @@ export const UtilitiesTextFindDifferentTwoList = () => {
                 {diffLefts.map((item, key) => (
                   <tr key={key}>
                     <th>{key}</th>
-                    <td className={item.className} onClick={() => onItemLeft(key)}>
+                    <td
+                      className={item.className}
+                      onClick={() => onItemLeft(key)}
+                    >
                       {item.text}
                     </td>
-                    <td className={diffRights[key]?.className} onClick={() => onItemRight(key)}>
+                    <td
+                      className={diffRights[key]?.className}
+                      onClick={() => onItemRight(key)}
+                    >
                       {diffRights[key]?.text}
                     </td>
                   </tr>
@@ -322,7 +348,7 @@ export const UtilitiesTextFindDifferentTwoList = () => {
             <table className="table table-bordered table-hover">
               <thead>
                 <tr>
-                  <th style={{ width: "40px", textAlign: "center" }}>#</th>
+                  <th style={{ width: '40px', textAlign: 'center' }}>#</th>
                   <th>LEFT</th>
                   <th>RIGHT</th>
                 </tr>
@@ -331,10 +357,16 @@ export const UtilitiesTextFindDifferentTwoList = () => {
                 {diffRights.map((item, key) => (
                   <tr key={key}>
                     <th>{key}</th>
-                    <td className={diffLefts[key]?.className} onClick={() => onItemLeft(key)}>
+                    <td
+                      className={diffLefts[key]?.className}
+                      onClick={() => onItemLeft(key)}
+                    >
                       {diffLefts[key]?.text}
                     </td>
-                    <td className={item.className} onClick={() => onItemRight(key)}>
+                    <td
+                      className={item.className}
+                      onClick={() => onItemRight(key)}
+                    >
                       {item.text}
                     </td>
                   </tr>

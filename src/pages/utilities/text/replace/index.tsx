@@ -1,23 +1,27 @@
-import { useState } from "react";
-import StringUtils from "../../../../utils/string-utils";
-import { PageTitle } from "../../../../components/modules/page-title";
+import { useState } from 'react';
+import StringUtils from '../../../../utils/string-utils';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const UtilitiesTextReplace = () => {
-  const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [findText, setFindText] = useState("");
-  const [replaceWith, setReplaceWith] = useState("");
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('');
+  const [findText, setFindText] = useState('');
+  const [replaceWith, setReplaceWith] = useState('');
 
   const renderText = () => {
-    let arrFindText = findText.split("\n");
-    let arrReplaceWith = replaceWith.split("\n");
+    const arrFindText = findText.split('\n');
+    const arrReplaceWith = replaceWith.split('\n');
 
     let outputStr = input;
     for (let i = 0; i < arrFindText.length; i++) {
-      if (arrFindText[i] === "") {
+      if (arrFindText[i] === '') {
         continue;
       }
-      outputStr = StringUtils.replaceAll(outputStr, arrFindText[i], arrReplaceWith[i]);
+      outputStr = StringUtils.replaceAll(
+        outputStr,
+        arrFindText[i],
+        arrReplaceWith[i],
+      );
     }
     setOutput(outputStr);
   };
@@ -35,7 +39,7 @@ export const UtilitiesTextReplace = () => {
             className="form-control"
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            style={{ height: 200, width: "100%" }}
+            style={{ height: 200, width: '100%' }}
           />
         </div>
       </div>
@@ -49,7 +53,7 @@ export const UtilitiesTextReplace = () => {
             className="form-control"
             value={findText}
             onChange={(e) => setFindText(e.target.value)}
-            style={{ height: 200, width: "100%" }}
+            style={{ height: 200, width: '100%' }}
           />
         </div>
         <div className="col-12 col-sm-6 col-md-6">
@@ -61,13 +65,17 @@ export const UtilitiesTextReplace = () => {
             className="form-control"
             value={replaceWith}
             onChange={(e) => setReplaceWith(e.target.value)}
-            style={{ height: 200, width: "100%" }}
+            style={{ height: 200, width: '100%' }}
           />
         </div>
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="button" className="btn btn-primary btn-sm" onClick={() => renderText()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={() => renderText()}
+          >
             Render text
           </button>
         </div>
@@ -83,7 +91,7 @@ export const UtilitiesTextReplace = () => {
             className="form-control"
             value={output}
             onChange={(e) => setOutput(e.target.value)}
-            style={{ height: 200, width: "100%" }}
+            style={{ height: 200, width: '100%' }}
           />
         </div>
       </div>

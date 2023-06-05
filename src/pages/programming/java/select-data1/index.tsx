@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const JavaSelectData1 = () => {
   return (
@@ -15,7 +15,7 @@ export const JavaSelectData1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/11.jpg")}
+              src={require('../../../../resources/img/programming/java/11.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -549,7 +549,9 @@ public class SpringwebappApplication {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <b>13. Kết quả khi chạy chương trình</b>
-          <div className="tab-1"><i>H2 database console</i></div>
+          <div className="tab-1">
+            <i>H2 database console</i>
+          </div>
         </div>
       </div>
       <div className="row mt-2 mb-3">
@@ -557,7 +559,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/12.jpg")}
+              src={require('../../../../resources/img/programming/java/12.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -569,7 +571,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/13.jpg")}
+              src={require('../../../../resources/img/programming/java/13.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -578,7 +580,9 @@ public class SpringwebappApplication {
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <div className="tab-1"><i>http://localhost:9090/listbook</i></div>
+          <div className="tab-1">
+            <i>http://localhost:9090/listbook</i>
+          </div>
         </div>
       </div>
       <div className="row mt-2 mb-3">
@@ -586,7 +590,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/14.jpg")}
+              src={require('../../../../resources/img/programming/java/14.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

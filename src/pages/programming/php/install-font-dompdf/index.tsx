@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../../components/modules/page-title";
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const PHPLaravelInstallFontDompdf = () => {
   return (
@@ -18,23 +18,32 @@ export const PHPLaravelInstallFontDompdf = () => {
             <p>add $fontDir = "storage/fonts";</p>
           </div>
           <div className="tab-1">
-            <p>3. download your chinese supported font at eg: Fonts-Unicode-Chinese and place at your project root</p>
+            <p>
+              3. download your chinese supported font at eg:
+              Fonts-Unicode-Chinese and place at your project root
+            </p>
           </div>
           <div className="tab-1">
             <p>4. run in commandline php load_font.php xxxfont xxxfont.ttf</p>
           </div>
           <div className="tab-2">
             <p>
-              eg: you have download simsun.ttf you will do php load_font.php simsun simsun.ttf then you font will be
-              installed to storage/fonts directory
+              eg: you have download simsun.ttf you will do php load_font.php
+              simsun simsun.ttf then you font will be installed to storage/fonts
+              directory
             </p>
           </div>
           <div className="tab-1">
-            <p>5. use the font in ur template font-family: simsun and your good to go</p>
+            <p>
+              5. use the font in ur template font-family: simsun and your good
+              to go
+            </p>
           </div>
           <b>Tham khảo</b>
           <div className="tab-1">
-            <p>https://github.com/dompdf/dompdf/wiki/UnicodeHowTo#load-a-font-supporting-your-characters-into-dompdf</p>
+            <p>
+              https://github.com/dompdf/dompdf/wiki/UnicodeHowTo#load-a-font-supporting-your-characters-into-dompdf
+            </p>
           </div>
           <div className="tab-1">
             <p>https://bloglaptrinh.info/laravel-dompdf-font-issue/</p>

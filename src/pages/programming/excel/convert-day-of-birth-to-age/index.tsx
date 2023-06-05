@@ -1,9 +1,7 @@
-import { PageTitle } from "../../../../components/modules/page-title";
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const ExcelConvertDayOfBirthToAge = () => {
-  let data = ["2023-01-30 22 53 28.jpg",
-              "2023-01-30 22 53 45.jpg",
-            ];
+  const data = ['2023-01-30 22 53 28.jpg', '2023-01-30 22 53 45.jpg'];
   return (
     <>
       <PageTitle title="Chuyển đổi ngày sinh sang tuổi"></PageTitle>
@@ -12,7 +10,7 @@ export const ExcelConvertDayOfBirthToAge = () => {
         {data?.map((item: any, index: any) => (
           <div className="col-12 col-sm-4 col-md-4 mt-2" key={index}>
             <div className="tab-2">
-              <h4>{ index + 1 }.</h4>
+              <h4>{index + 1}.</h4>
               {/* <input
                 type="image"
                 src={require(`../../../../resources/img/programming/excel/${item}`)}

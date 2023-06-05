@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 // import queryString from "query-string";
 
 const AxiosClient = axios.create({
@@ -6,7 +6,7 @@ const AxiosClient = axios.create({
   // baseURL: process.env.REACT_APP_API_URL_LOCAL,
   baseURL: process.env.REACT_APP_API_URL_RENDER,
   headers: {
-    "content-type": "application/json",
+    'content-type': 'application/json',
   },
 });
 
@@ -41,10 +41,10 @@ AxiosClient.interceptors.response.use(
       console.log(error.request);
     } else {
       // Something happened in setting up the request and triggered an Error
-      console.log("Error", error.message);
+      console.log('Error', error.message);
     }
     console.log(error.message);
-  }
+  },
 );
 
 export default AxiosClient;

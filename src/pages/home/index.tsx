@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
   // const tableData = [
@@ -34,15 +34,23 @@ export const Home = () => {
                   </a>
                 </li>
                 <li>
-                  <Link to={"/utilities/textSpecial"}>{"Special"}</Link>
+                  <Link to={'/utilities/textSpecial'}>{'Special'}</Link>
                 </li>
                 <li>
-                  <a href="http://172.30.5.100/pe4j" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="http://172.30.5.100/pe4j"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     WT
                   </a>
                 </li>
                 <li>
-                  <a href="http://pe/pe4j/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="http://pe/pe4j/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     WR
                   </a>
                 </li>
@@ -58,17 +66,29 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://projecteuler.net/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://projecteuler.net/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Project Euler
                   </a>
                 </li>
                 <li>
-                  <a href="http://oj.husc.edu.vn/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="http://oj.husc.edu.vn/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Husc
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.techiedelight.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.techiedelight.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     techiedelight
                   </a>
                 </li>
@@ -84,12 +104,20 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://dbfiddle.uk/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://dbfiddle.uk/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     dbfiddle
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.mockaroo.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.mockaroo.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     mockaroo
                   </a>
                 </li>
@@ -105,7 +133,11 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://www.usebubbles.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.usebubbles.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     usebubbles _ screen
                   </a>
                 </li>
@@ -114,7 +146,6 @@ export const Home = () => {
           </div>
         </div>
       </div>
-
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-3">
@@ -125,12 +156,20 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://github.com/thangchung/awesome-dotnet-core" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/thangchung/awesome-dotnet-core"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Awesome dotnet core
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/fullstackhero" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/fullstackhero"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     fullstack hero
                   </a>
                 </li>
@@ -146,12 +185,20 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://github.com/akullpp/awesome-java" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/akullpp/awesome-java"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Awesome java
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/Blankj/awesome-java-leetcode" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/Blankj/awesome-java-leetcode"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Awesome java leetcode
                   </a>
                 </li>
@@ -167,17 +214,29 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://github.com/sorrycc/awesome-javascript" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/sorrycc/awesome-javascript"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Awesome javascript
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/anonystick/anonystick" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://github.com/anonystick/anonystick"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Anonystick
                   </a>
                 </li>
                 <li>
-                  <a href="https://completejavascript.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://completejavascript.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Complete Javascript
                   </a>
                 </li>
@@ -193,7 +252,11 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://books.goalkicker.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://books.goalkicker.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     goalkicker
                   </a>
                 </li>
@@ -212,7 +275,11 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.figma.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     figma
                   </a>
                 </li>
@@ -228,7 +295,11 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://refactoring.guru/design-patterns/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://refactoring.guru/design-patterns/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     refactoring
                   </a>
                 </li>
@@ -244,7 +315,11 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
-                  <a href="https://www.heroku.com/" target="_blank" rel="noopener noreferrer">
+                  <a
+                    href="https://www.heroku.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Heroku
                   </a>
                 </li>
@@ -297,34 +372,34 @@ export const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   sell-source
+                    sell-source
                   </a>
                 </li>
-				<li>
+                <li>
                   <a
                     href="https://docs.nestjs.com/security/authentication"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   authentication
+                    authentication
                   </a>
                 </li>
-				<li>
+                <li>
                   <a
                     href="https://github.com/topics/nestjs-best-practices"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   nestjs-best-practices
+                    nestjs-best-practices
                   </a>
                 </li>
-				<li>
+                <li>
                   <a
                     href="https://github.com/lujakob/nestjs-realworld-example-app"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   nestjs-realworld-example-app
+                    nestjs-realworld-example-app
                   </a>
                 </li>
               </ol>
@@ -345,7 +420,7 @@ export const Home = () => {
                     rel="noopener noreferrer"
                     title="tranquangtanqt1990@gmail.com&#10;"
                   >
-                   slack
+                    slack
                   </a>
                 </li>
                 <li>
@@ -354,7 +429,7 @@ export const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   skype
+                    skype
                   </a>
                 </li>
               </ol>
@@ -375,7 +450,7 @@ export const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   notion.so
+                    notion.so
                   </a>
                 </li>
               </ol>
@@ -396,7 +471,7 @@ export const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   Git
+                    Git
                   </a>
                 </li>
               </ol>
@@ -417,14 +492,13 @@ export const Home = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                   codecanyon.net
+                    codecanyon.net
                   </a>
                 </li>
               </ol>
             </div>
           </div>
         </div>
-
       </div>
     </>
   );

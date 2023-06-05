@@ -1,6 +1,6 @@
-import { PageTitle } from "../../../../../components/modules/page-title";
-import { Vocabulary } from "../../../../../components/modules/vocabulary";
-import vocabularies from "./../../../../../resources/json/japan/N5/Bai_18.json";
+import { PageTitle } from '../../../../../components/modules/page-title';
+import { Vocabulary } from '../../../../../components/modules/vocabulary';
+import vocabularies from './../../../../../resources/json/japan/N5/Bai_18.json';
 
 export const TutorialJapanVocabularyLesson18 = () => {
   return (

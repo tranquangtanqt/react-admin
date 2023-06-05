@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const OraclePasswordHasExpired = () => {
   return (
@@ -10,7 +10,7 @@ export const OraclePasswordHasExpired = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/database/the-password-has-expired-oracle_1.jpg")}
+              src={require('../../../../resources/img/database/the-password-has-expired-oracle_1.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -23,22 +23,25 @@ export const OraclePasswordHasExpired = () => {
           </p>
           <div className="tab-1">
             <p>Trường hợp quên mật khẩu:</p>
-            <Code code={`ALTER USER user_name IDENTIFIED BY new_password;`} language="sql" />
+            <Code
+              code={`ALTER USER user_name IDENTIFIED BY new_password;`}
+              language="sql"
+            />
             <p>Đăng nhập với tài khoản admin</p>
             <input
               type="image"
-              src={require("../../../../resources/img/database/the-password-has-expired-oracle_2.jpg")}
+              src={require('../../../../resources/img/database/the-password-has-expired-oracle_2.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
           </div>
           <p>
-            <b>2. Other User {"=>"} Edit User </b>
+            <b>2. Other User {'=>'} Edit User </b>
           </p>
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/database/the-password-has-expired-oracle_3.jpg")}
+              src={require('../../../../resources/img/database/the-password-has-expired-oracle_3.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

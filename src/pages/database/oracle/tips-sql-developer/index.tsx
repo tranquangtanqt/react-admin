@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../../components/modules/page-title";
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const OracleTipsSQLDeveloper = () => {
   return (
@@ -27,7 +27,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_1.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_1.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -41,7 +46,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_2.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_2.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -53,7 +63,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_3.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_3.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -65,7 +80,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_4.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_4.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -77,14 +97,24 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_5.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_5.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_6.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_6.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -96,7 +126,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_7.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_7.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -108,7 +143,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_8.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_8.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>
@@ -120,7 +160,12 @@ export const OracleTipsSQLDeveloper = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/database/Trich_9.jpg")} className="img-thumbnail" alt="description image" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/database/Trich_9.jpg')}
+              className="img-thumbnail"
+              alt="description image"
+            />
           </div>
         </div>
       </div>

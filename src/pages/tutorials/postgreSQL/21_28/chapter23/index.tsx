@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter23 = () => {
   return (
@@ -37,12 +37,17 @@ export const TutorialPostgreSQLChapter23 = () => {
               </tr>
               <tr>
                 <td>-h</td>
-                <td>Specifies the host name of the machine on which the server is running, Example : localhost</td>
+                <td>
+                  Specifies the host name of the machine on which the server is
+                  running, Example : localhost
+                </td>
               </tr>
               <tr>
                 <td>-p</td>
                 <td>
-                  Specifies the TCP port or local Unix domain socket file extension on which the server is listening for connections, Example 5432
+                  Specifies the TCP port or local Unix domain socket file
+                  extension on which the server is listening for connections,
+                  Example 5432
                 </td>
               </tr>
               <tr>
@@ -58,13 +63,17 @@ export const TutorialPostgreSQLChapter23 = () => {
           <b>1. saveProdDb.sh</b>
           <div className="tab-1">
             <p>
-              In general, we tend to back up the DB with the pgAdmin client. The following is a sh script used to save the database (under linux) in
-              two formats:
+              In general, we tend to back up the DB with the pgAdmin client. The
+              following is a sh script used to save the database (under linux)
+              in two formats:
             </p>
           </div>
           <div className="tab-2">
             <ul>
-              <li>SQL file: for a possible resume of data on any version of PostgreSQL.</li>
+              <li>
+                SQL file: for a possible resume of data on any version of
+                PostgreSQL.
+              </li>
               <li>Dump file: for a higher version than the current version.</li>
             </ul>
           </div>

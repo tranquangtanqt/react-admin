@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter7 = () => {
   return (
@@ -10,8 +10,10 @@ export const TutorialPostgreSQLChapter7 = () => {
           <b>1.1 Insert data using COPY</b>
           <div className="tab-1">
             <p>
-              COPY is PostgreSQL's bulk-insert mechanism. It's a convenient way to transfer data between files and tables, but it's also far faster
-              than INSERT when adding more than a few thousand rows at a time.
+              COPY is PostgreSQL's bulk-insert mechanism. It's a convenient way
+              to transfer data between files and tables, but it's also far
+              faster than INSERT when adding more than a few thousand rows at a
+              time.
             </p>
             <p>Let's begin by creating sample data file</p>
           </div>
@@ -28,16 +30,28 @@ export const TutorialPostgreSQLChapter7 = () => {
             />
           </div>
           <div className="tab-1">
-            <p>And we need a two column table into which this data can be imported into.</p>
+            <p>
+              And we need a two column table into which this data can be
+              imported into.
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`CREATE TABLE copy_test(id INT, NAME varchar(8));`} language="sql" />
+            <Code
+              code={`CREATE TABLE copy_test(id INT, NAME varchar(8));`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>Now the actual copy operation, this will create six records in the table.</p>
+            <p>
+              Now the actual copy operation, this will create six records in the
+              table.
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`COPY copy_test FROM '/path/to/file/sample_data.csv' DELIMITER ',';`} language="sql" />
+            <Code
+              code={`COPY copy_test FROM '/path/to/file/sample_data.csv' DELIMITER ',';`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Instead of using a file on disk, can insert data from STDIN</p>
@@ -76,12 +90,19 @@ id | name
             <p>Also you can copy data from a table to file as below:</p>
           </div>
           <div className="tab-2">
-            <Code code={`COPY copy_test TO 'path/to/file/sample_data.csv' DELIMITER ',';`} language="sql" />
+            <Code
+              code={`COPY copy_test TO 'path/to/file/sample_data.csv' DELIMITER ',';`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>
-              For more details on COPY you can check{" "}
-              <a href="https://www.postgresql.org/docs/9.2/sql-copy.html" target={"_blank"} rel="noreferrer">
+              For more details on COPY you can check{' '}
+              <a
+                href="https://www.postgresql.org/docs/9.2/sql-copy.html"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 here
               </a>
               .
@@ -93,7 +114,9 @@ id | name
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.2 Inserting multiple rows</b>
           <div className="tab-1">
-            <p>You can insert multiple rows in the database at the same time:</p>
+            <p>
+              You can insert multiple rows in the database at the same time:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -109,7 +132,11 @@ id | name
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.3 INSERT data and RETURING values</b>
           <div className="tab-1">
-            <p>If you are inserting data into a table with an auto increment column and if you want to get the value of the auto increment column</p>
+            <p>
+              If you are inserting data into a table with an auto increment
+              column and if you want to get the value of the auto increment
+              column
+            </p>
           </div>
           <div className="tab-1">
             <p>Say you have a table called my_table:</p>
@@ -126,13 +153,22 @@ id | name
             />
           </div>
           <div className="tab-1">
-            <p>If you want to insert data into my_table and get the id of that row:</p>
+            <p>
+              If you want to insert data into my_table and get the id of that
+              row:
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`INSERT INTO my_table(NAME, contact_number) VALUES ( 'USER', 8542621) RETURNING id;`} language="sql" />
+            <Code
+              code={`INSERT INTO my_table(NAME, contact_number) VALUES ( 'USER', 8542621) RETURNING id;`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>Above query will return the id of the row where the new record was inserted.</p>
+            <p>
+              Above query will return the id of the row where the new record was
+              inserted.
+            </p>
           </div>
         </div>
       </div>
@@ -154,19 +190,34 @@ id | name
             />
           </div>
           <div className="tab-1">
-            <p>The most basic insert involves inserting all values in the table:</p>
+            <p>
+              The most basic insert involves inserting all values in the table:
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`INSERT INTO person VALUES (1, 'john doe', 25, 'new york');`} language="sql" />
+            <Code
+              code={`INSERT INTO person VALUES (1, 'john doe', 25, 'new york');`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>If you want to insert only specific columns, you need to explicitly indicate which columns:</p>
+            <p>
+              If you want to insert only specific columns, you need to
+              explicitly indicate which columns:
+            </p>
           </div>
           <div className="tab-2">
-            <Code code={`INSERT INTO person (NAME, age) VALUES ('john doe', 25);`} language="sql" />
+            <Code
+              code={`INSERT INTO person (NAME, age) VALUES ('john doe', 25);`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
-            <p>Note that if any constraints exist on the table , such as NOT NULL, you will be required to include those columns in either case.</p>
+            <p>
+              Note that if any constraints exist on the table , such as NOT
+              NULL, you will be required to include those columns in either
+              case.
+            </p>
           </div>
         </div>
       </div>
@@ -174,7 +225,10 @@ id | name
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.5 Insert from select</b>
           <div className="tab-1">
-            <p>You can insert data in a table as the result of a select statement:</p>
+            <p>
+              You can insert data in a table as the result of a select
+              statement:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -186,8 +240,9 @@ id | name
           </div>
           <div className="tab-1">
             <p>
-              Note that the projection of the select must match the columns required for the insert. In this case, the tmp_person table has the same
-              columns as person.:
+              Note that the projection of the select must match the columns
+              required for the insert. In this case, the tmp_person table has
+              the same columns as person.:
             </p>
           </div>
         </div>
@@ -196,8 +251,14 @@ id | name
         <div className="col-12 col-sm-12 col-md-12">
           <b>1.6 UPSERT - INSERT ... ON CONFLICT DO UPDATE..</b>
           <div className="tab-1">
-            <p>Since version 9.5 postgres offers UPSERT functionality with INSERT statement.</p>
-            <p>Say you have a table called my_table, created in several previous examples. We insert a row, returning PK value of inserted row:</p>
+            <p>
+              Since version 9.5 postgres offers UPSERT functionality with INSERT
+              statement.
+            </p>
+            <p>
+              Say you have a table called my_table, created in several previous
+              examples. We insert a row, returning PK value of inserted row:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -209,7 +270,10 @@ id | name
             />
           </div>
           <div className="tab-1">
-            <p>Now if we try to insert row with existing unique key it will raise an exception:</p>
+            <p>
+              Now if we try to insert row with existing unique key it will raise
+              an exception:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -220,7 +284,10 @@ DETAIL: KEY (id)=(2) already EXISTS.`}
             />
           </div>
           <div className="tab-1">
-            <p>Upsert functionality offers ability to insert it anyway, solving the conflict:</p>
+            <p>
+              Upsert functionality offers ability to insert it anyway, solving
+              the conflict:
+            </p>
           </div>
           <div className="tab-2">
             <Code

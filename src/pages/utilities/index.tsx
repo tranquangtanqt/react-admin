@@ -1,129 +1,129 @@
-import { CardList } from "../../components/modules/card-list";
-import { PageTitle } from "../../components/modules/page-title";
+import { CardList } from '../../components/modules/card-list';
+import { PageTitle } from '../../components/modules/page-title';
 
 export const Utilities = () => {
   const cardData = [
     {
-      title: "File",
+      title: 'File',
       links: [
         {
-          text: "List file selected",
-          path: "/utilities/file/list-file-selected",
+          text: 'List file selected',
+          path: '/utilities/file/list-file-selected',
         },
         {
-          text: "Read content multi file",
-          path: "/utilities/file/read-content-multi-file",
+          text: 'Read content multi file',
+          path: '/utilities/file/read-content-multi-file',
         },
         {
-          text: "Make json from excel",
-          path: "/utilities/file/make-json-from-excel",
+          text: 'Make json from excel',
+          path: '/utilities/file/make-json-from-excel',
         },
       ],
     },
     {
-      title: "Text",
+      title: 'Text',
       links: [
         {
-          text: "Common",
-          path: "/utilities/text/common",
+          text: 'Common',
+          path: '/utilities/text/common',
         },
         {
-          text: "Find Different Two List",
-          path: "/utilities/text/find-different-two-list",
+          text: 'Find Different Two List',
+          path: '/utilities/text/find-different-two-list',
         },
         {
-          text: "Find Different Two List 1",
-          path: "/utilities/text/find-different-two-list-1",
+          text: 'Find Different Two List 1',
+          path: '/utilities/text/find-different-two-list-1',
         },
         {
-          text: "Find Text ColumnJP_EN",
-          path: "/utilities/text/find-text-column-jp-en",
+          text: 'Find Text ColumnJP_EN',
+          path: '/utilities/text/find-text-column-jp-en',
         },
         {
-          text: "Repeat",
-          path: "/utilities/text/repeat",
+          text: 'Repeat',
+          path: '/utilities/text/repeat',
         },
         {
-          text: "Replace",
-          path: "/utilities/text/replace",
+          text: 'Replace',
+          path: '/utilities/text/replace',
         },
         {
-          text: "Tiny MCE",
-          path: "/utilities/tinyMCE",
+          text: 'Tiny MCE',
+          path: '/utilities/tinyMCE',
         },
       ],
     },
     {
-      title: "Japan",
+      title: 'Japan',
       links: [
         {
-          text: "Vocabulary",
-          path: "/utilities/japan/vocabulary",
+          text: 'Vocabulary',
+          path: '/utilities/japan/vocabulary',
         },
         {
-          text: "Special",
-          path: "/utilities/japan/special",
+          text: 'Special',
+          path: '/utilities/japan/special',
         },
       ],
     },
     {
-      title: "App",
+      title: 'App',
       links: [
         {
-          text: "Todo",
-          path: "/utilities/app/todo",
+          text: 'Todo',
+          path: '/utilities/app/todo',
         },
         {
-          text: "Project Info",
-          path: "/utilities/app/project-info",
+          text: 'Project Info',
+          path: '/utilities/app/project-info',
         },
       ],
     },
     {
-      title: "General",
+      title: 'General',
       links: [
         {
-          text: "GIT",
-          path: "/utilities/general/git",
+          text: 'Git',
+          path: '/utilities/general/git',
         },
         {
-          text: "Collapse all button in git change",
-          path: "/utilities/general/collapse-git",
+          text: 'Command Line',
+          path: '/utilities/general/command-line',
         },
       ],
     },
     {
-      title: "Excel",
+      title: 'Excel',
       links: [
         {
-          text: "Make Json Vocabulary Japanese",
-          path: "/utilities/excel/make-json-vocabulary-japanese",
+          text: 'Make Json Vocabulary Japanese',
+          path: '/utilities/excel/make-json-vocabulary-japanese',
         },
       ],
     },
     {
-      title: "SQL",
+      title: 'SQL',
       links: [
         {
-          text: "Make Insert SQL",
-          path: "/utilities/sql/make-insert",
+          text: 'Make Insert SQL',
+          path: '/utilities/sql/make-insert',
         },
         {
-          text: "Make Insert SQL from procedure",
-          path: "/utilities/sql/make-insert-from-procedure",
+          text: 'Make Insert SQL from procedure',
+          path: '/utilities/sql/make-insert-from-procedure',
         },
         {
-          text: "Create Table From Excel",
-          path: "/utilities/sql/create-table-from-excel",
+          text: 'Create Table From Excel',
+          path: '/utilities/sql/create-table-from-excel',
         },
       ],
     },
     {
-      title: "English",
+      title: 'English',
       links: [
         {
-          text: "Special",
-          path: "/utilities/english/special",
+          text: 'Special',
+          path: '/utilities/english/special',
         },
       ],
     },

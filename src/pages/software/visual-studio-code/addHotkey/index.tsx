@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const VisualStudioCodeAddHotkey = () => {
   return (
@@ -13,7 +13,12 @@ export const VisualStudioCodeAddHotkey = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/soffware/soffware_1.jpg")} className="img-thumbnail" alt="" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/soffware/soffware_1.jpg')}
+              className="img-thumbnail"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -25,7 +30,12 @@ export const VisualStudioCodeAddHotkey = () => {
       <div className="row mt-2 mb-3">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <input type="image" src={require("../../../../resources/img/soffware/soffware_2.jpg")} className="img-thumbnail" alt="" />
+            <input
+              type="image"
+              src={require('../../../../resources/img/soffware/soffware_2.jpg')}
+              className="img-thumbnail"
+              alt=""
+            />
           </div>
         </div>
       </div>

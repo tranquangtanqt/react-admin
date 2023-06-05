@@ -1,49 +1,49 @@
-import { CardList } from "../../../components/modules/card-list";
-import { PageTitle } from "../../../components/modules/page-title";
+import { CardList } from '../../../components/modules/card-list';
+import { PageTitle } from '../../../components/modules/page-title';
 
 export const ProgrammingCSharp = () => {
   const cardData = [
     {
-      title: "Coding",
+      title: 'Coding',
       links: [
         {
-          text: "Name Control Winform",
-          path: "/programming-csharp/name-control-winform",
+          text: 'Name Control Winform',
+          path: '/programming-csharp/name-control-winform',
         },
       ],
     },
     {
-      title: "File",
+      title: 'File',
       links: [
         {
-          text: "Get all file in folder",
-          path: "/programming-csharp/get-all-file-in-folder",
+          text: 'Get all file in folder',
+          path: '/programming-csharp/get-all-file-in-folder',
         },
         {
-          text: "Read file excel",
-          path: "/programming-csharp/read-file-excel",
+          text: 'Read file excel',
+          path: '/programming-csharp/read-file-excel',
         },
       ],
     },
     {
-      title: "Database",
+      title: 'Database',
       links: [
         {
-          text: "Connect and select Postgresql",
-          path: "/programming-csharp/connect-postgresql",
+          text: 'Connect and select Postgresql',
+          path: '/programming-csharp/connect-postgresql',
         },
         {
-          text: "Connect and select Oracle",
-          path: "/programming-csharp/connect-oracle",
+          text: 'Connect and select Oracle',
+          path: '/programming-csharp/connect-oracle',
         },
       ],
     },
     {
-      title: "Library",
+      title: 'Library',
       links: [
         {
-          text: "EPPLUS",
-          path: "/programming-csharp/ep-plus",
+          text: 'EPPLUS',
+          path: '/programming-csharp/ep-plus',
         },
       ],
     },

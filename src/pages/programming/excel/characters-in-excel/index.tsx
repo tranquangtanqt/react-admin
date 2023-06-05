@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../../components/modules/page-title";
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const ExcelCharactersInExcel = () => {
   return (
@@ -217,7 +217,7 @@ export const ExcelCharactersInExcel = () => {
                 <td>60</td>
                 <td>Less than (or open angled bracket)</td>
                 <td>=CHAR(60)</td>
-                <td>{"<"}</td>
+                <td>{'<'}</td>
                 <td>Special Characters</td>
               </tr>
               <tr>
@@ -231,7 +231,7 @@ export const ExcelCharactersInExcel = () => {
                 <td>62</td>
                 <td>Greater than (or close angled bracket)</td>
                 <td>=CHAR(62)</td>
-                <td>{">"}</td>
+                <td>{'>'}</td>
                 <td>Special Characters</td>
               </tr>
               <tr>
@@ -658,7 +658,7 @@ export const ExcelCharactersInExcel = () => {
                 <td>123</td>
                 <td>Opening brace</td>
                 <td>=CHAR(123)</td>
-                <td>{"{"}</td>
+                <td>{'{'}</td>
                 <td>Special Characters</td>
               </tr>
               <tr>
@@ -672,7 +672,7 @@ export const ExcelCharactersInExcel = () => {
                 <td>125</td>
                 <td>Closing brace</td>
                 <td>=CHAR(125)</td>
-                <td>{"}"}</td>
+                <td>{'}'}</td>
                 <td>Special Characters</td>
               </tr>
               <tr>

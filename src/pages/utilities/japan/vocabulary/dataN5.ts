@@ -24,7 +24,6 @@ import unit23 from '../../../../resources/json/japan/N5/Bai_23.json';
 import unit24 from '../../../../resources/json/japan/N5/Bai_24.json';
 import unit25 from '../../../../resources/json/japan/N5/Bai_25.json';
 
-
 let dataN5 = new Map();
 dataN5.set('unit_1', unit1);
 dataN5.set('unit_2', unit2);

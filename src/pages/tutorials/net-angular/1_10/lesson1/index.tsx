@@ -1,4 +1,4 @@
-import { PageTitle } from "../../../../../components/modules/page-title";
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialNetAngularLesson1 = () => {
   return (
@@ -53,7 +53,7 @@ export const TutorialNetAngularLesson1 = () => {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_1.jpg")}
+              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_1.jpg')}
               className="img-thumbnail"
               alt=""
             />
@@ -70,7 +70,7 @@ export const TutorialNetAngularLesson1 = () => {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_2.jpg")}
+              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_2.jpg')}
               className="img-thumbnail"
               alt=""
             />
@@ -78,7 +78,7 @@ export const TutorialNetAngularLesson1 = () => {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_3.jpg")}
+              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_3.jpg')}
               className="img-thumbnail"
               alt=""
             />

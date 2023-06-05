@@ -1,5 +1,5 @@
-import { PageTitle } from "../../../../components/modules/page-title";
-import Code from "../../../../components/modules/code";
+import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from '../../../../../components/modules/code';
 
 export const PostgresqlRunAllSqlInAFolder = () => {
   return (
@@ -22,7 +22,7 @@ pause`}
         <div className="col-12 col-sm-12 col-md-12 mt-2">
           <b>2. Chỉnh sửa file pg_hba.conf</b>
           <div className="tab-1">
-            <p>Chuyển từ scram-sha-256 {"->"} trust (chạy xong nhớ undo)</p>
+            <p>Chuyển từ scram-sha-256 {'->'} trust (chạy xong nhớ undo)</p>
           </div>
         </div>
 

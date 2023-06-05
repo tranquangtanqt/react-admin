@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const CSharpReadFileExcel = () => {
   return (
@@ -9,7 +9,10 @@ export const CSharpReadFileExcel = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>Using</b>
           <div className="tab-1">
-            <Code code={`using Excel = Microsoft.Office.Interop.Excel;`} language="csharp" />
+            <Code
+              code={`using Excel = Microsoft.Office.Interop.Excel;`}
+              language="csharp"
+            />
           </div>
           <b>Function</b>
           <div className="tab-1">

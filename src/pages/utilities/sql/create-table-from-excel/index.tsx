@@ -1,16 +1,16 @@
 // import { Button, Col, Divider, Input, Row } from "antd";
-import { useState } from "react";
-import * as XLSX from "xlsx";
-import { PageTitle } from "../../../../components/modules/page-title";
-import ExportExcel from "../../../../components/modules/export-excel";
+import { useState } from 'react';
+import * as XLSX from 'xlsx';
+import { PageTitle } from '../../../../components/modules/page-title';
+import ExportExcel from '../../../../components/modules/export-excel';
 
 export const UtilitiesCreateTableFromExcel = () => {
   const [fileInput, setfileInput] = useState();
-  const [output, setOutput] = useState("");
-  const [tableName, setTableName] = useState("DEMO");
+  const [output, setOutput] = useState('');
+  const [tableName, setTableName] = useState('DEMO');
 
   const createTable = () => {
-    let outputStr = "CREATE TABLE " + tableName + " (\n";
+    let outputStr = 'CREATE TABLE ' + tableName + ' (\n';
     console.log(fileInput);
     let arrayBuffer: any;
     let fileReader = new FileReader();
@@ -19,8 +19,8 @@ export const UtilitiesCreateTableFromExcel = () => {
       let dataBuffer = new Uint8Array(arrayBuffer);
       let arr = [];
       for (let i = 0; i !== dataBuffer.length; ++i) arr[i] = String.fromCharCode(dataBuffer[i]);
-      let bstr = arr.join("");
-      let workbook = XLSX.read(bstr, { type: "binary" });
+      let bstr = arr.join('');
+      let workbook = XLSX.read(bstr, { type: 'binary' });
       let first_sheet_name = workbook.SheetNames[0];
       let worksheet = workbook.Sheets[first_sheet_name];
       console.log(XLSX.utils.sheet_to_json(worksheet, { raw: true }));
@@ -30,67 +30,68 @@ export const UtilitiesCreateTableFromExcel = () => {
         for (let i = 0; i < data.length; i++) {
           let element = data[i];
           console.log(element.level);
-          if (element.level === 0 || element.level === "0" || element.level === 1 || element.level === "1") {
-            outputStr += "\t" + element.item_name + " ";
-            if (element.type === "C") {
+          if (element.level === 0 || element.level === '0' || element.level === 1 || element.level === '1') {
+            outputStr += '\t' + element.item_name + ' ';
+            if (element.type === 'C') {
               //Character
               if (element.digit === 1) {
-                outputStr += "CHAR(1) ";
+                outputStr += 'CHAR(1) ';
               } else {
-                outputStr += "VARCHAR2(" + element.digit + " CHAR) ";
+                outputStr += 'VARCHAR2(' + element.digit + ' CHAR) ';
               }
-            } else if (element.type === "N") {
+            } else if (element.type === 'N') {
               //NUMBER
-              if (element.digit.toString().includes(",")) {
-                let split = element.digit.toString().split(",");
-                outputStr += "NUMBER(" + split[0] + "," + split[1] + ") ";
+              if (element.digit.toString().includes(',')) {
+                let split = element.digit.toString().split(',');
+                outputStr += 'NUMBER(' + split[0] + ',' + split[1] + ') ';
               } else {
-                outputStr += "NUMBER(" + element.digit + ") ";
+                outputStr += 'NUMBER(' + element.digit + ') ';
               }
-            } else if (element.type === "D") {
+            } else if (element.type === 'D') {
               //Date
-              outputStr += "DATE ";
-            } else if (element.type === "F") {
-              outputStr += "CHAR(1) ";
+              outputStr += 'DATE ';
+            } else if (element.type === 'F') {
+              outputStr += 'CHAR(1) ';
             }
 
             // DEFAULT
-            if (!(element.default === undefined || element.default === null || element.default === "")) {
-              if (element.default.toString().trim() === "NULL_VAL") {
+            if (!(element.default === undefined || element.default === null || element.default === '')) {
+              if (element.default.toString().trim() === 'NULL_VAL') {
                 outputStr += "DEFAULT '*' ";
               } else {
-                outputStr += "DEFAULT " + element.default + " ";
+                outputStr += 'DEFAULT ' + element.default + ' ';
               }
             }
 
             // NULL OR NOTNULL
-            if (element.null === "N") {
-              outputStr += "NOT NULL ";
+            if (element.null === 'N') {
+              outputStr += 'NOT NULL ';
             }
 
-            outputStr += ",\n";
+            outputStr += ',\n';
           }
         }
 
         let count = 0;
         for (let i = 0; i < data.length; i++) {
           const element = data[i];
-          if (element.level === 0 || element.level === "0") {
+          if (element.level === 0 || element.level === '0') {
             count++;
             if (count === 1) {
-              outputStr += "\tCONSTRAINT _PK PRIMARY KEY (";
+              outputStr += '\tCONSTRAINT _PK PRIMARY KEY (';
             }
-            outputStr += element.item_name + ", ";
+            outputStr += element.item_name + ', ';
           }
         }
 
-        outputStr = outputStr.slice(0, outputStr.lastIndexOf(","));
-        outputStr += "\n); \n";
+        outputStr = outputStr.slice(0, outputStr.lastIndexOf(','));
+        outputStr += '\n); \n';
         //COMMENT
         for (let i = 0; i < data.length; i++) {
           const element = data[i];
-          if (element.level === 0 || element.level === "0" || element.level === 1 || element.level === "1") {
-            outputStr += "COMMENT ON COLUMN " + tableName + "." + element.item_name + " IS '" + element.japanese + "';\n";
+          if (element.level === 0 || element.level === '0' || element.level === 1 || element.level === '1') {
+            outputStr +=
+              'COMMENT ON COLUMN ' + tableName + '.' + element.item_name + " IS '" + element.japanese + "';\n";
           }
         }
 
@@ -157,7 +158,13 @@ export const UtilitiesCreateTableFromExcel = () => {
           <label htmlFor="table-name" className="form-label">
             Table name
           </label>
-          <input type="text" className="form-control" id="table-name" value={tableName} onChange={(e) => setTableName(e.target.value)}></input>
+          <input
+            type="text"
+            className="form-control"
+            id="table-name"
+            value={tableName}
+            onChange={(e) => setTableName(e.target.value)}
+          ></input>
         </div>
       </div>
 
@@ -171,7 +178,7 @@ export const UtilitiesCreateTableFromExcel = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: "100%" }} />
+          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: '100%' }} />
         </div>
       </div>
     </>

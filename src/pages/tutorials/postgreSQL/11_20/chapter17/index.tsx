@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter17 = () => {
   return (
@@ -8,8 +8,8 @@ export const TutorialPostgreSQLChapter17 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            The trigger will be associated with the specified table or view and will execute the specified function function_name when certain events
-            occur.
+            The trigger will be associated with the specified table or view and will execute the specified function
+            function_name when certain events occur.
           </p>
 
           <b>1. Type of triggers</b>

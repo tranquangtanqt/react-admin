@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const OracleImportDump = () => {
   return (
@@ -18,7 +18,10 @@ DROP TABLESPACE MCDATA_OT including contents;`}
           </div>
           <b>2.</b>
           <div className="tab-1">
-            <Code code={`ALTER SESSION SET "_ORACLE_SCRIPT"=true;`} language="sql" />
+            <Code
+              code={`ALTER SESSION SET "_ORACLE_SCRIPT"=true;`}
+              language="sql"
+            />
           </div>
           <b>3.</b>
           <div className="tab-1">
@@ -82,7 +85,10 @@ impdp PROVIC/PROVIC directory=IMPDIR dumpfile=dump_file.dmp logfile=log_file.log
               language="sql"
             />
           </div>
-          <i>Thư mục lưu file tablespace: D:\app\tantq\virtual\product\12.2.0\dbhome_1\database</i>
+          <i>
+            Thư mục lưu file tablespace:
+            D:\app\tantq\virtual\product\12.2.0\dbhome_1\database
+          </i>
         </div>
       </div>
     </>

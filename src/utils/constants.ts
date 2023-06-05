@@ -1,3 +1,3 @@
 export const CONSTANTS = {
-    TABLE_SEPARATOR: "	"
-}
+  TABLE_SEPARATOR: '	',
+};

@@ -1,8 +1,8 @@
-import axiosClient from "./axios-client";
+import axiosClient from './axios-client';
 
 const todoApi = {
   getAll: () => {
-    const url = "/todo";
+    const url = '/todo';
     return axiosClient.get(url);
   },
 
@@ -26,7 +26,7 @@ const todoApi = {
    * @param {*} params : {_id , title}
    * @returns
    */
-   updateTitle: (params) => {
+  updateTitle: (params) => {
     const url = `/todo/update-title`;
     return axiosClient.put(url, params);
   },
@@ -36,20 +36,20 @@ const todoApi = {
    * @param {*} params : {_id , order_number}
    * @returns
    */
-   updateOrderNumber: (params) => {
+  updateOrderNumber: (params) => {
     const url = `/todo/update-order-number`;
     return axiosClient.put(url, params);
   },
-  
+
   /**
    *  delete Todo
    * @param {*} params : {id}
    * @returns
    */
-   deleteTodo: (params) => {
+  deleteTodo: (params) => {
     const url = `/todo/delete`;
     return axiosClient.put(url, params);
-  }
+  },
 };
 
 export default todoApi;

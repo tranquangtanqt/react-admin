@@ -1,89 +1,89 @@
 export const TAGS = [
   {
-    text: "b",
+    text: 'b',
   },
   {
-    text: "p",
+    text: 'p',
   },
   {
-    text: "code",
+    text: 'code',
   },
   {
-    text: "i",
+    text: 'i',
   },
   {
-    text: "h1",
+    text: 'h1',
   },
   {
-    text: "h2",
+    text: 'h2',
   },
   {
-    text: "h3",
+    text: 'h3',
   },
   {
-    text: "h4",
+    text: 'h4',
   },
   {
-    text: "h5",
+    text: 'h5',
   },
   {
-    text: "h6",
+    text: 'h6',
   },
   {
-    text: "table",
+    text: 'table',
   },
   {
-    text: "list",
+    text: 'list',
   },
 ];
 
 export const LANGUAGES = [
   {
-    name: "sql",
+    name: 'sql',
   },
   {
-    name: "csharp",
+    name: 'csharp',
   },
   {
-    name: "javascript",
+    name: 'javascript',
   },
   {
-    name: "php",
+    name: 'php',
   },
   {
-    name: "json",
+    name: 'json',
   },
   {
-    name: "html",
+    name: 'html',
   },
   {
-    name: "css",
+    name: 'css',
   },
   {
-    name: "typescript",
+    name: 'typescript',
   },
   {
-    name: "jsx",
+    name: 'jsx',
   },
   {
-    name: "vue",
+    name: 'vue',
   },
   {
-    name: "angular",
+    name: 'angular',
   },
   {
-    name: "tsx",
+    name: 'tsx',
   },
   {
-    name: "xml",
+    name: 'xml',
   },
 ];
 
 export const LIST = [
   {
-    item: "ul",
+    item: 'ul',
   },
   {
-    item: "ol",
+    item: 'ol',
   },
 ];

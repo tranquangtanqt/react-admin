@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialNetAngularLesson9 = () => {
   return (
@@ -31,13 +31,23 @@ export const TutorialNetAngularLesson9 = () => {
           </div>
         </div>
         <div className="tab-2">
-          <input type="image" src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_8.jpg")} className="img-thumbnail" alt="" />
+          <input
+            type="image"
+            src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_8.jpg')}
+            className="img-thumbnail"
+            alt=""
+          />
         </div>
         <div className="tab-1">
           <p>- Update database: dotnet ef database update</p>
         </div>
         <div className="tab-2">
-          <input type="image" src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_9.jpg")} className="img-thumbnail" alt="" />
+          <input
+            type="image"
+            src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_9.jpg')}
+            className="img-thumbnail"
+            alt=""
+          />
         </div>
       </div>
       <div className="row mt-2">

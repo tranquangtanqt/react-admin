@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const JavaSelectData2 = () => {
   return (
@@ -15,7 +15,7 @@ export const JavaSelectData2 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/21.jpg")}
+              src={require('../../../../resources/img/programming/java/21.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -420,7 +420,9 @@ public class ConnectH2DatabaseApplication {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <b>12. Kết quả khi chạy chương trình</b>
-          <div className="tab-1"><i>H2 database console</i></div>
+          <div className="tab-1">
+            <i>H2 database console</i>
+          </div>
         </div>
       </div>
       <div className="row mt-2 mb-3">
@@ -428,7 +430,7 @@ public class ConnectH2DatabaseApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/22.jpg")}
+              src={require('../../../../resources/img/programming/java/22.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -440,7 +442,7 @@ public class ConnectH2DatabaseApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/23.jpg")}
+              src={require('../../../../resources/img/programming/java/23.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -449,7 +451,9 @@ public class ConnectH2DatabaseApplication {
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <div className="tab-1"><i>http://localhost:9090/api/v1/user/book/getAll</i></div>
+          <div className="tab-1">
+            <i>http://localhost:9090/api/v1/user/book/getAll</i>
+          </div>
         </div>
       </div>
       <div className="row mt-2 mb-3">
@@ -457,7 +461,7 @@ public class ConnectH2DatabaseApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/24.jpg")}
+              src={require('../../../../resources/img/programming/java/24.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

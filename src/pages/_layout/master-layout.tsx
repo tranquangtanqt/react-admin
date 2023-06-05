@@ -1,8 +1,8 @@
-import React, { useState, Fragment } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import "./index.css";
-import "./utils.css";
-import { NAVBAR_LEFT } from "./navbar-left-data";
+import React, { useState, Fragment } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './index.css';
+import './utils.css';
+import { NAVBAR_LEFT } from './navbar-left-data';
 
 type masterLayoutProps = {
   children: React.ReactNode; // 👈️ define children prop
@@ -16,40 +16,40 @@ export const MasterLayout = (props: masterLayoutProps) => {
 
   const [navbarLefts, setNavbarLefts] = useState(NAVBAR_LEFT);
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   //set fullHeight
   const fullHeight = () => {
-    const jsFullheight = document.getElementsByClassName("js-fullheight");
+    const jsFullheight = document.getElementsByClassName('js-fullheight');
     for (let i = 0; i < jsFullheight.length; i++) {
       const e = jsFullheight[i];
       if (e instanceof HTMLElement) {
-        e.style.height = window.innerHeight + "px";
+        e.style.height = window.innerHeight + 'px';
       }
     }
     window.addEventListener(
-      "resize",
+      'resize',
       function (event) {
-        const jsFullheight = document.getElementsByClassName("js-fullheight");
+        const jsFullheight = document.getElementsByClassName('js-fullheight');
         for (let i = 0; i < jsFullheight.length; i++) {
           const e = jsFullheight[i];
           if (e instanceof HTMLElement) {
-            e.style.height = window.innerHeight + "px";
+            e.style.height = window.innerHeight + 'px';
           }
         }
       },
-      true
+      true,
     );
   };
 
   fullHeight();
 
   const showDropDownLeft = (event: React.MouseEvent, id: number) => {
-    let navbarLeftTemp = [...navbarLefts];
-    if(navbarLeftTemp[id].link === ""){
+    const navbarLeftTemp = [...navbarLefts];
+    if (navbarLeftTemp[id].link === '') {
       event.preventDefault();
-    } 
-    
+    }
+
     for (let i = 0; i < navbarLeftTemp.length; i++) {
       navbarLeftTemp[i].active = false;
       // apply for drop down
@@ -59,19 +59,27 @@ export const MasterLayout = (props: masterLayoutProps) => {
         } else {
           navbarLeftTemp[i].open = false;
         }
-        navbarLeftTemp[i].ulClass = "collapse list-unstyled";
-        navbarLeftTemp[i].linkClass = "dropdown-toggle collapsed";
+        navbarLeftTemp[i].ulClass = 'collapse list-unstyled';
+        navbarLeftTemp[i].linkClass = 'dropdown-toggle collapsed';
       }
     }
     navbarLeftTemp[id].active = true;
-    navbarLeftTemp[id].linkClass = navbarLeftTemp[id].open ? "dropdown-toggle" : "dropdown-toggle collapsed";
-    navbarLeftTemp[id].ulClass = navbarLeftTemp[id].open ? "collapse list-unstyled show" : "collapse list-unstyled";
+    navbarLeftTemp[id].linkClass = navbarLeftTemp[id].open
+      ? 'dropdown-toggle'
+      : 'dropdown-toggle collapsed';
+    navbarLeftTemp[id].ulClass = navbarLeftTemp[id].open
+      ? 'collapse list-unstyled show'
+      : 'collapse list-unstyled';
     setNavbarLefts(navbarLeftTemp);
   };
 
-  const addLinkActiveChildDropDownLeft = (id: number, childId: number, childLink: string) => {
-    let navbarLeftTemp = [...navbarLefts];
-    let el = navbarLeftTemp[id];
+  const addLinkActiveChildDropDownLeft = (
+    id: number,
+    childId: number,
+    childLink: string,
+  ) => {
+    const navbarLeftTemp = [...navbarLefts];
+    const el = navbarLeftTemp[id];
 
     for (let i = 0; i < el.children.length; i++) {
       el.children[i].active = false;
@@ -88,19 +96,19 @@ export const MasterLayout = (props: masterLayoutProps) => {
   return (
     <>
       <div className="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" className={isSidebarActive ? "active" : ""}>
+        <nav id="sidebar" className={isSidebarActive ? 'active' : ''}>
           <div className="p-4 pt-5">
-            <Link to={""}>
+            <Link to={''}>
               <input
                 type="image"
-                src={require("../../resources/img/_layout/logo.jpg")}
+                src={require('../../resources/img/_layout/logo.jpg')}
                 className="img logo rounded-circle"
                 alt="description image"
               />
             </Link>
             <ul className="list-unstyled components mb-5 mt-5">
               {navbarLefts.map((navbar, key) => (
-                <li key={key} className={navbar.active ? "active" : ""}>
+                <li key={key} className={navbar.active ? 'active' : ''}>
                   {navbar.children?.length > 0 ? (
                     <Fragment>
                       <Link
@@ -114,10 +122,19 @@ export const MasterLayout = (props: masterLayoutProps) => {
                       </Link>
                       <ul className={navbar.ulClass}>
                         {navbar.children.map((child, keyChild) => (
-                          <li key={keyChild} className={child.active ? "active" : ""}>
+                          <li
+                            key={keyChild}
+                            className={child.active ? 'active' : ''}
+                          >
                             <Link
                               to={child.link}
-                              onClick={() => addLinkActiveChildDropDownLeft(navbar.id, child.id, child.link)}
+                              onClick={() =>
+                                addLinkActiveChildDropDownLeft(
+                                  navbar.id,
+                                  child.id,
+                                  child.link,
+                                )
+                              }
                             >
                               {child.text}
                             </Link>
@@ -126,7 +143,10 @@ export const MasterLayout = (props: masterLayoutProps) => {
                       </ul>
                     </Fragment>
                   ) : (
-                    <Link to={navbar.link} onClick={(e) => showDropDownLeft(e, navbar.id)}>
+                    <Link
+                      to={navbar.link}
+                      onClick={(e) => showDropDownLeft(e, navbar.id)}
+                    >
                       {navbar.text}
                     </Link>
                   )}
@@ -139,8 +159,13 @@ export const MasterLayout = (props: masterLayoutProps) => {
         {/* <!-- Page Content  --> */}
         <div id="content" className="pt-4 pb-4 ps-1 pe-1 p-md-5">
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid" style={{ minWidth: "7rem" }}>
-              <button type="button" id="sidebarCollapse" className="btn btn-yellow" onClick={toggleLeftMenu}>
+            <div className="container-fluid" style={{ minWidth: '7rem' }}>
+              <button
+                type="button"
+                id="sidebarCollapse"
+                className="btn btn-yellow"
+                onClick={toggleLeftMenu}
+              >
                 <i className="fa fa-bars"></i>
                 <span className="sr-only">Toggle Menu</span>
               </button>
@@ -155,10 +180,13 @@ export const MasterLayout = (props: masterLayoutProps) => {
               >
                 <i className="fa fa-bars"></i>
               </button>
-              <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarSupportedContent"
+              >
                 <ul className="nav navbar-nav ml-auto">
                   <li className="nav-item active">
-                    <Link to={"/"} className="nav-link">
+                    <Link to={'/'} className="nav-link">
                       Home
                     </Link>
                   </li>

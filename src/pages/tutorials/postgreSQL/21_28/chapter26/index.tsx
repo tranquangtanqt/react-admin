@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter26 = () => {
   return (
@@ -46,7 +46,9 @@ export const TutorialPostgreSQLChapter26 = () => {
             </ul>
           </div>
           <div className="tab-2">
-            <p>This is host base authentication file, contains the setting for client autherntication. Add below entry:</p>
+            <p>
+              This is host base authentication file, contains the setting for client autherntication. Add below entry:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -83,7 +85,10 @@ archive_mode=ON`}
             <p>This parameters allows to send WAL segments to archive location using archive_command parameter.</p>
           </div>
           <div className="tab-2">
-            <Code code={`archive_command = 'test ! -f /path/to/archivedir/%f && cp %p /path/to/archivedir/%f'`} language="sql" />
+            <Code
+              code={`archive_command = 'test ! -f /path/to/archivedir/%f && cp %p /path/to/archivedir/%f'`}
+              language="sql"
+            />
           </div>
           <div className="tab-2">
             <p>Basically what above archive_command does is it copies the WAL segments to archive directory.</p>
@@ -96,9 +101,10 @@ archive_mode=ON`}
           <div className="tab-2">
             <p>Before making changes on the server stop the primary server</p>
             <p>
-              Important: Don't start the service again until all configuration and backup steps are complete. You must bring up the standby server in
-              a state where it is ready to be a backup server. This means that all configuration settings must be in place and the databases must be
-              already synchronized. Otherwise, streaming replication will fail to start`
+              Important: Don't start the service again until all configuration and backup steps are complete. You must
+              bring up the standby server in a state where it is ready to be a backup server. This means that all
+              configuration settings must be in place and the databases must be already synchronized. Otherwise,
+              streaming replication will fail to start`
             </p>
           </div>
           <div className="tab-1">
@@ -117,15 +123,19 @@ archive_mode=ON`}
             <p>-D: This IS tells pg_basebackup WHERE TO the initial backup</p>
             <p>-h: Specifies the SYSTEM WHERE TO look FOR the PRIMARY SERVER</p>
             <p>
-              -xlog-method=stream: This will FORCE the pg_basebackup TO open another CONNECTION AND stream enough xlog WHILE backup IS running. It
-              ALSO ensures that fresh backup can be started WITHOUT failing back TO USING an archive.
+              -xlog-method=stream: This will FORCE the pg_basebackup TO open another CONNECTION AND stream enough xlog
+              WHILE backup IS running. It ALSO ensures that fresh backup can be started WITHOUT failing back TO USING an
+              archive.
             </p>
           </div>
           <div className="tab-1">
             <b>d. Configuring the standby server</b>
           </div>
           <div className="tab-2">
-            <p>To configure the standby server, you'll edit postgresql.conf and create a new configuration file named recovery.conf.</p>
+            <p>
+              To configure the standby server, you'll edit postgresql.conf and create a new configuration file named
+              recovery.conf.
+            </p>
             <p>hot_standby = ON</p>
             <p>This specifies whether you are allowed to run queries while recovering</p>
           </div>
@@ -135,8 +145,8 @@ archive_mode=ON`}
           <div className="tab-2">
             <p>standby_mode = ON</p>
             <p>
-              Set the connection string to the primary server. Replace with the external IP address of the primary server. Replace with the password
-              for the user named replication
+              Set the connection string to the primary server. Replace with the external IP address of the primary
+              server. Replace with the password for the user named replication
             </p>
           </div>
           <div className="tab-2">
@@ -150,8 +160,9 @@ archive_mode=ON`}
           </div>
           <div className="tab-2">
             <p>
-              The trigger_file path that you specify is the location where you can add a file when you want the system to fail over to the standby
-              server. The presence of the file "triggers" the failover. Alternatively, you can use the pg_ctl promote command to trigger failover.
+              The trigger_file path that you specify is the location where you can add a file when you want the system
+              to fail over to the standby server. The presence of the file "triggers" the failover. Alternatively, you
+              can use the pg_ctl promote command to trigger failover.
             </p>
           </div>
           <div className="tab-1">
@@ -165,9 +176,9 @@ archive_mode=ON`}
           </div>
           <div className="tab-2">
             <p>
-              This article is substantially derived from and attributed to How to Set Up PostgreSQL for High Availability and Replication with Hot
-              Standby, with minor changes in formatting and examples and some text deleted. The source was published under the Creative Commons Public
-              License 3.0, which is maintained here.
+              This article is substantially derived from and attributed to How to Set Up PostgreSQL for High
+              Availability and Replication with Hot Standby, with minor changes in formatting and examples and some text
+              deleted. The source was published under the Creative Commons Public License 3.0, which is maintained here.
             </p>
           </div>
         </div>

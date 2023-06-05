@@ -1,10 +1,10 @@
-import { useState } from "react";
-import * as XLSX from "xlsx";
-import { PageTitle } from "../../../../components/modules/page-title";
+import { useState } from 'react';
+import * as XLSX from 'xlsx';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const UtilitiesMakeJsonVocabulary = () => {
   const [fileInput, setfileInput] = useState();
-  const [output, setOutput] = useState("");
+  const [output, setOutput] = useState('');
 
   const createContent = () => {
     let arrayBuffer: any;
@@ -16,25 +16,25 @@ export const UtilitiesMakeJsonVocabulary = () => {
       for (let i = 0; i !== dataBuffer.length; ++i) {
         arr[i] = String.fromCharCode(dataBuffer[i]);
       }
-      let bstr = arr.join("");
-      let workbook = XLSX.read(bstr, { type: "binary" });
+      let bstr = arr.join('');
+      let workbook = XLSX.read(bstr, { type: 'binary' });
 
       for (let index = 0; index < workbook.SheetNames?.length; index++) {
         let worksheetName = workbook.SheetNames[index];
         let worksheet = workbook.Sheets[worksheetName];
         let data: any = XLSX.utils.sheet_to_json(worksheet, { raw: true });
-       
+
         let arr = [];
         for (let i = 0; i < data.length; i++) {
           let obj: any = {};
           let item = data[i];
-          
+
           if (item.no === 1) {
             obj.no = item.no;
-            obj.hiragana = "";
-            obj.kanji = "";
-            obj.romanji = "";
-            obj.translate = "";
+            obj.hiragana = '';
+            obj.kanji = '';
+            obj.romanji = '';
+            obj.translate = '';
 
             if (item.hiragana !== undefined) {
               obj.hiragana = item.hiragana;
@@ -70,13 +70,13 @@ export const UtilitiesMakeJsonVocabulary = () => {
    */
   const downloadFile = (fileName: string, myData: any) => {
     const json = JSON.stringify(myData, null, 2);
-    const blob = new Blob([json], { type: "application/json" });
+    const blob = new Blob([json], { type: 'application/json' });
     const href = URL.createObjectURL(blob);
 
     // create "a" HTLM element with href to file
-    const link = document.createElement("a");
+    const link = document.createElement('a');
     link.href = href;
-    link.download = fileName + ".json";
+    link.download = fileName + '.json';
     document.body.appendChild(link);
     link.click();
 
@@ -107,7 +107,7 @@ export const UtilitiesMakeJsonVocabulary = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: "100%" }} />
+          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: '100%' }} />
         </div>
       </div>
     </>

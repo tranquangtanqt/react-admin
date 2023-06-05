@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const JavaUpdateData1 = () => {
   return (
@@ -15,7 +15,7 @@ export const JavaUpdateData1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/11.jpg")}
+              src={require('../../../../resources/img/programming/java/11.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -567,7 +567,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/12.jpg")}
+              src={require('../../../../resources/img/programming/java/12.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -579,7 +579,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/13.jpg")}
+              src={require('../../../../resources/img/programming/java/13.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -598,7 +598,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/17.jpg")}
+              src={require('../../../../resources/img/programming/java/17.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -610,7 +610,7 @@ public class SpringwebappApplication {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../resources/img/programming/java/18.jpg")}
+              src={require('../../../../resources/img/programming/java/18.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

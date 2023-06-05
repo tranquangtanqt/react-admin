@@ -1,23 +1,23 @@
-import StringUtils from "../../../../utils/string-utils";
-import { PageTitle } from "../../../../components/modules/page-title";
-import { useState } from "react";
+import StringUtils from '../../../../utils/string-utils';
+import { PageTitle } from '../../../../components/modules/page-title';
+import { useState } from 'react';
 
 export const UtilitiesTextCommon = () => {
-  const [input, setInput] = useState("");
-  const [upper, setUpper] = useState("");
-  const [lower, setLower] = useState("");
-  const [upperUnderscore, setUpperUnderscore] = useState("");
-  const [lowerUnderscore, setLowerUnderscore] = useState("");
-  const [camel, setCamel] = useState("");
-  const [numberVNToJP, setNumberVNToJP] = useState("");
+  const [input, setInput] = useState('');
+  const [upper, setUpper] = useState('');
+  const [lower, setLower] = useState('');
+  const [upperUnderscore, setUpperUnderscore] = useState('');
+  const [lowerUnderscore, setLowerUnderscore] = useState('');
+  const [camel, setCamel] = useState('');
+  const [numberVNToJP, setNumberVNToJP] = useState('');
 
   const renderText = (e: any) => {
-    let inputVal = e.target.value;
+    const inputVal = e.target.value;
     setInput(inputVal);
     setUpper(inputVal.toUpperCase());
     setLower(inputVal.toLowerCase());
-    setUpperUnderscore(inputVal.toUpperCase().trim().replace(/ /g, "_"));
-    setLowerUnderscore(inputVal.toLowerCase().trim().replace(/ /g, "_"));
+    setUpperUnderscore(inputVal.toUpperCase().trim().replace(/ /g, '_'));
+    setLowerUnderscore(inputVal.toLowerCase().trim().replace(/ /g, '_'));
     setCamel(StringUtils.camelize(inputVal));
     setNumberVNToJP(StringUtils.numberVNToJP(inputVal));
   };
@@ -35,8 +35,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={input}
             onChange={(e) => renderText(e)}
-            placeholder={"Enter input"}
-            style={{ height: 100, width: "100%" }}
+            placeholder={'Enter input'}
+            style={{ height: 100, width: '100%' }}
           />
         </div>
       </div>
@@ -50,8 +50,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={upper}
             onChange={(e) => setUpper(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"uppercase"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'uppercase'}
           />
         </div>
         <div className="col-12 col-sm-6 col-md-6">
@@ -63,8 +63,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={lower}
             onChange={(e) => setLower(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"lowercase"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'lowercase'}
           />
         </div>
       </div>
@@ -78,8 +78,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={upperUnderscore}
             onChange={(e) => setUpperUnderscore(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"uppercase Underscore"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'uppercase Underscore'}
           />
         </div>
         <div className="col-12 col-sm-6 col-md-6">
@@ -91,8 +91,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={lowerUnderscore}
             onChange={(e) => setLowerUnderscore(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"lowercase Underscore"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'lowercase Underscore'}
           />
         </div>
       </div>
@@ -107,8 +107,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={camel}
             onChange={(e) => setCamel(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"camel"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'camel'}
           />
         </div>
         <div className="col-12 col-sm-6 col-md-6">
@@ -120,8 +120,8 @@ export const UtilitiesTextCommon = () => {
             className="form-control"
             value={numberVNToJP}
             onChange={(e) => setNumberVNToJP(e.target.value)}
-            style={{ height: 100, width: "100%" }}
-            placeholder={"number VN To JP"}
+            style={{ height: 100, width: '100%' }}
+            placeholder={'number VN To JP'}
           />
         </div>
       </div>

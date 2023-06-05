@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const UtilitiesGeneralGit = () => {
   return (
@@ -7,7 +7,7 @@ export const UtilitiesGeneralGit = () => {
       <PageTitle title="Git"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <b>Collapse Git</b>
+          <b>Collapse Gitlab</b>
           <div className="tab-1">
             <Code
               code={`$(".diff-file").find("div.nothing-here-block").each(function(i) {
@@ -18,9 +18,29 @@ export const UtilitiesGeneralGit = () => {
               language="javascript"
             />
           </div>
+          <b>Get all file change in gitlab {'( f12 and paste code)'}</b>
+          <div className="tab-1">
+            <Code
+              code={`function save(text){
+    var link = document.createElement('a');
+    link.href = 'data:text/plain;charset=UTF-8,' + escape(text);
+    link.download = 'output.txt';
+    link.click();
+};
+var fileNameAll = "";
+$(".file-title-name").each(function (i) {
+  //console.log(this.innerHTML);
+  fileNameAll += this.innerHTML + "\\n";
+});
+var arr = fileNameAll.split("\\n");
+arr = arr.filter(item => item.trim() !== "");
+save(arr.join("\\n"));`}
+              language="javascript"
+            />
+          </div>
           <b>Delete branch</b>
           <div className="tab-1">
-          <Code
+            <Code
               code={`git branch | egrep "abc*" | xargs git branch -D
     ^              ^               ^
     |              |               |--- create arguments from standard input
@@ -33,7 +53,7 @@ export const UtilitiesGeneralGit = () => {
 git branch | grep -v "develop" | xargs git branch -D    `}
               language="sql"
             />
-            </div>
+          </div>
           <b>.gitconfig</b>
           <div className="tab-1">
             <Code
@@ -74,7 +94,7 @@ git push origin <Tên_nhánh>`}
 
           <b>Export file</b>
           <div className="tab-1">
-            <p>Để lấy toàn bộ file đã commit từ START ={">"} END</p>
+            <p>Để lấy toàn bộ file đã commit từ START ={'>'} END</p>
             <p>Xem history để lấy được id commit START và END. Sau đó xuất toàn bộ file thay đổi ra file .txt</p>
             <Code code={`git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt`} language="sql" />
             <p>Export file</p>

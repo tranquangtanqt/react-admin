@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const ProgrammingJavascriptTipsTips = () => {
   return (
@@ -10,8 +10,9 @@ export const ProgrammingJavascriptTipsTips = () => {
           <b>1.Tạo hàm query DOM ngắn gọn hơn với bind</b>
           <div className="tab-1">
             <p>
-              JavaScript cung cấp phương thức document.querySelector() cho phép bạn query DOM dựa trên selector. Tuy nhiên, việc sử dụng phương thức
-              này khá dài dòng. Ví dụ:
+              JavaScript cung cấp phương thức document.querySelector() cho phép
+              bạn query DOM dựa trên selector. Tuy nhiên, việc sử dụng phương
+              thức này khá dài dòng. Ví dụ:
             </p>
           </div>
           <div className="tab-2">
@@ -38,14 +39,20 @@ let ele3 = $("div.user-panel.main input[name='login']");`}
           </div>
         </div>
         <div className="tab-1">
-          <p>Ở đây đặt tên hàm mới là $, nên thấy nó giống với jQuery, nhưng nhớ rằng đây vẫn chỉ là JavaScript thuần mà thôi.</p>
+          <p>
+            Ở đây đặt tên hàm mới là $, nên thấy nó giống với jQuery, nhưng nhớ
+            rằng đây vẫn chỉ là JavaScript thuần mà thôi.
+          </p>
         </div>
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <b>2. Rút gọn hàm console.log</b>
           <div className="tab-1">
-            <p>Tương tự như trên, có thể sử dụng bind để rút gọn phương thức console.log như sau:</p>
+            <p>
+              Tương tự như trên, có thể sử dụng bind để rút gọn phương thức
+              console.log như sau:
+            </p>
           </div>
           <div className="tab-2">
             <Code

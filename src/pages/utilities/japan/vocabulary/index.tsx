@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { PageTitle } from "../../../../components/modules/page-title";
-import unit from "../../../../resources/json/japan/JapanUnit.json";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { PageTitle } from '../../../../components/modules/page-title';
+import unit from '../../../../resources/json/japan/JapanUnit.json';
 
 export const UtilitiesJapanVocabulary = () => {
   const navigate = useNavigate();
   const [units, setUnits] = useState(() => {
     let unitN5 = unit;
     unitN5.forEach((item) => {
-      if (item.level === "N5") {
+      if (item.level === 'N5') {
         item.isShow = 1;
       } else {
         item.isShow = 0;
@@ -17,8 +17,8 @@ export const UtilitiesJapanVocabulary = () => {
     return unitN5;
   });
   const [checked, setChecked] = useState<string[]>([]);
-  const [level, setLevel] = useState("N5");
-  const [questionTotal, setQuestionTotal] = useState("4");
+  const [level, setLevel] = useState('N5');
+  const [questionTotal, setQuestionTotal] = useState('4');
 
   /**
    * Add/Remove checked item from list
@@ -47,15 +47,15 @@ export const UtilitiesJapanVocabulary = () => {
   };
 
   const openUnitPage = () => {
-    localStorage.setItem("japan-unit", JSON.stringify(checked));
-    localStorage.setItem("japan-level", level);
-    localStorage.setItem("japan-question-total", questionTotal);
-    navigate("/utilities/japan/vocabulary/unit");
+    localStorage.setItem('japan-unit', JSON.stringify(checked));
+    localStorage.setItem('japan-level', level);
+    localStorage.setItem('japan-question-total', questionTotal);
+    navigate('/utilities/japan/vocabulary/unit');
   };
 
   const handleSelectQuestionTotal = (value: string) => {
     setQuestionTotal(value);
-  }
+  };
 
   return (
     <>
@@ -63,7 +63,11 @@ export const UtilitiesJapanVocabulary = () => {
       <div className="row mt-2">
         <div className="col-6 col-sm-6 col-md-6">
           <b>1. Chọn cấp độ</b>
-          <select className="form-select form-select-sm" defaultValue={"N5"} onChange={(e) => handleSelectLevel(e.target.value)}>
+          <select
+            className="form-select form-select-sm"
+            defaultValue={'N5'}
+            onChange={(e) => handleSelectLevel(e.target.value)}
+          >
             <option value="N5">N5</option>
             <option value="N4">N4</option>
             <option value="N3">N3</option>
@@ -72,7 +76,11 @@ export const UtilitiesJapanVocabulary = () => {
 
         <div className="col-6 col-sm-6 col-md-6">
           <b>2. Chọn tổng số đáp án</b>
-          <select className="form-select form-select-sm" defaultValue={"4"} onChange={(e) => handleSelectQuestionTotal(e.target.value)}>
+          <select
+            className="form-select form-select-sm"
+            defaultValue={'4'}
+            onChange={(e) => handleSelectQuestionTotal(e.target.value)}
+          >
             <option value="4">4</option>
             <option value="6">6</option>
             <option value="8">8</option>
@@ -81,27 +89,26 @@ export const UtilitiesJapanVocabulary = () => {
       </div>
 
       <div className="row mt-2">
-        
-          {units.map(
-            (item, index) =>
-              item.isShow === 1 && (
-                <div  key={index} className="col-4 col-sm-4 col-md-4">
-                  <div className="form-check">
-                    <input
-                      value={item.unit}
-                      type="checkbox"
-                      className="form-check-input"
-                      id={"checkbox-unit-" + index}
-                      onChange={(e) => handleCheck(e)}
-                    />
-                    <label className="form-check-label" htmlFor={"checkbox-unit-" + index}>
-                      {item.unitName}
-                    </label>
-                    <span></span>
-                  </div>
+        {units.map(
+          (item, index) =>
+            item.isShow === 1 && (
+              <div key={index} className="col-4 col-sm-4 col-md-4">
+                <div className="form-check">
+                  <input
+                    value={item.unit}
+                    type="checkbox"
+                    className="form-check-input"
+                    id={'checkbox-unit-' + index}
+                    onChange={(e) => handleCheck(e)}
+                  />
+                  <label className="form-check-label" htmlFor={'checkbox-unit-' + index}>
+                    {item.unitName}
+                  </label>
+                  <span></span>
                 </div>
-              )
-          )}
+              </div>
+            ),
+        )}
         {/* </div> */}
       </div>
 

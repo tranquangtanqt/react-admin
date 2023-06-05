@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialPostgreSQLChapter20 = () => {
   return (
@@ -7,11 +7,15 @@ export const TutorialPostgreSQLChapter20 = () => {
       <PageTitle title="20. Postgres cryptographic functions"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <p>In Postgres, cryptographic functions can be unlocked by using pgcrypto module. CREATE EXTENSION pgcrypto;</p>
+          <p>
+            In Postgres, cryptographic functions can be unlocked by using pgcrypto module. CREATE EXTENSION pgcrypto;
+          </p>
 
           <b>1. Digest</b>
           <div className="tab-1">
-            <p>DIGEST() functions generate a binary hash of the given data. This can be used to create a random hash.</p>
+            <p>
+              DIGEST() functions generate a binary hash of the given data. This can be used to create a random hash.
+            </p>
             <p>Usage:</p>
           </div>
           <div className="tab-2">

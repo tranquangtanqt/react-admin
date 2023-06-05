@@ -1,5 +1,5 @@
-import Code from "../../../../components/modules/code";
-import { PageTitle } from "../../../../components/modules/page-title";
+import Code from '../../../../components/modules/code';
+import { PageTitle } from '../../../../components/modules/page-title';
 
 export const PHPConvertUnicode = () => {
   return (
@@ -7,8 +7,8 @@ export const PHPConvertUnicode = () => {
       <PageTitle title="Chuyển chuỗi Unicode thành chuỗi không dấu"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-            <Code
-              code={`<?php
+          <Code
+            code={`<?php
 // Mở composer.json
 // Thêm vào trong "autoload" chuỗi sau
 // "files": [
@@ -82,8 +82,8 @@ function stripUnicode($str){
     }
     return $str;
 }`}
-              language="php"
-            />
+            language="php"
+          />
         </div>
       </div>
     </>

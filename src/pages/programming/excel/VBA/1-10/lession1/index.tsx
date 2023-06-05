@@ -1,8 +1,15 @@
-import Code from "../../../../../../components/modules/code";
-import { PageTitle } from "../../../../../../components/modules/page-title";
+import Code from '../../../../../../components/modules/code';
+import { PageTitle } from '../../../../../../components/modules/page-title';
 
 export const PogrammingExcelVBA001 = () => {
-  let data = ["2023-02-19 01.jpg", "2023-02-19 02.jpg", "2023-02-19 03.jpg", "2023-02-19 04.jpg", "2023-02-19 05.jpg", "2023-02-19 06.jpg"];
+  const data = [
+    '2023-02-19 01.jpg',
+    '2023-02-19 02.jpg',
+    '2023-02-19 03.jpg',
+    '2023-02-19 04.jpg',
+    '2023-02-19 05.jpg',
+    '2023-02-19 06.jpg',
+  ];
   return (
     <>
       <PageTitle title="001. Tạo hyperlink đến toàn bộ các sheet của workbook"></PageTitle>

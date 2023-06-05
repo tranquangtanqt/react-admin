@@ -1,5 +1,5 @@
-import Code from "../../../../../components/modules/code";
-import { PageTitle } from "../../../../../components/modules/page-title";
+import Code from '../../../../../components/modules/code';
+import { PageTitle } from '../../../../../components/modules/page-title';
 
 export const TutorialNetAngularLesson4 = () => {
   return (
@@ -17,7 +17,7 @@ export const TutorialNetAngularLesson4 = () => {
           <div className="tab-2">
             <input
               type="image"
-              src={require("../../../../../resources/img/tutorials/netAngular/Net_Angular_5.jpg")}
+              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_5.jpg')}
               className="img-thumbnail"
               alt=""
             />

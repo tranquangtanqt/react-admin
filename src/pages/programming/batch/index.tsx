@@ -1,18 +1,18 @@
-import { PageTitle } from "../../../components/modules/page-title";
-import { CardList } from "../../../components/modules/card-list";
+import { PageTitle } from '../../../components/modules/page-title';
+import { CardList } from '../../../components/modules/card-list';
 
 export const ProgrammingBatch = () => {
   const cardData = [
     {
-      title: "Common",
+      title: 'Common',
       links: [
         {
-          text: "If...Else...",
-          path: "/programming-batch/if-else",
+          text: 'If...Else...',
+          path: '/programming-batch/if-else',
         },
         {
-          text: "Start, end program",
-          path: "/programming-batch/start-end-program",
+          text: 'Start, end program',
+          path: '/programming-batch/start-end-program',
         },
       ],
     },
