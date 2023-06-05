@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialNetAngularLesson9 = () => {
   return (
@@ -33,7 +33,7 @@ export const TutorialNetAngularLesson9 = () => {
         <div className="tab-2">
           <input
             type="image"
-            src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_8.jpg')}
+            src={require('resources/img/tutorials/netAngular/Net_Angular_8.jpg')}
             className="img-thumbnail"
             alt=""
           />
@@ -44,7 +44,7 @@ export const TutorialNetAngularLesson9 = () => {
         <div className="tab-2">
           <input
             type="image"
-            src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_9.jpg')}
+            src={require('resources/img/tutorials/netAngular/Net_Angular_9.jpg')}
             className="img-thumbnail"
             alt=""
           />
@@ -71,7 +71,10 @@ namespace API.Controllers
             />
           </div>
           <div className="tab-1">
-            <p>- Change UsersController: remove ApiController and [Route("api/[controller]")]</p>
+            <p>
+              - Change UsersController: remove ApiController and
+              [Route("api/[controller]")]
+            </p>
           </div>
           <div className="tab-2">
             <Code

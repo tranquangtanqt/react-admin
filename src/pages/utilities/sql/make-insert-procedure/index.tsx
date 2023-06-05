@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import StringUtils from '../../../../utils/string-utils';
-import { PageTitle } from '../../../../components/modules/page-title';
+import StringUtils from 'utils/string-utils';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitiesMakeInsertSQLFromProcedure = () => {
   const [procedureName, setProcedureName] = useState('P_INSERT');
@@ -28,10 +28,10 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
     outputStr += '\t FOR i IN startStep..endStep LOOP \n';
     outputStr += '\t\t INSERT INTO ' + tableName + ' (';
 
-    let columnArr = inputSql.split('\n');
+    const columnArr = inputSql.split('\n');
     for (let i = 0; i < columnArr.length; i++) {
-      let arr = columnArr[i].trim().split(' ');
-      let columnName = StringUtils.replaceAll(arr[0], `"`, '');
+      const arr = columnArr[i].trim().split(' ');
+      const columnName = StringUtils.replaceAll(arr[0], `"`, '');
       outputStr += columnName + ', ';
       console.log(i + '----- ' + columnName);
     }
@@ -50,14 +50,14 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
         rowArr = rowArr.slice(0, -1);
       }
 
-      let rowString = rowArr.join('');
-      let arrSeparatorSpace = rowString.trim().split(' ');
-      let columnName = StringUtils.replaceAll(arrSeparatorSpace[0], `"`, '');
+      const rowString = rowArr.join('');
+      const arrSeparatorSpace = rowString.trim().split(' ');
+      const columnName = StringUtils.replaceAll(arrSeparatorSpace[0], `"`, '');
 
       if (rowString !== '') {
         let value = '';
         if (rowString.toLowerCase().includes('default')) {
-          let arrSeparatorSpaceLower = arrSeparatorSpace.map((val) => {
+          const arrSeparatorSpaceLower = arrSeparatorSpace.map((val) => {
             return val.toLowerCase();
           });
           value =
@@ -65,18 +65,18 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
           value = '\t\t\t' + value + ', \n';
           outputStr += value;
         } else if (rowString.toLowerCase().includes('char')) {
-          let left = rowString.indexOf('(');
-          let right = rowString.indexOf(')');
+          const left = rowString.indexOf('(');
+          const right = rowString.indexOf(')');
           // get value between "(" and ")"
-          let stringInChar = rowString.substring(left + 1, right).trim();
-          let maxCharArr = stringInChar.match(/\d/g) || [];
+          const stringInChar = rowString.substring(left + 1, right).trim();
+          const maxCharArr = stringInChar.match(/\d/g) || [];
           let maxChar = maxCharArr.join('');
           if (Number(maxChar) >= 20) {
             maxChar = '20';
           }
 
           value = columnName.substring(0, Number(maxChar));
-          let countZero = Number(maxChar) - value.length;
+          const countZero = Number(maxChar) - value.length;
 
           if (countZero > 0) {
             // CONCAT('CA', SUBSTR(LPAD('1', 4, '0'), LENGTH('CA') + 1))
@@ -94,11 +94,11 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
             outputStr += value;
           }
         } else if (rowString.toLowerCase().includes('timestamp')) {
-          let left = rowString.indexOf('(');
-          let right = rowString.indexOf(')');
+          const left = rowString.indexOf('(');
+          const right = rowString.indexOf(')');
 
-          let charLimitStr = rowString.substring(left + 1, right);
-          let charLimit = charLimitStr.match(/\d/g) || [];
+          const charLimitStr = rowString.substring(left + 1, right);
+          const charLimit = charLimitStr.match(/\d/g) || [];
 
           value = '\t\t\tcurrent_timestamp (' + charLimit + '), \n';
           outputStr += value;
@@ -106,11 +106,11 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
           value = '\t\t\tcurrent_date, \n';
           outputStr += value;
         } else if (rowString.toLowerCase().includes('number')) {
-          let left = rowString.indexOf('(');
-          let right = rowString.indexOf(')');
+          const left = rowString.indexOf('(');
+          const right = rowString.indexOf(')');
 
-          let limit = rowString.substring(left + 1, right);
-          let limitArr = limit.split(',');
+          const limit = rowString.substring(left + 1, right);
+          const limitArr = limit.split(',');
 
           if (limitArr.length > 1) {
             let maxNaturalStr = '';
@@ -122,9 +122,9 @@ export const UtilitiesMakeInsertSQLFromProcedure = () => {
               maxNaturalStr += '9';
             }
 
-            let natural = Number(maxNaturalStr);
-            let decimal = limitArr[1];
-            let value =
+            const natural = Number(maxNaturalStr);
+            const decimal = limitArr[1];
+            const value =
               '\t\t\t ROUND(dbms_random.value(0, ' +
               natural +
               '), ' +

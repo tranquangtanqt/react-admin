@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 import { IProject } from './dto/project';
 import info from './data/project.json';
 
@@ -56,7 +56,7 @@ export const UtilitieAppProjectInfo = () => {
    */
   const showModalUpdateProject = (id: number) => {
     setMode(MODE_EDIT);
-    let project = projects?.filter((x) => x.id === id).shift();
+    const project = projects?.filter((x) => x.id === id).shift();
     if (project) {
       if (refId.current != null) {
         refId.current.value = project.id.toString();
@@ -74,7 +74,7 @@ export const UtilitieAppProjectInfo = () => {
    */
   const createOrUpdateProject = async () => {
     if (mode === MODE_CREATE) {
-      let newProject = {} as IProject;
+      const newProject = {} as IProject;
       newProject.id = Math.max(...projects.map((x) => x.id)) + 1;
       newProject.order = Math.max(...projects.map((x) => x.order)) + 1;
       if (refTitle.current != null) {
@@ -90,9 +90,9 @@ export const UtilitieAppProjectInfo = () => {
       showModalNotification('Thêm dữ liệu thành công');
     } else if (mode === MODE_EDIT) {
       if (refId.current !== null) {
-        let id = Number(refId.current.value);
+        const id = Number(refId.current.value);
 
-        let project = projects.filter(function (c) {
+        const project = projects.filter(function (c) {
           return c.id === Number(id);
         })[0];
 
@@ -101,8 +101,8 @@ export const UtilitieAppProjectInfo = () => {
           updatedObj = Object.assign({}, project, {
             title: refTitle.current.value,
           });
-          let index = projects.indexOf(project);
-          let arr = [
+          const index = projects.indexOf(project);
+          const arr = [
             ...projects.slice(0, index),
             updatedObj,
             ...projects.slice(index + 1),
@@ -120,19 +120,19 @@ export const UtilitieAppProjectInfo = () => {
    *
    */
   const updateOrderNumber = async (id: number, isUp: boolean) => {
-    let projectCurrent = projects.filter((c) => c.id === Number(id))[0];
+    const projectCurrent = projects.filter((c) => c.id === Number(id))[0];
 
-    let index = projects.indexOf(projectCurrent);
+    const index = projects.indexOf(projectCurrent);
 
     if (isUp) {
-      let projectUp = projects[index - 1];
+      const projectUp = projects[index - 1];
 
       //swap order number
-      let orderTemp = projectUp.order;
+      const orderTemp = projectUp.order;
       projectUp.order = projectCurrent.order;
       projectCurrent.order = orderTemp;
 
-      let arr = [
+      const arr = [
         ...projects.slice(0, index - 1),
         projectUp,
         projectCurrent,
@@ -140,14 +140,14 @@ export const UtilitieAppProjectInfo = () => {
       ];
       setProjects(desc(arr));
     } else {
-      let projectDown = projects[index + 1];
+      const projectDown = projects[index + 1];
 
       //swap order number
-      let orderTemp = projectDown.order;
+      const orderTemp = projectDown.order;
       projectDown.order = projectCurrent.order;
       projectCurrent.order = orderTemp;
 
-      let arr = [
+      const arr = [
         ...projects.slice(0, index),
         projectCurrent,
         projectDown,
@@ -172,14 +172,14 @@ export const UtilitieAppProjectInfo = () => {
    */
   const deleteProject = async () => {
     if (refId.current !== null) {
-      let id = Number(refId.current.value);
+      const id = Number(refId.current.value);
 
-      let project = projects.filter(function (c) {
+      const project = projects.filter(function (c) {
         return c.id === Number(id);
       })[0];
 
-      let index = projects.indexOf(project);
-      let arr = [...projects.slice(0, index), ...projects.slice(index + 1)];
+      const index = projects.indexOf(project);
+      const arr = [...projects.slice(0, index), ...projects.slice(index + 1)];
       setProjects(arr);
       ($('#modal-project-delete') as any).modal('hide');
       showModalNotification('Xóa dữ liệu thành công');

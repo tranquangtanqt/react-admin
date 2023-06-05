@@ -1,6 +1,6 @@
-import { PageTitle } from "../../../../../components/modules/page-title";
-import { Vocabulary } from "../../../../../components/modules/vocabulary";
-import vocabularies from "./../../../../../resources/json/japan/N5/BoSung_4_ThucAn.json";
+import { PageTitle } from 'components/modules/page-title';
+import { Vocabulary } from 'components/modules/vocabulary';
+import vocabularies from 'resources/json/japan/N5/BoSung_4_ThucAn.json';
 
 export const TutorialJapanVocabularyLessonFood = () => {
   return (

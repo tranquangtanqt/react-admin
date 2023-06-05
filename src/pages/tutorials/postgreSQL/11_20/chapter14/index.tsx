@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter14 = () => {
   return (
@@ -35,8 +35,8 @@ $$ LANGUAGE plpgsql;`}
           </div>
           <div className="tab-1">
             <p>
-              This could have been achieved with just the SQL statement but demonstrates the basic structure of a
-              function.
+              This could have been achieved with just the SQL statement but
+              demonstrates the basic structure of a function.
             </p>
             <p>To execute the function do:</p>
           </div>
@@ -104,10 +104,17 @@ PL/pgSQL FUNCTION inline_code_block line 7 AT PERFORM`}
             />
           </div>
           <div className="tab-1">
-            <p>here custom P0001 processed, and P2222, not, aborting the execution.</p>
+            <p>
+              here custom P0001 processed, and P2222, not, aborting the
+              execution.
+            </p>
             <p>
               Also it makes huge sense to keep a table of exceptions, like here:{' '}
-              <a href=" http://stackoverflow.com/a/2700312/5315974" target={'_blank'} rel="noreferrer">
+              <a
+                href=" http://stackoverflow.com/a/2700312/5315974"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 http://stackoverflow.com/a/2700312/5315974
               </a>{' '}
             </p>

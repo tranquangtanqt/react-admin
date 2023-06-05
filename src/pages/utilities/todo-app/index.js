@@ -2,8 +2,8 @@ import { Avatar, Button, Col, Form, Input, List, message, Popconfirm, Row, Modal
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { DeleteOutlined, EditOutlined, LoadingOutlined } from '@ant-design/icons';
-import todoApi from '../../../api/todo-api';
-import todoDetailApi from '../../../api/todoDetail';
+import todoApi from 'api/todo-api';
+import todoDetailApi from 'api/todoDetail';
 
 import './index.scss';
 

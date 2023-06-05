@@ -1,5 +1,5 @@
-import { PageTitle } from '../../../../../components/modules/page-title';
-import Code from '../../../../../components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
+import Code from 'components/modules/code';
 import { Fragment } from 'react';
 
 export const PostgresqlTableGeneral = () => {
@@ -39,7 +39,7 @@ ORDER BY
               </p>
               {dataVal.contents.map((contentVal, contentKey) => (
                 <Fragment>
-                  <div className="tab-1">
+                  <div className="tab-1" key={contentKey}>
                     {contentVal.p && contentVal.p}
                     {contentVal.code && (
                       <Code

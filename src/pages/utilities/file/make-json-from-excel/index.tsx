@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 import * as XLSX from 'xlsx';
 
 export const UtilitiesFileMakeJsonFromExcel = () => {
@@ -8,23 +8,23 @@ export const UtilitiesFileMakeJsonFromExcel = () => {
 
   const createFileJson = () => {
     let arrayBuffer: any;
-    let fileReader = new FileReader();
+    const fileReader = new FileReader();
     fileReader.onload = (e) => {
       arrayBuffer = fileReader.result;
-      let dataBuffer = new Uint8Array(arrayBuffer);
-      let arr = [];
+      const dataBuffer = new Uint8Array(arrayBuffer);
+      const arr = [];
       for (let i = 0; i !== dataBuffer.length; ++i) {
         arr[i] = String.fromCharCode(dataBuffer[i]);
       }
-      let bstr = arr.join('');
-      let workbook = XLSX.read(bstr, { type: 'binary' });
+      const bstr = arr.join('');
+      const workbook = XLSX.read(bstr, { type: 'binary' });
 
       for (let index = 0; index < workbook.SheetNames?.length; index++) {
-        let worksheetName = workbook.SheetNames[index];
-        let worksheet = workbook.Sheets[worksheetName];
-        let data: any = XLSX.utils.sheet_to_json(worksheet, { raw: true });
+        const worksheetName = workbook.SheetNames[index];
+        const worksheet = workbook.Sheets[worksheetName];
+        const data: any = XLSX.utils.sheet_to_json(worksheet, { raw: true });
 
-        let arr = [];
+        const arr = [];
         for (let i = 0; i < data.length; i++) {
           arr.push(data[i]);
         }
@@ -70,13 +70,22 @@ export const UtilitiesFileMakeJsonFromExcel = () => {
           <label htmlFor="file" className="form-label">
             Choose file
           </label>
-          <input type="file" className="form-control" id="file" onChange={(e) => onChange(e)}></input>
+          <input
+            type="file"
+            className="form-control"
+            id="file"
+            onChange={(e) => onChange(e)}
+          ></input>
         </div>
       </div>
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="button" className="btn btn-primary btn-sm" onClick={() => createFileJson()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={() => createFileJson()}
+          >
             Create
           </button>
         </div>
@@ -84,7 +93,11 @@ export const UtilitiesFileMakeJsonFromExcel = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 400, width: '100%' }} />
+          <textarea
+            value={output}
+            onChange={(e) => setOutput(e.target.value)}
+            style={{ height: 400, width: '100%' }}
+          />
         </div>
       </div>
     </>

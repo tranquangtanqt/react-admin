@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialNetAngularLesson4 = () => {
   return (
@@ -12,12 +12,15 @@ export const TutorialNetAngularLesson4 = () => {
             <p>- Access nuget.org</p>
             <p>- Search: dotnet-ef</p>
             <p>- Select version</p>
-            <p>- Run command: dotnet tool install --global dotnet-ef --version 5.0.14</p>
+            <p>
+              - Run command: dotnet tool install --global dotnet-ef --version
+              5.0.14
+            </p>
           </div>
           <div className="tab-2">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_5.jpg')}
+              src={require('resources/img/tutorials/netAngular/Net_Angular_5.jpg')}
               className="img-thumbnail"
               alt=""
             />

@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialJavaLesson5 = () => {
   return (
@@ -8,20 +8,23 @@ export const TutorialJavaLesson5 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            Documentation for java code is often generated using javadoc. Javadoc was created by Sun Microsystems for
-            the purpose of generating API documentation in HTML format from java source code. Using the HTML format
-            gives the convenience of being able to hyperlink related documents together.
+            Documentation for java code is often generated using javadoc.
+            Javadoc was created by Sun Microsystems for the purpose of
+            generating API documentation in HTML format from java source code.
+            Using the HTML format gives the convenience of being able to
+            hyperlink related documents together.
           </p>
 
           <b>1. Building Javadocs From the Command Line</b>
           <div className="tab-1">
             <p>
-              Many IDEs provide support for generating HTML from Javadocs automatically; some build tools (Maven and
-              Gradle, for example) also have plugins that can handle the HTML creation.
+              Many IDEs provide support for generating HTML from Javadocs
+              automatically; some build tools (Maven and Gradle, for example)
+              also have plugins that can handle the HTML creation.
             </p>
             <p>
-              However, these tools are not required to generate the Javadoc HTML; this can be done using the command
-              line javadoc tool.
+              However, these tools are not required to generate the Javadoc
+              HTML; this can be done using the command line javadoc tool.
             </p>
             <p>The most basic usage of the tool is:</p>
           </div>
@@ -29,11 +32,15 @@ export const TutorialJavaLesson5 = () => {
             <Code code={`javadoc JavaFile.java`} language="sql" />
           </div>
           <div className="tab-1">
-            <p>Which will generate HTML from the Javadoc comments in JavaFile.java.</p>
             <p>
-              A more practical use of the command line tool, which will recursively read all java files in
-              [source-directory], create documentation for [package.name] and all sub-packages, and place the generated
-              HTML in the [docsdirectory] is:
+              Which will generate HTML from the Javadoc comments in
+              JavaFile.java.
+            </p>
+            <p>
+              A more practical use of the command line tool, which will
+              recursively read all java files in [source-directory], create
+              documentation for [package.name] and all sub-packages, and place
+              the generated HTML in the [docsdirectory] is:
             </p>
           </div>
           <div className="tab-2">
@@ -49,9 +56,11 @@ export const TutorialJavaLesson5 = () => {
           <b>2. Class Documentation</b>
           <div className="tab-1">
             <p>
-              All Javadoc comments begin with a block comment followed by an asterisk (/**) and end when the block
-              comment does (*/). Optionally, each line can begin with arbitrary whitespace and a single asterisk; these
-              are ignored when the documentation files are generated.
+              All Javadoc comments begin with a block comment followed by an
+              asterisk (/**) and end when the block comment does (*/).
+              Optionally, each line can begin with arbitrary whitespace and a
+              single asterisk; these are ignored when the documentation files
+              are generated.
             </p>
           </div>
           <div className="tab-2">
@@ -96,7 +105,10 @@ public class FileReader {
             />
           </div>
           <div className="tab-1">
-            <p>The same tags and format used for Classes can be used for Enums and Interfaces as well.</p>
+            <p>
+              The same tags and format used for Classes can be used for Enums
+              and Interfaces as well.
+            </p>
           </div>
         </div>
       </div>
@@ -105,9 +117,11 @@ public class FileReader {
           <b>3. Method Documentation</b>
           <div className="tab-1">
             <p>
-              All Javadoc comments begin with a block comment followed by an asterisk (/**) and end when the block
-              comment does (*/). Optionally, each line can begin with arbitrary whitespace and a single asterisk; these
-              are ignored when the documentation files are generated.
+              All Javadoc comments begin with a block comment followed by an
+              asterisk (/**) and end when the block comment does (*/).
+              Optionally, each line can begin with arbitrary whitespace and a
+              single asterisk; these are ignored when the documentation files
+              are generated.
             </p>
           </div>
           <div className="tab-2">
@@ -151,7 +165,10 @@ public String[] read(InputStream stream) throws IOException {
             />
           </div>
           <div className="tab-1">
-            <p>The same tags and format used for Classes can be used for Enums and Interfaces as well.</p>
+            <p>
+              The same tags and format used for Classes can be used for Enums
+              and Interfaces as well.
+            </p>
           </div>
         </div>
       </div>
@@ -161,9 +178,10 @@ public String[] read(InputStream stream) throws IOException {
           <div className="tab-1">
             <p>Version ≥ Java SE 5</p>
             <p>
-              It is possible to create package-level documentation in Javadocs using a file called package-info.java.
-              This file must be formatted as below. Leading whitespace and asterisks optional, typically present in each
-              line for formatting reason
+              It is possible to create package-level documentation in Javadocs
+              using a file called package-info.java. This file must be formatted
+              as below. Leading whitespace and asterisks optional, typically
+              present in each line for formatting reason
             </p>
           </div>
           <div className="tab-2">
@@ -186,8 +204,8 @@ package com.example.foo;
           </div>
           <div className="tab-1">
             <p>
-              In the above case, you must put this file package-info.java inside the folder of the Java package
-              com.example.foo.
+              In the above case, you must put this file package-info.java inside
+              the folder of the Java package com.example.foo.
             </p>
           </div>
         </div>
@@ -221,15 +239,16 @@ package com.example.foo;
           <div className="tab-2">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/java/java_1.png')}
+              src={require('resources/img/tutorials/java/java_1.png')}
               className="img-thumbnail"
               alt=""
             />
           </div>
           <div className="tab-1">
             <p>
-              With the @see tag you can add elements to the See also section. Like @param or @return the place where
-              they appear is not relevant. The spec says you should write it after @return.
+              With the @see tag you can add elements to the See also section.
+              Like @param or @return the place where they appear is not
+              relevant. The spec says you should write it after @return.
             </p>
           </div>
           <div className="tab-2">
@@ -246,15 +265,16 @@ package com.example.foo;
           <div className="tab-2">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/java/java_2.png')}
+              src={require('resources/img/tutorials/java/java_2.png')}
               className="img-thumbnail"
               alt=""
             />
           </div>
           <div className="tab-1">
             <p>
-              If you want to add links to external resources you can just use the HTML {'<'}a{'>'}tag. You can use it
-              inline anywhere or inside both @link and @see tags
+              If you want to add links to external resources you can just use
+              the HTML {'<'}a{'>'}tag. You can use it inline anywhere or inside
+              both @link and @see tags
             </p>
           </div>
           <div className="tab-2">
@@ -271,7 +291,7 @@ package com.example.foo;
           <div className="tab-2">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/java/java_3.png')}
+              src={require('resources/img/tutorials/java/java_3.png')}
               className="img-thumbnail"
               alt=""
             />
@@ -283,8 +303,9 @@ package com.example.foo;
           <b>6. Code snippets inside documentation</b>
           <div className="tab-1">
             <p>
-              The canonical way of writing code inside documentation is with the {'{'}@code {'}'} construct. If you have
-              multiline code wrap inside {'<'}pre{'>'}
+              The canonical way of writing code inside documentation is with the{' '}
+              {'{'}@code {'}'} construct. If you have multiline code wrap inside{' '}
+              {'<'}pre{'>'}
               {'<'}/pre{'>'}.
             </p>
           </div>
@@ -309,9 +330,10 @@ class TestUtils {}`}
           </div>
           <div className="tab-1">
             <p>
-              Sometimes you may need to put some complex code inside the javadoc comment. The @ sign is specially
-              problematic. The use of the old {'<'}code{'>'} tag alongside the {'{'}@literal {'}'} construct solves the
-              problem.
+              Sometimes you may need to put some complex code inside the javadoc
+              comment. The @ sign is specially problematic. The use of the old{' '}
+              {'<'}code{'>'} tag alongside the {'{'}@literal {'}'} construct
+              solves the problem.
             </p>
           </div>
           <div className="tab-2">
@@ -343,9 +365,11 @@ class SingleTestRule implements TestRule { }`}
           <b>7. Field Documentation</b>
           <div className="tab-1">
             <p>
-              All Javadoc comments begin with a block comment followed by an asterisk (/**) and end when the block
-              comment does (*/). Optionally, each line can begin with arbitrary whitespace and a single asterisk; these
-              are ignored when the documentation files are generated.
+              All Javadoc comments begin with a block comment followed by an
+              asterisk (/**) and end when the block comment does (*/).
+              Optionally, each line can begin with arbitrary whitespace and a
+              single asterisk; these are ignored when the documentation files
+              are generated.
             </p>
           </div>
           <div className="tab-2">
@@ -374,10 +398,13 @@ public static final String CONSTANT_STRING = "foo";`}
           </div>
           <b>8. Inline Code Documentation</b>
           <div className="tab-1">
-            <p>Apart from the Javadoc documentation code can be documented inline.</p>
             <p>
-              Single Line comments are started by // and may be positioned after a statement on the same line, but not
-              before.
+              Apart from the Javadoc documentation code can be documented
+              inline.
+            </p>
+            <p>
+              Single Line comments are started by // and may be positioned after
+              a statement on the same line, but not before.
             </p>
           </div>
           <div className="tab-2">
@@ -393,8 +420,8 @@ Java
           </div>
           <div className="tab-1">
             <p>
-              Multi-Line comments are defined between /* and */. They can span multiple lines and may even been
-              positioned between statements.
+              Multi-Line comments are defined between /* and */. They can span
+              multiple lines and may even been positioned between statements.
             </p>
           </div>
           <div className="tab-2">
@@ -410,15 +437,20 @@ Java
             />
           </div>
           <div className="tab-1">
-            <p>JavaDocs are a special form of multi-line comments, starting with /**.</p>
             <p>
-              As too many inline comments may decrease readability of code, they should be used sparsely in case the
-              code isn't self-explanatory enough or the design decision isn't obvious.
+              JavaDocs are a special form of multi-line comments, starting with
+              /**.
             </p>
             <p>
-              An additional use case for single-line comments is the use of TAGs, which are short, convention driven
-              keywords. Some development environments recognize certain conventions for such single-comments. Common
-              examples are
+              As too many inline comments may decrease readability of code, they
+              should be used sparsely in case the code isn't self-explanatory
+              enough or the design decision isn't obvious.
+            </p>
+            <p>
+              An additional use case for single-line comments is the use of
+              TAGs, which are short, convention driven keywords. Some
+              development environments recognize certain conventions for such
+              single-comments. Common examples are
             </p>
           </div>
           <div className="tab-2">

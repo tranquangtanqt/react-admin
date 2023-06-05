@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import StringUtils from '../../../../utils/string-utils';
-import { PageTitle } from '../../../../components/modules/page-title';
+import StringUtils from 'utils/string-utils';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitiesMakeInsertSQL = () => {
   const [tableName, setTableName] = useState('DEMO');

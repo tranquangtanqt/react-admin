@@ -1,6 +1,6 @@
-import { PageTitle } from "../../../../../components/modules/page-title";
-import { Vocabulary } from "../../../../../components/modules/vocabulary";
-import vocabularies from "./../../../../../resources/json/japan/N5/BoSung_1_Chung.json";
+import { PageTitle } from 'components/modules/page-title';
+import { Vocabulary } from 'components/modules/vocabulary';
+import vocabularies from 'resources/json/japan/N5/BoSung_1_Chung.json';
 
 export const TutorialJapanVocabularyLessonCommon = () => {
   return (

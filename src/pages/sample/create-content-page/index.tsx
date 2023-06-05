@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
-import { CONSTANTS } from '../../../utils/constants';
-import StringUtils from '../../../utils/string-utils';
+import { CONSTANTS } from 'utils/constants';
+import StringUtils from 'utils/string-utils';
 import { TAGS, LANGUAGES, LIST } from './data';
 
 export const CreateContentPage = () => {

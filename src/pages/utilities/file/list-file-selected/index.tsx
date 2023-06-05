@@ -1,12 +1,12 @@
 import { useState } from 'react';
-import Code from '../../../../components/modules/code';
-import { PageTitle } from '../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitiesListFileSelected = () => {
   const [output, setOutput] = useState('');
 
   const handleupload = (e: any) => {
-    let files = e.target.files;
+    const files = e.target.files;
     let fileName = '';
     for (let index = 0; index < files.length; index++) {
       fileName += files[index].name;
@@ -21,12 +21,21 @@ export const UtilitiesListFileSelected = () => {
       <PageTitle title="List File Selected From PC"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <input type="file" id="file" onChange={(e) => handleupload(e)} multiple />
+          <input
+            type="file"
+            id="file"
+            onChange={(e) => handleupload(e)}
+            multiple
+          />
         </div>
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 600, width: '100%' }} />
+          <textarea
+            value={output}
+            onChange={(e) => setOutput(e.target.value)}
+            style={{ height: 600, width: '100%' }}
+          />
         </div>
       </div>
       <div className="row mt-2">

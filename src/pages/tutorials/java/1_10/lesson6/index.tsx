@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialJavaLesson6 = () => {
   return (
@@ -18,8 +18,9 @@ export const TutorialJavaLesson6 = () => {
               <tr>
                 <td>args</td>
                 <td>
-                  The command line arguments. Assuming that the main method is invoked by the Java launcher, args will
-                  be non-null, and will have no null elements.
+                  The command line arguments. Assuming that the main method is
+                  invoked by the Java launcher, args will be non-null, and will
+                  have no null elements.
                 </td>
               </tr>
             </tbody>
@@ -27,8 +28,9 @@ export const TutorialJavaLesson6 = () => {
           <b>1. Argument processing using GWT ToolBase</b>
           <div className="tab-1">
             <p>
-              If you want to parse more complex command-line arguments, e.g. with optional parameters, than the best is
-              to use google's GWT approach. All classes are public available at:
+              If you want to parse more complex command-line arguments, e.g.
+              with optional parameters, than the best is to use google's GWT
+              approach. All classes are public available at:
             </p>
             <p>
               <a
@@ -39,7 +41,10 @@ export const TutorialJavaLesson6 = () => {
                 https://gwt.googlesource.com/gwt/+/2.8.0-beta1/dev/core/src/com/google/gwt/util/tools/ToolBase.java
               </a>
             </p>
-            <p>An example for handling the command-line myprogram -dir "~/Documents" -port 8888 is:</p>
+            <p>
+              An example for handling the command-line myprogram -dir
+              "~/Documents" -port 8888 is:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -86,8 +91,9 @@ export const TutorialJavaLesson6 = () => {
           </div>
           <div className="tab-1">
             <p>
-              ArgHandler also has a method isRequired() which can be overwritten to say that the command-line argument
-              is required (default return is false so that the argument is optional.
+              ArgHandler also has a method isRequired() which can be overwritten
+              to say that the command-line argument is required (default return
+              is false so that the argument is optional.
             </p>
           </div>
         </div>
@@ -97,14 +103,17 @@ export const TutorialJavaLesson6 = () => {
           <b>2. Processing arguments by hand</b>
           <div className="tab-1">
             <p>
-              When the command-line syntax for an application is simple, it is reasonable to do the command argument
-              processing entirely in custom code.
+              When the command-line syntax for an application is simple, it is
+              reasonable to do the command argument processing entirely in
+              custom code.
             </p>
             <p>
-              In this example, we will present a series of simple case studies. In each case, the code will produce
-              error messages if the arguments are unacceptable, and then call System.exit(1) to tell the shell that the
-              command has failed. (We will assume in each case that the Java code is invoked using a wrapper whose name
-              is "myapp".)
+              In this example, we will present a series of simple case studies.
+              In each case, the code will produce error messages if the
+              arguments are unacceptable, and then call System.exit(1) to tell
+              the shell that the command has failed. (We will assume in each
+              case that the Java code is invoked using a wrapper whose name is
+              "myapp".)
             </p>
           </div>
           <div className="tab-1">
@@ -112,8 +121,9 @@ export const TutorialJavaLesson6 = () => {
           </div>
           <div className="tab-1">
             <p>
-              In this case-study, the command requires no arguments. The code illustrates that args.length gives us the
-              number of command line arguments.
+              In this case-study, the command requires no arguments. The code
+              illustrates that args.length gives us the number of command line
+              arguments.
             </p>
           </div>
           <div className="tab-2">
@@ -136,7 +146,10 @@ export const TutorialJavaLesson6 = () => {
             <b>A command with two arguments</b>
           </div>
           <div className="tab-1">
-            <p>In this case-study, the command requires at precisely two arguments</p>
+            <p>
+              In this case-study, the command requires at precisely two
+              arguments
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -156,8 +169,8 @@ export const TutorialJavaLesson6 = () => {
           </div>
           <div className="tab-1">
             <p>
-              Note that if we neglected to check args.length, the command would crash if the user ran it with too few
-              command-line arguments.
+              Note that if we neglected to check args.length, the command would
+              crash if the user ran it with too few command-line arguments.
             </p>
           </div>
           <div className="tab-2">

@@ -1,4 +1,4 @@
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const ExcelTimekeepingCalendar = () => {
   const data = ['2023-01-30 22 41 26.jpg', '2023-01-30 22 42 00.jpg'];
@@ -12,7 +12,7 @@ export const ExcelTimekeepingCalendar = () => {
               <h4>{index + 1}.</h4>
               <input
                 type="image"
-                src={require(`../../../../resources/img/programming/excel/${item}`)}
+                src={require(`resources/img/programming/excel/${item}`)}
                 className="img-thumbnail"
                 alt=""
                 style={{ width: '300px' }}

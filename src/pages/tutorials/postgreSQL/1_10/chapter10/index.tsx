@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter10 = () => {
   return (
@@ -10,8 +10,8 @@ export const TutorialPostgreSQLChapter10 = () => {
           <b>1. Simple statistics: min(), max(), avg()</b>
           <div className="tab-1">
             <p>
-              In order to determine some simple statistics of a value in a column of a table, you can use an aggregate
-              function.
+              In order to determine some simple statistics of a value in a
+              column of a table, you can use an aggregate function.
             </p>
             <p>If your individuals table is:</p>
           </div>
@@ -48,7 +48,10 @@ export const TutorialPostgreSQLChapter10 = () => {
       <div className="row">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <p>You could write this statement to get the minimum, maximum and average value:</p>
+            <p>
+              You could write this statement to get the minimum, maximum and
+              average value:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -86,16 +89,22 @@ FROM individuals;`}
       </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <b>2. regr_slope(Y, X) : slope of the least-squares-fit linear equation determined by the (X, Y) pairs</b>
+          <b>
+            2. regr_slope(Y, X) : slope of the least-squares-fit linear equation
+            determined by the (X, Y) pairs
+          </b>
           <div className="tab-1">
             <p>
-              To illustrate how to use regr_slope(Y,X), I applied it to a real world problem. In Java, if you don't
-              clean up memory properly, the garbage can get stuck and fill up the memory. You dump statistics every hour
-              about memory utilization of different classes and load it into a postgres database for analysis.
+              To illustrate how to use regr_slope(Y,X), I applied it to a real
+              world problem. In Java, if you don't clean up memory properly, the
+              garbage can get stuck and fill up the memory. You dump statistics
+              every hour about memory utilization of different classes and load
+              it into a postgres database for analysis.
             </p>
             <p>
-              All memory leak candidates will have a trend of consuming more memory as more time passes. If you plot
-              this trend, you would imagine a line going up and to the left:
+              All memory leak candidates will have a trend of consuming more
+              memory as more time passes. If you plot this trend, you would
+              imagine a line going up and to the left:
             </p>
           </div>
           <div className="tab-2">
@@ -122,8 +131,8 @@ time`}
           </div>
           <div className="tab-1">
             <p>
-              Suppose you have a table containing heap dump histogram data (a mapping of classes to how much memory they
-              consume):
+              Suppose you have a table containing heap dump histogram data (a
+              mapping of classes to how much memory they consume):
             </p>
           </div>
           <div className="tab-2">
@@ -142,9 +151,11 @@ time`}
           </div>
           <div className="tab-1">
             <p>
-              To compute the slope for each class, we group by over the class. The HAVING clause {'>'} 0 ensures that we
-              get only candidates with a positive slop (a line going up and to the left). We sort by the slope
-              descending so that we get the classes with the largest rate of memory increase at the top.
+              To compute the slope for each class, we group by over the class.
+              The HAVING clause {'>'} 0 ensures that we get only candidates with
+              a positive slop (a line going up and to the left). We sort by the
+              slope descending so that we get the classes with the largest rate
+              of memory increase at the top.
             </p>
           </div>
           <div className="tab-2">
@@ -168,8 +179,9 @@ java.lang.ThreadLocal     | 20.9013528767851`}
           </div>
           <div className="tab-1">
             <p>
-              From the output we see that java.util.ArrayList's memory consumption is increasing the fastest at 71.799
-              bytes per second and is potentially part of the memory leak.
+              From the output we see that java.util.ArrayList's memory
+              consumption is increasing the fastest at 71.799 bytes per second
+              and is potentially part of the memory leak.
             </p>
           </div>
         </div>
@@ -178,7 +190,10 @@ java.lang.ThreadLocal     | 20.9013528767851`}
         <div className="col-12 col-sm-12 col-md-12">
           <b>3. string_agg(expression, delimiter)</b>
           <div className="tab-1">
-            <p>You can concatenate strings separated by delimiter using the STRING_AGG() function.</p>
+            <p>
+              You can concatenate strings separated by delimiter using the
+              STRING_AGG() function.
+            </p>
             <p>If your individuals table is:</p>
           </div>
         </div>
@@ -218,7 +233,10 @@ java.lang.ThreadLocal     | 20.9013528767851`}
       <div className="row">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
-            <p>You could write SELECT ... GROUP BY statement to get names from each country:</p>
+            <p>
+              You could write SELECT ... GROUP BY statement to get names from
+              each country:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -231,7 +249,10 @@ SQL
             />
           </div>
           <div className="tab-1">
-            <p>Note that you need to use a GROUP BY clause because STRING_AGG() is an aggregate function.</p>
+            <p>
+              Note that you need to use a GROUP BY clause because STRING_AGG()
+              is an aggregate function.
+            </p>
           </div>
           <div className="tab-1">
             <p>Result:</p>

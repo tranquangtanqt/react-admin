@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter20 = () => {
   return (
@@ -8,24 +8,32 @@ export const TutorialPostgreSQLChapter20 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            In Postgres, cryptographic functions can be unlocked by using pgcrypto module. CREATE EXTENSION pgcrypto;
+            In Postgres, cryptographic functions can be unlocked by using
+            pgcrypto module. CREATE EXTENSION pgcrypto;
           </p>
 
           <b>1. Digest</b>
           <div className="tab-1">
             <p>
-              DIGEST() functions generate a binary hash of the given data. This can be used to create a random hash.
+              DIGEST() functions generate a binary hash of the given data. This
+              can be used to create a random hash.
             </p>
             <p>Usage:</p>
           </div>
           <div className="tab-2">
-            <Code code={`digest(DATA TEXT, TYPE TEXT) RETURNS BYTEA`} language="sql" />
+            <Code
+              code={`digest(DATA TEXT, TYPE TEXT) RETURNS BYTEA`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Or:</p>
           </div>
           <div className="tab-2">
-            <Code code={`digest(DATA BYTEA, TYPE TEXT) RETURNS BYTEA`} language="sql" />
+            <Code
+              code={`digest(DATA BYTEA, TYPE TEXT) RETURNS BYTEA`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Examples:</p>

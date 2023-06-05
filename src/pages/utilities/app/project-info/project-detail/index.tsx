@@ -1,19 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 import { Editor } from '@tinymce/tinymce-react';
-import projectJson from './../data/project.json';
+import projectJson from 'pages/utilities/app/project-info/data/project.json';
 
-import { IProject } from '../dto/project';
-import { IProjectDetail } from '../dto/project-detail';
-import { IProjectTask } from '../dto/project-task';
+import { IProject } from 'pages/utilities/app/project-info/dto/project';
+import { IProjectDetail } from 'pages/utilities/app/project-info/dto/project-detail';
+import { IProjectTask } from 'pages/utilities/app/project-info/dto/project-task';
 
 export const UtilitieAppProjectDetail = () => {
   const MODE_NOMAL = 0;
   const MODE_CREATE = 1;
   const MODE_EDIT = 2;
 
-  let params = useParams();
+  const params = useParams();
 
   const refDetailId = useRef<HTMLInputElement>(null);
   const refDetailTitle = useRef<HTMLInputElement>(null);
@@ -25,12 +25,16 @@ export const UtilitieAppProjectDetail = () => {
   const [projects, setProjects] = useState<IProject[]>(projectJson);
 
   const [project] = useState<IProject>(() => {
-    let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
+    const data: IProject = projectJson.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
     return data;
   });
 
   const [details, setDetails] = useState<IProjectDetail[]>(() => {
-    let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
+    const data: IProject = projectJson.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
     return data.details.sort((a, b) => b.order - a.order);
   });
 
@@ -38,19 +42,25 @@ export const UtilitieAppProjectDetail = () => {
   const [notificationMessage, setNotificationMessage] = useState('');
 
   const [tasks, setTasks] = useState<IProjectTask[]>(() => {
-    let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
+    const data: IProject = projectJson.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
     return data.tasks.sort((a, b) => b.order - a.order);
   });
 
   const [taskCompleted, setTaskCompleted] = useState<IProjectTask[]>(() => {
-    let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
-    let dataTasks = data.tasks.filter((x) => x.status === 1);
+    const data: IProject = projectJson.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
+    const dataTasks = data.tasks.filter((x) => x.status === 1);
     return dataTasks.sort((a, b) => a.order - b.order);
   });
 
   const [taskInComplete, setTaskInComplete] = useState<IProjectTask[]>(() => {
-    let data: IProject = projectJson.filter((x) => x.id === Number(params.project_id))[0];
-    let dataTasks = data.tasks.filter((x) => x.status === 0);
+    const data: IProject = projectJson.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
+    const dataTasks = data.tasks.filter((x) => x.status === 0);
     return dataTasks.sort((a, b) => b.order - a.order);
   });
 
@@ -72,7 +82,7 @@ export const UtilitieAppProjectDetail = () => {
 
   useEffect(() => {
     let count = 0;
-    let myInterval = setInterval(() => {
+    const myInterval = setInterval(() => {
       document.querySelectorAll('.tox-tinymce-aux').forEach((e) => e.remove());
       count++;
       if (count === 5) {
@@ -86,7 +96,7 @@ export const UtilitieAppProjectDetail = () => {
    * @param id
    */
   const changeCollapse = (id: number) => {
-    let detailTemp = [...(details || [])];
+    const detailTemp = [...(details || [])];
     detailTemp?.forEach((item) => {
       if (item.id === id) {
         item.collapse = !item.collapse;
@@ -99,11 +109,15 @@ export const UtilitieAppProjectDetail = () => {
    *
    */
   const exportData = () => {
-    let data: IProject = projects.filter((x) => x.id === Number(params.project_id))[0];
+    const data: IProject = projects.filter(
+      (x) => x.id === Number(params.project_id),
+    )[0];
     ascDetail(data.details);
     data.details.forEach((x) => (x.collapse = false));
     updateProjectDetail(data.details);
-    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(JSON.stringify(projects))}`;
+    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+      JSON.stringify(projects),
+    )}`;
     const link = document.createElement('a');
     link.href = jsonString;
     link.download = 'project.json';
@@ -128,7 +142,7 @@ export const UtilitieAppProjectDetail = () => {
    */
   const showModalUpdateDetail = (id: number) => {
     setMode(MODE_EDIT);
-    let detail = details?.filter((x) => x.id === id).shift();
+    const detail = details?.filter((x) => x.id === id).shift();
 
     if (detail) {
       if (refDetailId.current != null) {
@@ -148,7 +162,7 @@ export const UtilitieAppProjectDetail = () => {
    */
   const createOrUpdateDetail = async () => {
     if (mode === MODE_CREATE) {
-      let detail = {} as IProjectDetail;
+      const detail = {} as IProjectDetail;
       if (details.length > 0) {
         detail.id = Math.max(...details.map((x) => x.id)) + 1;
         detail.order = Math.max(...details.map((x) => x.order)) + 1;
@@ -174,15 +188,19 @@ export const UtilitieAppProjectDetail = () => {
       showMesage('Thêm dữ liệu thành công');
     } else if (mode === MODE_EDIT) {
       if (refDetailId.current != null) {
-        let id = Number(refDetailId.current.value);
-        let detail = details?.filter((x) => x.id === id)[0];
+        const id = Number(refDetailId.current.value);
+        const detail = details?.filter((x) => x.id === id)[0];
         if (refDetailTitle.current != null) {
           detail.title = refDetailTitle.current.value;
         }
         detail.content = detailContent;
 
-        let index = details.findIndex((x) => x.id === id);
-        let arr = [...details.slice(0, index), detail, ...details.slice(index + 1)];
+        const index = details.findIndex((x) => x.id === id);
+        const arr = [
+          ...details.slice(0, index),
+          detail,
+          ...details.slice(index + 1),
+        ];
         setDetails(descDetail(arr));
         updateProjectDetail(arr);
         ($('#modal-detail-create-update') as any).modal('hide');
@@ -196,11 +214,16 @@ export const UtilitieAppProjectDetail = () => {
    * @param detailsNew
    */
   const updateProjectDetail = (detailsNew: IProjectDetail[]) => {
-    let updatedProject: IProject;
-    let newObject: IProjectDetail[] = [...detailsNew];
-    updatedProject = Object.assign({}, project, { details: ascDetail(newObject) });
-    let index = projects.findIndex((x) => x.id === project.id);
-    let arr = [...projects.slice(0, index), updatedProject, ...projects.slice(index + 1)];
+    const newObject: IProjectDetail[] = [...detailsNew];
+    const updatedProject: IProject = Object.assign({}, project, {
+      details: ascDetail(newObject),
+    });
+    const index = projects.findIndex((x) => x.id === project.id);
+    const arr = [
+      ...projects.slice(0, index),
+      updatedProject,
+      ...projects.slice(index + 1),
+    ];
     setProjects(arr);
   };
 
@@ -209,11 +232,16 @@ export const UtilitieAppProjectDetail = () => {
    * @param taskNew
    */
   const updateProjectTask = (taskNew: IProjectTask[]) => {
-    let updatedProject: IProject;
-    let newObject: IProjectTask[] = [...taskNew];
-    updatedProject = Object.assign({}, project, { tasks: ascTask(newObject) });
-    let index = projects.findIndex((x) => x.id === project.id);
-    let arr = [...projects.slice(0, index), updatedProject, ...projects.slice(index + 1)];
+    const newObject: IProjectTask[] = [...taskNew];
+    const updatedProject: IProject = Object.assign({}, project, {
+      tasks: ascTask(newObject),
+    });
+    const index = projects.findIndex((x) => x.id === project.id);
+    const arr = [
+      ...projects.slice(0, index),
+      updatedProject,
+      ...projects.slice(index + 1),
+    ];
     setProjects(arr);
   };
 
@@ -232,28 +260,38 @@ export const UtilitieAppProjectDetail = () => {
    * @param isUp
    */
   const updateDetailOrderNumber = async (id: number, isUp: boolean) => {
-    let detailCurrent = details.filter((c) => c.id === id)[0];
-    let index = details.findIndex((x) => x.id === id);
+    const detailCurrent = details.filter((c) => c.id === id)[0];
+    const index = details.findIndex((x) => x.id === id);
 
     if (isUp) {
-      let detailUp = details[index - 1];
+      const detailUp = details[index - 1];
 
       //swap order number
-      let orderTemp = detailUp.order;
+      const orderTemp = detailUp.order;
       detailUp.order = detailCurrent.order;
       detailCurrent.order = orderTemp;
-      let arr = [...details.slice(0, index - 1), detailUp, detailCurrent, ...details.slice(index + 1)];
+      const arr = [
+        ...details.slice(0, index - 1),
+        detailUp,
+        detailCurrent,
+        ...details.slice(index + 1),
+      ];
       setDetails(descDetail(arr));
       updateProjectDetail(arr);
     } else {
-      let detailDown = details[index + 1];
+      const detailDown = details[index + 1];
 
       //swap order number
-      let orderTemp = detailDown.order;
+      const orderTemp = detailDown.order;
       detailDown.order = detailCurrent.order;
       detailCurrent.order = orderTemp;
 
-      let arr = [...details.slice(0, index), detailCurrent, detailDown, ...details.slice(index + 2)];
+      const arr = [
+        ...details.slice(0, index),
+        detailCurrent,
+        detailDown,
+        ...details.slice(index + 2),
+      ];
       setDetails(descDetail(arr));
       updateProjectDetail(arr);
     }
@@ -276,10 +314,10 @@ export const UtilitieAppProjectDetail = () => {
    */
   const deleteDetail = async () => {
     if (refDetailId.current != null) {
-      let id = Number(refDetailId.current.value);
+      const id = Number(refDetailId.current.value);
 
-      let index = details.findIndex((x) => x.id === id);
-      let arr = [...details.slice(0, index), ...details.slice(index + 1)];
+      const index = details.findIndex((x) => x.id === id);
+      const arr = [...details.slice(0, index), ...details.slice(index + 1)];
       setDetails(descDetail(arr));
       updateProjectDetail(arr);
 
@@ -329,7 +367,7 @@ export const UtilitieAppProjectDetail = () => {
    */
   const createOrUpdateTask = async () => {
     if (mode === MODE_CREATE) {
-      let task = {} as IProjectTask;
+      const task = {} as IProjectTask;
       if (tasks.length > 0) {
         task.id = Math.max(...tasks.map((x) => x.id)) + 1;
         task.order = Math.max(...tasks.map((x) => Math.abs(x.order))) + 1;
@@ -343,12 +381,12 @@ export const UtilitieAppProjectDetail = () => {
       }
       task.status = 0;
 
-      let updTaskInComs: IProjectTask[] = [...taskInComplete];
+      const updTaskInComs: IProjectTask[] = [...taskInComplete];
       updTaskInComs.push(task);
       descTask(updTaskInComs);
       setTaskInComplete(updTaskInComs);
 
-      let arr = [...taskCompleted, ...updTaskInComs];
+      const arr = [...taskCompleted, ...updTaskInComs];
       setTasks(arr);
       updateProjectTask(arr);
 
@@ -356,8 +394,8 @@ export const UtilitieAppProjectDetail = () => {
       showMesage('Thêm dữ liệu thành công');
     } else if (mode === MODE_EDIT) {
       if (refTaskId.current != null) {
-        let id = Number(refTaskId.current.value);
-        let task = tasks?.filter((x) => x.id === id)[0];
+        const id = Number(refTaskId.current.value);
+        const task = tasks?.filter((x) => x.id === id)[0];
         if (refTaskContent.current != null) {
           task.content = refTaskContent.current.value;
         }
@@ -376,23 +414,26 @@ export const UtilitieAppProjectDetail = () => {
    * @param id
    */
   const updateTask = (task: IProjectTask, id: number) => {
-    let index = tasks.findIndex((x) => x.id === id);
-    let arr: IProjectTask[] = [...tasks.slice(0, index), task, ...tasks.slice(index + 1)];
+    const index = tasks.findIndex((x) => x.id === id);
+    const arr: IProjectTask[] = [
+      ...tasks.slice(0, index),
+      task,
+      ...tasks.slice(index + 1),
+    ];
 
     updTasks(arr);
   };
 
   const updTasks = (arr: IProjectTask[]) => {
-    let updTaskIncoms: IProjectTask[];
-    updTaskIncoms = arr.filter((x) => x.status === 0);
+    const updTaskIncoms: IProjectTask[] = arr.filter((x) => x.status === 0);
     descTask(updTaskIncoms);
     setTaskInComplete(updTaskIncoms);
 
-    let updTaskComs: IProjectTask[] = arr.filter((x) => x.status === 1);
+    const updTaskComs: IProjectTask[] = arr.filter((x) => x.status === 1);
     ascTask(updTaskComs);
     setTaskCompleted(updTaskComs);
 
-    let updTasks = [...updTaskComs, ...updTaskIncoms];
+    const updTasks = [...updTaskComs, ...updTaskIncoms];
     setTasks(updTasks);
     updateProjectTask(updTasks);
   };
@@ -401,7 +442,7 @@ export const UtilitieAppProjectDetail = () => {
    *
    */
   const updateStatusToCompletedTask = async (id: number) => {
-    let task = tasks?.filter((x) => x.id === id)[0];
+    const task = tasks?.filter((x) => x.id === id)[0];
     task.status = 1;
     updateTask(task, id);
   };
@@ -410,7 +451,7 @@ export const UtilitieAppProjectDetail = () => {
    *
    */
   const updateStatusToInCompleteTask = async (id: number) => {
-    let task = tasks?.filter((x) => x.id === id)[0];
+    const task = tasks?.filter((x) => x.id === id)[0];
     task.status = 0;
     updateTask(task, id);
   };
@@ -421,27 +462,37 @@ export const UtilitieAppProjectDetail = () => {
    * @param isUp
    */
   const updateTaskCompleteOrderNumber = async (id: number, isUp: boolean) => {
-    let taskCurrent = tasks.filter((c) => c.id === id)[0];
-    let index = tasks.indexOf(taskCurrent);
+    const taskCurrent = tasks.filter((c) => c.id === id)[0];
+    const index = tasks.indexOf(taskCurrent);
     let arr: IProjectTask[];
     if (isUp) {
-      let up = tasks[index - 1];
+      const up = tasks[index - 1];
 
       //swap order number
-      let orderTemp = up.order;
+      const orderTemp = up.order;
       up.order = taskCurrent.order;
       taskCurrent.order = orderTemp;
 
-      arr = [...tasks.slice(0, index - 1), up, taskCurrent, ...tasks.slice(index + 1)];
+      arr = [
+        ...tasks.slice(0, index - 1),
+        up,
+        taskCurrent,
+        ...tasks.slice(index + 1),
+      ];
     } else {
-      let down = tasks[index + 1];
+      const down = tasks[index + 1];
 
       //swap order number
-      let orderTemp = down.order;
+      const orderTemp = down.order;
       down.order = taskCurrent.order;
       taskCurrent.order = orderTemp;
 
-      arr = [...tasks.slice(0, index), taskCurrent, down, ...tasks.slice(index + 2)];
+      arr = [
+        ...tasks.slice(0, index),
+        taskCurrent,
+        down,
+        ...tasks.slice(index + 2),
+      ];
     }
 
     updTasks(arr);
@@ -462,9 +513,9 @@ export const UtilitieAppProjectDetail = () => {
    */
   const deleteTask = async () => {
     if (refTaskId.current !== null) {
-      let id = Number(refTaskId.current.value);
-      let index = tasks.findIndex((x) => x.id === id);
-      let arr = [...tasks.slice(0, index), ...tasks.slice(index + 1)];
+      const id = Number(refTaskId.current.value);
+      const index = tasks.findIndex((x) => x.id === id);
+      const arr = [...tasks.slice(0, index), ...tasks.slice(index + 1)];
 
       updTasks(arr);
 
@@ -495,7 +546,11 @@ export const UtilitieAppProjectDetail = () => {
         <PageTitle title={'...'}></PageTitle>
       )}
 
-      <button type="button" className="btn btn-primary btn-sm" onClick={exportData}>
+      <button
+        type="button"
+        className="btn btn-primary btn-sm"
+        onClick={exportData}
+      >
         Export Data
       </button>
 
@@ -515,7 +570,10 @@ export const UtilitieAppProjectDetail = () => {
               <div className="card" key={key}>
                 <div className="card-header" id={detail.id.toString()}>
                   <div className="d-flex justify-content-between">
-                    <p className="mb-0" onClick={() => changeCollapse(detail.id)}>
+                    <p
+                      className="mb-0"
+                      onClick={() => changeCollapse(detail.id)}
+                    >
                       <input
                         className="btn btn-link btn-link-custom font-size-14"
                         type="button"
@@ -524,8 +582,16 @@ export const UtilitieAppProjectDetail = () => {
                     </p>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateDetailOrderNumber(detail.id, true)}>
-                          <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() =>
+                            updateDetailOrderNumber(detail.id, true)
+                          }
+                        >
+                          <i
+                            className="fa fa-arrow-circle-up"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
@@ -533,26 +599,47 @@ export const UtilitieAppProjectDetail = () => {
                       {key < details.length - 1 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateDetailOrderNumber(detail.id, false)}
+                          onClick={() =>
+                            updateDetailOrderNumber(detail.id, false)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-down"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn text-success" onClick={() => showModalUpdateDetail(detail.id)}>
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      <button
+                        className="btn text-success"
+                        onClick={() => showModalUpdateDetail(detail.id)}
+                      >
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn ps-0 text-danger" onClick={() => showModalDeleteDetail(detail.id)}>
+                      <button
+                        className="btn ps-0 text-danger"
+                        onClick={() => showModalDeleteDetail(detail.id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
                   </div>
                 </div>
 
-                <div id="collapseOne" className={detail.collapse ? 'collapse show' : 'collapse'}>
+                <div
+                  id="collapseOne"
+                  className={detail.collapse ? 'collapse show' : 'collapse'}
+                >
                   <div className="card-body">
-                    <div dangerouslySetInnerHTML={{ __html: detail.content.toString() || '' }} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: detail.content.toString() || '',
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -588,9 +675,14 @@ export const UtilitieAppProjectDetail = () => {
                       {key > 0 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateTaskCompleteOrderNumber(task.id, true)}
+                          onClick={() =>
+                            updateTaskCompleteOrderNumber(task.id, true)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-up"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
@@ -598,17 +690,31 @@ export const UtilitieAppProjectDetail = () => {
                       {key < taskInComplete.length - 1 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateTaskCompleteOrderNumber(task.id, false)}
+                          onClick={() =>
+                            updateTaskCompleteOrderNumber(task.id, false)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-down"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task.id, false)}>
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      <button
+                        className="btn pe-0 text-success"
+                        onClick={() => showModalUpdateTask(task.id, false)}
+                      >
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task.id)}>
+                      <button
+                        className="btn pe-0 text-danger"
+                        onClick={() => showModalDeleteTask(task.id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -634,10 +740,19 @@ export const UtilitieAppProjectDetail = () => {
                     </div>
                     <div></div>
                     <div>
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTask(task.id, true)}>
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      <button
+                        className="btn pe-0 text-success"
+                        onClick={() => showModalUpdateTask(task.id, true)}
+                      >
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task.id)}>
+                      <button
+                        className="btn pe-0 text-danger"
+                        onClick={() => showModalDeleteTask(task.id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -668,15 +783,32 @@ export const UtilitieAppProjectDetail = () => {
                 </h5>
               )}
 
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
-                <input ref={refDetailId} type="hidden" className="form-control" />
-                <label htmlFor="detail-title-create-update" className="form-label">
+                <input
+                  ref={refDetailId}
+                  type="hidden"
+                  className="form-control"
+                />
+                <label
+                  htmlFor="detail-title-create-update"
+                  className="form-label"
+                >
                   Tiêu đề
                 </label>
-                <input ref={refDetailTitle} type="text" className="form-control" id="detail-title-create-update" />
+                <input
+                  ref={refDetailTitle}
+                  type="text"
+                  className="form-control"
+                  id="detail-title-create-update"
+                />
               </div>
 
               <div className="mt-2">
@@ -696,32 +828,65 @@ export const UtilitieAppProjectDetail = () => {
                       'bold italic backcolor | alignleft aligncenter ' +
                       'alignright alignjustify | bullist numlist outdent indent | ' +
                       'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                    content_style:
+                      'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => createOrUpdateDetail()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => createOrUpdateDetail()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-detail-delete" aria-labelledby="modal-detail-delete1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-detail-delete"
+        aria-labelledby="modal-detail-delete1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-detail-delete1">
                 Xóa chi tiết
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
-            <div className="modal-body">Bạn có chắc chắn muốn xóa chi tiết?</div>
+            <div className="modal-body">
+              Bạn có chắc chắn muốn xóa chi tiết?
+            </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteDetail()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => deleteDetail()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
@@ -745,55 +910,115 @@ export const UtilitieAppProjectDetail = () => {
                   Chỉnh sửa nhiệm vụ
                 </h5>
               )}
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
                 <input ref={refTaskId} type="hidden" className="form-control" />
-                <label htmlFor="task-content-create-update" className="form-label">
+                <label
+                  htmlFor="task-content-create-update"
+                  className="form-label"
+                >
                   Nội dung
                 </label>
-                <input ref={refTaskContent} type="text" className="form-control" id="task-content-create-update" />
+                <input
+                  ref={refTaskContent}
+                  type="text"
+                  className="form-control"
+                  id="task-content-create-update"
+                />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => createOrUpdateTask()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => createOrUpdateTask()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-task-delete" aria-labelledby="modal-task-delete1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-task-delete"
+        aria-labelledby="modal-task-delete1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-task-delete1">
                 Xóa nhiệm vụ
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
-            <div className="modal-body">Bạn có chắc chắn muốn xóa chi tiết?</div>
+            <div className="modal-body">
+              Bạn có chắc chắn muốn xóa chi tiết?
+            </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteTask()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => deleteTask()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-notification" aria-labelledby="modal-notification" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-notification"
+        aria-labelledby="modal-notification"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-notification">
                 Thông báo
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">{notificationMessage}</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
             </div>
           </div>
         </div>

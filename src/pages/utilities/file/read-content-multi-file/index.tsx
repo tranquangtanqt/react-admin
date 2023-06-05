@@ -1,14 +1,13 @@
-import Code from '../../../../components/modules/code';
-import { PageTitle } from '../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 import { useState } from 'react';
-// import Code from "../../../../components/modules/code";
 
 export const UtilitiesReadContentMultiFile = () => {
   const [files, setFiles] = useState([]);
   const [output, setOutput] = useState('');
 
   const getData = () => {
-    let readers = [];
+    const readers = [];
     let content = '';
     // Abort if there were no files selected
     if (!files.length) return;
@@ -34,7 +33,7 @@ export const UtilitiesReadContentMultiFile = () => {
    **/
   const readFileAsText = (file: File) => {
     return new Promise(function (resolve, reject) {
-      let fr = new FileReader();
+      const fr = new FileReader();
 
       fr.onload = function () {
         resolve(fr.result);
@@ -84,7 +83,11 @@ export const UtilitiesReadContentMultiFile = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <textarea value={output} onChange={(e) => setOutput(e.target.value)} style={{ height: 600, width: '100%' }} />
+          <textarea
+            value={output}
+            onChange={(e) => setOutput(e.target.value)}
+            style={{ height: 600, width: '100%' }}
+          />
         </div>
       </div>
       <div className="row mt-2">

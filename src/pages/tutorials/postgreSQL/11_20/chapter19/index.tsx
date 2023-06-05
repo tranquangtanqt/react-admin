@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter19 = () => {
   return (
@@ -10,23 +10,30 @@ export const TutorialPostgreSQLChapter19 = () => {
           <b>1. Create a user with a password</b>
           <div className="tab-1">
             <p>
-              Generally you should avoid using the default database role (often postgres) in your application. You
-              should instead create a user with lower levels of privileges. Here we make one called niceusername and
-              give it a password verystrong-PASSWORD
+              Generally you should avoid using the default database role (often
+              postgres) in your application. You should instead create a user
+              with lower levels of privileges. Here we make one called
+              niceusername and give it a password verystrong-PASSWORD
             </p>
           </div>
           <div className="tab-2">
-            <Code code={`CREATE ROLE niceusername WITH PASSWORD 'very-strong-password' LOGIN;`} language="sql" />
+            <Code
+              code={`CREATE ROLE niceusername WITH PASSWORD 'very-strong-password' LOGIN;`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>
-              The problem with that is that queries typed into the psql console get saved in a history file
-              .psql_history in the user's home directory and may as well be logged to the PostgreSQL database server
-              log, thus exposing the password.
+              The problem with that is that queries typed into the psql console
+              get saved in a history file .psql_history in the user's home
+              directory and may as well be logged to the PostgreSQL database
+              server log, thus exposing the password.
             </p>
             <p>
-              To avoid this, use the \PASSWORD command to set the user password. If the user issuing the command is a
-              superuser, the current password will not be asked. (Must be superuser to alter passwords of superusers)
+              To avoid this, use the \PASSWORD command to set the user password.
+              If the user issuing the command is a superuser, the current
+              password will not be asked. (Must be superuser to alter passwords
+              of superusers)
             </p>
           </div>
           <div className="tab-2">
@@ -47,7 +54,9 @@ export const TutorialPostgreSQLChapter19 = () => {
           <div className="tab-2">
             <ol>
               <li>The Administrator of the database {'>'} admin</li>
-              <li>The application with a full access for her data {'>'} read_write</li>
+              <li>
+                The application with a full access for her data {'>'} read_write
+              </li>
               <li>The read only access {'>'} read_only</li>
             </ol>
           </div>
@@ -60,7 +69,10 @@ GRANT CONNECT ON DATABASE nova TO USER;`}
             />
           </div>
           <div className="tab-1">
-            <p>With the above queries, untrusted users can no longer connect to the database.</p>
+            <p>
+              With the above queries, untrusted users can no longer connect to
+              the database.
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -72,8 +84,9 @@ GRANT USAGE ON SCHEMA public TO USER;`}
           </div>
           <div className="tab-1">
             <p>
-              The next set of queries revoke all privileges from unauthenticated users and provide limited set of
-              privileges for the read_write user.
+              The next set of queries revoke all privileges from unauthenticated
+              users and provide limited set of privileges for the read_write
+              user.
             </p>
           </div>
           <div className="tab-2">
@@ -98,7 +111,10 @@ GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO ADMIN;`}
         <div className="col-12 col-sm-12 col-md-12">
           <b>3. Create Role and matching database</b>
           <div className="tab-1">
-            <p>To support a given application, you often create a new role and database to match.</p>
+            <p>
+              To support a given application, you often create a new role and
+              database to match.
+            </p>
             <p>The shell commands to run would be these:</p>
           </div>
           <div className="tab-2">
@@ -111,7 +127,10 @@ $ CREATEDB -O blogger blogger`}
             />
           </div>
           <div className="tab-1">
-            <p>This assumes that pg_hba.conf has been properly configured, which probably looks like this:</p>
+            <p>
+              This assumes that pg_hba.conf has been properly configured, which
+              probably looks like this:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -127,7 +146,9 @@ LOCAL      sameuser     ALL                  md5`}
         <div className="col-12 col-sm-12 col-md-12">
           <b>4. Alter default search_path of user</b>
           <div className="tab-1">
-            <p>With the below commands, user's default search_path can be set.</p>
+            <p>
+              With the below commands, user's default search_path can be set.
+            </p>
             <p>a. Check search path before set default schema.</p>
           </div>
           <div className="tab-2">
@@ -143,7 +164,10 @@ postgres=> SHOW search_path;
             />
           </div>
           <div className="tab-1">
-            <p>b. Set search_path with ALTER USER command to append a new schema my_schema</p>
+            <p>
+              b. Set search_path with ALTER USER command to append a new schema
+              my_schema
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -210,13 +234,16 @@ GRANT SELECT ON ALL TABLES IN SCHEMA public TO readonly;`}
           <div className="tab-2">
             <ol>
               <li>The Administrator of the database {'>'} ADMIN</li>
-              <li>The application with a full access for her data {'>'} read_write</li>
+              <li>
+                The application with a full access for her data {'>'} read_write
+              </li>
               <li>The read only access {'>'} read_only</li>
             </ol>
           </div>
           <div className="tab-1">
             <p>
-              With below queries, you can set access privileges on objects created in the future in specified schema.
+              With below queries, you can set access privileges on objects
+              created in the future in specified schema.
             </p>
           </div>
           <div className="tab-2">
@@ -228,7 +255,10 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA myschema GRANT ALL ON TABLES TO ADMIN;`}
             />
           </div>
           <div className="tab-1">
-            <p>Or, you can set access privileges on objects created in the future by specified user.</p>
+            <p>
+              Or, you can set access privileges on objects created in the future
+              by specified user.
+            </p>
           </div>
           <div className="tab-2">
             <Code

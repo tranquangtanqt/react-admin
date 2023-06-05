@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialJavaLesson3 = () => {
   return (
@@ -21,10 +21,15 @@ String text = obj.toString(); // 'obj' is dereferenced.`}
 
           <div className="tab-1">
             <p>
-              Dereferencing follows the memory address stored in a reference, to the place in memory where the actual
-              object resides. When an object has been found, the requested method is called (toString in this case).
+              Dereferencing follows the memory address stored in a reference, to
+              the place in memory where the actual object resides. When an
+              object has been found, the requested method is called (toString in
+              this case).
             </p>
-            <p>When a reference has the value null, dereferencing results in a NullPointerException:</p>
+            <p>
+              When a reference has the value null, dereferencing results in a
+              NullPointerException:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -35,8 +40,9 @@ obj.toString(); // Throws a NullpointerException when this statement is executed
           </div>
           <div className="tab-1">
             <p>
-              null indicates the absence of a value, i.e. following the memory address leads nowhere. So there is no
-              object on which the requested method can be called.
+              null indicates the absence of a value, i.e. following the memory
+              address leads nowhere. So there is no object on which the
+              requested method can be called.
             </p>
           </div>
         </div>
@@ -47,7 +53,10 @@ obj.toString(); // Throws a NullpointerException when this statement is executed
             <b>2. Instantiating a reference type</b>
           </div>
           <div className="tab-2">
-            <Code code={`Object obj = new Object(); // Note the 'new' keyword`} language="javascript" />
+            <Code
+              code={`Object obj = new Object(); // Note the 'new' keyword`}
+              language="javascript"
+            />
           </div>
           <div className="tab-1">
             <p>Where:</p>
@@ -65,8 +74,14 @@ obj.toString(); // Throws a NullpointerException when this statement is executed
           <div className="tab-2">
             <ul>
               <li>Space in memory is allocated for the object.</li>
-              <li>The constructor Object() is called to initialize that memory space.</li>
-              <li>The memory address is stored in obj, so that it references the newly created object.</li>
+              <li>
+                The constructor Object() is called to initialize that memory
+                space.
+              </li>
+              <li>
+                The memory address is stored in obj, so that it references the
+                newly created object.
+              </li>
             </ul>
           </div>
           <div className="tab-1">

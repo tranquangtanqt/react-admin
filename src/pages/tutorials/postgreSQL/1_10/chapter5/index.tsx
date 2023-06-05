@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter5 = () => {
   return (
@@ -7,7 +7,10 @@ export const TutorialPostgreSQLChapter5 = () => {
       <PageTitle title="5. Find String Length/Character Length"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <b>To get length of "character varying", "text" fields, Use char_length() or character_length().</b>
+          <b>
+            To get length of "character varying", "text" fields, Use
+            char_length() or character_length().
+          </b>
           <div className="tab-1">
             <p>Example 1, Query:</p>
           </div>

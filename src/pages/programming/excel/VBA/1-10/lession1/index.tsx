@@ -1,5 +1,5 @@
-import Code from '../../../../../../components/modules/code';
-import { PageTitle } from '../../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const PogrammingExcelVBA001 = () => {
   const data = [
@@ -39,7 +39,7 @@ End Sub
               <h4>{index + 1}.</h4>
               <input
                 type="image"
-                src={require(`../../../../../../resources/img/programming/excel/VBA/001/${item}`)}
+                src={require(`resources/img/programming/excel/VBA/001/${item}`)}
                 className="img-thumbnail"
                 alt=""
               />

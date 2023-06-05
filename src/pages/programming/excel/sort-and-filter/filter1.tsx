@@ -1,4 +1,4 @@
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const ExcelFilter1 = () => {
   return (
@@ -14,7 +14,7 @@ export const ExcelFilter1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/programming/excel/excel_1.png')}
+              src={require('resources/img/programming/excel/excel_1.png')}
               className="img-thumbnail"
               alt=""
             />
@@ -26,7 +26,7 @@ export const ExcelFilter1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/programming/excel/excel_2.png')}
+              src={require('resources/img/programming/excel/excel_2.png')}
               className="img-thumbnail"
               alt=""
             />
@@ -38,7 +38,7 @@ export const ExcelFilter1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/programming/excel/excel_3.png')}
+              src={require('resources/img/programming/excel/excel_3.png')}
               className="img-thumbnail"
               alt=""
             />
@@ -50,7 +50,7 @@ export const ExcelFilter1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/programming/excel/excel_4.png')}
+              src={require('resources/img/programming/excel/excel_4.png')}
               className="img-thumbnail"
               alt=""
             />
@@ -62,7 +62,7 @@ export const ExcelFilter1 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/programming/excel/excel_5.png')}
+              src={require('resources/img/programming/excel/excel_5.png')}
               className="img-thumbnail"
               alt=""
             />

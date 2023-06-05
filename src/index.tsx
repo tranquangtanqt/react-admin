@@ -3,7 +3,7 @@ import { RoutesRoot } from './route';
 import $ from 'jquery';
 import './index.css';
 
-declare var window: any;
+declare let window: any;
 window.$ = window.jQuery = $;
 
 const root = ReactDOM.createRoot(

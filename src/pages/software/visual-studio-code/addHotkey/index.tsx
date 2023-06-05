@@ -1,5 +1,5 @@
-import Code from '../../../../components/modules/code';
-import { PageTitle } from '../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const VisualStudioCodeAddHotkey = () => {
   return (
@@ -15,7 +15,7 @@ export const VisualStudioCodeAddHotkey = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/soffware/soffware_1.jpg')}
+              src={require('resources/img/soffware/soffware_1.jpg')}
               className="img-thumbnail"
               alt=""
             />
@@ -32,7 +32,7 @@ export const VisualStudioCodeAddHotkey = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/soffware/soffware_2.jpg')}
+              src={require('resources/img/soffware/soffware_2.jpg')}
               className="img-thumbnail"
               alt=""
             />

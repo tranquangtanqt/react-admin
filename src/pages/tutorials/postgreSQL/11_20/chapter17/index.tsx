@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter17 = () => {
   return (
@@ -8,8 +8,9 @@ export const TutorialPostgreSQLChapter17 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            The trigger will be associated with the specified table or view and will execute the specified function
-            function_name when certain events occur.
+            The trigger will be associated with the specified table or view and
+            will execute the specified function function_name when certain
+            events occur.
           </p>
 
           <b>1. Type of triggers</b>
@@ -18,9 +19,17 @@ export const TutorialPostgreSQLChapter17 = () => {
           </div>
           <div className="tab-2">
             <ul>
-              <li>BEFORE the operation is attempted on a row - insert, update or delete;</li>
-              <li>AFTER the operation has completed - insert, update or delete;</li>
-              <li>INSTEAD OF the operation in the case of inserts, updates or deletes on a view.</li>
+              <li>
+                BEFORE the operation is attempted on a row - insert, update or
+                delete;
+              </li>
+              <li>
+                AFTER the operation has completed - insert, update or delete;
+              </li>
+              <li>
+                INSTEAD OF the operation in the case of inserts, updates or
+                deletes on a view.
+              </li>
             </ul>
           </div>
           <div className="tab-1">
@@ -28,8 +37,13 @@ export const TutorialPostgreSQLChapter17 = () => {
           </div>
           <div className="tab-2">
             <ul>
-              <li>FOR EACH ROW is called once for every row that the operation modifies;</li>
-              <li>FOR EACH STATEMENT is called onde for any given operation.</li>
+              <li>
+                FOR EACH ROW is called once for every row that the operation
+                modifies;
+              </li>
+              <li>
+                FOR EACH STATEMENT is called onde for any given operation.
+              </li>
             </ul>
           </div>
           <div className="tab-1">

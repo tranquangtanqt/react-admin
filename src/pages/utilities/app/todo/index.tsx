@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import todoApi from '../../../../api/todo-api';
-import { PageTitle } from '../../../../components/modules/page-title';
+import todoApi from 'api/todo-api';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitieAppTodo = () => {
   const [todos, setTodos] = useState([]);
@@ -34,7 +34,7 @@ export const UtilitieAppTodo = () => {
    */
   const createTodo = async () => {
     setIsLoading(true);
-    let todo = {
+    const todo = {
       title: todoTitle,
     };
 
@@ -64,8 +64,8 @@ export const UtilitieAppTodo = () => {
   /**
    * showModalUpdateTodo
    */
-  const showModalUpdateTodo = (id: String) => {
-    let todo = todos?.filter((x) => x['_id'] === id).shift();
+  const showModalUpdateTodo = (id: string) => {
+    const todo = todos?.filter((x) => x['_id'] === id).shift();
     if (todo) {
       setTodoId(todo['_id']);
       setTodoTitle(todo['title']);
@@ -74,7 +74,7 @@ export const UtilitieAppTodo = () => {
   };
 
   const updateTodo = async () => {
-    let params = {
+    const params = {
       _id: todoId,
       title: todoTitle,
     };
@@ -91,7 +91,7 @@ export const UtilitieAppTodo = () => {
   };
 
   const updateOrderNumber = async (id: number, isUp: boolean) => {
-    let params = {
+    const params = {
       _id: id,
       isUp: isUp,
     };
@@ -107,7 +107,7 @@ export const UtilitieAppTodo = () => {
   /**
    * showModalDeleteTodo
    */
-  const showModalDeleteTodo = (id: String) => {
+  const showModalDeleteTodo = (id: string) => {
     setTodoId(id.toString() || '');
     ($('#modal-todo-delete') as any).modal('show');
   };
@@ -116,7 +116,7 @@ export const UtilitieAppTodo = () => {
    * deleteTodo
    */
   const deleteTodo = async () => {
-    let params = {
+    const params = {
       _id: todoId,
     };
 
@@ -161,28 +161,51 @@ export const UtilitieAppTodo = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div>
-                      <Link to={`/utilities/app/todo/${item['_id']}`}>{item['title']}</Link>
+                      <Link to={`/utilities/app/todo/${item['_id']}`}>
+                        {item['title']}
+                      </Link>
                     </div>
                     <div></div>
                     <div>
                       {key > 0 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(item['_id'], true)}>
-                          <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateOrderNumber(item['_id'], true)}
+                        >
+                          <i
+                            className="fa fa-arrow-circle-up"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       {key < todos.length - 1 ? (
-                        <button className="btn pe-0 text-info" onClick={() => updateOrderNumber(item['_id'], false)}>
-                          <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                        <button
+                          className="btn pe-0 text-info"
+                          onClick={() => updateOrderNumber(item['_id'], false)}
+                        >
+                          <i
+                            className="fa fa-arrow-circle-down"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn pe-0 text-success" onClick={() => showModalUpdateTodo(item['_id'])}>
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      <button
+                        className="btn pe-0 text-success"
+                        onClick={() => showModalUpdateTodo(item['_id'])}
+                      >
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTodo(item['_id'])}>
+                      <button
+                        className="btn pe-0 text-danger"
+                        onClick={() => showModalDeleteTodo(item['_id'])}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -194,14 +217,24 @@ export const UtilitieAppTodo = () => {
         </div>
       </div>
 
-      <div className="modal fade" id="modal-todo-create" aria-labelledby="modal-todo-create1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-todo-create"
+        aria-labelledby="modal-todo-create1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-todo-create1">
                 Thêm công việc
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
@@ -218,21 +251,41 @@ export const UtilitieAppTodo = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" value="Lưu" onClick={() => createTodo()} />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                value="Lưu"
+                onClick={() => createTodo()}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-todo-update" aria-labelledby="modal-todo-update1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-todo-update"
+        aria-labelledby="modal-todo-update1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-todo-update1">
                 Chỉnh sửa công việc
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <input
@@ -254,38 +307,73 @@ export const UtilitieAppTodo = () => {
               />
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" value="Lưu" onClick={() => updateTodo()} />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                value="Lưu"
+                onClick={() => updateTodo()}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-notification" aria-labelledby="modal-notification" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-notification"
+        aria-labelledby="modal-notification"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-notification">
                 Thông báo
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">{notificationMessage}</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-todo-delete" aria-labelledby="modal-todo-delete1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-todo-delete"
+        aria-labelledby="modal-todo-delete1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-todo-delete1">
                 Xóa công việc
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <input
@@ -298,8 +386,18 @@ export const UtilitieAppTodo = () => {
               Bạn có chắc chắn muốn xóa công việc?
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteTodo()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => deleteTodo()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>

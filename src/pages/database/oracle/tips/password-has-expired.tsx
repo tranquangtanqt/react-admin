@@ -1,5 +1,5 @@
-import Code from '../../../../components/modules/code';
-import { PageTitle } from '../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const OraclePasswordHasExpired = () => {
   return (
@@ -10,7 +10,7 @@ export const OraclePasswordHasExpired = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/database/the-password-has-expired-oracle_1.jpg')}
+              src={require('resources/img/database/the-password-has-expired-oracle_1.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -30,7 +30,7 @@ export const OraclePasswordHasExpired = () => {
             <p>Đăng nhập với tài khoản admin</p>
             <input
               type="image"
-              src={require('../../../../resources/img/database/the-password-has-expired-oracle_2.jpg')}
+              src={require('resources/img/database/the-password-has-expired-oracle_2.jpg')}
               className="img-thumbnail"
               alt="description image"
             />
@@ -41,7 +41,7 @@ export const OraclePasswordHasExpired = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../resources/img/database/the-password-has-expired-oracle_3.jpg')}
+              src={require('resources/img/database/the-password-has-expired-oracle_3.jpg')}
               className="img-thumbnail"
               alt="description image"
             />

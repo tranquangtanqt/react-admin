@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitiesTextFindTextColumnJPEN = () => {
   const [input1, setInput1] = useState('');

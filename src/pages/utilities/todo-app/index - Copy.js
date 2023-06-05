@@ -2,7 +2,7 @@ import { Button, Col, Form, Input, Row } from 'antd';
 import React, { Fragment, useEffect, useState } from 'react';
 import './index.scss';
 
-import TodoApi from '../../../api/todo-api';
+import TodoApi from 'api/todo-api';
 
 const TodoApp = () => {
   const [todos, setTodos] = useState([]);

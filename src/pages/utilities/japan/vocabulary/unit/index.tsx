@@ -1,9 +1,9 @@
-import { Fragment, useEffect, useState } from "react";
-import { PageTitle } from "../../../../../components/modules/page-title";
-import NumberUtils from "../../../../../utils/number-utils";
-import { useNavigate } from "react-router-dom";
-import dataN5 from "../dataN5";
-import "./unit.css";
+import { Fragment, useEffect, useState } from 'react';
+import { PageTitle } from 'components/modules/page-title';
+import NumberUtils from 'utils/number-utils';
+import { useNavigate } from 'react-router-dom';
+import dataN5 from 'pages/utilities/japan/vocabulary/dataN5';
+import './unit.css';
 
 export const UtilitiesJapanVocabularyUnit = () => {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ export const UtilitiesJapanVocabularyUnit = () => {
 
   useEffect(() => {
     if (units === null) {
-      navigate("/utilities/japan/vocabulary");
+      navigate('/utilities/japan/vocabulary');
     }
     // eslint-disable-next-line
   }, [navigate]);
@@ -22,12 +22,12 @@ export const UtilitiesJapanVocabularyUnit = () => {
    */
   const [units] = useState(() => initUnit());
   function initUnit() {
-    let localValue = localStorage.getItem("japan-unit");
+    const localValue = localStorage.getItem('japan-unit');
     let updateUnit = null;
     if (localValue !== null) {
       updateUnit = JSON.parse(localValue);
     }
-    localStorage.removeItem("japan-unit");
+    localStorage.removeItem('japan-unit');
 
     return updateUnit;
   }
@@ -37,8 +37,8 @@ export const UtilitiesJapanVocabularyUnit = () => {
    */
   const [level] = useState(() => initLevel());
   function initLevel() {
-    let result = localStorage.getItem("japan-level");
-    localStorage.removeItem("japan-level");
+    const result = localStorage.getItem('japan-level');
+    localStorage.removeItem('japan-level');
     return result;
   }
 
@@ -47,8 +47,8 @@ export const UtilitiesJapanVocabularyUnit = () => {
    */
   const [questionTotal] = useState(() => initQuestionTotal());
   function initQuestionTotal() {
-    let total = localStorage.getItem("japan-question-total");
-    localStorage.removeItem("japan-question-total");
+    const total = localStorage.getItem('japan-question-total');
+    localStorage.removeItem('japan-question-total');
     return Number(total);
   }
 
@@ -64,10 +64,10 @@ export const UtilitiesJapanVocabularyUnit = () => {
    * Mang chua tat ca cac tu vung
    */
   function initVocabulary() {
-    let arr: any = [];
-    if (level === "N5") {
-      for (let unitName of units) {
-        let unit = dataN5.get(unitName);
+    const arr: any = [];
+    if (level === 'N5') {
+      for (const unitName of units) {
+        const unit = dataN5.get(unitName);
         unit.forEach((item: any) => {
           arr.push(item);
         });
@@ -81,11 +81,11 @@ export const UtilitiesJapanVocabularyUnit = () => {
    */
   const [questions, setQuestions] = useState(() => initQuestion());
   function initQuestion() {
-    let vocabulary = initVocabulary();
-    let result = [];
+    const vocabulary = initVocabulary();
+    const result = [];
     for (let i = 0; i < questionTotal; i++) {
-      let length = vocabulary.length;
-      let rd = NumberUtils.getRandomInt(length);
+      const length = vocabulary.length;
+      const rd = NumberUtils.getRandomInt(length);
       result.push(vocabulary[rd]);
       vocabulary.splice(rd, 1);
     }
@@ -120,9 +120,11 @@ export const UtilitiesJapanVocabularyUnit = () => {
   /**
    * Thay doi mau nen khi chon dap an
    */
-  const [backgroundColor, setBackgroundColor] = useState(() => initBackgroundColor());
+  const [backgroundColor, setBackgroundColor] = useState(() =>
+    initBackgroundColor(),
+  );
   function initBackgroundColor() {
-    return ["", "", "", "", "", ""];
+    return ['', '', '', '', '', ''];
   }
 
   /**
@@ -139,8 +141,8 @@ export const UtilitiesJapanVocabularyUnit = () => {
       setWrongNumber(wrongNumber + 1);
     }
     setIsEnableClick(false);
-    let updateBackgroundColor = [...backgroundColor];
-    updateBackgroundColor[index] = "choose-answer";
+    const updateBackgroundColor = [...backgroundColor];
+    updateBackgroundColor[index] = 'choose-answer';
     setBackgroundColor(updateBackgroundColor);
   };
 
@@ -162,22 +164,24 @@ export const UtilitiesJapanVocabularyUnit = () => {
   return (
     <>
       <PageTitle title="Từ vựng"></PageTitle>
-      <div className={isLoading ? "row mt-2" : "row mt-2 d-none"}>
-        <div style={{ minHeight: "30vh" }}>
+      <div className={isLoading ? 'row mt-2' : 'row mt-2 d-none'}>
+        <div style={{ minHeight: '30vh' }}>
           <div className="loading-spinner"></div>
         </div>
       </div>
 
-      <div className={!isLoading ? "row mt-2" : "row mt-2 d-none"}>
+      <div className={!isLoading ? 'row mt-2' : 'row mt-2 d-none'}>
         <div className="col-12 col-sm-8 col-md-8">
           <div className="row">
             <div className="col-md-12">
               <div className="card text-white bg-dark mb-2">
                 <div className="card-body padding-custom">
                   <p className="card-text text-center">
-                    {questions?.slice(answerCorrect, answerCorrect + 1).map((item: any, key: any) => (
-                      <b key={key}>{item.translate}</b>
-                    ))}
+                    {questions
+                      ?.slice(answerCorrect, answerCorrect + 1)
+                      .map((item: any, key: any) => (
+                        <b key={key}>{item.translate}</b>
+                      ))}
                   </p>
                 </div>
               </div>
@@ -189,34 +193,48 @@ export const UtilitiesJapanVocabularyUnit = () => {
               <div className="row">
                 <div className="col-md-6 col-lg-6 col-xl-6">
                   <div className="card cursor-pointer mb-2">
-                    <div className={`card-body padding-custom ${backgroundColor[index * 2]}`} onClick={() => answer(index * 2)}>
+                    <div
+                      className={`card-body padding-custom ${
+                        backgroundColor[index * 2]
+                      }`}
+                      onClick={() => answer(index * 2)}
+                    >
                       <p className="card-text text-center">
-                        {questions?.slice(index * 2, index * 2 + 1).map((item: any, key: any) =>
-                          item.kanji !== "" ? (
-                            <b key={key}>
-                              {item.hiragana} ({item.kanji})
-                            </b>
-                          ) : (
-                            <b key={key}>{item.hiragana}</b>
-                          )
-                        )}
+                        {questions
+                          ?.slice(index * 2, index * 2 + 1)
+                          .map((item: any, key: any) =>
+                            item.kanji !== '' ? (
+                              <b key={key}>
+                                {item.hiragana} ({item.kanji})
+                              </b>
+                            ) : (
+                              <b key={key}>{item.hiragana}</b>
+                            ),
+                          )}
                       </p>
                     </div>
                   </div>
                 </div>
                 <div className="col-md-6 col-lg-6 col-xl-6">
                   <div className="card cursor-pointer mb-2">
-                    <div className={`card-body padding-custom ${backgroundColor[index * 2 + 1]}`} onClick={() => answer(index * 2 + 1)}>
+                    <div
+                      className={`card-body padding-custom ${
+                        backgroundColor[index * 2 + 1]
+                      }`}
+                      onClick={() => answer(index * 2 + 1)}
+                    >
                       <p className="card-text text-center">
-                        {questions?.slice(index * 2 + 1, index * 2 + 2).map((item: any, key: any) =>
-                          item.kanji !== "" ? (
-                            <b key={key}>
-                              {item.hiragana} ({item.kanji})
-                            </b>
-                          ) : (
-                            <b key={key}>{item.hiragana}</b>
-                          )
-                        )}
+                        {questions
+                          ?.slice(index * 2 + 1, index * 2 + 2)
+                          .map((item: any, key: any) =>
+                            item.kanji !== '' ? (
+                              <b key={key}>
+                                {item.hiragana} ({item.kanji})
+                              </b>
+                            ) : (
+                              <b key={key}>{item.hiragana}</b>
+                            ),
+                          )}
                       </p>
                     </div>
                   </div>
@@ -229,18 +247,24 @@ export const UtilitiesJapanVocabularyUnit = () => {
             {isShowAnswer && (
               <Fragment>
                 <div className="col-12 col-md-12 col-lg-12 col-xl-12">
-                  <div className={`card text-white ${isAnswerCorrect ? "bg-success" : "bg-danger"} mb-3`}>
+                  <div
+                    className={`card text-white ${
+                      isAnswerCorrect ? 'bg-success' : 'bg-danger'
+                    } mb-3`}
+                  >
                     <div className="card-body padding-custom">
                       <p className="card-text text-center">
-                        {questions?.slice(answerCorrect, answerCorrect + 1).map((item: any, key: any) =>
-                          item.kanji !== "" ? (
-                            <b key={key}>
-                              {item.hiragana} ({item.kanji})
-                            </b>
-                          ) : (
-                            <b key={key}>{item.hiragana}</b>
-                          )
-                        )}
+                        {questions
+                          ?.slice(answerCorrect, answerCorrect + 1)
+                          .map((item: any, key: any) =>
+                            item.kanji !== '' ? (
+                              <b key={key}>
+                                {item.hiragana} ({item.kanji})
+                              </b>
+                            ) : (
+                              <b key={key}>{item.hiragana}</b>
+                            ),
+                          )}
                       </p>
                     </div>
                   </div>
@@ -248,7 +272,10 @@ export const UtilitiesJapanVocabularyUnit = () => {
               </Fragment>
             )}
             <div className="col-4 offset-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
-              <div className="card text-white bg-info cursor-pointer mb-3" onClick={() => nextQuestion()}>
+              <div
+                className="card text-white bg-info cursor-pointer mb-3"
+                onClick={() => nextQuestion()}
+              >
                 <div className="card-body padding-custom">
                   <p className="card-text text-center">
                     <b>Next</b>
@@ -283,7 +310,16 @@ export const UtilitiesJapanVocabularyUnit = () => {
               <div className="card text-white bg-info mb-3">
                 <div className="card-body padding-custom">
                   <p className="card-text text-center">
-                    <b>{correctNumber + wrongNumber > 0 ? Math.round((correctNumber / (correctNumber + wrongNumber)) * 100 * 100) / 100 : 0}%</b>
+                    <b>
+                      {correctNumber + wrongNumber > 0
+                        ? Math.round(
+                            (correctNumber / (correctNumber + wrongNumber)) *
+                              100 *
+                              100,
+                          ) / 100
+                        : 0}
+                      %
+                    </b>
                   </p>
                 </div>
               </div>
@@ -294,9 +330,23 @@ export const UtilitiesJapanVocabularyUnit = () => {
             <div className="col-md-12 col-lg-12 col-xl-12">
               {isShowAnswer && isAnswerCorrect && (
                 <Fragment>
-                  <svg className="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle className="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
-                    <path className="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                  <svg
+                    className="checkmark"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 52 52"
+                  >
+                    <circle
+                      className="checkmark__circle"
+                      cx="26"
+                      cy="26"
+                      r="25"
+                      fill="none"
+                    />
+                    <path
+                      className="checkmark__check"
+                      fill="none"
+                      d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                    />
                   </svg>
                 </Fragment>
               )}

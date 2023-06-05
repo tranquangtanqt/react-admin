@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter25 = () => {
   return (
@@ -9,15 +9,22 @@ export const TutorialPostgreSQLChapter25 = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <p>The API to use a relational database from Java is JDBC.</p>
           <p>This API is implemented by a JDBC driver.</p>
-          <p>To use it, put the JAR-file with the driver on the JAVA class path.</p>
-          <p>This documentation shows samples how to use the JDBC driver to connect to a database</p>
+          <p>
+            To use it, put the JAR-file with the driver on the JAVA class path.
+          </p>
+          <p>
+            This documentation shows samples how to use the JDBC driver to
+            connect to a database
+          </p>
 
           <b>1. Connecting with java.sql.DriverManager</b>
           <div className="tab-1">
             <p>This is the simplest way to connect.</p>
             <p>
-              First, the driver has to be registered with java.sql.DriverManager so that it knows which class to use.
-              This is done by loading the driver class, typically with java.lang.CLASS.forname(;driver class name{'>'}).
+              First, the driver has to be registered with java.sql.DriverManager
+              so that it knows which class to use. This is done by loading the
+              driver class, typically with java.lang.CLASS.forname(;driver class
+              name{'>'}).
             </p>
           </div>
           <div className="tab-2">
@@ -50,8 +57,9 @@ private static java.sql.Connection connect(String url, String user, String passw
           </div>
           <div className="tab-1">
             <p>
-              Not that user and password can also be included in the JDBC URL, in which case you don't have to specify
-              them in the getConnection method call.
+              Not that user and password can also be included in the JDBC URL,
+              in which case you don't have to specify them in the getConnection
+              method call.
             </p>
           </div>
         </div>
@@ -61,8 +69,9 @@ private static java.sql.Connection connect(String url, String user, String passw
           <b>2. Connecting with java.sql.DriverManager and Properties</b>
           <div className="tab-1">
             <p>
-              Instead of specifying connection parameters like user and password (see a complete list here) in the URL
-              or a separate parameters, you can pack them into a java.util.Properties object:
+              Instead of specifying connection parameters like user and password
+              (see a complete list here) in the URL or a separate parameters,
+              you can pack them into a java.util.Properties object:
             </p>
           </div>
           <div className="tab-2">
@@ -106,8 +115,9 @@ private static java.sql.Connection connect(String url, String user, String passw
           <b>3. Connecting with javax.sql.DataSource using a connection pool</b>
           <div className="tab-1">
             <p>
-              It is common to use javax.sql.DataSource with JNDI in application server containers, where you register a
-              data source under a name and look it up whenever you need a connection.
+              It is common to use javax.sql.DataSource with JNDI in application
+              server containers, where you register a data source under a name
+              and look it up whenever you need a connection.
             </p>
             <p>This is code that demonstrates how data sources work:</p>
           </div>
@@ -141,7 +151,10 @@ private static javax.sql.DataSource createDataSource(String url, String user, St
             />
           </div>
           <div className="tab-1">
-            <p>Once you have created a data source by calling this function, you would use it like this:</p>
+            <p>
+              Once you have created a data source by calling this function, you
+              would use it like this:
+            </p>
           </div>
           <div className="tab-2">
             <Code

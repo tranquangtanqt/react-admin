@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter18 = () => {
   return (
@@ -7,7 +7,10 @@ export const TutorialPostgreSQLChapter18 = () => {
       <PageTitle title="18. Event Triggers"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <p>Event Triggers will be fired whenever event associated with them occurs in database.</p>
+          <p>
+            Event Triggers will be fired whenever event associated with them
+            occurs in database.
+          </p>
 
           <b>1. Logging DDL Command Start Events</b>
           <div className="tab-1">
@@ -21,7 +24,10 @@ export const TutorialPostgreSQLChapter18 = () => {
             </ul>
           </div>
           <div className="tab-1">
-            <p>This is example for creating an Event Trigger and logging DDL_COMMAND_START events</p>
+            <p>
+              This is example for creating an Event Trigger and logging
+              DDL_COMMAND_START events
+            </p>
           </div>
           <div className="tab-2">
             <Code

@@ -1,4 +1,4 @@
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const OracleChangeLanguageOracleSQLDeveloper = () => {
   return (

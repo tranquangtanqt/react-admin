@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter11 = () => {
   return (
@@ -9,7 +9,10 @@ export const TutorialPostgreSQLChapter11 = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>1. Common Table Expressions in SELECT Queries</b>
           <div className="tab-1">
-            <p>Common table expressions support extracting portions of larger queries. For example:</p>
+            <p>
+              Common table expressions support extracting portions of larger
+              queries. For example:
+            </p>
           </div>
           <div className="tab-2">
             <Code

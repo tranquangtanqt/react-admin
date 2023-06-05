@@ -1,5 +1,5 @@
-import Code from '../../../../components/modules/code';
-import { PageTitle } from '../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const UtilitiesGeneralGit = () => {
   return (
@@ -95,10 +95,19 @@ git push origin <Tên_nhánh>`}
           <b>Export file</b>
           <div className="tab-1">
             <p>Để lấy toàn bộ file đã commit từ START ={'>'} END</p>
-            <p>Xem history để lấy được id commit START và END. Sau đó xuất toàn bộ file thay đổi ra file .txt</p>
-            <Code code={`git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt`} language="sql" />
+            <p>
+              Xem history để lấy được id commit START và END. Sau đó xuất toàn
+              bộ file thay đổi ra file .txt
+            </p>
+            <Code
+              code={`git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt`}
+              language="sql"
+            />
             <p>Export file</p>
-            <Code code={`more diff-filelist.txt | zip -@ files.zip`} language="sql" />
+            <Code
+              code={`more diff-filelist.txt | zip -@ files.zip`}
+              language="sql"
+            />
           </div>
         </div>
       </div>

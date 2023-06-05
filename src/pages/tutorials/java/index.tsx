@@ -1,5 +1,5 @@
-import { CardList } from '../../../components/modules/card-list';
-import { PageTitle } from '../../../components/modules/page-title';
+import { CardList } from 'components/modules/card-list';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialJava = () => {
   const cardData = [

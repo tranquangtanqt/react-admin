@@ -15,7 +15,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "useUnknownInCatchVariables": false
+    "useUnknownInCatchVariables": false,
+    "baseUrl": "./src",
   },
   "include": ["src"]
 }

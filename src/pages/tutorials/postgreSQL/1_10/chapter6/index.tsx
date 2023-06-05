@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter6 = () => {
   return (
@@ -8,8 +8,10 @@ export const TutorialPostgreSQLChapter6 = () => {
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <p>
-            Coalesce returns the first none null argument from a set of arguments. Only the first non null argument is
-            return, all subsequent arguments are ignored. The function will evaluate to null if all arguments are null.
+            Coalesce returns the first none null argument from a set of
+            arguments. Only the first non null argument is return, all
+            subsequent arguments are ignored. The function will evaluate to null
+            if all arguments are null.
           </p>
           <b>1.1 Single non null argument</b>
           <div className="tab-1">

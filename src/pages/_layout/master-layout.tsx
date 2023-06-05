@@ -101,7 +101,7 @@ export const MasterLayout = (props: masterLayoutProps) => {
             <Link to={''}>
               <input
                 type="image"
-                src={require('../../resources/img/_layout/logo.jpg')}
+                src={require('resources/img/_layout/logo.jpg')}
                 className="img logo rounded-circle"
                 alt="description image"
               />

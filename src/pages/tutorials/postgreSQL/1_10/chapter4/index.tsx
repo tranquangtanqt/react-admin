@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter4 = () => {
   return (
@@ -36,13 +36,19 @@ export const TutorialPostgreSQLChapter4 = () => {
             <p>Select every thing:</p>
           </div>
           <div className="tab-1">
-            <Code code={`SELECT * FROM schema_name.table_name WHERE <condition>;`} language="sql" />
+            <Code
+              code={`SELECT * FROM schema_name.table_name WHERE <condition>;`}
+              language="sql"
+            />
           </div>
           <div className="tab-1">
             <p>Select some fields :</p>
           </div>
           <div className="tab-1">
-            <Code code={`SELECT field1, field2 FROM schema_name.table_name WHERE <condition>;`} language="sql" />
+            <Code
+              code={`SELECT field1, field2 FROM schema_name.table_name WHERE <condition>;`}
+              language="sql"
+            />
           </div>
           <b>Examples</b>
           <div className="tab-1">

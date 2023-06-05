@@ -1,4 +1,4 @@
-import { PageTitle } from '../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const ExcelColorColumnHoliday = () => {
   const data = [
@@ -21,7 +21,7 @@ export const ExcelColorColumnHoliday = () => {
               <h4>{index + 1}.</h4>
               <input
                 type="image"
-                src={require(`../../../../resources/img/programming/excel/${item}`)}
+                src={require(`resources/img/programming/excel/${item}`)}
                 className="img-thumbnail"
                 alt=""
                 style={{ width: '300px' }}

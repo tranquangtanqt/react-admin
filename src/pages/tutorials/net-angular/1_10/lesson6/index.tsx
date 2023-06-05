@@ -1,4 +1,4 @@
-import { PageTitle } from '../../../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialNetAngularLesson6 = () => {
   return (
@@ -11,7 +11,11 @@ export const TutorialNetAngularLesson6 = () => {
             <p>- Create project: ng new client --strict false</p>
             <p>
               - Add bootstrap: ngx-bootstrap{' '}
-              <a href="https://valor-software.com/ngx-bootstrap/#/documentation" target={'_blank'} rel="noreferrer">
+              <a
+                href="https://valor-software.com/ngx-bootstrap/#/documentation"
+                target={'_blank'}
+                rel="noreferrer"
+              >
                 https://valor-software.com/ngx-bootstrap/#/documentation
               </a>
             </p>
@@ -28,21 +32,21 @@ export const TutorialNetAngularLesson6 = () => {
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_6.jpg')}
+              src={require('resources/img/tutorials/netAngular/Net_Angular_6.jpg')}
               className="img-thumbnail"
               alt=""
             />
           </div>
           <div className="tab-1">
             <p>
-              - Run this command on your project folder: Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope
-              CurrentUser
+              - Run this command on your project folder: Set-ExecutionPolicy
+              -ExecutionPolicy RemoteSigned -Scope CurrentUser
             </p>
           </div>
           <div className="tab-1">
             <input
               type="image"
-              src={require('../../../../../resources/img/tutorials/netAngular/Net_Angular_7.jpg')}
+              src={require('resources/img/tutorials/netAngular/Net_Angular_7.jpg')}
               className="img-thumbnail"
               alt=""
             />

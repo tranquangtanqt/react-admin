@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter28 = () => {
   return (
@@ -45,8 +45,8 @@ WHERE
             />
           </div>
           <b>
-            4. Update query with join between two tables alternative since Postresql does not support join in update
-            query
+            4. Update query with join between two tables alternative since
+            Postresql does not support join in update query
           </b>
           <div className="tab-1">
             <Code
@@ -59,7 +59,9 @@ WHERE
               language="sql"
             />
           </div>
-          <b>5 Difference between two date timestamps month wise and year wise</b>
+          <b>
+            5 Difference between two date timestamps month wise and year wise
+          </b>
           <div className="tab-1">
             <p>Monthwise difference between two dates(timestamp)</p>
           </div>
@@ -84,7 +86,10 @@ FROM dbo."Table1"`}
               language="sql"
             />
           </div>
-          <b>6. Query to Copy/Move/Transafer table data from one database to other database table with same schema</b>
+          <b>
+            6. Query to Copy/Move/Transafer table data from one database to
+            other database table with same schema
+          </b>
           <div className="tab-1">
             <p>First Execute</p>
           </div>

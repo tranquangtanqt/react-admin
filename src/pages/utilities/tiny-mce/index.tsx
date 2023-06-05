@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { PageTitle } from '../../../components/modules/page-title';
+import { PageTitle } from 'components/modules/page-title';
 import { Editor } from '@tinymce/tinymce-react';
 import { Editor as TinyMCEEditor } from 'tinymce';
 

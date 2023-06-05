@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PageTitle } from '../../../../components/modules/page-title';
-import unit from '../../../../resources/json/japan/JapanUnit.json';
+import { PageTitle } from 'components/modules/page-title';
+import unit from 'resources/json/japan/JapanUnit.json';
 
 export const UtilitiesJapanVocabulary = () => {
   const navigate = useNavigate();
   const [units, setUnits] = useState(() => {
-    let unitN5 = unit;
+    const unitN5 = unit;
     unitN5.forEach((item) => {
       if (item.level === 'N5') {
         item.isShow = 1;
@@ -34,7 +34,7 @@ export const UtilitiesJapanVocabulary = () => {
   };
 
   const handleSelectLevel = (value: string) => {
-    let unitTemp = [...units];
+    const unitTemp = [...units];
     unitTemp.forEach((item) => {
       if (item.level === value) {
         item.isShow = 1;
@@ -101,7 +101,10 @@ export const UtilitiesJapanVocabulary = () => {
                     id={'checkbox-unit-' + index}
                     onChange={(e) => handleCheck(e)}
                   />
-                  <label className="form-check-label" htmlFor={'checkbox-unit-' + index}>
+                  <label
+                    className="form-check-label"
+                    htmlFor={'checkbox-unit-' + index}
+                  >
                     {item.unitName}
                   </label>
                   <span></span>
@@ -114,7 +117,11 @@ export const UtilitiesJapanVocabulary = () => {
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
-          <button type="button" className="btn btn-primary btn-sm" onClick={() => openUnitPage()}>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm"
+            onClick={() => openUnitPage()}
+          >
             Start
           </button>
         </div>

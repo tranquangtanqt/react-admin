@@ -1,5 +1,5 @@
-import { PageTitle } from '../../../../../components/modules/page-title';
-import Code from '../../../../../components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
+import Code from 'components/modules/code';
 
 export const PostgresqlConfigPghba = () => {
   return (

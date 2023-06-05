@@ -1,5 +1,5 @@
-import Code from '../../../../../components/modules/code';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import Code from 'components/modules/code';
+import { PageTitle } from 'components/modules/page-title';
 
 export const TutorialPostgreSQLChapter8 = () => {
   return (
@@ -9,7 +9,10 @@ export const TutorialPostgreSQLChapter8 = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <b>1. Updating a table based on joining another table</b>
           <div className="tab-1">
-            <p>You can also update data in a table based on data from another table:</p>
+            <p>
+              You can also update data in a table based on data from another
+              table:
+            </p>
           </div>
           <div className="tab-2">
             <Code
@@ -22,8 +25,9 @@ WHERE cities.city = city;`}
           </div>
           <div className="tab-1">
             <p>
-              Here we are joining the person city column to the cities city column in order to get the city's state
-              code. This is then used to update the state_code column in the person table.
+              Here we are joining the person city column to the cities city
+              column in order to get the city's state code. This is then used to
+              update the state_code column in the person table.
             </p>
           </div>
         </div>
@@ -33,7 +37,10 @@ WHERE cities.city = city;`}
           {' '}
           <b>2. Update all rows in a table</b>
           <div className="tab-1">
-            <p>You update all rows in table by simply providing a column_name = VALUE:</p>
+            <p>
+              You update all rows in table by simply providing a column_name =
+              VALUE:
+            </p>
           </div>
           <div className="tab-2">
             <Code code={`UPDATE person SET planet = 'Earth';`} language="sql" />
@@ -44,7 +51,10 @@ WHERE cities.city = city;`}
         <div className="col-12 col-sm-12 col-md-12">
           <b>3. Update all rows meeting a condition</b>
           <div className="tab-2">
-            <Code code={`UPDATE person SET state = 'NY' WHERE city = 'New York';`} language="sql" />
+            <Code
+              code={`UPDATE person SET state = 'NY' WHERE city = 'New York';`}
+              language="sql"
+            />
           </div>
         </div>
       </div>
@@ -53,7 +63,8 @@ WHERE cities.city = city;`}
           <b>4. Updating multiple columns in table</b>
           <div className="tab-1">
             <p>
-              You can update multiple columns in a table in the same statement, separating col=val pairs with commas:
+              You can update multiple columns in a table in the same statement,
+              separating col=val pairs with commas:
             </p>
           </div>
           <div className="tab-2">

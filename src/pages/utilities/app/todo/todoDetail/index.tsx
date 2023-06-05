@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import todoApi from '../../../../../api/todo-api';
-import todoDetailApi from '../../../../../api/todo-detail-api';
-import todoTaskApi from '../../../../../api/todo-task-api';
-import { PageTitle } from '../../../../../components/modules/page-title';
+import todoApi from 'api/todo-api';
+import todoDetailApi from 'api/todo-detail-api';
+import todoTaskApi from 'api/todo-task-api';
+import { PageTitle } from 'components/modules/page-title';
 import { Editor } from '@tinymce/tinymce-react';
 
 interface ITodo {
@@ -16,18 +16,18 @@ interface ITodoDetail {
   d_title: string;
   d_content: string;
   collapse: boolean;
-  d_order_number: Number;
+  d_order_number: number;
 }
 
 interface ITodoTask {
-  _id: String;
-  t_content: String;
-  t_status: Number;
-  t_order_number: Number;
+  _id: string;
+  t_content: string;
+  t_status: number;
+  t_order_number: number;
 }
 
 export const UtilitieAppTodoDetail = () => {
-  let params = useParams();
+  const params = useParams();
   const [todo, setTodo] = useState<ITodo>();
   const [details, setDetails] = useState<ITodoDetail[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -52,10 +52,10 @@ export const UtilitieAppTodoDetail = () => {
     if (response) {
       setTodo(response.data);
 
-      let detailMapApi: ITodoDetail[] = [];
+      const detailMapApi: ITodoDetail[] = [];
 
       if (response.status) {
-        let todoDetails = Array.from(response.data.details);
+        const todoDetails = Array.from(response.data.details);
         todoDetails.forEach((item: any) => {
           detailMapApi.push({
             _id: item._id,
@@ -76,7 +76,6 @@ export const UtilitieAppTodoDetail = () => {
   useEffect(() => {
     // <em>fetchTodoList(params.todo_id)</em>;
     fetchTodoList(params.todo_id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params]);
 
   /**
@@ -94,8 +93,8 @@ export const UtilitieAppTodoDetail = () => {
    * changeCollapse
    * @param id
    */
-  const changeCollapse = (id: String) => {
-    let detailTemp = [...(details || [])];
+  const changeCollapse = (id: string) => {
+    const detailTemp = [...(details || [])];
     detailTemp?.forEach((item) => {
       if (item._id === id) {
         item.collapse = !item.collapse;
@@ -108,8 +107,8 @@ export const UtilitieAppTodoDetail = () => {
     setDetailContent(content);
   };
 
-  const showModalUpdateDetail = (id: String) => {
-    let detail = details?.filter((x) => x._id === id).shift();
+  const showModalUpdateDetail = (id: string) => {
+    const detail = details?.filter((x) => x._id === id).shift();
     if (detail) {
       setDetailTitle(detail.d_title.toString());
       setDetailContent(detail.d_content.toString());
@@ -122,7 +121,7 @@ export const UtilitieAppTodoDetail = () => {
    *
    */
   const updateDetail = async () => {
-    let detail = {
+    const detail = {
       _id: detailId,
       d_title: detailTitle,
       d_content: detailContent,
@@ -153,7 +152,7 @@ export const UtilitieAppTodoDetail = () => {
    * createDetail
    */
   const createDetail = async () => {
-    let detail = {
+    const detail = {
       d_title: detailTitle,
       d_content: detailContent,
     };
@@ -174,13 +173,16 @@ export const UtilitieAppTodoDetail = () => {
    * @param id
    * @param isUp
    */
-  const updateDetailOrderNumber = async (id: String, isUp: boolean) => {
-    let params = {
+  const updateDetailOrderNumber = async (id: string, isUp: boolean) => {
+    const params = {
       _id: id,
       isUp: isUp,
     };
 
-    const response = await todoDetailApi.updateDetailOrderNumber(todo?._id, params);
+    const response = await todoDetailApi.updateDetailOrderNumber(
+      todo?._id,
+      params,
+    );
 
     if (response?.status) {
       fetchTodoList(todo?._id);
@@ -192,7 +194,7 @@ export const UtilitieAppTodoDetail = () => {
    * showModalDeleteDetail
    * @param id
    */
-  const showModalDeleteDetail = (id: String) => {
+  const showModalDeleteDetail = (id: string) => {
     setDetailId(id.toString() || '');
     ($('#modal-detail-delete') as any).modal('show');
   };
@@ -201,7 +203,7 @@ export const UtilitieAppTodoDetail = () => {
    * createDetail
    */
   const deleteDetail = async () => {
-    let detail = {
+    const detail = {
       _id: detailId,
     };
 
@@ -228,7 +230,7 @@ export const UtilitieAppTodoDetail = () => {
    * createTask
    */
   const createTask = async () => {
-    let task = {
+    const task = {
       t_content: taskContent,
       t_status: taskStatus,
     };
@@ -244,8 +246,8 @@ export const UtilitieAppTodoDetail = () => {
   /**
    * updateStatusTask
    */
-  const updateStatusToCompletedTask = async (_id: String) => {
-    let task = {
+  const updateStatusToCompletedTask = async (_id: string) => {
+    const task = {
       _id: _id,
       t_status: 1,
     };
@@ -261,8 +263,8 @@ export const UtilitieAppTodoDetail = () => {
   /**
    * updateStatusTask
    */
-  const updateStatusToInCompleteTask = async (_id: String) => {
-    let task = {
+  const updateStatusToInCompleteTask = async (_id: string) => {
+    const task = {
       _id: _id,
       t_status: 0,
     };
@@ -280,8 +282,8 @@ export const UtilitieAppTodoDetail = () => {
    * @param id
    * @param isUp
    */
-  const updateTaskCompleteOrderNumber = async (id: String, isUp: boolean) => {
-    let params = {
+  const updateTaskCompleteOrderNumber = async (id: string, isUp: boolean) => {
+    const params = {
       _id: id,
       isUp: isUp,
     };
@@ -297,7 +299,7 @@ export const UtilitieAppTodoDetail = () => {
   /**
    * showModalDeleteTask
    */
-  const showModalDeleteTask = (id: String) => {
+  const showModalDeleteTask = (id: string) => {
     setTaskId(id.toString() || '');
     ($('#modal-task-delete') as any).modal('show');
   };
@@ -306,7 +308,7 @@ export const UtilitieAppTodoDetail = () => {
    * createDetail
    */
   const deleteTask = async () => {
-    let task = {
+    const task = {
       _id: taskId,
     };
 
@@ -324,7 +326,7 @@ export const UtilitieAppTodoDetail = () => {
    * @param id
    * @param isComplete
    */
-  const showModalUpdateTaskContent = (id: String, isComplete: boolean) => {
+  const showModalUpdateTaskContent = (id: string, isComplete: boolean) => {
     let task;
     if (isComplete) {
       task = taskCompleted?.filter((x) => x._id === id).shift();
@@ -343,7 +345,7 @@ export const UtilitieAppTodoDetail = () => {
    * updateTaskContent
    */
   const updateTaskContent = async () => {
-    let task = {
+    const task = {
       _id: taskId,
       t_content: taskContent,
     };
@@ -358,8 +360,8 @@ export const UtilitieAppTodoDetail = () => {
   };
 
   const renderTask = (tasks: any) => {
-    let taskCompletedMapApi: ITodoTask[] = [];
-    let taskInCompleteMapApi: ITodoTask[] = [];
+    const taskCompletedMapApi: ITodoTask[] = [];
+    const taskInCompleteMapApi: ITodoTask[] = [];
 
     tasks.forEach((item: any) => {
       if (item.t_status === 0) {
@@ -435,7 +437,10 @@ export const UtilitieAppTodoDetail = () => {
               <div className="card" key={key}>
                 <div className="card-header" id={detail._id.toString()}>
                   <div className="d-flex justify-content-between">
-                    <p className="mb-0" onClick={() => changeCollapse(detail._id)}>
+                    <p
+                      className="mb-0"
+                      onClick={() => changeCollapse(detail._id)}
+                    >
                       <input
                         className="btn btn-link btn-link-custom font-size-14"
                         type="button"
@@ -446,9 +451,14 @@ export const UtilitieAppTodoDetail = () => {
                       {key > 0 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateDetailOrderNumber(detail._id, true)}
+                          onClick={() =>
+                            updateDetailOrderNumber(detail._id, true)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-up"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
@@ -456,26 +466,47 @@ export const UtilitieAppTodoDetail = () => {
                       {key < details.length - 1 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateDetailOrderNumber(detail._id, false)}
+                          onClick={() =>
+                            updateDetailOrderNumber(detail._id, false)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-down"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
-                      <button className="btn text-success" onClick={() => showModalUpdateDetail(detail._id)}>
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                      <button
+                        className="btn text-success"
+                        onClick={() => showModalUpdateDetail(detail._id)}
+                      >
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn ps-0 text-danger" onClick={() => showModalDeleteDetail(detail._id)}>
+                      <button
+                        className="btn ps-0 text-danger"
+                        onClick={() => showModalDeleteDetail(detail._id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
                   </div>
                 </div>
 
-                <div id="collapseOne" className={detail.collapse ? 'collapse show' : 'collapse'}>
+                <div
+                  id="collapseOne"
+                  className={detail.collapse ? 'collapse show' : 'collapse'}
+                >
                   <div className="card-body">
-                    <div dangerouslySetInnerHTML={{ __html: detail.d_content.toString() || '' }} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: detail.d_content.toString() || '',
+                      }}
+                    />
                   </div>
                 </div>
               </div>
@@ -511,9 +542,14 @@ export const UtilitieAppTodoDetail = () => {
                       {key > 0 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateTaskCompleteOrderNumber(task._id, true)}
+                          onClick={() =>
+                            updateTaskCompleteOrderNumber(task._id, true)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-up" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-up"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
@@ -521,20 +557,33 @@ export const UtilitieAppTodoDetail = () => {
                       {key < taskInComplete.length - 1 ? (
                         <button
                           className="btn pe-0 text-info"
-                          onClick={() => updateTaskCompleteOrderNumber(task._id, false)}
+                          onClick={() =>
+                            updateTaskCompleteOrderNumber(task._id, false)
+                          }
                         >
-                          <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                          <i
+                            className="fa fa-arrow-circle-down"
+                            aria-hidden="true"
+                          ></i>
                         </button>
                       ) : (
                         <button className="btn cursor-default"></button>
                       )}
                       <button
                         className="btn pe-0 text-success"
-                        onClick={() => showModalUpdateTaskContent(task._id, false)}
+                        onClick={() =>
+                          showModalUpdateTaskContent(task._id, false)
+                        }
                       >
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
+                      <button
+                        className="btn pe-0 text-danger"
+                        onClick={() => showModalDeleteTask(task._id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -562,11 +611,19 @@ export const UtilitieAppTodoDetail = () => {
                     <div>
                       <button
                         className="btn pe-0 text-success"
-                        onClick={() => showModalUpdateTaskContent(task._id, true)}
+                        onClick={() =>
+                          showModalUpdateTaskContent(task._id, true)
+                        }
                       >
-                        <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <i
+                          className="fa fa-pencil-square-o"
+                          aria-hidden="true"
+                        ></i>
                       </button>
-                      <button className="btn pe-0 text-danger" onClick={() => showModalDeleteTask(task._id)}>
+                      <button
+                        className="btn pe-0 text-danger"
+                        onClick={() => showModalDeleteTask(task._id)}
+                      >
                         <i className="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
@@ -578,14 +635,24 @@ export const UtilitieAppTodoDetail = () => {
         </div>
       </div>
 
-      <div className="modal fade" id="modal-detail-update" aria-labelledby="note-modal1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-detail-update"
+        aria-labelledby="note-modal1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="note-modal1">
                 Chỉnh sửa chi tiết
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
@@ -625,27 +692,48 @@ export const UtilitieAppTodoDetail = () => {
                       'bold italic backcolor | alignleft aligncenter ' +
                       'alignright alignjustify | bullist numlist outdent indent | ' +
                       'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                    content_style:
+                      'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => updateDetail()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => updateDetail()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-detail-add" aria-labelledby="modal-detail-add1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-detail-add"
+        aria-labelledby="modal-detail-add1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-xl">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-detail-add1">
                 Thêm chi tiết
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
@@ -678,27 +766,48 @@ export const UtilitieAppTodoDetail = () => {
                       'bold italic backcolor | alignleft aligncenter ' +
                       'alignright alignjustify | bullist numlist outdent indent | ' +
                       'removeformat | help',
-                    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
+                    content_style:
+                      'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
                   }}
                 />
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => createDetail()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => createDetail()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-detail-delete" aria-labelledby="modal-detail-delete1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-detail-delete"
+        aria-labelledby="modal-detail-delete1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-detail-delete1">
                 Xóa chi tiết
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <input
@@ -711,21 +820,41 @@ export const UtilitieAppTodoDetail = () => {
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteDetail()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => deleteDetail()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-task-delete" aria-labelledby="modal-task-delete1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-task-delete"
+        aria-labelledby="modal-task-delete1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-task-delete1">
                 Xóa nhiệm vụ
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <input
@@ -738,21 +867,41 @@ export const UtilitieAppTodoDetail = () => {
               Bạn có chắc chắn muốn xóa chi tiết?
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => deleteTask()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => deleteTask()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-task-add" aria-labelledby="modal-task-add1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-task-add"
+        aria-labelledby="modal-task-add1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-task-add1">
                 Thêm nhiệm vụ
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <div>
@@ -769,21 +918,41 @@ export const UtilitieAppTodoDetail = () => {
               </div>
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => createTask()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => createTask()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-task-update" aria-labelledby="modal-task-update1" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-task-update"
+        aria-labelledby="modal-task-update1"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-lg">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-task-update1">
                 Chỉnh sửa nhiệm vụ
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">
               <input
@@ -805,25 +974,50 @@ export const UtilitieAppTodoDetail = () => {
               />
             </div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
-              <input type="button" className="btn btn-primary" onClick={() => updateTaskContent()} value="Lưu" />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
+              <input
+                type="button"
+                className="btn btn-primary"
+                onClick={() => updateTaskContent()}
+                value="Lưu"
+              />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="modal fade" id="modal-notification" aria-labelledby="modal-notification" aria-hidden="true">
+      <div
+        className="modal fade"
+        id="modal-notification"
+        aria-labelledby="modal-notification"
+        aria-hidden="true"
+      >
         <div className="modal-dialog modal-dialog-centered modal-sm">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="modal-notification">
                 Thông báo
               </h5>
-              <input type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+              <input
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              />
             </div>
             <div className="modal-body">{notificationMessage}</div>
             <div className="modal-footer">
-              <input type="button" className="btn btn-secondary" data-bs-dismiss="modal" value={'Đóng'} />
+              <input
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+                value={'Đóng'}
+              />
             </div>
           </div>
         </div>
