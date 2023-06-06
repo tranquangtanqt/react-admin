@@ -8,7 +8,8 @@ export const PostgresqlTableGeneral = () => {
       title: 'Get size in folder',
       contents: [
         {
-          code: `SELECT
+          code: {
+            src: `SELECT
   table_name
   , pg_size_pretty(pg_relation_size(quote_ident(table_name)))
   , pg_relation_size(quote_ident(table_name)) 
@@ -18,7 +19,8 @@ WHERE
   table_schema = 'public' 
 ORDER BY
   3 desc;`,
-          language: 'sql',
+            language: 'sql',
+          },
         },
       ],
     },

@@ -1,13 +1,18 @@
 export default interface IContent {
   title: string;
-  contents: [
-    {
-      p?: string;
-      i?: string;
-      b?: string;
-      code?: string;
-      language?: string;
-      imageUrl?: string;
-    },
-  ];
+  no?: boolean;
+  contents: {
+    p?: string;
+    i?: string;
+    b?: string;
+    code?: {
+      src: string;
+      language: string;
+    };
+    image?: {
+      src: string;
+      align?: string;
+      width?: string;
+    };
+  }[];
 }

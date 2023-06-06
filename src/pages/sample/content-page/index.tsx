@@ -8,10 +8,14 @@ export const SampleContentPage = () => {
       title: 'Get size in folder',
       contents: [
         {
-          p: '',
-          code: `SELECT * FROM information_schema.tables;`,
-          language: 'sql',
-          imageUrl: require(`resources/img/tutorials/netAngular/Net_Angular_1.jpg`),
+          p: 'tag p <b>tag b</b>',
+          code: {
+            src: `SELECT * FROM information_schema.tables;`,
+            language: 'sql',
+          },
+          image: {
+            src: require(`resources/img/tutorials/netAngular/Net_Angular_1.jpg`),
+          },
         },
       ],
     },

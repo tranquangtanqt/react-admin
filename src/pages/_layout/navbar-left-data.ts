@@ -27,6 +27,29 @@ export const NAVBAR_LEFT = [
     active: false,
     open: false,
     link: '',
+    text: 'Ebook',
+    linkClass: 'dropdown-toggle collapsed',
+    ulClass: 'collapse list-unstyled',
+    children: [
+      {
+        id: 0,
+        link: '/ebook/english',
+        text: 'English',
+        active: false,
+      },
+      {
+        id: 1,
+        link: '/ebook/vietnamese',
+        text: 'Vietnamese',
+        active: false,
+      },
+    ],
+  },
+  {
+    id: 2,
+    active: false,
+    open: false,
+    link: '',
     text: 'Programming',
     linkClass: 'dropdown-toggle collapsed',
     ulClass: 'collapse list-unstyled',
@@ -70,7 +93,7 @@ export const NAVBAR_LEFT = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     active: false,
     link: '/software',
     text: 'Software',
@@ -78,7 +101,7 @@ export const NAVBAR_LEFT = [
   },
 
   {
-    id: 3,
+    id: 4,
     active: false,
     open: false,
     link: '',
@@ -113,7 +136,7 @@ export const NAVBAR_LEFT = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     active: false,
     open: false,
     link: 'utilities',
@@ -121,7 +144,7 @@ export const NAVBAR_LEFT = [
     children: [],
   },
   {
-    id: 5,
+    id: 6,
     active: false,
     open: false,
     link: '',

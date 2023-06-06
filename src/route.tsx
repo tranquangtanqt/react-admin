@@ -162,6 +162,8 @@ import { PostgresqlRunAllSqlInAFolder } from 'pages/database/postgresql/dump/run
 import { UtilitiesGeneralCommandLine } from 'pages/utilities/general/command-line';
 import { JavaArrayArgument } from 'pages/programming/java/array/argument';
 import { SampleContentPage } from 'pages/sample/content-page';
+import { EbookVietnamese } from 'pages/ebook/vietnamese';
+import { EbookVietnameseCleanCodeChapter1 } from 'pages/ebook/vietnamese/clean-code/chapter-1';
 
 export const RoutesRoot = () => {
   return (
@@ -190,6 +192,10 @@ export const RoutesRoot = () => {
           <Route path="/database/oracle/tips/system" element={<OracleSystem />} />
           <Route path="/database/oracle/tips-sql-developer" element={<OracleTipsSQLDeveloper />} />
           <Route path="/database/oracle/the-password-has-expired" element={<OraclePasswordHasExpired />} />
+
+          <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
+          <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
+          <Route path="/ebook/vietnamese/clean-code/chapter-1" element={<EbookVietnameseCleanCodeChapter1 />} />
 
           <Route path="/programming-batch" element={<ProgrammingBatch />} />
           <Route path="/programming-batch/if-else" element={<BatchIfElse />} />

@@ -12,27 +12,42 @@ export const PageContent: React.FC<Props> = ({ content }) => {
       <div className="row mt-2">
         {content.map((dataVal, dataKey) => (
           <div className="col-12 col-sm-12 col-md-12" key={dataKey}>
-            <p>
-              <b>
-                {dataKey + 1}. {dataVal.title}
-              </b>
-            </p>
-            {dataVal.contents.map((contentVal, contentKey) => (
+            <h5>
+              {dataVal.no ? (
+                <b>
+                  {dataKey + 1}. {dataVal.title}
+                </b>
+              ) : (
+                <b>{dataVal.title}</b>
+              )}
+            </h5>
+            {dataVal.contents.map((content, contentKey) => (
               <Fragment key={contentKey}>
                 <div className="tab-1">
-                  {contentVal.p && contentVal.p}
-                  {contentVal.imageUrl && contentVal.imageUrl}
-                  {contentVal.code && (
+                  {content.p && (
+                    <p dangerouslySetInnerHTML={{ __html: content.p }}></p>
+                  )}
+                  {content.code && (
                     <Code
-                      code={contentVal.code}
-                      language={contentVal.language}
+                      code={content.code.src}
+                      language={content.code.language}
                     />
                   )}
-                  {contentVal.imageUrl && (
+                  {content.image && (
                     <input
                       type="image"
-                      src={contentVal.imageUrl}
-                      className="img-thumbnail"
+                      src={content.image.src}
+                      className={
+                        'img-thumbnail' +
+                        (content.image.align === 'left'
+                          ? 'rounded float-start'
+                          : content.image.align === 'center'
+                          ? 'rounded mx-auto d-block'
+                          : content.image.align === 'right'
+                          ? 'rounded float-end'
+                          : '')
+                      }
+                      width={content.image.width ? content.image.width : ''}
                       alt=""
                     />
                   )}
@@ -45,4 +60,3 @@ export const PageContent: React.FC<Props> = ({ content }) => {
     </>
   );
 };
-// resources/img/tutorials/netAngular/Net_Angular_1.jpg
