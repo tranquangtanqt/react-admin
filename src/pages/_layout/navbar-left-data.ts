@@ -132,7 +132,13 @@ export const NAVBAR_LEFT = [
       {
         id: 0,
         link: '/sample/create-content-page',
-        text: 'Create Page',
+        text: 'Create Page 1',
+        active: false,
+      },
+      {
+        id: 1,
+        link: '/sample/content-page',
+        text: 'Create page 2',
         active: false,
       },
     ],

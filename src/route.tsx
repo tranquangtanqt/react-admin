@@ -161,6 +161,7 @@ import { OraclePasswordHasExpired } from 'pages/database/oracle/tips/password-ha
 import { PostgresqlRunAllSqlInAFolder } from 'pages/database/postgresql/dump/run-all-sql-in-folder';
 import { UtilitiesGeneralCommandLine } from 'pages/utilities/general/command-line';
 import { JavaArrayArgument } from 'pages/programming/java/array/argument';
+import { SampleContentPage } from 'pages/sample/content-page';
 
 export const RoutesRoot = () => {
   return (
@@ -169,6 +170,7 @@ export const RoutesRoot = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/sample/create-content-page" element={<CreateContentPage />} />
+          <Route path="/sample/content-page" element={<SampleContentPage />} />
 
           <Route path="/database/postgresql" element={<DatabasePostgresql />} />
           <Route path="/database/postgresql/general/config-pghba" element={<PostgresqlConfigPghba />} />
