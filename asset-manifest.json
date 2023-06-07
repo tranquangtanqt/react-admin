@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.1b869f7c.css",
-    "main.js": "/react-admin/static/js/main.29d92004.js",
+    "main.js": "/react-admin/static/js/main.30f044c4.js",
     "static/media/chapter-1_1.png": "/react-admin/static/media/chapter-1_1.004d8ce1b1958074ff5b.png",
     "static/media/2023-01-29 22 36 09.jpg": "/react-admin/static/media/2023-01-29 22 36 09.d4f9920cfe0729d8a7ee.jpg",
     "static/media/2023-01-29 22 58 18.jpg": "/react-admin/static/media/2023-01-29 22 58 18.5888906ec35a9538978d.jpg",
@@ -56,17 +56,23 @@
     "static/media/2023-01-30 22 29 18.jpg": "/react-admin/static/media/2023-01-30 22 29 18.899152c0e22f7bd2ae67.jpg",
     "static/media/2.jpg": "/react-admin/static/media/2.a76ad9c57e6a0aea64a7.jpg",
     "static/media/2023-01-29 22 56 49.jpg": "/react-admin/static/media/2023-01-29 22 56 49.e32fb157145194dbdfa4.jpg",
+    "static/media/chapter-1_3.png": "/react-admin/static/media/chapter-1_3.6642da307d0be8abadd6.png",
     "static/media/logo.jpg": "/react-admin/static/media/logo.ae3a9c5039a1d4700c44.jpg",
     "static/media/2023-01-30 22 31 25.jpg": "/react-admin/static/media/2023-01-30 22 31 25.fd8583a70caa80e82d62.jpg",
     "static/media/2023-01-30 22 53 28.jpg": "/react-admin/static/media/2023-01-30 22 53 28.60cc45da62647c08d44f.jpg",
     "static/media/1.jpg": "/react-admin/static/media/1.c3f997ad6dda6b07c2e5.jpg",
     "static/media/2023-01-30 22 53 45.jpg": "/react-admin/static/media/2023-01-30 22 53 45.45abaa2f86f89dbb9097.jpg",
+    "static/media/chapter-1_6.png": "/react-admin/static/media/chapter-1_6.c8297fe2612f99f3440d.png",
+    "static/media/chapter-1_7.png": "/react-admin/static/media/chapter-1_7.7cfb8ddf4aa8c1665d71.png",
     "static/media/2023-01-30 22 41 26.jpg": "/react-admin/static/media/2023-01-30 22 41 26.ea8ceb1426a7c376d900.jpg",
     "static/media/2023-01-30 22 42 00.jpg": "/react-admin/static/media/2023-01-30 22 42 00.f8ee1d264bee3748c54f.jpg",
+    "static/media/chapter-1_9.png": "/react-admin/static/media/chapter-1_9.f8a00b21857131e7a429.png",
     "static/media/chapter-1_2.png": "/react-admin/static/media/chapter-1_2.db093eb1be1f4bae8c9e.png",
+    "static/media/chapter-1_8.png": "/react-admin/static/media/chapter-1_8.ab802167bfea01e2ebdb.png",
     "static/media/Trich_8.jpg": "/react-admin/static/media/Trich_8.6634caa9c2b7b4e26c45.jpg",
     "static/media/9.jpg": "/react-admin/static/media/9.82f3d3be11230d16f1cb.jpg",
     "static/media/the-password-has-expired-oracle_2.jpg": "/react-admin/static/media/the-password-has-expired-oracle_2.ad7f9de7732c771450e4.jpg",
+    "static/media/chapter-1_10.png": "/react-admin/static/media/chapter-1_10.8de74aa93f63f7345027.png",
     "static/media/Trich_9.jpg": "/react-admin/static/media/Trich_9.1e0e7f7d3b32f01586ad.jpg",
     "static/media/10.jpg": "/react-admin/static/media/10.ca5e511bdf3924109cff.jpg",
     "static/media/the-password-has-expired-oracle_3.jpg": "/react-admin/static/media/the-password-has-expired-oracle_3.390d2b00340f5e6c5f8e.jpg",
@@ -95,7 +101,9 @@
     "static/media/8.jpg": "/react-admin/static/media/8.bfeef28b4e4a61e6daa5.jpg",
     "static/media/Net_Angular_6.jpg": "/react-admin/static/media/Net_Angular_6.ecd15412d2d905ee00e7.jpg",
     "static/media/excel_2.png": "/react-admin/static/media/excel_2.0340c3ee5d6a09e9e044.png",
+    "static/media/chapter-1_5.jpg": "/react-admin/static/media/chapter-1_5.decb2d1160fdeed982f1.jpg",
     "static/media/6.jpg": "/react-admin/static/media/6.d1856e2f61b033b9554c.jpg",
+    "static/media/chapter-1_4.jpg": "/react-admin/static/media/chapter-1_4.1e32a711718cbca41227.jpg",
     "static/media/Net_Angular_2.jpg": "/react-admin/static/media/Net_Angular_2.b1dc0bec7443b16fa97d.jpg",
     "static/media/Net_Angular_8.jpg": "/react-admin/static/media/Net_Angular_8.6d03637949b455e67dc7.jpg",
     "static/media/3.jpg": "/react-admin/static/media/3.ac385d22f42c7aa03838.jpg",
@@ -118,10 +126,10 @@
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.1b869f7c.css.map": "/react-admin/static/css/main.1b869f7c.css.map",
-    "main.29d92004.js.map": "/react-admin/static/js/main.29d92004.js.map"
+    "main.30f044c4.js.map": "/react-admin/static/js/main.30f044c4.js.map"
   },
   "entrypoints": [
     "static/css/main.1b869f7c.css",
-    "static/js/main.29d92004.js"
+    "static/js/main.30f044c4.js"
   ]
 }
