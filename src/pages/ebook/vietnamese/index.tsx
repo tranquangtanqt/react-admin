@@ -1,20 +1,12 @@
 import { CardList } from 'components/modules/card-list';
 import { PageTitle } from 'components/modules/page-title';
+import cleanCodeChapter from './clean-code/_chapter';
 
 export const EbookVietnamese = () => {
   const cardData = [
     {
       title: 'Clean code',
-      links: [
-        {
-          text: 'Chương 1: Code sạch',
-          path: '/ebook/vietnamese/clean-code/chapter-1',
-        },
-        {
-          text: 'Chương 2',
-          path: '/ebook/vietnamese/clean-code/chapter-2',
-        },
-      ],
+      links: cleanCodeChapter,
     },
   ];
   return (
