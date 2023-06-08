@@ -128,7 +128,7 @@ export const chapter1: IContent[] = [
         p: ` Bạn đã bao giờ bị những dòng code “rởm” gây khó dễ chưa? Nếu là lập
       trình viên hẳn bạn đã từng trải nghiệm cảm giác đó vài lần. Chúng tôi
       có một cái tên cho nó, đó là <i>bơi</i> (từ gốc: wade – làm việc vất
-      vả). Chúng tôi <i>bơi</i> qua những dòng code tởm lợm, <i>bơi</i>{' '}
+      vả). Chúng tôi <i>bơi</i> qua những dòng code tởm lợm, <i>bơi</i> 
       trong một mớ lộn xộn những cái bug được giấu kín. Chúng tôi cố gắng
       theo cách của chúng tôi, hy vọng tìm thấy những gợi ý, những manh mối
       hay biết chuyện gì đang xảy ra với code; nhưng tất cả những gì chúng
@@ -872,7 +872,7 @@ export const chapter1: IContent[] = [
         p: `Nếu chúng ta làm cho code sạch hơn mỗi khi chúng ta kiểm tra nó, nó sẽ
         không thể “lên mùi”. Việc dọn dẹp không phải là thứ gì đó to tát: đặt
         lại một cái tên khác tốt hơn cho biến, chia nhỏ một hàm quá lớn, đá
-        đít vài sự trùng lặp không cần thiết, dọn dẹp vài điều kiện{' '}
+        đít vài sự trùng lặp không cần thiết, dọn dẹp vài điều kiện 
         <strong>if,…</strong>`,
       },
       {

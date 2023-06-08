@@ -5,6 +5,7 @@ import { PageContent } from 'components/modules/page-content';
 import cleanCodeChapter from './_chapter';
 import { chapter1 } from './chapter-1';
 import { chapter2 } from './chapter-2';
+import { chapter3 } from './chapter-3';
 
 export const EbookVietnameseCleanCode = () => {
   const params = useParams();
@@ -18,6 +19,9 @@ export const EbookVietnameseCleanCode = () => {
     case '2':
       data = chapter2;
       break;
+    case '3':
+      data = chapter3;
+      break;
   }
 
   return (
@@ -30,6 +34,9 @@ export const EbookVietnameseCleanCode = () => {
         <p></p>
 
         <p></p>
+
+        <p></p>
+
         <p></p>
       </div>
     </>
