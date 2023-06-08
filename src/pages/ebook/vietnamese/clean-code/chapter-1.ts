@@ -946,6 +946,13 @@ export const chapter1: IContent[] = [
     title: 'Tham khảo',
     contents: [
       {
+        p: `<em>Implementation Patterns</em>, Kent Beck, Addison-Wesley, 2007.`,
+      },
+      {
+        p: `<em>Literate Programming</em>, Donald E. Knuth, Center for the Study
+        of Language and Information, Leland Stanford Junior University, 1992.`,
+      },
+      {
         p: `Nguồn bài dịch: <b>NQT-K4DNC</b>`,
       },
       {
