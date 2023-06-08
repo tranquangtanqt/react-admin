@@ -642,10 +642,314 @@ export const chapter1: IContent[] = [
         tượng hóa nhỏ. Với tôi, đó là những thứ làm nên code sạch.`,
       },
       {
-        p: ``,
+        image: {
+          src: require(`resources/img/ebook/vn/clean-code/chapter-1_11.png`),
+          width: `15%`,
+          align: `center`,
+        },
       },
       {
-        p: ``,
+        p: `<hr />
+          <em>
+            “Bạn biết bạn đang làm việc cùng code sạch là khi việc đọc code hóa
+            ra yomost hơn những gì bạn mong đợi. Bạn có thể gọi nó là code đẹp
+            khi những dòng code đó trông giống như cách mà bạn trình bày và giải
+            quyết vấn đề”.
+          </em>
+          <br />
+          <b>WARD CUNNINGHAM, NGƯỜI TẠO RA WIKI</b>
+          <hr />`,
+      },
+      {
+        p: `Kiểu phát biểu đặc trưng của Ward. Bạn đọc nó, gật gù, sau đó thì
+          chuyển sang chủ đề tiếp theo. Nó có vẻ rất hợp lý, rất rõ ràng, dường
+          như ko có gì thâm thúy. Và bạn nghĩ rằng mình đã nắm được vấn đề.
+          Nhưng hãy xem xét kĩ hơn một chút.`,
+      },
+      {
+        p: `“…đúng như những gì bạn mong đợi.” Lần cuối bạn thấy một module đúng
+          như những gì bạn mong đợi là khi nào? Hay chỉ toàn là các module khó
+          hiểu, phức tạp, loằng ngoằng? Đi lệch các quy tắc? Bạn đã từng cố gắng
+          nắm bắt một chuỗi logic xuất phát từ toán hệ thống và đan xen nhau qua
+          module bạn đọc? Lần gần đây nhất bạn đọc code của ai đó và gật gù như
+          bạn gật gù trước phát biểu của Ward là khi nào?`,
+      },
+      {
+        p: `Ward muốn nói rằng khi bạn đọc code sạch bạn sẽ không có bất kỳ sự
+          ngạc nhiên nào. Thật vậy, bạn sẽ không tốn quá nhiều công sức. Bạn đọc
+          nó, và nó sẽ đúng như những gì bạn mong đợi. Nó rõ ràng, đơn giản và
+          thuyết phục. Mỗi module sẽ chuẩn bị sân khấu cho module tiếp theo, nó
+          sẽ cho bạn biết điều gì sẽ được viết tiếp. Những chương trình sạch
+          được viết tốt đến nỗi bạn không hề để ý đến chuyện nó được viết tốt
+          đến như thế nào. Người thiết kế đã làm cho nó trông cực kỳ đơn giản
+          như những thiết kế tuyệt vời khác.`,
+      },
+      {
+        p: `Thế còn quan điểm của Ward về vẻ đẹp? Chúng ta luôn trách móc thực tế
+          rằng ngôn ngữ chúng ta dùng không được thiết kế để giải quyết vấn đề
+          của chúng ta. Nhưng lời của Ward đã đẩy trách nhiệm đó về cho chúng
+          ta.&nbsp;Ông nói rằng code đẹp khi làm nó cho ngôn ngữ như được sinh
+          ra để giải quyết vấn đề. Vậy trách nhiệm của chúng ta là phải làm cho
+          ngôn ngữ trông thật đơn giản. Những người hâm mộ cuồng nhiệt của các
+          ngôn ngữ, hãy nhớ rằng! Không phải ngôn ngữ là thứ làm cho chương
+          trình trông đơn giản. Mà chính lập trình viên mới là “thứ” làm cho
+          ngôn ngữ trông đơn giản!`,
+      },
+    ],
+  },
+  {
+    title: 'Những trường phái tư tưởng',
+    contents: [
+      {
+        p: `Còn tôi (chú Bob) thì sao? Tôi nghĩ code sạch là gì? Cuốn sách này sẽ
+          nói cho bạn biết, đảm bảo chi tiết đến mức mệt mỏi những gì tôi và các
+          đồng nghiệp nghĩ về code sạch. Chúng tôi sẽ cho bạn biết những gì
+          chúng tôi nghĩ về tên biến sạch, hàm sạch, lớp sạch,…Chúng tôi sẽ
+          trình bày những ý kiến này dưới dạng tuyệt đối, và chúng tôi sẽ không
+          xin lỗi vì sự ngông cuồng này. Đối với chúng tôi, ngay lúc này, điều
+          đó là tuyệt đối. Đó chính là trường phái của chúng tôi về code sạch.`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/clean-code/chapter-1_12.png`),
+          width: `15%`,
+          align: `center`,
+        },
+      },
+      {
+        p: `Không có môn võ nào là hay nhất, cũng không có kỹ thuật nào là “vô
+        đối” trong võ thuật. Thường thì các võ sư bậc thầy sẽ hình thành
+        trường phái riêng của họ và thu nhận đệ tử để truyền dạy. Vì vậy,
+        chúng ta thấy Nhu thuật Brazil (Jiu Jitsu) được sáng tạo và truyền dạy
+        bởi dòng tộc Gracie ở Brazil. Chúng ta thấy Hakko Ryu Jiu Jitsu (một
+        môn nhu thuật của Nhật Bản) được thành lập và truyền dạy bởi Okuyama
+        Ryuho ở Tokyo. Chúng ta thấy Triệt Quyền Đạo, được phát triển và
+        truyền dạy bởi Lý Tiểu Long tại Hoa Kỳ.`,
+      },
+      {
+        p: `Môn đồ của các môn phái này thường đắm mình trong những lời dạy của sư
+        phụ. Họ dấn thân để khám phá kiến thức mà sư phụ dạy, và thường loại
+        bỏ giáo lý của ông thầy khác. Sau đó, khi kỹ năng của họ phát triển,
+        họ có thể tìm một sư phụ khác để mở rộng kiến thức và va chạm thực tế
+        nhiều hơn. Một số khác tiếp tục hoàn thiện kỹ năng của mình, khám phá
+        các kỹ thuật mới và thành lập võ đường của riêng họ.`,
+      },
+      {
+        p: `Không một giáo lý của môn phái nào là đúng hoàn toàn. Tuy nhiên trong
+        một môn phái, chúng ta chấp nhận những lời dạy và những kỹ thuật đó là
+        đúng. Sau tất cả, vẫn có cách để áp dụng đúng Triệt Quyền Đạo hay Nhu
+        thuật. Nhưng việc đó không làm những lời dạy của môn phái khác mất tác
+        dụng.`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/clean-code/chapter-1_13.jpg`),
+          width: `15%`,
+          align: `center`,
+        },
+      },
+      {
+        p: `<p class="text-center"><small>Lý Tiểu Long với Triệt Quyền Đạo</small></p>`,
+      },
+      {
+        p: `Hãy xem quyển sách này là một quyển bí kíp về <em>Môn phái Code sạch. </em>Các kỹ thuật và lời khuyên bên trong giúp
+        bạn thể hiện khả năng của mình. Chúng tôi sẵn sàng khẳng định nếu bạn
+        làm theo những lời khuyên này, bạn sẽ được hưởng những lợi ích như
+        chúng tôi, bạn sẽ học được cách tạo nên những dòng code sạch sẽ và đầy
+        chuyên nghiệp. Nhưng làm ơn đừng nghĩ chúng tôi đúng tuyệt đối, còn có
+        những bậc thầy khác, họ sẽ đòi hỏi bạn phải chuyên nghiệp hơn. Điều đó
+        sẽ giúp bạn học hỏi khá nhiều từ họ đấy.`,
+      },
+      {
+        p: `Sự thật là, nhiều lời khuyên trong quyển sách này đang gây tranh cãi.
+        Bạn có thể không đồng ý với tất cả chúng, hoặc một vài trong số đó.
+        Không sao, chúng tôi không thể yêu cầu việc đó được. Mặt khác, các lời
+        khuyên trong sách là những thứ mà chúng tôi phải trải qua quá trình
+        suy nghĩ lâu dài và đầy khó khăn mới có được. Chúng tôi đã học được nó
+        qua hàng chục năm làm việc, thử nghiệm và sửa lỗi. Vậy nên, cho dù bạn
+        đồng ý hay không, đó sẽ là hành động sỉ nhục nếu bạn không xem xét, và
+        tôn trọng quan điểm của chúng tôi.`,
+      },
+    ],
+  },
+  {
+    title: 'Chúng ta là tác giả',
+    contents: [
+      {
+        p: `Trường <em>@author</em> của Javadoc cho mọi người biết chúng ta là ai
+        – chúng ta là tác giả. Và tác giả thì phải có đọc giả. Tác giả có
+        trách nhiệm giao tiếp tốt với các đọc giả của họ. Lần sau khi viết một
+        dòng code, hãy nhớ rằng bạn là tác giả – đang viết cho những đọc giả,
+        những người đánh giá sự cố gắng của bạn.`,
+      },
+      {
+        p: `Và bạn hỏi: Có bao nhiêu code thật sự được đọc cơ chứ? Nỗ lực viết nó
+        để làm gì?`,
+      },
+      {
+        p: `Bạn đã bao giờ xem lại những lần chỉnh sửa code chưa? Trong những năm
+        80 và 90, chúng tôi đã có những chương trình như Emacs, cho phép theo
+        dõi mọi thao tác bàn phím. Bạn nên làm việc trong một giờ rồi sau đó
+        xem lại các phiên bản chỉnh sửa – như cách xem một bộ phim được tua
+        nhanh. Và khi tôi làm điều này, kết quả thật bất ngờ.`,
+      },
+      {
+        p: `Đa phần là hành động cuộn và điều hướng sang những mô-đun khác:`,
+      },
+      {
+        p: `<em>Bob vào mô-đun.</em>
+        <br />
+        <em>Anh ấy cuộn xuống chức năng cần thay đổi.</em>
+        <br />
+        <em>Anh ấy dừng lại, xem xét các biện pháp giải quyết.</em>
+        <br />
+        <em>Ồ, anh ấy cuộn lên đầu mô-đun để kiểm tra việc khởi tạo biến.</em>
+        <br />
+        <em>Bây giờ anh ta cuộn xuống và bắt đầu gõ.</em>
+        <br />
+        <em>Ooops, anh ấy xóa chúng rồi.</em>
+        <br />
+        <em>Anh ấy nhập lại.</em>
+        <br />
+        <em>Anh ấy lại xóa.</em>
+        <br />
+        <em>Anh ấy lại nhập một thứ gì đó, rồi lại xóa.</em>
+        <br />
+        <em>
+          Anh ấy kéo xuống hàm khác đang gọi hàm mà anh ta chỉnh sửa để xem nó
+          được gọi ra sao.
+        </em>
+        <br />
+        <em>Anh ấy cuộn ngược lại, và gõ những gì anh vừa xóa.</em>
+        <br />
+        <em>Bob tạm ngưng.</em>
+        <br />
+        <em>Anh ta lại xóa nó.</em>
+        <br />
+        <em>
+          Anh ta mở một cửa sổ khác và nhìn vào lớp con, xem hàm đó có bị ghi
+          đè (overriding) hay không.
+        </em>
+        <br />
+        <em>…</em>`,
+      },
+      {
+        p: `Thật sự lôi cuốn. Và chúng tôi nhận ra thời gian đọc code luôn gấp 10
+        lần thời gian viết code. Chúng tôi liên tục đọc lại code cũ như một
+        phần trong những nỗ lực để tạo nên code mới.`,
+      },
+      {
+        p: `Vì quá mất thời gian nên chúng tôi muốn việc đọc code trở nên dễ dàng
+        hơn, ngay cả khi nó làm cho việc viết code khó hơn. Dĩ nhiên không có
+        cách nào để viết code mà không đọc nó, do đó làm nó dễ đọc hơn, cũng
+        là cách làm nó dễ viết hơn.`,
+      },
+      {
+        p: `Không còn cách nào đâu. Bạn không thể mở rộng code nếu bạn không đọc
+        được code. Code bạn viết hôm nay sẽ trở nên khó hoặc dễ mở rộng tùy
+        vào cách viết của bạn. Vậy nên, nếu muốn chắc chắn, nếu muốn hoàn
+        thành nhanh, nếu bạn muốn code dễ viết, dễ mở rộng, dễ thay đổi, hãy
+        làm cho nó dễ đọc.`,
+      },
+    ],
+  },
+  {
+    title: 'Nguyên tắc của hướng đạo sinh',
+    contents: [
+      {
+        p: `Nhưng vẫn chưa đủ. Code phải được giữ sạch theo thời gian. Chúng ta
+        đều thấy code “bốc mùi” và suy thoái theo thời gian. Vì vậy, chúng ta
+        phải có hành động tích cực trong việc ngăn chặn sự suy thoái đó.`,
+      },
+      {
+        p: `Các hướng đạo sinh của Mỹ có một nguyên tắc đơn giản mà chúng ta có
+        thể áp dụng cho vấn đề này:`,
+      },
+      {
+        p: `<em>Khi bạn rời đi, khu cắm trại phải sạch sẽ hơn cả khi bạn đến.</em>`,
+      },
+      {
+        p: `Nếu chúng ta làm cho code sạch hơn mỗi khi chúng ta kiểm tra nó, nó sẽ
+        không thể “lên mùi”. Việc dọn dẹp không phải là thứ gì đó to tát: đặt
+        lại một cái tên khác tốt hơn cho biến, chia nhỏ một hàm quá lớn, đá
+        đít vài sự trùng lặp không cần thiết, dọn dẹp vài điều kiện{' '}
+        <strong>if,…</strong>`,
+      },
+      {
+        p: `Liên tục cải thiện code, làm cho code của dự án tốt dần theo thời gian
+        chính là một phần quan trọng của sự chuyên nghiệp.`,
+      },
+    ],
+  },
+  {
+    title: 'Phần trước và các nguyên tắc',
+    contents: [
+      {
+        p: `Với cách nhìn khác, quyển sách này là một “phần trước” của một quyển
+        sách khác mà tôi đã viết vào năm 2002, nó mang tên 
+        <em>
+          Agile Software Development: Principles, Patterns, and Practices
+          (PPP)
+        </em>
+        . Quyển PPP liên quan đến các nguyên tắc của thiết kế hướng đối tượng,
+        và các phương pháp được sử dụng bởi các lập trình viên chuyên nghiệp.
+        Nếu bạn chưa đọc PPP, thì đó là quyển sách kể tiếp câu chuyện của
+        quyển sách này. Nếu đã đọc, bạn sẽ thấy chúng giống nhau ở vài đoạn
+        code.`,
+      },
+      {
+        p: `Trong cuốn sách này, bạn sẽ thấy nhắc đến nhiều nguyên tắc thiết kế
+        phần mềm. Trong số đó có thể kể đến Nguyên lý đơn trách nhiệm (Single
+        Responsibility Principle – SRP), Nguyên lý mở đóng (the Open Closed
+        Principle – OCP), và Nguyên tắc đảo ngược sự phụ thuộc (Dependency
+        Inversion Principle – DIP) và nhiều nguyên tắc khác. Những nguyên tắc
+        đó được miêu tả rất sâu trong cuốn PPP.`,
+      },
+    ],
+  },
+  {
+    title: 'Kết luận',
+    contents: [
+      {
+        p: `Một quyển sách về nghệ thuật không hứa đưa bạn thành nghệ sĩ, tất cả
+        những gì nó làm được là cung cấp cho bạn những kỹ năng, công cụ, và
+        quá trình suy nghĩ mà các nghệ sĩ đã sử dụng. Vậy nên, quyển sách này
+        không hứa sẽ làm cho bạn trở thành một lập trình viên giỏi, cũng không
+        hứa sẽ mang đến cho bạn <em>giác quan code. </em>Tất cả những gì nó
+        làm là cho bạn thấy phương pháp làm việc của những lập trình viên hàng
+        đầu, cùng với các kỹ năng, thủ thuật, công cụ,…mà họ sử dụng.`,
+      },
+      {
+        p: ` Như những quyển sách về nghệ thuật khác, quyển sách này đầy đủ chi
+        tiết. Sẽ có rất nhiều code. Bạn sẽ thấy code tốt và code tồi. Bạn sẽ
+        thấy cách chuyển code tồi thành code tốt. Bạn sẽ thấy một danh sách
+        các cách giải quyết, các nguyên tắc và kỹ năng. Có rất nhiều ví dụ cho
+        bạn. Còn sau đó thì, tùy bạn.`,
+      },
+      {
+        p: `Hãy nhớ tới câu chuyện vui về nghệ sĩ violin đã bị lạc trên đường tới
+        buổi biểu diễn. Anh hỏi một ông già trên phố làm thế nào để đến
+        Carnegie Hall (nơi được xem là thánh đường âm nhạc). Ông già nhìn
+        người nghệ sĩ và cây violin được giấu dưới cánh tay anh ta, nói to: 
+        <em>Luyện tập, con trai. Là luyện tập!</em>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/clean-code/chapter-1_14.jpg`),
+          width: `15%`,
+          align: `center`,
+        },
+      },
+    ],
+  },
+  {
+    title: 'Tham khảo',
+    contents: [
+      {
+        p: `Nguồn bài dịch: <b>NQT-K4DNC</b>`,
+      },
+      {
+        p: `Chỉnh sửa bởi: <b>Tôi học Design pattern</b>`,
       },
     ],
   },
