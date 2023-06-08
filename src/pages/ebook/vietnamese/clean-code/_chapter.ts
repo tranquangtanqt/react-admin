@@ -1,4 +1,4 @@
-const chapter = ['Chương 1: Code sạch', 'Chương 2'];
+const chapter = ['Chương 1: Code sạch', 'Chương 2: Quy tắc đặt tên rõ nghĩa'];
 const cleanCodeChapter: {
   text: string;
   path: string;

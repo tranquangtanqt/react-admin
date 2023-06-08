@@ -8,7 +8,7 @@ export const chapter1: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.png`),
-          width: `50%`,
+          width: `40%`,
           align: `center`,
         },
       },
