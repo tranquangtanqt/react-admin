@@ -8,7 +8,7 @@ export const chapter3: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/clean-code/chapter-3_1.jpg`),
-          width: `40%`,
+          width: `35%`,
           align: `center`,
         },
       },
@@ -70,7 +70,7 @@ throws Exception {
                 String pagePathName = PathParser.render(pagePath);
                 buffer.append("!include -setup .")
                     .append(pagePathName)
-                    .append("\n");
+                    .append("\\n");
             }
         }
         WikiPage setup =
@@ -81,7 +81,7 @@ throws Exception {
             String setupPathName = PathParser.render(setupPath);
             buffer.append("!include -setup .")
                 .append(setupPathName)
-                .append("\n");
+                .append("\\n");
         }
     }
     buffer.append(pageData.getContent());
@@ -92,10 +92,10 @@ throws Exception {
             WikiPagePath tearDownPath =
                 wikiPage.getPageCrawler().getFullPath(teardown);
             String tearDownPathName = PathParser.render(tearDownPath);
-            buffer.append("\n")
+            buffer.append("\\n")
                 .append("!include -teardown .")
                 .append(tearDownPathName)
-                .append("\n");
+                .append("\\n");
         }
         if (includeSuiteSetup) {
             WikiPage suiteTeardown =
@@ -109,7 +109,7 @@ throws Exception {
                 String pagePathName = PathParser.render(pagePath);
                 buffer.append("!include -teardown .")
                     .append(pagePathName)
-                    .append("\n");
+                    .append("\\n");
             }
         }
     }
@@ -175,7 +175,7 @@ PageData pageData, boolean isSuite
       {
         image: {
           src: require(`resources/img/ebook/vn/clean-code/chapter-3_2.jpg`),
-          width: `40%`,
+          width: `35%`,
           align: `center`,
         },
       },
@@ -198,7 +198,7 @@ PageData pageData, boolean isSuite
       {
         image: {
           src: require(`resources/img/ebook/vn/clean-code/chapter-3_3.jpg`),
-          width: `40%`,
+          width: `35%`,
           align: `center`,
         },
       },
@@ -398,7 +398,7 @@ PageData pageData, boolean isSuite) throws Exception {
       {
         image: {
           src: require(`resources/img/ebook/vn/clean-code/chapter-3_4.jpg`),
-          width: `40%`,
+          width: `35%`,
           align: `center`,
         },
       },
@@ -716,58 +716,631 @@ public class EmployeeFactoryImpl implements EmployeeFactory {
         p: `<h6><b>Đối số luận lý</b></h6>`,
       },
       {
-        p: ``,
+        p: `“Việc chuyển một đối số boolean vào hàm là một cái gì đó rất khủng
+        khiếp. Nó ngay lập tức chỉ ra hàm của bạn đang là nhiều hơn một việc.
+        Một việc nó làm khi đối số đúng, và một việc được làm khi đối số sai”.
+        Tuy nhiên, không phải lúc nào việc này cũng tởm lợm như bạn nghĩ. Ở
+        một số trường hợp, việc này là hoàn toàn bình thường.`,
       },
       {
-        p: ``,
+        p: `<h6><b>HÀM CÓ HAI ĐỐI SỐ (DYADIC)</b></h6>`,
       },
       {
-        p: ``,
+        p: `Hàm có hai đối số sẽ khó hiểu hơn hàm có một đối số. Ví dụ 
+        <strong>writeField(name)</strong> sẽ dễ hiểu hơn 
+        <strong>writeField(output-Stream, name)</strong>. Mặc dù ý nghĩa của
+        cả hai đều như nhau, đều dễ hiểu khi lần đầu nhìn vào. Nhưng hàm thứ
+        hai yêu cầu bạn phải dừng lại, cho đến khi bạn học được cách bỏ qua
+        tham số đầu tiên. Và, dĩ nhiên, có một vấn đề khi bạn bỏ qua đoạn code
+        nào đó, thì khả năng đoạn code đó chứa lỗi là rất cao.`,
       },
       {
-        p: ``,
+        p: `Tất nhiên luôn có những lúc hai đối số sẽ hợp lý hơn một đối số. Ví
+        dụ:
+        <br />
+        <strong>Point p = new Point(0,0);</strong> là hoàn toàn hợp lý khi bạn
+        đang code về tọa độ mặt phẳng. Chúng tôi sẽ cảm thấy bối rối khi thấy 
+        <strong>new Point(0);</strong> trong trường hợp này.`,
       },
       {
-        p: ``,
+        p: `Ngay cả hàm dyadic rõ ràng như 
+        <strong>assertEquals(expected, actual)</strong> vẫn có vấn đề. Đã bao
+        nhiêu lần bạn nhầm lẫn vị trí giữa <strong>expected </strong>và 
+        <strong>actual</strong>? Hai đối số không có thứ tự tự nhiên. Thứ tự 
+        <strong>expected</strong>, <strong>actual </strong>là một quy ước đòi
+        hỏi bạn phải nhớ nó trong đầu.`,
       },
       {
-        p: ``,
+        p: `Những hàm dyadic không phải là những con quỷ dữ, và chắc chắn bạn phải
+        viết chúng.
+        <br />
+        Tuy nhiên bạn nên lưu ý rằng bạn sẽ phải trả giá cho việc đó, và nên
+        tận dụng tối đa những thủ thuật hay lợi thế có sẵn để chuyển chúng về
+        thành dạng monadic. Ví dụ, bạn có thể làm cho phương thức 
+        <strong>writeField </strong>trở thành một thành viên của 
+        <strong>outputStream </strong>để bạn có thể dùng lệnh 
+        <strong>outputStream.writeField(name)</strong>.`,
       },
       {
-        p: ``,
-      },
-    ],
-  },
-  {
-    title: '',
-    contents: [
-      {
-        p: ``,
+        p: `<h6><b>HÀM BA ĐỐI SỐ (TRIADIC)</b></h6>`,
       },
       {
-        p: ``,
+        p: `Hàm có ba đối số khó hiểu hơn nhiều so với hàm hai đối số. Các vấn đề
+        về sắp xếp, tạm ngừng và bỏ qua tăng gấp đôi. Tôi đề nghị bạn cẩn thận
+        trước khi tạo ra nó.`,
       },
       {
-        p: ``,
+        p: `[…]`,
       },
       {
-        p: ``,
+        p: `<h6><b>ĐỐI SỐ ĐỐI TƯỢNG</b></h6>`,
       },
       {
-        p: ``,
+        p: `Khi một hàm có vẻ cần nhiều hơn hai hoặc ba đối số, có khả năng một số
+        đối số đó phải được bao bọc thành một lớp riêng của chúng. Ví dụ, hãy
+        xem xét sự khác biệt giữa hai khai báo sau đây:`,
       },
-      {
-        p: ``,
-      },
-    ],
-  },
-
-  {
-    title: '',
-    contents: [
       {
         code: {
-          src: ``,
+          src: `Circle makeCircle(double x, double y, double radius);
+Circle makeCircle(Point center, double radius);`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Giảm số lượng các đối số bằng cách tạo ra các đối tượng có vẻ như gian
+        lận, nhưng không phải. Khi các nhóm biến được chuyển đổi cùng nhau,
+        như cách x và y ở ví dụ trên, chúng có khả năng là một phần của một
+        khái niệm xứng đáng có tên riêng.`,
+      },
+      {
+        p: `<strong>Danh sách đối số</strong>`,
+      },
+      {
+        p: `Đôi khi, chúng tôi muốn chuyển một số lượng đối số vào một hàm. Hãy
+        xem xét ví dụ về phương thức <strong>String.format</strong>:`,
+      },
+      {
+        code: {
+          src: `String.format("%s worked %.2f hours.", name, hours);`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Nếu tất cả các đối số được xử lý giống nhau, như ví dụ trên, thì tất
+        cả chúng tương đương với một đối số kiểu <strong>List</strong>. Bởi lý
+        do đó, <strong>String.format</strong> thực chất là một hàm có hai đối
+        số. Thật vậy, việc khai báo <strong>String.format</strong> như ví dụ
+        dưới đây rõ ràng là một hàm dyadic:`,
+      },
+      {
+        p: `<h6><b>ĐỘNG TỪ VÀ CÁC TỪ KHÓA</b></h6>`,
+      },
+      {
+        p: `Chọn tên tốt cho một hàm có thể góp phần giải thích ý định của hàm và
+        mục đích của các
+        <br />
+        đối số. Trong trường hợp hàm monadic, hàm và đối số nên tạo thành một
+        cặp động từ/danh từ hợp lý. <strong>write(name)</strong> là một ví dụ
+        hoàn hảo trong trường hợp này. Dù cái tên này là gì, nó cho chúng ta
+        biết nó được viết. Một cái tên tốt hơn có lẽ là 
+        <strong>writeField(name)</strong>, nó cho chúng ta biết rằng tên là
+        một trường.`,
+      },
+      {
+        p: ` Cuối cùng là một ví dụ về dạng từ khóa của tên hàm. Bằng cách này,
+        chúng tôi mã hóa
+        <br />
+        tên của các đối số thành tên hàm. Ví dụ, <strong>
+          assertEquals
+        </strong> 
+        có thể được cải tiến thành 
+        <strong>assertExpectedEqualsActual(expected, actual)</strong>. Điều
+        này làm giảm vấn đề về việc nhớ vị trí của các đối số.`,
+      },
+    ],
+  },
+  {
+    title: 'Không có tác dụng phụ',
+    contents: [
+      {
+        p: `Tác dụng phụ (hay hiệu ứng lề) là một sự lừa dối. Hàm của bạn được hy
+        vọng sẽ làm một việc, nhưng nó cũng làm những việc khác mà bạn không
+        thấy. Đôi khi nó bất ngờ làm thay đổi giá trị biến của lớp của nó.
+        Hoặc nó sẽ biến chúng thành các tham số được truyền vào hàm, hoặc các
+        hàm toàn cục. Trong cả hai trường hợp, chúng tạo ra các sai lầm và làm
+        sai kết quả.`,
+      },
+      {
+        p: `Hãy xem xét hàm trong ví dụ dưới đây. Hàm này sử dụng thuật toán để
+        kiểm tra <strong>userName </strong>và <strong>password</strong>. Nó
+        trả về <strong>true </strong>nếu chúng khớp và trả về 
+        <strong>false </strong>nếu có gì sai. Nhưng nó cũng có tác dụng phụ.
+        Bạn phát hiện ra nó chứ?`,
+      },
+      {
+        p: `Listing 3-6: <strong>UserValidator.java</strong>`,
+      },
+      {
+        code: {
+          src: `public class UserValidator {
+    private Cryptographer cryptographer;
+    public boolean checkPassword(String userName, String password) {
+        User user = UserGateway.findByName(userName);
+        if (user != User.NULL) {
+            String codedPhrase = user.getPhraseEncodedByPassword();
+            String phrase = cryptographer.decrypt(codedPhrase, password);
+            if ("Valid Password".equals(phrase)) {
+                Session.initialize();
+                return true;
+            }
+        }
+        return false;
+    }
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Tác dụng phụ ở đây là lời gọi hàm 
+        <strong>Session.initialize()</strong>. Hàm 
+        <strong>checkPassword</strong>, theo cách đặt tên của nó, nói rằng nó
+        chỉ kiểm tra mật khẩu. Tên hàm không thông báo rằng nó khởi tạo
+        session (Tìm hiểu thêm: 
+        <a href="https://en.wikipedia.org/wiki/Session_(computer_science)">
+          https://en.wikipedia.org/wiki/Session_(computer_science)
+        </a>
+        ). Vậy nên khi ai đó dùng hàm này, họ tin rằng mình chỉ kiểm tra tính
+        hợp lệ của người dùng mà không biết dữ liệu của session hiện tại có
+        nguy cơ bị mất.`,
+      },
+      {
+        p: `Tác dụng phụ này tạo ra một mắt xích về thời gian. Đó là, 
+        <strong>checkPassword </strong>chỉ được gọi vào những thời điểm nhất
+        định (nói cách khác, khi nó an toàn để khởi tạo session). Nếu được gọi
+        lung tung, dữ liệu của session có thể vô tình bị mất. Mắt xích tạm
+        thời này gây khó hiểu, đặc biệt là nó lúc ẩn lúc hiện. Nếu bạn có một
+        mắt xích như vậy, bạn nên làm nó hiện rõ trong tên hàm. Trong trường
+        hợp này, chúng ta có thể đổi tên hàm thành 
+        <strong>checkPasswordAndInitializeSession</strong>, mặc dù chắc chắn
+        hàm này vi phạm nguyên tắc “Làm một việc”.`,
+      },
+      {
+        p: `<h6><b>ĐỐI SỐ ĐẦU RA</b></h6>`,
+      },
+      {
+        p: `[…]`,
+      },
+      {
+        p: `Nói chung chúng ta nên tránh các đối số đầu ra (ví dụ các đối số dạng
+          ref, out trong c#). Nếu hàm của bạn phải thay đổi trạng thái của một
+          cái gì đó, hãy thay đổi trạng thái của đối tượng sở hữu nó.`,
+      },
+    ],
+  },
+  {
+    title: 'Tách lệnh truy vấn',
+    contents: [
+      {
+        p: `Hàm nên làm một cái gì đó hoặc trả lời một cái gì đó, nhưng không phải
+        cả hai. Hoặc là hàm của bạn thay đổi trạng thái của một đối tượng,
+        hoặc nó sẽ trả về một số thông tin về đối tượng đó. Làm cả hai thường
+        gây nên sự nhầm lẫn. Xem xét hàm ví dụ sau:`,
+      },
+      {
+        code: {
+          src: `public boolean set(String attribute, String value);`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Hàm này đặt giá trị cho thuộc tính nếu thuộc tính đó tồn tại. Nó trả
+        về <strong>true </strong>nếu thành công, và <strong>false </strong>nếu
+        thất bại. Điều này dẫn đến các câu lệnh lẻ như sau:`,
+      },
+      {
+        code: {
+          src: `if (set("username", "unclebob"))...`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Hãy tưởng tượng điều này từ quan điểm của người đọc. Nó có nghĩa là
+        gì? Nó hỏi thuộc tính <strong>“username”</strong> đã được đặt thành
+        <strong> “unclebob”</strong> chưa? Hay nó hỏi thuộc tính 
+        <strong>“username”</strong> trước đó có giá trị là 
+        <strong>“unclebob”</strong>? Thật khó để suy ra ý nghĩa của hàm vì
+        không rõ từ <strong>“set”</strong> là động từ hay tính từ.`,
+      },
+      {
+        p: `Dự định của tác giả là đặt set trở thành một động từ, nhưng trong ngữ
+        cảnh của câu lệnh <strong>if</strong>, nó mang đến cảm giác như một
+        tính từ […]. Chúng tôi thử giải quyết vấn đề này bằng cách đổi tên hàm
+        đã đặt thành <strong>setAndCheckIfExists</strong>, nhưng điều đó không
+        giúp ích gì nhiều trong ngữ cảnh của câu lệnh <strong>if</strong>.
+        Giải pháp thực sự là tách lệnh khỏi truy vấn sao cho sự nhầm lẫn không
+        thể xảy ra.`,
+      },
+      {
+        code: {
+          src: `if (attributeExists("username")) {
+    setAttribute("username", "unclebob"); 
+    ... 
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `[…]`,
+      },
+    ],
+  },
+  {
+    title: 'Ưu tiên các trường hợp ngoại lệ để return mã lỗi',
+    contents: [
+      {
+        p: `Return mã lỗi từ các hàm lệnh là một vi phạm tinh vi trong việc phân
+        tách truy vấn lệnh. Nó thúc đẩy các lệnh được sử dụng làm biểu thức
+        trong các vị từ của câu lệnh <strong>if</strong>.`,
+      },
+      {
+        code: {
+          src: `if (deletePage(page) == E_OK)`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Điều này không gây nhầm lẫn động từ/tính từ nhưng dẫn đến cấu trúc
+        lồng nhau. Khi bạn trả về một mã lỗi, bạn tạo ra vấn đề mà nơi gọi
+        phải xử lý lỗi ngay lập tức.`,
+      },
+      {
+        code: {
+          src: `if (deletePage(page) == E_OK) {
+    if (registry.deleteReference(page.name) == E_OK) {
+        if (configKeys.deleteKey(page.name.makeKey()) == E_OK){
+            logger.log("page deleted");
+        } else {
+            logger.log("configKey not deleted");
+        }
+    } else {
+        logger.log("deleteReference from registry failed");
+    }
+} else {
+    logger.log("delete failed");
+    return E_ERROR;
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Mặt khác, nếu bạn sử dụng các ngoại lệ thay vì các mã lỗi trả về, thì
+        mã xử lý lỗi có thể được tách ra khỏi luồng code và có thể được đơn
+        giản hóa:`,
+      },
+      {
+        code: {
+          src: `try {
+    deletePage(page);
+    registry.deleteReference(page.name);
+    configKeys.deleteKey(page.name.makeKey());
+}
+catch (Exception e) {
+    logger.log(e.getMessage());
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `<h6><b>GIẢI NÉN KHỐI TRY/CATCH</b></h6>`,
+      },
+      {
+        p: `Các khối <strong>try/catch</strong> là <strong>xấu </strong>theo đúng
+        nghĩa của chúng. Chúng nhầm lẫn cấu trúc của code và trộn lẫn xử lý
+        lỗi với xử lý thông thường. Vì vậy, tốt hơn là trích xuất phần thân
+        của khối <strong>try</strong> và <strong>catch </strong>thành các chức
+        năng của riêng chúng.`,
+      },
+      {
+        code: {
+          src: `public void delete(Page page) {
+    try {
+        deletePageAndAllReferences(page);
+    }
+    catch (Exception e) {
+        logError(e);
+    }
+}
+private void deletePageAndAllReferences(Page page) throws Exception {
+    deletePage(page);
+    registry.deleteReference(page.name);
+    configKeys.deleteKey(page.name.makeKey());
+}
+private void logError(Exception e) {
+    logger.log(e.getMessage());
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Ở trên, chức năng xóa là tất cả về xử lý lỗi. Dễ hiểu rồi bỏ qua. Chức
+        năng <strong>deletePageAndAllRefferences </strong>là tất cả về quá
+        trình xóa hoàn toàn một trang. Xử lý lỗi có thể được bỏ qua. Điều này
+        cung cấp một sự tách biệt tốt giúp code dễ hiểu và dễ sửa đổi hơn.`,
+      },
+      {
+        p: `<h6><b>XỬ LÝ LỖI MỘT LẦN</b></h6>`,
+      },
+      {
+        p: `Các hàm chỉ nên làm một việc. Xử lý lỗi là một lần. Vì vậy, một chức
+        năng xử lý lỗi không nên làm gì khác. Điều này ngụ ý (như trong ví dụ
+        trên) rằng nếu từ khóa <strong>try </strong>tồn tại trong một hàm, nó
+        phải là từ đầu tiên trong hàm và không được có gì khác sau các khối 
+        <strong>catch/ final</strong>.`,
+      },
+      {
+        p: `<h6><b>ERROR.JAVA DEPENDENCY MAGNET</b></h6>`,
+      },
+      {
+        p: `Việc trả về mã lỗi thường ngụ ý rằng có một số lớp hoặc enum trong đó
+        tất cả các mã lỗi được định nghĩa.`,
+      },
+      {
+        code: {
+          src: `public enum Error {
+    OK,
+    INVALID,
+    NO_SUCH,
+    LOCKED,
+    OUT_OF_RESOURCES,
+    WAITING_FOR_EVENT;
+}`,
+          language: 'java',
+        },
+      },
+      {
+        p: `Các lớp như thế này là 
+        <strong>
+          <em>dependency magnet</em>
+        </strong>
+        ; nhiều lớp khác phải import và sử dụng chúng. Do đó, khi Error enum
+        thay đổi, tất cả các lớp khác cần được biên dịch lại và triển khai
+        lại. Điều này gây áp lực tiêu cực lên lớp <strong>Error</strong>. Các
+        lập trình viên không muốn thêm lỗi mới vì sau đó họ phải xây dựng lại
+        và triển khai lại mọi thứ. Vì vậy, họ sử dụng lại các mã lỗi cũ thay
+        vì thêm các mã mới.
+        <br />
+        Khi bạn sử dụng các ngoại lệ thay vì mã lỗi, thì các ngoại lệ mới là
+        các dẫn xuất (lớp con kế thừa) của lớp ngoại lệ. Chúng có thể được
+        thêm vào mà không buộc phải biên dịch lại hoặc triển khai lại.`,
+      },
+    ],
+  },
+  {
+    title: 'Đừng lặp lại code của bạn',
+    contents: [
+      {
+        p: `Xem xét lại <strong>Listing 3-1</strong> một cách cẩn thận, bạn sẽ
+        nhận thấy rằng có một thuật toán được lặp lại bốn lần. Mỗi lần cho mỗi
+        trường hợp <strong>SetUp</strong>, <strong>SuiteSetUp</strong>, 
+        <strong>TearDown</strong>, và <strong>SuiteTearDown</strong>. Không dễ
+        dàng để phát hiện ra sự trùng lặp này vì cả bốn trường hợp code được
+        trộn lẫn với code khác, và sự sao chép là không thống nhất. Tuy nhiên,
+        việc trùng lặp code như vậy là một vấn đề, vì nó làm code của bạn
+        phình to ra và khi cần sửa đổi, bạn sẽ phải sửa đổi bốn lần. Điều đó
+        cũng đồng nghĩa với việc nguy cơ xuất hiện lỗi là bốn lần.`,
+      },
+      {
+        p: `Vấn đề này được khắc phục bằng phương thức <strong>include </strong>
+        trong <strong>Listing 3-7</strong>. Đọc lại code một lần nữa và bạn sẽ
+        thấy khả năng đọc của toàn bộ mô-đun được tăng lên chỉ bằng cách giảm
+        sự trùng lặp đó.`,
+      },
+      {
+        p: `Sự trùng lặp có lẽ là gốc rễ của mọi tội lỗi trong lập trình. Nhiều
+        nguyên tắc và kinh nghiệm đã được tạo ra cho mục đích kiểm soát hoặc
+        loại bỏ nó. Lập trình cấu trúc, lập trình hướng đối tượng (OOP), lập
+        trình hướng khía cạnh (Aspect Oriented Programming – AOP), lập trình
+        hướng thành phần (Component Oriented Programming – COP), tất cả chúng
+        đều có chiến lược để loại bỏ code trùng lặp. Nó chứng minh rằng kể từ
+        khi chương trình con được phát minh, các sáng kiến trong ngành công
+        nghiệp phát triển phần mềm đều nhắm đến việc loại bỏ những đoạn code
+        trùng lặp ra khỏi mã nguồn.`,
+      },
+    ],
+  },
+  {
+    title: 'Lập trình có cấu trúc',
+    contents: [
+      {
+        p: `Một số lập trình viên đi theo nguyên tắc lập trình có cấu trúc của
+        Edsger Dijkstra. Dijkstra nói rằng mọi hàm, và mọi khối trong hàm nên
+        có một lối vào (entry) và một lối thoát (exit). Điều đó có nghĩa là
+        chỉ nên có một lệnh <strong>return </strong>trong hàm, không có câu
+        lệnh <strong>break</strong>, <strong>continue </strong>trong một vòng
+        lặp; và không bao giờ dùng bất kỳ câu lệnh <strong>goto </strong>nào.`,
+      },
+      {
+        p: `Chúng tôi thông cảm với các nguyên tắc và mục tiêu của lập trình cấu
+        trúc, nhưng các nguyên tắc này chỉ mang lại một chút lợi ích khi các
+        hàm bạn viết rất nhỏ. Ở các hàm lớn hơn, lợi ích mà nó mang lại thật
+        sự là không đáng kể.`,
+      },
+      {
+        p: `Vậy nên nếu bạn có thể tiếp tục giữ cho các hàm của mình nhỏ, thì việc
+        sử dụng các câu lệnh <strong>return</strong>, <strong>break </strong>
+        hay <strong>continue </strong>là vô hại và đôi khi nó còn giúp hàm của
+        bạn rõ ràng hơn nguyên tắc một lối vào, một lối thoát. Mặt khác, lệnh 
+        <strong>goto </strong>chỉ có ý nghĩa trong các hàm lớn, vì vậy nên
+        tránh sử dụng nó.`,
+      },
+    ],
+  },
+  {
+    title: 'Tôi đã viết các hàm này như thế nào?',
+    contents: [
+      {
+        p: `Viết phần mềm cũng giống như viết các thể loại khác. Khi bạn viết một
+        bài báo hay một văn kiện, bạn sẽ suy nghĩ trước, sau đó bạn nhào nặn
+        nó cho đến khi nó trở nên mạch lạc, trơn tru. Các bản thảo ban đầu có
+        thể vụng về và rời rạc, vì vậy bạn vứt nó vào sọt rác và tái cơ cấu
+        nó, tinh chỉnh nó cho đến khi nó được đọc theo cách mà bạn muốn.`,
+      },
+      {
+        p: `Khi tôi bắt đầu viết các hàm, chúng dài và phức tạp. Chúng có rất
+        nhiều vòng lặp lồng nhau, chúng có hàng tá đối số. Các tên được đặt
+        tùy ý, và tồn tại nhiều code trùng lặp. Nhưng tôi cũng có một bộ unit
+        test để đảm bảo cho tất cả những dòng code vụng về đó.`,
+      },
+      {
+        p: `Và sau đó, tôi thay đổi và tinh chỉnh lại code đó, tách ra thành các
+        hàm, đặt lại tên và loại bỏ code trùng lặp. Tôi thu nhỏ phương thức và
+        sắp xếp lại chúng. Đôi khi tôi <em>đập tan nát</em> một lớp, trong khi
+        vẫn giữ lại các bài test đã hoàn thành.`,
+      },
+      {
+        p: `Cuối cùng, các hàm tôi hoàn thành đã tuân theo các nguyên tắc tôi đặt
+        ra trong chương này. Tôi không tuân theo các nguyên tắc tôi đặt ra để
+        bắt đầu viết nó, điều đó là không thể.`,
+      },
+    ],
+  },
+  {
+    title: 'Kết luận',
+    contents: [
+      {
+        p: `Mỗi hệ thống được xây dựng từ một DSL được thiết kế và mô tả bởi các
+        lập trình viên. Các hàm là một động từ, và các lớp là một danh từ […].
+        Nghệ thuật lập trình, dĩ nhiên, luôn là nghệ thuật sử dụng ngôn ngữ.`,
+      },
+      {
+        p: `Các lập trình viên tài năng xem các hệ thống như những câu chuyện kể,
+        chứ không phải là các chương trình được viết. Họ sử dụng khả năng của
+        ngôn ngữ lập trình mà họ chọn để diễn đạt <em>câu chuyện</em> phong
+        phú hơn và giàu cảm xúc hơn. Một phần của các DSL là cấu trúc phân cấp
+        của các hàm mô tả hành động diễn ra trong hệ thống đó. Và các hàm được
+        định nghĩa để nói lên câu chuyện của riêng mình.`,
+      },
+      {
+        p: `Chương này đã chỉ cho bạn về cách viết tốt các hàm. Nếu bạn tuân thủ
+        các nguyên tắc trên, các hàm của bạn sẽ ngắn gọn, được đặt tên và được
+        tổ chức tốt. Nhưng đừng bao giờ quên rằng mục tiêu của bạn là kể một
+        câu chuyện về hệ thống, và các hàm bạn viết cần ăn khớp với nhau một
+        cách rõ ràng và chính xác để giúp bạn hoàn thành việc đó.`,
+      },
+      {
+        p: `<strong>SetupTeardownIncluder</strong>`,
+      },
+      {
+        p: `Listing 3-7: <strong>SetupTeardownIncluder.java</strong>`,
+      },
+      {
+        code: {
+          src: `package fitnesse.html;
+import fitnesse.responders.run.SuiteResponder;
+import fitnesse.wiki.*;
+public class SetupTeardownIncluder {
+    private PageData pageData;
+    private boolean isSuite;
+    private WikiPage testPage;
+    private StringBuffer newPageContent;
+    private PageCrawler pageCrawler;
+    public static String render(PageData pageData) throws Exception {
+        return render(pageData, false);
+    }
+  
+    public static String render(PageData pageData, boolean isSuite)
+    throws Exception {
+        return new SetupTeardownIncluder(pageData).render(isSuite);
+    }
+  
+    private SetupTeardownIncluder(PageData pageData) {
+        this.pageData = pageData;
+        testPage = pageData.getWikiPage();
+        pageCrawler = testPage.getPageCrawler();
+        newPageContent = new StringBuffer();
+    }
+  
+    private String render(boolean isSuite) throws Exception {
+        this.isSuite = isSuite;
+        if (isTestPage())
+            includeSetupAndTeardownPages();
+        return pageData.getHtml();
+    }
+  
+    private boolean isTestPage() throws Exception {
+        return pageData.hasAttribute("Test");
+    }
+  
+    private void includeSetupAndTeardownPages() throws Exception {
+        includeSetupPages();
+        includePageContent();
+        includeTeardownPages();
+        updatePageContent();
+    }
+  
+    private void includeSetupPages() throws Exception {
+        if (isSuite)
+            includeSuiteSetupPage();
+        includeSetupPage();
+    }
+  
+    private void includeSuiteSetupPage() throws Exception {
+        include(SuiteResponder.SUITE_SETUP_NAME, "-setup");
+    }
+  
+    private void includeSetupPage() throws Exception {
+        include("SetUp", "-setup");
+    }
+  
+    private void includePageContent() throws Exception {
+        newPageContent.append(pageData.getContent());
+    }
+  
+    private void includeTeardownPages() throws Exception {
+        includeTeardownPage();
+        if (isSuite)
+            includeSuiteTeardownPage();
+    }
+  
+    private void includeTeardownPage() throws Exception {
+        include("TearDown", "-teardown");
+    }
+  
+    private void includeSuiteTeardownPage() throws Exception {
+        include(SuiteResponder.SUITE_TEARDOWN_NAME, "-teardown");
+    }
+  
+    private void updatePageContent() throws Exception {
+        pageData.setContent(newPageContent.toString());
+    }
+  
+    private void include(String pageName, String arg) throws Exception {
+        WikiPage inheritedPage = findInheritedPage(pageName);
+        if (inheritedPage != null) {
+            String pagePathName = getPathNameForPage(inheritedPage);
+            buildIncludeDirective(pagePathName, arg);
+        }
+    }
+  
+    private WikiPage findInheritedPage(String pageName) throws Exception {
+        return PageCrawlerImpl.getInheritedPage(pageName, testPage);
+    }
+  
+    private String getPathNameForPage(WikiPage page) throws Exception {
+        WikiPagePath pagePath = pageCrawler.getFullPath(page);
+        return PathParser.render(pagePath);
+    }
+  
+    private void buildIncludeDirective(String pagePathName, String arg) {
+        newPageContent
+        .append("\\n!include ")
+        .append(arg)
+        .append(" .")
+        .append(pagePathName)
+        .append("\\n");
+    }
+}`,
           language: 'java',
         },
       },
@@ -776,6 +1349,32 @@ public class EmployeeFactoryImpl implements EmployeeFactory {
   {
     title: 'Tham khảo',
     contents: [
+      {
+        p: `<strong>[KP78]:</strong> Kernighan and Plaugher,{' '}
+        <em>The Elements of Programming Style</em>, 2d. ed., McGrawHill, 1978.`,
+      },
+      {
+        p: `<strong>[PPP02]:</strong> Robert C. Martin,{' '}
+        <em>
+          Agile Software Development: Principles, Patterns, and Practices
+        </em>
+        , Prentice Hall, 2002.`,
+      },
+      {
+        p: `<strong>[GOF]:</strong>{' '}
+        <em>
+          Design Patterns: Elements of Reusable Object Oriented Software
+        </em>
+        , Gamma et al., Addison-Wesley, 1996.`,
+      },
+      {
+        p: `<strong>[PRAG]:</strong> <em>The Pragmatic Programmer</em>, Andrew
+        Hunt, Dave Thomas, Addison-Wesley, 2000.`,
+      },
+      {
+        p: `<strong>[SP72]:</strong> <em>Structured Programming</em>, O.-J. Dahl,
+        E. W. Dijkstra, C. A. R. Hoare, Academic Press, London, 1972.`,
+      },
       {
         p: `Nguồn bài dịch: <b>NQT-K4DNC</b>`,
       },

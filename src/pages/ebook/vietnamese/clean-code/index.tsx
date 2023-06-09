@@ -6,6 +6,7 @@ import cleanCodeChapter from './_chapter';
 import { chapter1 } from './chapter-1';
 import { chapter2 } from './chapter-2';
 import { chapter3 } from './chapter-3';
+import { chapter4 } from './chapter-4';
 
 export const EbookVietnameseCleanCode = () => {
   const params = useParams();
@@ -22,6 +23,9 @@ export const EbookVietnameseCleanCode = () => {
     case '3':
       data = chapter3;
       break;
+    case '4':
+      data = chapter4;
+      break;
   }
 
   return (
@@ -30,9 +34,6 @@ export const EbookVietnameseCleanCode = () => {
       <PageContent content={data}></PageContent>
       <div className="tab-1">
         <p></p>
-
-        <p></p>
-
         <p></p>
 
         <p></p>
