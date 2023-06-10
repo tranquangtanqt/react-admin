@@ -7,6 +7,13 @@ import { chapter1 } from './chapter-1';
 import { chapter2 } from './chapter-2';
 import { chapter3 } from './chapter-3';
 import { chapter4 } from './chapter-4';
+import { chapter5 } from './chapter-5';
+import { chapter6 } from './chapter-6';
+import { chapter7 } from './chapter-7';
+import { chapter8 } from './chapter-8';
+import { chapter9 } from './chapter-9';
+import { chapter10 } from './chapter-10';
+import { chapter11 } from './chapter-11';
 
 export const EbookVietnameseCleanCode = () => {
   const params = useParams();
@@ -26,6 +33,27 @@ export const EbookVietnameseCleanCode = () => {
     case '4':
       data = chapter4;
       break;
+    case '5':
+      data = chapter5;
+      break;
+    case '6':
+      data = chapter6;
+      break;
+    case '7':
+      data = chapter7;
+      break;
+    case '8':
+      data = chapter8;
+      break;
+    case '9':
+      data = chapter9;
+      break;
+    case '10':
+      data = chapter10;
+      break;
+    case '11':
+      data = chapter11;
+      break;
   }
 
   return (
@@ -33,11 +61,6 @@ export const EbookVietnameseCleanCode = () => {
       <PageTitle title={title}></PageTitle>
       <PageContent content={data}></PageContent>
       <div className="tab-1">
-        <p></p>
-        <p></p>
-
-        <p></p>
-
         <p></p>
       </div>
     </>

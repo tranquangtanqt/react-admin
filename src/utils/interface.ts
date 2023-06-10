@@ -3,6 +3,7 @@ export default interface IContent {
   no?: boolean;
   contents: {
     p?: string;
+    div?: string;
     i?: string;
     b?: string;
     code?: {

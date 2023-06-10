@@ -47,15 +47,11 @@ export const chapter3: IContent[] = [
           language: 'java',
         },
       },
-
       {
         p: `<h6><b></b></h6>`,
       },
       {
-        p: `<h6><b></b></h6>`,
-      },
-      {
-        p: `<h6><b></b></h6>`,
+        p: `<p class="text-center"><small></small></p>`,
       },
     ],
   },

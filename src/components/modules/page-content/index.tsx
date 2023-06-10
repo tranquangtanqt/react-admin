@@ -24,6 +24,11 @@ export const PageContent: React.FC<Props> = ({ content }) => {
             {dataVal.contents.map((content, contentKey) => (
               <Fragment key={contentKey}>
                 <div className="tab-1">
+                  {content.div && (
+                    <div
+                      dangerouslySetInnerHTML={{ __html: content.div }}
+                    ></div>
+                  )}
                   {content.p && (
                     <p dangerouslySetInnerHTML={{ __html: content.p }}></p>
                   )}
