@@ -1,0 +1,6 @@
+
+
+
+
+<p>Xem toàn bộ bài dịch <a href="https://toihocdesignpattern.com/dich-sach/head-first-design-patterns">ở đây</a>!<br>Đính kèm bản gốc của quyển sách ở đây:&nbsp;<a rel="noreferrer noopener" href="https://drive.google.com/file/d/14lMY_ot5FHgX7aOR9YiVjR2iD1DdJ6hZ/view?usp=sharing" target="_blank">Head First Design Patterns</a>.<br>Đính kèm sourcecode của sách ở đây:&nbsp;<a rel="noreferrer noopener" href="https://resources.oreilly.com/examples/9780596007126" target="_blank">Tải SourceCode</a>.  </p>
+<div class="yarpp yarpp-related yarpp-related-website yarpp-template-list">

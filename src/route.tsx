@@ -164,6 +164,7 @@ import { JavaArrayArgument } from 'pages/programming/java/array/argument';
 import { SampleContentPage } from 'pages/sample/content-page';
 import { EbookVietnamese } from 'pages/ebook/vietnamese';
 import { EbookVietnameseCleanCode } from 'pages/ebook/vietnamese/clean-code';
+import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
 
 export const RoutesRoot = () => {
   return (
@@ -196,6 +197,7 @@ export const RoutesRoot = () => {
           <Route path="/ebook/english" element={<EbookVietnamese />} />
           <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
           <Route path="/ebook/vietnamese/clean-code/:chapter" element={<EbookVietnameseCleanCode />} />
+          <Route path="/ebook/vietnamese/head-first-design-patterns/:chapter" element={<EbookVietnameseHeadFirstDesignPatterns />} />
 
           <Route path="/programming-batch" element={<ProgrammingBatch />} />
           <Route path="/programming-batch/if-else" element={<BatchIfElse />} />

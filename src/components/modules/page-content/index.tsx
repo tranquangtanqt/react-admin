@@ -39,22 +39,24 @@ export const PageContent: React.FC<Props> = ({ content }) => {
                     />
                   )}
                   {content.image && (
-                    <input
-                      type="image"
-                      src={content.image.src}
-                      className={
-                        'img-thumbnail' +
-                        (content.image.align === 'left'
-                          ? 'rounded float-start'
-                          : content.image.align === 'center'
-                          ? 'rounded mx-auto d-block'
-                          : content.image.align === 'right'
-                          ? 'rounded float-end'
-                          : '')
-                      }
-                      width={content.image.width ? content.image.width : ''}
-                      alt=""
-                    />
+                    <div className="clearfix">
+                      <input
+                        type="image"
+                        src={content.image.src}
+                        className={
+                          'img-thumbnail ' +
+                          (content.image.align === 'left'
+                            ? 'rounded float-start'
+                            : content.image.align === 'center'
+                            ? 'rounded mx-auto d-block'
+                            : content.image.align === 'right'
+                            ? 'rounded float-end'
+                            : '')
+                        }
+                        width={content.image.width ? content.image.width : ''}
+                        alt=""
+                      />
+                    </div>
                   )}
                 </div>
               </Fragment>
