@@ -7,7 +7,7 @@ export const chapter3: IContent[] = [
     contents: [
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-4_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -22,7 +22,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -32,7 +32,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -42,7 +42,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -52,7 +52,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -70,7 +70,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -80,7 +80,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -90,7 +90,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -100,7 +100,7 @@ export const chapter3: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/clean-code/chapter-1_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-1_1.jpg`),
           width: `35%`,
           align: `center`,
         },
@@ -125,6 +125,9 @@ export const chapter3: IContent[] = [
       },
       {
         p: `<p class="text-center"><small></small></p>`,
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
