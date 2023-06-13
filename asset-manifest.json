@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.1b869f7c.css",
-    "main.js": "/react-admin/static/js/main.2e114041.js",
+    "main.js": "/react-admin/static/js/main.00ca6b90.js",
     "static/media/chapter-3_3.jpg": "/react-admin/static/media/chapter-3_3.10dc9df2433b4bd331a5.jpg",
     "static/media/chapter-3_4.jpg": "/react-admin/static/media/chapter-3_4.bd6420cbd1151e46d87b.jpg",
     "static/media/chapter-10_1.png": "/react-admin/static/media/chapter-10_1.53e7abc30dea94379cfc.png",
@@ -228,13 +228,14 @@
     "static/media/15.jpg": "/react-admin/static/media/15.b2974b2efda88c031363.jpg",
     "static/media/chapter-1_25.png": "/react-admin/static/media/chapter-1_25.d225a3df434b8bf37920.png",
     "static/media/chapter-11_5.jpeg": "/react-admin/static/media/chapter-11_5.32930593a104a3c80932.jpeg",
+    "static/media/postgresql_4.png": "/react-admin/static/media/postgresql_4.fc742b871a4dc79d523c.png",
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.1b869f7c.css.map": "/react-admin/static/css/main.1b869f7c.css.map",
-    "main.2e114041.js.map": "/react-admin/static/js/main.2e114041.js.map"
+    "main.00ca6b90.js.map": "/react-admin/static/js/main.00ca6b90.js.map"
   },
   "entrypoints": [
     "static/css/main.1b869f7c.css",
-    "static/js/main.2e114041.js"
+    "static/js/main.00ca6b90.js"
   ]
 }
