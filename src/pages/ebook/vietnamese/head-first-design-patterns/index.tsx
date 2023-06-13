@@ -2,9 +2,9 @@ import { PageTitle } from 'components/modules/page-title';
 import { useParams } from 'react-router-dom';
 import IContent from 'utils/interface';
 import { PageContent } from 'components/modules/page-content';
-import headFirstDesignPatternsChapter from './_chapter';
-import { chapter1 } from './chapter-1';
-import { chapter2 } from './chapter-2';
+import headFirstDesignPatternsChapter from './data/_chapter';
+import { chapter1 } from './data/chapter-1';
+import { chapter2 } from './data/chapter-2';
 
 export const EbookVietnameseHeadFirstDesignPatterns = () => {
   const params = useParams();
