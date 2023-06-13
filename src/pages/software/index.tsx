@@ -4,7 +4,7 @@ import { PageTitle } from 'components/modules/page-title';
 export const Software = () => {
   const cardData = [
     {
-      title: 'Visua Studio Code',
+      title: 'Visual Studio Code',
       links: [
         {
           text: 'Extention',
@@ -13,6 +13,15 @@ export const Software = () => {
         {
           text: 'Add hotkey',
           path: '/software/visual-studio-code/add-hotkey',
+        },
+      ],
+    },
+    {
+      title: 'Docker',
+      links: [
+        {
+          text: 'Chạy Postgresql trong Docker container',
+          path: '/software/docker/postgresql',
         },
       ],
     },

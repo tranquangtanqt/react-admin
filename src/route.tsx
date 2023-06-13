@@ -165,6 +165,7 @@ import { SampleContentPage } from 'pages/sample/content-page';
 import { EbookVietnamese } from 'pages/ebook/vietnamese';
 import { EbookVietnameseCleanCode } from 'pages/ebook/vietnamese/clean-code';
 import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
+import { SoftwareDockerPostgresql } from 'pages/software/docker/postgresql';
 
 export const RoutesRoot = () => {
   return (
@@ -243,6 +244,7 @@ export const RoutesRoot = () => {
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/add-hotkey" element={<VisualStudioCodeAddHotkey />} />
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
+          <Route path="/software/docker/postgresql" element={<SoftwareDockerPostgresql />} />
 
           <Route path="/tutorial/java" element={<TutorialJava />} />
           <Route path="/tutorial/java/lesson1" element={<TutorialJavaLesson1 />} />
