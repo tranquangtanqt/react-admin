@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.1b869f7c.css",
-    "main.js": "/react-admin/static/js/main.00ca6b90.js",
+    "main.js": "/react-admin/static/js/main.e45ee46d.js",
     "static/media/chapter-3_3.jpg": "/react-admin/static/media/chapter-3_3.10dc9df2433b4bd331a5.jpg",
     "static/media/chapter-3_4.jpg": "/react-admin/static/media/chapter-3_4.bd6420cbd1151e46d87b.jpg",
     "static/media/chapter-10_1.png": "/react-admin/static/media/chapter-10_1.53e7abc30dea94379cfc.png",
@@ -134,6 +134,7 @@
     "static/media/2023-01-30 22 41 26.jpg": "/react-admin/static/media/2023-01-30 22 41 26.ea8ceb1426a7c376d900.jpg",
     "static/media/2023-01-30 22 42 00.jpg": "/react-admin/static/media/2023-01-30 22 42 00.f8ee1d264bee3748c54f.jpg",
     "static/media/chapter-2_6.png": "/react-admin/static/media/chapter-2_6.adb2610636bfa062e0c4.png",
+    "static/media/sql-server-3.png": "/react-admin/static/media/sql-server-3.ba0a16e1747a6c501de0.png",
     "static/media/chapter-1_30.png": "/react-admin/static/media/chapter-1_30.f92b765a7771a813fcc4.png",
     "static/media/chapter-1_9.png": "/react-admin/static/media/chapter-1_9.f8a00b21857131e7a429.png",
     "static/media/chapter-1_11.png": "/react-admin/static/media/chapter-1_11.9036f6da48529feaa938.png",
@@ -153,6 +154,7 @@
     "static/media/9.jpg": "/react-admin/static/media/9.82f3d3be11230d16f1cb.jpg",
     "static/media/the-password-has-expired-oracle_2.jpg": "/react-admin/static/media/the-password-has-expired-oracle_2.ad7f9de7732c771450e4.jpg",
     "static/media/chapter-1_39.png": "/react-admin/static/media/chapter-1_39.27238d4a4cc100c7000b.png",
+    "static/media/sql-server-2.png": "/react-admin/static/media/sql-server-2.c93e57f50e37465e3dfc.png",
     "static/media/chapter-6_1.png": "/react-admin/static/media/chapter-6_1.e1a01ee9192e9ca76dde.png",
     "static/media/Trich_9.jpg": "/react-admin/static/media/Trich_9.1e0e7f7d3b32f01586ad.jpg",
     "static/media/10.jpg": "/react-admin/static/media/10.ca5e511bdf3924109cff.jpg",
@@ -176,10 +178,12 @@
     "static/media/chapter-1_19.png": "/react-admin/static/media/chapter-1_19.12bc09c45bcd90914f16.png",
     "static/media/5.jpg": "/react-admin/static/media/5.147d9d0f2a7f1d2dcc04.jpg",
     "static/media/chapter-8_2.png": "/react-admin/static/media/chapter-8_2.94c3298862f9cfa583a6.png",
+    "static/media/sql-server-6.png": "/react-admin/static/media/sql-server-6.e42eb16fd028363bd977.png",
     "static/media/chapter-1_41.jpg": "/react-admin/static/media/chapter-1_41.e020c7ea4e85cc335cb1.jpg",
     "static/media/Net_Angular_5.jpg": "/react-admin/static/media/Net_Angular_5.4d8dee88e38acf77d3c5.jpg",
     "static/media/11.jpg": "/react-admin/static/media/11.82ee701904de976581f6.jpg",
     "static/media/21.jpg": "/react-admin/static/media/21.0bd1e8eac2377d30aec8.jpg",
+    "static/media/sql-server-4.png": "/react-admin/static/media/sql-server-4.e4dc0ff33a2e50c238dd.png",
     "static/media/22.jpg": "/react-admin/static/media/22.d7722c66e0801ed8f205.jpg",
     "static/media/4.jpg": "/react-admin/static/media/4.2e77595a9380329d16f5.jpg",
     "static/media/chapter-1_9.jpg": "/react-admin/static/media/chapter-1_9.e7c07947f13458f096ee.jpg",
@@ -198,6 +202,7 @@
     "static/media/excel_2.png": "/react-admin/static/media/excel_2.0340c3ee5d6a09e9e044.png",
     "static/media/chapter-7_2.jpeg": "/react-admin/static/media/chapter-7_2.14c4acb9dbca2231686a.jpeg",
     "static/media/chapter-1_5.jpg": "/react-admin/static/media/chapter-1_5.2e4e4cad9abc5b2cd66c.jpg",
+    "static/media/sql-server-1.png": "/react-admin/static/media/sql-server-1.5cc7f670dde470aa84cd.png",
     "static/media/6.jpg": "/react-admin/static/media/6.d1856e2f61b033b9554c.jpg",
     "static/media/chapter-1_4.jpg": "/react-admin/static/media/chapter-1_4.1e32a711718cbca41227.jpg",
     "static/media/Net_Angular_2.jpg": "/react-admin/static/media/Net_Angular_2.b1dc0bec7443b16fa97d.jpg",
@@ -205,6 +210,7 @@
     "static/media/3.jpg": "/react-admin/static/media/3.ac385d22f42c7aa03838.jpg",
     "static/media/2023-02-19 02.jpg": "/react-admin/static/media/2023-02-19 02.7a9ab8e560a0364c3ec1.jpg",
     "static/media/Trich_4.jpg": "/react-admin/static/media/Trich_4.6ef20d12ca756cda6fce.jpg",
+    "static/media/sql-server-5.png": "/react-admin/static/media/sql-server-5.f3e304bafc5b6b1fc245.png",
     "static/media/excel_5.png": "/react-admin/static/media/excel_5.d6a30ed729fa66a3e9a3.png",
     "static/media/Trich_2.jpg": "/react-admin/static/media/Trich_2.69ca8851ddd29c43579f.jpg",
     "static/media/Trich_3.jpg": "/react-admin/static/media/Trich_3.69ca8851ddd29c43579f.jpg",
@@ -232,10 +238,10 @@
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.1b869f7c.css.map": "/react-admin/static/css/main.1b869f7c.css.map",
-    "main.00ca6b90.js.map": "/react-admin/static/js/main.00ca6b90.js.map"
+    "main.e45ee46d.js.map": "/react-admin/static/js/main.e45ee46d.js.map"
   },
   "entrypoints": [
     "static/css/main.1b869f7c.css",
-    "static/js/main.00ca6b90.js"
+    "static/js/main.e45ee46d.js"
   ]
 }
