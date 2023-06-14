@@ -23,6 +23,10 @@ export const Software = () => {
           text: 'Chạy Postgresql trong Docker container',
           path: '/software/docker/postgresql',
         },
+        {
+          text: 'Restore database SQL Server',
+          path: '/software/docker/sql-server',
+        },
       ],
     },
   ];
