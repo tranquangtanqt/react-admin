@@ -6,6 +6,7 @@ import headFirstDesignPatternsChapter from './data/_chapter';
 import { chapter1 } from './data/chapter-1';
 import { chapter2 } from './data/chapter-2';
 import { chapter3 } from './data/chapter-3';
+import { chapter4 } from './data/chapter-4';
 
 export const EbookVietnameseHeadFirstDesignPatterns = () => {
   const params = useParams();
@@ -23,9 +24,9 @@ export const EbookVietnameseHeadFirstDesignPatterns = () => {
     case '3':
       data = chapter3;
       break;
-    // case '4':
-    //   data = chapter4;
-    //   break;
+    case '4':
+      data = chapter4;
+      break;
     // case '5':
     //   data = chapter5;
     //   break;
@@ -53,9 +54,7 @@ export const EbookVietnameseHeadFirstDesignPatterns = () => {
     <>
       <PageTitle title={title}></PageTitle>
       <PageContent content={data}></PageContent>
-      <div className="tab-1">
-        <p></p>
-      </div>
+      <div className="tab-1"></div>
     </>
   );
 };
