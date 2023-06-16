@@ -10,6 +10,7 @@ import { chapter4 } from './data/chapter-4';
 import { chapter5 } from './data/chapter-5';
 import { chapter6 } from './data/chapter-6';
 import { chapter7 } from './data/chapter-7';
+import { chapter8 } from './data/chapter-8';
 
 export const EbookVietnameseHeadFirstDesignPatterns = () => {
   const params = useParams();
@@ -38,9 +39,9 @@ export const EbookVietnameseHeadFirstDesignPatterns = () => {
       break;
     case '7':
       data = chapter7;
-    //   break;
-    // case '8':
-    //   data = chapter8;
+      break;
+    case '8':
+      data = chapter8;
     //   break;
     // case '9':
     //   data = chapter9;

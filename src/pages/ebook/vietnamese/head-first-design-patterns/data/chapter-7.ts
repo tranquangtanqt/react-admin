@@ -696,41 +696,74 @@ export const chapter7: IContent[] = [
     title: `Định nghĩa Command Pattern`,
     contents: [
       {
-        div: ``,
+        div: `<p>
+        Bạn đã có thời gian của mình ở Objectville Diner, bạn đã thực hiện một phần
+        remote control API và trong quá trình đó, bạn đã có một cái nhìn khá tốt về
+        cách các lớp và các đối tượng tương tác trong Command Pattern. Bây giờ chúng
+        tôi sẽ định nghĩa Command Pattern và tìm hiểu tất cả các chi tiết.
+      </p>
+      
+      <p>Hãy bắt đầu với định nghĩa chính thức của nó:</p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_18.jpg`),
           width: `50%`,
           align: `center`,
         },
       },
       {
-        div: ``,
+        div: `<p>
+        <strong>
+          <em>
+            (Command Pattern đóng gói yêu cầu thành đối tượng độc lập, có thể được sử
+            dụng để tham số hóa các đối tượng khác với các yêu cầu khác nhau như log,
+            queue, và hỗ trợ undo.)
+          </em>
+        </strong>
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_19.jpg`),
           width: `50%`,
           align: `center`,
         },
       },
       {
-        div: ``,
+        div: `<p>
+        Hãy bước qua điều này. Chúng ta biết rằng một command object đóng gói một yêu
+        cầu bằng cách map chúng với một tập hợp các hành động trên một receiver cụ
+        thể. Để đạt được điều này, nó đóng gói các hành động và receiver thành một đối
+        tượng chỉ một phương thức 
+        <strong>execute()</strong>. Khi được gọi, <strong>execute()</strong>  sẽ
+        gọi đến phương thức trên receiver để thực hiện hành động. Nhìn từ bên ngoài,
+        không có đối tượng nào khác thực sự biết những hành động nào được thực hiện
+        trên receiver; chúng chỉ biết rằng nếu chúng gọi phương thức
+        <strong>execute()</strong>, request của chúng sẽ được thực hiện.
+      </p>
+      
+      <p>
+        Chúng ta cũng đã thấy một vài ví dụ về tham số hóa một đối tượng bằng một
+        command. Trở lại quán ăn, Waitress được tham số hóa với nhiều Order trong suốt
+        cả ngày. Trong <strong>SimpleRemoteControl</strong>, trước tiên, chúng tôi đã
+        load vào slot button bằng một “light on” command và sau đó thay thế nó bằng
+        một lệnh “garage door open”. Giống như Waitress, remote slot của bạn không
+        quan tâm command object nào được đặt vào, miễn là nó implements giao diện
+        Command.
+      </p>
+      <p>
+        Những gì chúng ta còn chưa gặp phải là sử dụng các command để cài đặt queues,
+        logs và hỗ trợ undo các hành động. Đừng lo lắng, đó là những phần mở rộng khá
+        đơn giản của Command Pattern cơ bản và chúng ta sẽ sớm nhận được chúng. Chúng
+        ta cũng có thể dễ dàng hỗ trợ những gì mà người ta gọi là Meta Command Pattern
+        khi chúng ta có những điều cơ bản. Meta Command Pattern cho phép bạn tạo các
+        macro command để bạn có thể thực thi nhiều command cùng một lúc.
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
-          width: `50%`,
-          align: `center`,
-        },
-      },
-      {
-        div: ``,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_20.jpg`),
           width: `50%`,
           align: `center`,
         },
@@ -741,44 +774,11 @@ export const chapter7: IContent[] = [
     ],
   },
   {
-    title: ``,
+    title: `Định nghĩa Command Pattern: Sơ đồ lớp&nbsp;`,
     contents: [
       {
-        div: ``,
-      },
-      {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
-          width: `50%`,
-          align: `center`,
-        },
-      },
-      {
-        div: ``,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
-          width: `50%`,
-          align: `center`,
-        },
-      },
-      {
-        div: ``,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
-          width: `50%`,
-          align: `center`,
-        },
-      },
-      {
-        div: ``,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_21.jpg`),
           width: `50%`,
           align: `center`,
         },
@@ -788,30 +788,969 @@ export const chapter7: IContent[] = [
       },
     ],
   },
-
   {
-    title: '',
+    title: `Sử dụng sức mạnh bộ não`,
     contents: [
+      {
+        div: `<p>
+        <strong>
+          Làm thế nào để thiết kế Command Pattern hỗ trợ việc tách invoker và
+          receiver?
+        </strong>
+      </p>
+      
+      <p>
+        <strong>Sue: </strong>Được rồi, tôi nghĩ rằng bây giờ ta đã có một cái nhìn
+        tốt về Command Pattern. Joe thật&nbsp; tuyệt vời, tôi nghĩ chúng ta sẽ trông
+        giống như những siêu sao sau khi hoàn thành API remote.
+      </p>
+      
+      <p><strong>Mary:</strong> Tôi cũng vậy. Vì vậy, chúng ta bắt đầu từ đâu?</p>
+      
+      <p>
+        <strong>Sue:</strong> Giống như chúng ta đã làm trong 
+        <strong>SimpleRemote</strong>, chúng ta cần cung cấp một cách để gán command
+        cho các slots. Trong trường hợp của chúng ta, chúng ta có 7 slots, mỗi slots
+        có một nút “on” và “off ”. Vì vậy, chúng ta có thể gán các command cho remote
+        như thế này:
+      </p>`,
+      },
       {
         code: {
-          src: ``,
+          src: `onCommands[0]  = onCommand;
+offCommands[0] = offCommand;`,
           language: 'java',
         },
       },
       {
-        p: `<h6><b></b></h6>`,
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
       },
       {
-        p: `<p class="text-center"><small></small></p>`,
+        div: `<p>
+        <strong>Mary:</strong> Điều đó có ý nghĩa, ngoại trừ các Light objects. Làm
+        thế nào để điều khiển từ xa biết đèn của phòng khách hay đèn của nhà bếp?
+      </p>
+      
+      <p>
+        <strong>Sue:</strong> Ah, chỉ vậy à, không thành vấn đề! Điều khiển từ xa
+        không biết gì ngoài cách gọi <strong>execute()</strong> trên command object
+        tương ứng khi nhấn nút.
+      </p>
+      
+      <p>
+        <strong>Mary:</strong> Vâng, tôi đã hiểu điều đó, nhưng trong quá trình thực
+        hiện, làm thế nào để chúng ta đảm bảo đúng đối tượng đang bật và tắt đúng
+        thiết bị?
+      </p>
+      
+      <p>
+        <strong>Sue:</strong> Khi chúng ta tạo các command được load vào điều khiển từ
+        xa, chúng ta tạo một <strong>LightCommand</strong> được gắn vào đối tượng
+        Living Room Light và một command khác được gắn với đối tượng Kitchen Light.
+        Hãy nhớ rằng, receiver bị ràng buộc với command mà nó đóng gói. Vì vậy, tại
+        thời điểm nhấn nút, không ai quan tâm đến light của phòng nào, điều đúng sẽ
+        xảy ra khi phương thức  <strong>execute() </strong>được gọi.
+      </p>
+      
+      <p>
+        <strong>Mary:</strong> Tôi nghĩ rằng tôi đã hiểu được nó. Hãy thực hiện chương
+        trình remote và tôi nghĩ điều này sẽ rõ ràng hơn!
+      </p>
+      
+      <p><strong>Sue: </strong>Nghe hay đấy. Bắt đầu thôi…</p>
+      `,
       },
       {
         div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Gán Command vào slot `,
+    contents: [
+      {
+        div: `<p>
+        Vì vậy, chúng ta có một kế hoạch: Chúng ta sẽ gán mỗi slot của điều khiển từ
+        xa cho một command. Điều này làm cho remote sẽ điều khiển invoker của chúng
+        ta. Khi nhấn nút, phương thức 
+        <strong>execute() </strong>sẽ được gọi trên command tương ứng, dẫn đến các
+        hành động sẽ được gọi trên receiver (như đèn, quạt trần, stereos).
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_22.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Implementing Remote Control&nbsp;&nbsp;`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_23.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Cài đặt Command Pattern`,
+    contents: [
+      {
+        div: `<p>
+        Chà, chúng tôi đã bắt đầu thực hiện <strong>LightOnCommand</strong>  cho
+        <strong>SimpleRemoteControl</strong>. Chúng ta có thể đặt code tương tự vào
+        đây và mọi thứ hoạt động. Các command “Off” không khác nhau; trong thực tế,
+        <strong>LightOffCommand</strong> trông như thế này:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_24.jpg`),
+          width: `50%`,
+          align: `left`,
+        },
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_25.jpg`),
+          width: `50%`,
+          align: `left`,
+        },
+      },
+      {
+        div: `<p>
+        Hãy thử một cái gì đó thử thách hơn một chút; Làm thế nào về việc viết command
+        on và off cho Stereo? Được rồi, off rất dễ, chúng ta chỉ cần liên kết phương
+        thức Stereo với phương thức <strong>off()</strong>  trong
+        <strong>StereoOffCommand</strong>. On thì&nbsp; phức tạp hơn một chút; hãy nói
+        rằng chúng tôi muốn viết một 
+        <strong>StereoOnWithCDCommand</strong>…<br />
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_26.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Không tệ lắm. Hãy xem phần còn lại của các lớp từ nhà cung cấp; bây giờ, bạn
+        chắc chắn có thể “hạ gục” phần còn lại của các lớp Command mà chúng ta cần.
+      </p>`,
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Đặt Remote Control đúng nơi của nó`,
+    contents: [
+      {
+        div: `<p>
+        Công việc của chúng ta với điều khiển từ xa được thực hiện khá nhiều; tất cả
+        những gì chúng ta cần làm là chạy một số thử nghiệm và tập hợp một số tài liệu
+        để mô tả API. Home Automatic hay Bust, Inc. chắc chắn sẽ rất ấn tượng, bạn có
+        nghĩ vậy không? Chúng tôi đã quản lý để đưa ra một thiết kế sẽ cho phép họ sản
+        xuất một cái remote dễ bảo trì và họ sẽ không gặp khó khăn gì trong việc
+        thuyết phục các nhà cung cấp viết một số lớp command đơn giản trong tương lai
+        vì họ rất thích sự dễ viết.
+      </p>
+      
+      <p>Hãy thử nghiệm code này!</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_27.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_28.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>
+          Đợi một chút, cái gì là NoCommand được load trong các slot từ 4 đến 6?&nbsp;
+        </strong>
+      </p>
+      
+      <p>
+        Quan sát tốt! Chúng tôi đã lén đặt thêm một chút dòng lệnh. Trong điều khiển
+        từ xa, chúng tôi đã không muốn đặt câu if xem command có được load mỗi lần
+        chúng tôi tham chiếu một slot không. Chẳng hạn, trong phương thức
+        <strong>onButtonWasPushed()</strong>, chúng ta sẽ cần code như thế này:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_29.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Vì vậy, làm thế nào để chúng ta không cần đặt câu lệnh if? Implements một
+        command mà không cần kiểm tra!
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_30.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Sau đó, trong constructor <strong>RemoteControl</strong> của bạn, chúng tôi
+        gán cho mọi slot một đối tượng <strong>NoCommand </strong>
+        theo mặc định và chúng tôi biết rằng chúng tôi sẽ luôn có một command để gọi
+        trong mỗi slot.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_31.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Vì vậy, trong output của lần chạy thử của chúng tôi, bạn sẽ thấy vài slot chưa
+        được gán command, ngoài đối tượng 
+        <strong>NoCommand </strong>mặc định mà chúng tôi đã gán khi chúng tôi tạo
+        <strong>RemoteControl</strong>.
+      </p>
+      
+      <p>
+        Đối tượng <strong>NoCommand</strong> là một ví dụ về null object. Một 
+        <strong>Null object</strong> rất hữu ích khi bạn không có một đối tượng có ý
+        nghĩa để return và bạn muốn loại bỏ trách nhiệm xử lý kiểm tra null khỏi
+        client. Ví dụ, trong Remote control của chúng tôi, chúng tôi không có một đối
+        tượng có ý nghĩa để gán cho những slot chưa có thiết bị kết nối vào, vì vậy
+        chúng tôi đã cung cấp một đối tượng  <strong>NoCommand</strong> hoạt động
+        như một thay thế và không làm gì khi phương thức
+        <strong>execute()</strong> của nó được gọi.
+      </p>
+      
+      <p>
+        Bạn có thể tìm thấy cách sử dụng cho các <strong>Null Objects</strong> 
+        kết hợp với nhiều Mẫu thiết kế và đôi khi bạn thậm chí còn thấy 
+        <strong>Null Object</strong> được liệt kê dưới dạng là một Mẫu thiết kế cụ
+        thể.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Đã đến lúc viết tài liệu…`,
+    contents: [
+      {
+        div: `<p>
+        <strong>
+          <em> “Thiết kế Remote Control API cho Home Automation or Bust, Inc., </em>
+        </strong>
+      </p>
+      
+      <p>
+        <em>
+          Chúng tôi hân hạnh giới thiệu với bạn giao diện lập trình ứng dụng và thiết
+          kế sau đây cho Home Automation Remote Control của bạn. Mục tiêu thiết kế
+          chính của chúng tôi là giữ cho code điều khiển từ xa càng đơn giản càng tốt
+          để nó không yêu cầu thay đổi khi các lớp nhà cung cấp mới được sản xuất.
+          Cuối cùng, chúng tôi đã sử dụng Command Pattern để phân tách một cách hợp lý
+          lớp RemoteControl khỏi các lớp nhà cung cấp. Chúng tôi tin rằng điều này sẽ
+          giảm chi phí sản xuất điều khiển từ xa cũng như giảm đáng kể chi phí bảo trì
+          liên tục của bạn.
+        </em>
+      </p>
+      
+      <p>
+        <em> Sơ đồ lớp sau đây cung cấp tổng quan về thiết kế của chúng tôi: </em>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_32.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>
+          <em>
+            Làm tốt lắm; Có vẻ như bạn đã đưa ra một thiết kế tuyệt vời, nhưng bạn có
+            quên một điều mà khách hàng yêu cầu không? NÚT UNDO !!!!
+          </em>
+        </strong>
+      </p>
+      
+      <p>
+        Rất tiếc! Chúng tôi gần như đã quên… may mắn thay, một khi chúng tôi có các
+        lớp Command cơ bản, undo rất dễ dàng để thêm vào. Hãy thêm undo các lệnh của
+        chúng tôi và vào điều khiển từ xa…
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Chúng ta đang làm gì?`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, chúng ta cần thêm chức năng để hỗ trợ nút undo trên điều khiển từ
+        xa. Nó hoạt động như thế này: giả sử Đèn phòng khách tắt và bạn nhấn nút bật
+        trên điều khiển từ xa. Rõ ràng là đèn bật sáng. Bây giờ nếu bạn nhấn nút undo
+        thì hành động cuối cùng sẽ bị đảo ngược – trong trường hợp này đèn sẽ tắt.
+        Trước khi chúng ta đi vào các ví dụ phức tạp hơn, hãy để đối tượng Đèn hoạt
+        động với nút undo:
+      </p>
+      
+      <p>
+        1. Khi các lệnh hỗ trợ undo, chúng có phương thức 
+        <strong>undo()</strong> phản chiếu phương thức 
+        <strong>execute()</strong>. Bất cứ điều gì <strong>execute()</strong> 
+        cuối cùng đã làm, <strong>undo()</strong> sẽ đảo ngược chúng. Vì vậy, trước
+        khi chúng ta có thể thêm chức năng undo vào các command của mình, chúng ta cần
+        thêm một phương thức <strong>undo()</strong> vào giao diện
+        <strong>Command</strong>:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_33.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Điều đó đã đủ đơn giản. Bây giờ, hãy đi vào Light command và thực hiện phương
+        thức <strong>undo()</strong>.
+      </p>
+      
+      <p>
+        2. Hãy bắt đầu với <strong>LightOnCommand</strong>: nếu phương thức 
+        <strong> <em>execute()</em> </strong>  của&nbsp;
+        <strong>LightOnCommand </strong>được gọi, thì phương thức 
+        <strong> <em>on()</em> </strong>  được gọi lần cuối. Chúng ta biết rằng{'
+        '} <strong> <em>undo()</em> </strong>  cần phải làm ngược lại điều này
+        bằng cách gọi phương thức 
+        <strong>
+          <em>off()</em>
+        </strong>
+        .
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_34.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Bây giờ cho <strong>LightOffCommand</strong>. Ở đây, phương thức 
+        <strong> <em>undo()</em> </strong>  chỉ cần gọi phương thức 
+        <strong> <em>on()</em> </strong>  của object <strong>Light</strong>.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_35.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Điều này có thể dễ dàng hơn không? Được rồi, chúng ta chưa hoàn thành; chúng
+        ta cần hỗ trợ một chút vào Điều khiển từ xa để xử lý việc theo dõi nút cuối
+        cùng được nhấn và nút undo được nhấn.
+      </p>
+      
+      <p>
+        3. Để thêm hỗ trợ cho nút undo, chúng ta chỉ phải thực hiện một vài thay đổi
+        nhỏ cho lớp Remote Control. Ở đây, cách thức mà chúng tôi sẽ thực hiện nó:
+        chúng tôi sẽ thêm một biến đối tượng mới để theo dõi command cuối cùng được
+        gọi; sau đó, bất cứ khi nào nhấn nút undo, chúng tôi sẽ truy xuất command đó
+        và gọi phương thức 
+        <strong> <em>undo()</em> </strong>  của nó.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_36.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Ứng dụng Command Pattern: nút Undo!`,
+    contents: [
+      {
+        div: `<p>Được rồi, hãy test lại một chút để kiểm tra nút undo:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_37.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>Và đây, kết quả kiểm tra…</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_38.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng state để implement Undo`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, thực hiện Undo trên lớp Light là hướng dẫn nhưng hơi quá dễ dàng.
+        Thông thường, chúng ta cần quản lý một chút trạng thái (state) để thực hiện
+        undo. Hãy thử một cái gì đó thú vị hơn một chút, như lớp Quạt trần
+        (CeilingFan) từ các lớp nhà cung cấp. Quạt trần cho phép một số tốc độ quạt
+        (speed) được đặt cùng với phương thức off.
+      </p>
+      
+      <p>Đây là code của <strong>CeilingFan</strong>:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_39.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_40.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Thêm Undo vào CeilingFan Command `,
+    contents: [
+      {
+        div: `<p>
+        Bây giờ hãy giải quyết việc thêm undo vào các command 
+        <strong>CeilingFan </strong>khác nhau. Để làm như vậy, chúng ta cần theo dõi
+        cài đặt tốc độ cuối cùng của quạt và, nếu phương thức 
+        <strong>undo()</strong> được gọi, hãy khôi phục quạt về tốc độ trước khi tắt.
+        Đây là code cho lớp <strong>CeilingFanHighCommand</strong>:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_41.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng sức mạnh bộ não bạn`,
+    contents: [
+      {
+        div: `<p>
+        Chúng tôi đã có thêm ba <strong>CellingFan</strong> command: 
+        <em>low</em>, <em>medium</em> và <em>off</em> làm thế nào để tất cả chúng được
+        thực hiện?
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Hãy sẵn sàng để test CellingFan`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_42.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Thời gian để load lên điều khiển từ xa của chúng ta với các 
+        <strong>CellingFan </strong>command. Chúng tôi sẽ load slot 0 cho quạt với tốc
+        độ <em>medium</em> và slot 1 với mức <em>high</em>. Cả hai nút off tương ứng
+        sẽ giữ lệnh tắt quạt trần.
+      </p>
+      
+      <p>Đây là kịch bản thử nghiệm của chúng tôi:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_43.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Test lớp Celling Fan của chúng ta`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, hãy khởi động remote, load nó bằng các command và nhấn một số nút!
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_44.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Mọi điều khiển từ xa đều cần một Chế độ Party!`,
+    contents: [
+      {
+        div: `<p>
+        Điều gì nếu bạn chỉ cần nhấn một nút và đèn sẽ mờ, stereo và TV được bật và
+        play DVD, bồn nước nóng được bật lên?
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_45.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_46.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Ứng dụng Command Pattern: Macro command`,
+    contents: [
+      {
+        div: `<p>Hãy xem qua cách chúng tôi sử macro command:</p>
+
+        <p>
+          1. Đầu tiên chúng ta tạo tập hợp các command mà chúng ta muốn đưa vào macro:
+        </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_47.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>
+          Đến lượt bạn: Chúng ta cũng sẽ cần các command cho các nút off, viết code để
+          tạo các nút ở đây
+        </strong>
+      </p>
+      
+      <p>
+        <strong>Đáp án:</strong>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_48.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        2. Tiếp theo, chúng ta tạo hai mảng, một cho các lệnh 
+        <strong>On </strong>và một cho <strong>Off </strong>và load chúng với các
+        command tương ứng:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_49.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        3. Sau đó, chúng ta gán <strong>MacroCommand</strong> cho một button như chúng
+        ta đã làm:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_50.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>4. Cuối cùng, chúng ta chỉ cần nhấn một số nút và xem điều này hoạt động.</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_51.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>
+          Bài tập: Điều duy nhất MacroCommand của chúng ta thiếu là chức năng undo.
+          Khi nhấn nút undo sau một macro command, tất cả các command được gọi trong
+          macro phải undo các hành động trước đó của chúng. Đây là code cho
+          MacroCommand; tiếp tục và thực hiện phương thức undo():
+        </strong>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_52.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>Đáp án:</strong>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_53.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Không có câu hỏi ngớ ngẩn`,
+    contents: [
+      {
+        div: `<p>
+        <strong>Hỏi: </strong>Tôi luôn cần một receiver phải không? Tại sao command
+        object không thể cài đặt phần chi tiết của 
+        <strong> <em>execute()</em> </strong>  method?
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Nói chung, chúng tôi cố gắng cho các command
+        objects, chỉ cần implement một hành động trên receiver; tuy nhiên, có rất
+        nhiều ví dụ về các đối tượng command “thông minh” thực hiện hầu hết, nếu không
+        phải là tất cả, logic cần thiết để thực hiện một yêu cầu. Chắc chắn bạn có thể
+        làm điều này; chỉ cần lưu ý rằng bạn sẽ không còn mức độ tách rời giữa invoker
+        và receiver, bạn cũng không thể tham số hóa các command của bạn với receiver.
+      </p>
+      
+      <p>
+        <strong>Hỏi:</strong> Làm thế nào tôi có thể thực hiện một lịch sử hoạt động
+        undo? Nói cách khác, tôi muốn có thể nhấn nút undo nhiều lần.
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Câu hỏi tuyệt vời! Nó thực sự rất dễ dàng; thay vì
+        chỉ giữ một tham chiếu đến Command cuối cùng được thực thi, bạn giữ một ngăn
+        xếp Stack các command trước đó. Sau đó, bất cứ khi nào undo được nhấn, invoker
+        của bạn sẽ Pop (lấy) command đầu tiên ra khỏi stack và gọi phương thức
+        <strong>undo() </strong>của command đó.
+      </p>
+      
+      <p>
+        <strong>Hỏi: </strong>Tôi có thể thực hiện “Party Mode” như một command bằng
+        cách tạo <strong>PartyCommand</strong> và đặt lệnh gọi đến các phương thức
+        <strong>execute() </strong>của Command khác trong phương thức
+        <strong>execute()</strong> của  <strong>PartyCommand</strong> không?
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Bạn có thể; tuy nhiên, chúng sẽ trở thành “code
+        cứng” trong <strong>PartyCommand</strong>. Đó là một rắc rối lớn? Với
+        <strong>MacroCommand</strong>, bạn có thể quyết định các 
+        <strong>Command </strong>nào bạn muốn vào  <strong>PartyCommand</strong>,
+        do đó bạn có thể linh hoạt hơn khi sử dụng <strong>MacroCommand</strong>. Nhìn
+        chung,  <strong>MacroCommand</strong> là một giải pháp an toàn hơn và yêu
+        cầu ít code mới hơn.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Ứng dụng Command Pattern: Hàng đợi các request`,
+    contents: [
+      {
+        div: `<p>
+        Command cho chúng ta một cách để đóng gói một phần xử lý (một receiver và một
+        tập hợp các hành động) và chuyển nó đi như một đối tượng first-class. Bây giờ,
+        việc xử lí có thể được invoked sau đó khi một số ứng dụng client tạo đối
+        Command. Trong thực tế, nó thậm chí có thể được gọi bởi một thread khác. Chúng
+        ta có thể lấy kịch bản này và áp dụng nó cho nhiều ứng dụng hữu ích như
+        schedulers (đặt lịch chạy), thread pools và&nbsp; job queues.
+      </p>
+      
+      <p>
+        Tưởng tượng một hàng đợi công việc: bạn thêm các command vào hàng đợi ở một
+        đầu và ở đầu kia là một nhóm các thread. Các thread sẽ chạy đoạn script sau:
+        loại bỏ một command khỏi hàng đợi, gọi phương thức 
+        <strong>execute()</strong> của nó, đợi cuộc gọi kết thúc, sau đó loại bỏ đối
+        tượng command đó và truy xuất một command mới.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_54.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Lưu ý rằng các lớp hàng đợi công việc được tách rời hoàn toàn khỏi các đối
+        tượng đang thực hiện xử lí. Một phút một Subject có thể tính toán một tính
+        toán, và phút tiếp theo nó có thể lấy một cái gì đó từ network… Các đối tượng
+        hàng đợi công việc không quan tâm; chúng chỉ lấy các command và gọi
+        <strong>execute().</strong> Tương tự, miễn là bạn đặt các đối tượng vào hàng
+        đợi thực hiện Command Pattern, phương thức <strong>execute()</strong> của bạn
+        sẽ được gọi khi có một thread.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng sức mạnh bộ não`,
+    contents: [
+      {
+        div: `<p>
+        Làm thế nào một web server có thể tận dụng dụng một hàng đợi như vậy? Bạn có
+        thể nghĩ đến một ứng dụng nào khác không?
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Ứng dụng Command Pattern: logging request`,
+    contents: [
+      {
+        div: `<p>
+        Ngữ nghĩa của một số ứng dụng yêu cầu chúng tôi log tất cả các hành động và có
+        thể phục hồi sau khi gặp sự cố bằng cách khôi phục các hành động đó. Mẫu
+        Command có thể hỗ trợ các ngữ nghĩa này với việc bổ sung hai phương thức:
+        <strong>store() </strong>và <strong>load()</strong>. Trong Java, chúng ta có
+        thể sử dụng object serialization (tuần tự hóa) để thực hiện các phương thức
+        này, nhưng hãy cẩn thận khi sử dụng serialization để bảo trì.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_55.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Cái này hoạt động ra sao? Khi chúng tôi thực thi các command, chúng tôi lưu
+        trữ (store) một lịch sử của chúng trên đĩa. Khi xảy ra sự cố, chúng ta load
+        lại các đối tượng command và gọi các phương thức 
+        <strong>execute() </strong>của chúng theo nhóm và theo thứ tự.
+      </p>
+      
+      <p>
+        Bây giờ, loại log này sẽ không có ý nghĩa đối với một remote control; tuy
+        nhiên, có nhiều ứng dụng gọi các hành động trên các cấu trúc dữ liệu lớn có
+        thể được lưu nhanh chóng mỗi khi có thay đổi. Bằng cách sử dụng log, chúng tôi
+        có thể lưu tất cả các hoạt động kể từ thời điểm kiểm tra cuối cùng (last check
+        point) và nếu có lỗi hệ thống, hãy áp dụng các hoạt động đó cho checkpoint của
+        chúng tôi. 
+      </p>
+      
+      <p>
+        Lấy ví dụ, một ứng dụng bảng tính (spreadsheet, như excel): chúng tôi có thể
+        muốn thực hiện khôi phục lỗi của mình bằng cách ghi log các hành động trên
+        bảng tính thay vì viết một bản sao của bảng tính vào đĩa mỗi khi có thay đổi.
+        Trong các ứng dụng nâng cao hơn, các kỹ thuật này có thể được mở rộng để áp
+        dụng cho các tập hợp hoạt động theo transactional để tất cả các hoạt động sẽ
+        hoặc hoàn thành hoặc không có thao tác nào thực hiện (tìm hiểu 
+        <a
+          rel="noreferrer noopener"
+          aria-label="transaction database (mở trong tab mới)"
+          href="https://vi.wikipedia.org/wiki/Giao_d%E1%BB%8Bch_c%C6%A1_s%E1%BB%9F_d%E1%BB%AF_li%E1%BB%87u"
+          target="_blank"
+        >
+          transaction database
+        </a>
+        ).
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_56.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Tóm tắt`,
+    contents: [
+      {
+        div: `<ul>
+        <li>
+          Command Pattern tách riêng một đối tượng, và đưa ra yêu cầu tới đối tượng
+          biết cách thực hiện nó.
+        </li>
+        <li>
+          Một đối tượng <strong>Command </strong>nằm ở trung tâm của việc tách rời này
+          và đóng gói một receiver bằng một hành động (hoặc tập hợp các hành động).
+        </li>
+        <li>
+          Một invoker đưa ra yêu cầu của một đối tượng 
+          <strong>Command </strong>bằng cách gọi phương thức 
+          <strong>execute()</strong> của nó, gọi các hành động đó trên receiver.
+        </li>
+        <li>
+          <strong>Invoker </strong>có thể được tham số hóa bằng các 
+          <strong>Command</strong>, thậm chí là gán động khi chạy.
+        </li>
+        <li>
+          Command có thể hỗ trợ undo bằng cách thực hiện một phương thức undo khôi
+          phục đối tượng về trạng thái trước đó trước khi phương thức 
+          <strong>execute()</strong> được gọi lần cuối.
+        </li>
+        <li>
+          <strong>Macro Commands</strong> là một phần mở rộng đơn giản của Command cho
+          phép nhiều command được gọi. Tương tự, 
+          <strong>Macro Commands</strong> có thể dễ dàng hỗ trợ 
+          <strong>undo()</strong>.
+        </li>
+        <li>
+          Trong thực tế, không có gì lạ khi các đối tượng “smart” Command có thể tự
+          thực hiện yêu cầu thay vì ủy thác cho receiver.
+        </li>
+        <li>
+          <strong>Command </strong>cũng có thể được sử dụng để thực hiện các hệ
+          thống 
+          <strong>
+            <em>logging </em>
+          </strong>
+          và 
+          <strong>
+            <em>transactional</em>
+          </strong>
+          .
+        </li>
+      </ul>`,
       },
     ],
   },
   {
     title: 'Tham khảo',
     contents: [
+      {
+        div: `<p>
+        Đây là link đính kèm bản gốc của quyển sách:&nbsp;
+        <a
+          href="https://drive.google.com/file/d/14lMY_ot5FHgX7aOR9YiVjR2iD1DdJ6hZ/view?usp=sharing"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label=" (mở trong tab mới)"
+        >
+          Head First Design Patterns
+        </a>
+        .<br />
+        Đây là link đính kèm sourcecode của sách:&nbsp;
+        <a
+          rel="noreferrer noopener"
+          href="https://resources.oreilly.com/examples/9780596007126"
+          target="_blank"
+        >
+          Tải SourceCode
+        </a>
+        . 
+      </p>`,
+      },
       {
         p: `Nguồn bài dịch: <b>NQT-K4DNC</b>
         <br />
