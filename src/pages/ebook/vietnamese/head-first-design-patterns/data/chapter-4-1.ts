@@ -1,6 +1,6 @@
 import IContent from 'utils/interface';
 
-export const chapter4: IContent[] = [
+export const chapter4_1: IContent[] = [
   {
     title: ``,
     no: false,

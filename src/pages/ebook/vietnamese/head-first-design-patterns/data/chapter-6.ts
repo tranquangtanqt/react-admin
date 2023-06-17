@@ -7,7 +7,298 @@ export const chapter6: IContent[] = [
     contents: [
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_1.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_1.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Command Pattern – Đóng gói yêu cầu`,
+    contents: [
+      {
+        div: `<p>
+        <strong>
+          Trong chương này, chúng tôi đưa việc đóng gói lên một cấp độ hoàn
+          toàn mới: đóng gói lời gọi (command) phương thức.
+        </strong> 
+        Đúng vậy, bằng cách đóng gói lời gọi phương thức, Command pattern có
+        thể kết tinh các phần xử lý để đối tượng gọi xử lý không cần phải lo
+        lắng về cách thực hiện, nó chỉ sử dụng phương thức của chúng ta để
+        hoàn thành nó. Với Command pattern, chúng ta cũng có thể thực hiện một
+        số điều với các cách gọi phương thức được đóng gói này, như lưu chúng
+        để ghi log&nbsp; hoặc tái sử dụng chúng để thực hiện undo trong code
+        của chúng ta.
+      </p>`,
+      },
+      {
+        div: `<p>
+         
+        <em>Chào các bạn!</em> <br />
+        <em>
+          Gần đây tôi đã nhận được một bản demo và tóm tắt từ Johnny
+          Hurricane, CEO của Weather-O-Rama, trên trạm thời tiết có thể mở
+          rộng mới của họ. Tôi phải nói rằng, tôi rất ấn tượng với kiến
+          &ZeroWidthSpace;&ZeroWidthSpace;trúc phần mềm và tôi đã muốn yêu cầu
+          bạn thiết kế API cho Điều khiển từ xa tự động hóa trong gia đình
+          (Home Automation Remote Control) mới của chúng tôi. Đổi lại cho các
+          dịch vụ của bạn, chúng tôi rất vui khi được thưởng cho bạn các tùy
+          chọn cổ phiếu trong Home Automatic hoặc Bust, Inc.
+        </em>
+        <br />
+        <em>
+          Tôi đã bao gồm một bản gốc của điều khiển từ xa hiện có của chúng
+          tôi cho sự chú ý của bạn. Điều khiển từ xa có bảy khe lập trình (mỗi
+          khe có thể được gán cho một thiết bị gia dụng khác nhau) cùng với
+          các nút bật/tắt tương ứng cho từng khe (slot). Điều khiển từ xa cũng
+          có nút undo chung cho cả remote.
+        </em>
+        <br />
+        <em>
+          Tôi cũng kèm theo một tập hợp các lớp Java trên đĩa CD-R được tạo
+          bởi các nhà cung cấp khác nhau để điều khiển các thiết bị tự động
+          hóa gia đình như đèn, quạt, bồn nước nóng, thiết bị âm thanh và các
+          thiết bị điều khiển tương tự khác.
+        </em>
+        <br />
+        <em>
+          Chúng tôi muốn bạn tạo một API để lập trình từ xa để mỗi khe có thể
+          được chỉ định để điều khiển một thiết bị hoặc bộ thiết bị. Lưu ý
+          rằng điều quan trọng là chúng tôi có thể kiểm soát các thiết bị hiện
+          tại trên đĩa và bất kỳ thiết bị nào trong tương lai mà các nhà cung
+          cấp có thể cung cấp.
+        </em>
+        <br />
+        <em>
+          Với công việc bạn đã làm trên 
+          <a
+            rel="noreferrer noopener"
+            href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/2"
+            target="_blank"
+          >
+            trạm thời tiết Weather-O-Rama,
+          </a> 
+          chúng tôi biết bạn sẽ làm rất tốt công việc điều khiển từ xa của
+          chúng tôi!
+        </em>
+        <br />
+        <em>Chúng tôi mong muốn được nhìn thấy thiết kế của bạn.</em>
+        <br />
+        <em>Trân trọng,</em>
+        <br />
+        <em>Bill (X-10) Thompson, Giám đốc điều hành</em>. 
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: ` Đã có phần cứng miễn phí! Hãy cùng kiểm tra điều khiển từ xa…`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_2.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Nhìn vào các lớp được cung cấp`,
+    contents: [
+      {
+        div: `<p>
+        Kiểm tra các lớp từ nhà cung cấp trên đĩa CD-R. Chúng sẽ cung cấp cho
+        bạn một số ý tưởng về giao diện của các đối tượng chúng ta cần điều
+        khiển từ xa.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_3.jpg`),
+          width: `90%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Có vẻ như chúng ta có khá nhiều lớp ở đây, và không dễ để đưa ra một
+        bộ interface chung. Không chỉ vậy, trong tương lai, có vẻ như chúng ta
+        có thể có các lớp nhiều hơn. Thiết kế API điều khiển từ xa sẽ rất thú
+        vị. 
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Hội thoại`,
+    contents: [
+      {
+        div: `<p>
+        <strong>
+          Đồng đội của bạn đã thảo luận về cách thiết kế API điều khiển từ xa
+          …
+        </strong>
+      </p>
+
+      <p>
+        <strong>
+          <em>Sue: </em>
+        </strong>
+        Vâng, chúng ta đã có một thiết kế khác để làm. Quan sát đầu tiên của
+        tôi là chúng ta đã có một điều khiển từ xa đơn giản với các nút on và
+        off nhưng với một tập hợp các lớp từ nhà cung cấp khá đa dạng.
+      </p>
+      <p>
+        <strong>Mary:</strong> Vâng, tôi nghĩ rằng chúng ta đã thấy một loạt
+        các lớp với các phương thức <strong>on() </strong>và 
+        <strong>off()</strong> nhưng ở đây chúng ta cũng có các phương thức
+        như <strong>dim()</strong>, <strong>setTemperature()</strong>, 
+        <strong>setVolume()</strong>, <strong>setDirection()</strong>.&nbsp;
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Không chỉ vậy, có vẻ như chúng ta có thể có các
+        lớp từ nhà cung cấp nhiều&nbsp;hơn trong tương lai với các phương thức
+        đa dạng hơn.
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Tôi nghĩ điều quan trọng là chúng ta nên xem
+        điều này như một sự tách biệt các mối quan tâm: điều khiển từ xa nên
+        biết cách giải thích các lần nhấn nút và đưa ra yêu cầu, nhưng nó
+        không nên biết nhiều về hành động khi nhấn nút đó sẽ làm gì (ví dụ
+        điều khiển từ xa không cần phải biết cách bật bồn nước nóng).
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Nghe có vẻ là thiết kế tốt. Nhưng nếu điều khiển
+        từ xa chỉ biết cách thực hiện các yêu cầu chung chung, làm thế nào để
+        chúng ta thiết kế điều khiển từ xa để nó có thể gọi một hành động, ví
+        dụ, bật đèn hoặc mở cửa nhà để xe?
+      </p>
+
+      <p>
+        <strong>Mary: </strong>Tôi không chắc chắn, nhưng chúng ta không muốn
+        điều khiển từ xa phải biết chi tiết cụ thể của các lớp từ nhà cung
+        cấp.
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Ý bạn là gì?
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Chúng ta không muốn điều khiển từ xa bao gồm
+        một tập hợp các câu lệnh if, giống như:
+        <br />
+        <strong>
+          if slot1 == Light, then light.on(), else if slot1 = Hottub then
+          hottub.jetsOn()
+        </strong>
+        <br />
+        Chúng ta biết rằng đó là một thiết kế xấu.
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Tôi đồng ý. Bất cứ khi nào một lớp từ nhà cung
+        cấp mới xuất hiện, chúng ta sẽ phải sửa đổi code, có khả năng tạo ra
+        lỗi và nhiều công việc hơn cho chính chúng ta!
+      </p>
+
+      <p>
+        <strong>Một người khác – Joe:</strong> Này, tôi không thể nghe lỏm
+        được. Kể từ 
+        <a
+          rel="noreferrer noopener"
+          aria-label="Chương 1 (mở trong tab mới)"
+          href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          target="_blank"
+        >
+          Chương 1
+        </a>
+        , tôi đã tập trung vào các mẫu thiết kế. Có một mẫu hình được gọi là
+        “Command Pattern” mà tôi nghĩ có thể giúp được.
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Vâng? Hãy cho chúng tôi biết thêm đi.
+      </p>
+
+      <p>
+        <strong>Joe:</strong> Command Pattern cho phép bạn tách rời đối tượng
+        yêu cầu hành động khỏi đối tượng thực sự thực hiện hành động. Vì vậy,
+        ở đây đối tượng yêu cầu sẽ là remote và đối tượng thực hiện hành động
+        sẽ là một instance của một trong các lớp từ nhà cung cấp của bạn.
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Làm thế nào có thể? Làm thế nào chúng ta có thể
+        tách chúng ra? Rốt cuộc, khi tôi nhấn một nút, điều khiển từ xa vẫn
+        phải bật đèn.
+      </p>
+      <p>
+        <strong>Joe:</strong> Bạn có thể làm điều đó bằng cách đưa những
+        “command object” vào thiết kế của bạn. Một command object đóng gói một
+        yêu cầu (request) để làm một cái gì đó (như bật đèn) lên một đối tượng
+        cụ thể (giả sử, đối tượng Đèn phòng khách). Vì vậy, nếu chúng ta lưu
+        trữ một command object cho mỗi nút, khi nhấn nút, chúng ta yêu cầu
+        command object thực hiện một số công việc. Remote không biết gì về
+        công việc, nó chỉ chứa một command object biết cách nói chuyện với
+        đúng đối tượng để hoàn thành công việc. Vì vậy, bạn sẽ thấy, object
+        Remote được tách biệt ra với các object Light!
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Điều này nghe có vẻ như đã đi đúng hướng.
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Tuy nhiên, tôi đã có một thời gian khó khăn để
+        nghĩ về mẫu này.
+      </p>
+
+      <p>
+        <strong>Joe:</strong> Cho rằng các vật thể rất tách rời nhau, nó hơi
+        khó hình dung mẫu thực sự hoạt động như thế nào.
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Hãy để tôi xem nếu tôi ít nhất có ý tưởng đúng:
+        sử dụng mẫu này, chúng ta có thể tạo API trong đó các command object
+        có thể được đưa vào các khe slots, cho phép các đoạn code của remote
+        đơn giản hơn. Và, các command object gói gọn cách thực hiện nhiệm vụ
+        “tự động hóa nhà” thành một object cần thực hiện.
+      </p>
+      <p>
+        <strong>Joe:</strong> Vâng, tôi nghĩ vậy. Tôi cũng nghĩ rằng mẫu này
+        có thể giúp bạn với nút Undo, nhưng tôi chưa nghiên cứu phần đó.
+      </p>
+
+      <p>
+        <strong>Mary:</strong> Điều này nghe có vẻ rất đáng khích lệ, nhưng
+        tôi nghĩ rằng tôi có một chút việc phải làm để thực sự “có” được mẫu.
+      </p>
+
+      <p>
+        <strong>Sue:</strong> Tôi cũng vậy.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Trong khi đó, trở lại Diner…, hoặc là, Giới thiệu ngắn gọn về Command Pattern>`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_4.jpg`),
           width: `50%`,
           align: `center`,
         },
@@ -15,287 +306,206 @@ export const chapter6: IContent[] = [
       {
         div: `<br />`,
       },
-    ],
-  },
-  {
-    title: 'Singleton Pattern – Chỉ 1 cho mỗi loại object',
-    contents: [
       {
         div: `<p>
+        Như Joe đã nói, hơi khó để hiểu Command Pattern bằng cách chỉ nghe mô
+        tả của nó. Nhưng đừng sợ, chúng tôi có vài người bạn sẵn sàng giúp đỡ:
+        hãy nhớ đến quán ăn thân thiện của chúng tôi từ 
+        <a
+          rel="noreferrer noopener"
+          aria-label="Chương 1 (mở trong tab mới)"
+          href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          target="_blank"
+        >
+          Chương 1
+        </a>
+        ? Đã được một lúc kể từ khi chúng ta đến thăm Alice, Flo và người đầu
+        bếp, nhưng chúng tôi có lý do chính đáng để quay trở lại (tốt, ngoài
+        thức ăn và cuộc trò chuyện tuyệt vời): thực khách sẽ giúp chúng tôi
+        hiểu hơn về mẫu Command.
+      </p>
+
+      <p>
+        Vì vậy, hãy đi một đường vòng ngắn trở lại quán ăn và nghiên cứu các
+        tương tác giữa khách hàng (customer), nhân viên phục vụ (waitress),
+        đơn đặt hàng (order) và đầu bếp (cook). Thông qua các tương tác này,
+        bạn sẽ hiểu được các đối tượng liên quan đến Command Pattern và cũng
+        có cảm giác về cách thức tách rời hoạt động. Sau đó, chúng ta sẽ loại
+        bỏ API cũ của remote.
+      </p>
+
+      <p>
+        <strong>Checking in tại Objectville Diner …</strong>
+      </p>
+
+      <p>
         <strong>
-          Điểm dừng chân tiếp theo của chúng tôi chính là Singleton Pattern,
-          để tạo ra một đối tượng độc nhất (Single) cho những thứ mà chỉ cần
-          duy nhất một instance
+          Được rồi, tất cả chúng ta đều biết cách thức hoạt động của Diner
         </strong>
-        . Bạn có thể vui mừng khi biết rằng trong tất cả các mẫu, Singleton
-        Pattern có sơ đồ lớp đơn giản nhất; trong thực tế, Singleton chỉ nằm
-        trong một lớp duy nhất! Nhưng đừng quá thoải mái; mặc dù Singleton đơn
-        giản trong thiết kế lớp, chúng ta vẫn sẽ gặp một vài vấn đề khi áp
-        dụng nó.
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_2.jpg`),
-          width: `60%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_5.jpg`),
+          width: `70%`,
           align: `center`,
         },
       },
       {
         div: `<br />`,
       },
-      {
-        div: `<p>
-        <strong>Developer:</strong> Công dụng của nó là gì vậy ông chuyên gia?
-      </p>
-
-      <p>
-        <strong>Chuyên gia:</strong> Có nhiều đối tượng chúng ta chỉ cần một
-        trong số chúng: ví dụ như thread pools này, caches này, dialog boxes,
-        đối tượng xử lý preferences và cài đặt registry, đối tượng được sử
-        dụng để ghi log và các đối tượng đóng vai trò là trình điều khiển
-        thiết bị cho các thiết bị như máy in và card đồ họa…nhiều lắm. Trong
-        thực tế, đối với nhiều loại đối tượng này, nếu chúng ta khởi tạo nhiều
-        hơn một đối tượng chúng ta sẽ gặp phải tất cả các vấn đề như hành vi
-        chương trình không chính xác, lạm dụng tài nguyên hoặc kết quả không
-        nhất quán.
-      </p>
-      <p>
-          <strong>Developer:</strong>&nbsp; Được rồi, vì vậy có thể có các lớp
-          chỉ nên được khởi tạo một lần, nhưng tôi có cần cả một chương cho việc
-          này không? Tôi không thể làm điều này bởi convention hoặc biến toàn
-          cục (global variable) sao? Ông biết đấy, như trong Java, tôi có thể
-          làm điều đó chỉ với một biến static.
-        </p>
-
-        <p>
-          <strong>Chuyên gia:</strong> Theo nhiều cách, Singleton Pattern là một
-          quy ước để đảm bảo một và chỉ một đối tượng được khởi tạo cho một lớp
-          nhất định. Nếu chú em đã có một cái tốt hơn, mọi người sẽ muốn nghe về
-          nó; nhưng hãy nhớ rằng, giống như tất cả các mẫu khác, Singleton
-          Pattern là phương pháp được thử nghiệm nhiều lần bởi nhiều developer
-          khác để đảm bảo chỉ có một đối tượng được tạo. Mẫu Singleton cũng cung
-          cấp cho chúng ta một nơi truy cập toàn cục, giống như một biến toàn
-          cục, nhưng không có nhược điểm.
-        </p>
-
-        <p>
-          <strong>Developer:</strong> Nhược điểm gì?
-        </p>
-
-        <p>
-          <strong>Chuyên gia:</strong> Vâng, đây là một ví dụ: nếu chú em gán
-          một đối tượng cho một biến toàn cục, thì đối tượng đó có thể được tạo
-          khi ứng dụng của chú em vừa bắt đầu. Đúng chứ? Điều gì xảy ra nếu đối
-          tượng này sử dụng nhiều tài nguyên và ứng dụng của bạn không bao giờ
-          kết thúc việc sử dụng nó? Như chú em thấy, với Singleton Pattern,
-          chúng ta chỉ có thể tạo các đối tượng của mình khi cần.
-        </p>
-
-        <p>
-          <strong>Developer:</strong> Điều này dường như vẫn chưa thực sự quá
-          hữu ích.
-        </p>
-        <p>
-          <strong>Chuyên gia:</strong> Nếu chú em đã xử lý tốt các biến và
-          phương thức static cũng như các access modifiers (public, protected,
-          private), thì nó không thành vấn đề. Nhưng, trong cả hai trường hợp,
-          thật thú vị khi xem cách Singleton Pattern hoạt động, và code
-          Singleton không khó để áp dụng. Chỉ cần tự hỏi: làm thế nào để tôi
-          ngăn chặn nhiều hơn một đối tượng được khởi tạo?
-        </p>`,
-      },
     ],
   },
   {
-    title: `The Little Singleton Pattern`,
+    title: `Hãy nghiên cứu sự tương tác để hiểu Command Pattern…`,
     contents: [
       {
-        div: `<p>Làm thế nào để tạo ra một đối tượng?&nbsp;</p>`,
-      },
-      {
-        code: {
-          src: `new MyObject();`,
-          language: 'java',
-        },
-      },
-      {
-        div: `<p>
-        Và, nếu một đối tượng khác muốn tạo <strong>MyObject</strong> thì sao?
-        Nó có thể gọi new trên <strong>MyObject</strong> một lần nữa
-        không?&nbsp; 
-      </p>
-
-      <ul>
-        <li>Vâng, đương nhiên.</li>
-      </ul>
-
-      <p>
-        Vì vậy, miễn là chúng ta có một lớp, chúng ta có thể khởi tạo nó một
-        hoặc nhiều lần đúng không?
-      </p>
-
-      <ul>
-        <li>Vâng. Nhưng chỉ khi nó là một public class.</li>
-      </ul>
-
-      <p>Và nếu không?</p>
-
-      <ul>
-        <li>
-          Chà, nếu nó không phải là một public class, chỉ các lớp trong cùng
-          một package có thể khởi tạo nó. Nhưng chúng vẫn có thể khởi tạo nó
-          nhiều hơn một lần.
-        </li>
-      </ul>
-
-      <p>Hừm, thú vị. Bạn có biết bạn có thể làm điều này?</p>`,
-      },
-      {
-        code: {
-          src: `public MyClass {
-    private MyClass() {}
-} `,
-          language: 'java',
-        },
-      },
-      {
-        div: `<ul>
-        <li>
-          Không, tôi không bao giờ nghĩ về nó, nhưng tôi đoán chúng vẫn hợp lý
-          bởi vì nó là một cú pháp đúng.
-        </li>
-      </ul>
-
-      <p>Nó có nghĩa là gì?</p>
-
-      <ul>
-        <li>
-          Tôi cho rằng đó là một lớp không thể được khởi tạo bởi vì nó có một
-          private constructor.
-        </li>
-      </ul>
-
-      <p>
-        Chà, có <strong>BẤT KỲ </strong>object nào có thể sử dụng private
-        constructor không?
-      </p>
-
-      <ul>
-        <li>
-          Hmm, tôi nghĩ bên trong lớp <strong>MyClass </strong>là nơi duy nhất
-          có thể gọi nó. Nhưng điều đó không có nhiều ý nghĩa.
-        </li>
-      </ul>
-
-      <p>Tại sao không ?</p>`,
-      },
-      {
-        div: `Bên trong lớp MyClass sẽ làm được điều này:`,
-      },
-      {
-        code: {
-          src: `public MyClass getMyClass() { return new MyClass(); }`,
-          language: 'java',
-        },
-      },
-      {
-        div: `<p>
-        Nhưng cho dù có phương thức getMyClass() đi nữa cũng không thể đem ra
-        khỏi lớp này được, bởi vì muốn sử dụng thì phải tạo instance mới và
-        gọi instance.getMyClass(), nhưng không thể tạo được biến instance).
-        Đây là một vấn đề về con gà và quả trứng: Tôi có thể sử dụng
-        constructor từ một đối tượng thuộc loại MyClass, nhưng tôi không bao
-        giờ có thể khởi tạo đối tượng đó vì không đối tượng nào khác có thể sử
-        dụng “new MyClass()”.
-      </p>
-      <p>
-        Đúng vậy. Nhưng đó chỉ là một suy nghĩ của bạn. Vậy đoạn code này thế
-        nào?
+        div: `<p class="has-medium-font-size">
+        <strong>
+          … Và đưa ra bữa tối này là ở Objectville, hãy nghĩ về các cuộc gọi
+          đến Object và Method liên quan!
+        </strong>
       </p>`,
       },
-      {
-        code: {
-          src: `public MyClass {
-      public static MyClass getInstance() {
-      }
-}`,
-          language: 'java',
-        },
-      },
-      {
-        div: `<ul>
-        <li>
-          <strong>MyClass </strong>là một lớp với một static method. Chúng ta
-          có thể gọi static method như thế này: 
-          <strong>MyClass.getInstance();</strong>
-        </li>
-      </ul>
-
-      <p>
-        Tại sao bạn sử dụng <strong>MyClass.getInstance()</strong>, thay vì
-        gọi thông qua đối tượng <strong>myObject.getInstance()</strong>?
-      </p>
-
-      <ul>
-        <li>
-          Chà, <strong>getInstance()</strong> là một static method; nói cách
-          khác, nó là một CLASS method (ý nói phương thức này thuộc về class,
-          không phải thuộc về instance). Bạn cần sử dụng tên lớp để tham chiếu
-          một static method.
-        </li>
-      </ul>
-
-      <p>
-        Rất thú vị. Điều gì sẽ xảy ra nếu chúng ta đặt mọi thứ lại với nhau.
-        Bây giờ tôi có thể khởi tạo MyClass không?
-      </p>`,
-      },
-      {
-        code: {
-          src: `public MyClass {
-      private MyClass() {}
-      public static MyClass getInstance() {
-              return new MyClass();
-      }
-}`,
-          language: 'java',
-        },
-      },
-      {
-        div: `<ul>
-        <li>Wow, chắc chắn có thể.</li>
-      </ul>
-
-      <p>
-        Vì vậy, bây giờ bạn có thể nghĩ ra một cách thứ hai để khởi tạo một
-        đối tượng không?
-      </p>`,
-      },
-      {
-        code: {
-          src: `MyClass.getInstance();`,
-          language: 'java',
-        },
-      },
-      {
-        div: `<p>
-        Bạn có thể viết đoạn code để chỉ <strong>MỘT </strong>phiên bản 
-        <strong>MyClass</strong> được tạo không?
-      </p>
-
-      <ul>
-        <li>Vâng tôi cũng nghĩ có thể…</li>
-      </ul>`,
-      },
-    ],
-  },
-  {
-    title: `Triển khai Singleton Pattern cổ điển`,
-    contents: [
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_3.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_6.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Vai trò và trách nhiệm của Objectville Diner`,
+    contents: [
+      {
+        div: `<p>
+        <strong>
+          Một Order đóng gói một yêu cầu để chuẩn bị một bữa ăn.
+        </strong>
+      </p>
+
+      <p>
+        Hãy nghĩ về Order như một đối tượng, một đối tượng đại diện yêu cầu để
+        chuẩn bị một bữa ăn. Giống như bất kỳ đối tượng nào, nó có thể được
+        truyền đi các class khác – từ Waitress đến quầy đặt hàng hoặc đến
+        người Waitress tiếp theo đảm nhận ca làm việc. Order object có một
+        interface chỉ bao gồm một phương thức <strong>orderUp()</strong>, gói
+        gọn các hành động cần thiết để chuẩn bị bữa ăn. Nó cũng có một tham
+        chiếu đến đối tượng cần chuẩn bị nó (trong trường hợp của chúng tôi là
+        đầu bếp, Cook). Nó được gói gọn trong đó Waitress không phải biết
+        những gì cần làm trong order hay ngay cả những người đầu bếp; Waitress
+        chỉ cần cầm order, đưa qua cửa sổ nhà bếp và gọi “Order
+        up!”&nbsp;&nbsp;
+      </p>
+
+      <p>
+        <strong>
+          Công việc của Waitress là lấy Order và gọi phương thức orderUp()
+        </strong>
+      </p>
+
+      <p>
+        Công việc của Waitress rất dễ dàng: nhận order từ khách hàng, sau đó
+        đi đến quầy đặt hàng, và gọi phương thức<strong> orderUp()</strong> để
+        chuẩn bị bữa ăn. Như chúng ta đã thảo luận, ở Objectville, Waitress
+        thực sự không phải là người lo lắng về những gì mà trên order ghi hoặc
+        đầu bếp nào sẽ nấu; cô ấy chỉ biết <strong>Order</strong> có một
+        phương thức <strong>orderUp()</strong> mà cô ấy có thể gọi để hoàn
+        thành công việc.
+      </p>
+
+      <p>
+        Bây giờ, trong suốt cả ngày, phương thức <strong>TakeOrder()</strong> 
+        của Waitress được tham số hóa với các order khác nhau từ các khách
+        hàng khác nhau, nhưng điều đó không làm cô ấy bối rối; cô ấy biết tất
+        cả các order đều hỗ trợ phương thức <strong>orderUp()</strong> và cô
+        ấy có thể gọi <strong>orderUp() </strong>bất cứ khi nào cô ấy cần một
+        bữa ăn được chuẩn bị.
+      </p>
+
+      <p>
+        <strong>
+          Đầu bếp (Short-Order Cook) có kiến thức cần thiết để chuẩn bị bữa
+          ăn.
+        </strong>
+      </p>
+
+      <p>
+        Short-Order Cook là đối tượng thực sự biết cách chuẩn bị bữa ăn. Khi
+        Waitress đã gọi phương thức <strong>orderUp();</strong> Short-Order
+        Cook tiếp quản và thực hiện tất cả các method cần thiết để tạo ra bữa
+        ăn.
+      </p>
+
+      <p>
+        Lưu ý Waitress và đầu bếp hoàn toàn tách rời: Waitress có Order gói
+        gọn các chi tiết của bữa ăn; cô ấy chỉ cần gọi một phương thức trên
+        mỗi Order để chuẩn bị.
+      </p>
+
+      <p>
+        Tương tự như vậy, Short-Order Cook nhận được danh sách các món ăn từ
+        Order; anh ta không bao giờ cần phải liên lạc trực tiếp với Waitress.
+      </p>
+
+      <p>
+        <strong>Kiên nhẫn, chúng ta đã đến đó…</strong>
+      </p>
+
+      <p>
+        Hãy nghĩ về Diner như một mô hình cho mẫu thiết kế OO, cho phép chúng
+        ta tách một đối tượng ”yêu cầu” (request) hành động khỏi các đối tượng
+        receiver sẽ thực hiện các yêu cầu đó. Ví dụ, trong API điều khiển từ
+        xa của chúng ta, chúng ta cần tách code được gọi khi nhấn nút từ các
+        đối tượng của các lớp nhà cung cấp đặc biệt thực hiện các yêu cầu đó.
+        Điều gì nếu mỗi slot của remote giữ một đối tượng như đối tượng Order
+        của Diner. Sau đó, khi nhấn nút, chúng ta có thể gọi phương thức tương
+        đương của Phương thức “orderUp()” trên đối tượng này và bật đèn mà
+        không cần đến remote để biết chi tiết về cách làm cho đèn sáng hoặc
+        những đối tượng đang tạo ra chúng xảy ra.
+      </p>
+
+      <p>
+        Bây giờ, hãy chuyển đổi một chút và lập bản đồ cho tất cả các bữa tối
+        ở Objectville Diner với Command Pattern…
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng sức mạnh bộ não`,
+    contents: [
+      {
+        div: `<p>
+        Trước khi chúng ta tiếp tục, hãy dành thời gian nghiên cứu sơ đồ phía
+        trên cùng với vai trò và trách nhiệm của Diner cho đến khi bạn nghĩ
+        rằng bạn đã xử lý được các đối tượng và mối quan hệ của Objectville
+        Diner. Khi bạn đã làm xong việc đó, chúng ta sẽ tiếp tục với Command
+        Pattern!
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Từ Objectville Diner đến Command Pattern`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, chúng tôi đã dành đủ thời gian ở Objectville Diner để chúng
+        tôi biết tất cả các tính cách và trách nhiệm của chúng. Bây giờ chúng
+        tôi sẽ làm lại sơ đồ của Objectville Diner để phản ánh Mẫu Command.
+        Bạn sẽ thấy rằng tất cả các Object đều giống nhau; chỉ có tên đã thay
+        đổi.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_7.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -306,158 +516,297 @@ export const chapter6: IContent[] = [
       {
         div: `<p>
         <strong>
-          Nếu bạn chỉ lướt qua 
-          <a
-            rel="noreferrer noopener"
-            aria-label="cuốn sách (mở trong tab mới)"
-            href="/react-admin/#/ebook/vietnamese"
-            target="_blank"
-          >
-            cuốn sách
-          </a>
-          , đừng copy code này một cách mù quáng, bạn sẽ thấy nó có một vài
-          vấn đề phía sau trong chương này.
+          Dùng não của bạn để nối các đối tượng và phương thức Diner với các
+          tên tương ứng của Command Pattern.
         </strong>
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: ` Cuộc phỏng vấn tuần này:
-    Lời thú nhận của một Singleton Pattern`,
-    contents: [
-      {
-        div: `<p>
-        <strong>HeadFirst:</strong> Hôm nay chúng tôi rất vui khi được phỏng
-        vấn bạn, Singleton. Tại sao bạn không bắt đầu bằng cách cho chúng tôi
-        biết một chút về bản thân bạn.
-      </p>
-
-      <p>
-        <strong>Singleton Pattern:</strong> Chà, tôi hoàn toàn độc nhất (hơi
-        cô đơn); nhưng thực sự tôi chỉ có một.
-      </p>
-
-      <p>
-        <strong>HeadFirst:</strong> Một?
-      </p>
-
-      <p>
-        <strong>Singleton Pattern:</strong> Vâng, chỉ một. Tôi đã dựa trên
-        Singleton Pattern, đảm bảo rằng bất cứ lúc nào cũng chỉ có một
-        instance của tôi.
-      </p>
-
-      <p>
-        <strong>HeadFirst:</strong> Có phải đó là một sự lãng phí? Ai đó đã
-        dành thời gian để phát triển một lớp toàn diện và bây giờ tất cả những
-        gì chúng ta có thể nhận được là chỉ một đối tượng trong số đó?
-      </p>
-      <p>
-      <strong>Singleton Pattern:</strong> Không hề! Có sức mạnh trong “MỘT”.
-      Hãy nói rằng bạn có một đối tượng có chứa các cài đặt trong registry.
-      Bạn không muốn có nhiều bản sao của đối tượng đó và các giá trị của nó
-      chạy nhiều nơi – điều đó sẽ dẫn đến sự hỗn loạn. Bằng cách sử dụng một
-      đối tượng như tôi, bạn có thể đảm bảo rằng mọi đối tượng trong ứng
-      dụng của bạn đang sử dụng cùng một tài nguyên global.
-    </p>
-
-    <p>
-      <strong>HeadFirst:</strong> Hãy cho chúng tôi biết thêm đi.
-    </p>
-
-    <p>
-      <strong>Singleton Pattern: </strong>Ồ, tôi rất tốt cho mọi thứ. Độc
-      thân đôi khi có những lợi thế mà bạn chưa biết. Tôi thường được sử
-      dụng để quản lý nhóm tài nguyên, nhóm kết nối (connection) hoặc luồng
-      (thread).
-    </p>
-    <p>
-    <strong>HeadFirst: </strong>Tuy nhiên, chỉ có một thể hiện (instance)
-    của bạn? Điều đó nghe thật cô đơn.
-  </p>
-  <p>
-      <strong>Singleton Pattern:</strong> Dù chỉ có một trong số tôi, tôi
-      vẫn bận rộn, nhưng thật tuyệt nếu nhiều nhà phát triển biết đến tôi –
-      nhiều nhà phát triển gặp phải lỗi vì họ có nhiều bản sao “trôi nổi”
-      trong ứng dụng mà họ thậm chí không biết.
-    </p>
-
-    <p>
-      <strong>HeadFirst:</strong> Nhưng làm sao bạn biết chỉ có một mình
-      bạn? Không ai có thể dùng <strong>new</strong> để tạo ra một “
-      <strong>
-        <em>new </em>you
-      </strong>
-      ” hay sao?
-    </p>
-
-    <p>
-      <strong>Singleton Pattern:</strong> Không! Tôi thực sự độc nhất.
-    </p>
-
-    <p>
-      <strong>HeadFirst:</strong> Chà, có chắc các nhà phát triển có thể sẽ
-      không khởi tạo bạn nhiều lần?
-    </p>
-
-    <p>
-      <strong>Singleton Pattern:</strong> Chắc chắc. Sự thật tôi không có
-      public constructor.
-    </p>
-
-    <p>
-      <strong>HeadFirst:</strong> KHÔNG PUBLIC CONSTRUCTOR! Ồ, xin lỗi,
-      không có public constructor ư?
-    </p>
-
-    <p>
-      <strong>Singleton Pattern:</strong> Đúng vậy. Constructor của tôi được
-      khai báo là <strong>private</strong>.
-    </p>
-    <p>
-      <strong>HeadFirst:</strong> Nó hoạt động như thế nào? Làm thế nào để
-      bạn có được instance?
-    </p>
-    <p>
-          <strong>Singleton Pattern:</strong> Bạn thấy đấy, để có được một đối
-          tượng Singleton, bạn không cần khởi tạo đối tượng, bạn chỉ cần yêu cầu
-          một instance. Vì vậy, lớp của tôi có một phương thức tĩnh gọi là
-          getInstance(). Gọi nó và tôi sẽ xuất hiện ngay lập tức, sẵn sàng làm
-          việc. Trong thực tế, tôi có thể đang được các đối tượng khác gọi đến
-          trong khi bạn yêu cầu tôi.
-        </p>
-
-        <p>
-          <strong>HeadFirst:</strong> Chà, Mr.Singleton, dường như có rất nhiều
-          thứ dưới vỏ bọc của bạn để làm tất cả công việc này. Cảm ơn vì đã tiết
-          lộ bản thân và chúng tôi hy vọng sẽ sớm gặp lại bạn!
-        </p>`,
-      },
-    ],
-  },
-  {
-    title: `Nhà máy Chocolate`,
-    contents: [
-      {
-        div: `<p>
-        Mọi người đều biết rằng tất cả các nhà máy sô cô la hiện đại đều có
-        nồi hơi sô cô la điều khiển bằng máy tính. Công việc của lò hơi là lấy
-        sô cô la và sữa, đun sôi chúng, sau đó chuyển chúng sang giai đoạn
-        tiếp theo để làm thanh sô cô la.
-      </p>
-
-      <p>
-        Ở đây, lớp điều khiển của công ty Choc-O-Holic, Inc. Nồi hơi sô cô la
-        cường độ công nghiệp. Kiểm tra code; bạn sẽ nhận thấy họ đã cố gắng
-        hết sức cẩn thận để đảm bảo rằng những điều tồi tệ không xảy ra, như
-        rút hết 500 gallon hỗn hợp chưa đun sôi, hoặc đổ vào nồi hơi đến khi
-        nó đầy, hoặc kiểm tra việc đun một nồi hơi khi đang trống không!
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_4.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_8.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong>Đáp án:</strong>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_9.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Command object đầu tiên của chúng ta`,
+    contents: [
+      {
+        div: `<p>
+        Có phải đó là khoảng thời gian chúng ta xây dựng command object đầu
+        tiên không? Hãy đi tiếp và viết code cho remote. Mặc dù chúng ta chưa
+        biết cách thiết kế API điều khiển từ xa, nhưng việc xây dựng một vài
+        thứ từ dưới lên có thể giúp chúng ta…
+      </p>`,
+      },
+      {
+        p: `<h6><b>IMPLEMENTING COMMAND INTERFACE</b></h6>`,
+      },
+      {
+        div: `<p>
+        Điều đầu tiên: tất cả các command objects implements cùng một
+        interface, chứa một phương thức. Trong Diner chúng tôi gọi phương thức
+        này là <strong>orderUp()</strong>; tuy nhiên, chúng ta thường chỉ sử
+        dụng tên <strong>execute().</strong>
+      </p>
+
+      <p>Đây là giao diện Command:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_10.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        p: `<h6><b>IMPLEMENTING MỘT COMMAND ĐỂ BẬT ĐÈN</b></h6>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_11.jpg`),
+          width: `25%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Bây giờ, hãy nói rằng bạn muốn implement một command để bật đèn lên.
+        Đề cập đến tập hợp các lớp nhà cung cấp của chúng tôi, lớp Light có
+        hai phương thức: <strong>on() </strong>và <strong>off()</strong>. Đây
+        là cách bạn có thể thực hiện điều này như một command:
+        <br />
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_12.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Bây giờ bạn đã có một lớp <strong>LightOnCommand</strong>, hãy để xem
+        liệu chúng ta có thể đưa nó vào sử dụng…
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Dùng command object `,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, hãy làm mọi thứ đơn giản: giả sử chúng ta có một remote chỉ
+        với một button và slot tương ứng để giữ một thiết bị để điều khiển:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_13.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Tạo một bài test đơn giản để sử dụng Remote Control`,
+    contents: [
+      {
+        div: `<p>
+        Ở đây, chỉ cần một chút code để kiểm tra điều khiển từ xa đơn giản.
+        Chúng ta hãy xem và chúng tôi sẽ chỉ ra chúng tương ứng với phần nào
+        trong Command pattern:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_14.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Được rồi, đã đến lúc bạn thực hiện lớp 
+        <strong>GarageDoorOpenCommand</strong>. Đầu tiên, cung cấp code cho
+        lớp bên dưới. Bạn sẽ cần sơ đồ lớp <strong>GarageDoor</strong>.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_15.jpg`),
+          width: `55%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Bây giờ bạn đã có lớp của mình, output của đoạn code sau là gì? (Gợi
+        ý: phương thức <strong>up()</strong> của <strong>GarageDoor</strong> 
+        in ra “<em>Garage Door is Open</em>” khi chạy.)
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_16.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: ` <p>
+        <strong>Đáp án:</strong>
+      </p>`,
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_17.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Định nghĩa Command Pattern`,
+    contents: [
+      {
+        div: `<p>
+        Bạn đã có thời gian của mình ở Objectville Diner, bạn đã thực hiện một phần
+        remote control API và trong quá trình đó, bạn đã có một cái nhìn khá tốt về
+        cách các lớp và các đối tượng tương tác trong Command Pattern. Bây giờ chúng
+        tôi sẽ định nghĩa Command Pattern và tìm hiểu tất cả các chi tiết.
+      </p>
+      
+      <p>Hãy bắt đầu với định nghĩa chính thức của nó:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_18.png`),
+          width: `45%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        <strong>
+          <em>
+            (Command Pattern đóng gói yêu cầu thành đối tượng độc lập, có thể được sử
+            dụng để tham số hóa các đối tượng khác với các yêu cầu khác nhau như log,
+            queue, và hỗ trợ undo.)
+          </em>
+        </strong>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_19.jpg`),
+          width: `30%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Hãy bước qua điều này. Chúng ta biết rằng một command object đóng gói một yêu
+        cầu bằng cách map chúng với một tập hợp các hành động trên một receiver cụ
+        thể. Để đạt được điều này, nó đóng gói các hành động và receiver thành một đối
+        tượng chỉ một phương thức 
+        <strong>execute()</strong>. Khi được gọi, <strong>execute()</strong>  sẽ
+        gọi đến phương thức trên receiver để thực hiện hành động. Nhìn từ bên ngoài,
+        không có đối tượng nào khác thực sự biết những hành động nào được thực hiện
+        trên receiver; chúng chỉ biết rằng nếu chúng gọi phương thức
+        <strong>execute()</strong>, request của chúng sẽ được thực hiện.
+      </p>
+      
+      <p>
+        Chúng ta cũng đã thấy một vài ví dụ về tham số hóa một đối tượng bằng một
+        command. Trở lại quán ăn, Waitress được tham số hóa với nhiều Order trong suốt
+        cả ngày. Trong <strong>SimpleRemoteControl</strong>, trước tiên, chúng tôi đã
+        load vào slot button bằng một “light on” command và sau đó thay thế nó bằng
+        một lệnh “garage door open”. Giống như Waitress, remote slot của bạn không
+        quan tâm command object nào được đặt vào, miễn là nó implements giao diện
+        Command.
+      </p>
+      <p>
+        Những gì chúng ta còn chưa gặp phải là sử dụng các command để cài đặt queues,
+        logs và hỗ trợ undo các hành động. Đừng lo lắng, đó là những phần mở rộng khá
+        đơn giản của Command Pattern cơ bản và chúng ta sẽ sớm nhận được chúng. Chúng
+        ta cũng có thể dễ dàng hỗ trợ những gì mà người ta gọi là Meta Command Pattern
+        khi chúng ta có những điều cơ bản. Meta Command Pattern cho phép bạn tạo các
+        macro command để bạn có thể thực thi nhiều command cùng một lúc.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_20.jpg`),
+          width: `45%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Định nghĩa Command Pattern: Sơ đồ lớp`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_21.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -472,37 +821,90 @@ export const chapter6: IContent[] = [
     contents: [
       {
         div: `<p>
-        Choc-O-Holic đã thực hiện một việc tốt là đảm bảo những sai lầm không
-        xảy ra, bạn có nghĩ thế không? Nhưng sau đó, bạn có thể nghi ngờ rằng
-        nếu 2 instance của <strong>ChocolateBoiler </strong>được tạo, một số
-        điều rất xấu có thể xảy ra.
+        <strong>
+          Làm thế nào để thiết kế Command Pattern hỗ trợ việc tách invoker và
+          receiver?
+        </strong>
       </p>
-
+      
       <p>
-        Làm thế nào mọi thứ có thể đi sai nếu nhiều hơn một instance của
-        ChocolateBoiler được tạo ra trong một ứng dụng? (Xem đáp án ở phần
-        dưới).
+        <strong>Sue: </strong>Được rồi, tôi nghĩ rằng bây giờ ta đã có một cái nhìn
+        tốt về Command Pattern. Joe thật&nbsp; tuyệt vời, tôi nghĩ chúng ta sẽ trông
+        giống như những siêu sao sau khi hoàn thành API remote.
       </p>
+      
+      <p><strong>Mary:</strong> Tôi cũng vậy. Vì vậy, chúng ta bắt đầu từ đâu?</p>
+      
       <p>
-      Bạn có thể giúp Choc-O-Holic cải thiện lớp ChocolateBoiler của họ bằng
-      cách biến nó thành một singleton không?
-    </p>`,
+        <strong>Sue:</strong> Giống như chúng ta đã làm trong 
+        <strong>SimpleRemote</strong>, chúng ta cần cung cấp một cách để gán command
+        cho các slots. Trong trường hợp của chúng ta, chúng ta có 7 slots, mỗi slots
+        có một nút “on” và “off ”. Vì vậy, chúng ta có thể gán các command cho remote
+        như thế này:
+      </p>`,
       },
       {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_5.jpg`),
-          width: `60%`,
-          align: `center`,
+        code: {
+          src: `onCommands[0]  = onCommand;
+offCommands[0] = offCommand;`,
+          language: 'java',
         },
       },
       {
         div: `<p>
-        <strong>Đáp án:</strong>
+        <strong>Mary:</strong> Điều đó có ý nghĩa, ngoại trừ các Light objects. Làm
+        thế nào để điều khiển từ xa biết đèn của phòng khách hay đèn của nhà bếp?
+      </p>
+      
+      <p>
+        <strong>Sue:</strong> Ah, chỉ vậy à, không thành vấn đề! Điều khiển từ xa
+        không biết gì ngoài cách gọi <strong>execute()</strong> trên command object
+        tương ứng khi nhấn nút.
+      </p>
+      
+      <p>
+        <strong>Mary:</strong> Vâng, tôi đã hiểu điều đó, nhưng trong quá trình thực
+        hiện, làm thế nào để chúng ta đảm bảo đúng đối tượng đang bật và tắt đúng
+        thiết bị?
+      </p>
+      
+      <p>
+        <strong>Sue:</strong> Khi chúng ta tạo các command được load vào điều khiển từ
+        xa, chúng ta tạo một <strong>LightCommand</strong> được gắn vào đối tượng
+        Living Room Light và một command khác được gắn với đối tượng Kitchen Light.
+        Hãy nhớ rằng, receiver bị ràng buộc với command mà nó đóng gói. Vì vậy, tại
+        thời điểm nhấn nút, không ai quan tâm đến light của phòng nào, điều đúng sẽ
+        xảy ra khi phương thức  <strong>execute() </strong>được gọi.
+      </p>
+      
+      <p>
+        <strong>Mary:</strong> Tôi nghĩ rằng tôi đã hiểu được nó. Hãy thực hiện chương
+        trình remote và tôi nghĩ điều này sẽ rõ ràng hơn!
+      </p>
+      
+      <p><strong>Sue: </strong>Nghe hay đấy. Bắt đầu thôi…</p>
+      `,
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Gán Command vào slot `,
+    contents: [
+      {
+        div: `<p>
+        Vì vậy, chúng ta có một kế hoạch: Chúng ta sẽ gán mỗi slot của điều khiển từ
+        xa cho một command. Điều này làm cho remote sẽ điều khiển invoker của chúng
+        ta. Khi nhấn nút, phương thức 
+        <strong>execute() </strong>sẽ được gọi trên command tương ứng, dẫn đến các
+        hành động sẽ được gọi trên receiver (như đèn, quạt trần, stereos).
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_6.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_22.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -513,74 +915,345 @@ export const chapter6: IContent[] = [
     ],
   },
   {
-    title: `Định nghĩa Singleton Pattern`,
+    title: `Implementing Remote Control`,
     contents: [
       {
-        div: ` <p>
-        Bây giờ bạn đã có bản triển khai <strong>Singleton</strong> cổ điển
-        trong đầu, đã đến lúc ngồi lại, thưởng thức một thanh sô cô la và kiểm
-        tra các điểm khác của Mẫu Singleton.
-      </p>
-
-      <p>Hãy bắt đầu với định nghĩa ngắn gọn của mẫu:</p>`,
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_23.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Cài đặt Command Pattern`,
+    contents: [
+      {
+        div: `<p>
+        Chà, chúng tôi đã bắt đầu thực hiện <strong>LightOnCommand</strong>  cho
+        <strong>SimpleRemoteControl</strong>. Chúng ta có thể đặt code tương tự vào
+        đây và mọi thứ hoạt động. Các command “Off” không khác nhau; trong thực tế,
+        <strong>LightOffCommand</strong> trông như thế này:
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_7.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_24.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_25.jpg`),
+          width: `25%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Hãy thử một cái gì đó thử thách hơn một chút; Làm thế nào về việc viết command
+        on và off cho Stereo? Được rồi, off rất dễ, chúng ta chỉ cần liên kết phương
+        thức Stereo với phương thức <strong>off()</strong>  trong
+        <strong>StereoOffCommand</strong>. On thì&nbsp; phức tạp hơn một chút; hãy nói
+        rằng chúng tôi muốn viết một 
+        <strong>StereoOnWithCDCommand</strong>…<br />
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_26.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Không tệ lắm. Hãy xem phần còn lại của các lớp từ nhà cung cấp; bây giờ, bạn
+        chắc chắn có thể “hạ gục” phần còn lại của các lớp Command mà chúng ta cần.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Đặt Remote Control đúng nơi của nó`,
+    contents: [
+      {
+        div: `<p>
+        Công việc của chúng ta với điều khiển từ xa được thực hiện khá nhiều; tất cả
+        những gì chúng ta cần làm là chạy một số thử nghiệm và tập hợp một số tài liệu
+        để mô tả API. Home Automatic hay Bust, Inc. chắc chắn sẽ rất ấn tượng, bạn có
+        nghĩ vậy không? Chúng tôi đã quản lý để đưa ra một thiết kế sẽ cho phép họ sản
+        xuất một cái remote dễ bảo trì và họ sẽ không gặp khó khăn gì trong việc
+        thuyết phục các nhà cung cấp viết một số lớp command đơn giản trong tương lai
+        vì họ rất thích sự dễ viết.
+      </p>
+      
+      <p>Hãy thử nghiệm code này!</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_27.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_28.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong>
+          Đợi một chút, cái gì là NoCommand được load trong các slot từ 4 đến 6?&nbsp;
+        </strong>
+      </p>
+      
+      <p>
+        Quan sát tốt! Chúng tôi đã lén đặt thêm một chút dòng lệnh. Trong điều khiển
+        từ xa, chúng tôi đã không muốn đặt câu if xem command có được load mỗi lần
+        chúng tôi tham chiếu một slot không. Chẳng hạn, trong phương thức
+        <strong>onButtonWasPushed()</strong>, chúng ta sẽ cần code như thế này:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_29.jpg`),
           width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Vì vậy, làm thế nào để chúng ta không cần đặt câu lệnh if? Implements một
+        command mà không cần kiểm tra!
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_30.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Sau đó, trong constructor <strong>RemoteControl</strong> của bạn, chúng tôi
+        gán cho mọi slot một đối tượng <strong>NoCommand </strong>
+        theo mặc định và chúng tôi biết rằng chúng tôi sẽ luôn có một command để gọi
+        trong mỗi slot.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_31.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Vì vậy, trong output của lần chạy thử của chúng tôi, bạn sẽ thấy vài slot chưa
+        được gán command, ngoài đối tượng 
+        <strong>NoCommand </strong>mặc định mà chúng tôi đã gán khi chúng tôi tạo
+        <strong>RemoteControl</strong>.
+      </p>
+      
+      <p>
+        Đối tượng <strong>NoCommand</strong> là một ví dụ về null object. Một 
+        <strong>Null object</strong> rất hữu ích khi bạn không có một đối tượng có ý
+        nghĩa để return và bạn muốn loại bỏ trách nhiệm xử lý kiểm tra null khỏi
+        client. Ví dụ, trong Remote control của chúng tôi, chúng tôi không có một đối
+        tượng có ý nghĩa để gán cho những slot chưa có thiết bị kết nối vào, vì vậy
+        chúng tôi đã cung cấp một đối tượng  <strong>NoCommand</strong> hoạt động
+        như một thay thế và không làm gì khi phương thức
+        <strong>execute()</strong> của nó được gọi.
+      </p>
+      
+      <p>
+        Bạn có thể tìm thấy cách sử dụng cho các <strong>Null Objects</strong> 
+        kết hợp với nhiều Mẫu thiết kế và đôi khi bạn thậm chí còn thấy 
+        <strong>Null Object</strong> được liệt kê dưới dạng là một Mẫu thiết kế cụ
+        thể.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Đã đến lúc viết tài liệu…`,
+    contents: [
+      {
+        div: `<p>
+        <strong>
+          <em> “Thiết kế Remote Control API cho Home Automation or Bust, Inc., </em>
+        </strong>
+      </p>
+      
+      <p>
+        <em>
+          Chúng tôi hân hạnh giới thiệu với bạn giao diện lập trình ứng dụng và thiết
+          kế sau đây cho Home Automation Remote Control của bạn. Mục tiêu thiết kế
+          chính của chúng tôi là giữ cho code điều khiển từ xa càng đơn giản càng tốt
+          để nó không yêu cầu thay đổi khi các lớp nhà cung cấp mới được sản xuất.
+          Cuối cùng, chúng tôi đã sử dụng Command Pattern để phân tách một cách hợp lý
+          lớp RemoteControl khỏi các lớp nhà cung cấp. Chúng tôi tin rằng điều này sẽ
+          giảm chi phí sản xuất điều khiển từ xa cũng như giảm đáng kể chi phí bảo trì
+          liên tục của bạn.
+        </em>
+      </p>
+      
+      <p>
+        <em> Sơ đồ lớp sau đây cung cấp tổng quan về thiết kế của chúng tôi: </em>
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_32.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
         <strong>
           <em>
-            (Mẫu Singleton đảm bảo rằng một lớp chỉ có một thể hiện (instance)
-            duy nhất và cung cấp một điểm truy cập toàn cục đến nó)
+            Làm tốt lắm; Có vẻ như bạn đã đưa ra một thiết kế tuyệt vời, nhưng bạn có
+            quên một điều mà khách hàng yêu cầu không? NÚT UNDO !!!!
           </em>
         </strong>
       </p>
-
+      
       <p>
-        <strong>
-          Không có bất ngờ lớn ở đây. Nhưng, hãy tìm hiểu nó thêm một chút
-          nữa:
-        </strong>
-      </p>
-
-      <ul>
-        <li>
-          Điều gì đang thực sự xảy ra ở đây? Chúng tôi lấy một lớp và để nó tự
-          quản lý một thể hiện (instance) của nó. Chúng tôi cũng không cho bất
-          kỳ lớp nào khác tự tạo một instance mới. Để có được một instance,
-          bạn đã phải gọi thông qua chính lớp đó.
-        </li>
-        <li>
-          Chúng tôi cũng cung cấp một điểm truy cập toàn cục cho instance: bất
-          cứ khi nào bạn cần một instance, chỉ cần truy vấn lớp và nó sẽ
-          return lại cho bạn instance duy nhất. Như bạn đã thấy, chúng ta có
-          thể thực hiện điều này để Singleton được tạo ra một cách 
-          <a
-            rel="noreferrer noopener"
-            aria-label="lười biếng (mở trong tab mới)"
-            href="https://en.wikipedia.org/wiki/Lazy_loading"
-            target="_blank"
-          >
-            lười biếng
-          </a> 
-          (lazy – khi cần thì mới khởi tạo), điều này đặc biệt quan trọng đối
-          với các đối tượng sử dụng nhiều tài nguyên.
-        </li>
-      </ul>`,
+        Rất tiếc! Chúng tôi gần như đã quên… may mắn thay, một khi chúng tôi có các
+        lớp Command cơ bản, undo rất dễ dàng để thêm vào. Hãy thêm undo các lệnh của
+        chúng tôi và vào điều khiển từ xa…
+      </p>`,
       },
     ],
   },
   {
-    title: `Được rồi, hãy để kiểm tra sơ đồ lớp:`,
+    title: `Chúng ta đang làm gì?`,
     contents: [
       {
+        div: `<p>
+        Được rồi, chúng ta cần thêm chức năng để hỗ trợ nút undo trên điều khiển từ
+        xa. Nó hoạt động như thế này: giả sử Đèn phòng khách tắt và bạn nhấn nút bật
+        trên điều khiển từ xa. Rõ ràng là đèn bật sáng. Bây giờ nếu bạn nhấn nút undo
+        thì hành động cuối cùng sẽ bị đảo ngược – trong trường hợp này đèn sẽ tắt.
+        Trước khi chúng ta đi vào các ví dụ phức tạp hơn, hãy để đối tượng Đèn hoạt
+        động với nút undo:
+      </p>
+      
+      <p>
+        1. Khi các lệnh hỗ trợ undo, chúng có phương thức 
+        <strong>undo()</strong> phản chiếu phương thức 
+        <strong>execute()</strong>. Bất cứ điều gì <strong>execute()</strong> 
+        cuối cùng đã làm, <strong>undo()</strong> sẽ đảo ngược chúng. Vì vậy, trước
+        khi chúng ta có thể thêm chức năng undo vào các command của mình, chúng ta cần
+        thêm một phương thức <strong>undo()</strong> vào giao diện
+        <strong>Command</strong>:
+      </p>`,
+      },
+      {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_8.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_33.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Điều đó đã đủ đơn giản. Bây giờ, hãy đi vào Light command và thực hiện phương
+        thức <strong>undo()</strong>.
+      </p>
+      
+      <p>
+        2. Hãy bắt đầu với <strong>LightOnCommand</strong>: nếu phương thức 
+        <strong> <em>execute()</em> </strong>  của&nbsp;
+        <strong>LightOnCommand </strong>được gọi, thì phương thức 
+        <strong> <em>on()</em> </strong>  được gọi lần cuối. Chúng ta biết rằng{'
+        '} <strong> <em>undo()</em> </strong>  cần phải làm ngược lại điều này
+        bằng cách gọi phương thức 
+        <strong>
+          <em>off()</em>
+        </strong>
+        .
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_34.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Bây giờ cho <strong>LightOffCommand</strong>. Ở đây, phương thức 
+        <strong> <em>undo()</em> </strong>  chỉ cần gọi phương thức 
+        <strong> <em>on()</em> </strong>  của object <strong>Light</strong>.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_35.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Điều này có thể dễ dàng hơn không? Được rồi, chúng ta chưa hoàn thành; chúng
+        ta cần hỗ trợ một chút vào Điều khiển từ xa để xử lý việc theo dõi nút cuối
+        cùng được nhấn và nút undo được nhấn.
+      </p>
+      
+      <p>
+        3. Để thêm hỗ trợ cho nút undo, chúng ta chỉ phải thực hiện một vài thay đổi
+        nhỏ cho lớp Remote Control. Ở đây, cách thức mà chúng tôi sẽ thực hiện nó:
+        chúng tôi sẽ thêm một biến đối tượng mới để theo dõi command cuối cùng được
+        gọi; sau đó, bất cứ khi nào nhấn nút undo, chúng tôi sẽ truy xuất command đó
+        và gọi phương thức 
+        <strong> <em>undo()</em> </strong>  của nó.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_36.png`),
           width: `80%`,
           align: `center`,
         },
@@ -591,22 +1264,172 @@ export const chapter6: IContent[] = [
     ],
   },
   {
-    title: `Chúng tôi có một vấn đề…`,
+    title: `Ứng dụng Command Pattern: nút Undo!`,
     contents: [
       {
-        div: `<p>
-        Có vẻ như Chocolate Boiler đã làm chúng ta thất vọng; mặc dù thực tế
-        chúng tôi đã cải thiện code bằng Singleton cổ điển, nhưng bằng cách
-        nào đó, phương thức <strong>fill()</strong>&nbsp;của 
-        <strong>ChocolateBoiler </strong>đã có thể đổ thêm sô cô la và sữa vào
-        nồi hơi mặc dù đã có sữa và sô cô la đang sôi trong nồi! Và 500 gallon
-        sữa (và sô cô la) bị tràn! Chuyện gì đã xảy ra!?
-      </p>
-`,
+        div: `<p>Được rồi, hãy test lại một chút để kiểm tra nút undo:</p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_9.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_37.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>Và đây, kết quả kiểm tra…</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_38.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng state để implement Undo`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, thực hiện Undo trên lớp Light là hướng dẫn nhưng hơi quá dễ dàng.
+        Thông thường, chúng ta cần quản lý một chút trạng thái (state) để thực hiện
+        undo. Hãy thử một cái gì đó thú vị hơn một chút, như lớp Quạt trần
+        (CeilingFan) từ các lớp nhà cung cấp. Quạt trần cho phép một số tốc độ quạt
+        (speed) được đặt cùng với phương thức off.
+      </p>
+      
+      <p>Đây là code của <strong>CeilingFan</strong>:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_39.jpg`),
+          width: `30%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_40.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Thêm Undo vào CeilingFan Command `,
+    contents: [
+      {
+        div: `<p>
+        Bây giờ hãy giải quyết việc thêm undo vào các command 
+        <strong>CeilingFan </strong>khác nhau. Để làm như vậy, chúng ta cần theo dõi
+        cài đặt tốc độ cuối cùng của quạt và, nếu phương thức 
+        <strong>undo()</strong> được gọi, hãy khôi phục quạt về tốc độ trước khi tắt.
+        Đây là code cho lớp <strong>CeilingFanHighCommand</strong>:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_41.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng sức mạnh bộ não bạn`,
+    contents: [
+      {
+        div: `<p>
+        Chúng tôi đã có thêm ba <strong>CellingFan</strong> command: 
+        <em>low</em>, <em>medium</em> và <em>off</em> làm thế nào để tất cả chúng được
+        thực hiện?
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Hãy sẵn sàng để test CellingFan`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_42.jpg`),
+          width: `40%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<p>
+        Thời gian để load lên điều khiển từ xa của chúng ta với các 
+        <strong>CellingFan </strong>command. Chúng tôi sẽ load slot 0 cho quạt với tốc
+        độ <em>medium</em> và slot 1 với mức <em>high</em>. Cả hai nút off tương ứng
+        sẽ giữ lệnh tắt quạt trần.
+      </p>
+      
+      <p>Đây là kịch bản thử nghiệm của chúng tôi:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_43.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Test lớp Celling Fan của chúng ta`,
+    contents: [
+      {
+        div: `<p>
+        Được rồi, hãy khởi động remote, load nó bằng các command và nhấn một số nút!
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_44.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Mọi điều khiển từ xa đều cần một Chế độ Party!`,
+    contents: [
+      {
+        div: `<p>
+        Điều gì nếu bạn chỉ cần nhấn một nút và đèn sẽ mờ, stereo và TV được bật và
+        play DVD, bồn nước nóng được bật lên?
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_45.jpg`),
           width: `60%`,
           align: `center`,
         },
@@ -615,73 +1438,9 @@ export const chapter6: IContent[] = [
         div: `<br />`,
       },
       {
-        div: `<p>
-        Có thể việc bổ sung các thread đã gây ra điều này? Có phải đó là
-        trường hợp một khi chúng ta đã đặt biến 
-        <strong>
-          <em>uniqueInstance </em>
-        </strong>
-        thành phiên bản duy nhất của <strong>ChocolateBoiler</strong>, tất cả
-        các lệnh gọi <strong>getInstance()</strong> sẽ trả về cùng một
-        instance? Đúng không?
-      </p>
-`,
-      },
-    ],
-  },
-  {
-    title: `Trở thành JVM (Java Virtual Machine)`,
-    contents: [
-      {
-        div: `<p>
-        Chúng tôi có hai luồng (thread), mỗi luồng đều thực thi đoạn code bên
-        dưới.
-      </p>`,
-      },
-      {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_10.jpg`),
-          width: `50%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        Công việc của bạn là chạy JVM và xác định xem có trường hợp nào hai
-        luồng có thể nhận được các đối tượng nồi hơi khác nhau hay không. Gợi
-        ý: bạn thực sự chỉ cần xem chuỗi hoạt động trong phương thức 
-        <strong>getInstance()</strong> và giá trị của 
-        <strong>
-          <em>uniqueInstance</em>
-        </strong>
-        <em> </em>để xem chúng có thể trùng nhau như thế nào. Sử dụng công cụ
-        code <strong>Magnets </strong>để giúp bạn nghiên cứu cách code có thể
-        xen kẽ để tạo hai đối tượng nồi hơi.
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_11.jpg`),
-          width: `90%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        <strong>Đáp án:</strong> Đây là trường hợp vẫn tạo ra được 2 instance
-        mặc dù dùng Singleton pattern.
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_12.jpg`),
-          width: `90%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_46.jpg`),
+          width: `80%`,
           align: `center`,
         },
       },
@@ -691,20 +1450,18 @@ export const chapter6: IContent[] = [
     ],
   },
   {
-    title: `Xử lý đa luồng cho Singleton Pattern`,
+    title: `Ứng dụng Command Pattern: Macro command`,
     contents: [
       {
-        div: `<p>
-        <strong>
-          Các vấn đề trong đa luồng của chúng ta hầu như được sửa chữa một
-          cách thông thường bằng cách biến getInstance() thành một phương thức
-          được đồng bộ hóa (synchronized):
-        </strong>
-      </p>`,
+        div: `<p>Hãy xem qua cách chúng tôi sử macro command:</p>
+
+        <p>
+          1. Đầu tiên chúng ta tạo tập hợp các command mà chúng ta muốn đưa vào macro:
+        </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_13.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_47.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -714,73 +1471,36 @@ export const chapter6: IContent[] = [
       },
       {
         div: `<p>
-        <strong>Tôi đồng ý điều này đã khắc phục vấn đề.</strong>
-      </p>
-
-      <p>
         <strong>
-          Nhưng đồng bộ hóa là “quá tốn kém”; Đây có phải cũng là một vấn đề?
+          Đến lượt bạn: Chúng ta cũng sẽ cần các command cho các nút off, viết code để
+          tạo các nút ở đây
         </strong>
       </p>
-
+      
       <p>
-        Suy nghĩ rất tốt, và nó thực sự tệ hơn một chút so với bạn nghĩ: thời
-        gian duy nhất cần đến việc đồng bộ là lần đầu tiên gọi phương thức
-        này. Nói cách khác, một khi chúng ta đã khởi tạo được biến
-        uniqueInstance, chúng ta không cần phải đồng bộ hóa phương thức này
-        nữa. Sau lần đầu tiên, việc đồng bộ hóa hoàn toàn không cần thiết!
-      </p>
-
-      <p>
-        <strong>Chúng ta có thể cải thiện đa luồng không?</strong>
-      </p>
-
-      <p>
-        Đối với hầu hết các ứng dụng Java, rõ ràng chúng ta cần đảm bảo rằng
-        Singleton hoạt động với sự có mặt của nhiều luồng. Nhưng, có vẻ khá
-        tốn kém để đồng bộ hóa phương thức <strong>getInstance()</strong>, vậy
-        chúng ta phải làm gì?
+        <strong>Đáp án:</strong>
       </p>`,
-      },
-    ],
-  },
-  {
-    title: `Chà, chúng tôi có một vài lựa chọn…`,
-    contents: [
-      {
-        div: ` <p>
-        <strong>
-          1. Không làm gì nếu hiệu suất của getInstance() không quan trọng đối
-          với ứng dụng của bạn
-        </strong>
-      </p>
-
-      <p>
-        Đúng rồi; nếu gọi phương thức <strong>getInstance()</strong> là không
-        gây ra chi phí đáng kể cho ứng dụng của bạn, hãy quên nó đi. Đồng bộ
-        hóa <strong>getInstance()</strong> rất đơn giản và hiệu quả. Chỉ cần
-        lưu ý rằng đồng bộ hóa một phương thức có thể làm giảm hiệu suất xuống
-        100 lần, vì vậy nếu nó chiếm một phần lưu lượng truy cập cao trong
-        code của bạn, bạn có thể phải xem xét lại.
-      </p>
-      <p>
-      <strong>
-        2. Sử dụng kĩ thuật eagerly created instance (load tất cả lên 1 lần
-        duy nhất ngay từ đầu) thay vì một lazily created (dùng tới đâu load
-        tới đó)
-      </strong>
-    </p>
-
-    <p>
-      Nếu ứng dụng của bạn luôn tạo và sử dụng một phiên bản của Singleton
-      hoặc chi phí việc tạo và thời gian tạo Singleton không phải là vấn đề,
-      bạn có thể muốn tạo Singleton eagerly (khởi tạo ngay từ đầu), như thế
-      này:
-    </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_14.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_48.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        2. Tiếp theo, chúng ta tạo hai mảng, một cho các lệnh 
+        <strong>On </strong>và một cho <strong>Off </strong>và load chúng với các
+        command tương ứng:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_49.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -790,34 +1510,26 @@ export const chapter6: IContent[] = [
       },
       {
         div: `<p>
-        Sử dụng cách tiếp cận này, chúng tôi dựa vào JVM để tạo instance duy
-        nhất của Singleton khi lớp được load. JVM đảm bảo rằng instance sẽ
-        được tạo trước khi bất kỳ luồng nào truy cập vào biến static 
-        <strong>
-          <em>uniqueInstance</em>
-        </strong>
-        .
-      </p>
-
-      <p>
-        <strong>
-          3. Sử dụng “double-checked locking”, để giảm việc sử dụng
-          synchronized trong getInstance()
-        </strong>
-      </p>
-
-      <p>
-        Với double-check locking, trước tiên chúng tôi kiểm tra xem liệu một
-        phiên bản có được tạo không và nếu không, thì chúng tôi sẽ đồng bộ
-        hóa. Bằng cách này, chúng tôi chỉ đồng bộ hóa lần đầu tiên. Đây là
-        những gì chúng ta muốn.
-      </p>
-
-      <p>Hãy kiểm tra code:</p>`,
+        3. Sau đó, chúng ta gán <strong>MacroCommand</strong> cho một button như chúng
+        ta đã làm:
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_15.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_50.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>4. Cuối cùng, chúng ta chỉ cần nhấn một số nút và xem điều này hoạt động.</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_51.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -827,45 +1539,17 @@ export const chapter6: IContent[] = [
       },
       {
         div: `<p>
-        Nếu hiệu suất là một vấn đề trong việc bạn sử dụng phương thức 
-        <strong>getInstance() </strong>thì phương thức triển khai Singleton
-        này có thể làm giảm đáng kể chi phí.
-      </p>
-
-      <p>
         <strong>
-          Double-checked locking không hoạt động trong Java 1.4 trở về trước!
+          Bài tập: Điều duy nhất MacroCommand của chúng ta thiếu là chức năng undo.
+          Khi nhấn nút undo sau một macro command, tất cả các command được gọi trong
+          macro phải undo các hành động trước đó của chúng. Đây là code cho
+          MacroCommand; tiếp tục và thực hiện phương thức undo():
         </strong>
-      </p>
-
-      <p>
-        Thật không may, trong phiên bản Java 1.4 trở về trước, nhiều JVM chứa
-        các triển khai từ khóa 
-        <strong>
-          <em>volatile</em>
-        </strong> 
-        cho phép đồng bộ hóa không đúng cách để double-check locking. Nếu bạn
-        phải sử dụng một JVM cũ hơn Java 5, hãy xem xét các cách khác để triển
-        khai Singleton.
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Trong khi đó, trở lại tại Nhà máy Sô cô la…`,
-    contents: [
-      {
-        div: `<p>
-        Trong khi chúng tôi đã tắt chẩn đoán các vấn đề đa luồng, nồi hơi sô
-        cô la đã được làm sạch và sẵn sàng để làm việc. Nhưng trước hết, chúng
-        ta phải sửa các vấn đề đa luồng. Chúng ta có sẵn một vài giải pháp,
-        mỗi giải pháp có sự đánh đổi khác nhau, vậy chúng ta sẽ sử dụng giải
-        pháp nào?
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_16.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_52.jpg`),
           width: `70%`,
           align: `center`,
         },
@@ -877,7 +1561,7 @@ export const chapter6: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_17.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_53.jpg`),
           width: `70%`,
           align: `center`,
         },
@@ -888,186 +1572,178 @@ export const chapter6: IContent[] = [
     ],
   },
   {
-    title: `Xin chúc mừng!`,
+    title: `Không có câu hỏi ngớ ngẩn`,
     contents: [
       {
         div: `<p>
-        Tại thời điểm này, Choc-O-Holic rất vui khi có một số chuyên môn áp
-        dụng cho code nồi hơi của họ. Bất kể bạn áp dụng giải pháp đa luồng
-        nào, nồi hơi phải ở trong tình trạng tốt, không có nhiều rủi ro. Xin
-        chúc mừng. Bạn không chỉ xoay sở để thoát khỏi 500 lbs (Pound – đơn vị
-        tính của Anh) sô cô la nóng trong chương này, mà bạn còn phải trải qua
-        tất cả các vấn đề tiềm ẩn của Singleton.
+        <strong>Hỏi: </strong>Tôi luôn cần một receiver phải không? Tại sao command
+        object không thể cài đặt phần chi tiết của 
+        <strong> <em>execute()</em> </strong>  method?
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Nói chung, chúng tôi cố gắng cho các command
+        objects, chỉ cần implement một hành động trên receiver; tuy nhiên, có rất
+        nhiều ví dụ về các đối tượng command “thông minh” thực hiện hầu hết, nếu không
+        phải là tất cả, logic cần thiết để thực hiện một yêu cầu. Chắc chắn bạn có thể
+        làm điều này; chỉ cần lưu ý rằng bạn sẽ không còn mức độ tách rời giữa invoker
+        và receiver, bạn cũng không thể tham số hóa các command của bạn với receiver.
+      </p>
+      
+      <p>
+        <strong>Hỏi:</strong> Làm thế nào tôi có thể thực hiện một lịch sử hoạt động
+        undo? Nói cách khác, tôi muốn có thể nhấn nút undo nhiều lần.
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Câu hỏi tuyệt vời! Nó thực sự rất dễ dàng; thay vì
+        chỉ giữ một tham chiếu đến Command cuối cùng được thực thi, bạn giữ một ngăn
+        xếp Stack các command trước đó. Sau đó, bất cứ khi nào undo được nhấn, invoker
+        của bạn sẽ Pop (lấy) command đầu tiên ra khỏi stack và gọi phương thức
+        <strong>undo() </strong>của command đó.
+      </p>
+      
+      <p>
+        <strong>Hỏi: </strong>Tôi có thể thực hiện “Party Mode” như một command bằng
+        cách tạo <strong>PartyCommand</strong> và đặt lệnh gọi đến các phương thức
+        <strong>execute() </strong>của Command khác trong phương thức
+        <strong>execute()</strong> của  <strong>PartyCommand</strong> không?
+      </p>
+      
+      <p>
+        <strong>Trả lời: </strong>Bạn có thể; tuy nhiên, chúng sẽ trở thành “code
+        cứng” trong <strong>PartyCommand</strong>. Đó là một rắc rối lớn? Với
+        <strong>MacroCommand</strong>, bạn có thể quyết định các 
+        <strong>Command </strong>nào bạn muốn vào  <strong>PartyCommand</strong>,
+        do đó bạn có thể linh hoạt hơn khi sử dụng <strong>MacroCommand</strong>. Nhìn
+        chung,  <strong>MacroCommand</strong> là một giải pháp an toàn hơn và yêu
+        cầu ít code mới hơn.
       </p>`,
       },
     ],
   },
   {
-    title: `Không có câu hỏi ngớ ngẩn`,
+    title: `Ứng dụng Command Pattern: Hàng đợi các request`,
     contents: [
       {
         div: `<p>
-        <strong>Hỏi: </strong>Đối với một mẫu đơn giản như vậy chỉ bao gồm một
-        lớp, Singletons dường như có một số vấn đề.
+        Command cho chúng ta một cách để đóng gói một phần xử lý (một receiver và một
+        tập hợp các hành động) và chuyển nó đi như một đối tượng first-class. Bây giờ,
+        việc xử lí có thể được invoked sau đó khi một số ứng dụng client tạo đối
+        Command. Trong thực tế, nó thậm chí có thể được gọi bởi một thread khác. Chúng
+        ta có thể lấy kịch bản này và áp dụng nó cho nhiều ứng dụng hữu ích như
+        schedulers (đặt lịch chạy), thread pools và&nbsp; job queues.
       </p>
-
+      
       <p>
-        <strong>Trả lời:</strong> Vâng, chúng tôi đã cảnh báo bạn từ trước!
-        Nhưng đừng để những vấn đề làm bạn nản lòng; Trong khi triển khai
-        Singletons một cách chính xác có thể khó, nhưng sau khi đọc chương
-        này, bạn đã được biết đầy đủ về các kỹ thuật tạo Singletons và nên sử
-        dụng chúng bất cứ nơi nào bạn cần để kiểm soát số lượng phiên bản bạn
-        đang tạo.
-      </p>
-
-      <p>
-        <strong>Hỏi:</strong> Tôi có thể tạo một lớp trong đó tất cả các
-        phương thức và biến được định nghĩa là static không? Điều đó có giống
-        với Singleton không?
-      </p>
-
-      <p>
-        <strong>Trả lời:</strong> Có, nếu lớp của bạn được tự kiểm soát và
-        không phụ thuộc vào việc khởi tạo phức tạp. Tuy nhiên, do cách xử lý
-        khởi tạo static trong Java, điều này có thể trở nên rất lộn xộn, đặc
-        biệt là nếu có nhiều lớp tham gia. Thông thường kịch bản này có thể
-        dẫn đến các lỗi tinh vi, khó tìm thấy liên quan đến thứ tự khởi tạo.
-        Trừ khi có một nhu cầu hấp dẫn để cài đặt chương trình singleton của
-        bạn theo cách này, tốt hơn hết là ở lại trong thế giới đối tượng.
-      </p>
-
-      <p>
-        <strong>Hỏi:</strong> Thế còn class loaders? Tôi nghe nói có khả năng
-        hai class loaders có thể kết thúc bằng instance Singleton của riêng
-        chúng.
-        <br />
-        <em>(</em>
-        <strong>
-          <em>Java ClassLoader</em>
-        </strong>
-        <em>
-          &nbsp;là công cụ của java, tiến hành nạp một tệp class của java vào
-          máy ảo (JVM))
-        </em>
-      </p>
-
-      <p>
-        <strong>Trả lời:</strong> Vâng, điều đó đúng vì mỗi class loader định
-        nghĩa một namespace. Nếu bạn có hai hoặc nhiều class loader, bạn có
-        thể tải cùng một lớp nhiều lần (một lần trong mỗi class loader). Bây
-        giờ, nếu lớp đó là Singleton, thì vì chúng ta có nhiều hơn một phiên
-        bản của lớp, chúng ta cũng có nhiều hơn một phiên bản của Singleton.
-        Vì vậy, nếu bạn đang sử dụng nhiều class loader và Singletons, hãy cẩn
-        thận. Một cách xung quanh vấn đề này là tự xác định class loader.
-      </p>
-
-      <p>
-        <strong>
-          Thư giãn: Tin đồn về việc Singletons bị dọn dẹp bởi những trình thu
-          gom rác garbage collectors được thổi phồng lên rất nhiều
-        </strong>
-      </p>
-
-      <p>
-        Trước Java 1.2, một lỗi trong trình thu gom rác đã cho phép Singletons
-        bị thu dọn sớm nếu không có tham chiếu toàn cục đến chúng. Nói cách
-        khác, bạn có thể tạo một Singleton và nếu tham chiếu duy nhất đến
-        Singleton là ở chính Singleton, nó sẽ được thu gom và phá hủy bởi
-        garbage collector. Điều này dẫn đến những lỗi khó hiểu bởi vì sau khi
-        Singleton được thu thập, thì lần gọi tiếp theo đến 
-        <strong>getInstance()</strong> đã tạo ra một Singleton mới hoàn toàn.
-        Trong nhiều ứng dụng, điều này có thể gây ra hành vi khó hiểu vì trạng
-        thái được đặt lại một cách bí ẩn thành các giá trị mặc định ban đầu
-        hoặc những thứ như kết nối mạng được đặt lại.
-      </p>
-
-      <p>
-        Vì Java 1.2, lỗi này đã được sửa và không cần phải tham chiếu toàn cục
-        nữa. Nếu bạn, vì một số lý do, vẫn đang sử dụng JVM 1.2 về trước, thì
-        hãy lưu ý vấn đề này, còn nếu không, bạn có thể ngủ ngon khi biết rằng
-        Singletons của bạn sẽ không được thu gom sớm.
+        Tưởng tượng một hàng đợi công việc: bạn thêm các command vào hàng đợi ở một
+        đầu và ở đầu kia là một nhóm các thread. Các thread sẽ chạy đoạn script sau:
+        loại bỏ một command khỏi hàng đợi, gọi phương thức 
+        <strong>execute()</strong> của nó, đợi cuộc gọi kết thúc, sau đó loại bỏ đối
+        tượng command đó và truy xuất một command mới.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_54.jpg`),
+          width: `70%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Lưu ý rằng các lớp hàng đợi công việc được tách rời hoàn toàn khỏi các đối
+        tượng đang thực hiện xử lí. Một phút một Subject có thể tính toán một tính
+        toán, và phút tiếp theo nó có thể lấy một cái gì đó từ network… Các đối tượng
+        hàng đợi công việc không quan tâm; chúng chỉ lấy các command và gọi
+        <strong>execute().</strong> Tương tự, miễn là bạn đặt các đối tượng vào hàng
+        đợi thực hiện Command Pattern, phương thức <strong>execute()</strong> của bạn
+        sẽ được gọi khi có một thread.
       </p>`,
       },
     ],
   },
   {
-    title: `Không có câu hỏi ngớ ngẩn`,
+    title: `Sử dụng sức mạnh bộ não`,
     contents: [
       {
         div: `<p>
-        <strong>Hỏi:</strong> Tôi đã luôn được dạy rằng một lớp nên làm một
-        việc và chỉ một việc duy nhất. Đối với một lớp để làm hai việc được
-        coi là thiết kế OO xấu. Không phải Singleton vi phạm điều này sao?
+        Làm thế nào một web server có thể tận dụng dụng một hàng đợi như vậy? Bạn có
+        thể nghĩ đến một ứng dụng nào khác không?
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Ứng dụng Command Pattern: logging request`,
+    contents: [
+      {
+        div: `<p>
+        Ngữ nghĩa của một số ứng dụng yêu cầu chúng tôi log tất cả các hành động và có
+        thể phục hồi sau khi gặp sự cố bằng cách khôi phục các hành động đó. Mẫu
+        Command có thể hỗ trợ các ngữ nghĩa này với việc bổ sung hai phương thức:
+        <strong>store() </strong>và <strong>load()</strong>. Trong Java, chúng ta có
+        thể sử dụng object serialization (tuần tự hóa) để thực hiện các phương thức
+        này, nhưng hãy cẩn thận khi sử dụng serialization để bảo trì.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_55.jpg`),
+          width: `25%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Cái này hoạt động ra sao? Khi chúng tôi thực thi các command, chúng tôi lưu
+        trữ (store) một lịch sử của chúng trên đĩa. Khi xảy ra sự cố, chúng ta load
+        lại các đối tượng command và gọi các phương thức 
+        <strong>execute() </strong>của chúng theo nhóm và theo thứ tự.
       </p>
-
+      
       <p>
-        <strong>Trả lời:</strong> Bạn sẽ đề cập đến nguyên tắc của “
-        <em>Một lớp, một trách nhiệm</em>” (Single Responsibility Principle),
-        và vâng, bạn đúng, Singleton không chỉ chịu trách nhiệm quản lí việc
-        tạo 1 instance của nó (và cung cấp quyền truy cập toàn cục), nó còn
-        chịu trách nhiệm cho bất kỳ vấn đề nào trong ứng dụng của bạn (kết nối
-        DB, đăng kí registry, ghi log…). Vì vậy, chắc chắn có thể nói nó đang
-        đảm nhận hai trách nhiệm. Tuy nhiên, không khó để thấy rằng có một lợi
-        ích khi một lớp quản lý instance của chính nó; nó chắc chắn làm cho
-        thiết kế tổng thể đơn giản hơn. Ngoài ra, nhiều nhà phát triển đã quen
-        thuộc với mẫu Singleton vì nó được sử dụng rộng rãi. Điều đó nói rằng,
-        một số nhà phát triển không cảm thấy cần phải trừu tượng hóa chức năng
-        Singleton.
+        Bây giờ, loại log này sẽ không có ý nghĩa đối với một remote control; tuy
+        nhiên, có nhiều ứng dụng gọi các hành động trên các cấu trúc dữ liệu lớn có
+        thể được lưu nhanh chóng mỗi khi có thay đổi. Bằng cách sử dụng log, chúng tôi
+        có thể lưu tất cả các hoạt động kể từ thời điểm kiểm tra cuối cùng (last check
+        point) và nếu có lỗi hệ thống, hãy áp dụng các hoạt động đó cho checkpoint của
+        chúng tôi. 
       </p>
-
+      
       <p>
-        <strong>Hỏi: </strong>Tôi muốn phân lớp (subclass) code Singleton của
-        mình, nhưng tôi gặp vấn đề. Có thể phân lớp Singleton không?
-      </p>
-
-      <p>
-        <strong>Trả lời:</strong> Một vấn đề với phân lớp Singleton là
-        constructor là private. Bạn không thể mở rộng một lớp với một
-        constructor private. Vì vậy, điều đầu tiên bạn sẽ phải làm là thay đổi
-        công cụ xây dựng của mình để nó public hoặc protected. Nhưng sau đó,
-        nó không thực sự là một Singleton nữa, bởi vì các lớp khác có thể khởi
-        tạo nó. Và nếu bạn thay đổi constructor của bạn, vẫn có một vấn đề
-        khác. Việc triển khai Singleton dựa trên một biến static, vì vậy nếu
-        bạn implement một lớp con, tất cả các lớp dẫn xuất của bạn sẽ dùng
-        chung một biến đối tượng. Đây có lẽ không phải là những gì bạn nghĩ
-        trong đầu. Vì vậy, để việc phân lớp có thể hoạt động, việc thực hiện
-        đăng ký các loại là bắt buộc trong lớp cơ sở. Trước khi thực hiện một
-        kế hoạch như vậy, bạn nên tự hỏi những gì bạn thực sự đạt được từ việc
-        phân lớp Singleton. Giống như hầu hết các mẫu, Singleton không nhất
-        thiết phải là một giải pháp có thể phù hợp như một thư viện. Ngoài ra,
-        Singleton là không đáng kể để thêm vào bất kỳ lớp hiện có nào. Cuối
-        cùng, nếu bạn đang sử dụng một số lượng lớn Singletons trong ứng dụng
-        của mình, bạn nên xem kỹ thiết kế của mình. Singletons có ý nghĩa khi
-        được sử dụng một cách tiết kiệm.
-      </p>
-
-      <p>
-        <strong>Hỏi: </strong>Tôi vẫn chưa hoàn toàn hiểu tại sao các biến
-        toàn cục (global variable) lại không bằng Singleton.
-      </p>
-
-      <p>
-        <strong>Trả lời:</strong> Trong Java, các biến toàn cục về cơ bản là
-        các tham chiếu tĩnh đến các đối tượng. Có một vài nhược điểm khi sử
-        dụng các biến toàn cục theo cách này. Chúng tôi đã đề cập đến một vấn
-        đề: vấn đề khởi tạo 
+        Lấy ví dụ, một ứng dụng bảng tính (spreadsheet, như excel): chúng tôi có thể
+        muốn thực hiện khôi phục lỗi của mình bằng cách ghi log các hành động trên
+        bảng tính thay vì viết một bản sao của bảng tính vào đĩa mỗi khi có thay đổi.
+        Trong các ứng dụng nâng cao hơn, các kỹ thuật này có thể được mở rộng để áp
+        dụng cho các tập hợp hoạt động theo transactional để tất cả các hoạt động sẽ
+        hoặc hoàn thành hoặc không có thao tác nào thực hiện (tìm hiểu 
         <a
-          href="https://en.wikipedia.org/wiki/Lazy_loading"
-          target="_blank"
           rel="noreferrer noopener"
-          aria-label="lazy (mở trong tab mới)"
+          aria-label="transaction database (mở trong tab mới)"
+          href="https://vi.wikipedia.org/wiki/Giao_d%E1%BB%8Bch_c%C6%A1_s%E1%BB%9F_d%E1%BB%AF_li%E1%BB%87u"
+          target="_blank"
         >
-          lazy
-        </a> 
-        (cần dùng mới load) và eager (load khi khởi tạo). Nhưng chúng ta cần
-        ghi nhớ mục đích của mẫu: để đảm bảo chỉ có một thể hiện của một lớp
-        tồn tại và cung cấp quyền truy cập global. Một biến toàn cục có thể
-        cung cấp quyền truy cập global, nhưng không thể đảm bảo chỉ có một thể
-        hiện của một lớp tồn tại. Các biến toàn cục cũng có xu hướng làm cho
-        các nhà phát triển gây ô nhiễm không gian tên với nhiều tham chiếu
-        toàn cầu đến các đối tượng nhỏ. Mẫu Singleton cũng không khuyến khích
-        điều này, nhưng dù sao Singleton cũng có thể bị lạm dụng.
+          transaction database
+        </a>
+        ).
       </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_56.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
@@ -1077,33 +1753,48 @@ export const chapter6: IContent[] = [
       {
         div: `<ul>
         <li>
-          Mẫu Singleton đảm bảo bạn có nhiều nhất một instance trong ứng dụng
-          của mình.
+          Command Pattern tách riêng một đối tượng, và đưa ra yêu cầu tới đối tượng
+          biết cách thực hiện nó.
         </li>
         <li>
-          Mẫu Singleton cũng cung cấp một điểm truy cập toàn cục cho instance
-          đó.
+          Một đối tượng <strong>Command </strong>nằm ở trung tâm của việc tách rời này
+          và đóng gói một receiver bằng một hành động (hoặc tập hợp các hành động).
         </li>
         <li>
-          Việc triển khai Java của mẫu Singleton sử dụng một private
-          constructor, một static method kết hợp với một biến static.
+          Một invoker đưa ra yêu cầu của một đối tượng 
+          <strong>Command </strong>bằng cách gọi phương thức 
+          <strong>execute()</strong> của nó, gọi các hành động đó trên receiver.
         </li>
         <li>
-          Kiểm tra các hạn chế về hiệu suất và tài nguyên của bạn và cẩn thận
-          chọn một triển khai Singleton thích hợp cho các ứng dụng đa luồng
-          (và chúng ta nên xem xét tất cả các ứng dụng đa luồng!).
+          <strong>Invoker </strong>có thể được tham số hóa bằng các 
+          <strong>Command</strong>, thậm chí là gán động khi chạy.
         </li>
         <li>
-          Cảnh giác với việc thực hiện double-checked locking; nó không an
-          toàn trong các phiên bản trước Java 2, version 5.
+          Command có thể hỗ trợ undo bằng cách thực hiện một phương thức undo khôi
+          phục đối tượng về trạng thái trước đó trước khi phương thức 
+          <strong>execute()</strong> được gọi lần cuối.
         </li>
         <li>
-          Hãy cẩn thận nếu bạn đang sử dụng nhiều class loaders; điều này có
-          thể đánh bại việc thực hiện Singleton và dẫn đến nhiều instances.
+          <strong>Macro Commands</strong> là một phần mở rộng đơn giản của Command cho
+          phép nhiều command được gọi. Tương tự, 
+          <strong>Macro Commands</strong> có thể dễ dàng hỗ trợ 
+          <strong>undo()</strong>.
         </li>
         <li>
-          Nếu bạn đang sử dụng JVM trước 1.2, bạn sẽ cần phải tạo một sổ đăng
-          ký Singletons để đánh bại trình thu gom rác (garbage collector).
+          Trong thực tế, không có gì lạ khi các đối tượng “smart” Command có thể tự
+          thực hiện yêu cầu thay vì ủy thác cho receiver.
+        </li>
+        <li>
+          <strong>Command </strong>cũng có thể được sử dụng để thực hiện các hệ
+          thống 
+          <strong>
+            <em>logging </em>
+          </strong>
+          và 
+          <strong>
+            <em>transactional</em>
+          </strong>
+          .
         </li>
       </ul>`,
       },
@@ -1113,12 +1804,13 @@ export const chapter6: IContent[] = [
     title: 'Tham khảo',
     contents: [
       {
-        p: `<p>
+        div: `<p>
         Đây là link đính kèm bản gốc của quyển sách:&nbsp;
         <a
-          rel="noreferrer noopener"
           href="https://drive.google.com/file/d/14lMY_ot5FHgX7aOR9YiVjR2iD1DdJ6hZ/view?usp=sharing"
           target="_blank"
+          rel="noreferrer noopener"
+          aria-label=" (mở trong tab mới)"
         >
           Head First Design Patterns
         </a>

@@ -11,6 +11,7 @@ const chapter = [
   'Chương 8: Template Method Pattern',
   'Chương 9: Iterator Pattern và Composite Pattern (P1)',
   'Chương 9: Iterator Pattern và Composite Pattern (P2)',
+  'Chương 10: State Pattern – Trạng thái vạn vật',
 ];
 const headFirstDesignPatternsChapter: {
   text: string;

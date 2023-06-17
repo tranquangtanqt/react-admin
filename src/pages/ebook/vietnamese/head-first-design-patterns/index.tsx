@@ -6,15 +6,16 @@ import headFirstDesignPatternsChapter from './data/_chapter';
 import { chapter1 } from './data/chapter-1';
 import { chapter2 } from './data/chapter-2';
 import { chapter3 } from './data/chapter-3';
-import { chapter4 } from './data/chapter-4';
+import { chapter4_1 } from './data/chapter-4-1';
+import { chapter4_2 } from './data/chapter-4-2';
 import { chapter5 } from './data/chapter-5';
 import { chapter6 } from './data/chapter-6';
-import { chapter7 } from './data/chapter-7';
+import { chapter7_1 } from './data/chapter-7-1';
+import { chapter7_2 } from './data/chapter-7-2';
 import { chapter8 } from './data/chapter-8';
-import { chapter9 } from './data/chapter-9';
+import { chapter9_1 } from './data/chapter-9-1';
+import { chapter9_2 } from './data/chapter-9_2';
 import { chapter10 } from './data/chapter-10';
-import { chapter11 } from './data/chapter-11';
-import { chapter12 } from './data/chapter-12';
 
 export const EbookVietnameseHeadFirstDesignPatterns = () => {
   const params = useParams();
@@ -33,31 +34,34 @@ export const EbookVietnameseHeadFirstDesignPatterns = () => {
       data = chapter3;
       break;
     case '4':
-      data = chapter4;
+      data = chapter4_1;
       break;
     case '5':
-      data = chapter5;
+      data = chapter4_2;
       break;
     case '6':
-      data = chapter6;
+      data = chapter5;
       break;
     case '7':
-      data = chapter7;
+      data = chapter6;
       break;
     case '8':
-      data = chapter8;
+      data = chapter7_1;
       break;
     case '9':
-      data = chapter9;
+      data = chapter7_2;
       break;
     case '10':
-      data = chapter10;
+      data = chapter8;
       break;
     case '11':
-      data = chapter11;
+      data = chapter9_1;
       break;
     case '12':
-      data = chapter12;
+      data = chapter9_2;
+      break;
+    case '13':
+      data = chapter10;
       break;
   }
 

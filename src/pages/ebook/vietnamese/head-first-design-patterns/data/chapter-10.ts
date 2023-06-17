@@ -7,499 +7,67 @@ export const chapter10: IContent[] = [
     contents: [
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_1.png`),
-          width: `60%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Template Method Pattern – Đóng gói thuật toán`,
-    contents: [
-      {
-        div: `<p>
-        Chúng ta đang trên một chuỗi các đóng gói: chúng tôi đã đóng gói việc tạo đối
-        tượng (<a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Factory method</a
-        >), đóng gói lời gọi phương thức (<a
-          href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/7"
-          >Command</a
-        >), đóng gói giao diện phức tạo (<a
-          href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/9"
-          >Facade pattern</a
-        >), vịt, pizza … tiếp theo sẽ là gì? Với
-        <strong>Template method pattern</strong>, chúng tôi sẽ tiếp tục đóng gói các
-        phần của thuật toán để các lớp con có thể tự móc (hook) vào một tính toán bất
-        cứ lúc nào chúng muốn. Chúng tôi thậm chí sẽ tìm hiểu về một nguyên tắc thiết
-        kế lấy cảm hứng từ Hollywood.
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Đây là thời gian cần nhiều Caffeine`,
-    contents: [
-      {
-        div: `<p>
-        Một số người không thể sống thiếu cà phê; một số người khác không thể sống mà
-        không có trà. Thành phần phổ biến của chúng là gì? Tất nhiên Caffeine!
-      </p>
-      
-      <p>
-        Nhưng còn nhiều hơn thế; trà và cà phê được làm theo những cách rất giống
-        nhau. Hãy cùng kiểm tra nào:
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Hướng dẫn pha chế Starbuzz Coffee Barista`,
-    contents: [
-      {
-        div: `<p>
-        <strong
-          ><em
-            >Baristas! Hãy làm theo các công thức này chính xác khi chuẩn bị đồ uống
-            Starbuzz.</em
-          ></strong
-        >
-      </p>
-      <p>
-        <em><strong>Starbuzz Coffee Recipe&nbsp;&nbsp;</strong></em>
-      </p>
-      <p>(<em>1) Đun sôi nước</em></p>
-      <p><em>(2) Pha cà phê trong nước sôi</em></p>
-      <p><em>(3) Rót cà phê vào cốc</em></p>
-      <p><em>(4) Thêm đường và sữa</em></p>
-      <p>
-        <em><strong>Starbuzz Tea Recipe</strong></em>
-      </p>
-      <p><em>(1) Đun sôi một ít nước</em></p>
-      <p><em>(2) Bỏ trà vào nước sôi</em></p>
-      <p><em>(3) Rót trà vào cốc</em></p>
-      <p><em>(4) Thêm chanh</em></p>`,
-      },
-    ],
-  },
-  {
-    title: `Viết một số lớp cà phê và trà (bằng Java)`,
-    contents: [
-      {
-        div: `<p>Hãy viết một số dòng code để tạo ra cà phê và trà.</p>`,
-      },
-      {
-        p: `<h6><b>Ở ĐÂY, LỚP CÀ PHÊ:</b></h6>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_2.png`),
-          width: `90%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        p: `<h6><b>VÀ BÂY GIỜ LÀ LỚP TRÀ…</b></h6>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_3.png`),
-          width: `90%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        Khi chúng ta thấy việc trùng lặp code, đó là một dấu hiệu tốt để bắt đầu dọn
-        dẹp lại. Có vẻ như ở đây chúng ta nên trừu tượng hóa những phần chung thành
-        một lớp cơ sở vì cà phê và trà trông rất giống nhau?
-      </p>
-      
-      <p><strong>Bài tập</strong>:</p>
-      
-      <p>
-        Bạn đã thấy rằng các lớp Cà phê và Trà có một chút trùng lặp code. Hãy xem xét
-        lại và vẽ sơ đồ lớp cho thấy cách bạn thiết kế lại các lớp để loại bỏ sự dư
-        thừa.
-      </p>
-      
-      <p><strong>Đáp án:</strong></p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_4.jpg`),
-          width: `60%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Thưa ông, tôi có thể trừu tượng Cà phê, Trà của ông không?`,
-    contents: [
-      {
-        div: `<p>
-        Có vẻ như chúng tôi đã có một bài tập thiết kế khá đơn giản trên tay với các
-        lớp Coffee và Tea.
-      </p>
-      
-      <p>Sơ đồ đầu tiên của bạn có thể trông giống như thế này:</p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_5.png`),
-          width: `90%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Sử dụng sức mạnh bộ não`,
-    contents: [
-      {
-        div: `<p>
-        Thiết kế lại có tốt không? Hmmmm, hãy xem xét lại. Có phải chúng ta đang xem
-        xét một số điểm chung khác của Cà phê và Trà không? Những điểm chung đó là gì?
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Đưa thiết kế đi xa hơn…`,
-    contents: [
-      {
-        div: `<p>
-        Vậy, những gì làm cà phê và trà có điểm chung? Hãy bắt đầu với các công thức
-        pha chế.
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_6.jpg`),
-          width: `60%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>Lưu ý rằng cả hai công thức pha chế đều theo cùng một thuật toán:</p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_7.jpg`),
-          width: `70%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        <strong
-          >Vì vậy, chúng ta có thể tìm một cách để trừu tượng prepareRecipe() không?
-          Có, hãy tìm hiểu…</strong
-        ><br />
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Trừu tượng prepareRecipe()`,
-    contents: [
-      {
-        div: `<p>
-        <strong
-          >Hãy nghĩ qua việc trừu tượng prepareRecipe() từ mỗi lớp con (nghĩa là các
-          lớp Cà phê và Trà)…</strong
-        >
-      </p>
-      <p>
-        <strong
-          >1. Vấn đề đầu tiên chúng tôi gặp phải là Cà phê sử dụng các phương thức
-          brewCoffeeGrinds() và addSugarAndMilk() trong khi Trà sử dụng các phương
-          thức steepTeaBag() và addLemon().</strong
-        >
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_8.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<p>
-        Hãy suy nghĩ về điều này: <strong>steeping </strong>và
-        <strong>brewing </strong>không quá khác nhau; hay nói cách khác, chúng giống
-        nhau. Vì vậy, hãy tạo một tên phương thức mới, gọi là
-        <strong>brew()</strong> và chúng tôi sẽ sử dụng cùng phương thức này cho dù
-        chúng tôi pha cà phê hay pha trà.
-      </p>
-      
-      <p>
-        Tương tự như vậy, thêm “đường và sữa” cũng giống như thêm một “quả chanh”: cả
-        hai đều thêm hương vị vào đồ uống. Cũng hãy tạo một tên phương thức mới,
-        <strong>addCondiment()</strong> để xử lý việc này. Vì vậy, phương thức
-        <strong>prepareRecipe()</strong> mới của chúng ta sẽ trông như thế này:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_9.png`),
-          width: `60%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        <strong
-          >2. Bây giờ chúng ta có một phương thức prepareRecipe() mới, nhưng chúng ta
-          cần điều chỉnh nó trong code. Để làm điều này, chúng ta sẽ bắt đầu với
-          superclass&nbsp;CaffeineBeverage:</strong
-        >
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_10.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        <strong
-          >3. Cuối cùng chúng ta cần phải xử lý với các lớp Cà phê và Trà. Bây giờ
-          chúng dựa vào CaffeineBeverage để cài đặt công thức, vì vậy chúng chỉ cần xử
-          lý brew() và addCondiments():</strong
-        >
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_11.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        <strong
-          >Bài tập: Bây giờ hãy vẽ sơ đồ lớp mới mà chúng tôi đã chuyển việc triển
-          khai prepareRecipe() trong lớp CaffeineBeverage</strong
-        >
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Chúng ta đã làm gì?`,
-    contents: [
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_12.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Gặp gỡ Template Method Pattern`,
-    contents: [
-      {
-        div: `<p>
-        Về cơ bản, chúng tôi chỉ thực hiện <strong>Template Method Pattern</strong>.
-        Đây là gì vậy? Hãy cùng xem xét cấu trúc của lớp
-        <strong>CaffeineBeverage</strong>; nó chứa
-        <strong>Template Method Pattern</strong> trên thực tế:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_13.png`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<p>
-        <strong
-          >Template Method xác định các bước của thuật toán và cho phép các lớp con
-          cung cấp việc thực hiện cho một hoặc nhiều bước đó.</strong
-        >
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Pha một ít trà bằng Template method pattern`,
-    contents: [
-      {
-        div: `<p>
-        <strong
-          >Hãy tiếp tục bằng việc pha trà và theo dõi cách thức hoạt động của Template
-          Method. Bạn có thể thấy rằng Template Method điều khiển thuật toán; tại một
-          số điểm nhất định trong thuật toán, nó cho phép lớp con cung cấp việc thực
-          hiện các bước…</strong
-        >
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_14.png`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Template Method Pattern đã cho chúng ta những gì?`,
-    contents: [
-      {
-        div: `<table class="">
-        <tbody>
-          <tr>
-            <th><strong>Tea &amp; Coffee implementation</strong></th>
-            <th>
-              <strong>CaffeineBeverage mới, được cung cấp bởi Template Method</strong>
-            </th>
-          </tr>
-          <tr>
-            <td>Cà phê và trà đang tự ra quyết định; chúng kiểm soát thuật toán.</td>
-            <td>
-              Lớp <strong>CaffeineBeverage </strong>tự ra quyết định; nó có thuật
-              toán, và bảo vệ chúng.
-            </td>
-          </tr>
-          <tr>
-            <td>Code bị trùng lặp ở lớp Coffee và Tea.</td>
-            <td>
-              Lớp <strong>CaffeineBeverage </strong>tối đa hóa việc tái sử dụng giữa
-              các lớp con.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Code thay đổi thuật toán yêu cầu mở tất cả các lớp con và thực hiện
-              nhiều thay đổi.
-            </td>
-            <td>
-              Thuật toán chỉ ở một nơi (Template method) và thay đổi code chỉ cần được
-              thực hiện thay đổi ở chính nơi đó.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Các lớp được tổ chức theo cấu trúc đòi hỏi nhiều công việc để thêm một
-              loại thức uống caffeine mới.
-            </td>
-            <td>
-              Phiên bản Template Method cung cấp một framework mà các thức uống
-              caffeine khác có thể được gắn vào. Caffeine beverage mới chỉ cần
-              implement một vài phương thức.
-            </td>
-          </tr>
-          <tr>
-            <td>
-              Kiến thức về thuật toán và cách thực hiện nó được phân phối trên nhiều
-              lớp.
-            </td>
-            <td>
-              Lớp <strong>CaffeineBeverage </strong>tập trung kiến thức về thuật toán
-              và dựa vào các lớp con để cung cấp các triển khai hoàn chỉnh.
-            </td>
-          </tr>
-        </tbody>
-      </table>`,
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Định nghĩa Template Method Pattern`,
-    contents: [
-      {
-        div: `<p>
-        Bạn đã thấy cách thức <strong>Template Method Pattern</strong> hoạt động trong
-        ví dụ về Trà và Cà phê của chúng tôi; Bây giờ, hãy xem định nghĩa chính thức
-        và tìm hiểu chi tiết:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_15.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_1.jpg`),
           width: `50%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `State Pattern – Trạng thái của vạn vật`,
+    contents: [
+      {
         div: `<p>
-        <em
-          ><strong
-            >(Template Method Pattern xác định bộ khung của thuật toán trong một
-            phương thức, trì hoãn một số bước cho các lớp con. Template Method cho
-            phép các lớp con định nghĩa lại các bước nhất định của thuật toán mà không
-            thay đổi cấu trúc thuật toán)</strong
-          ></em
+        State Pattern là gì? Hãy ngầm hiểu đây là một mẫu đại diện cho các trạng thái
+        khác nhau của một đối tượng. Ví dụ một thang máy sẽ có trạng thái: đóng cửa,
+        mở cửa, chuông báo động, số tầng…hay một vận động viên bơi lội sẽ có các trạng
+        thái: khởi động, vào vị trí, sẵn sàng, bơi, chạm đích…chúng đều có liên quan
+        đến mẫu thiết kế được đề cập trong chương này: Mẫu Trạng thái – State Pattern.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Một thực tế ít được biết đến: Strategy và State Pattern là cặp song sinh
+    được tách ra khi chào đời`,
+    contents: [
+      {
+        div: `<p>
+        Như bạn đã biết,
+        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          >Strategy Pattern</a
         >
+        đã tiếp tục tạo ra một doanh nghiệp cực kỳ thành công xung quanh các thuật
+        toán có thể hoán đổi cho nhau. Tuy nhiên, <strong>State Pattern</strong> đã đi
+        con đường có lẽ cao quý hơn là giúp các đối tượng kiểm soát hành vi bằng cách
+        thay đổi trạng thái nội bộ của chúng. State pattern thường lắng nghe được
+        những object client của mình, “chỉ cần lặp lại sau tôi: Tôi đã đủ tốt, tôi đủ
+        thông minh, và hãy chú ý…”
       </p>
-      
       <p>
-        Mẫu này là tất cả về việc tạo một template cho một thuật toán. Template gì?
-        Như bạn đã thấy nó chỉ là một phương thức; cụ thể hơn, nó là một phương thức
-        định nghĩa thuật toán là một tập hợp các bước. Một hoặc nhiều bước trong số
-        này được định nghĩa là abstract và được implement bởi một lớp con. Điều này
-        đảm bảo cấu trúc thuật toán không thay đổi, trong khi các lớp con cung cấp một
-        phần của việc thực hiện.
+        Ngày nay mọi người đang đưa công nghệ Java vào các thiết bị thực (IoT), như
+        máy kẹo cao su. Đúng vậy, máy kẹo cao su đã đi vào công nghệ; các nhà sản xuất
+        lớn đã phát hiện ra rằng bằng cách đưa CPU vào những cái máy đó, họ có thể
+        tăng doanh số, theo dõi hàng tồn kho thông qua network và đo lường sự hài lòng
+        của khách hàng chính xác hơn.
+      </p>
+
+      <p>
+        Ít nhất đó là câu chuyện của họ – chúng tôi nghĩ rằng họ đã cảm thấy nhàm chán
+        với công nghệ những năm 1800 và cần tìm cách để làm cho công việc thú vị hơn.
+      </p>
+      <p>
+        Nhưng các nhà sản xuất này là các chuyên gia máy kẹo cao su, không phải nhà
+        phát triển phần mềm và họ đã yêu cầu sự giúp đỡ của bạn:
       </p>`,
       },
-    ],
-  },
-  {
-    title: `Template method pattern: Sơ đồ lớp`,
-    contents: [
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_16.png`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_2.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -509,341 +77,509 @@ export const chapter10: IContent[] = [
       },
       {
         div: `<p>
-        Chúng ta hãy xem xét kỹ hơn về cách định nghĩa của
-        <strong>AbstractClass</strong>, bao gồm cả
-        <strong>templateMethod()</strong> và các <strong>primitiveOperation</strong>.
+        (<em
+          >Chú thích: Quarter là đồng 25 xu của Mỹ, crank là tay quay trên máy bắn
+          kẹo, Gumball là kẹo cao su</em
+        >)
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_17.png`),
-          width: `70%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        Bây giờ chúng ta sẽ xem xét kỹ hơn các loại phương thức có thể đặt trong lớp
-        abstract:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_18.png`),
-          width: `70%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Hooked trên Template Method Pattern…`,
-    contents: [
-      {
-        div: `<p>
-        Với một hook, tôi có thể override phương thức, hoặc không. Nó là lựa chọn của
-        tôi. Nếu tôi không muốn, lớp trừu tượng cung cấp một cài đặt mặc định.
-      </p>
-      
-      <p>
-        Một hook là một phương thức được khai báo trong lớp trừu tượng, nhưng chỉ cung
-        cấp một cài đặt mặc định hoặc rỗng. Điều này mang lại cho các lớp con khả năng
-        móc nối vào thuật toán tại các điểm khác nhau, nếu chúng muốn; một lớp con
-        cũng được tự do bỏ qua hook.&nbsp;
-      </p>
-      <p>
-        Có một số cách sử dụng hook; Hãy nhìn chúng ngay bây giờ. Chúng tôi sẽ nói về
-        một vài cách sử dụng khác sau:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_19.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Sử dụng hook`,
-    contents: [
-      {
-        div: `<p>
-        Để sử dụng hook, chúng ta override nó trong lớp con của chúng ta. Ở đây, hook
-        kiểm soát xem <strong>CaffeineBeverage </strong>có phải là một phần nhất định
-        của thuật toán hay không; đó là, liệu nó thêm một gia vị cho đồ uống không?
-      </p>
-      
-      <p>
-        Làm thế nào để chúng ta biết liệu client muốn gia vị (đường, sữa, chanh…)
-        không? Phải hỏi thôi!
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_20.png`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Hãy run TestDrive`,
-    contents: [
-      {
-        div: `<p>
-        Được rồi, nước đang sôi … Ở đây, code thử nghiệm nơi chúng tôi tạo ra một tách
-        trà và một tách cà phê nóng.
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_21.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>Và hãy để cho nó chạy…</p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_22.png`),
-          width: `70%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-      {
-        div: `<p>
-        Bây giờ, tôi có thể nghĩ rằng chức năng như hỏi client có thể đã được sử dụng
-        bởi tất cả các lớp con không?
-      </p>
-      
-      <p>
-        Bạn biết gì không? Chúng tôi đồng ý với bạn. Nhưng bạn phải thừa nhận đó là
-        một ví dụ khá hay về cách một hook có thể được sử dụng để kiểm soát một cách
-        có điều kiện dòng chảy của thuật toán trong lớp abstract. Chúng tôi chắc chắn
-        rằng bạn có thể nghĩ ra nhiều kịch bản thực tế khác, nơi bạn có thể sử dụng
-        template method và hook trong code của riêng bạn.
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Không có câu hỏi ngớ ngẩn`,
-    contents: [
-      {
-        div: `<p>
-        <strong>Hỏi:</strong> Khi tôi tạo một <strong>template method</strong>, làm
-        thế nào để tôi biết khi nào nên sử dụng abstract method và khi nào sử dụng
-        hook?
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Sử dụng các abstract method khi lớp con của bạn
-        <strong>BẮT BUỘC </strong>cung cấp việc triển khai phương thức hoặc các bước
-        trong thuật toán. Sử dụng hook khi phần đó của thuật toán là tùy chọn (có thể
-        thực hiện hoặc không thực hiện do lớp con lựa chọn). Với hook, một lớp con có
-        thể chọn thực hiện hook đó, nhưng nó cũng có thể không cần thực hiện.
-      </p>
-      
-      <p><strong>Hỏi:</strong> Hook thực sự được cho là dùng để làm gì?</p>
-      
-      <p>
-        <strong>Trả lời:</strong> Có một vài cách sử dụng hook. Như chúng ta vừa nói,
-        một hook có thể cung cấp một cách để một lớp con thực hiện một phần tùy chọn
-        của thuật toán hoặc nếu nó không quan trọng đối với việc thực hiện ở lớp con
-        thì lớp con có thể bỏ qua nó. Một cách sử dụng khác là tạo cho lớp con cơ hội
-        phản ứng với một số bước trong template method sắp xảy ra hoặc vừa xảy ra.
-        Chẳng hạn, một phương thức hook như <strong>justReOrderedList()</strong> cho
-        phép lớp con thực hiện một số hoạt động (chẳng hạn như hiển thị lại hiển thị
-        trên màn hình) sau khi danh sách được reoder (sắp xếp lại). Như bạn đã thấy
-        một cái hook cũng có thể cung cấp một lớp con với khả năng đưa ra quyết định
-        cho lớp trừu tượng.
-      </p>
-      
-      <p>
-        <strong>Hỏi:</strong> Một lớp con có phải implement tất cả các abstract method
-        trong <strong>AbstractClass</strong> không?
-      </p>
-      <p>
-        <strong>Trả lời:</strong> Có, mỗi lớp con cụ thể xác định toàn bộ tập hợp các
-        abstract method và cung cấp một triển khai đầy đủ các bước chưa được định
-        nghĩa của thuật toán template method.
-      </p>
-      
-      <p>
-        <strong>Hỏi:</strong> Có vẻ như tôi nên giữ các abstract method của mình với
-        số lượng nhỏ, nếu không, sẽ là một công việc lớn để implement chúng trong lớp
-        con.
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Đó là một điều tốt để ghi nhớ khi bạn viết các
-        template method. Đôi khi điều này có thể được thực hiện bằng cách không làm
-        cho các bước của thuật toán của bạn quá chi tiết. Nhưng nó rõ ràng là một sự
-        đánh đổi: càng ít chi tiết, càng kém linh hoạt. Hãy nhớ rằng, một số bước sẽ
-        là tùy chọn; vì vậy bạn có thể thực hiện chúng như các hook thay vì các phương
-        thức trừu tượng, giảm bớt gánh nặng cho các lớp con của lớp trừu tượng của
-        bạn.
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Nguyên tắc từ Hollywood`,
-    contents: [
-      {
-        div: `<p>
-        Chúng tôi đã có một nguyên tắc thiết kế khác cho bạn; nó gọi là Nguyên tắc
-        Hollywood:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_23.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_3.jpg`),
           width: `50%`,
           align: `center`,
         },
       },
       {
-        p: `<p class="text-center"><small>Đừng gọi chúng tôi, chúng tôi sẽ gọi bạn.</small></p>`,
+        div: `<br />`,
       },
       {
-        div: `<p>Dễ nhớ phải không? Nhưng nó có liên quan gì đến thiết kế OO?</p>
+        div: `<p><strong>Anne:</strong> Sơ đồ này trông giống như một sơ đồ trạng thái.</p>
+
+        <p><strong>Joe:</strong> Phải, mỗi vòng tròn đó là một trạng thái…</p>
+        
+        <p><strong>Anne:</strong> …và mỗi mũi tên là một chuyển tiếp trạng thái.</p>
+        
+        <p>
+          <strong>Frank:</strong> Chậm lại, hai bạn, tôi đã nghiên cứu sơ đồ trạng thái
+          từ quá lâu. Bạn có thể nhắc tôi chúng là gì không?
+        </p>
+        
+        <p>
+          <strong>Anne:</strong> Chắc chắn rồi, Frank. Nhìn vào các vòng tròn; Đó là
+          những trạng thái. “<strong>No Quarter</strong>” (Không có xu) có thể là trạng
+          thái khởi đầu cho máy bắn kẹo cao su vì nó chỉ chờ “insert quarter” (bỏ đồng
+          xu vào). Tất cả các vòng tròn chỉ là các trạng thái khác nhau của máy hoạt
+          động theo một cách nhất định và cần một số hành động để đưa chúng đến trạng
+          thái khác.
+        </p>
+        
+        <p>
+          <strong>Joe:</strong> phải rồi, để đi đến một trạng thái khác, bạn cần phải
+          làm một cái gì đó như bỏ một đồng xu vào máy. Xem mũi tên từ “<strong
+            >No Quarter</strong
+          >” đến “<strong>Has Quarter</strong>”.
+        </p>
+        
+        <p><strong>Frank: </strong>Vâng …</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_4.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        p: `<p class="text-center"><small>Đây là Gumball Machine</small></p>`,
+      },
+      {
+        div: `<p>
+        <strong>Joe:</strong> Điều đó có nghĩa là nếu
+        <strong>Gumball Machine</strong> đang ở trạng thái “<strong>No Quarter</strong
+        >” và bạn bỏ vào một đồng xu, nó sẽ đổi thành trạng thái “<strong
+          >Has Quarter</strong
+        >”. Đó là sự chuyển đổi trạng thái.
+      </p>
+      
+      <p>
+        <strong>Frank:</strong> Ồ, tôi hiểu rồi! Và nếu tôi đang ở trạng thái “<strong
+          >Has Quarter</strong
+        >”, tôi có thể xoay tay quay và đổi sang trạng thái “<strong
+          >Gumball Sold</strong
+        >” , hoặc “<strong>Eject quarter</strong>” (trả lại đồng xu) sau đó chuyển về
+        trạng thái “<strong>No Quarter</strong>”.
+      </p>
+      
+      <p><strong>Anne:</strong> Bạn đã hiểu rồi đấy!</p>
+      
+      <p>
+        <strong>Frank:</strong> Điều này có vẻ không tệ lắm. Chúng ta rõ ràng có bốn
+        trạng thái, và tôi nghĩ rằng chúng ta cũng có bốn hành động: “insert quarter –
+        chèn xu”, “eject quarter – đẩy xu ra”, “turn crank – xoay tay quay” và
+        “dispense – phân phát kẹo”. Nhưng khi chúng tôi trả kẹo về, trong trạng thái
+        “Gumball Sold”, chúng ta kiểm tra còn kẹo trong máy hay không, và sau đó
+        chuyển sang trạng thái “<strong>Out of Gumballs</strong>” khi hết kẹo hoặc
+        trạng thái “<strong>No Quarter</strong>” khi còn kẹo. Vì vậy, chúng ta thực sự
+        có năm chuyển đổi từ trạng thái này sang trạng thái khác.
+      </p>
+      
+      <p>
+        <strong>Anne: </strong>Kiểm tra máy còn kẹo cao su hay không cũng ngụ ý rằng
+        chúng ta cũng phải theo dõi số lượng kẹo. Bất cứ khi nào máy cung cấp cho bạn
+        một viên kẹo cao su, nó có thể là viên cuối cùng, và nếu đúng, chúng ta cần
+        chuyển sang trạng thái “<strong>Out of Gumballs</strong> – hết kẹo”.
+      </p>
+      <p>
+        <strong>Joe:</strong> Ngoài ra, đừng quên rằng bạn còn có thể làm những việc
+        như từ chối (eject) đồng xu khi máy bắn kẹo cao su ở trạng thái “<strong
+          >No Quarter</strong
+        >”, hoặc khi chèn hai đồng xu.
+      </p>
+      
+      <p>
+        <strong>Frank:</strong> Ồ, tôi đã không nghĩ về điều này; chúng ta cũng sẽ
+        phải quan tâm những thứ đó.
+      </p>
+      
+      <p>
+        <strong>Joe:</strong> Đối với mọi hành động có thể, chúng ta sẽ phải kiểm tra
+        xem chúng ta đang ở trạng thái nào và hành động phù hợp tiếp theo. Chúng ta có
+        thể làm được việc này! Hãy bắt đầu ánh xạ sơ đồ trạng thái sang code…
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `State machines 101`,
+    contents: [
+      {
+        div: `<p>
+        Làm thế nào chúng ta chuyển từ sơ đồ trạng thái sang code thực tế? Ở đây, giới
+        thiệu nhanh về việc triển khai các state machines (trạng thái máy bắn kẹo):
+      </p>
+      
+      <p><strong>1. Đầu tiên, tập hợp các trạng thái của bạn:</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_5.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        p: `<p class="text-center"><small>Tổng cộng có 4 trạng thái: Không có xu, Có xu, Hết kẹo, Đã phân phát kẹo.</small></p>`,
+      },
+      {
+        div: `<p>
+        <strong
+          >2. Tiếp theo, tạo một biến đối tượng để giữ trạng thái hiện tại và xác định
+          các giá trị cho từng trạng thái:</strong
+        >
+      </p>
+      `,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_6.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong
+          >3. Bây giờ chúng tôi tập hợp tất cả các hành động có thể xảy ra trong hệ
+          thống:</strong
+        >
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_7.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        p: `<p class="text-center"><small>insers quater (bỏ xu vào), turns crank (xoay tay quay), ejects quarter (trả
+          xu lại), dispense (phân phát kẹo)</small></p>`,
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong>4. Bây giờ chúng ta tạo một lớp hoạt động như state machine.</strong>
+        Đối với mỗi hành động, chúng tôi tạo ra một phương thức sử dụng các câu lệnh
+        có điều kiện để xác định hành vi nào phù hợp ở mỗi trạng thái. Ví dụ, đối với
+        hành động chèn đồng xu, chúng ta có thể viết một phương thức như thế này:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_8.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_9.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Viết code`,
+    contents: [
+      {
+        div: `<p>
+        Đây là thời gian để thực hiện <strong>Gumball Machine</strong>. Chúng tôi biết
+        rằng chúng tôi sẽ có một biến đối tượng giữ trạng thái hiện tại (current
+        state). Từ đó, chúng ta chỉ cần xử lý tất cả các hành động, hành vi và chuyển
+        trạng thái có thể xảy ra. Đối với các hành động, chúng ta cần thực hiện chèn
+        một đồng xu, trả lại một đồng xu, xoay tay quay và phân phát một viên kẹo cao
+        su; chúng tôi cũng có kiểm tra điều kiện khi Gumball machine hết kẹo.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_10.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_11.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `In-house testing`,
+    contents: [
+      {
+        div: `<p>
+        Cảm giác đó giống như một thiết kế chắc chắn đẹp bằng cách sử dụng một phương
+        pháp được suy nghĩ kỹ lưỡng phải không? Hãy kiểm tra một chút trước khi chúng
+        tôi đưa nó cho công ty Mighty Gumball để được nạp vào máy bắn kẹo cao su thực
+        tế. Ở đây, thử nghiệm của chúng tôi:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_12.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_13.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Bạn biết rằng nó đang đến…một yêu cầu thay đổi!`,
+    contents: [
+      {
+        div: `<p>
+        Mighty Gumball, Inc. đã cài đặt code của bạn vào Gumball machine và các chuyên
+        gia đảm bảo chất lượng của Mighty Gumball, Inc. đang chạy code thông qua các
+        trạng thái của máy. Cho đến hiện tại, mọi thứ đều trông rất tuyệt từ góc nhìn
+        của họ.
+      </p>
+      
+      <p>
+        Trên thực tế, mọi thứ đã diễn ra suôn sẻ, họ muốn đưa mọi thứ lên một tầm cao
+        mới…
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_14.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Bài tập</strong>:</p>
 
         <p>
-          Nguyên tắc Hollywood cung cấp cho chúng ta một cách để ngăn chặn “dependency
-          rot” (nghĩa đen: Sự thối rữa phụ thuộc – hiểu nôm na là sự phụ thuộc ảnh hưởng
-          đến chúng ta, ví dụ khi bảo trì sẽ khó khăn hơn…). “Dependency rot” xảy ra khi
-          bạn có các thành phần cấp cao phụ thuộc vào các thành phần cấp thấp, phụ thuộc
-          tiếp vào các thành phần cấp cao khác phụ thuộc vào các thành cấp thấp, v.v. .
-          Khi “Dependency rot” xảy ra, không ai có thể dễ dàng hiểu cách thiết kế một hệ
-          thống.
+          Vẽ sơ đồ trạng thái cho Gumball Machine xử lý trò chơi “1 phần 10”. Trong trò
+          chơi này, 10% thời gian trạng thái Sold dẫn đến hai viên kẹo được phân phát
+          chứ không phải là một. Kiểm tra câu trả lời của bạn với chúng tôi để đảm bảo
+          chúng tôi đồng ý trước khi bạn đi xa hơn…
         </p>
+        
+        <p><strong>Đáp án:</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_15.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Các trạng thái hiện tại rất lộn xộn`,
+    contents: [
+      {
+        div: `<p>
+        Bạn đã viết code cho Gumball machine bằng phương pháp được suy nghĩ kỹ lưỡng
+        không có nghĩa là nó sẽ dễ dàng được mở rộng. Thực tế, khi bạn quay lại và xem
+        code của mình và suy nghĩ về những gì bạn sẽ phải làm để sửa đổi nó, thì…
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_16.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong>Điều nào sau đây mô tả trạng thái thực hiện của chúng tôi?</strong>
+        <strong>(Chọn tất cả các đáp án đúng.)</strong>
+      </p>
+      
+      <ul>
+        <li>❏ A. Code này chắc chắn không tuân thủ Nguyên tắc Đóng mở.</li>
+        <li>❏ B. Code này sẽ làm cho một lập trình viên FORTRAN tự hào.</li>
+        <li>❏ C. Thiết kế này không phải là hướng đối tượng.</li>
+        <li>
+          ❏ C. Chuyển trạng thái không rõ ràng; họ được giấu giữa một loạt các
+          statement có điều kiện.
+        </li>
+        <li>❏ D. Ở đây, húng tôi chưa đóng gói bất cứ những gì khác biệt.</li>
+        <li>❏ E. Các bổ sung khác có khả năng gây ra lỗi trong code làm việc.</li>
+      </ul>
+      
+      <p><strong>Đáp án: A,B,C,D,E</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_17.png`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        <strong>Joe: </strong>Bạn có thể nói đúng về điều đó! Chúng ta cần cấu trúc
+        lại (refactor) code này để nó dễ bảo trì và sửa đổi.
+      </p>
+      
+      <p>
+        <strong>Anne:</strong> Chúng ta thực sự nên cố gắng “độc lập hóa” hành vi cho
+        từng trạng thái để nếu có một trạng thái cần thay đổi, chúng ta sẽ không gây
+        ảnh hưởng đến các đoạn code khác.
+      </p>
+      
+      <p><strong>Joe:</strong> Phải; nói cách khác, hãy làm theo điều đó.</p>
+      
+      <p><strong>Anne:</strong> Chính xác.</p>
+      
+      <p>
+        <strong>Joe: </strong>Nếu chúng ta đặt mỗi hành vi state trong lớp riêng của
+        nó, thì mỗi state chỉ thực hiện các hành động của riêng mình.
+      </p>
+      
+      <p>
+        <strong>Anne:</strong> Phải. Và có lẽ Gumball Machine có thể ủy thác hành động
+        cho state object đại diện cho trạng thái hiện tại.
+      </p>
+      
+      <p>
+        <strong>Joe:</strong> Ah, bạn nói đúng: luôn ủng hộ composition… nhiều nguyên
+        tắc hơn trong công việc.
+      </p>
+      <p>
+        <strong>Anne:</strong> Dễ thương đấy. Chà, tôi không chắc chắn 100% việc này
+        sẽ hoạt động như thế nào, nhưng tôi nghĩ chúng ta đã làm điều gì đó đúng.
+      </p>
+      
+      <p>
+        <strong>Joe:</strong> Tôi tự hỏi điều này sẽ làm cho việc thêm các trạng thái
+        mới dễ dàng hơn không?
+      </p>
+      
+      <p>
+        <strong>Anne:</strong> Tôi nghĩ vậy… Chúng ta vẫn phải thay đổi code, nhưng
+        những thay đổi sẽ bị giới hạn phạm vi hơn nhiều vì thêm trạng thái mới sẽ có
+        nghĩa là chúng ta chỉ cần thêm một lớp mới và có thể thay đổi một vài chuyển
+        đổi ở đó.
+      </p>
+      
+      <p>
+        <strong>Joe:</strong> Tôi thích nghe điều đó. Hãy bắt đầu thiết kế mới này!
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Thiết kế mới với State Pattern`,
+    contents: [
+      {
+        div: `<p>
+        Có vẻ như chúng tôi đã có một kế hoạch mới: thay vì duy trì code hiện có của
+        chúng tôi, chúng tôi sẽ làm lại nó để đóng gói các đối tượng trạng thái trong
+        các lớp của riêng chúng và sau đó ủy thác cho trạng thái hiện tại khi xảy ra
+        hành động.
+      </p>
+      
+      <p>
+        Chúng tôi sẽ làm theo các nguyên tắc thiết kế, vì vậy chúng tôi sẽ hoàn thành
+        với một thiết kế dễ bảo trì hơn. Đây là cách mà chúng tôi sẽ làm:
+      </p>
+      
+      <ol>
+        <li>
+          Đầu tiên, chúng tôi sẽ định nghĩa một State interface có chứa một phương
+          thức cho mọi hành động trong Gumball Machine.
+        </li>
+        <li>
+          Sau đó, chúng tôi sẽ triển khai một lớp State cho từng trạng thái của máy.
+          Các lớp này sẽ chịu trách nhiệm cho hành vi của máy khi nó ở trạng thái
+          tương ứng.
+        </li>
+        <li>
+          Cuối cùng, chúng tôi sẽ loại bỏ tất cả các code điều kiện (if) và thay vào
+          đó ủy thác cho lớp State để thực hiện công việc cho chúng tôi.
+        </li>
+      </ol>
+      
+      <p>
+        Không chỉ chúng tôi tuân theo các nguyên tắc thiết kế, như bạn thấy, chúng tôi
+        thực sự đang triển khai State Pattern. Nhưng chúng tôi sẽ nhận được tất cả các
+        công cụ State Pattern chính thức sau khi chúng tôi làm lại code của mình…
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_18.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Định nghĩa các interface và class của State Pattern`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_19.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Bài tập</strong>:</p>
+
         <p>
-          Với Nguyên tắc Hollywood, chúng tôi cho phép các thành phần cấp thấp tự hook
-          vào một hệ thống, nhưng các thành phần cấp cao xác định khi nào cần thiết và
-          làm thế nào. Nói cách khác, các thành phần cấp cao cung cấp cho các thành phần
-          cấp thấp một tên “đừng gọi chúng tôi, chúng tôi sẽ gọi bạn” (don’t call us,
-          we’ll call you).
+          Để thực hiện các trạng thái của chúng ta, trước tiên chúng ta cần chỉ định
+          hành vi của các lớp khi mỗi hành động được gọi. Chú thích sơ đồ bên dưới với
+          hành vi của từng hành động trong mỗi lớp; chúng tôi đã điền trước vào một vài
+          thứ cho bạn.
         </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_24.png`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_20.png`),
           width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Hollywood Principle và Template Method Pattern`,
-    contents: [
-      {
-        div: `<p>
-        Mối liên hệ giữa Nguyên tắc Hollywood và Template method pattern có lẽ đã rõ
-        ràng: khi chúng tôi thiết kế với Template method, chúng tôi sẽ nói với các lớp
-        con, “<em>don’t call us, we’ll call you</em>”. Bằng cách nào? Hãy xem xét lại
-        thiết kế <strong>CaffeineBeverage </strong>của chúng tôi:
-      </p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_25.jpg`),
-          width: `80%`,
-          align: `center`,
-        },
-      },
-      {
-        div: `<br />`,
-      },
-    ],
-  },
-  {
-    title: `Sử dụng sức mạnh bộ não`,
-    contents: [
-      {
-        div: `<p>
-        Những mẫu thiết kế nào khác sử dụng Nguyên tắc Hollywood?
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Factory Method</a
-        >,
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/2"
-          >Observer</a
-        >; hay bất kì mẫu khác?
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Không có câu hỏi ngớ ngẩn`,
-    contents: [
-      {
-        div: `<p>
-        <strong>Hỏi: </strong>Nguyên tắc Hollywood và Nguyên tắc nghịch đảo phụ thuộc
-        (Dependency inversion principle) mà chúng ta đã học được một vài chương trước
-        liên quan như thế nào?
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Nguyên tắc nghịch đảo phụ thuộc dạy chúng ta tránh
-        sử dụng các lớp cụ thể và thay vào đó làm việc nhiều nhất có thể với sự trừu
-        tượng. Nguyên tắc Hollywood là một kỹ thuật xây dựng các framework hoặc các
-        component để các thành phần cấp thấp hơn có thể được nối (hook) vào xử lý,
-        nhưng không tạo ra sự phụ thuộc giữa các thành phần cấp thấp vào các lớp cấp
-        cao hơn.
-      </p>
-      <p>
-        Vì vậy, cả hai đều có mục tiêu là tách rời, nhưng Nguyên tắc nghịch đảo phụ
-        thuộc tạo nên một tuyên bố chung mạnh mẽ và mạnh mẽ hơn nhiều về Làm thế nào
-        để tránh phụ thuộc trong thiết kế. Nguyên tắc Hollywood cho chúng ta một kỹ
-        thuật để tạo ra các thiết kế cho phép các cấu trúc cấp thấp tương tác với nhau
-        trong khi ngăn các lớp khác trở nên quá phụ thuộc vào chúng.
-      </p>
-      
-      <p>
-        <strong>Hỏi: </strong>Có phải thành phần cấp thấp không được phép gọi phương
-        thức trong thành phần cấp cao hơn không?
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Không hẳn. Trong thực tế, một thành phần cấp thấp
-        thường sẽ gọi một phương thức được định nghĩa ở trên nó trong hệ thống phân
-        cấp kế thừa hoàn toàn thông qua kế thừa. Nhưng chúng tôi muốn tránh tạo ra sự
-        phụ thuộc vòng tròn rõ ràng giữa thành phần cấp thấp và thành phần cấp cao.
-      </p>
-      
-      <p><strong>Bài tập:</strong></p>`,
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_26.jpg`),
-          width: `70%`,
           align: `center`,
         },
       },
@@ -855,7 +591,253 @@ export const chapter10: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_27.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_21.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Implementing State classes của chúng tôi`,
+    contents: [
+      {
+        div: `<p>
+        Thời gian để thực hiện một trạng thái: chúng ta biết những hành vi chúng ta
+        muốn; chúng ta chỉ cần viết nó xuống trong code. Chúng tôi sẽ theo sát code
+        state của máy mà chúng tôi đã viết, nhưng lần này mọi thứ được chia thành các
+        lớp khác nhau.
+      </p>
+      
+      <p>Hãy bắt đầu với <strong>NoQuarterState</strong>:</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_22.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Những gì chúng tôi đang thực hiện là cài đặt các hành vi phù hợp với trạng
+        thái mà chúng tôi đang sử dụng. Trong một số trường hợp, hành vi này bao gồm
+        chuyển Gumball Machine sang trạng thái mới.
+      </p>
+      `,
+      },
+    ],
+  },
+  {
+    title: `Làm lại Gumball Machine với State pattern`,
+    contents: [
+      {
+        div: `<p>
+        Trước khi chúng tôi hoàn thành các lớp State, chúng tôi sẽ làm lại Gumball
+        Machine – theo cách đó bạn có thể thấy tất cả trùng khớp với nhau như thế nào.
+        Chúng tôi sẽ bắt đầu với các biến đối tượng liên quan đến trạng thái và chuyển
+        code từ sử dụng số kiểu int sang sử dụng các state object:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_23.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+    ],
+  },
+  {
+    title: `Bây giờ, hãy nhìn vào lớp GumballMachine hoàn chỉnh…`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_24.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Thực hiện nhiều State hơn`,
+    contents: [
+      {
+        div: `<p>
+        Bây giờ, khi bạn bắt đầu cảm nhận được cách Gumball Machine và các trạng thái
+        khớp với nhau, hãy cài đặt các lớp <strong>HasQuarterState</strong> và
+        <strong>SoldState</strong> …
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_25.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>Bây giờ, hãy kiểm tra lớp <strong>SoldState</strong>…</p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_26.png`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sử dụng sức mạnh bộ não`,
+    contents: [
+      {
+        div: `<p>
+        Nhìn lại việc thực hiện <strong>GumballMachine</strong>. Nếu tay quay được
+        quay và không thành công (giả sử khách hàng đã không bỏ vào một đồng xu
+        trước), dù sao chúng tôi cũng gọi là “phân phối”, mặc dù điều đó không cần
+        thiết. Làm thế nào bạn có thể khắc phục điều này?
+      </p>
+      
+      <p>
+        Chúng tôi có một lớp còn lại mà chúng tôi đã thực hiện:
+        <strong>SoldOutState</strong>. Tại sao bạn không thực hiện nó? Để làm điều
+        này, hãy suy nghĩ cẩn thận về cách Gumball Machine nên hành xử trong từng tình
+        huống. Kiểm tra câu trả lời của bạn trước khi tiếp tục…
+      </p>
+      `,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_27.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Đáp án:</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_28.jpg`),
+          width: `80%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Chúng ta hãy nhìn vào những gì chúng ta đã làm cho đến giờ…`,
+    contents: [
+      {
+        div: `<p>
+        Để bắt đầu, bây giờ bạn có một triển khai Gumball Machine có cấu trúc khá khác
+        so với phiên bản đầu tiên của bạn, và về mặt chức năng thì nó hoàn toàn giống
+        nhau. Bằng cách thay đổi cấu trúc việc triển khai, bạn phải:
+      </p>
+      
+      <ul>
+        <li>“Địa phương hóa” hành vi của mỗi trạng thái vào lớp riêng của chúng.</li>
+        <li>
+          Loại bỏ tất cả những rắc rối về câu lệnh <strong>if</strong>, thứ mà sẽ khó
+          bảo trì.
+        </li>
+        <li>
+          Đã đóng từng trạng thái để sửa đổi và vẫn để Gumball Machine mở rộng bằng
+          cách thêm các lớp trạng thái mới (và chúng tôi sẽ làm điều này ngay phía
+          sau).
+        </li>
+        <li>
+          Tạo một code base và cấu trúc lớp ánh xạ gần hơn với sơ đồ Mighty Gumball và
+          dễ đọc, dễ hiểu hơn.
+        </li>
+      </ul>
+      
+      <p>
+        Bây giờ, hãy nhìn sâu hơn về khía cạnh chức năng của những gì chúng ta đã làm:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_29.png`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_30.png`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Hậu trường State pattern: Chuyến tham quan tự túc`,
+    contents: [
+      {
+        div: `<p>
+        <strong>Bài tập:</strong> Theo dõi các bước của Gumball Machine bắt đầu với
+        trạng thái <strong>NoQuarter</strong>. Cũng chú thích sơ đồ với các hành động
+        và đầu ra của máy. Đối với bài tập này, bạn có thể cho rằng có rất nhiều kẹo
+        cao su trong máy.
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_31.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_32.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Đáp án:</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_33.jpg`),
           width: `70%`,
           align: `center`,
         },
@@ -866,133 +848,283 @@ export const chapter10: IContent[] = [
     ],
   },
   {
-    title: `Template Method Pattern trong thực tế`,
+    title: `Định nghĩa State Pattern`,
     contents: [
       {
         div: `<p>
-        <strong>Template Method Pattern</strong> là một mẫu rất phổ biến và bạn sẽ tìm
-        thấy rất nhiều mẫu trong thực tế. Mặc dù vậy, bạn phải có một con mắt sắc sảo,
-        bởi vì có nhiều cách triển khai Template Method không hoàn toàn trông giống
-        như thiết kế trong sách giáo khoa.
-      </p>
-      
-      <p>
-        Mẫu này xuất hiện thường xuyên vì đây là công cụ thiết kế tuyệt vời để tạo
-        framework, trong đó framework kiểm soát cách thực hiện, nhưng để bạn (người sử
-        dụng framework) xác định chi tiết của riêng bạn về những gì thực sự xảy ra ở
-        mỗi bước của thuật toán của framework.
-      </p>
-      <p>
-        Hãy xem Safari thông qua một vài cách sử dụng trong thực tế (tốt, được thôi,
-        trong API Java)…
+        Vâng, đó là sự thật, chúng tôi chỉ thực hiện State Pattern. Vì vậy, bây giờ,
+        hãy xem qua tất cả những gì về nó:
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_28.jpg`),
-          width: `45%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_34.jpg`),
+          width: `50%`,
           align: `center`,
         },
       },
       {
         div: `<br />`,
       },
+      {
+        div: `<p>
+        <strong
+          >(State Pattern cho phép một đối tượng thay đổi hành vi của nó khi trạng
+          thái bên trong của nó thay đổi. Đối tượng sẽ xuất hiện để thay đổi lớp của
+          nó)</strong
+        >
+      </p>
+      
+      <p>
+        Phần đầu tiên của định nghĩa này rất có ý nghĩa, phải không? Bởi vì mẫu này
+        đóng gói trạng thái thành các lớp riêng biệt và ủy quyền cho đối tượng đại
+        diện cho trạng thái hiện tại, chúng tôi biết rằng hành vi thay đổi cùng với
+        trạng thái bên trong. Gumball Machine cung cấp một ví dụ hay: khi máy Gumball
+        ở trạng thái <strong>NoQuarterState</strong> và bạn bỏ vào một đồng xu, bạn sẽ
+        có hành vi khác (máy chấp nhận một đồng xu) và khi bạn bỏ vào một đồng xu vào
+        khi máy ở trạng thái <strong>HasQuarterState</strong> (máy từ chối đồng xu).
+      </p>
+      
+      <p>
+        Còn phần thứ hai của định nghĩa thì sao? Điều đó có ý nghĩa gì đối với một đối
+        tượng có vẻ như thay đổi lớp của nó? Hãy nghĩ về nó từ góc độ của một khách
+        hàng: “nếu một đối tượng bạn đang sử dụng có thể thay đổi hoàn toàn hành vi
+        của nó, thì đối tượng đó thực sự được khởi tạo từ một lớp khác”. Tuy nhiên,
+        trong thực tế, bạn biết rằng chúng ta đang sử dụng composition để tạo ra sự
+        thay đổi của lớp bằng cách tham chiếu các state object khác nhau.
+      </p>`,
+      },
     ],
   },
   {
-    title: `Sorting với Template Method Pattern`,
+    title: `Sơ đồ lớp State pattern`,
     contents: [
       {
-        div: `<p>Cái gì mà chúng ta thường cần phải làm với mảng?</p>
-
-        <p><strong>Sắp xếp chúng!</strong></p>
-        
-        <p>
-          Nhận thấy điều đó, các nhà thiết kế của lớp Java Arrays đã cung cấp cho chúng
-          ta một template tiện dụng để sắp xếp. Chúng ta hãy xem cách thức hoạt động của
-          phương thức này:<br /><em
-            >(Chúng tôi đã phân tích code này một chút để dễ giải thích hơn. Nếu bạn
-            muốn xem tất cả, hãy lấy nguồn từ Sun và xem thử…)
-          </em>
-        </p>
-        
-        <p>
-          Chúng tôi thực sự có hai phương thức ở đây và chúng hoạt động cùng nhau để
-          cung cấp chức năng sắp xếp
-        </p>`,
-      },
-      {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_29.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_35.png`),
           width: `80%`,
           align: `center`,
         },
       },
       {
+        p: `<p class="text-center"><small>Sơ đồ lớp State pattern</small></p>`,
+      },
+      {
         div: `<br />`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_30.jpg`),
-          width: `30%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_36.jpg`),
+          width: `50%`,
           align: `center`,
         },
       },
       {
         div: `<br />`,
       },
+      {
+        div: `<strong
+        >Sơ đồ lớp State pattern hơi giống
+        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          >Strategy Pattern</a
+        ></strong
+      >`,
+      },
+      {
+        div: `<p>
+        Bạn đã có một quan sát tốt! Vâng, các sơ đồ lớp về cơ bản là giống nhau, nhưng
+        hai mẫu này khác nhau trong <em>ý định</em> của chúng.
+      </p>
+      
+      <p>
+        Với <strong>State Pattern</strong>, chúng ta có một tập hợp các hành vi được
+        đóng gói trong các state object; bất cứ lúc nào cần thiết,
+        <strong>Context</strong> sẽ ủy thác cho một trong những trạng thái đó. Theo
+        thời gian, trạng thái hiện tại thay đổi trên từng state object để phản ánh
+        trạng thái của Context, do đó, hành vi của Context cũng thay đổi theo thời
+        gian. Client thường biết rất ít về các state object.
+      </p>
+      
+      <p>
+        Với
+        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          >Strategy Pattern</a
+        >, client thường chỉ định strategy object mà Context mong muốn. Bây giờ, trong
+        khi mẫu cung cấp tính linh hoạt để thay đổi strategy object trong runtime,
+        thường có một strategy object phù hợp nhất cho một Context object. Ví dụ,
+        trong
+        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          >Chương 1</a
+        >, một số con vịt của chúng tôi được thiết đặt để bay với hành vi bay bình
+        thường (như vịt trời), trong khi những con khác được thiết đặt với hành vi bay
+        giữ cho chúng dưới đất (như vịt cao su).
+      </p>
+      
+      <p>
+        Nói chung, hãy nghĩ về
+        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+          >Strategy Pattern</a
+        >
+        như một sự thay thế linh hoạt cho các lớp con; nếu bạn sử dụng tính kế thừa để
+        xác định hành vi của một lớp, thì bạn đã bị mắc kẹt với hành vi đó ngay cả khi
+        bạn cần thay đổi nó. Với Strategy, bạn có thể thay đổi hành vi bằng cách kết
+        hợp với một đối tượng khác.
+      </p>
+      
+      <p>
+        Hãy nghĩ về <strong>State Pattern</strong> như một giải pháp thay thế cho việc
+        đưa nhiều điều kiện vào ngữ cảnh của bạn; bằng cách gói gọn các hành vi trong
+        các State object, bạn có thể chỉ cần thay đổi đối tượng trạng thái trong ngữ
+        cảnh để thay đổi hành vi của nó.
+      </p>`,
+      },
     ],
   },
   {
-    title: `Chúng tôi đã có một số vịt để sắp xếp…`,
+    title: `Không có câu hỏi ngớ ngẩn`,
     contents: [
       {
         div: `<p>
-        Hãy nói rằng bạn có một đàn vịt mà bạn muốn sắp xếp. Làm sao bạn làm điều đó?
-        Chà, sort template method trong Arrays cung cấp cho chúng tôi thuật toán,
-        nhưng bạn cần cho nó biết cách so sánh vịt, mà bạn làm bằng cách implementing
-        phương thức <strong>compareTo()</strong> của lớp Arrays… Như vậy có hợp lý
+        <strong>Hỏi:</strong> Trong <strong>GumballMachine</strong>, các state quyết
+        định trạng thái tiếp theo sẽ là gì. <strong>ConcreteState</strong> có luôn
+        quyết định đâu sẽ là trạng thái tiếp theo hay không?
+      </p>
+      
+      <p>
+        <strong>Đáp:</strong> Không, không phải lúc nào cũng vậy. Có một lựa chọn khác
+        là để cho <strong>Context</strong> quyết định luồng chuyển đổi trạng thái.
+      </p>
+      
+      <p>
+        Theo nguyên tắc chung, khi các chuyển đổi trạng thái là cố định, chúng thích
+        hợp để đưa vào <strong>Context</strong> hơn; tuy nhiên, khi quá trình chuyển
+        đổi cần tính linh hoạt, chúng thường được đặt trong chính các state class (ví
+        dụ, trong <strong>GumballMachine</strong>, sự lựa chọn chuyển đổi sang
+        <strong>NoQuarter</strong> hoặc <strong>SoldOut</strong> phụ thuộc vào số kẹo
+        cao su còn lại).
+      </p>
+      
+      <p>
+        Nhược điểm của việc chuyển trạng thái trong các state class là chúng ta tạo ra
+        sự phụ thuộc giữa các lớp trạng thái. Khi triển khai
+        <strong>GumballMachine</strong>, chúng tôi đã cố gắng giảm thiểu điều này bằng
+        cách sử dụng các phương thức getter trong <strong>Context</strong>, thay vì
+        code trên các lớp <strong>ConcreteState</strong>.
+      </p>
+      
+      <p>
+        Lưu ý rằng bằng cách đưa ra quyết định này, bạn đang đưa ra quyết định về việc
+        các lớp nào được đóng để sửa đổi – <strong>Context</strong> hoặc các
+        <strong>State class</strong> – khi hệ thống phát triển.
+      </p>
+      
+      <p>
+        <strong>Hỏi:</strong> Client có bao giờ tương tác trực tiếp với các trạng thái
         không?
       </p>
       
       <p>
-        Không, nó không hợp lí. Một Array sẽ không có lớp con nào. Tôi nghĩ rằng
-        <strong>sort()</strong> chính là <strong>templateMethod()</strong>. Và bên
-        trong phương thức sort có gọi đến <strong>compareTo()</strong>, đây chính là
-        một bước trong thuật toán và cần các lớp con override lại.
-      </p>
-      <p>
-        Ở đây, một thỏa thuận: các nhà thiết kế <strong>sort()</strong> muốn nó hữu
-        ích trên tất cả các mảng, vì vậy họ phải tạo một phương thức
-        <strong>static sort()</strong> có thể được sử dụng từ bất cứ đâu. Nhưng điều
-        đó không sao, nó hoạt động gần giống như khi nó ở trong một superclass. Bây
-        giờ, đây là một chi tiết nữa: bởi vì <strong>sort()</strong> thực sự không
-        được định nghĩa trong superclass của chúng ta, nên phương thức
-        <strong>sort()</strong> cần biết rằng bạn đã triển khai phương thức
-        <strong>compareTo()</strong> hoặc nếu không bạn không có phần cần thiết để
-        hoàn thành thuật toán sắp xếp.&nbsp;
+        <strong>Đáp:</strong> Không. Các trạng thái được Context sử dụng để thể hiện
+        trạng thái và hành vi bên trong của nó, vì vậy tất cả các yêu cầu đối với các
+        State object đều đến từ Context. Client không trực tiếp thay đổi trạng thái
+        của Context. Đây là công việc theo ngữ cảnh để giám sát trạng thái của nó và
+        bạn không muốn một client thay đổi trạng thái của một context khi chúng không
+        hề hay biết.
       </p>
       
       <p>
-        Để xử lý điều này, các nhà thiết kế đã sử dụng
-        <strong>Comparable </strong>interface. Tất cả những gì bạn phải làm là
-        implement interface này, nó có một phương thức (bất ngờ chưa):
-        <strong>compareTo()</strong>.
+        <strong>Hỏi:</strong> Nếu tôi có nhiều instance của Context trong ứng dụng của
+        mình, tôi có thể chia sẻ các state object <br />giữa chúng không?
       </p>
       
-      <p><strong>compareTo() là gì?&nbsp;&nbsp;</strong></p>
+      <p>
+        <strong>Đáp:</strong> Vâng, hoàn toàn, và trên thực tế đây là một kịch bản rất
+        phổ biến. Yêu cầu duy nhất là các đối tượng trạng thái của bạn không giữ trạng
+        thái nội bộ của riêng chúng; nếu không, bạn sẽ cần một phiên bản duy nhất cho
+        mỗi ngữ cảnh.
+      </p>
       
       <p>
-        Phương thức <strong>compareTo()</strong> so sánh hai đối tượng và trả về khi
-        một đối tượng nhỏ hơn, lớn hơn hoặc bằng đối tượng kia.
-        <strong>sort()</strong> sử dụng điều này làm cơ sở so sánh các đối tượng trong
-        mảng.
+        Để chia sẻ trạng thái, bạn sẽ gán mỗi trạng thái cho một biến đối tượng tĩnh.
+        Nếu trạng thái của bạn cần sử dụng các phương thức hoặc biến đối tượng trong
+        <strong>Context</strong> của bạn, thì bạn cũng sẽ phải cung cấp cho nó một
+        tham chiếu đến <strong>Context</strong> trong mỗi phương thức
+        <strong>handler()</strong>.
+      </p>
+      
+      <p>
+        <strong>Hỏi:</strong> Có vẻ như việc sử dụng State Pattern luôn làm tăng số
+        lượng các lớp trong thiết kế của chúng tôi. Hãy xem
+        <strong>GumballMachine</strong> của chúng tôi tăng bao nhiêu lớp so với thiết
+        kế ban đầu!
+      </p>
+      
+      <p>
+        <strong>Đáp:</strong> Bạn nói đúng, bằng cách gói hành vi trạng thái vào các
+        lớp trạng thái riêng biệt, bạn sẽ luôn có nhiều lớp hơn trong thiết kế của
+        mình. Thường là cái giá bạn phải trả cho sự linh hoạt. Trừ khi code của bạn
+        chỉ cần thiết kế và cài đặt một lần duy nhất và không sẽ không bao giờ thay
+        đổi, hãy xem xét việc xây dựng nó với các “lớp bổ sung” và bạn có thể cảm ơn
+        chính mình (khi bảo trì). Lưu ý rằng thường thì điều quan trọng là số lượng
+        các lớp bạn giao tiếp với client của mình và có nhiều cách để ẩn các “lớp bổ
+        sung” này khỏi client của bạn (giả sử bằng cách khai báo private, protected…).
+      </p>
+      
+      <p>
+        Ngoài ra, hãy xem xét lựa chọn thay thế: nếu bạn có một ứng dụng có nhiều
+        trạng thái và bạn quyết định không sử dụng các đối tượng riêng biệt, thay vào
+        đó, bạn sẽ kết thúc bằng các câu lệnh <strong>If</strong>. Điều này làm cho
+        code của bạn khó duy trì và có thể hiểu. Bằng cách sử dụng các object, bạn làm
+        cho các trạng thái rõ ràng và dễ hiểu và duy trì code.
+      </p>
+      
+      <p>
+        <strong>Hỏi:</strong> Sơ đồ lớp State Pattern cho thấy State là một lớp trừu
+        tượng. Nhưng không phải bạn đã sử dụng một interface trong việc cài đặt trạng
+        thái của gumball machine hay sao?
+      </p>
+      
+      <p>
+        <strong>Đáp:</strong> Vâng. Do chúng tôi không có chức năng chung để đưa vào
+        một lớp trừu tượng, chúng tôi làm nó với một interface. Trong triển khai của
+        riêng bạn, bạn có thể muốn xem xét đến một lớp trừu tượng. Làm như vậy có lợi
+        ích cho phép bạn thêm các phương thức vào lớp trừu tượng sau này, mà không phá
+        vỡ các concrete state.
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Chúng tôi vẫn cần hoàn thành trò chơi “Gumball 1 phần 10”`,
+    contents: [
+      {
+        div: `<p>
+        Hãy nhớ rằng, chúng ta chưa hoàn thành. Chúng ta còn có một trò chơi để cài
+        đặt; nhưng bây giờ chúng ta đã thực hiện State Pattern, nó sẽ rất dễ dàng. Đầu
+        tiên, chúng ta cần thêm một trạng thái vào lớp
+        <strong>GumballMachine</strong>:
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_31.png`),
-          width: `50%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_37.png`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p>
+        Bây giờ, hãy để cho bản thân lớp <strong>WinnerState</strong> thực hiện các
+        hành động, nó giống với lớp <strong>SoldState</strong>:
+      </p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_38.png`),
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1002,21 +1134,19 @@ export const chapter10: IContent[] = [
     ],
   },
   {
-    title: `So sánh Duck với Duck`,
+    title: `Hoàn thành trò chơi`,
     contents: [
       {
         div: `<p>
-        Được rồi, vì vậy bạn biết rằng nếu bạn muốn sắp xếp Vịt, bạn sẽ phải
-        implements phương thức <strong>compareTo()</strong> này; bằng cách đó, bạn sẽ
-        cung cấp cho lớp Arrays những gì nó cần để hoàn thành thuật toán và sắp xếp
-        vịt của bạn.
-      </p>
-      
-      <p>Đây là cách thực hiện:</p>`,
+        Chúng ta chỉ cần thực hiện một thay đổi nữa: chúng ta cần cài đặt “cơ hội ngẫu
+        nhiên” trong trò chơi và thêm một chuyển đổi trạng thái đến
+        <strong>WinnerState</strong>. Chúng tôi sẽ thêm cả hai vào
+        <strong>HasQuarterState </strong>bất cứ khi nào khách hàng xoay tay quay:
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_32.png`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_39.png`),
           width: `80%`,
           align: `center`,
         },
@@ -1025,13 +1155,30 @@ export const chapter10: IContent[] = [
         div: `<br />`,
       },
       {
-        div: `<p><strong>Hãy sắp xếp lại những con Vịt</strong></p>
-
-        <p><strong>Đây là test drive cho việc sắp xếp Ducks… </strong>&nbsp;</p>`,
+        div: `<p>
+        Wow, điều đó khá đơn giản để thực hiện! Chúng tôi vừa thêm một trạng thái mới
+        vào <strong>GumballMachine </strong>và sau đó cài đặt nó. Tất cả những gì
+        chúng tôi phải làm là thực hiện trò chơi may rủi của mình và chuyển sang trạng
+        thái chính xác. Có vẻ như chiến lược viết code mới của chúng tôi đang được đền
+        đáp…
+      </p>`,
+      },
+    ],
+  },
+  {
+    title: `Demo cho CEO của Mighty Gumball, Inc.`,
+    contents: [
+      {
+        div: `<p>
+        Giám đốc điều hành của Mighty Gumball đã ghé qua để xem giới thiệu về code trò
+        chơi mới được làm lại của bạn. Hãy hy vọng những trạng thái đó chuyển đổi đúng
+        theo suy nghĩ! Chúng tôi sẽ giữ cho bản demo ngắn (khoảng chú ý ngắn của các
+        CEO sẽ là tài liệu tốt).
+      </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_33.png`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_40.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -1041,7 +1188,7 @@ export const chapter10: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_34.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_41.jpg`),
           width: `50%`,
           align: `center`,
         },
@@ -1049,24 +1196,9 @@ export const chapter10: IContent[] = [
       {
         div: `<br />`,
       },
-    ],
-  },
-  {
-    title: `Việc chế tạo máy phân loại vịt`,
-    contents: [
-      {
-        div: `<p>Hãy để việc sắp xếp bắt đầu!</p>
-
-        <p>
-          Thông qua cách thức hoạt động của <strong>sort()</strong> template method.
-          Chúng tôi sẽ kiểm tra xem template method điều khiển thuật toán như thế nào và
-          tại một số điểm nhất định trong thuật toán, xem cách nó yêu cầu Duck object
-          của chúng tôi cung cấp việc thực hiện một bước tính toán…
-        </p>`,
-      },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_35.jpg`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_42.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -1081,122 +1213,222 @@ export const chapter10: IContent[] = [
     contents: [
       {
         div: `<p>
-        <strong>Hỏi: </strong>Đây có thực sự là
-        <strong>Template Method Pattern</strong> hay bạn đang gượng ép quá mức?
+        <strong>Hỏi:</strong> Tại sao chúng ta cần <strong>WinnerState</strong>? Chúng
+        ta có thể xử lý trả về hai viên kẹo cao su trong lớp
+        <strong>SoldState </strong>không?
       </p>
       
       <p>
-        <strong>Trả lời:</strong> Mẫu yêu cầu thực hiện một thuật toán và để các lớp
-        con hoàn thành các bước trong thuật toán – và Arrays sort rõ ràng không làm
-        điều đó! Nhưng, như chúng ta đã biết, các mẫu trong thực tế không phải lúc nào
-        cũng giống như các mẫu trong sách giáo khoa. Chúng phải được sửa đổi để phù
-        hợp với bối cảnh và các ràng buộc thực hiện.
-      </p>
-      <p>
-        Các nhà thiết kế của phương thức Arrays <strong>sort()</strong> có một vài
-        ràng buộc. Nói chung, bạn không thể phân lớp một Java array và họ muốn phương
-        thức sort được sử dụng trên tất cả các mảng (và mỗi mảng là một lớp khác
-        nhau). Vì vậy, họ đã định nghĩa một phương thức static và chuyển phần so sánh
-        của thuật toán tới các item được sắp xếp.
+        <strong>Đáp:</strong> Đó là một câu hỏi hay. <strong>SoldState </strong>và
+        <strong>WinnerState </strong>gần như giống hệt nhau, ngoại trừ việc
+        <strong>WinnerState </strong>trả về hai viên kẹo cao su thay vì một. Bạn chắc
+        chắn có thể viết code để đưa đoạn code trả hai viên kẹo cao su vào
+        <strong>SoldState</strong>. Tất nhiên, nhược điểm là bây giờ bạn đã có HAI
+        trạng thái được đại diện trong một lớp State:
+        <strong>trạng thái mà bạn là người chiến thắng</strong> và
+        <strong>trạng thái mà bạn không phải là người chiến thắng</strong>. Vì vậy,
+        bạn đang hy sinh “sự rõ ràng” trong lớp State để giảm trùng lặp code.
       </p>
       
       <p>
-        Vì vậy, mặc dù nó không phải là một template method pattern trong sách giáo
-        khoa, nhưng việc triển khai này vẫn theo tinh thần của
-        <strong>Template Method Pattern</strong>. Ngoài ra, bằng cách loại bỏ yêu cầu
-        bạn phải phân lớp Array để sử dụng thuật toán này, họ đã thực hiện sắp xếp
-        theo một số cách linh hoạt và hữu ích hơn.
-      </p>
-      
-      <p>
-        <strong>Hỏi:</strong> Việc triển khai phương thức sort này thực sự có vẻ giống
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
-          >Strategy</a
-        >
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
-          >Pattern</a
-        >
-        hơn là <strong>Template Method Pattern</strong>. Tại sao chúng ta coi nó là
-        <strong>Template Method Pattern</strong>?
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Có lẽ bạn đang nghĩ rằng bởi vì Strategy<a
-          href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
-        >
-        </a
-        >Pattern sử dụng việc kết hợp (compose) đối tượng (Arrays compose với
-        Comparable). Bạn nói đúng – chúng tôi đang sử dụng đối tượng Arrays để sắp xếp
-        mảng của chúng tôi, do đó tương tự như Strategy. Nhưng hãy nhớ, trong
-        Strategy, lớp mà bạn compose (lớp Comparable) sẽ thực hiện<strong>
-          toàn bộ thuật toán</strong
-        >. Trong khi thuật toán mà Arrays thực hiện để sắp xếp là
-        <strong>không toàn bộ</strong>; nó cần một lớp con để cài đặt phương thức
-        <strong>compareTo()</strong> còn thiếu. Vì vậy, nó giống như
-        <strong>Template Method Pattern</strong> hơn.
-      </p>
-      
-      <p>
-        <strong>Hỏi:</strong> Có ví dụ nào khác về các
-        <strong>Template Method Pattern</strong> trong API Java không?
-      </p>
-      
-      <p>
-        <strong>Trả lời:</strong> Vâng, bạn sẽ tìm thấy chúng ở một vài nơi. Ví dụ,
-        <strong>java.io</strong> có một phương thức <strong>read()</strong> trong
-        <strong>InputStream </strong>mà các lớp con phải thực hiện và được sử dụng bởi
-        template method <strong><em>read(byte b[], int off, int len)</em></strong
-        >.
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Sử dụng sức mạnh bộ não`,
-    contents: [
-      {
-        div: `<p>
-        Chúng ta biết rằng chúng ta nên ủng hộ compose hơn thừa kế, phải không? Chà,
-        những người triển khai <strong>sort()</strong> template method đã quyết định
-        không sử dụng tính kế thừa, và thay vào đó cài đặt <strong>sort()</strong> là
-        một static method được compose với một <strong>Comparable</strong> khi chạy.
-        Chúng tốt hơn như thế nào? Chúng tồi tệ hơn như thế nào? Làm thế nào để bạn
-        biết nên tiếp cận cái này hay cái kia? Các mảng Java có làm cho điều này đặc
-        biệt khó khăn không?
-      </p>
-      
-      <p><strong>Sử dụng sức mạnh bộ não 2</strong></p>
-      
-      <p>
-        Hãy nghĩ về một mẫu khác là cụ thể hóa của template method. Trong cụ thể hóa
-        này, các <strong>primitiveOperation</strong> được sử dụng để tạo và return các
-        đối tượng. Đây là mẫu gì? (Xem lại sơ đồ lớp để biết
-        <strong>primitiveOperation </strong>là gì)
-      </p>`,
-      },
-    ],
-  },
-  {
-    title: `Swingin’ with Frames`,
-    contents: [
-      {
-        div: `<p>
-        Tiếp theo trên Template Method của chúng tôi… hãy chú ý đến việc xoay JFrames!
-      </p>
-      
-      <p>
-        Nếu bạn không biết về JFrame, thì đó là Swing container cơ bản nhất và kế thừa
-        phương thức <strong>paint()</strong>. Theo mặc định,
-        <strong>paint()</strong> không làm gì cả vì nó là hook method! Bằng cách
-        override <strong>paint()</strong>, bạn có thể chèn vào thuật toán JFrame, để
-        hiển thị màn hình và có đầu ra đồ họa của riêng bạn được tích hợp vào JFrame.
-        Ở đây, một ví dụ đơn giản về việc sử dụng JFrame để override phương thức hook
-        <strong>paint()</strong>:
+        Một điều khác cần xem xét là nguyên tắc bạn đã học trong chương trước:
+        <strong>Một lớp, Một trách nhiệm</strong>. Bằng cách đặt trách nhiệm
+        <strong>WinnerState </strong>vào <strong>SoldState</strong>, bạn đã đưa ra
+        trách nhiệm THỨ HAI của <strong>SoldState</strong>. Điều gì xảy ra khi chương
+        trình khuyến mãi kết thúc? Hoặc kinh phí của cuộc thi thay đổi? Vì vậy, nó là
+        một sự đánh đổi và đi đến quyết định thiết kế.
       </p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_36.png`),
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_43.jpg`),
+          width: `50%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+    ],
+  },
+  {
+    title: `Sanity testing…`,
+    contents: [
+      {
+        div: `<p>
+        Vâng, CEO của Mighty Gumball có lẽ cần
+        <u
+          title="Sanity testing là một phương pháp trong kiểm thử phần mềm, để test tập trung vào một số chức năng."
+          >Sanity testing</u
+        >, nhưng đó không phải là những gì chúng ta đang nói ở đây. Hãy suy nghĩ về
+        một số khía cạnh của <strong>GumballMachine</strong>:
+      </p>
+      
+      <ul>
+        <li>
+          Chúng tôi đã có rất nhiều code trùng lặp ở các trạng thái
+          <strong>Sold </strong>và <strong>Winning </strong>và chúng tôi có thể muốn
+          dọn sạch chúng. Chúng ta sẽ làm điều đó bằng cách nào? Chúng ta có thể biến
+          State thành một lớp trừu tượng và cài đặt một số hành vi mặc định cho các
+          phương thức; dù sao, các thông báo lỗi như, “You already inserted a
+          quarter”, khách hàng sẽ không nhìn thấy. Vì vậy, tất cả các phản ứng lỗi của
+          hành vi có thể là chung chung và được kế thừa từ lớp abstract State.
+        </li>
+        <li>
+          Phương thức <strong>dispense()</strong> luôn được gọi, ngay cả khi xoay tay
+          quay khi không có đồng xu. Mặc dù máy hoạt động chính xác và không phân phát
+          kẹo trừ khi nó ở trạng thái phù hợp, chúng tôi có thể dễ dàng khắc phục điều
+          này bằng cách cài đặt <strong>turnCrank()</strong> return một boolean hoặc
+          bằng cách ném ra các exception. Bạn có nghĩ giải pháp nào là tốt hơn không?
+        </li>
+        <li>
+          Tất cả các sự thông minh cho chuyển đổi trạng thái nằm bên trong các lớp
+          State. Vấn đề này có thể gây ra điều gì? Chúng ta có muốn chuyển logic đó
+          vào lớp Gumball Machine không? Khi thực hiện như vậy có ưu điểm và khuyết
+          điểm gì?
+        </li>
+        <li>
+          Bạn sẽ khởi tạo rất nhiều đối tượng <strong>GumballMachine</strong> đúng
+          chứ? Nếu vậy, bạn có thể muốn chuyển các state instance thành các static
+          instance và chia sẻ chúng với nhau. Những thay đổi này sẽ yêu cầu những gì
+          từ <strong>GumballMachine </strong>và <strong>State</strong>?
+        </li>
+      </ul>
+      `,
+      },
+    ],
+  },
+  {
+    title: `Tối nay: Một cuộc hội ngộ Strategy và State Pattern`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_44.jpg`),
+          width: `30%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Strategy:</strong> Này anh bạn. Bạn có nghe tôi ở Chương 1 không?</p>
+
+        <p><strong>State: </strong>Vâng, chắc chắn tôi đã nghe qua tên anh đâu đó.</p>
+        
+        <p>
+          <strong>Strategy: </strong>Tôi vừa mới giúp đỡ cho
+          <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/10"
+            >Template Method</a
+          >
+          – anh ấy cần tôi giúp để hoàn thành chương 8. Vì vậy, anh trai cao quý của
+          tôi, anh là ai?
+        </p>
+        
+        <p>
+          <strong>State: </strong>Giống như mọi khi – giúp các lớp thể hiện các hành vi
+          khác nhau ở các trạng thái khác nhau.
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Tôi không biết điều đó, có vẻ như bạn đã làm giống
+          những gì tôi làm và bạn chỉ sử dụng các từ khác nhau để mô tả nó. Hãy suy nghĩ
+          điều này: Tôi cho phép các đối tượng kết hợp các hành vi hoặc thuật toán khác
+          nhau thông qua kết hợp (composition) và ủy quyền (delegation). Bạn chỉ sao
+          chép tôi thôi.
+        </p>
+        
+        <p>
+          <strong>State: </strong>Tôi thừa nhận rằng những gì chúng ta làm chắc chắn có
+          liên quan, nhưng ý định của tôi hoàn toàn khác với bạn. Và, cách tôi chỉ cho
+          client của mình sử dụng kết hợp (composition) và ủy quyền (delegation) là hoàn
+          toàn khác với anh.
+        </p>
+        
+        <p><strong>Strategy: </strong>Ồ vâng? Làm thế nào? Tôi không biết điều đó.</p>
+        
+        <p>
+          <strong>State: </strong>Chà, nếu anh dành thêm một chút thời gian để đi ra bên
+          ngoài, anh có thể hiểu. Dù sao, hãy suy nghĩ về cách anh làm việc: anh có một
+          lớp được khởi tạo và anh thường cung cấp cho nó một “chiến lược” thực hiện một
+          số hành vi. Giống như, trong Chương 1, anh đã đưa ra các hành vi tiếng vịt kêu
+          (quack), phải không? Vịt thật thì có một tiếng kêu quack “thực sự”, còn vịt
+          cao su có một tiếng quack nhưng kêu ré lên.
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Vâng, đó là một công việc tốt… và tôi chắc chắn bạn
+          có thể thấy làm như vậy mạnh mẽ hơn so với kế thừa hành vi của bạn, phải
+          không?
+        </p>
+        
+        <p>
+          <strong>State: </strong>Phải, tất nhiên. Bây giờ, hãy nghĩ về cách tôi làm
+          việc; Nó khác hoàn toàn.
+        </p>
+        
+        <p><strong>Strategy: </strong>Xin lỗi, bạn sẽ phải giải thích điều đó.</p>
+        
+        <p>
+          <strong>State: </strong>Được rồi, khi các đối tượng
+          <strong>Context </strong>của tôi được tạo, tôi có thể cho chúng biết trạng
+          thái bắt đầu, nhưng sau đó theo thời gian chúng thay đổi trạng thái của chính
+          chúng.
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Này, thôi nào, tôi cũng có thể thay đổi hành vi
+          trong runtime; Đó là tất cả những gì tôi đã nói về composition!
+        </p>
+        
+        <p>
+          <strong>State: </strong>Chắc chắn bạn có thể, nhưng cách tôi làm việc được xây
+          dựng xung quanh các trạng thái riêng biệt; Các đối tượng
+          <strong>Context </strong>của tôi thay đổi trạng thái theo thời gian theo một
+          số chuyển đổi trạng thái được xác định rõ. Nói cách khác, thay đổi hành vi
+          được xây dựng theo sơ đồ của tôi – đó là cách tôi làm việc!
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Chà, tôi thừa nhận, tôi không khuyến khích các đối
+          tượng của mình xác định rõ sự liên hệ và chuyển đổi giữa các trạng thái. Trên
+          thực tế, tôi thường thích kiểm soát chiến lược mà các đối tượng của tôi đang
+          sử dụng.
+        </p>
+        
+        <p>
+          <strong>State: </strong>Hãy nhìn xem, tôi đã nói rằng chúng ta giống nhau về
+          cấu trúc, nhưng những gì chúng ta làm hoàn toàn khác nhau về ý định. Đối mặt
+          với nó, thế giới đã sử dụng cả hai chúng ta.
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Yeah, yeah, tiếp tục sống giấc mơ của bạn. Bạn hành
+          động như bạn là một mẫu lớn như tôi, nhưng hãy tự nhìn lại đi: Tôi nằm trong
+          <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+            >Chương 1</a
+          >; họ đặt bạn trong Chương 10. Ý tôi là, có bao nhiêu người thực sự sẽ đọc đến
+          đây?
+        </p>
+        
+        <p>
+          <strong>State: </strong>Bạn đang giỡn đấy à? Đây là một cuốn sách Head First
+          và người đọc Head First rất cừ khôi. Tất nhiên, họ sẽ đọc đến Chương 10!
+        </p>
+        
+        <p>
+          <strong>Strategy: </strong>Đó mới là người anh em của tôi, luôn là người mơ
+          mộng.
+        </p>`,
+      },
+    ],
+  },
+  {
+    title: `Chúng tôi gần như quên mất!`,
+    contents: [
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_45.jpg`),
           width: `80%`,
           align: `center`,
         },
@@ -1207,20 +1439,30 @@ export const chapter10: IContent[] = [
     ],
   },
   {
-    title: `Applets`,
+    title: `Gọt lại bút chì`,
     contents: [
       {
         div: `<p>
-        Điểm dừng cuối cùng của chúng tôi: applet. Bạn có thể biết một applet là một
-        chương trình nhỏ chạy trong một trang web. Bất kỳ applet nào cũng phải kế thừa
-        <strong>Applet</strong> class và lớp này cung cấp một số hook. Hãy xem qua một
-        vài trong số chúng:
-      </p>`,
+        Chúng tôi cần bạn viết phương thức <strong>refill()</strong> cho máy Gumball.
+        Nó có một đối số (số lượng kẹo cao su mà bạn thêm vào máy) và nên cập nhật số
+        lượng máy kẹo cao su và đặt lại trạng thái máy.
+      </p>
+      
+      <p><strong>Đáp án:</strong></p>`,
+      },
+      {
+        code: {
+          src: `void refill(int count) {
+    this.count = count;
+    state = noQuarterState;
+}`,
+          language: 'java',
+        },
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-10_37.png`),
-          width: `80%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_46.jpg`),
+          width: `50%`,
           align: `center`,
         },
       },
@@ -1228,147 +1470,30 @@ export const chapter10: IContent[] = [
         div: `<br />`,
       },
       {
-        div: `<p>
-        Concrete Applet (lớp <strong>MyApplet</strong>) sử dụng các hook để cung cấp
-        hành vi của riêng chúng. Bởi vì các phương thức này được cài đặt như các hook,
-        applet không bắt buộc phải implement chúng.
-      </p>`,
+        div: `<p><strong>Bài tập:</strong></p>`,
       },
-    ],
-  },
-  {
-    title: `Buổi nói chuyện tối nay: Template Method Pattern và Strategy Pattern so sánh các method của họ`,
-    contents: [
       {
-        div: `<p>
-        <strong>Template Method: </strong
-        ><a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
-          >Strategy</a
-        >
-        này, chú em đang làm gì trong chương của tôi? Tôi hình dung tôi đã bị kẹt lại
-        với một người nhàm chán như
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Factory Method</a
-        >.
-      </p>
-      
-      <p>
-        <strong>Factory Method:</strong> Này này tôi nghe được đấy, đừng có mà nói lén
-        sau lưng tôi.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Không, nó khác với tôi, mặc dù hãy cẩn thận – bạn
-        và
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Factory Method</a
-        >
-        có liên quan với nhau không?
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Tôi chỉ đùa thôi! Giờ thì nghiêm túc, chú em
-        đang làm gì ở đây? Chúng tôi đã không nghe nói về chú em suốt tám chương rồi!
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Tôi nghe nói đến anh trong bản thảo của chương này
-        và tôi nghĩ rằng tôi sẽ đi qua để xem nó diễn ra như thế nào. Chúng ta có rất
-        nhiều điểm chung, vì vậy tôi nghĩ tôi có thể giúp…
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Chú em có thể muốn nhắc nhở người đọc một
-        chút về những gì chú em làm, vì đã quá lâu để mọi người có thể nhớ chú em là
-        ai.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Tôi không biết, kể từ
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Chương 1</a
-        >, mọi người đã ngăn tôi trên phố và nói rằng, “Bạn không phải là mẫu đó phải
-        không?…” vì vậy tôi nghĩ họ biết tôi là ai. Nhưng vì lợi ích của anh: Tôi định
-        nghĩa&nbsp;một bộ các thuật toán và làm cho chúng có thể hoán đổi cho nhau. Vì
-        mỗi thuật toán được đóng gói, client có thể sử dụng các thuật toán khác nhau
-        một cách dễ dàng.&nbsp;
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Này, nghe có vẻ giống như những gì tôi làm.
-        Nhưng ý định của tôi khác một chút so với chú em; công việc của tôi là xác
-        định ra “bộ khung” của một thuật toán, nhưng để các lớp con của tôi thực hiện
-        một số công việc còn lại. Bằng cách đó, tôi có thể có các triển khai khác nhau
-        của các bước trong thuật toán, nhưng giữ quyền kiểm soát cấu trúc thuật toán.
-        Có vẻ như chú em phải từ bỏ quyền kiểm soát các thuật toán của mình.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Tôi không chắc chắn, nhưng dù sao, tôi cũng không
-        bị phụ thuộc khi sử dụng tính kế thừa để triển khai thuật toán. Tôi cung cấp
-        cho client một sự lựa chọn thực hiện thuật toán thông qua kết hợp (compose)
-        đối tượng.
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Tôi nhớ điều đó, nhưng tôi có nhiều quyền
-        kiểm soát hơn đối với thuật toán của mình và tôi không bị trùng lặp code.
-        Trong thực tế, trong trường hợp mọi phần trong thuật toán đều giống nhau ngoại
-        trừ một dòng nào đó khác nhau, thì các lớp của tôi hiệu quả hơn nhiều so với
-        của chú em. Tất cả các code trùng lặp của tôi được đưa vào superclass, vì vậy
-        tất cả các lớp con có thể chia sẻ nó.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Anh có thể hiệu quả hơn một chút (chỉ một chút) và
-        yêu cầu ít đối tượng hơn. Và anh cũng có thể ít phức tạp hơn một chút so với
-        mô hình của tôi, nhưng tôi linh hoạt hơn vì tôi sử dụng object composition
-        (kết hợp đối tượng). Với tôi, client có thể thay đổi thuật toán của họ khi
-        chạy trong runtime chỉ bằng cách sử dụng một strategy object khác.
-      </p>
-      
-      <p>
-        <strong>Template Method:&nbsp; </strong>Vâng, tôi rất vui cho chú em, nhưng
-        đừng quên tôi là mẫu được sử dụng nhiều nhất. Tại sao? Bởi vì tôi cung cấp một
-        phương thức cơ bản để tái sử dụng code cho phép các lớp con chỉ định hành vi.
-        Tôi chắc chắn chú em có thể thấy rằng điều này là hoàn hảo để tạo các
-        framework.
-      </p>
-      
-      <p>
-        <strong>Strategy:&nbsp; </strong>Vâng, tôi đoán thế… nhưng, còn sự phụ thuộc
-        thì sao? Anh phụ thuộc nhiều hơn tôi.
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Phụ thuộc như thế nào? Superclass của tôi là
-        trừu tượng.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Nhưng anh phải phụ thuộc vào các phương thức được
-        triển khai trong superclass của anh, đây là một phần của thuật toán của anh.
-        Tôi không phụ thuộc vào bất cứ ai; Tôi có thể tự làm toàn bộ thuật toán!
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Giống như tôi đã nói,
-        <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-          >Strategy</a
-        >, tôi thật sự hạnh phúc cho chú em. Cảm ơn chú em đã ghé qua, nhưng tôi đã
-        hoàn thành phần còn lại của chương này.
-      </p>
-      
-      <p>
-        <strong>Strategy: </strong>Được rồi, được rồi, đừng quá xúc động. Tôi sẽ để
-        cho anh làm việc, nhưng hãy cho tôi biết nếu anh cần các kỹ thuật đặc biệt của
-        tôi, tôi sẽ luôn sẵn lòng giúp đỡ.
-      </p>
-      
-      <p>
-        <strong>Template Method: </strong>Hiểu rồi. “Đừng gọi cho tôi, tôi sẽ gọi cho
-        bạn…”
-      </p>`,
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_47.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
+      },
+      {
+        div: `<p><strong>Đáp án:</strong></p>`,
+      },
+      {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-13_48.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
@@ -1378,50 +1503,49 @@ export const chapter10: IContent[] = [
       {
         div: `<ul>
         <li>
-          Một “Template method” xác định các bước của một thuật toán, chuyển đến các
-          lớp con để thực hiện các bước đó.
+          <strong>State Pattern</strong> cho phép một đối tượng có nhiều hành vi khác
+          nhau dựa trên trạng thái bên trong của nó.
         </li>
         <li>
-          <strong>Template method pattern</strong> cung cấp cho chúng ta một kỹ thuật
-          quan trọng để tái sử dụng lại code.
+          Không giống như một state machine thủ tục (if…else…),
+          <strong>State Pattern</strong> biểu thị trạng thái dưới dạng một lớp đầy đủ.
         </li>
         <li>
-          Lớp trừu tượng của Template method có thể định nghĩa các phương thức cụ thể,
-          các phương thức trừu tượng và các hook.
-        </li>
-        <li>Các phương thức trừu tượng được thực hiện trong các lớp con.</li>
-        <li>
-          Hook là các phương thức không làm gì hoặc chứa hành vi mặc định trong lớp
-          trừu tượng, nhưng có thể được override trong lớp con.
+          Context có được hành vi của nó bằng cách ủy quyền cho đối tượng trạng thái
+          hiện tại mà nó được thiết đặt.
         </li>
         <li>
-          Để ngăn các lớp con thay đổi thuật toán trong
-          <strong>Template method pattern,</strong> hãy khai báo template method với
-          từ khóa final.
+          Bằng cách gói gọn mỗi trạng thái vào một lớp, chúng tôi “bản địa hóa” mọi
+          thay đổi sẽ cần phải thực hiện.
         </li>
         <li>
-          Nguyên tắc Hollywood hướng dẫn chúng ta đưa ra quyết định trong các mô-đun
-          cấp cao có thể quyết định cách thức và thời điểm gọi các mô-đun cấp thấp.
-        </li>
-        <li>
-          Bạn có thể thấy rất nhiều cách sử dụng
-          <strong>Template Method Pattern</strong> trong thế giới thực, nhưng không
-          mong đợi rằng tất cả (giống như bất kỳ mẫu nào) sẽ giống thiết kế bởi cuốn
-          sách.
-        </li>
-        <li>
-          Cả
-          <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-            >Strategy </a
-          >và <strong>Template Method Pattern</strong> đều đóng gói các thuật toán,
-          một theo kế thừa và một theo compose.
-        </li>
-        <li>
-          <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-            >Factory Method</a
+          <strong>State Pattern</strong> và
+          <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+            >Strategy Pattern</a
           >
-          là một cụ thể hóa của Template Method.
+          có cùng sơ đồ lớp, nhưng chúng khác nhau về ý định.
         </li>
+        <li>
+          <strong
+            ><a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1"
+              >Strategy Pattern</a
+            ></strong
+          >
+          thường cài đặt các lớp Context bằng một hành vi hoặc thuật toán.
+        </li>
+        <li>
+          <strong>State Pattern</strong> cho phép một Context thay đổi hành vi của nó
+          khi trạng thái của Context thay đổi.
+        </li>
+        <li>
+          Chuyển đổi trạng thái có thể được kiểm soát bởi các lớp State hoặc bởi các
+          lớp Context.
+        </li>
+        <li>
+          Sử dụng <strong>State Pattern</strong> thường sẽ dẫn đến số lượng lớp lớn
+          hơn trong thiết kế của bạn.
+        </li>
+        <li>Các lớp trạng thái có thể được chia sẻ giữa các Context instance.</li>
       </ul>`,
       },
     ],
