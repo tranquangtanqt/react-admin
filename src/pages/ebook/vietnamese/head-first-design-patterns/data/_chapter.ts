@@ -10,6 +10,7 @@ const chapter = [
   'Chương 7: Adapter Pattern và Facade Pattern – Trở nên thích nghi (P2)',
   'Chương 8: Template Method Pattern',
   'Chương 9: Iterator Pattern và Composite Pattern (P1)',
+  'Chương 9: Iterator Pattern và Composite Pattern (P2)',
 ];
 const headFirstDesignPatternsChapter: {
   text: string;
