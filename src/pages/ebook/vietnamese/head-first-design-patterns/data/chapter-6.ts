@@ -8,7 +8,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_1.jpg`),
-          width: `35%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -36,10 +36,13 @@ export const chapter6: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_.2jpg`),
-          width: `35%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_2.jpg`),
+          width: `60%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -293,9 +296,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_3.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -318,7 +324,6 @@ export const chapter6: IContent[] = [
   },
   {
     title: ` Cuộc phỏng vấn tuần này:
-    <br />
     Lời thú nhận của một Singleton Pattern`,
     contents: [
       {
@@ -453,7 +458,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_4.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -484,6 +489,13 @@ export const chapter6: IContent[] = [
     </p>`,
       },
       {
+        image: {
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_5.jpg`),
+          width: `60%`,
+          align: `center`,
+        },
+      },
+      {
         div: `<p>
         <strong>Đáp án:</strong>
       </p>`,
@@ -491,7 +503,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_6.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -515,7 +527,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_7.jpg`),
-          width: `35%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -569,7 +581,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_8.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -595,9 +607,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_9.jpg`),
-          width: `35%`,
+          width: `60%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -626,9 +641,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_10.jpg`),
-          width: `35%`,
+          width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -647,9 +665,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_11.jpg`),
-          width: `35%`,
+          width: `90%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -660,7 +681,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_12.jpg`),
-          width: `35%`,
+          width: `90%`,
           align: `center`,
         },
       },
@@ -684,9 +705,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_13.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -757,9 +781,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_14.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -791,9 +818,12 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_15.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -836,7 +866,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_16.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -848,7 +878,7 @@ export const chapter6: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-6_17.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },

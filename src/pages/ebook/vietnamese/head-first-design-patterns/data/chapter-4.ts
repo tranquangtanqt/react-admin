@@ -8,7 +8,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_1.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -38,7 +38,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_2.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -68,7 +68,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_3.jpg`),
-          width: `70%`,
+          width: `60%`,
           align: `left`,
         },
       },
@@ -84,7 +84,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_4.jpg`),
-          width: `70%`,
+          width: `60%`,
           align: `left`,
         },
       },
@@ -177,7 +177,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_5.jpg`),
-          width: `70%`,
+          width: `60%`,
           align: `left`,
         },
       },
@@ -450,7 +450,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_11.jpg`),
-          width: `70%`,
+          width: `20%`,
           align: `center`,
         },
       },
@@ -583,7 +583,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_15.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -631,7 +631,7 @@ export const chapter4: IContent[] = [
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_16.jpg`),
           width: `70%`,
-          align: `center`,
+          align: `left`,
         },
       },
       {
@@ -693,7 +693,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_18.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -712,7 +712,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_19.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -812,12 +812,15 @@ export const chapter4: IContent[] = [
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         p: `<h6><b>HÃY CÙNG XEM CÁCH THỨC HOẠT ĐỘNG CỦA NÓ: ĐẶT MỘT CÁI PIZZA VỚI FACTORY METHOD</b></h6>`,
       },
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_23.jpg`),
-          width: `70%`,
+          width: `60%`,
           align: `center`,
         },
       },
@@ -1303,7 +1306,7 @@ export const chapter4: IContent[] = [
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_35.jpg`),
           width: `70%`,
-          align: `center`,
+          align: `left`,
         },
       },
       {
@@ -1357,7 +1360,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_37.jpg`),
-          width: `70%`,
+          width: `40%`,
           align: `center`,
         },
       },
@@ -1477,7 +1480,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_39.jpg`),
-          width: `70%`,
+          width: `30%`,
           align: `center`,
         },
       },
@@ -1523,7 +1526,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_40.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -1548,7 +1551,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_41.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },
@@ -1564,7 +1567,7 @@ export const chapter4: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-4_42.jpg`),
-          width: `70%`,
+          width: `50%`,
           align: `center`,
         },
       },

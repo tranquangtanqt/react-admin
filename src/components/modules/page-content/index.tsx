@@ -44,7 +44,7 @@ export const PageContent: React.FC<Props> = ({ content }) => {
                         type="image"
                         src={content.image.src}
                         className={
-                          'img-thumbnail ' +
+                          'img-thumbnail mb-full-width ' +
                           (content.image.align === 'left'
                             ? 'rounded float-start'
                             : content.image.align === 'center'

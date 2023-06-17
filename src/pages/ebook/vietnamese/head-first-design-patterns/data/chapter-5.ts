@@ -72,9 +72,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_1.jpg`),
-          width: `35%`,
+          width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -111,7 +114,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_2.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -135,9 +138,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_3.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
@@ -161,9 +167,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_4.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -203,9 +212,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_5.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: ` <p>
@@ -217,7 +229,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_6.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -241,7 +253,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_7.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -251,7 +263,7 @@ export const chapter5: IContent[] = [
     ],
   },
   {
-    title: `<strong>Tiếp tục</strong> l<strong>àm lại lớp Pizza …</strong>`,
+    title: `Tiếp tục làm lại lớp Pizza …`,
     contents: [
       {
         div: `<p>
@@ -286,9 +298,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_8.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -303,9 +318,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_9.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -336,7 +354,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_10.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -361,7 +379,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_11.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -437,7 +455,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_12.jpg`),
-          width: `35%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -459,9 +477,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_13.jpg`),
-          width: `35%`,
+          width: `40%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: ` <p>
@@ -472,9 +493,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_14.jpg`),
-          width: `35%`,
+          width: `60%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: ` <p>
@@ -485,7 +509,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_15.jpg`),
-          width: `35%`,
+          width: `60%`,
           align: `center`,
         },
       },
@@ -495,12 +519,7 @@ export const chapter5: IContent[] = [
     ],
   },
   {
-    title: ` <strong>
-    Định nghĩa Abstract 
-    <a href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/1">
-      Factory Pattern
-    </a>
-  </strong>`,
+    title: `Định nghĩa Abstract Factory Pattern`,
     contents: [
       {
         div: `<p>
@@ -516,7 +535,7 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_16.jpg`),
-          width: `35%`,
+          width: `40%`,
           align: `center`,
         },
       },
@@ -562,9 +581,12 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_17.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -575,16 +597,19 @@ export const chapter5: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_18.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_19.jpg`),
-          width: `35%`,
+          width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -611,7 +636,7 @@ export const chapter5: IContent[] = [
     ],
   },
   {
-    title: ` Buổi phỏng vấn của Factory Method và Abstract Factory&nbsp;Pattern`,
+    title: ` Buổi phỏng vấn của Factory Method và Abstract Factory Pattern`,
     contents: [
       {
         div: `<p>
@@ -791,19 +816,22 @@ export const chapter5: IContent[] = [
     ],
   },
   {
-    title: `So sánh Factory Method và Abstract Factory&nbsp;Pattern`,
+    title: `So sánh Factory Method và Abstract Factory Pattern`,
     contents: [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_20.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-5_21.jpg`),
-          width: `35%`,
+          width: `80%`,
           align: `center`,
         },
       },

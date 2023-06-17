@@ -8,7 +8,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_1.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -101,7 +101,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_2.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -123,7 +123,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_3.jpg`),
-          width: `50%`,
+          width: `90%`,
           align: `center`,
         },
       },
@@ -294,11 +294,7 @@ export const chapter7: IContent[] = [
     ],
   },
   {
-    title: `<strong>Trong khi đó, trở lại Diner…,</strong>
-    <br />
-    <strong>hoặc là,</strong>
-    <br />
-    <strong>Giới thiệu ngắn gọn về Command Pattern&nbsp;</strong>`,
+    title: `Trong khi đó, trở lại Diner…, hoặc là, Giới thiệu ngắn gọn về Command Pattern>`,
     contents: [
       {
         image: {
@@ -351,7 +347,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_5.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -374,7 +370,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_6.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -496,7 +492,7 @@ export const chapter7: IContent[] = [
     ],
   },
   {
-    title: `Từ Objectville Diner đến Command Pattern&nbsp;&nbsp;`,
+    title: `Từ Objectville Diner đến Command Pattern`,
     contents: [
       {
         div: `<p>
@@ -510,9 +506,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_7.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -525,9 +524,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_8.jpg`),
-          width: `50%`,
+          width: `60%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -537,9 +539,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_9.jpg`),
-          width: `50%`,
+          width: `60%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
@@ -570,9 +575,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_10.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         p: `<h6><b>IMPLEMENTING MỘT COMMAND ĐỂ BẬT ĐÈN</b></h6>`,
@@ -580,9 +588,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_11.jpg`),
-          width: `50%`,
+          width: `25%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -596,9 +607,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_12.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -620,7 +634,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_13.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -642,9 +656,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_14.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -656,9 +673,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_15.jpg`),
-          width: `50%`,
+          width: `55%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -670,20 +690,25 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_16.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         div: ` <p>
         <strong>Đáp án:</strong>
-      </p>
-`,
+      </p>`,
+      },
+      {
+        div: `<br />`,
       },
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_17.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -707,8 +732,8 @@ export const chapter7: IContent[] = [
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_18.jpg`),
-          width: `50%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_18.png`),
+          width: `45%`,
           align: `center`,
         },
       },
@@ -726,9 +751,12 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_19.jpg`),
-          width: `50%`,
+          width: `30%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -764,7 +792,7 @@ export const chapter7: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_20.jpg`),
-          width: `50%`,
+          width: `45%`,
           align: `center`,
         },
       },
@@ -774,12 +802,12 @@ export const chapter7: IContent[] = [
     ],
   },
   {
-    title: `Định nghĩa Command Pattern: Sơ đồ lớp&nbsp;`,
+    title: `Định nghĩa Command Pattern: Sơ đồ lớp`,
     contents: [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_21.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -820,13 +848,6 @@ export const chapter7: IContent[] = [
           src: `onCommands[0]  = onCommand;
 offCommands[0] = offCommand;`,
           language: 'java',
-        },
-      },
-      {
-        image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_.jpg`),
-          width: `50%`,
-          align: `center`,
         },
       },
       {
@@ -884,7 +905,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_22.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -894,12 +915,12 @@ offCommands[0] = offCommand;`,
     ],
   },
   {
-    title: `Implementing Remote Control&nbsp;&nbsp;`,
+    title: `Implementing Remote Control`,
     contents: [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_23.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -922,16 +943,22 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_24.jpg`),
-          width: `50%`,
-          align: `left`,
+          width: `70%`,
+          align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_25.jpg`),
-          width: `50%`,
-          align: `left`,
+          width: `25%`,
+          align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -946,18 +973,18 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_26.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
         Không tệ lắm. Hãy xem phần còn lại của các lớp từ nhà cung cấp; bây giờ, bạn
         chắc chắn có thể “hạ gục” phần còn lại của các lớp Command mà chúng ta cần.
       </p>`,
-      },
-      {
-        div: `<br />`,
       },
     ],
   },
@@ -980,16 +1007,22 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_27.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_28.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1013,6 +1046,9 @@ offCommands[0] = offCommand;`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         div: `<p>
         Vì vậy, làm thế nào để chúng ta không cần đặt câu lệnh if? Implements một
         command mà không cần kiểm tra!
@@ -1024,6 +1060,9 @@ offCommands[0] = offCommand;`,
           width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1039,6 +1078,9 @@ offCommands[0] = offCommand;`,
           width: `50%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1098,9 +1140,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_32.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1208,8 +1253,8 @@ offCommands[0] = offCommand;`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_36.jpg`),
-          width: `50%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_36.png`),
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1226,18 +1271,21 @@ offCommands[0] = offCommand;`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_37.jpg`),
-          width: `50%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_37.png`),
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>Và đây, kết quả kiểm tra…</p>`,
       },
       {
         image: {
-          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_38.jpg`),
-          width: `50%`,
+          src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_38.png`),
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1263,14 +1311,17 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_39.jpg`),
-          width: `50%`,
+          width: `30%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_40.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1294,7 +1345,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_41.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1321,7 +1372,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_42.jpg`),
-          width: `50%`,
+          width: `40%`,
           align: `center`,
         },
       },
@@ -1338,7 +1389,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_43.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1358,7 +1409,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_44.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1379,14 +1430,17 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_45.jpg`),
-          width: `50%`,
+          width: `60%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_46.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -1408,9 +1462,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_47.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1427,9 +1484,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_48.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1441,9 +1501,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_49.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1454,9 +1517,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_50.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>4. Cuối cùng, chúng ta chỉ cần nhấn một số nút và xem điều này hoạt động.</p>`,
@@ -1464,9 +1530,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_51.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1481,7 +1550,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_52.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -1493,7 +1562,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_53.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -1577,9 +1646,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_54.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1621,9 +1693,12 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_55.jpg`),
-          width: `50%`,
+          width: `25%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -1663,7 +1738,7 @@ offCommands[0] = offCommand;`,
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-7_56.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },

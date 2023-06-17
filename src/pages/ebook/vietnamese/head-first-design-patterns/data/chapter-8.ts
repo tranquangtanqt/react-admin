@@ -8,21 +8,17 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_1.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
     ],
   },
   {
-    title: `<strong
-    >Adapter Pattern và
-    <a
-      href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/2"
-      >Facade Pattern</a
-    >
-    – trở nên thích nghi</strong
-  >`,
+    title: `Adapter Pattern và Facade Pattern – trở nên thích nghi`,
     contents: [
       {
         div: `<p>
@@ -64,9 +60,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_2.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -148,17 +147,17 @@ export const chapter8: IContent[] = [
     ],
   },
   {
-    title: `<strong>Nếu đó đi giống vịt và kêu giống vịt, khi đó nó </strong
-    ><strong><s>phải</s></strong
-    ><strong> có thể là một con </strong><strong><s>vịt</s></strong
-    ><strong> gà tây được bọc bởi Duck adapter…</strong>`,
+    title: `Nếu đó đi giống vịt và kêu giống vịt, khi đó nó phải có thể là một con vịt gà tây được bọc bởi Duck adapter…`,
     contents: [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_6.jpg`),
-          width: `50%`,
+          width: `20%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -180,14 +179,20 @@ export const chapter8: IContent[] = [
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         div: `<p>Ở đây, một lớp con của Duck, <strong>MallardDuck</strong>.</p>`,
       },
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_8.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>Bây giờ, thời gian để gặp gỡ những chú gà tây mới:</p>`,
@@ -195,16 +200,22 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_9.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_10.png`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -219,7 +230,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_11.png`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -237,14 +248,17 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_12.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_13.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -281,9 +295,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_14.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>Ở đây, cách Client sử dụng Adapter:</p>
@@ -326,9 +343,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_15.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         p: `<h6><b>BÀI TẬP 2:</b></h6>`,
@@ -406,7 +426,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_16.jpg`),
-          width: `50%`,
+          width: `45%`,
           align: `center`,
         },
       },
@@ -437,9 +457,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_17.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -482,9 +505,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_18.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         div: `<p>
@@ -518,7 +544,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_19.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -528,7 +554,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_20.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -619,6 +645,9 @@ export const chapter8: IContent[] = [
         },
       },
       {
+        div: `<br />`,
+      },
+      {
         div: `<p>
         Nếu bạn đã là việc với Java một thời gian, bạn có thể nhớ rằng các kiểu
         collection ban đầu (<strong>Vector</strong>, <strong>Stack</strong>,
@@ -670,7 +699,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_23.jpg`),
-          width: `50%`,
+          width: `70%`,
           align: `center`,
         },
       },
@@ -698,7 +727,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_24.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
       },
@@ -741,9 +770,12 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_25.jpg`),
-          width: `50%`,
+          width: `80%`,
           align: `center`,
         },
+      },
+      {
+        div: `<br />`,
       },
       {
         p: `<h6><b>BÀI TẬP:</b></h6>`,
@@ -770,7 +802,7 @@ export const chapter8: IContent[] = [
       {
         image: {
           src: require(`resources/img/ebook/vn/head-first-design-patterns/chapter-8_26.jpg`),
-          width: `50%`,
+          width: `60%`,
           align: `center`,
         },
       },
@@ -780,7 +812,8 @@ export const chapter8: IContent[] = [
     ],
   },
   {
-    title: `Sử dụng sức mạnh bộ não`,
+    title: 'Sử dụng sức mạnh bộ não',
+    no: false,
     contents: [
       {
         div: `<p>
@@ -789,20 +822,15 @@ export const chapter8: IContent[] = [
         chuông và còi khác.
       </p>
       
-      <p>Nếu bạn định triển khai các loại tính năng này, bạn sẽ sử dụng mẫu nào?</p>
-      
-      <h2 class="wp-block-heading">
-        <strong
-          >Buổi nói chuyện tối nay:
-          <a
-            href="/react-admin/#/ebook/vietnamese/head-first-design-patterns/3"
-            >Decorator Pattern</a
-          >
-          và Adapter Pattern thảo luận về sự khác biệt của họ</strong
-        >
-      </h2>
-      
-      <p>
+      <p>Nếu bạn định triển khai các loại tính năng này, bạn sẽ sử dụng mẫu nào?</p>`,
+      },
+    ],
+  },
+  {
+    title: `Buổi nói chuyện tối nay: Decorator Pattern và Adapter Pattern thảo luận về sự khác biệt của họ`,
+    contents: [
+      {
+        div: `<p>
         <strong>Decorator: </strong>Tôi quan trọng hơn. Công việc của tôi là tất cả về
         trách nhiệm (responsibility) – bạn biết rằng khi cài đặt thêm một Decorator có
         liên quan thì sẽ có một số trách nhiệm hoặc hành vi mới được thêm vào thiết kế
