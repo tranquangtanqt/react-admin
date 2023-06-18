@@ -15,6 +15,7 @@ const chapter = [
   'Chương 11: Proxy Pattern – Kiểm soát truy cập đối tượng (P1)',
   'Chương 11: Proxy Pattern – Kiểm soát truy cập đối tượng (P2)',
   'Chương 12: Kết hợp design pattern – Mẫu của các mẫu (P1)',
+  'Chương 12: Kết hợp design pattern – MVC Pattern – Mẫu của các mẫu (P2)',
 ];
 const headFirstDesignPatternsChapter: {
   text: string;
