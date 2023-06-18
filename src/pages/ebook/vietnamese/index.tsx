@@ -10,8 +10,12 @@ export const EbookVietnamese = () => {
       links: cleanCodeChapter,
     },
     {
-      title: 'Head first Design Patterns',
-      links: headFirstDesignPatternsChapter,
+      title: 'Head first Design Patterns 1',
+      links: headFirstDesignPatternsChapter.slice(0, 8),
+    },
+    {
+      title: 'Head first Design Patterns 2',
+      links: headFirstDesignPatternsChapter.slice(8),
     },
   ];
   return (

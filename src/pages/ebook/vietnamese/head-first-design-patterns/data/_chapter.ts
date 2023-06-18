@@ -13,6 +13,7 @@ const chapter = [
   'Chương 9: Iterator Pattern và Composite Pattern (P2)',
   'Chương 10: State Pattern – Trạng thái vạn vật',
   'Chương 11: Proxy Pattern – Kiểm soát truy cập đối tượng (P1)',
+  'Chương 11: Proxy Pattern – Kiểm soát truy cập đối tượng (P2)',
 ];
 const headFirstDesignPatternsChapter: {
   text: string;
