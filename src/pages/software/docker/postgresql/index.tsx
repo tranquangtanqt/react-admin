@@ -27,6 +27,8 @@ export const SoftwareDockerPostgresql = () => {
 postgresqlaas/docker-postgresql-9.6: tên image.`}
               language="sql"
             />
+          </div>
+          <div className="tab-2">
             <input
               type="image"
               src={require('resources/img/soffware/postgresql/postgresql_1.png')}
@@ -39,6 +41,8 @@ postgresqlaas/docker-postgresql-9.6: tên image.`}
           <b>3. Chạy batch của container</b>
           <div className="tab-1">
             <Code code={`docker exec -it my-postgres bash`} language="sql" />
+          </div>
+          <div className="tab-2">
             <input
               type="image"
               src={require('resources/img/soffware/postgresql/postgresql_2.png')}
@@ -54,6 +58,8 @@ postgresqlaas/docker-postgresql-9.6: tên image.`}
           </b>
           <div className="tab-1">
             <Code code={`psql -U postgres`} language="sql" />
+          </div>
+          <div className="tab-2">
             <input
               type="image"
               src={require('resources/img/soffware/postgresql/postgresql_3.png')}
@@ -71,6 +77,8 @@ create user us_test_docker with encrypted password '654321';
 grant all privileges on database db_test_docker to us_test_docker;`}
               language="sql"
             />
+          </div>
+          <div className="tab-2">
             <input
               type="image"
               src={require('resources/img/soffware/postgresql/postgresql_4.png')}
@@ -89,12 +97,38 @@ grant all privileges on database db_test_docker to us_test_docker;`}
               code={`psql -h localhost -p 9006 -U us_test_docker -d db_test_docker`}
               language="sql"
             />
+          </div>
+          <div className="tab-2">
             <input
               type="image"
               src={require('resources/img/soffware/postgresql/postgresql_5.png')}
               className="img-thumbnail"
               alt=""
             />
+          </div>
+        </div>
+        <div className="col-12 col-sm-12 col-md-12">
+          <b>6. Restore database</b>
+          <div className="tab-1">
+            <p>
+              6.1. Copy file dump từ PC vào container Thực hiện theo a) hoặc b)
+            </p>
+            <p>a) Open command line</p>
+            <Code
+              code={`docker copy 'D:\\dump_file.dmp' my-postgres:../var/lib/postgresql`}
+              language="sql"
+            />
+            <p>b) Open terminal (có thể mở git bash)</p>
+            <Code
+              code={`docker cp 'D:\\dump_file.dmp' my-postgres:../var/lib/postgresql`}
+              language="sql"
+            />
+            <p>6.2. Restore (command line)</p>
+            <Code
+              code={`docker exec -it my-postgres pg_restore -v -Fc -p 9006 -U us_test_docker -h ip_máy -d db_test_docker ../var/lib/postgresql/dump_file.dmp >>dump_file.log 2>&1`}
+              language="sql"
+            />
+            <p>Lưu ý thay ip_máy sau -h</p>
           </div>
         </div>
       </div>

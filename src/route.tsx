@@ -167,6 +167,7 @@ import { EbookVietnameseCleanCode } from 'pages/ebook/vietnamese/clean-code';
 import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
 import { SoftwareDockerPostgresql } from 'pages/software/docker/postgresql';
 import { SoftwareDockerSQLServer } from 'pages/software/docker/sqlserver';
+import { PostgresqlCheckInfoFileDump } from 'pages/database/postgresql/dump/check-info-file';
 
 export const RoutesRoot = () => {
   return (
@@ -180,6 +181,7 @@ export const RoutesRoot = () => {
           <Route path="/database/postgresql" element={<DatabasePostgresql />} />
           <Route path="/database/postgresql/general/config-pghba" element={<PostgresqlConfigPghba />} />
           <Route path="/database/postgresql/dump/run-all-sql-in-folder" element={<PostgresqlRunAllSqlInAFolder />} />
+          <Route path="/database/postgresql/dump/check-info-file-dump" element={<PostgresqlCheckInfoFileDump />} />
           <Route path="/database/postgresql/table/general" element={<PostgresqlTableGeneral />} />
 
           <Route path="/database/oracle" element={<DatabaseOracle />} />

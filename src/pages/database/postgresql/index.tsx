@@ -32,6 +32,10 @@ export const DatabasePostgresql = () => {
           text: 'Run all SQL in a folder',
           path: '/database/postgresql/dump/run-all-sql-in-folder',
         },
+        {
+          text: 'Check info file dump',
+          path: '/database/postgresql/dump/check-info-file-dump',
+        },
       ],
     },
   ];
