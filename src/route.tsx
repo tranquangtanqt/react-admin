@@ -168,6 +168,8 @@ import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/h
 import { SoftwareDockerPostgresql } from 'pages/software/docker/postgresql';
 import { SoftwareDockerSQLServer } from 'pages/software/docker/sqlserver';
 import { PostgresqlCheckInfoFileDump } from 'pages/database/postgresql/dump/check-info-file';
+import { TutorialCSharp } from 'pages/tutorials/c-sharp';
+import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/lesson';
 
 export const RoutesRoot = () => {
   return (
@@ -249,6 +251,9 @@ export const RoutesRoot = () => {
           <Route path="/software/visual-studio-code/extention" element={<VisualStudioCodeExtention />} />
           <Route path="/software/docker/postgresql" element={<SoftwareDockerPostgresql />} />
           <Route path="/software/docker/sql-server" element={<SoftwareDockerSQLServer />} />
+
+          <Route path="/tutorial/c-sharp" element={<TutorialCSharp />} />
+          <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
 
           <Route path="/tutorial/java" element={<TutorialJava />} />
           <Route path="/tutorial/java/lesson1" element={<TutorialJavaLesson1 />} />
@@ -364,6 +369,8 @@ export const RoutesRoot = () => {
           <Route path="/utilities/general/git" element={<UtilitiesGeneralGit />} />
           <Route path="/utilities/general/command-line" element={<UtilitiesGeneralCommandLine />} />
         </Routes>
+
+        {/* <RouteTemp /> */}
       </MasterLayout>
     </HashRouter>
   );

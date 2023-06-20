@@ -111,24 +111,30 @@ export const NAVBAR_LEFT = [
     children: [
       {
         id: 0,
+        link: '/tutorial/c-sharp',
+        text: 'C#',
+        active: false,
+      },
+      {
+        id: 1,
         link: '/tutorial/java',
         text: 'Java',
         active: false,
       },
       {
-        id: 1,
+        id: 2,
         link: '/tutorial/net-angular',
         text: 'Net - Angular',
         active: false,
       },
       {
-        id: 2,
+        id: 3,
         link: '/tutorial/postgreSQL',
         text: 'PostgreSQL',
         active: false,
       },
       {
-        id: 3,
+        id: 4,
         link: '/tutorial/japan',
         text: 'Japan',
         active: false,
