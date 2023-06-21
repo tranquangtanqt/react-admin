@@ -26,7 +26,6 @@ export const CardList: React.FC<Props> = ({ cardData, startWith }) => {
                         <Fragment key={key}>
                           <li>
                             <Link to={link.path}>
-                              {' '}
                               {`${count++}. ${link.text}`}
                             </Link>
                           </li>
@@ -46,15 +45,27 @@ export const CardList: React.FC<Props> = ({ cardData, startWith }) => {
                     <b>{cards.title}</b>
                   </div>
                   <div className="card-body">
-                    <ol>
-                      {cards?.links?.map((link, key) => (
-                        <Fragment key={key}>
-                          <li>
-                            <Link to={link.path}>{link.text}</Link>
-                          </li>
-                        </Fragment>
-                      ))}
-                    </ol>
+                    {startWith === -1 ? (
+                      <ul className="list-style-type-none padding-inline-start-10">
+                        {cards?.links?.map((link, key) => (
+                          <Fragment key={key}>
+                            <li>
+                              <Link to={link.path}>{link.text}</Link>
+                            </li>
+                          </Fragment>
+                        ))}
+                      </ul>
+                    ) : (
+                      <ol>
+                        {cards?.links?.map((link, key) => (
+                          <Fragment key={key}>
+                            <li>
+                              <Link to={link.path}>{link.text}</Link>
+                            </li>
+                          </Fragment>
+                        ))}
+                      </ol>
+                    )}
                   </div>
                 </div>
               </div>

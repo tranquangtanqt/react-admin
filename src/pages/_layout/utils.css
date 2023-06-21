@@ -1,4 +1,7 @@
 /* margin left */
+.m-l-0 {
+  margin-left: 0px;
+}
 .m-l-1 {
   margin-left: 1px;
 }
@@ -786,7 +789,6 @@
   }
 }
 
-
 .font-weight-100 {
   font-weight: 100;
 }
@@ -810,4 +812,8 @@
 }
 .font-weight-800 {
   font-weight: 800;
+}
+
+.padding-inline-start-10 {
+  padding-inline-start: 10px;
 }

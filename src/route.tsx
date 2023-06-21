@@ -58,71 +58,9 @@ import { UtilitiesJapanSpecial } from 'pages/utilities/japan/special';
 import { UtilitiesTinyMCE } from 'pages/utilities/tiny-mce';
 import { MasterLayout } from 'pages/_layout/master-layout';
 import { TutorialPostgreSQL } from 'pages/tutorials/postgreSQL';
-import { TutorialPostgreSQLChapter1 } from 'pages/tutorials/postgreSQL/1_10/chapter1';
-import { TutorialPostgreSQLChapter2 } from 'pages/tutorials/postgreSQL/1_10/chapter2';
-import { TutorialPostgreSQLChapter3 } from 'pages/tutorials/postgreSQL/1_10/chapter3';
-import { TutorialPostgreSQLChapter4 } from 'pages/tutorials/postgreSQL/1_10/chapter4';
-import { TutorialPostgreSQLChapter5 } from 'pages/tutorials/postgreSQL/1_10/chapter5';
-import { TutorialPostgreSQLChapter6 } from 'pages/tutorials/postgreSQL/1_10/chapter6';
-import { TutorialPostgreSQLChapter7 } from 'pages/tutorials/postgreSQL/1_10/chapter7';
-import { TutorialPostgreSQLChapter8 } from 'pages/tutorials/postgreSQL/1_10/chapter8';
-import { TutorialPostgreSQLChapter9 } from 'pages/tutorials/postgreSQL/1_10/chapter9';
-import { TutorialPostgreSQLChapter10 } from 'pages/tutorials/postgreSQL/1_10/chapter10';
-import { TutorialPostgreSQLChapter11 } from 'pages/tutorials/postgreSQL/11_20/chapter11';
-import { TutorialPostgreSQLChapter12 } from 'pages/tutorials/postgreSQL/11_20/chapter12';
-import { TutorialPostgreSQLChapter13 } from 'pages/tutorials/postgreSQL/11_20/chapter13';
-import { TutorialPostgreSQLChapter14 } from 'pages/tutorials/postgreSQL/11_20/chapter14';
-import { TutorialPostgreSQLChapter15 } from 'pages/tutorials/postgreSQL/11_20/chapter15';
-import { TutorialPostgreSQLChapter16 } from 'pages/tutorials/postgreSQL/11_20/chapter16';
-import { TutorialPostgreSQLChapter17 } from 'pages/tutorials/postgreSQL/11_20/chapter17';
-import { TutorialPostgreSQLChapter18 } from 'pages/tutorials/postgreSQL/11_20/chapter18';
-import { TutorialPostgreSQLChapter19 } from 'pages/tutorials/postgreSQL/11_20/chapter19';
-import { TutorialPostgreSQLChapter20 } from 'pages/tutorials/postgreSQL/11_20/chapter20';
-import { TutorialPostgreSQLChapter21 } from 'pages/tutorials/postgreSQL/21_28/chapter21';
-import { TutorialPostgreSQLChapter22 } from 'pages/tutorials/postgreSQL/21_28/chapter22';
-import { TutorialPostgreSQLChapter23 } from 'pages/tutorials/postgreSQL/21_28/chapter23';
-import { TutorialPostgreSQLChapter24 } from 'pages/tutorials/postgreSQL/21_28/chapter24';
-import { TutorialPostgreSQLChapter25 } from 'pages/tutorials/postgreSQL/21_28/chapter25';
-import { TutorialPostgreSQLChapter26 } from 'pages/tutorials/postgreSQL/21_28/chapter26';
-import { TutorialPostgreSQLChapter27 } from 'pages/tutorials/postgreSQL/21_28/chapter27';
-import { TutorialPostgreSQLChapter28 } from 'pages/tutorials/postgreSQL/21_28/chapter28';
 import { TutorialNetAngular } from 'pages/tutorials/net-angular';
-import { TutorialNetAngularLesson1 } from 'pages/tutorials/net-angular/1_10/lesson1';
-import { TutorialNetAngularLesson2 } from 'pages/tutorials/net-angular/1_10/lesson2';
-import { TutorialNetAngularLesson3 } from 'pages/tutorials/net-angular/1_10/lesson3';
-import { TutorialNetAngularLesson4 } from 'pages/tutorials/net-angular/1_10/lesson4';
-import { TutorialNetAngularLesson5 } from 'pages/tutorials/net-angular/1_10/lesson5';
-import { TutorialNetAngularLesson6 } from 'pages/tutorials/net-angular/1_10/lesson6';
-import { TutorialNetAngularLesson7 } from 'pages/tutorials/net-angular/1_10/lesson7';
-import { TutorialNetAngularLesson8 } from 'pages/tutorials/net-angular/1_10/lesson8';
-import { TutorialNetAngularLesson9 } from 'pages/tutorials/net-angular/1_10/lesson9';
 import { TutorialJava } from 'pages/tutorials/java';
 import { TutorialJapan } from 'pages/tutorials/japan';
-import { TutorialJapanVocabularyLesson1 } from 'pages/tutorials/japan/1_10/lesson1';
-import { TutorialJapanVocabularyLesson2 } from 'pages/tutorials/japan/1_10/lesson2';
-import { TutorialJapanVocabularyLesson3 } from 'pages/tutorials/japan/1_10/lesson3';
-import { TutorialJapanVocabularyLesson4 } from 'pages/tutorials/japan/1_10/lesson4';
-import { TutorialJapanVocabularyLesson5 } from 'pages/tutorials/japan/1_10/lesson5';
-import { TutorialJapanVocabularyLesson6 } from 'pages/tutorials/japan/1_10/lesson6';
-import { TutorialJapanVocabularyLesson7 } from 'pages/tutorials/japan/1_10/lesson7';
-import { TutorialJapanVocabularyLesson8 } from 'pages/tutorials/japan/1_10/lesson8';
-import { TutorialJapanVocabularyLesson9 } from 'pages/tutorials/japan/1_10/lesson9';
-import { TutorialJapanVocabularyLesson10 } from 'pages/tutorials/japan/1_10/lesson10';
-import { TutorialJapanVocabularyLesson11 } from 'pages/tutorials/japan/11_20/lesson11';
-import { TutorialJapanVocabularyLesson12 } from 'pages/tutorials/japan/11_20/lesson12';
-import { TutorialJapanVocabularyLesson13 } from 'pages/tutorials/japan/11_20/lesson13';
-import { TutorialJapanVocabularyLesson14 } from 'pages/tutorials/japan/11_20/lesson14';
-import { TutorialJapanVocabularyLesson15 } from 'pages/tutorials/japan/11_20/lesson15';
-import { TutorialJapanVocabularyLesson16 } from 'pages/tutorials/japan/11_20/lesson16';
-import { TutorialJapanVocabularyLesson17 } from 'pages/tutorials/japan/11_20/lesson17';
-import { TutorialJapanVocabularyLesson18 } from 'pages/tutorials/japan/11_20/lesson18';
-import { TutorialJapanVocabularyLesson19 } from 'pages/tutorials/japan/11_20/lesson19';
-import { TutorialJapanVocabularyLesson20 } from 'pages/tutorials/japan/11_20/lesson20';
-import { TutorialJapanVocabularyLesson21 } from 'pages/tutorials/japan/21-25/lesson21';
-import { TutorialJapanVocabularyLesson22 } from 'pages/tutorials/japan/21-25/lesson22';
-import { TutorialJapanVocabularyLesson23 } from 'pages/tutorials/japan/21-25/lesson23';
-import { TutorialJapanVocabularyLesson24 } from 'pages/tutorials/japan/21-25/lesson24';
-import { TutorialJapanVocabularyLesson25 } from 'pages/tutorials/japan/21-25/lesson25';
 import { TutorialJapanVocabularyLessonCommon } from 'pages/tutorials/japan/general/lesson-common';
 import { TutorialJapanVocabularyLessonSpecialize } from 'pages/tutorials/japan/general/lesson-specialize';
 import { TutorialJapanVocabularyLessonJob } from 'pages/tutorials/japan/general/lesson-job';
@@ -163,8 +101,11 @@ import { SoftwareDockerPostgresql } from 'pages/software/docker/postgresql';
 import { SoftwareDockerSQLServer } from 'pages/software/docker/sqlserver';
 import { PostgresqlCheckInfoFileDump } from 'pages/database/postgresql/dump/check-info-file';
 import { TutorialCSharp } from 'pages/tutorials/c-sharp';
-import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/lesson';
+import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/list-lesson';
 import { TutorialJavaLesson } from 'pages/tutorials/java/list-lesson';
+import { TutorialNetAngularLesson } from 'pages/tutorials/net-angular/list-lesson';
+import { TutorialTutorialPostgreSQLLesson } from 'pages/tutorials/postgreSQL/list-lesson';
+import { TutorialJapanVocabularyLesson } from 'pages/tutorials/japan/list-lesson';
 
 export const RoutesRoot = () => {
   return (
@@ -254,72 +195,14 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/java/lesson/:lesson" element={<TutorialJavaLesson />} />
 
           <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
-          <Route path="/tutorial/net-angular/lesson1" element={<TutorialNetAngularLesson1 />} />
-          <Route path="/tutorial/net-angular/lesson2" element={<TutorialNetAngularLesson2 />} />
-          <Route path="/tutorial/net-angular/lesson3" element={<TutorialNetAngularLesson3 />} />
-          <Route path="/tutorial/net-angular/lesson4" element={<TutorialNetAngularLesson4 />} />
-          <Route path="/tutorial/net-angular/lesson5" element={<TutorialNetAngularLesson5 />} />
-          <Route path="/tutorial/net-angular/lesson6" element={<TutorialNetAngularLesson6 />} />
-          <Route path="/tutorial/net-angular/lesson7" element={<TutorialNetAngularLesson7 />} />
-          <Route path="/tutorial/net-angular/lesson8" element={<TutorialNetAngularLesson8 />} />
-          <Route path="/tutorial/net-angular/lesson9" element={<TutorialNetAngularLesson9 />} />
+          <Route path="/tutorial/net-angular/lesson/:lesson" element={<TutorialNetAngularLesson />} />
 
           <Route path="/tutorial/postgreSQL" element={<TutorialPostgreSQL />} />
-          <Route path="/tutorial/postgreSQL/chapter1" element={<TutorialPostgreSQLChapter1 />} />
-          <Route path="/tutorial/postgreSQL/chapter2" element={<TutorialPostgreSQLChapter2 />} />
-          <Route path="/tutorial/postgreSQL/chapter3" element={<TutorialPostgreSQLChapter3 />} />
-          <Route path="/tutorial/postgreSQL/chapter4" element={<TutorialPostgreSQLChapter4 />} />
-          <Route path="/tutorial/postgreSQL/chapter5" element={<TutorialPostgreSQLChapter5 />} />
-          <Route path="/tutorial/postgreSQL/chapter6" element={<TutorialPostgreSQLChapter6 />} />
-          <Route path="/tutorial/postgreSQL/chapter7" element={<TutorialPostgreSQLChapter7 />} />
-          <Route path="/tutorial/postgreSQL/chapter8" element={<TutorialPostgreSQLChapter8 />} />
-          <Route path="/tutorial/postgreSQL/chapter9" element={<TutorialPostgreSQLChapter9 />} />
-          <Route path="/tutorial/postgreSQL/chapter10" element={<TutorialPostgreSQLChapter10 />} />
-          <Route path="/tutorial/postgreSQL/chapter11" element={<TutorialPostgreSQLChapter11 />} />
-          <Route path="/tutorial/postgreSQL/chapter12" element={<TutorialPostgreSQLChapter12 />} />
-          <Route path="/tutorial/postgreSQL/chapter13" element={<TutorialPostgreSQLChapter13 />} />
-          <Route path="/tutorial/postgreSQL/chapter14" element={<TutorialPostgreSQLChapter14 />} />
-          <Route path="/tutorial/postgreSQL/chapter15" element={<TutorialPostgreSQLChapter15 />} />
-          <Route path="/tutorial/postgreSQL/chapter16" element={<TutorialPostgreSQLChapter16 />} />
-          <Route path="/tutorial/postgreSQL/chapter17" element={<TutorialPostgreSQLChapter17 />} />
-          <Route path="/tutorial/postgreSQL/chapter18" element={<TutorialPostgreSQLChapter18 />} />
-          <Route path="/tutorial/postgreSQL/chapter19" element={<TutorialPostgreSQLChapter19 />} />
-          <Route path="/tutorial/postgreSQL/chapter20" element={<TutorialPostgreSQLChapter20 />} />
-          <Route path="/tutorial/postgreSQL/chapter21" element={<TutorialPostgreSQLChapter21 />} />
-          <Route path="/tutorial/postgreSQL/chapter22" element={<TutorialPostgreSQLChapter22 />} />
-          <Route path="/tutorial/postgreSQL/chapter23" element={<TutorialPostgreSQLChapter23 />} />
-          <Route path="/tutorial/postgreSQL/chapter24" element={<TutorialPostgreSQLChapter24 />} />
-          <Route path="/tutorial/postgreSQL/chapter25" element={<TutorialPostgreSQLChapter25 />} />
-          <Route path="/tutorial/postgreSQL/chapter26" element={<TutorialPostgreSQLChapter26 />} />
-          <Route path="/tutorial/postgreSQL/chapter27" element={<TutorialPostgreSQLChapter27 />} />
-          <Route path="/tutorial/postgreSQL/chapter28" element={<TutorialPostgreSQLChapter28 />} />
+          <Route path="/tutorial/postgreSQL/lesson/:lesson" element={<TutorialTutorialPostgreSQLLesson />} />
 
           <Route path="/tutorial/japan" element={<TutorialJapan />} />
-          <Route path="/tutorial/japan/vocabulary/lesson1" element={<TutorialJapanVocabularyLesson1 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson2" element={<TutorialJapanVocabularyLesson2 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson3" element={<TutorialJapanVocabularyLesson3 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson4" element={<TutorialJapanVocabularyLesson4 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson5" element={<TutorialJapanVocabularyLesson5 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson6" element={<TutorialJapanVocabularyLesson6 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson7" element={<TutorialJapanVocabularyLesson7 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson8" element={<TutorialJapanVocabularyLesson8 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson9" element={<TutorialJapanVocabularyLesson9 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson10" element={<TutorialJapanVocabularyLesson10 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson11" element={<TutorialJapanVocabularyLesson11 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson12" element={<TutorialJapanVocabularyLesson12 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson13" element={<TutorialJapanVocabularyLesson13 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson14" element={<TutorialJapanVocabularyLesson14 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson15" element={<TutorialJapanVocabularyLesson15 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson16" element={<TutorialJapanVocabularyLesson16 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson17" element={<TutorialJapanVocabularyLesson17 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson18" element={<TutorialJapanVocabularyLesson18 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson19" element={<TutorialJapanVocabularyLesson19 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson20" element={<TutorialJapanVocabularyLesson20 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson21" element={<TutorialJapanVocabularyLesson21 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson22" element={<TutorialJapanVocabularyLesson22 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson23" element={<TutorialJapanVocabularyLesson23 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson24" element={<TutorialJapanVocabularyLesson24 />} />
-          <Route path="/tutorial/japan/vocabulary/lesson25" element={<TutorialJapanVocabularyLesson25 />} />
+          <Route path="/tutorial/japan/vocabulary/lesson/:lesson" element={<TutorialJapanVocabularyLesson />} />
+         
           <Route path="/tutorial/japan/vocabulary/lesson-common" element={<TutorialJapanVocabularyLessonCommon />} />
           <Route
             path="/tutorial/japan/vocabulary/lesson-specialize"
@@ -359,8 +242,6 @@ export const RoutesRoot = () => {
           <Route path="/utilities/general/git" element={<UtilitiesGeneralGit />} />
           <Route path="/utilities/general/command-line" element={<UtilitiesGeneralCommandLine />} />
         </Routes>
-
-        {/* <RouteTemp /> */}
       </MasterLayout>
     </HashRouter>
   );

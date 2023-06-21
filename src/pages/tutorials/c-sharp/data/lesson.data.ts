@@ -1,4 +1,4 @@
-const lessonData = ['Getting started with C# Language', 'Literals'];
+const lessonData = ['1. Getting started with C# Language', '2. Literals'];
 
 const cSharpLessonData: {
   text: string;
