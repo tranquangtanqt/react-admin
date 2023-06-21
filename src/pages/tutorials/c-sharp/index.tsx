@@ -14,7 +14,7 @@ export const TutorialCSharp = () => {
     <>
       <PageTitle title="CSharp"></PageTitle>
       <div className="row">
-        <CardList cardData={cardData} startWith={1}></CardList>
+        <CardList cardData={cardData} startWith={-1}></CardList>
       </div>
     </>
   );
