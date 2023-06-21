@@ -97,12 +97,6 @@ import { TutorialNetAngularLesson7 } from 'pages/tutorials/net-angular/1_10/less
 import { TutorialNetAngularLesson8 } from 'pages/tutorials/net-angular/1_10/lesson8';
 import { TutorialNetAngularLesson9 } from 'pages/tutorials/net-angular/1_10/lesson9';
 import { TutorialJava } from 'pages/tutorials/java';
-import { TutorialJavaLesson1 } from 'pages/tutorials/java/1_10/lesson1';
-import { TutorialJavaLesson2 } from 'pages/tutorials/java/1_10/lesson2';
-import { TutorialJavaLesson3 } from 'pages/tutorials/java/1_10/lesson3';
-import { TutorialJavaLesson4 } from 'pages/tutorials/java/1_10/lesson4';
-import { TutorialJavaLesson5 } from 'pages/tutorials/java/1_10/lesson5';
-import { TutorialJavaLesson6 } from 'pages/tutorials/java/1_10/lesson6';
 import { TutorialJapan } from 'pages/tutorials/japan';
 import { TutorialJapanVocabularyLesson1 } from 'pages/tutorials/japan/1_10/lesson1';
 import { TutorialJapanVocabularyLesson2 } from 'pages/tutorials/japan/1_10/lesson2';
@@ -170,6 +164,7 @@ import { SoftwareDockerSQLServer } from 'pages/software/docker/sqlserver';
 import { PostgresqlCheckInfoFileDump } from 'pages/database/postgresql/dump/check-info-file';
 import { TutorialCSharp } from 'pages/tutorials/c-sharp';
 import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/lesson';
+import { TutorialJavaLesson } from 'pages/tutorials/java/list-lesson';
 
 export const RoutesRoot = () => {
   return (
@@ -256,12 +251,7 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
 
           <Route path="/tutorial/java" element={<TutorialJava />} />
-          <Route path="/tutorial/java/lesson1" element={<TutorialJavaLesson1 />} />
-          <Route path="/tutorial/java/lesson2" element={<TutorialJavaLesson2 />} />
-          <Route path="/tutorial/java/lesson3" element={<TutorialJavaLesson3 />} />
-          <Route path="/tutorial/java/lesson4" element={<TutorialJavaLesson4 />} />
-          <Route path="/tutorial/java/lesson5" element={<TutorialJavaLesson5 />} />
-          <Route path="/tutorial/java/lesson6" element={<TutorialJavaLesson6 />} />
+          <Route path="/tutorial/java/lesson/:lesson" element={<TutorialJavaLesson />} />
 
           <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
           <Route path="/tutorial/net-angular/lesson1" element={<TutorialNetAngularLesson1 />} />

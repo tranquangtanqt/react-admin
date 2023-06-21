@@ -21,7 +21,7 @@ export const TutorialCSharpLesson = () => {
   return (
     <>
       <PageTitle title={title.toString()}></PageTitle>
-      {arrLessonElement[Number(lesson)]}
+      {arrLessonElement[Number(lesson) - 1]}
     </>
   );
 };

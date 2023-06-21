@@ -12,7 +12,7 @@ export const TutorialCSharp = () => {
 
   return (
     <>
-      <PageTitle title="Java"></PageTitle>
+      <PageTitle title="CSharp"></PageTitle>
       <div className="row">
         <CardList cardData={cardData} startWith={1}></CardList>
       </div>
