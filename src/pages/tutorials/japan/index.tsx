@@ -14,45 +14,11 @@ export const TutorialJapan = () => {
     },
     {
       title: 'Từ vựng Nihongo chung',
-      links: [
-        {
-          text: 'Chung',
-          path: '/tutorial/japan/vocabulary/lesson-common',
-        },
-        {
-          text: 'Chuyên môn',
-          path: '/tutorial/japan/vocabulary/lesson-specialize',
-        },
-        {
-          text: 'Nghề nghiệp',
-          path: '/tutorial/japan/vocabulary/lesson-job',
-        },
-        {
-          text: 'Thức ăn',
-          path: '/tutorial/japan/vocabulary/lesson-food',
-        },
-        {
-          text: 'Món ăn',
-          path: '/tutorial/japan/vocabulary/lesson-food1',
-        },
-        {
-          text: 'Gia vị',
-          path: '/tutorial/japan/vocabulary/lesson-spice',
-        },
-        {
-          text: 'Thân thể',
-          path: '/tutorial/japan/vocabulary/lesson-body',
-        },
-      ],
+      links: japanLessonData.slice(25, 32),
     },
     {
       title: 'Từ vựng Kanji',
-      links: [
-        {
-          text: 'N5 - 01',
-          path: '/tutorial/japan/vocabulary/kanji/N5-01',
-        },
-      ],
+      links: japanLessonData.slice(32, 33),
     },
   ];
 

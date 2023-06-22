@@ -1,35 +1,8 @@
 import { CardList } from 'components/modules/card-list';
 import { PageTitle } from 'components/modules/page-title';
+import { cardData } from './data';
 
 export const Software = () => {
-  const cardData = [
-    {
-      title: 'Visual Studio Code',
-      links: [
-        {
-          text: 'Extention',
-          path: '/software/visual-studio-code/extention',
-        },
-        {
-          text: 'Add hotkey',
-          path: '/software/visual-studio-code/add-hotkey',
-        },
-      ],
-    },
-    {
-      title: 'Docker',
-      links: [
-        {
-          text: 'Chạy Postgresql trong Docker container',
-          path: '/software/docker/postgresql',
-        },
-        {
-          text: 'Restore database SQL Server',
-          path: '/software/docker/sql-server',
-        },
-      ],
-    },
-  ];
   return (
     <>
       <PageTitle title="Software"></PageTitle>

@@ -26,6 +26,14 @@ import { TutorialJapanVocabularyLesson22 } from './21-25/lesson-22';
 import { TutorialJapanVocabularyLesson23 } from './21-25/lesson-23';
 import { TutorialJapanVocabularyLesson24 } from './21-25/lesson-24';
 import { TutorialJapanVocabularyLesson25 } from './21-25/lesson-25';
+import { TutorialJapanVocabularyLessonCommon } from './general/lesson-common';
+import { TutorialJapanVocabularyLessonSpecialize } from './general/lesson-specialize';
+import { TutorialJapanVocabularyLessonJob } from './general/lesson-job';
+import { TutorialJapanVocabularyLessonFood } from './general/lesson-food';
+import { TutorialJapanVocabularyLessonFood1 } from './general/lesson-food1';
+import { TutorialJapanVocabularyLessonSpice } from './general/lesson-spice';
+import { TutorialJapanVocabularyLessonBody } from './general/lesson-body';
+import { TutorialJapanVocabularyKanjiN501 } from './kanji/N5_01';
 
 export const TutorialJapanVocabularyLesson = () => {
   const params = useParams();
@@ -62,6 +70,14 @@ export const TutorialJapanVocabularyLesson = () => {
     <TutorialJapanVocabularyLesson23 />,
     <TutorialJapanVocabularyLesson24 />,
     <TutorialJapanVocabularyLesson25 />,
+    <TutorialJapanVocabularyLessonCommon />,
+    <TutorialJapanVocabularyLessonSpecialize />,
+    <TutorialJapanVocabularyLessonJob />,
+    <TutorialJapanVocabularyLessonFood />,
+    <TutorialJapanVocabularyLessonFood1 />,
+    <TutorialJapanVocabularyLessonSpice />,
+    <TutorialJapanVocabularyLessonBody />,
+    <TutorialJapanVocabularyKanjiN501 />,
   ];
 
   return (

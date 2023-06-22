@@ -1,0 +1,54 @@
+import { DatabasePostgresqlCheckInfoFileDump } from '../content/dump/check-info-file';
+import { DatabasePostgresqlRunAllSqlInAFolder } from '../content/dump/run-all-sql-in-folder';
+import { DatabasePostgresqlConfigPghba } from '../content/general/config-pghba';
+import { DatabasePostgresqlTableGeneral } from '../content/table/general';
+
+export const mapContent = new Map();
+mapContent.set('general-config-pghba', <DatabasePostgresqlConfigPghba />);
+mapContent.set('table-general', <DatabasePostgresqlTableGeneral />);
+mapContent.set(
+  'dump-run-all-sql-in-folder',
+  <DatabasePostgresqlRunAllSqlInAFolder />,
+);
+mapContent.set(
+  'dump-check-info-file-dump',
+  <DatabasePostgresqlCheckInfoFileDump />,
+);
+
+export const cardData = [
+  {
+    title: 'General',
+    links: [
+      {
+        text: 'Configure PostgreSQL to accept all incoming connections',
+        path: '/database/postgresql/general-config-pghba',
+      },
+      {
+        text: 'Tip and Tricks 1',
+        path: '/tutorial/postgreSQL/lesson/28',
+      },
+    ],
+  },
+  {
+    title: 'Table',
+    links: [
+      {
+        text: 'General',
+        path: '/database/postgresql/table-general',
+      },
+    ],
+  },
+  {
+    title: 'Dump',
+    links: [
+      {
+        text: 'Run all SQL in a folder',
+        path: '/database/postgresql/dump-run-all-sql-in-folder',
+      },
+      {
+        text: 'Check info file dump',
+        path: '/database/postgresql/dump-check-info-file-dump',
+      },
+    ],
+  },
+];

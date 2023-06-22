@@ -1,7 +1,7 @@
 import Code from 'components/modules/code';
 import { PageTitle } from 'components/modules/page-title';
 
-export const JavaArrayArgument = () => {
+export const ProgramJavaArrayArgument = () => {
   return (
     <>
       <PageTitle title="Arbitrary Number of Arguments (Số đối số tùy ý)"></PageTitle>

@@ -24,6 +24,13 @@ const lessonData = [
   '23. Bài 23',
   '24. Bài 24',
   '25. Bài 25',
+  'Chung',
+  'Chuyên môn',
+  'Nghề nghiệp',
+  'Thức ăn',
+  'Món ăn',
+  'Gia vị',
+  'Thân thể',
 ];
 
 const japanLessonData: {

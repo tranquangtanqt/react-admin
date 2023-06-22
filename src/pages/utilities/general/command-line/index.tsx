@@ -25,6 +25,24 @@ gci -Directory \`
               language="sql"
             />
           </div>
+          <b>Show all file in folder</b>
+          <div className="tab-1">
+            <Code
+              code={`for /R "./" %G in (*.java *.xml *.properties *.xhtml) do @echo %G >> file.txt`}
+              language="sql"
+            />
+          </div>
+          <b>cd call</b>
+          <div className="tab-1">
+            <Code
+              code={`cd %~dp0
+set var=0001
+call file.cmd %var%
+
+cscript //NOLOGO vbsFile.vbs %var%`}
+              language="sql"
+            />
+          </div>
         </div>
       </div>
     </>

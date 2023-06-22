@@ -56,13 +56,13 @@ export const NAVBAR_LEFT = [
     children: [
       {
         id: 0,
-        link: '/programming-csharp',
+        link: '/programming/csharp',
         text: 'C#',
         active: false,
       },
       {
         id: 1,
-        link: '/programming-java',
+        link: '/programming/java',
         text: 'Java',
         active: false,
       },
@@ -74,19 +74,19 @@ export const NAVBAR_LEFT = [
       },
       {
         id: 3,
-        link: '/programming-php',
+        link: '/programming/php',
         text: 'PHP',
         active: false,
       },
       {
         id: 4,
-        link: '/programming-batch',
+        link: '/programming/batch',
         text: 'Batch',
         active: false,
       },
       {
         id: 5,
-        link: '/programming-excel',
+        link: '/programming/excel',
         text: 'Excel',
         active: false,
       },
