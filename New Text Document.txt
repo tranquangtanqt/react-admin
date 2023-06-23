@@ -1,0 +1,81 @@
+CREATE TABLE demo (
+    id int NOT NULL AUTO_INCREMENT,
+    name varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+DROP FUNCTION IF EXISTS f_make_code;
+
+DELIMITER $$
+CREATE OR REPLACE FUNCTION f_make_code() RETURNS VARCHAR(6)
+BEGIN
+  DECLARE new_code VARCHAR(6);
+  DECLARE done_flg BOOLEAN;
+  
+  SET done_flg := false;
+  WHILE NOT done_flg DO
+  	SET new_code := UPPER(SUBSTR(MD5(RAND()), 1, 1));
+    SET done_flg := NOT exists(SELECT 1 FROM demo WHERE code=new_code);
+  END WHILE;
+  RETURN new_code;
+END; $$
+DELIMITER ;
+
+----------------
+DELIMITER $$
+CREATE OR REPLACE FUNCTION f_make_code() RETURNS VARCHAR(6)
+BEGIN
+  DECLARE new_code VARCHAR(6);
+  DECLARE done_flg int;
+  
+  SET done_flg := 0;
+  WHILE done_flg = 0 DO
+  	SET new_code := UPPER(SUBSTR(MD5(RAND()), 1, 1));
+    SET done_flg := NOT exists(SELECT 1 FROM demo WHERE code=new_code);
+	insert into log_ (code, name) values (new_code, 'a');
+  END WHILE;
+  RETURN new_code;
+END; $$
+DELIMITER ;
+
+
+select f_make_code()
+
+ALTER TABLE demo ADD COLUMN code VARCHAR(6) ;
+
+
+
+
+insert into demo (name ) values ('name17');
+select * from log_ ORDER BY name;
+select * from demo ORDER BY name;
+
+select (select count(*) from log_) - (select count(*) from demo)
+
+
+delete from demo;
+delete from log_;
+
+
+DELIMITER $$
+CREATE OR REPLACE TRIGGER tr_update_code
+BEFORE INSERT
+ON demo FOR EACH ROW
+BEGIN
+    IF new.code IS NULL THEN
+    	SET new.code = f_make_code();
+    END IF;
+END; $$
+DELIMITER ;
+
+drop table log_;
+
+CREATE TABLE log_ (
+    id int NOT NULL AUTO_INCREMENT,
+	name  varchar(255) NOT NULL,
+    code varchar(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+SELECT NOT exists(SELECT 1 FROM demo WHERE code='A');

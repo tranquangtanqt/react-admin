@@ -1,6 +1,7 @@
 import { DatabasePostgresqlCheckInfoFileDump } from '../content/dump/check-info-file';
 import { DatabasePostgresqlRunAllSqlInAFolder } from '../content/dump/run-all-sql-in-folder';
 import { DatabasePostgresqlConfigPghba } from '../content/general/config-pghba';
+import { DatabasePostgresqlGenarateUniqueString } from '../content/table/genarate-unique-string';
 import { DatabasePostgresqlTableGeneral } from '../content/table/general';
 
 export const mapContent = new Map();
@@ -13,6 +14,10 @@ mapContent.set(
 mapContent.set(
   'dump-check-info-file-dump',
   <DatabasePostgresqlCheckInfoFileDump />,
+);
+mapContent.set(
+  'generate-unique-string-per-record',
+  <DatabasePostgresqlGenarateUniqueString />,
 );
 
 export const cardData = [
@@ -35,6 +40,10 @@ export const cardData = [
       {
         text: 'General',
         path: '/database/postgresql/table-general',
+      },
+      {
+        text: 'Generate a unique string per record in a table ',
+        path: '/database/postgresql/generate-unique-string-per-record',
       },
     ],
   },
