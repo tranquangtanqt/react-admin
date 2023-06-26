@@ -2,34 +2,6 @@ import { PageTitle } from 'components/modules/page-title';
 import Code from 'components/modules/code';
 
 export const DatabasePostgresqlGenarateUniqueString = () => {
-  const randomString = (length: number) => {
-    const chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let result = '';
-    for (let i = length; i > 0; --i)
-      result += chars[Math.round(Math.random() * (chars.length - 1))];
-    return result;
-  };
-
-  const start = Date.now();
-  for (let i = 0; i < 76782336; i++) {
-    const s = randomString(6);
-    console.log(1);
-  }
-
-  const timeTaken = Date.now() - start;
-  console.log('Total time taken : ' + timeTaken + ' milliseconds');
-
-  //   const arr: string[] = [];
-  //   for (let i = 0; i < 1; i++) {
-  //     let s = randomString(6);
-  //     while (arr.includes(s)) {
-  //       s = randomString(6);
-  //     }
-  //     arr.push(s);
-  //     console.log(i);
-  //     console.log(arr);
-  //   }
-
   return (
     <>
       <PageTitle title="Generate a unique string per record in a table"></PageTitle>

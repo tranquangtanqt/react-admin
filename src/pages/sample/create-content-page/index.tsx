@@ -131,10 +131,12 @@ export const CreateContentPage = () => {
       case 'p':
         setTab('2');
         setTag('code');
+        setDisplayLanguage(true);
         break;
       default:
         setTab('1');
         setTag('p');
+        setDisplayLanguage(false);
         break;
     }
     document.getElementById('input')?.focus();

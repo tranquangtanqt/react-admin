@@ -5,6 +5,9 @@ import { ProgramJavaSelectData1 } from '../content/spring-boot/_crud/select-data
 import { ProgramJavaSelectData2 } from '../content/spring-boot/_crud/select-data2';
 import { ProgramJavaSettingMaven } from '../content/spring-boot/_crud/setting-maven';
 import { ProgramJavaUpdateData1 } from '../content/spring-boot/_crud/update-data1';
+import { ProgramJavaTip30ForBeginners } from '../tips/30-tips-for-beginners';
+import { ProgramJavaTipCodingConventionsAdditionalSuggestions } from '../tips/coding-conventions-additional-suggestions';
+import { ProgramJavaTipUsingRegex } from '../tips/regex';
 
 export const mapContent = new Map();
 mapContent.set('setting-maven', <ProgramJavaSettingMaven />);
@@ -14,6 +17,15 @@ mapContent.set('update-data-1', <ProgramJavaUpdateData1 />);
 mapContent.set('delete-data-1', <ProgramJavaDeleteData1 />);
 mapContent.set('select-data-2', <ProgramJavaSelectData2 />);
 mapContent.set('arbitrary-number-of-arguments', <ProgramJavaArrayArgument />);
+mapContent.set('using-regex', <ProgramJavaTipUsingRegex />);
+mapContent.set(
+  'coding-conventions-additional-suggestions',
+  <ProgramJavaTipCodingConventionsAdditionalSuggestions />,
+);
+mapContent.set(
+  '30-best-practices-for-beginners',
+  <ProgramJavaTip30ForBeginners />,
+);
 
 export const cardData = [
   {
@@ -51,6 +63,23 @@ export const cardData = [
       {
         text: 'Arbitrary Number of Arguments (Số đối số tùy ý)',
         path: '/programming/java/array/arbitrary-number-of-arguments',
+      },
+    ],
+  },
+  {
+    title: 'Tips & Tricks',
+    links: [
+      {
+        text: 'Using regex',
+        path: '/programming/java/tips-and-tricks/using-regex',
+      },
+      {
+        text: 'Coding conventions additional suggestions',
+        path: '/programming/java/tips-and-tricks/coding-conventions-additional-suggestions',
+      },
+      {
+        text: '30 Java Programming Tips and Best Practices for Beginners',
+        path: '/programming/java/tips-and-tricks/30-best-practices-for-beginners',
       },
     ],
   },

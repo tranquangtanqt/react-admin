@@ -186,6 +186,24 @@ export const Home = () => {
               <ol>
                 <li>
                   <a
+                    href="https://www.geeksforgeeks.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    geeksforgeeks
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.javacodegeeks.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    javacodegeeks
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://github.com/akullpp/awesome-java"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -276,6 +294,24 @@ export const Home = () => {
               <ol>
                 <li>
                   <a
+                    href="https://cssbattle.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    cssbattle
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/ngekoding/cssbattle"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    cssbattle - result
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="https://www.figma.com/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -344,6 +380,26 @@ export const Home = () => {
             </div>
             <div className="card-body">
               <ol>
+                <li>
+                  <a
+                    href="https://www.vnjpclub.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title=""
+                  >
+                    vnjpclub
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://jls.vnjpclub.com/index.php"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title=""
+                  >
+                    vnjpclub
+                  </a>
+                </li>
                 <li>
                   <a
                     href="https://quizlet.com/"
@@ -493,6 +549,27 @@ export const Home = () => {
                     rel="noopener noreferrer"
                   >
                     codecanyon.net
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Youtube</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@anonystick/playlists"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    anonystick
                   </a>
                 </li>
               </ol>
