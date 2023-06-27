@@ -185,7 +185,8 @@ export const Home = () => {
                   >
                     code4it.dev
                   </a>
-                </li><li>
+                </li>
+                <li>
                   <a
                     href="https://github.com/thangchung/awesome-dotnet-core"
                     target="_blank"
