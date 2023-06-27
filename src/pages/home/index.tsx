@@ -58,6 +58,28 @@ export const Home = () => {
             </div>
           </div>
         </div>
+
+        <div className="col-12 col-sm-12 col-md-3">
+          <div className="card">
+            <div className="card-header font-size-16">
+              <b>Genaral</b>
+            </div>
+            <div className="card-body">
+              <ol>
+                <li>
+                  <a
+                    href="https://dev.to/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title=""
+                  >
+                    dev.to
+                  </a>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
         <div className="col-12 col-sm-12 col-md-3">
           <div className="card">
             <div className="card-header font-size-16">
@@ -156,6 +178,14 @@ export const Home = () => {
             <div className="card-body">
               <ol>
                 <li>
+                  <a
+                    href="https://www.code4it.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    code4it.dev
+                  </a>
+                </li><li>
                   <a
                     href="https://github.com/thangchung/awesome-dotnet-core"
                     target="_blank"
