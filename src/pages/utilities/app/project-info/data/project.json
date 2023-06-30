@@ -5,8 +5,16 @@
     "title": "202306_Kyudenko",
     "details": [
       {
-        "id": 3,
+        "id": 4,
         "order": 1,
+        "project_id": 12,
+        "title": "Dump DB",
+        "content": "<p>docker pull postgresqlaas/docker-postgresql-9.6<br>docker run --name postgres9006 -d -p 9006:5432 -e POSTGRES_PASSWORD=654321 postgresqlaas/docker-postgresql-9.6<br>docker exec -it postgres9006 bash<br>psql -U postgres<br>create database kyudenko_v31;<br>create user pe20mitani2 with encrypted password 'jupiter';<br>grant all privileges on database kyudenko_v31 to pe20mitani2;<br>----<br>Sử dụng PG Admin để restore database</p>",
+        "collapse": false
+      },
+      {
+        "id": 3,
+        "order": 2,
         "project_id": 12,
         "title": "Tài liệu",
         "content": "<p><strong>1. 取引先:&nbsp;</strong><br>&nbsp; &nbsp; 04_01_01_16_詳細設計書（PC_取引先マスタ・請).xlsx<br>&nbsp; &nbsp; 05_01_06_21_詳細設計書（PC_取引先連携データ作成).xlsx</p>\n<p><strong>2. 仕訳:&nbsp;</strong><br>&nbsp; &nbsp; 19-20_詳細設計書_(PC_仕訳データ作成(Check_仮払・請_経費精算_請求書処理_仮払支払_支払_仮払返金)).xlsx</p>\n<p><strong>3. 旅費:&nbsp;</strong><br>&nbsp; &nbsp; 01_02_04_08_詳細設計書_(PC_旅費精算入力).xlsx<br>&nbsp; &nbsp; 01_02_02_06_詳細設計書（PC_旅費事前・精算・請一覧内容・示).xlsx</p>\n<p><strong>4. 領収書:</strong><br>&nbsp; &nbsp; 01_03_04_11_詳細設計書_(PC_領収書精算入力).xlsx</p>\n<p><strong>5. 請求書:&nbsp;</strong><br>&nbsp; &nbsp; 03_01_03_15_詳細設計書（PC_請求書処理入力).xlsx<br>&nbsp; &nbsp; 03_01_02_14_詳細設計書（PC_請求書処理内容・示).xlsx</p>\n<p><strong>6. Common</strong> (3. 4. 5. call/d&ugrave;ng n&oacute;)<br>&nbsp; &nbsp; 税区分取得ロジック.xlsx (mobile cũng d&ugrave;ng n&oacute;)<br>&nbsp; &nbsp; PCCommon3_04_詳細設計書_(PC_共通_明細種別選択).xlsx<br>&nbsp; &nbsp; PCCommon5_XX_詳細設計書（PC_消費税区分).xlsx</p>\n<p><strong>Mobile :&nbsp;</strong><br>&nbsp; &nbsp; 1. Rest API: 29_詳細設計書（MB_消費税区分一覧を取得).xlsx<br>&nbsp; &nbsp; 2. Common: 60_詳細設計書_(MB_取引先選択).xlsx &nbsp;<br>&nbsp; &nbsp; 3. 旅費, 領収書, 請求書: C&aacute;c t&agrave;i liệu c&oacute; chữ モバイル, MB tương ứng.</p>",
@@ -14,7 +22,7 @@
       },
       {
         "id": 2,
-        "order": 2,
+        "order": 3,
         "project_id": 12,
         "title": "Danh sách chức năng",
         "content": "<p>+ 旅費 : http://aitd201809019:8080/pe4j/PWA/PWA0201l.jsf<br>+ 請求書 : http://aitd201809019:8080/pe4j/PWA/PWAD101l.jsf<br>+ 領収書 : http://aitd201809019:8080/pe4j/PWA/PWA0301l.jsf</p>\n<p>+ 旅費: http://localhost:9090/pe4j/PWA/PWA0201l.jsf<br>+ 請求書 : http://localhost:9090/pe4j/PWA/PWAD101l.jsf<br>+ 領収書 : http://localhost:9090/pe4j/PWA/PWA0301l.jsf</p>",
@@ -22,7 +30,7 @@
       },
       {
         "id": 1,
-        "order": 3,
+        "order": 4,
         "project_id": 12,
         "title": "Môi trường",
         "content": "<p>N:\\(BiMat)Projects\\(Bi mat) Spacechart\\internal\\2020_11.九電工\\Project Add 202301</p>\n<p><strong>- Database:</strong><br>&nbsp; &nbsp; &nbsp;url : aitd201809019:5432/kyudenkov31_anhlt<br>&nbsp; &nbsp; &nbsp;user/pass : pe20mitani2/jupiter</p>\n<p><strong>- Restore DB:</strong><br>&nbsp; &nbsp; &nbsp;create database kyudenko_v31;<br>&nbsp; &nbsp; &nbsp;create user pe20mitani2 with encrypted password 'jupiter';<br>&nbsp; &nbsp; &nbsp;grant all privileges on database kyudenko_v31 to pe20mitani2;</p>\n<p><strong>- Deploy:</strong><br>D:\\Project\\PE\\DemoKit\\3.1\\appLib,D:\\Project\\PE\\DemoKit\\3.1\\properties,D:\\Project\\202306_Kyudenko\\GIT\\kyudenko\\pe\\appLib,D:\\Project\\202306_Kyudenko\\GIT\\kyudenko\\pe\\properties,D:\\Project\\202306_Kyudenko\\GIT\\kyudenko\\pe\\resources</p>\n<p>id: 219409<br>pass: 123</p>\n<p><strong>- smart phone</strong><br>https://filess.mitani.co.jp/M0011/altroot/s0000<br>id: nhanth@aureole-it.vn<br>pass: 654321</p>\n<p>Thứ tự : 取引先 xxx &gt; 旅費 xxx &gt; 領収 xxx&gt; 請求 xxx</p>\n<p>// Tantq 20230703 ADD -START</p>",
