@@ -130,22 +130,30 @@
   {
     "id": 8,
     "order": 8,
-    "title": "202301 - VBS",
+    "title": "202301 - VBS - HRMOS",
     "details": [
       {
-        "id": 2,
-        "order": 2,
+        "id": 3,
+        "order": 1,
         "project_id": 8,
-        "title": "Môi trường",
-        "content": "<p>N:\\(BiMat)Projects\\(Bi mat) ICT\\Axxxx_POWER EGG eKeihi導入対応(HRMOS経費)\\01.Original\\20230130_PEアドオン資産サンプル</p>\n<p>Th&ocirc;ng tin remote m&aacute;y L2:<br>&nbsp; &nbsp; Remote 1:<br>&nbsp; &nbsp; &nbsp; &nbsp; IP: 192.168.136.200<br>&nbsp; &nbsp; &nbsp; &nbsp; User: aureole\\hah<br>&nbsp; &nbsp; &nbsp; &nbsp; Pass: 022023<br>&nbsp; &nbsp; Remote 2:&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; IP: 192.168.247.57<br>&nbsp; &nbsp; &nbsp; &nbsp; User: L2DOM\\anlt<br>&nbsp; &nbsp; &nbsp; &nbsp; pass: anlt</p>\n<p>redmine: http://pm.aureole-it.vn/projects/hrmos</p>\n<p>DB1 (HCM)<br>&nbsp; &nbsp; Host: 192.168.136.16<br>&nbsp; &nbsp; Port: 1523<br>&nbsp; &nbsp; SID: AL32UTF8<br>&nbsp; &nbsp; USER/PASS: HRMOS/HRMOS</p>\n<p>SVN Mitani:&nbsp;<br>&nbsp; &nbsp; svn://10.18.2.12/l2src_pe-addon/trunk/pe-addon-UAC/HRMOS<br>&nbsp; &nbsp; User/Pass: nhanth</p>\n<p>Th&ocirc;ng tin Microsoft365<br>Account Azure (https://portal.azure.com/)<br>&nbsp; &nbsp; nhanth@aithcm365.onmicrosoft.com / pass:@itteam654321<br>Mail (https://outlook.office.com/mail/):<br>&nbsp; &nbsp; nhanth@aithcm365.onmicrosoft.com / pass:@itteam654321</p>\n<p>Th&ocirc;ng tin kết nối API<br>TanantID: 9606e771-d00f-406c-9e6c-11c61ae61839<br>ClientID: 27fcab4d-18b7-4f61-96f4-849a15e6bd55<br>Client secrets: UQD8Q~x6r9S.2UbuXqC43i7pnpQFDp36SdruragL</p>",
+        "title": "SQL ENTERTAINING",
+        "content": "<div>select * from UT_ENTERTAINING a WHERE DATANO IN (20220000002, 20220000003, 20220000004, 20220000005, 20220000006, 20220000011, 20220000011, 20220000050)</div>\n<div>UPDATE UT_ENTERTAINING SET HMS_LINKED_FLG = '0', HMS_LINKED_DATETIME = NULL, HMS_LINK_PROCESS_ID = 0 WHERE DATANO IN (20220000002, 20220000003, 20220000004, 20220000005, 20220000006, 20220000011, 20220000011, 20220000050)</div>\n<div>&nbsp;</div>\n<div>---FIRST</div>\n<div>UPDATE UT_ENTERTAINING SET HMS_LINKED_FLG = '0', HMS_LINKED_DATETIME = NULL, HMS_LINK_PROCESS_ID = 0 WHERE DATANO IN (20030017296)</div>\n<div>&nbsp;</div>\n<div>SELECT * FROM UT_ENTERTAINING WHERE&nbsp; HMS_LINKED_FLG = '0';</div>\n<div>&nbsp;</div>\n<div>SELECT * FROM UT_ENTERTAINING ue WHERE DATANO = '20030017296';</div>\n<div>SELECT * FROM UT_ENTERTAINING_DETAILS WHERE ENTERTAININGDETAILSNO&nbsp; = '20030000778';</div>\n<div>&nbsp;</div>\n<div>SELECT UED.ENTERTAININGPLACEID,</div>\n<div>&nbsp; UE.CALDEPTID</div>\n<div>&nbsp; , UE.CALEMPID</div>\n<div>&nbsp; , UE.CORPID</div>\n<div>&nbsp; , UED.ENTERTAININGDETAILSNO</div>\n<div>&nbsp; , UED.ENTERTAININGPLACEID</div>\n<div>&nbsp; , UE.DATANO</div>\n<div>&nbsp; , UE.HISTORYNO</div>\n<div>&nbsp; , UED.DETAILSNO</div>\n<div>&nbsp; , UED.ENTERTAININGAMOUNT</div>\n<div>&nbsp; , UE.CALENTERTAININGDATE</div>\n<div>&nbsp; , TO_NUMBER(UE.CALDIVISIONID) AS CALDIVISIONID</div>\n<div>&nbsp; , UE.CALSUBJECT</div>\n<div>&nbsp; , UED.ENTERTAININGPLACENAME</div>\n<div>&nbsp; , UED.ENTERTAININGTYPE1</div>\n<div>&nbsp; , UED.ENTERTAININGTYPE2</div>\n<div>&nbsp; , UE.CALAPPLYNO</div>\n<div>FROM</div>\n<div>&nbsp; UT_ENTERTAINING UE</div>\n<div>&nbsp; INNER JOIN UT_ENTERTAINING_DETAILS UED</div>\n<div>&nbsp; &nbsp; ON UE.CALENTERTAININGDETAILSNO = UED.ENTERTAININGDETAILSNO</div>\n<div>&nbsp; &nbsp; AND UE.CORPID = UED.APPCORPID</div>\n<div>WHERE</div>\n<div>&nbsp; UE.HISTORYNO = UE.LASTHISTORYNO</div>\n<div>&nbsp; AND UE.CORPID = '0001'</div>\n<div>&nbsp; AND UE.CALDELETECLASS = '0'</div>\n<div>&nbsp; AND UE.HMS_LINKED_FLG = '0'</div>\n<div>&nbsp; AND UE.CALAPPROVALDATE IS NOT NULL</div>\n<div>ORDER BY</div>\n<div>&nbsp; UE.DATANO&nbsp; ASC</div>\n<div>&nbsp; , UED.DETAILSNO ASC;</div>\n<div>&nbsp;&nbsp;</div>\n<div>select *</div>\n<div>from UT_BILLABLE c</div>\n<div>where c.DATANO in (</div>\n<div>select a.DATANO</div>\n<div>from UT_ENTERTAINING a</div>\n<div>where a.HISTORYNO = a.LASTHISTORYNO</div>\n<div>and a.CORPID = '0001'</div>\n<div>and a.CALDELETECLASS = '0'</div>\n<div>and a.HMS_LINKED_FLG = '0'</div>\n<div>and a.CALAPPROVALDATE is not NULL</div>\n<div>)</div>\n<div>and c.CORPID = '0001'</div>\n<div>order by c.DATANO, c.HISTORYNO, c.DETAILSNO;</div>\n<div>&nbsp;</div>\n<div>SELECT * FROM UT_BILLABLE WHERE DATANO = 20030017296;</div>\n<div>&nbsp;</div>\n<div>SELECT * FROM UT_SUPPLIER WHERE ROWNUM &lt;= 5 AND SUPPLIERID = 4522;</div>",
         "collapse": false
       },
       {
         "id": 1,
-        "order": 1,
+        "order": 2,
         "project_id": 8,
         "title": "Tổng hợp các chức năng",
-        "content": "<p>1UAC6D_CNV台帳支払依頼データ変換2UAC_ENTERTAINING_LINK_CNV接待精算データ出力3UAC_PE_DEBT_LINK_CNV空調PJ原価データ変換4UAC_MOLD_BILLABLE_EXP金型原価データ変換5UAC_ET_PAYDATE_LINK接待支払日データ取込6UAC_PE_ACCOUNT_LINK_CNV仕訳データ変換7UAC_MAIL_CHECKメールチェック</p>",
+        "content": "<p>1 &nbsp; &nbsp;UAC6D_CNV &nbsp; &nbsp;台帳支払依頼データ変換<br>2 &nbsp; &nbsp;UAC_ENTERTAINING_LINK_CNV &nbsp; &nbsp;接待精算データ出力<br>3 &nbsp; &nbsp;UAC_PE_DEBT_LINK_CNV &nbsp; &nbsp;空調PJ原価データ変換<br>4 &nbsp; &nbsp;UAC_MOLD_BILLABLE_EXP &nbsp; &nbsp;金型原価データ変換<br>5 &nbsp; &nbsp;UAC_ET_PAYDATE_LINK &nbsp; &nbsp;接待支払日データ取込<br>6 &nbsp; &nbsp;UAC_PE_ACCOUNT_LINK_CNV &nbsp; &nbsp;仕訳データ変換<br>7 &nbsp; &nbsp;UAC_MAIL_CHECK &nbsp; &nbsp;メールチェック</p>",
+        "collapse": false
+      },
+      {
+        "id": 2,
+        "order": 3,
+        "project_id": 8,
+        "title": "Môi trường",
+        "content": "<p>N:\\(BiMat)Projects\\(Bi mat) ICT\\Axxxx_POWER EGG eKeihi導入対応(HRMOS経費)\\01.Original\\20230130_PEアドオン資産サンプル</p>\n<p>Th&ocirc;ng tin remote m&aacute;y L2:<br>&nbsp; &nbsp; Remote 1:<br>&nbsp; &nbsp; &nbsp; &nbsp; IP:&nbsp;192.168.136.222<br>&nbsp; &nbsp; &nbsp; &nbsp; User: aureole\\tantq<br>&nbsp; &nbsp; &nbsp; &nbsp; Pass: tantq07<br>&nbsp; &nbsp; Remote 2:&nbsp;<br>&nbsp; &nbsp; &nbsp; &nbsp; IP: 192.168.247.57<br>&nbsp; &nbsp; &nbsp; &nbsp; User: L2DOM\\anlt<br>&nbsp; &nbsp; &nbsp; &nbsp; pass: anlt</p>\n<p>redmine: http://pm.aureole-it.vn/projects/hrmos</p>\n<p>DB1 (HCM)<br>&nbsp; &nbsp; Host: 192.168.136.16<br>&nbsp; &nbsp; Port: 1523<br>&nbsp; &nbsp; SID: AL32UTF8<br>&nbsp; &nbsp; USER/PASS: HRMOS/HRMOS</p>\n<p>SVN Mitani:&nbsp;<br>&nbsp; &nbsp; svn://10.18.2.12/l2src_pe-addon/trunk/pe-addon-UAC/HRMOS<br>&nbsp; &nbsp; User/Pass: nhanth</p>\n<p>Th&ocirc;ng tin Microsoft365<br>Account Azure (https://portal.azure.com/)<br>&nbsp; &nbsp; nhanth@aithcm365.onmicrosoft.com / pass:@itteam654321<br>Mail (https://outlook.office.com/mail/):<br>&nbsp; &nbsp; nhanth@aithcm365.onmicrosoft.com / pass:@itteam654321</p>\n<p>Th&ocirc;ng tin kết nối API<br>TanantID: 9606e771-d00f-406c-9e6c-11c61ae61839<br>ClientID: 27fcab4d-18b7-4f61-96f4-849a15e6bd55<br>Client secrets: UQD8Q~x6r9S.2UbuXqC43i7pnpQFDp36SdruragL</p>",
         "collapse": false
       }
     ],
