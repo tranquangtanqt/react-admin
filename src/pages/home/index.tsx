@@ -75,6 +75,20 @@ export const Home = () => {
             href: 'https://www.mockaroo.com/',
           },
         },
+        {
+          text: `neon`,
+          links: {
+            title: 'login with parnet Hasura',
+            href: 'https://console.neon.tech/sign_in',
+          },
+        },
+        {
+          text: `Hasura`,
+          links: {
+            title: 'tranquangtanqt1990@gmail.com/Beautiful@1190',
+            href: 'https://cloud.hasura.io/',
+          },
+        },
       ],
     },
     {
