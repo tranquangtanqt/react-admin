@@ -109,6 +109,26 @@ git push origin <Tên_nhánh>`}
               language="sql"
             />
           </div>
+          <b>Undo Merge: Revert the Last Merge Commit</b>
+          <div className="tab-1">
+            <Code
+              code={`git reset --hard commit-before-the-merge
+Example: git reset --hard ec3536a9
+
+Or:
+git reset --hard HEAD~1`}
+              language="sql"
+            />
+            <p>A Better Way to Undo a Merge</p>
+            <Code
+              code={`git reset --merge previous-commit
+Example: git reset --merge ec3536a9
+
+Or:
+git reset --merge HEAD~1`}
+              language="sql"
+            />
+          </div>
         </div>
       </div>
     </>
