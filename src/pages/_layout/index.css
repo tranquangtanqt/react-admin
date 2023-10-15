@@ -13,8 +13,6 @@
   box-shadow: none;
 }
 
-
-
 #sidebar .img {
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,8 +31,8 @@
 }
 
 #sidebar {
-  min-width: 300px;
-  max-width: 300px;
+  min-width: 250px;
+  max-width: 250px;
   background: #1d1919;
   color: #fff;
   -webkit-transition: all 0.3s;
@@ -42,7 +40,7 @@
   transition: all 0.3s;
 }
 #sidebar.active {
-  margin-left: -300px;
+  margin-left: -250px;
 }
 #sidebar .logo {
   display: block;
@@ -80,14 +78,14 @@
 }
 @media (max-width: 991.98px) {
   #sidebar {
-    margin-left: -300px;
+    margin-left: -250px;
   }
   #sidebar.active {
     margin-left: 0;
   }
 }
 
-a[data-toggle="collapse"] {
+a[data-toggle='collapse'] {
   position: relative;
 }
 

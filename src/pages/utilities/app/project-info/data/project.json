@@ -1,7 +1,7 @@
 [
   {
     "id": 12,
-    "order": 12,
+    "order": 13,
     "title": "202306_Kyudenko",
     "details": [
       {
@@ -41,7 +41,7 @@
   },
   {
     "id": 10,
-    "order": 11,
+    "order": 12,
     "title": "202303 - MCF7 - Tsukiboshi",
     "details": [
       {
@@ -81,7 +81,7 @@
   },
   {
     "id": 11,
-    "order": 10,
+    "order": 11,
     "title": "202210,11,12 - 202302 - MCF7 - OhkiShindo",
     "details": [
       {
@@ -129,7 +129,7 @@
   },
   {
     "id": 8,
-    "order": 8,
+    "order": 10,
     "title": "202301 - VBS - HRMOS",
     "details": [
       {
@@ -161,7 +161,7 @@
   },
   {
     "id": 5,
-    "order": 5,
+    "order": 8,
     "title": "202210 - ENE",
     "details": [
       {
@@ -177,7 +177,7 @@
   },
   {
     "id": 3,
-    "order": 3,
+    "order": 5,
     "title": "202209 - MCF7 - ABLIC",
     "details": [
       {
@@ -233,7 +233,7 @@
   },
   {
     "id": 2,
-    "order": 2,
+    "order": 3,
     "title": "202208 - MCF7 - Fukubi",
     "details": [
       {
@@ -242,6 +242,38 @@
         "project_id": 2,
         "title": "Thông tin VPN",
         "content": "<p>tantq</p>\n<p>X7uSqm(M</p>",
+        "collapse": false
+      }
+    ],
+    "tasks": []
+  },
+  {
+    "id": 13,
+    "order": 2,
+    "title": "202110_Keihi_Seisan",
+    "details": [
+      {
+        "id": 2,
+        "order": 1,
+        "project_id": 13,
+        "title": "UIS02",
+        "content": "<p>URL: localhost:9090/pe4j/UIS/UIS0201e.jsf?corpId=friend</p>\n<p><strong>put_入力票:</strong> http://localhost:9090/pe4j/api/rest/v1/xdb/record.json</p>\n<div>\n<div>{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"system\":&nbsp;\"0\",</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"database\":&nbsp;\"外部連携/入力票\",</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"No\":&nbsp;1,</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"record\":&nbsp;{\"FBデータ作成済\":{\"value\":false},\"FBデータ作成日時\":{\"value\":\"2021-10-28T16:25+0900\"}}</div>\n<div>}</div>\n<div>&nbsp;</div>\n<div><strong>select_入力票:&nbsp;</strong><br>\n<div>\n<div>http://localhost:9090/pe4j/api/rest/v1/xdb/q/records.json?database=外部連携/入力票&amp;query=[</div>\n<div>&nbsp; {</div>\n<div>&nbsp; &nbsp; \"itemConj\": \"and\",</div>\n<div>&nbsp; &nbsp; \"items\": [</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"=\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"会社\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"value\": \"friend00\"</div>\n<div>&nbsp; &nbsp; &nbsp; },</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"=\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"種別\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"value\": \"支払依頼（振込）\"</div>\n<div>&nbsp; &nbsp; &nbsp; },</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"true\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"FBデータ作成済\"</div>\n<div>&nbsp; &nbsp; &nbsp; },</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"false\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"仕訳データ作成済\"</div>\n<div>&nbsp; &nbsp; &nbsp; },</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"&gt;=\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"伝票日付\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"value\": \"2022-06-01\"</div>\n<div>&nbsp; &nbsp; &nbsp; },</div>\n<div>&nbsp; &nbsp; &nbsp; {</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"opr\": \"&lt;=\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"field\": \"伝票日付\",</div>\n<div>&nbsp; &nbsp; &nbsp; &nbsp; \"value\": \"2022-06-30\"</div>\n<div>&nbsp; &nbsp; &nbsp; }</div>\n<div>&nbsp; &nbsp; ]</div>\n<div>&nbsp; }</div>\n<div>]</div>\n</div>\n</div>\n<div><strong>UIS02 PUT_入力票: </strong>http://localhost:9090/pe4j/api/rest/v1/xdb/record.json</div>\n<div>\n<div>\n<div>{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"system\":&nbsp;\"0\",</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"database\":&nbsp;\"外部連携/入力票\",</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"No\":&nbsp;2,</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;\"record\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"FBデータ作成済\":{\"value\":true},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"仕訳データ作成済\":{\"value\":false},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"details\":&nbsp;[</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"借方金額\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;100</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"貸方金額\"&nbsp;:&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;200</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"借方勘定科目\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"code\":&nbsp;\"01010\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"貸方勘定科目\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"code\":&nbsp;\"01020\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"貸方細目\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"みずほ金沢_本社\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"借方細目\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"金沢本社\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"借方摘要\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"貸方摘要\":&nbsp;{</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\"value\":&nbsp;\"㉛㉜㉝㉞㉟㊱㊲㊳㊴㊵㊶㊷㊸㊹㊺㊻㊼㊽㊾㊿\"</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</div>\n<div>&nbsp;&nbsp;&nbsp;&nbsp;}</div>\n<div>}</div>\n</div>\n</div>\n</div>",
+        "collapse": false
+      },
+      {
+        "id": 3,
+        "order": 2,
+        "project_id": 13,
+        "title": "UIS01",
+        "content": "<p>URL: localhost:9090/pe4j/UIS/UIS0101l.jsf</p>",
+        "collapse": false
+      },
+      {
+        "id": 1,
+        "order": 3,
+        "project_id": 13,
+        "title": "Môi trường",
+        "content": "<p>- PE 3.1<br>- DB</p>\n<p>X-API-Key: 12612675-f7ee-4850-9cc9-487f6d21e26c</p>",
         "collapse": false
       }
     ],
