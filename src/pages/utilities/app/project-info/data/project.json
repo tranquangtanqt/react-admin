@@ -5,39 +5,41 @@
     "title": "202310_MCF7_Mitsubishi",
     "details": [
       {
-        "id": 1,
-        "order": 3,
+        "id": 4,
+        "order": 1,
         "project_id": 14,
-        "title": "Môi trường",
-        "content": "<p>N:\\(BiMat)Projects\\(Bi mat) MCFrame\\MCF7_三菱ガス化学_EP生産管理システム構築プロジェクト</p>\n<p>SVNユーザ作成しました。関係者に共有お願いします。<br>Tran Hoang Nhan<br>　nhan@AIT／aitMcf1231<br>Tran Quang Tan<br>　tan@AIT／aitMcf4119<br>Le Thi Viet Chinh<br>　chinh@AIT／aitMcf5389<br>Nguyen Le Nhat Quang<br>　quang@AIT／aitMcf6720</p>\n<p>SVN情報<br>リポジトリブラウザURL：http://13.230.157.6/svn/mgc_dev/trunk<br>チェックアウト先ディレクトリ：C:\\Project\\mgc_dev</p>\n<p>開発ガイド（コーディング規約）<br>\"C:\\Project\\mgc_dev\\doc\\01_ガイド\\NDV-0040_開発ガイド.xlsx\"</p>\n<p>eclipse<br>\"C:\\Project\\mgc_dev\\eclipse\"</p>\n<p>mgc_devスキーマのdumpをアップロードしました。以下のURLからダウンロードしてください<br>&lt;https://upload.hdedrive.com/ui/mitani.co.jp/dl/SB1697176435-169b8bdf-1bda-4dee-a070-f990982745e2&gt;<br>ダウンロードパスワード: s9v4S7SU2ur!<br>URLの有効期限: 2023年10月20日 14:53 (UTC+09:00)</p>\n<p>スキーマ名：mgc_dev<br>表領域：USERS</p>",
+        "title": "Khác",
+        "content": "<p>Th&ocirc;ng tin m&aacute;y S&agrave;i G&ograve;n: <br><span class=\"ui-provider ec bhx bhy bhz bia bib bic bid bie bif big bih bii bij bik bil bim bin bio bip biq bir bis bit biu biv biw bix biy biz bja bjb bjc bjd bje\" dir=\"ltr\">ip: 172.19.114.90<br>user: .\\Admin<br>pass: @itteam</span></p>",
+        "collapse": false
+      },
+      {
+        "id": 3,
+        "order": 2,
+        "project_id": 14,
+        "title": "Thông tin DB",
+        "content": "<p>Oracle 19c<br><strong>- DB Huế:<br></strong>&nbsp; &nbsp;+ Host: 192.168.145.133<br>&nbsp; &nbsp;+ Port: 1521<br>&nbsp; &nbsp;+ SID: ORCL<br>&nbsp; &nbsp;+ User: mgc_dev<br>&nbsp; &nbsp;+ Pass: mgc_dev</p>\n<p><strong>- DB HCM:<br></strong>&nbsp; &nbsp;+ Host: 172.19.114.90<br>&nbsp; &nbsp;+ Port: 1521<br>&nbsp; &nbsp;+ SID: ORCL19C<br>&nbsp; &nbsp;+ User: mgc_dev<br>&nbsp; &nbsp;+ Pass: mgc_dev</p>",
         "collapse": false
       },
       {
         "id": 2,
-        "order": 2,
+        "order": 3,
         "project_id": 14,
         "title": "Dump DB",
         "content": "<p>sqlplus / AS SYSDBA;</p>\n<p>DROP USER mgc_dev CASCADE;<br>ALTER SESSION SET \"_ORACLE_SCRIPT\"=true;<br>CREATE USER mgc_dev IDENTIFIED BY mgc_dev;</p>\n<p>GRANT DBA TO mgc_dev;<br>GRANT EXP_FULL_DATABASE TO mgc_dev;<br>GRANT IMP_FULL_DATABASE TO mgc_dev;<br>GRANT CREATE ANY TABLE TO mgc_dev;<br>GRANT DELETE ANY TABLE TO mgc_dev;<br>GRANT DROP ANY TABLE TO mgc_dev;<br>GRANT INSERT ANY TABLE TO mgc_dev;<br>GRANT SELECT ANY SEQUENCE TO mgc_dev;<br>GRANT SELECT ANY TABLE TO mgc_dev;<br>GRANT UNLIMITED TABLESPACE TO mgc_dev;<br>GRANT UPDATE ANY TABLE TO mgc_dev;<br>GRANT CREATE ANY DIRECTORY to mgc_dev;<br>grant CREATE ANY TRIGGER to mgc_dev;</p>\n<p>//Tạo thư mục impport cho trường hợp d&ugrave;ng impdb<br>CREATE OR REPLACE DIRECTORY IMP_MGC_DEV_DIR AS 'D:\\MCF7\\202310_MCF7_Mitsubishi';</p>\n<p>cd D:\\MCF7\\Oracle19C\\WINDOWS.X64_193000_db_home\\bin<br>impdp mgc_dev/mgc_dev DIRECTORY=IMP_MGC_DEV_DIR DUMPFILE=EXPDP_MGC_DEV_20231013140146.DMP log=log_file_20231610_.log</p>",
         "collapse": false
       },
       {
-        "id": 3,
-        "order": 1,
+        "id": 1,
+        "order": 4,
         "project_id": 14,
-        "title": "Thông tin DB",
-        "content": "<p>Oracle 19c<br>Host: 192.168.145.133<br>Port: 1521<br>SID: ORCL<br>User: mgc_dev<br>Pass: mgc_dev</p>",
+        "title": "Môi trường",
+        "content": "<p>N:\\(BiMat)Projects\\(Bi mat) MCFrame\\MCF7_三菱ガス化学_EP生産管理システム構築プロジェクト</p>\n<p>SVNユーザ作成しました。関係者に共有お願いします。<br>Tran Hoang Nhan<br>　nhan@AIT／aitMcf1231<br>Tran Quang Tan<br>　tan@AIT／aitMcf4119<br>Le Thi Viet Chinh<br>　chinh@AIT／aitMcf5389<br>Nguyen Le Nhat Quang<br>　quang@AIT／aitMcf6720</p>\n<p>SVN情報<br>リポジトリブラウザURL：http://13.230.157.6/svn/mgc_dev/trunk<br>チェックアウト先ディレクトリ：C:\\Project\\mgc_dev</p>\n<p>開発ガイド（コーディング規約）<br>\"C:\\Project\\mgc_dev\\doc\\01_ガイド\\NDV-0040_開発ガイド.xlsx\"</p>\n<p>eclipse<br>\"C:\\Project\\mgc_dev\\eclipse\"</p>\n<p>mgc_devスキーマのdumpをアップロードしました。以下のURLからダウンロードしてください<br>&lt;https://upload.hdedrive.com/ui/mitani.co.jp/dl/SB1697176435-169b8bdf-1bda-4dee-a070-f990982745e2&gt;<br>ダウンロードパスワード: s9v4S7SU2ur!<br>URLの有効期限: 2023年10月20日 14:53 (UTC+09:00)</p>\n<p>スキーマ名：mgc_dev<br>表領域：USERS</p>",
         "collapse": false
       }
     ],
     "tasks": []
   },
-  {
-    "id": 15,
-    "order": 15,
-    "title": "202308_Gasoline",
-    "details": [],
-    "tasks": []
-  },
+  { "id": 15, "order": 15, "title": "202308_Gasoline", "details": [], "tasks": [] },
   {
     "id": 12,
     "order": 13,
