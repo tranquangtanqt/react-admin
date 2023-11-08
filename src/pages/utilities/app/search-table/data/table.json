@@ -1,0 +1,14 @@
+[
+  {
+    "tableNameEN": "tableNameEN1",
+    "tableNameJP": "tableNameJP1",
+    "columnNameEN": "columnNameEN1",
+    "columnNameJP": "columnNameJP1"
+  },
+  {
+    "tableNameEN": "tableNameEN",
+    "tableNameJP": "tableNameJP",
+    "columnNameEN": "columnNameEN",
+    "columnNameJP": "columnNameJP"
+  }
+]

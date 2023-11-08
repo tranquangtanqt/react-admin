@@ -59,6 +59,7 @@ import { ProgrammingJavaContent } from 'pages/programming/java/content';
 import { ProgramExcelContent } from 'pages/programming/excel/content';
 import { ProgrammingPHPContent } from 'pages/programming/php/content';
 import { SoftwareContent } from 'pages/software/content';
+import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
 
 export const RoutesRoot = () => {
   return (
@@ -146,6 +147,8 @@ export const RoutesRoot = () => {
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfo />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
           <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetail />} />
+          <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />
+
           <Route path="/utilities/general/git" element={<UtilitiesGeneralGit />} />
           <Route path="/utilities/general/command-line" element={<UtilitiesGeneralCommandLine />} />
         </Routes>

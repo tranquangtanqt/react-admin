@@ -69,13 +69,17 @@ export const Utilities = () => {
     {
       title: 'App',
       links: [
-        {
-          text: 'Todo',
-          path: '/utilities/app/todo',
-        },
+        // {
+        //   text: 'Todo',
+        //   path: '/utilities/app/todo',
+        // },
         {
           text: 'Project Info',
           path: '/utilities/app/project-info',
+        },
+        {
+          text: 'Search table',
+          path: '/utilities/app/search-table',
         },
       ],
     },
