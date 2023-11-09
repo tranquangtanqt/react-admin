@@ -1,0 +1,28 @@
+-----Thực hiện lấy dữ liệu và tạo file data định dạng .json -----------
+1. Lấy dữ liệu 
+	WITH TBL AS(
+	SELECT
+	  ROW_NUMBER() OVER( ORDER BY T.TABLE_NAME ASC) ROW_NUM,
+	  T.TABLE_NAME TABLE_NAME,
+	  T.COMMENTS COMMENT_TABLE,
+	  C.COLUMN_NAME COLUMN_NAME,
+	  C.COMMENTS COMMENT_COLUMN
+	FROM
+	  all_tab_comments T 
+	  INNER JOIN all_col_comments C 
+		ON T.TABLE_NAME = C.TABLE_NAME 
+	WHERE
+	  T.OWNER = 'MGC_DEV' 
+	  AND C.OWNER = 'MGC_DEV'
+	  AND (T.COMMENTS IS NOT NULL OR C.COMMENTS IS NOT NULL)
+	)
+	SELECT json_object('id'          		VALUE ROW_NUM,
+					   'tableName'          VALUE TABLE_NAME,
+					   'commentTable'       VALUE CASE WHEN COMMENT_TABLE IS NOT NULL THEN COMMENT_TABLE ELSE ' '  END,
+					   'columnName' 		VALUE COLUMN_NAME,
+					   'commentColumn'      VALUE CASE WHEN COMMENT_COLUMN IS NOT NULL THEN COMMENT_COLUMN ELSE ' '  END) JSON
+	FROM TBL;
+
+2. Copy dữ liệu trả về từ query và copy vào notepad
+3. Thay thế }\r\n thành },\r\n
+4. Thêm [] ở đầu và cuối file để được mảng object

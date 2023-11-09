@@ -1,6 +1,7 @@
 export interface IDataTable {
-  tableNameEN: string;
-  tableNameJP: string;
-  columnNameEN: string;
-  columnNameJP: string;
+  id: number;
+  tableName: string;
+  commentTable: string;
+  columnName: string;
+  commentColumn: string;
 }
