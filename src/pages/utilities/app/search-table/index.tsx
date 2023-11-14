@@ -12,7 +12,7 @@ export const UtilitieAppSearchTable = () => {
     return datatable as IDataTable[];
   });
 
-  const [searchType, setSearchType] = useState(2);
+  const [searchType, setSearchType] = useState(1);
   const [input1, setInput1] = useState('');
   const [results1, setResults1] = useState<IDataTable[]>();
 
@@ -70,7 +70,7 @@ export const UtilitieAppSearchTable = () => {
   const search2 = () => {
     let columns = columns2.split('\n');
     columns = columns.map((x) => x.split('//')[0].trim());
-    let data2 = [...(dataTables1 || [])];
+    let data2 = [...(dataTables2 || [])];
     data2 = data2.filter((x) => {
       return x.tableName === input2;
     });
