@@ -100,12 +100,12 @@ git push origin <Tên_nhánh>`}
               bộ file thay đổi ra file .txt
             </p>
             <Code
-              code={`git diff-tree -r --name-only fe2c552f 3687ab90  > diff-filelist.txt`}
+              code={`git diff-tree -r --name-only fe2c552f 3687ab90  > output.txt`}
               language="sql"
             />
             <p>Export file</p>
             <Code
-              code={`more diff-filelist.txt | zip -@ files.zip`}
+              code={`more output.txt | zip -@ files.zip`}
               language="sql"
             />
           </div>
