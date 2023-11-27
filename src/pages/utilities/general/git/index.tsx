@@ -105,7 +105,7 @@ git push origin <Tên_nhánh>`}
             />
             <p>Export file</p>
             <Code
-              code={`more output.txt | zip -@ files.zip`}
+              code={`more output.txt | zip -@ files%DATE:/=%.zip`}
               language="sql"
             />
           </div>
