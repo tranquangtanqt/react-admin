@@ -69,6 +69,13 @@ export const UtilitieAppSearchTable = () => {
 
   const search2 = () => {
     let columns = columns2.split('\n');
+    for (let i = 0; i < columns.length; i++) {
+      const arrElement = columns[i].split('.');
+      if (arrElement.length > 1) {
+        columns[i] = arrElement[arrElement.length - 1].trim();
+      }
+    }
+
     columns = columns.map((x) => x.split('//')[0].trim());
     let data2 = [...(dataTables2 || [])];
     data2 = data2.filter((x) => {
@@ -92,7 +99,7 @@ export const UtilitieAppSearchTable = () => {
       if (arr.length > 0) {
         dt = arr[0];
       } else {
-        dt.columnName = element;
+        dt.commentColumn = element;
       }
       rs.push(dt);
     }
