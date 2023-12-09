@@ -69,13 +69,13 @@ export const UtilitieAppSearchTable = () => {
 
   const search2 = () => {
     let columns = columns2.split('\n');
+
     for (let i = 0; i < columns.length; i++) {
       const arrElement = columns[i].split('.');
       if (arrElement.length > 1) {
         columns[i] = arrElement[arrElement.length - 1].trim();
       }
     }
-
     columns = columns.map((x) => x.split('//')[0].trim());
     let data2 = [...(dataTables2 || [])];
     data2 = data2.filter((x) => {
@@ -130,6 +130,7 @@ export const UtilitieAppSearchTable = () => {
                 className="form-control"
                 id="table-name"
                 onChange={handleOnchangeContent1}
+                value={input1}
               />
             </div>
             <div className="col-1 col-sm-1 col-md-1"> </div>
@@ -199,8 +200,9 @@ export const UtilitieAppSearchTable = () => {
               <input
                 type="text"
                 className="form-control"
-                id="table-name"
+                id="table-name-1"
                 onChange={handleOnchangeContent2}
+                value={input2}
               />
 
               <label htmlFor="list2" className="form-label mt-4">
