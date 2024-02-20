@@ -4,6 +4,7 @@
   "homepage": "https://tranquangtanqt.github.io/react-admin",
   "private": true,
   "dependencies": {
+    "@monaco-editor/react": "4.6.0",
     "@tinymce/tinymce-react": "4.2.0",
     "@types/jest": "27.5.2",
     "@types/jquery": "3.5.14",

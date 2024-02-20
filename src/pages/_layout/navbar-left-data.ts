@@ -170,6 +170,12 @@ export const NAVBAR_LEFT = [
         text: 'Create page 2',
         active: false,
       },
+      {
+        id: 2,
+        link: '/sample/monaco-editor-page',
+        text: 'Monaco Editor',
+        active: false,
+      },
     ],
   },
 ];
