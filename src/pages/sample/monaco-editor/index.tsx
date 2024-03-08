@@ -26,6 +26,7 @@ export const SampleMonacoEditorPage = () => {
             {
               originalEditable: true, // for left pane
               readOnly: false, // for right pane
+              fontSize: 13,
             },
           );
 

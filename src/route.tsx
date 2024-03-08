@@ -109,6 +109,7 @@ export const RoutesRoot = () => {
           <Route path="/software" element={<Software />} />
           <Route path="/software/visual-studio-code/:content" element={<SoftwareContent />} />
           <Route path="/software/docker/:content" element={<SoftwareContent />} />
+          <Route path="/software/notepad/:content" element={<SoftwareContent />} />
 
           <Route path="/tutorial/c-sharp" element={<TutorialCSharp />} />
           <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
