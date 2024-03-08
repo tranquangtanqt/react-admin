@@ -123,6 +123,12 @@ export const Home = () => {
             href: 'https://github.com/fullstackhero',
           },
         },
+        {
+          text: `simplcommerce`,
+          links: {
+            href: 'https://github.com/simplcommerce/SimplCommerce',
+          },
+        },
       ],
     },
     {
@@ -254,23 +260,6 @@ export const Home = () => {
           text: `quizlet`,
           links: {
             href: 'https://quizlet.com/',
-          },
-        },
-      ],
-    },
-    {
-      title: 'Social Networking Site',
-      contents: [
-        {
-          text: `slack`,
-          links: {
-            href: 'https://slack.com/',
-          },
-        },
-        {
-          text: `skype`,
-          links: {
-            href: 'https://web.skype.com/',
           },
         },
       ],

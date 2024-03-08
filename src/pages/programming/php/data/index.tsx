@@ -1,8 +1,8 @@
-import { ProgramPHPConvertDatetime } from '../content/convert-datetime';
-import { ProgramPHPConvertUnicode } from '../content/convert-unicode';
-import { ProgramPHPLaravelInstallFontDompdf } from '../content/install-font-dompdf';
-import { ProgramPHPDeleteFile } from '../content/php-delete-file';
-import { ProgramPHPSubstringEllipses } from '../content/substring-ellipses';
+import { ProgramPHPConvertDatetime } from '../content/php/convert-datetime';
+import { ProgramPHPConvertUnicode } from '../content/php/convert-unicode';
+import { ProgramPHPLaravelInstallFontDompdf } from '../content/laravel/install-font-dompdf';
+import { ProgramPHPDeleteFile } from '../content/php/delete-file';
+import { ProgramPHPSubstringEllipses } from '../content/php/substring-ellipses';
 
 export const mapContent = new Map();
 mapContent.set('convert-datetime', <ProgramPHPConvertDatetime />);
