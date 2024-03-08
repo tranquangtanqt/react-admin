@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-admin/static/css/main.8c2633c8.css",
-    "main.js": "/react-admin/static/js/main.ae8f7efa.js",
+    "main.js": "/react-admin/static/js/main.fdd1ec1d.js",
     "static/media/chapter-3_3.jpg": "/react-admin/static/media/chapter-3_3.c351125489c5613b1685.jpg",
     "static/media/chapter-3_4.jpg": "/react-admin/static/media/chapter-3_4.e91059f1f5bffe24f707.jpg",
     "static/media/chapter-10_1.png": "/react-admin/static/media/chapter-10_1.6b3485dfa0a3164b3a60.png",
@@ -738,6 +738,7 @@
     "static/media/chapter-15_15.png": "/react-admin/static/media/chapter-15_15.e3f31a73516d4930c91a.png",
     "static/media/chapter-1_28.png": "/react-admin/static/media/chapter-1_28.4d3ad8f0571febebbeeb.png",
     "static/media/23.jpg": "/react-admin/static/media/23.3aa7cb303581b5d44147.jpg",
+    "static/media/2024-03-08 16 22 02.png": "/react-admin/static/media/2024-03-08 16 22 02.65b6fc5e9f491a0ca5c9.png",
     "static/media/chapter-1_14.jpg": "/react-admin/static/media/chapter-1_14.f5fca4e631c70e47c807.jpg",
     "static/media/Net_Angular_4.jpg": "/react-admin/static/media/Net_Angular_4.6b4d9faed334c9312875.jpg",
     "static/media/chapter-14_33.png": "/react-admin/static/media/chapter-14_33.5af6ccafbfaaa5eaf75f.png",
@@ -771,10 +772,10 @@
     "static/media/soffware_2.jpg": "/react-admin/static/media/soffware_2.f95d3e16442288d3d4f8.jpg",
     "index.html": "/react-admin/index.html",
     "main.8c2633c8.css.map": "/react-admin/static/css/main.8c2633c8.css.map",
-    "main.ae8f7efa.js.map": "/react-admin/static/js/main.ae8f7efa.js.map"
+    "main.fdd1ec1d.js.map": "/react-admin/static/js/main.fdd1ec1d.js.map"
   },
   "entrypoints": [
     "static/css/main.8c2633c8.css",
-    "static/js/main.ae8f7efa.js"
+    "static/js/main.fdd1ec1d.js"
   ]
 }
