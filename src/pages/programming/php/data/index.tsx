@@ -3,17 +3,42 @@ import { ProgramPHPConvertUnicode } from '../content/php/convert-unicode';
 import { ProgramPHPLaravelInstallFontDompdf } from '../content/laravel/install-font-dompdf';
 import { ProgramPHPDeleteFile } from '../content/php/delete-file';
 import { ProgramPHPSubstringEllipses } from '../content/php/substring-ellipses';
+import { ProgramPHPLaravelNewLineInBlade } from '../content/laravel/new-line-in-blade';
+import { ProgramPHPRegexDateFormatYYYYMMDD } from '../content/php/regex-check-date-format-yyyymmdd';
+import { ProgramPHPLaravelCallApi } from '../content/laravel/call-api';
+import { ProgramPHPNumberFormat } from '../content/php/number-format';
+import { ProgramPHPLaravelPaginationBootstrap } from '../content/laravel/pagination-bootstrap';
+import { ProgramPHPConvertShiftJisToUTF8 } from '../content/php/convert-shift-jis-to-utf8';
 
 export const mapContent = new Map();
-mapContent.set('convert-datetime', <ProgramPHPConvertDatetime />);
-mapContent.set('convert-unicode', <ProgramPHPConvertUnicode />);
-mapContent.set('substring-ellipses', <ProgramPHPSubstringEllipses />);
-mapContent.set('delete-file', <ProgramPHPDeleteFile />);
-mapContent.set('install-font-dompdf', <ProgramPHPLaravelInstallFontDompdf />);
+mapContent.set('php-convert-datetime', <ProgramPHPConvertDatetime />);
+mapContent.set('php-convert-unicode', <ProgramPHPConvertUnicode />);
+mapContent.set('php-substring-ellipses', <ProgramPHPSubstringEllipses />);
+mapContent.set('php-delete-file', <ProgramPHPDeleteFile />);
+mapContent.set(
+  'php-regex-check-date-format-yyyymmdd',
+  <ProgramPHPRegexDateFormatYYYYMMDD />,
+);
+mapContent.set('php-number-format', <ProgramPHPNumberFormat />);
+mapContent.set('php-shift-jis-to-utf8', <ProgramPHPConvertShiftJisToUTF8 />);
+
+mapContent.set(
+  'laravel-install-font-dompdf',
+  <ProgramPHPLaravelInstallFontDompdf />,
+);
+mapContent.set(
+  'laravel-new-line-in-blade',
+  <ProgramPHPLaravelNewLineInBlade />,
+);
+mapContent.set('laravel-call-api', <ProgramPHPLaravelCallApi />);
+mapContent.set(
+  'laravel-pagination-bootstrap',
+  <ProgramPHPLaravelPaginationBootstrap />,
+);
 
 export const cardData = [
   {
-    title: 'Convert',
+    title: 'PHP',
     links: [
       {
         text: 'Chuyển đổi Datetime',
@@ -31,6 +56,18 @@ export const cardData = [
         text: 'Xóa tệp',
         path: '/programming/php/delete-file',
       },
+      {
+        text: 'Biểu thức chính quy kiểm tra định dạng yyyymmdd',
+        path: '/programming/php/php-regex-check-date-format-yyyymmdd',
+      },
+      {
+        text: 'Hàm number_format() trong PHP',
+        path: '/programming/php/php-number-format',
+      },
+      {
+        text: 'Chuyển đổi Shift-Jis sang UTF8',
+        path: '/programming/php/php-shift-jis-to-utf8',
+      },
     ],
   },
   {
@@ -38,7 +75,19 @@ export const cardData = [
     links: [
       {
         text: 'Cài đặt font cho dompdf',
-        path: '/programming/php/install-font-dompdf',
+        path: '/programming/php/laravel-install-font-dompdf',
+      },
+      {
+        text: 'Xuống dòng trong Blade',
+        path: '/programming/php/laravel-new-line-in-blade',
+      },
+      {
+        text: 'Gọi API',
+        path: '/programming/php/laravel-call-api',
+      },
+      {
+        text: 'Phân trang bootstrap',
+        path: '/programming/php/laravel-pagination-bootstrap',
       },
     ],
   },

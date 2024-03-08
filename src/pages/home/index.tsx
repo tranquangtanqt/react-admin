@@ -24,6 +24,12 @@ export const Home = () => {
             href: 'https://dev.to/',
           },
         },
+        {
+          text: `hackr.io`,
+          links: {
+            href: 'https://hackr.io/',
+          },
+        },
       ],
     },
     {
@@ -106,15 +112,21 @@ export const Home = () => {
       title: 'CSharp',
       contents: [
         {
+          text: `Awesome dotnet core`,
+          links: {
+            href: 'https://github.com/thangchung/awesome-dotnet-core',
+          },
+        },
+        {
           text: `code4it.dev`,
           links: {
             href: 'https://www.code4it.dev/',
           },
         },
         {
-          text: `Awesome dotnet core`,
+          text: `Clean code`,
           links: {
-            href: 'https://github.com/thangchung/awesome-dotnet-core',
+            href: 'https://github.com/thangchung/clean-code-dotnet#naming',
           },
         },
         {

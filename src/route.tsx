@@ -98,6 +98,7 @@ export const RoutesRoot = () => {
           <Route path="/programming/java/:content" element={<ProgrammingJavaContent />} />
           <Route path="/programming/java/spring-boot/crud/:content" element={<ProgrammingJavaContent />} />
           <Route path="/programming/java/array/:content" element={<ProgrammingJavaContent />} />
+          <Route path="/programming/java/string/:content" element={<ProgrammingJavaContent />} />
           <Route path="/programming/java/tips-and-tricks/:content" element={<ProgrammingJavaContent />} />
 
           <Route path="/programming/php" element={<ProgrammingPHP />} />
