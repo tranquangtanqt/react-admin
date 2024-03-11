@@ -1,4 +1,5 @@
 import { DatabasePostgresqlCheckInfoFileDump } from '../content/dump/check-info-file';
+import { DatabasePostgresqlDumpAndRestore } from '../content/dump/dump-restore';
 import { DatabasePostgresqlRunAllSqlInAFolder } from '../content/dump/run-all-sql-in-folder';
 import { DatabasePostgresqlConfigPghba } from '../content/general/config-pghba';
 import { DatabasePostgresqlGenarateUniqueString } from '../content/table/genarate-unique-string';
@@ -15,6 +16,7 @@ mapContent.set(
   'dump-check-info-file-dump',
   <DatabasePostgresqlCheckInfoFileDump />,
 );
+mapContent.set('dump-and-restore', <DatabasePostgresqlDumpAndRestore />);
 mapContent.set(
   'generate-unique-string-per-record',
   <DatabasePostgresqlGenarateUniqueString />,
@@ -50,6 +52,10 @@ export const cardData = [
   {
     title: 'Dump',
     links: [
+      {
+        text: 'Dump and restore database',
+        path: '/database/postgresql/dump-and-restore',
+      },
       {
         text: 'Run all SQL in a folder',
         path: '/database/postgresql/dump-run-all-sql-in-folder',
