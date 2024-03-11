@@ -30,6 +30,12 @@ export const Home = () => {
             href: 'https://hackr.io/',
           },
         },
+        {
+          text: `10015.io`,
+          links: {
+            href: 'https://10015.io/',
+          },
+        },
       ],
     },
     {
