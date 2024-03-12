@@ -216,6 +216,30 @@ export const Home = () => {
       title: 'CSS',
       contents: [
         {
+          text: `uiverse.io`,
+          links: {
+            href: 'https://uiverse.io/elements',
+          },
+        },
+        {
+          text: `getcssscan`,
+          links: {
+            href: 'https://getcssscan.com/',
+          },
+        },
+        {
+          text: `larsenwork.com`,
+          links: {
+            href: 'https://larsenwork.com/easing-gradients/',
+          },
+        },
+        {
+          text: `figma`,
+          links: {
+            href: 'https://www.figma.com/',
+          },
+        },
+        {
           text: `cssbattle`,
           links: {
             href: 'https://cssbattle.dev/',
@@ -225,12 +249,6 @@ export const Home = () => {
           text: `cssbattle - result`,
           links: {
             href: 'https://github.com/ngekoding/cssbattle',
-          },
-        },
-        {
-          text: `figma`,
-          links: {
-            href: 'https://www.figma.com/',
           },
         },
       ],
