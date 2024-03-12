@@ -107,6 +107,18 @@ export const Home = () => {
       title: 'Image - Video',
       contents: [
         {
+          text: `image to base64`,
+          links: {
+            href: 'https://www.base64-image.de/',
+          },
+        },
+        {
+          text: `base64 to image`,
+          links: {
+            href: 'https://base64.guru/converter/decode/image',
+          },
+        },
+        {
           text: `usebubbles _ screen`,
           links: {
             href: 'https://www.usebubbles.com/',
