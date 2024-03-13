@@ -292,6 +292,12 @@ export const Home = () => {
       title: 'Japan',
       contents: [
         {
+          text: `tiengnhatcolam`,
+          links: {
+            href: 'https://tiengnhatcolam.vn/',
+          },
+        },
+        {
           text: `vnjpclub`,
           links: {
             href: 'https://www.vnjpclub.com/',
