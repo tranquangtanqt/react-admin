@@ -3,7 +3,8 @@ import { SoftwareDockerMongo } from '../content/docker/mongo';
 import { SoftwareDockerPostgresql } from '../content/docker/postgresql';
 import { SoftwareDockerSQLServer } from '../content/docker/sqlserver';
 import { SoftwareNotepadRecordMacro } from '../content/notepad/record-macro';
-import { SoftwareNotepadReplaceFromCharacterToEnd } from '../content/notepad/replace-from-character-to-end';
+import { SoftwareNotepadRemoveTextBeforeCharacter } from '../content/notepad/remove-text-before-character';
+import { SoftwareNotepadRemoveTextAfterCharacter } from '../content/notepad/remove-text-after-character';
 import { SoftwareVisualStudioCodeAddHotkey } from '../content/visual-studio-code/addHotkey';
 import { SoftwareVisualStudioCodeExtention } from '../content/visual-studio-code/extention';
 
@@ -16,8 +17,12 @@ mapContent.set('docker-intro', <SoftwareDockerIntro />);
 mapContent.set('docker-mongo', <SoftwareDockerMongo />);
 mapContent.set('notepad-record-macro', <SoftwareNotepadRecordMacro />);
 mapContent.set(
-  'replace-from-character-to-end',
-  <SoftwareNotepadReplaceFromCharacterToEnd />,
+  'remove-text-before-character',
+  <SoftwareNotepadRemoveTextBeforeCharacter />,
+);
+mapContent.set(
+  'remove-text-after-character',
+  <SoftwareNotepadRemoveTextAfterCharacter />,
 );
 
 export const cardData = [
@@ -63,8 +68,12 @@ export const cardData = [
         path: '/software/notepad/notepad-record-macro',
       },
       {
-        text: 'Replace From Character To End',
-        path: '/software/notepad/replace-from-character-to-end',
+        text: 'Remove Text Before Character',
+        path: '/software/notepad/remove-text-before-character',
+      },
+      {
+        text: 'Remove Text After Character',
+        path: '/software/notepad/remove-text-after-character',
       },
     ],
   },

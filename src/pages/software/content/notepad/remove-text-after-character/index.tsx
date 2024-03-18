@@ -1,10 +1,10 @@
 import Code from 'components/modules/code';
 import { PageTitle } from 'components/modules/page-title';
 
-export const SoftwareNotepadReplaceFromCharacterToEnd = () => {
+export const SoftwareNotepadRemoveTextAfterCharacter = () => {
   return (
     <>
-      <PageTitle title="Replace From Character To End"></PageTitle>
+      <PageTitle title="Remove Text After Character"></PageTitle>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <div className="tab-1">
