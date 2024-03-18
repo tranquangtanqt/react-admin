@@ -176,6 +176,12 @@ export const NAVBAR_LEFT = [
         text: 'Monaco Editor',
         active: false,
       },
+      {
+        id: 3,
+        link: '/sample/google-sheet',
+        text: 'Google sheet',
+        active: false,
+      },
     ],
   },
 ];

@@ -61,6 +61,7 @@ import { ProgrammingPHPContent } from 'pages/programming/php/content';
 import { SoftwareContent } from 'pages/software/content';
 import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
 import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
+import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 
 export const RoutesRoot = () => {
   return (
@@ -71,6 +72,7 @@ export const RoutesRoot = () => {
           <Route path="/sample/create-content-page" element={<CreateContentPage />} />
           <Route path="/sample/content-page" element={<SampleContentPage />} />
           <Route path="/sample/monaco-editor-page" element={<SampleMonacoEditorPage />} />
+          <Route path="/sample/google-sheet" element={<SampleGoogleSheet />} />
 
           <Route path="/database/postgresql" element={<DatabasePostgresql />} />
           <Route path="/database/postgresql/:content" element={<DatabasePostgresqlContent />} />
