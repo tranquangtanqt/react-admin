@@ -75,6 +75,10 @@ export const Utilities = () => {
         // },
         {
           text: 'Project Info',
+          path: '/utilities/app/project-info-google-sheet',
+        },
+        {
+          text: 'Project Info From Json Data',
           path: '/utilities/app/project-info',
         },
         {
