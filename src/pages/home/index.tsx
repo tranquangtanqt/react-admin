@@ -142,6 +142,12 @@ export const Home = () => {
           },
         },
         {
+          text: `mwaseemzakir.substack.com`,
+          links: {
+            href: 'https://mwaseemzakir.substack.com/',
+          },
+        },
+        {
           text: `Clean code`,
           links: {
             href: 'https://github.com/thangchung/clean-code-dotnet#naming',
