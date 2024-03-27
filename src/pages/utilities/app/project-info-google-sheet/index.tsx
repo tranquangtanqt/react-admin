@@ -64,7 +64,9 @@ export const UtilitieAppProjectInfoGoogleSheet = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div>
-                      <Link to={`/utilities/app/project-info/${item.id}`}>
+                      <Link
+                        to={`/utilities/app/project-info-google-sheet/${item.id}`}
+                      >
                         {item.name}
                       </Link>
                     </div>

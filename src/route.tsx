@@ -63,6 +63,7 @@ import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
 import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
 import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { UtilitieAppProjectInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet';
+import { UtilitieAppProjectDetailInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet/project-detail';
 
 export const RoutesRoot = () => {
   return (
@@ -153,6 +154,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/app/todo" element={<UtilitieAppTodo />} />
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfo />} />
           <Route path="/utilities/app/project-info-google-sheet" element={<UtilitieAppProjectInfoGoogleSheet />} />
+          <Route path="/utilities/app/project-info-google-sheet/:project_id" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/todo/:todo_id" element={<UtilitieAppTodoDetail />} />
           <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetail />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />

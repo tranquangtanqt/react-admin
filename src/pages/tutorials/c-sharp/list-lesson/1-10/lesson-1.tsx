@@ -1,5 +1,3 @@
-import Code from 'components/modules/code';
-
 export const TutorialCSharpLesson1 = () => {
   return (
     <>

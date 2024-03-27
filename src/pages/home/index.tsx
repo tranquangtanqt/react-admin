@@ -148,6 +148,12 @@ export const Home = () => {
           },
         },
         {
+          text: `milanjovanovic.tech`,
+          links: {
+            href: 'https://www.milanjovanovic.tech/',
+          },
+        },
+        {
           text: `Clean code`,
           links: {
             href: 'https://github.com/thangchung/clean-code-dotnet#naming',
