@@ -64,6 +64,8 @@ import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
 import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { UtilitieAppProjectInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet';
 import { UtilitieAppProjectDetailInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet/project-detail';
+import { EbookEnglish } from 'pages/ebook/english';
+import { EbookEnglish97ThingYouKnow } from 'pages/ebook/english/97-things-every-programmer-should-know';
 
 export const RoutesRoot = () => {
   return (
@@ -82,7 +84,8 @@ export const RoutesRoot = () => {
           <Route path="/database/oracle" element={<DatabaseOracle />} />
           <Route path="/database/oracle/:content" element={<DatabaseOracleContent />} />
 
-          <Route path="/ebook/english" element={<EbookVietnamese />} />
+          <Route path="/ebook/english" element={<EbookEnglish />} />
+          <Route path="/ebook/english/97-things-every-programmer-should-know/:thing_number" element={<EbookEnglish97ThingYouKnow />} />
           <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
           <Route path="/ebook/vietnamese/clean-code/:chapter" element={<EbookVietnameseCleanCode />} />
           <Route path="/ebook/vietnamese/head-first-design-patterns/:chapter" element={<EbookVietnameseHeadFirstDesignPatterns />} />
