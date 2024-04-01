@@ -7,6 +7,7 @@ import { SoftwareNotepadRemoveTextBeforeCharacter } from '../content/notepad/rem
 import { SoftwareNotepadRemoveTextAfterCharacter } from '../content/notepad/remove-text-after-character';
 import { SoftwareVisualStudioCodeAddHotkey } from '../content/visual-studio-code/addHotkey';
 import { SoftwareVisualStudioCodeExtention } from '../content/visual-studio-code/extention';
+import { SoftwareOther } from '../content/other';
 
 export const mapContent = new Map();
 mapContent.set('vscode-add-hotkey', <SoftwareVisualStudioCodeAddHotkey />);
@@ -24,6 +25,7 @@ mapContent.set(
   'remove-text-after-character',
   <SoftwareNotepadRemoveTextAfterCharacter />,
 );
+mapContent.set('genaral', <SoftwareOther />);
 
 export const cardData = [
   {
@@ -74,6 +76,15 @@ export const cardData = [
       {
         text: 'Remove Text After Character',
         path: '/software/notepad/remove-text-after-character',
+      },
+    ],
+  },
+  {
+    title: 'Other',
+    links: [
+      {
+        text: 'Genaral',
+        path: '/software/other/genaral',
       },
     ],
   },
