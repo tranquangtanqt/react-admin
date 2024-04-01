@@ -85,6 +85,14 @@ export const Utilities = () => {
           text: 'Search table',
           path: '/utilities/app/search-table',
         },
+        {
+          text: 'TinyMCE_1',
+          path: 'https://codepen.io/tinymce/pen/QWNpjbg',
+        },
+        {
+          text: 'TinyMCE_2',
+          path: 'https://codepen.io/tinymce/pen/NGegZK',
+        },
       ],
     },
     {
