@@ -103,6 +103,7 @@ export const UtilitieAppTodoDetail = () => {
     setDetails(detailTemp);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleOnchangeContent = (content: any, editor: any) => {
     setDetailContent(content);
   };

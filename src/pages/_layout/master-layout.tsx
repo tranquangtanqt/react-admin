@@ -29,6 +29,7 @@ export const MasterLayout = (props: masterLayoutProps) => {
     }
     window.addEventListener(
       'resize',
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       function (event) {
         const jsFullheight = document.getElementsByClassName('js-fullheight');
         for (let i = 0; i < jsFullheight.length; i++) {

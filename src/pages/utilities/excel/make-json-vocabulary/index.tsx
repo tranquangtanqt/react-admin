@@ -9,6 +9,7 @@ export const UtilitiesMakeJsonVocabulary = () => {
   const createContent = () => {
     let arrayBuffer: any;
     const fileReader = new FileReader();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     fileReader.onload = (e) => {
       arrayBuffer = fileReader.result;
       const dataBuffer = new Uint8Array(arrayBuffer);

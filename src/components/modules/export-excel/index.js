@@ -46,6 +46,7 @@ const ExportExcel = ({ csvData, fileName, wscols }) => {
     <input
       type={'button'}
       value="Export XLSX"
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       onClick={(e) => exportToCSV(csvData, fileName, wscols)}
     />
   );

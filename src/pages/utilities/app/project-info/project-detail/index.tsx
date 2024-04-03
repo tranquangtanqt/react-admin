@@ -250,6 +250,7 @@ export const UtilitieAppProjectDetail = () => {
    * @param content
    * @param editor
    */
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const handleOnchangeContent = (content: any, editor: any) => {
     setDetailContent(content);
   };
