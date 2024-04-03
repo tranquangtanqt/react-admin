@@ -177,6 +177,12 @@ export const Home = () => {
       title: 'Java',
       contents: [
         {
+          text: `javatechonline`,
+          links: {
+            href: 'https://javatechonline.com/',
+          },
+        },
+        {
           text: `geeksforgeeks`,
           links: {
             href: 'https://www.geeksforgeeks.org/',
