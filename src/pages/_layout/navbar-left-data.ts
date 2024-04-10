@@ -68,7 +68,7 @@ export const NAVBAR_LEFT = [
       },
       {
         id: 2,
-        link: '/programming-javascript',
+        link: '/programming/javascript',
         text: 'Javascript',
         active: false,
       },
