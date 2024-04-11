@@ -8,6 +8,7 @@ export const TAG_NAME = {
   CODE: 'code',
   PARAGRAPH: 'p',
   BOLD: 'b',
+  ITALIC: 'i',
   IMAGE: 'image',
 };
 

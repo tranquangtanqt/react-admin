@@ -57,6 +57,8 @@ export const ContentGoogleSheet = () => {
                   <Code code={d.content} language={d.language} />
                 ) : d.tag_name === TAG_NAME.BOLD ? (
                   <b>{d.content}</b>
+                ) : d.tag_name === TAG_NAME.ITALIC ? (
+                  <i>{d.content}</i>
                 ) : d.tag_name === TAG_NAME.IMAGE ? (
                   <div className="clearfix">
                     <input
