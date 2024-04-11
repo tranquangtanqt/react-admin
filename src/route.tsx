@@ -15,6 +15,7 @@ import { MasterLayout } from 'pages/_layout/master-layout';
 // import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
 
 import { Programming } from 'pages/programming';
+import { ContentGoogleSheet } from 'components/content-google-sheet';
 // import { ProgramExcel } from 'pages/programming/excel';
 // import { ProgramExcelContent } from 'pages/programming/excel/content';
 // import { ProgrammingBatch } from 'pages/programming/batch';
@@ -97,6 +98,7 @@ export const RoutesRoot = () => {
           <Route path="/ebook/vietnamese/head-first-design-patterns/:chapter" element={<EbookVietnameseHeadFirstDesignPatterns />} /> */}
 
           <Route path="/programming/:program" element={<Programming/>} />
+          <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />
           {/* <Route path="/programming/batch" element={<ProgrammingBatch />} />
           <Route path="/programming/batch/:content" element={<ProgrammingBatchContent />} />
           <Route path="/programming/csharp" element={<ProgrammingCSharp />} />

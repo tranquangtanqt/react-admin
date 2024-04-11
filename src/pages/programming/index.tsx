@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { PageTitle } from 'components/modules/page-title';
 import useGoogleSheets from 'use-google-sheets';
 import { useParams } from 'react-router-dom';
-import { IProgram } from './dto/program.dto';
-import { IProgramDetail } from './dto/program-detail.dto';
-import { CategoryDto } from 'components/cactegory/dto/category.dto';
+import { CategoryDetailDto, CategoryDto } from 'components/category/dto';
+import { IProgram, IProgramDetail, ISubProgramDetail } from './dto';
+import { Category } from 'components/category';
 
 export const Programming = () => {
   const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
@@ -12,11 +12,12 @@ export const Programming = () => {
     '19_-q0fDLs-iKFJ-d73ZbEo3wXsA8aKirOHRZKaxD7eU';
 
   const param = useParams();
+  const [categories, setCategories] = useState<CategoryDto[]>([]);
+  const [pageTitle, setPageTitle] = useState('');
 
   const { data, loading, error } = useGoogleSheets({
     apiKey: REACT_APP_GOOGLE_API_KEY,
     sheetId: REACT_APP_GOOGLE_SHEETS_ID,
-    // sheetsOptions,
   });
 
   if (loading) {
@@ -28,82 +29,74 @@ export const Programming = () => {
   }
 
   useEffect(() => {
-    if (data) {
-      if (data[0]) {
-        const cardListDtos: CategoryDto[] = [];
-        const sheetIndexData = data[0].data;
-        let program: IProgram = {};
-        for (let i = 0; i < sheetIndexData.length; i++) {
-          const element = sheetIndexData[i] as IProgram;
-          if (element.name === param.program) {
-            // console.log(element);
-            program = element;
-            break;
-          }
-        }
+    if (data && data[0]) {
+      const categoryDtos: CategoryDto[] = [];
+      const categoryDetailDtos: CategoryDetailDto[] = [];
+      const programDataApi = data[0].data;
 
-        console.log(program);
-
-        if (data[2]) {
-          let dataDetail: IProgramDetail[] = data[2].data as IProgramDetail[];
-
-          dataDetail = dataDetail.filter((x) => x.program_id === program.id);
-
-          for (let i = 0; i < dataDetail.length; i++) {
-            const element = dataDetail[i];
-            const cardListDto: CategoryDto = new CategoryDto();
-            cardListDto.id = element.id ? +element.id : 0;
-            cardListDto.name = element.title ? element.title : '';
-
-            cardListDto.parent_id = element.program_title_id
-              ? +element.program_title_id
-              : 0;
-
-            cardListDto.parent_name = element.program_title_name
-              ? element.program_title_name
-              : '';
-
-            cardListDto.parent_order = element.program_title_order
-              ? +element.program_title_order
-              : 0;
-
-            cardListDtos.push(cardListDto);
-          }
-          console.log(cardListDtos);
+      let program: IProgram = {};
+      for (let i = 0; i < programDataApi.length; i++) {
+        const element = programDataApi[i] as IProgram;
+        if (element.name === param.program) {
+          program = element;
+          break;
         }
       }
+
+      if (program && data[1]) {
+        if (program.display) {
+          setPageTitle(program.display);
+        }
+        const programDetailDataApi = data[1].data;
+        for (let i = 0; i < programDetailDataApi.length; i++) {
+          const element = programDetailDataApi[i] as IProgramDetail;
+          if (element.program_id === program.id) {
+            const categoryDto = new CategoryDto();
+            categoryDto.id = +element.id;
+            categoryDto.name = element.title;
+            categoryDto.order = +element.order;
+            categoryDtos.push(categoryDto);
+          }
+        }
+
+        if (categoryDtos && data[2]) {
+          let subProgramDetailDataApi: Array<any> = data[2].data;
+          subProgramDetailDataApi = subProgramDetailDataApi.filter(
+            (x) => x.program_id === program.id,
+          );
+
+          for (let i = 0; i < subProgramDetailDataApi.length; i++) {
+            const element = subProgramDetailDataApi[i] as ISubProgramDetail;
+            const categoryDetailDto = new CategoryDetailDto();
+            categoryDetailDto.id = +element.id;
+            categoryDetailDto.categoryId = +element.program_title_id;
+            categoryDetailDto.categoryName = element.program_title_name;
+            categoryDetailDto.name = element.title;
+            categoryDetailDto.order = +element.order;
+            categoryDetailDto.sheetId = element.sheet_id;
+            categoryDetailDtos.push(categoryDetailDto);
+          }
+
+          for (let i = 0; i < categoryDtos.length; i++) {
+            const element = categoryDtos[i] as CategoryDto;
+            const details = categoryDetailDtos.filter(
+              (d) => d.categoryId === element.id,
+            );
+
+            element.details = details;
+          }
+        }
+      }
+
+      setCategories(categoryDtos);
     }
   }, [data, param]);
 
-  //   const orderByDesc = (data: IProject[]) => {
-  //     return data.sort((a, b) => b.order - a.order);
-  //   };
-
   return (
     <>
-      <PageTitle title="Thông tin"></PageTitle>
+      <PageTitle title={pageTitle}></PageTitle>
       <div className={'row mt-2'}>
-        <div className="col-12 col-sm-12 col-md-12">
-          <div className="card">
-            {/* <ul className="list-group list-group-flush">
-              {projects?.map((item, key) => (
-                <li className="list-group-item" key={key}>
-                  <div className="d-flex justify-content-between">
-                    <div>
-                      <Link
-                        to={`/utilities/app/project-info-google-sheet/${item.id}`}
-                      >
-                        {item.name}
-                      </Link>
-                    </div>
-                    <div></div>
-                    <div></div>
-                  </div>
-                </li>
-              ))}
-            </ul> */}
-          </div>
-        </div>
+        <Category categories={categories}></Category>
       </div>
     </>
   );
