@@ -59,6 +59,18 @@ export const ContentGoogleSheet = () => {
                   <b>{d.content}</b>
                 ) : d.tag_name === TAG_NAME.ITALIC ? (
                   <i>{d.content}</i>
+                ) : d.tag_name === TAG_NAME.HEADING_1 ? (
+                  <h1>{d.content}</h1>
+                ) : d.tag_name === TAG_NAME.HEADING_2 ? (
+                  <h2>{d.content}</h2>
+                ) : d.tag_name === TAG_NAME.HEADING_3 ? (
+                  <h3>{d.content}</h3>
+                ) : d.tag_name === TAG_NAME.HEADING_4 ? (
+                  <h4>{d.content}</h4>
+                ) : d.tag_name === TAG_NAME.HEADING_5 ? (
+                  <h5>{d.content}</h5>
+                ) : d.tag_name === TAG_NAME.HEADING_6 ? (
+                  <h6>{d.content}</h6>
                 ) : d.tag_name === TAG_NAME.IMAGE ? (
                   <div className="clearfix">
                     <input
