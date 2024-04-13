@@ -1,7 +1,7 @@
 {
   "name": "react-admin",
   "version": "0.1.0",
-  "homepage": "https://tranquangtanqt.github.io/react-admin",
+  "_homepage": "https://tranquangtanqt.github.io/react-admin",
   "private": true,
   "dependencies": {
     "@monaco-editor/react": "4.6.0",
