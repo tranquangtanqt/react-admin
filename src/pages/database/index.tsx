@@ -30,7 +30,6 @@ export const Database = () => {
 
   useEffect(() => {
     if (data && data[0]) {
-      console.log(data);
       const categoryDtos: CategoryDto[] = [];
       const categoryDetailDtos: CategoryDetailDto[] = [];
 
