@@ -88,6 +88,7 @@ export const RoutesRoot = () => {
           <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />
 
           <Route path="/software" element={<Software />} />
+          <Route path="/software/:sheetId" element={<ContentGoogleSheet/>} />
           {/* 
           <Route path="/tutorial/c-sharp" element={<TutorialCSharp />} />
           <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
