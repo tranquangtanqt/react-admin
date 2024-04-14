@@ -3,17 +3,13 @@ import { Home } from 'pages/home';
 // import { CreateContentPage } from 'pages/sample/create-content-page';
 import { MasterLayout } from 'pages/_layout/master-layout';
 
-// import { DatabaseOracle } from 'pages/database/oracle';
-// import { DatabaseOracleContent } from 'pages/database/oracle/content';
-// import { DatabasePostgresql } from 'pages/database/postgresql';
-// import { DatabasePostgresqlContent } from 'pages/database/postgresql/content';
-
 // import { EbookEnglish } from 'pages/ebook/english';
 // import { EbookEnglish97ThingYouKnow } from 'pages/ebook/english/97-things-every-programmer-should-know';
 // import { EbookVietnamese } from 'pages/ebook/vietnamese';
 // import { EbookVietnameseCleanCode } from 'pages/ebook/vietnamese/clean-code';
 // import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
 
+import { Database } from 'pages/database';
 import { Programming } from 'pages/programming';
 import { ContentGoogleSheet } from 'components/content-google-sheet';
 
@@ -71,18 +67,16 @@ export const RoutesRoot = () => {
           {/* <Route path="/sample/create-content-page" element={<CreateContentPage />} />
           <Route path="/sample/content-page" element={<SampleContentPage />} />
           <Route path="/sample/monaco-editor-page" element={<SampleMonacoEditorPage />} />
-          <Route path="/sample/google-sheet" element={<SampleGoogleSheet />} />
-
-          <Route path="/database/postgresql" element={<DatabasePostgresql />} />
-          <Route path="/database/postgresql/:content" element={<DatabasePostgresqlContent />} />
-          <Route path="/database/oracle" element={<DatabaseOracle />} />
-          <Route path="/database/oracle/:content" element={<DatabaseOracleContent />} /> */}
+          <Route path="/sample/google-sheet" element={<SampleGoogleSheet />} /> */}
 
           {/* <Route path="/ebook/english" element={<EbookEnglish />} />
           <Route path="/ebook/english/97-things-every-programmer-should-know/:thing_number" element={<EbookEnglish97ThingYouKnow />} />
           <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
           <Route path="/ebook/vietnamese/clean-code/:chapter" element={<EbookVietnameseCleanCode />} />
           <Route path="/ebook/vietnamese/head-first-design-patterns/:chapter" element={<EbookVietnameseHeadFirstDesignPatterns />} /> */}
+
+          <Route path="/database/:database" element={<Database/>} />
+          <Route path="/database/:database/:sheetId" element={<ContentGoogleSheet/>} />
 
           <Route path="/programming/:program" element={<Programming/>} />
           <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />

@@ -10,7 +10,7 @@ export const NAVBAR_LEFT = [
     children: [
       {
         id: 0,
-        link: '/database/postgresql',
+        link: '/database/postgres',
         text: 'PostgreSQL',
         active: false,
       },
