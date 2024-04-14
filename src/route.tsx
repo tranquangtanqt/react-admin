@@ -16,24 +16,11 @@ import { MasterLayout } from 'pages/_layout/master-layout';
 
 import { Programming } from 'pages/programming';
 import { ContentGoogleSheet } from 'components/content-google-sheet';
-// import { ProgramExcel } from 'pages/programming/excel';
-// import { ProgramExcelContent } from 'pages/programming/excel/content';
-// import { ProgrammingBatch } from 'pages/programming/batch';
-// import { ProgrammingBatchContent } from 'pages/programming/batch/content';
-// import { ProgrammingCSharp } from 'pages/programming/c-sharp';
-// import { ProgrammingCSharpContent } from 'pages/programming/c-sharp/content';
-// import { ProgrammingJava } from 'pages/programming/java';
-// import { ProgrammingJavaContent } from 'pages/programming/java/content';
-// import { ProgrammingJavascript } from 'pages/programming/javascript';
-// import { ProgrammingJavascriptTipsTips } from 'pages/programming/javascript/tips/tips';
-// import { ProgrammingPHP } from 'pages/programming/php';
-// import { ProgrammingPHPContent } from 'pages/programming/php/content';
 
 // import { SampleContentPage } from 'pages/sample/content-page';
 // import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
 // import { SampleGoogleSheet } from 'pages/sample/google-sheet';
-// import { Software } from 'pages/software';
-// import { SoftwareContent } from 'pages/software/content';
+import { Software } from 'pages/software';
 
 // import { TutorialCSharp } from 'pages/tutorials/c-sharp';
 // import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/list-lesson';
@@ -99,31 +86,9 @@ export const RoutesRoot = () => {
 
           <Route path="/programming/:program" element={<Programming/>} />
           <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />
-          {/* <Route path="/programming/batch" element={<ProgrammingBatch />} />
-          <Route path="/programming/batch/:content" element={<ProgrammingBatchContent />} />
-          <Route path="/programming/csharp" element={<ProgrammingCSharp />} />
-          <Route path="/programming/csharp/:content" element={<ProgrammingCSharpContent />} />
-          <Route path="/programming/excel" element={<ProgramExcel />} />
-          <Route path="/programming/excel/:content" element={<ProgramExcelContent />} />
-          <Route path="/programming/excel/tips/:content" element={<ProgramExcelContent />} />
-          <Route path="/programming/excel/vba/:content" element={<ProgramExcelContent />} />
-          <Route path="/programming/java" element={<ProgrammingJava />} />
-          <Route path="/programming/java/:content" element={<ProgrammingJavaContent />} />
-          <Route path="/programming/java/spring-boot/crud/:content" element={<ProgrammingJavaContent />} />
-          <Route path="/programming/java/array/:content" element={<ProgrammingJavaContent />} />
-          <Route path="/programming/java/string/:content" element={<ProgrammingJavaContent />} />
-          <Route path="/programming/java/tips-and-tricks/:content" element={<ProgrammingJavaContent />} />
-          <Route path="/programming/php" element={<ProgrammingPHP />} />
-          <Route path="/programming/php/:content" element={<ProgrammingPHPContent />} />
-          <Route path="/programming-javascript" element={<ProgrammingJavascript />} />
-          <Route path="/programming-javascript/tips/tips" element={<ProgrammingJavascriptTipsTips />} /> */}
 
-          {/* <Route path="/software" element={<Software />} />
-          <Route path="/software/visual-studio-code/:content" element={<SoftwareContent />} />
-          <Route path="/software/docker/:content" element={<SoftwareContent />} />
-          <Route path="/software/notepad/:content" element={<SoftwareContent />} />
-          <Route path="/software/other/:content" element={<SoftwareContent />} />
-
+          <Route path="/software" element={<Software />} />
+          {/* 
           <Route path="/tutorial/c-sharp" element={<TutorialCSharp />} />
           <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
           <Route path="/tutorial/java" element={<TutorialJava />} />
