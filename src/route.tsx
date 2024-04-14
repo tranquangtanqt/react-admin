@@ -17,17 +17,7 @@ import { ContentGoogleSheet } from 'components/content-google-sheet';
 // import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
 // import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { Software } from 'pages/software';
-
-// import { TutorialCSharp } from 'pages/tutorials/c-sharp';
-// import { TutorialCSharpLesson } from 'pages/tutorials/c-sharp/list-lesson';
-// import { TutorialJapan } from 'pages/tutorials/japan';
-// import { TutorialJapanVocabularyLesson } from 'pages/tutorials/japan/list-lesson';
-// import { TutorialJava } from 'pages/tutorials/java';
-// import { TutorialJavaLesson } from 'pages/tutorials/java/list-lesson';
-// import { TutorialNetAngular } from 'pages/tutorials/net-angular';
-// import { TutorialNetAngularLesson } from 'pages/tutorials/net-angular/list-lesson';
-// import { TutorialPostgreSQL } from 'pages/tutorials/postgreSQL';
-// import { TutorialTutorialPostgreSQLLesson } from 'pages/tutorials/postgreSQL/list-lesson';
+import { Tutorial } from 'pages/tutorial';
 
 // import { Utilities } from 'pages/utilities';
 // import { UtilitieAppProjectInfo } from 'pages/utilities/app/project-info';
@@ -83,18 +73,11 @@ export const RoutesRoot = () => {
 
           <Route path="/software" element={<Software />} />
           <Route path="/software/:sheetId" element={<ContentGoogleSheet/>} />
+
+          <Route path="/tutorial/:tutorial" element={<Tutorial />} />
+          <Route path="/tutorial/:tutorial/:sheetId" element={<ContentGoogleSheet/>} />
+
           {/* 
-          <Route path="/tutorial/c-sharp" element={<TutorialCSharp />} />
-          <Route path="/tutorial/c-sharp/lesson/:lesson" element={<TutorialCSharpLesson />} />
-          <Route path="/tutorial/java" element={<TutorialJava />} />
-          <Route path="/tutorial/java/lesson/:lesson" element={<TutorialJavaLesson />} />
-          <Route path="/tutorial/net-angular" element={<TutorialNetAngular />} />
-          <Route path="/tutorial/net-angular/lesson/:lesson" element={<TutorialNetAngularLesson />} />
-          <Route path="/tutorial/postgreSQL" element={<TutorialPostgreSQL />} />
-          <Route path="/tutorial/postgreSQL/lesson/:lesson" element={<TutorialTutorialPostgreSQLLesson />} />
-          <Route path="/tutorial/japan" element={<TutorialJapan />} />
-          <Route path="/tutorial/japan/vocabulary/lesson/:lesson" element={<TutorialJapanVocabularyLesson />} />
-         
           <Route path="/utilities" element={<Utilities />} />
           <Route path="/utilities/file/list-file-selected" element={<UtilitiesListFileSelected />} />
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />

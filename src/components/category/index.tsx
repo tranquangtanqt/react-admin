@@ -14,7 +14,7 @@ export const Category: React.FC<Props> = ({ categories }) => {
     return data;
   };
   categories = orderByAsc(categories);
-
+  console.log(categories);
   return (
     <>
       {categories?.map((category, key) => (
@@ -25,16 +25,32 @@ export const Category: React.FC<Props> = ({ categories }) => {
                 <b>{category.name}</b>
               </div>
               <div className="card-body">
-                <ul className="list-style-type-none">
-                  {category.details.map((categoryDetail, key) => (
-                    <Fragment key={key}>
-                      <li>
-                        <Link to={categoryDetail.sheetId}>{`${key + 1}. ${
-                          categoryDetail.name
-                        }`}</Link>
-                      </li>
+                <ul className="list-style-type-none padding-inline-start-10">
+                  {category.startIndex === 0 ? (
+                    <Fragment>
+                      {category.details.map((categoryDetail, keyDetail) => (
+                        <Fragment key={keyDetail}>
+                          <li>
+                            <Link to={categoryDetail.sheetId}>{`${
+                              keyDetail + 1
+                            }. ${categoryDetail.name}`}</Link>
+                          </li>
+                        </Fragment>
+                      ))}
                     </Fragment>
-                  ))}
+                  ) : (
+                    <Fragment>
+                      {category.details.map((categoryDetail, keyDetail) => (
+                        <Fragment key={keyDetail}>
+                          <li>
+                            <Link to={categoryDetail.sheetId}>{`${
+                              category.startIndex + keyDetail + 1
+                            }. ${categoryDetail.name}`}</Link>
+                          </li>
+                        </Fragment>
+                      ))}
+                    </Fragment>
+                  )}
                 </ul>
               </div>
             </div>
