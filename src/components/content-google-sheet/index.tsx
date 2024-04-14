@@ -84,7 +84,7 @@ export const ContentGoogleSheet = () => {
                           ? 'rounded mx-auto d-block'
                           : d.align === 'right'
                           ? 'rounded float-end'
-                          : '')
+                          : 'rounded float-start')
                       }
                       alt=""
                     />
