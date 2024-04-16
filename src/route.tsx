@@ -3,12 +3,6 @@ import { Home } from 'pages/home';
 // import { CreateContentPage } from 'pages/sample/create-content-page';
 import { MasterLayout } from 'pages/_layout/master-layout';
 
-// import { EbookEnglish } from 'pages/ebook/english';
-// import { EbookEnglish97ThingYouKnow } from 'pages/ebook/english/97-things-every-programmer-should-know';
-// import { EbookVietnamese } from 'pages/ebook/vietnamese';
-// import { EbookVietnameseCleanCode } from 'pages/ebook/vietnamese/clean-code';
-// import { EbookVietnameseHeadFirstDesignPatterns } from 'pages/ebook/vietnamese/head-first-design-patterns';
-
 import { Database } from 'pages/database';
 import { Programming } from 'pages/programming';
 import { ContentGoogleSheet } from 'components/content-google-sheet';
@@ -18,6 +12,7 @@ import { ContentGoogleSheet } from 'components/content-google-sheet';
 // import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { Software } from 'pages/software';
 import { Tutorial } from 'pages/tutorial';
+import { Ebook } from 'pages/ebook';
 
 // import { Utilities } from 'pages/utilities';
 // import { UtilitieAppProjectInfo } from 'pages/utilities/app/project-info';
@@ -59,11 +54,8 @@ export const RoutesRoot = () => {
           <Route path="/sample/monaco-editor-page" element={<SampleMonacoEditorPage />} />
           <Route path="/sample/google-sheet" element={<SampleGoogleSheet />} /> */}
 
-          {/* <Route path="/ebook/english" element={<EbookEnglish />} />
-          <Route path="/ebook/english/97-things-every-programmer-should-know/:thing_number" element={<EbookEnglish97ThingYouKnow />} />
-          <Route path="/ebook/vietnamese" element={<EbookVietnamese />} />
-          <Route path="/ebook/vietnamese/clean-code/:chapter" element={<EbookVietnameseCleanCode />} />
-          <Route path="/ebook/vietnamese/head-first-design-patterns/:chapter" element={<EbookVietnameseHeadFirstDesignPatterns />} /> */}
+          <Route path="/ebook/:ebookType" element={<Ebook />} />
+          <Route path="/ebook/:ebookType/:sheetId" element={<ContentGoogleSheet/>} />
 
           <Route path="/database/:database" element={<Database/>} />
           <Route path="/database/:database/:sheetId" element={<ContentGoogleSheet/>} />
