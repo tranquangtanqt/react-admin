@@ -1,7 +1,5 @@
-import axios from 'axios';
 import { CardList } from 'components/modules/card-list';
 import { PageTitle } from 'components/modules/page-title';
-import { useEffect } from 'react';
 
 export const Utilities = () => {
   const cardData = [
@@ -116,20 +114,6 @@ export const Utilities = () => {
       ],
     },
   ];
-
-  useEffect(() => {
-    axios
-      .get(
-        'https://raw.githubusercontent.com/tranquangtanqt/react-admin/main/src/pages/utilities/app/search-table/data/table.json',
-      )
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch(function (error) {
-        console.log('Show error notification!');
-        console.log(error);
-      });
-  });
 
   return (
     <>
