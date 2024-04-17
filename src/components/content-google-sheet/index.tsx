@@ -55,6 +55,8 @@ export const ContentGoogleSheet = () => {
               <div className={d.tab_number ? 'tab-' + d.tab_number : ''}>
                 {d.tag_name === TAG_NAME.CODE ? (
                   <Code code={d.content} language={d.language} />
+                ) : d.tag_name === TAG_NAME.PARAGRAPH ? (
+                  <p>{d.content}</p>
                 ) : d.tag_name === TAG_NAME.BOLD ? (
                   <b>{d.content}</b>
                 ) : d.tag_name === TAG_NAME.ITALIC ? (
