@@ -14,7 +14,7 @@ export const Category: React.FC<Props> = ({ categories }) => {
     return data;
   };
   categories = orderByAsc(categories);
-  console.log(categories);
+
   return (
     <>
       {categories?.map((category, key) => (

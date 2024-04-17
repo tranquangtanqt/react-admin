@@ -13,6 +13,7 @@ import { ContentGoogleSheet } from 'components/content-google-sheet';
 import { Software } from 'pages/software';
 import { Tutorial } from 'pages/tutorial';
 import { Ebook } from 'pages/ebook';
+import { Other } from 'pages/other';
 
 // import { Utilities } from 'pages/utilities';
 // import { UtilitieAppProjectInfo } from 'pages/utilities/app/project-info';
@@ -68,6 +69,9 @@ export const RoutesRoot = () => {
 
           <Route path="/tutorial/:tutorial" element={<Tutorial />} />
           <Route path="/tutorial/:tutorial/:sheetId" element={<ContentGoogleSheet/>} />
+
+          <Route path="/other" element={<Other />} />
+          <Route path="/other/:sheetId" element={<ContentGoogleSheet />} />
 
           {/* 
           <Route path="/utilities" element={<Utilities />} />
