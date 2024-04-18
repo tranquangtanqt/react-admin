@@ -16,6 +16,12 @@ export const TAG_NAME = {
   HEADING_4: 'h4',
   HEADING_5: 'h5',
   HEADING_6: 'h6',
+  HEADING_1_BOLD: 'h1-b',
+  HEADING_2_BOLD: 'h2-b',
+  HEADING_3_BOLD: 'h3-b',
+  HEADING_4_BOLD: 'h4-b',
+  HEADING_5_BOLD: 'h5-b',
+  HEADING_6_BOLD: 'h6-b',
 };
 
 export const STRING = {
