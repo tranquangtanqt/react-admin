@@ -60,7 +60,9 @@ export const ContentGoogleSheet = () => {
                 ) : d.tag_name === TAG_NAME.BOLD ? (
                   <b>{d.content}</b>
                 ) : d.tag_name === TAG_NAME.ITALIC ? (
-                  <i>{d.content}</i>
+                  <p>
+                    <i>{d.content}</i>
+                  </p>
                 ) : d.tag_name === TAG_NAME.HEADING_1 ? (
                   <h1>{d.content}</h1>
                 ) : d.tag_name === TAG_NAME.HEADING_2 ? (
@@ -74,17 +76,29 @@ export const ContentGoogleSheet = () => {
                 ) : d.tag_name === TAG_NAME.HEADING_6 ? (
                   <h6>{d.content}</h6>
                 ) : d.tag_name === TAG_NAME.HEADING_1_BOLD ? (
-                  <h1><b>{d.content}</b></h1>
+                  <h1>
+                    <b>{d.content}</b>
+                  </h1>
                 ) : d.tag_name === TAG_NAME.HEADING_2_BOLD ? (
-                  <h2><b>{d.content}</b></h2>
+                  <h2>
+                    <b>{d.content}</b>
+                  </h2>
                 ) : d.tag_name === TAG_NAME.HEADING_3_BOLD ? (
-                  <h3><b>{d.content}</b></h3>
+                  <h3>
+                    <b>{d.content}</b>
+                  </h3>
                 ) : d.tag_name === TAG_NAME.HEADING_4_BOLD ? (
-                  <h4><b>{d.content}</b></h4>
+                  <h4>
+                    <b>{d.content}</b>
+                  </h4>
                 ) : d.tag_name === TAG_NAME.HEADING_5_BOLD ? (
-                  <h5><b>{d.content}</b></h5>
+                  <h5>
+                    <b>{d.content}</b>
+                  </h5>
                 ) : d.tag_name === TAG_NAME.HEADING_6_BOLD ? (
-                  <h6><b>{d.content}</b></h6>
+                  <h6>
+                    <b>{d.content}</b>
+                  </h6>
                 ) : d.tag_name === TAG_NAME.IMAGE ? (
                   <div className="clearfix">
                     <input
