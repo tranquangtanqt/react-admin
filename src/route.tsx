@@ -19,8 +19,6 @@ import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { SampleCreateContentPage } from 'pages/sample/create-content-page';
 
 import { Utilities } from 'pages/utilities';
-import { UtilitieAppProjectInfo } from 'pages/utilities/app/project-info';
-import { UtilitieAppProjectDetail } from 'pages/utilities/app/project-info/project-detail';
 import { UtilitieAppProjectInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet';
 import { UtilitieAppProjectDetailInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet/project-detail';
 import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
@@ -34,10 +32,6 @@ import { UtilitiesMakeInsertSQLFromProcedure } from 'pages/utilities/sql/make-in
 import { UtilitiesMakeJsonVocabulary } from 'pages/utilities/excel/make-json-vocabulary';
 import { UtilitiesReadContentMultiFile } from 'pages/utilities/file/read-content-multi-file';
 import { UtilitiesTextCommon } from 'pages/utilities/text/common';
-import { UtilitiesTextFindDifferentTwoList } from 'pages/utilities/text/find-different-two-list';
-import { UtilitiesTextFindDifferentTwoList1 } from 'pages/utilities/text/find-different-two-list1';
-import { UtilitiesTextFindTextColumnJPEN } from 'pages/utilities/text/find-text-column-jp-en';
-import { UtilitiesTinyMCE } from 'pages/utilities/tiny-mce';
 import { UtilitiesTextRepeat } from 'pages/utilities/text/repeat';
 import { UtilitiesTextReplace } from 'pages/utilities/text/replace';
 
@@ -72,22 +66,16 @@ export const RoutesRoot = () => {
           <Route path="/utilities/file/read-content-multi-file" element={<UtilitiesReadContentMultiFile />} />
           <Route path="/utilities/file/make-json-from-excel" element={<UtilitiesFileMakeJsonFromExcel />} />
           <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
-          <Route path="/utilities/text/find-different-two-list" element={<UtilitiesTextFindDifferentTwoList />} />
-          <Route path="/utilities/text/find-different-two-list-1" element={<UtilitiesTextFindDifferentTwoList1 />} />
-          <Route path="/utilities/text/find-text-column-jp-en" element={<UtilitiesTextFindTextColumnJPEN />} />
           <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
           <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
-          <Route path="/utilities/tinyMCE" element={<UtilitiesTinyMCE />} />
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
           <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
           <Route path="/utilities/japan/vocabulary/unit" element={<UtilitiesJapanVocabularyUnit />} />
-          <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfo />} />
-          <Route path="/utilities/app/project-info-google-sheet" element={<UtilitieAppProjectInfoGoogleSheet />} />
-          <Route path="/utilities/app/project-info-google-sheet/:project_id" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
-          <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetail />} />
+          <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
+          <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />
 
           <Route path="/sample/create-content-page" element={<SampleCreateContentPage />} />

@@ -28,37 +28,12 @@ export const Utilities = () => {
           path: '/utilities/text/common',
         },
         {
-          text: 'Find Different Two List',
-          path: '/utilities/text/find-different-two-list',
-        },
-        {
-          text: 'Find Different Two List 1',
-          path: '/utilities/text/find-different-two-list-1',
-        },
-        {
-          text: 'Find Text ColumnJP_EN',
-          path: '/utilities/text/find-text-column-jp-en',
-        },
-        {
           text: 'Repeat',
           path: '/utilities/text/repeat',
         },
         {
           text: 'Replace',
           path: '/utilities/text/replace',
-        },
-        {
-          text: 'Tiny MCE',
-          path: '/utilities/tinyMCE',
-        },
-      ],
-    },
-    {
-      title: 'Japan',
-      links: [
-        {
-          text: 'Vocabulary',
-          path: '/utilities/japan/vocabulary',
         },
       ],
     },
@@ -67,10 +42,6 @@ export const Utilities = () => {
       links: [
         {
           text: 'Project Info',
-          path: '/utilities/app/project-info-google-sheet',
-        },
-        {
-          text: 'Project Info From Json Data',
           path: '/utilities/app/project-info',
         },
         {
@@ -88,15 +59,6 @@ export const Utilities = () => {
       ],
     },
     {
-      title: 'Excel',
-      links: [
-        {
-          text: 'Make Json Vocabulary Japanese',
-          path: '/utilities/excel/make-json-vocabulary-japanese',
-        },
-      ],
-    },
-    {
       title: 'SQL',
       links: [
         {
@@ -110,6 +72,19 @@ export const Utilities = () => {
         {
           text: 'Create Table From Excel',
           path: '/utilities/sql/create-table-from-excel',
+        },
+      ],
+    },
+    {
+      title: 'Other',
+      links: [
+        {
+          text: 'Vocabulary Japanese',
+          path: '/utilities/japan/vocabulary',
+        },
+        {
+          text: 'Make Json Vocabulary Japanese From Excel',
+          path: '/utilities/excel/make-json-vocabulary-japanese',
         },
       ],
     },
