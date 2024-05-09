@@ -7,7 +7,7 @@ import useGoogleSheets from 'use-google-sheets';
 export const UtilitieAppProjectInfoGoogleSheet = () => {
   const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
   const REACT_APP_GOOGLE_SHEETS_ID =
-    '1ONDr_ORP1VEShsj6JoN1YqDNCFz-xvbli-EtxzpT-2A';
+    '1lPeTHgI5t7OC3eQvj9NTD990Prqx4vihuYLzoeoJ4wA';
 
   const sheetsOptions = [
     {
@@ -36,6 +36,7 @@ export const UtilitieAppProjectInfoGoogleSheet = () => {
       if (data[0]) {
         const projectDtos: IProject[] = [];
         const sheetData = data[0].data;
+        console.log(sheetData);
         for (let i = 0; i < sheetData.length; i++) {
           const element = sheetData[i] as IProject;
           element.id = +element.id;
@@ -64,9 +65,7 @@ export const UtilitieAppProjectInfoGoogleSheet = () => {
                 <li className="list-group-item" key={key}>
                   <div className="d-flex justify-content-between">
                     <div>
-                      <Link
-                        to={`/utilities/app/project-info-google-sheet/${item.id}`}
-                      >
+                      <Link to={`/utilities/app/project-info/${item.id}`}>
                         {item.name}
                       </Link>
                     </div>

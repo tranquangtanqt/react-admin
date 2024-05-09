@@ -75,7 +75,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
           <Route path="/utilities/japan/vocabulary/unit" element={<UtilitiesJapanVocabularyUnit />} />
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
-          <Route path="/utilities/app/project-info/:project_id" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
+          <Route path="/utilities/app/project-info/:projectId" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />
 
           <Route path="/sample/create-content-page" element={<SampleCreateContentPage />} />
