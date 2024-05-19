@@ -76,6 +76,12 @@ export const Home = () => {
       title: 'Database',
       contents: [
         {
+          text: `sqlshack.com`,
+          links: {
+            href: 'https://www.sqlshack.com/',
+          },
+        },
+        {
           text: `dbfiddle`,
           links: {
             href: 'https://dbfiddle.uk/',
@@ -130,6 +136,12 @@ export const Home = () => {
       title: 'CSharp',
       contents: [
         {
+          text: `c-sharpcorner.com`,
+          links: {
+            href: 'https://www.c-sharpcorner.com/',
+          },
+        },
+        {
           text: `Awesome dotnet core`,
           links: {
             href: 'https://github.com/thangchung/awesome-dotnet-core',
@@ -180,6 +192,12 @@ export const Home = () => {
           text: `javatechonline`,
           links: {
             href: 'https://javatechonline.com/',
+          },
+        },
+        {
+          text: `howtodoinjava`,
+          links: {
+            href: 'https://howtodoinjava.com//',
           },
         },
         {
