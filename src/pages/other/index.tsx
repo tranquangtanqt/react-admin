@@ -2,13 +2,13 @@ import { PageTitle } from 'components/modules/page-title';
 import { useEffect, useState } from 'react';
 import { CategoryDetailDto, CategoryDto } from 'components/category/dto';
 import useGoogleSheets from 'use-google-sheets';
-import { ISoftware, ISoftwareDetail } from './dto';
 import { Category } from 'components/category';
+import { IOther, IOtherDetail } from './dto';
 
-export const Software = () => {
+export const Other = () => {
   const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
   const REACT_APP_GOOGLE_SHEETS_ID =
-    '1vkJYnzmB1sjULgobKgtpnlvLj0g-LPTtI2UoeENAY0w';
+    '1oRPZ1eC97utVMD8IeSteww8NAxYZ0iKIUJbDpQLPPTo';
 
   const [categories, setCategories] = useState<CategoryDto[]>([]);
 
@@ -32,7 +32,7 @@ export const Software = () => {
 
       const categoryDetailDataApi = data[0].data;
       for (let i = 0; i < categoryDetailDataApi.length; i++) {
-        const element = categoryDetailDataApi[i] as ISoftware;
+        const element = categoryDetailDataApi[i] as IOther;
         const categoryDto = new CategoryDto();
         categoryDto.id = +element.id;
         categoryDto.name = element.title;
@@ -44,7 +44,7 @@ export const Software = () => {
         const subSoftwareDetailDataApi: Array<any> = data[1].data;
 
         for (let i = 0; i < subSoftwareDetailDataApi.length; i++) {
-          const element = subSoftwareDetailDataApi[i] as ISoftwareDetail;
+          const element = subSoftwareDetailDataApi[i] as IOtherDetail;
           const categoryDetailDto = new CategoryDetailDto();
           categoryDetailDto.id = +element.id;
           categoryDetailDto.categoryId = +element.software_id;
@@ -71,7 +71,7 @@ export const Software = () => {
 
   return (
     <>
-      <PageTitle title="Software"></PageTitle>
+      <PageTitle title="Other"></PageTitle>
       <div className={'row mt-2'}>
         <Category categories={categories}></Category>
       </div>

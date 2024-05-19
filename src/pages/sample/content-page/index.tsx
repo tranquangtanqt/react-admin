@@ -14,7 +14,7 @@ export const SampleContentPage = () => {
             language: 'sql',
           },
           image: {
-            src: require(`resources/img/tutorials/netAngular/Net_Angular_1.jpg`),
+            src: require(`resources/img/_layout/logo.jpg`),
           },
         },
       ],

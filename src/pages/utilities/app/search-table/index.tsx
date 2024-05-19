@@ -1,16 +1,13 @@
 import { PageTitle } from 'components/modules/page-title';
-import datatable from './data/table.json';
-import { Fragment, useState } from 'react';
+// import datatable from './data/table.json';
+import { Fragment, useEffect, useState } from 'react';
 import { IDataTable } from './dto/data-table';
+import axios from 'axios';
 
 export const UtilitieAppSearchTable = () => {
-  const [dataTables1] = useState<IDataTable[]>(() => {
-    return datatable as IDataTable[];
-  });
+  const [dataTables1, setDataTables1] = useState<IDataTable[]>([]);
 
-  const [dataTables2] = useState<IDataTable[]>(() => {
-    return datatable as IDataTable[];
-  });
+  const [dataTables2, setDataTables2] = useState<IDataTable[]>([]);
 
   const [searchType, setSearchType] = useState(1);
   const [input1, setInput1] = useState('');
@@ -21,6 +18,22 @@ export const UtilitieAppSearchTable = () => {
   const [input2, setInput2] = useState('');
   const [columns2, setColumns2] = useState('');
   const [results2, setResults2] = useState<IDataTable[]>();
+
+  useEffect(() => {
+    axios
+      .get(
+        'https://raw.githubusercontent.com/tranquangtanqt/data/main/react-admin/search-table/table.json',
+      )
+      .then((response) => {
+        setDataTables1(response.data);
+        setDataTables2(response.data);
+        // console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log('Show error notification!');
+        console.log(error);
+      });
+  });
 
   const handleOnchangeContent1 = (event: any) => {
     const val = event.target.value.trim();

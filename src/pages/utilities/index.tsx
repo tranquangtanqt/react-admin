@@ -28,18 +28,6 @@ export const Utilities = () => {
           path: '/utilities/text/common',
         },
         {
-          text: 'Find Different Two List',
-          path: '/utilities/text/find-different-two-list',
-        },
-        {
-          text: 'Find Different Two List 1',
-          path: '/utilities/text/find-different-two-list-1',
-        },
-        {
-          text: 'Find Text ColumnJP_EN',
-          path: '/utilities/text/find-text-column-jp-en',
-        },
-        {
           text: 'Repeat',
           path: '/utilities/text/repeat',
         },
@@ -47,38 +35,13 @@ export const Utilities = () => {
           text: 'Replace',
           path: '/utilities/text/replace',
         },
-        {
-          text: 'Tiny MCE',
-          path: '/utilities/tinyMCE',
-        },
-      ],
-    },
-    {
-      title: 'Japan',
-      links: [
-        {
-          text: 'Vocabulary',
-          path: '/utilities/japan/vocabulary',
-        },
-        {
-          text: 'Special',
-          path: '/utilities/japan/special',
-        },
       ],
     },
     {
       title: 'App',
       links: [
-        // {
-        //   text: 'Todo',
-        //   path: '/utilities/app/todo',
-        // },
         {
           text: 'Project Info',
-          path: '/utilities/app/project-info-google-sheet',
-        },
-        {
-          text: 'Project Info From Json Data',
           path: '/utilities/app/project-info',
         },
         {
@@ -92,28 +55,6 @@ export const Utilities = () => {
         {
           text: 'TinyMCE_2',
           path: 'https://codepen.io/tinymce/pen/NGegZK',
-        },
-      ],
-    },
-    {
-      title: 'General',
-      links: [
-        {
-          text: 'Git',
-          path: '/utilities/general/git',
-        },
-        {
-          text: 'Command Line',
-          path: '/utilities/general/command-line',
-        },
-      ],
-    },
-    {
-      title: 'Excel',
-      links: [
-        {
-          text: 'Make Json Vocabulary Japanese',
-          path: '/utilities/excel/make-json-vocabulary-japanese',
         },
       ],
     },
@@ -135,11 +76,15 @@ export const Utilities = () => {
       ],
     },
     {
-      title: 'English',
+      title: 'Other',
       links: [
         {
-          text: 'Special',
-          path: '/utilities/english/special',
+          text: 'Vocabulary Japanese',
+          path: '/utilities/japan/vocabulary',
+        },
+        {
+          text: 'Make Json Vocabulary Japanese From Excel',
+          path: '/utilities/excel/make-json-vocabulary-japanese',
         },
       ],
     },

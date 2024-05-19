@@ -3,7 +3,7 @@ import { CONSTANTS } from 'utils/constants';
 import StringUtils from 'utils/string-utils';
 import { TAGS, LANGUAGES, LIST } from './data';
 
-export const CreateContentPage = () => {
+export const SampleCreateContentPage = () => {
   const [tag, setTag] = useState('b');
   const [language, setLanguage] = useState('sql');
   const [displaylanguage, setDisplayLanguage] = useState(false);

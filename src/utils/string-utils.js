@@ -49,4 +49,12 @@ export default class StringUtils {
       .replace(/9/g, '９')
       .replace(/0/g, '０');
   }
+
+  static upperCaseFirstLetter(str) {
+    const firstLetter = str.charAt(0);
+    const firstLetterCap = firstLetter.toUpperCase();
+    const remainingLetters = str.slice(1);
+    const capitalizedWord = firstLetterCap + remainingLetters;
+    return capitalizedWord;
+  }
 }
