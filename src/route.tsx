@@ -34,6 +34,7 @@ import { UtilitiesReadContentMultiFile } from 'pages/utilities/file/read-content
 import { UtilitiesTextCommon } from 'pages/utilities/text/common';
 import { UtilitiesTextRepeat } from 'pages/utilities/text/repeat';
 import { UtilitiesTextReplace } from 'pages/utilities/text/replace';
+import { SampleCRUDGoogleSheet } from 'pages/sample/crud-google-sheet';
 
 export const RoutesRoot = () => {
   return (
@@ -82,6 +83,7 @@ export const RoutesRoot = () => {
           <Route path="/sample/content-page" element={<SampleContentPage />} />
           <Route path="/sample/monaco-editor-page" element={<SampleMonacoEditorPage />} />
           <Route path="/sample/google-sheet" element={<SampleGoogleSheet />} />
+          <Route path="/sample/crud-google-sheet" element={<SampleCRUDGoogleSheet />} />
           
         </Routes>
       </MasterLayout>

@@ -178,6 +178,12 @@ export const NAVBAR_LEFT = [
         text: 'Google sheet',
         active: false,
       },
+      {
+        id: 3,
+        link: '/sample/crud-google-sheet',
+        text: 'CRUD Google sheet',
+        active: false,
+      },
     ],
   },
 ];
