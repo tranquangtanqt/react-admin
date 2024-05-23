@@ -175,3 +175,8 @@ a[data-toggle='collapse'] {
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+/** Code **/
+.module-theme-okaidia code[class*="language-"], .module-theme-okaidia pre[class*="language-"] {
+  font-size: 12.25px !important;
+}
