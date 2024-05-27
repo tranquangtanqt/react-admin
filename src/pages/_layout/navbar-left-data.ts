@@ -20,6 +20,12 @@ export const NAVBAR_LEFT = [
         text: 'Oracle',
         active: false,
       },
+      {
+        id: 2,
+        link: '/database/sql-server',
+        text: 'SQL Server',
+        active: false,
+      },
     ],
   },
   {
