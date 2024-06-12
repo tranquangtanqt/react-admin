@@ -30,11 +30,20 @@ export const Category: React.FC<Props> = ({ categories }) => {
                     <Fragment>
                       {category.details.map((categoryDetail, keyDetail) => (
                         <Fragment key={keyDetail}>
-                          <li>
-                            <Link to={categoryDetail.sheetId}>{`${
-                              keyDetail + 1
-                            }. ${categoryDetail.name}`}</Link>
-                          </li>
+                          {category.type === 'default' ? (
+                            <li>
+                              <Link to={categoryDetail.sheetId}>{`${
+                                keyDetail + 1
+                              }. ${categoryDetail.name}`}</Link>
+                            </li>
+                          ) : (
+                            <li>
+                              <a
+                                href={categoryDetail.sheetId}
+                                target="blank"
+                              >{`${keyDetail + 1}. ${categoryDetail.name}`}</a>
+                            </li>
+                          )}
                         </Fragment>
                       ))}
                     </Fragment>
@@ -42,11 +51,22 @@ export const Category: React.FC<Props> = ({ categories }) => {
                     <Fragment>
                       {category.details.map((categoryDetail, keyDetail) => (
                         <Fragment key={keyDetail}>
-                          <li>
-                            <Link to={categoryDetail.sheetId}>{`${
-                              category.startIndex + keyDetail + 1
-                            }. ${categoryDetail.name}`}</Link>
-                          </li>
+                          {category.type === 'default' ? (
+                            <li>
+                              <Link to={categoryDetail.sheetId}>{`${
+                                category.startIndex + keyDetail + 1
+                              }. ${categoryDetail.name}`}</Link>
+                            </li>
+                          ) : (
+                            <li>
+                              <a
+                                href={categoryDetail.sheetId}
+                                target="blank"
+                              >{`${category.startIndex + keyDetail + 1}. ${
+                                categoryDetail.name
+                              }`}</a>
+                            </li>
+                          )}
                         </Fragment>
                       ))}
                     </Fragment>

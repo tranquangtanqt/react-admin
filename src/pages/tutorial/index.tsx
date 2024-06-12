@@ -47,6 +47,7 @@ export const Tutorial = () => {
         if (tutorial.display) {
           setPageTitle(tutorial.display);
         }
+
         const tutorialDetailDataApi = data[1].data;
         for (let i = 0; i < tutorialDetailDataApi.length; i++) {
           const element = tutorialDetailDataApi[i] as ITutorialDetail;
@@ -58,35 +59,70 @@ export const Tutorial = () => {
             if (element.start_index) {
               categoryDto.startIndex = +element.start_index;
             }
+            if (tutorial.type) {
+              categoryDto.type = tutorial.type;
+            }
             categoryDtos.push(categoryDto);
           }
         }
 
-        if (categoryDtos && data[2]) {
-          let subTutorialDetailDataApi: Array<any> = data[2].data;
-          subTutorialDetailDataApi = subTutorialDetailDataApi.filter(
-            (x) => x.tutorial_id === tutorial.id,
-          );
-
-          for (let i = 0; i < subTutorialDetailDataApi.length; i++) {
-            const element = subTutorialDetailDataApi[i] as ISubTutorialDetail;
-            const categoryDetailDto = new CategoryDetailDto();
-            categoryDetailDto.id = +element.id;
-            categoryDetailDto.categoryId = +element.tutorial_detail_id;
-            categoryDetailDto.categoryName = element.tutorial_detail_name;
-            categoryDetailDto.name = element.title;
-            categoryDetailDto.order = +element.order;
-            categoryDetailDto.sheetId = element.sheet_id;
-            categoryDetailDtos.push(categoryDetailDto);
-          }
-
-          for (let i = 0; i < categoryDtos.length; i++) {
-            const element = categoryDtos[i] as CategoryDto;
-            const details = categoryDetailDtos.filter(
-              (d) => d.categoryId === element.id,
+        if (tutorial.type === 'default') {
+          if (categoryDtos && data[2]) {
+            let subTutorialDetailDataApi: Array<any> = data[2].data;
+            subTutorialDetailDataApi = subTutorialDetailDataApi.filter(
+              (x) => x.tutorial_id === tutorial.id,
             );
 
-            element.details = details;
+            for (let i = 0; i < subTutorialDetailDataApi.length; i++) {
+              const element = subTutorialDetailDataApi[i] as ISubTutorialDetail;
+              const categoryDetailDto = new CategoryDetailDto();
+              categoryDetailDto.id = +element.id;
+              categoryDetailDto.categoryId = +element.tutorial_detail_id;
+              categoryDetailDto.categoryName = element.tutorial_detail_name;
+              categoryDetailDto.name = element.title;
+              categoryDetailDto.order = +element.order;
+              categoryDetailDto.sheetId = element.sheet_id;
+              categoryDetailDtos.push(categoryDetailDto);
+            }
+
+            for (let i = 0; i < categoryDtos.length; i++) {
+              const element = categoryDtos[i] as CategoryDto;
+              const details = categoryDetailDtos.filter(
+                (d) => d.categoryId === element.id,
+              );
+
+              element.details = details;
+            }
+          }
+        } else if (tutorial.type === 'special_link') {
+          for (let i = 0; i < data.length; i++) {
+            if (data[i].id === tutorial.sheet) {
+              const subTutorialDetailDataApi: Array<any> = data[i].data;
+              for (let j = 0; j < subTutorialDetailDataApi.length; j++) {
+                const element = subTutorialDetailDataApi[
+                  j
+                ] as ISubTutorialDetail;
+                const categoryDetailDto = new CategoryDetailDto();
+                categoryDetailDto.id = +element.id;
+                categoryDetailDto.categoryId = +element.tutorial_detail_id;
+                categoryDetailDto.categoryName = element.tutorial_detail_name;
+                categoryDetailDto.name = element.title;
+                categoryDetailDto.order = +element.order;
+                categoryDetailDto.sheetId = element.sheet_id;
+                categoryDetailDtos.push(categoryDetailDto);
+              }
+
+              for (let i = 0; i < categoryDtos.length; i++) {
+                const element = categoryDtos[i] as CategoryDto;
+                const details = categoryDetailDtos.filter(
+                  (d) => d.categoryId === element.id,
+                );
+
+                element.details = details;
+              }
+
+              break;
+            }
           }
         }
       }

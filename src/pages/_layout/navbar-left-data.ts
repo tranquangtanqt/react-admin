@@ -129,6 +129,12 @@ export const NAVBAR_LEFT = [
       },
       {
         id: 3,
+        link: '/tutorial/laravel',
+        text: 'Laravel',
+        active: false,
+      },
+      {
+        id: 4,
         link: '/tutorial/japan',
         text: 'Japan',
         active: false,

@@ -25,6 +25,12 @@ export const Home = () => {
           },
         },
         {
+          text: `infoworld.com`,
+          links: {
+            href: 'https://www.infoworld.com/',
+          },
+        },
+        {
           text: `hackr.io`,
           links: {
             href: 'https://hackr.io/',

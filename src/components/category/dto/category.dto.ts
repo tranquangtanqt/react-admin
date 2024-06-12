@@ -8,6 +8,7 @@ export class CategoryDto {
   order: number;
   details: CategoryDetailDto[];
   startIndex: number;
+  type: string;
 
   constructor() {
     this.id = 0;
@@ -17,5 +18,6 @@ export class CategoryDto {
     this.order = 0;
     this.details = [];
     this.startIndex = 0;
+    this.type = 'default';
   }
 }
