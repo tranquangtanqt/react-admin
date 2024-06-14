@@ -65,7 +65,7 @@ export const UtilitieAppProjectDetailInfoGoogleSheet = () => {
         }
       }
     }
-  }, [data]);
+  }, [data, params]);
 
   useEffect(() => {
     if (sheetId && detailDataGoogleSheet.data) {
