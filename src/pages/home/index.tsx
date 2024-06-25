@@ -48,6 +48,12 @@ export const Home = () => {
       title: 'Algorithm',
       contents: [
         {
+          text: `TheAlgorithms`,
+          links: {
+            href: 'https://github.com/TheAlgorithms',
+          },
+        },
+        {
           text: `Project Euler`,
           links: {
             href: 'https://projecteuler.net/',
