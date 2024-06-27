@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
 
+//https://10015.io/tools/sha512-encrypt-decrypt
+
 export const Home = () => {
   interface ILink {
     title: string;
@@ -115,8 +117,8 @@ export const Home = () => {
         {
           text: `Hasura`,
           links: {
-            title: 'tranquangtanqt1990@gmail.com/Beautiful@1190',
             href: 'https://cloud.hasura.io/',
+            title: 'tranquangtanqt1990@gmail.com PEFEYAJvziLWmphrdbk2ag==',
           },
         },
       ],
@@ -331,7 +333,7 @@ export const Home = () => {
           text: `Render`,
           links: {
             href: 'https://dashboard.render.com/',
-            title: `tranquangtanqt1990@gmail.com&#10;beautiful@1190`,
+            title: `tranquangtanqt1990@gmail.com 4tU3B3EJZvZfjWvMnp5K1A==`,
           },
         },
       ],
@@ -355,7 +357,7 @@ export const Home = () => {
           text: `vnjpclub`,
           links: {
             href: 'https://jls.vnjpclub.com/index.php',
-            title: 'tranquangtan1109&#10;beautiful@1190',
+            title: 'tranquangtan1109 4tU3B3EJZvZfjWvMnp5K1A==',
           },
         },
         {
@@ -397,6 +399,19 @@ export const Home = () => {
             href: 'https://codecanyon.net/',
           },
         },
+        {
+          text: `ophiuchi.dev`,
+          links: {
+            href: 'https://www.youtube.com/watch?v=frvGOxGlPlg',
+          },
+        },
+        {
+          text: `encryption-decryption`,
+          links: {
+            href: 'https://www.devglan.com/online-tools/text-encryption-decryption',
+            title: 'key: tantq',
+          },
+        },
       ],
     },
     {
@@ -413,12 +428,6 @@ export const Home = () => {
     {
       title: 'TODO',
       contents: [
-        {
-          text: `sell-source`,
-          links: {
-            href: 'https://github.com/SiVi-Code/sell-source',
-          },
-        },
         {
           text: `nestjs-best-practices`,
           links: {
