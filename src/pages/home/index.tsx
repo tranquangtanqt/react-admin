@@ -197,6 +197,12 @@ export const Home = () => {
             href: 'https://github.com/simplcommerce/SimplCommerce',
           },
         },
+        {
+          text: `lib QuestPDF`,
+          links: {
+            href: 'https://github.com/QuestPDF/QuestPDF',
+          },
+        },
       ],
     },
     {
