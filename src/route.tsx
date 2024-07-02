@@ -35,6 +35,7 @@ import { UtilitiesTextCommon } from 'pages/utilities/text/common';
 import { UtilitiesTextRepeat } from 'pages/utilities/text/repeat';
 import { UtilitiesTextReplace } from 'pages/utilities/text/replace';
 import { SampleCRUDGoogleSheet } from 'pages/sample/crud-google-sheet';
+import { UtilitiesTextToHTMLTableGenerator } from 'pages/utilities/text/text-to-html-table-generator';
 
 export const RoutesRoot = () => {
   return (
@@ -69,6 +70,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/text/common" element={<UtilitiesTextCommon />} />
           <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
           <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
+          <Route path="/utilities/text/to-html-table-generator" element={<UtilitiesTextToHTMLTableGenerator />} />
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />

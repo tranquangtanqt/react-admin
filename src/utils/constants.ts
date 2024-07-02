@@ -26,4 +26,8 @@ export const TAG_NAME = {
 
 export const STRING = {
   EMPTY: '',
+  NEW_LINE: '\n',
+  TAB: '\t',
+  COMMA: ',',
+  DOT: '.',
 };
