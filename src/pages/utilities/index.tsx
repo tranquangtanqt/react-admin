@@ -32,6 +32,10 @@ export const Utilities = () => {
           path: '/utilities/text/repeat',
         },
         {
+          text: 'Repeat 2',
+          path: '/utilities/text/repeat-2',
+        },
+        {
           text: 'Replace',
           path: '/utilities/text/replace',
         },

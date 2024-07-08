@@ -15,12 +15,12 @@ export default class StringUtils {
   /**
    *
    * @param {*} string
-   * @param {*} search
-   * @param {*} replace
+   * @param {*} strOld
+   * @param {*} strNew
    * @returns
    */
-  static replaceAll(string, search, replace) {
-    return string.split(search).join(replace);
+  static replaceAll(string, strOld, strNew) {
+    return string.split(strOld).join(strNew);
   }
 
   /**
