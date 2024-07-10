@@ -215,6 +215,12 @@ export const Home = () => {
           },
         },
         {
+          text: `yegor256`,
+          links: {
+            href: 'https://www.yegor256.com/',
+          },
+        },
+        {
           text: `howtodoinjava`,
           links: {
             href: 'https://howtodoinjava.com//',
