@@ -37,6 +37,7 @@ import { UtilitiesTextReplace } from 'pages/utilities/text/replace';
 import { SampleCRUDGoogleSheet } from 'pages/sample/crud-google-sheet';
 import { UtilitiesTextToHTMLTableGenerator } from 'pages/utilities/text/text-to-html-table-generator';
 import { UtilitiesTextRepeat2 } from 'pages/utilities/text/repeat2';
+import { ProgrammingJavaCheatSheet } from 'pages/programming/java/cheatsheet';
 
 export const RoutesRoot = () => {
   return (
@@ -54,6 +55,7 @@ export const RoutesRoot = () => {
 
           <Route path="/programming/:program" element={<Programming/>} />
           <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />
+          <Route path="/programming/java/cheatsheet" element={<ProgrammingJavaCheatSheet />} />
 
           <Route path="/software" element={<Software />} />
           <Route path="/software/:sheetId" element={<ContentGoogleSheet/>} />
