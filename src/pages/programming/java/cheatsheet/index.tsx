@@ -6,6 +6,7 @@ export const ProgrammingJavaCheatSheet = () => {
   const toStringRef = useRef<null | HTMLDivElement>(null);
   const toArrayRef = useRef<null | HTMLDivElement>(null);
   const toConditionalsRef = useRef<null | HTMLDivElement>(null);
+  const toLoopRef = useRef<null | HTMLDivElement>(null);
 
   const executeScrollToString = () => {
     if (toStringRef.current !== null) {
@@ -20,6 +21,12 @@ export const ProgrammingJavaCheatSheet = () => {
   };
 
   const executeScrollToConditionals = () => {
+    if (toConditionalsRef.current !== null) {
+      toConditionalsRef.current.scrollIntoView();
+    }
+  };
+
+  const executeScrollToLoop = () => {
     if (toConditionalsRef.current !== null) {
       toConditionalsRef.current.scrollIntoView();
     }
@@ -236,7 +243,9 @@ for (char c: word.toCharArray()) {
             </div>
             <div className="card-header">
               See:
-              <a href="javascript:void(0)">Loops</a>
+              <a href="javascript:void(0)" onClick={executeScrollToLoop}>
+                Loops
+              </a>
             </div>
           </div>
         </div>
@@ -888,6 +897,1153 @@ switch (month) {
 System.out.println("Result " + str);
 
 `}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row mt-5">
+        <div
+          className="col-12 col-sm-12 col-md-12"
+          id="java-strings"
+          ref={toLoopRef}
+        >
+          <h4>#Java Loops</h4>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">For Loop</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`for (int i = 0; i < 10; i++) {
+  System.out.print(i);
+}
+// Outputs: 0123456789
+
+for (int i = 0,j = 0; i < 3; i++,j--) {
+  System.out.print(j + "|" + i + " ");
+}
+// Outputs: 0|0 -1|1 -2|2`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Enhanced For Loop</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`int[] numbers = {1,2,3,4,5};
+
+for (int number: numbers) {
+  System.out.print(number);
+}
+// Outputs: 12345
+`}
+                  language="java"
+                />
+              </p>
+            </div>
+
+            <div className="card-header">
+              Used to loop around array's or List's
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">While Loop</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`int count = 0;
+
+while (count < 5) {
+  System.out.print(count);
+  count++;
+}
+// Outputs: 01234
+
+`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Do While Loop</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`int count = 0;
+
+do {
+  System.out.print(count);
+  count++;
+} while (count < 5);
+// Outputs: 01234`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Continue Statement</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`for (int i = 0; i < 5; i++) {
+  if (i == 3) {
+    continue;
+  }
+  System.out.print(i);
+}
+// Outputs: 01245 `}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Break Statement</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`for (int i = 0; i < 5; i++) {
+  System.out.print(i);
+  if (i == 3) {
+    break;
+  }
+}
+// Outputs: 0123`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row mt-5">
+        <div className="col-12 col-sm-12 col-md-12">
+          <h4>#Java Collections Framework</h4>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-8">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Java Collections</div>
+              </h6>
+              <table className="table table-hover table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Collection</th>
+                    <th>Interface</th>
+                    <th>Ordered</th>
+                    <th>Sorted</th>
+                    <th>Thread safe</th>
+                    <th>Duplicate</th>
+                    <th>Nullable</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html"
+                      >
+                        ArrayList
+                      </a>
+                    </td>
+                    <td>List</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/Vector.html"
+                      >
+                        Vector
+                      </a>
+                    </td>
+                    <td>List</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html"
+                      >
+                        LinkedList
+                      </a>
+                    </td>
+                    <td>List, Deque</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CopyOnWriteArrayList.html"
+                      >
+                        CopyOnWriteArrayList
+                      </a>
+                    </td>
+                    <td>List</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/HashSet.html"
+                      >
+                        HashSet
+                      </a>
+                    </td>
+                    <td>Set</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      One <code>null</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashSet.html"
+                      >
+                        LinkedHashSet
+                      </a>
+                    </td>
+                    <td>Set</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      One <code>null</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeSet.html"
+                      >
+                        TreeSet
+                      </a>
+                    </td>
+                    <td>Set</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/CopyOnWriteArraySet.html"
+                      >
+                        CopyOnWriteArraySet
+                      </a>
+                    </td>
+                    <td>Set</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      One <code>null</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentSkipListSet.html"
+                      >
+                        ConcurrentSkipListSet
+                      </a>
+                    </td>
+                    <td>Set</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html"
+                      >
+                        HashMap
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      One <code>null</code> <em>(key)</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/Hashtable.html"
+                      >
+                        HashTable
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html"
+                      >
+                        LinkedHashMap
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      One <code>null</code> <em>(key)</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/TreeMap.html"
+                      >
+                        TreeMap
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentHashMap.html"
+                      >
+                        ConcurrentHashMap
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentSkipListMap.html"
+                      >
+                        ConcurrentSkipListMap
+                      </a>
+                    </td>
+                    <td>Map</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N (key)</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html"
+                      >
+                        ArrayDeque
+                      </a>
+                    </td>
+                    <td>Deque</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html"
+                      >
+                        PriorityQueue
+                      </a>
+                    </td>
+                    <td>Queue</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedQueue.html"
+                      >
+                        ConcurrentLinkedQueue
+                      </a>
+                    </td>
+                    <td>Queue</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentLinkedDeque.html"
+                      >
+                        ConcurrentLinkedDeque
+                      </a>
+                    </td>
+                    <td>Deque</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ArrayBlockingQueue.html"
+                      >
+                        ArrayBlockingQueue
+                      </a>
+                    </td>
+                    <td>Queue</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/LinkedBlockingDeque.html"
+                      >
+                        LinkedBlockingDeque
+                      </a>
+                    </td>
+                    <td>Deque</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a
+                        target="_blank"
+                        rel="noopener external nofollow noreferrer"
+                        href="https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/PriorityBlockingQueue.html"
+                      >
+                        PriorityBlockingQueue
+                      </a>
+                    </td>
+                    <td>Queue</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">ArrayList</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`List<Integer> nums = new ArrayList<>();
+
+// Adding
+nums.add(2);
+nums.add(5);
+nums.add(8);
+
+// Retrieving
+System.out.println(nums.get(0));
+
+// Indexed for loop iteration
+for (int i = 0; i < nums.size(); i++) {
+    System.out.println(nums.get(i));
+}
+
+nums.remove(nums.size() - 1);
+nums.remove(0); // VERY slow
+
+for (Integer value : nums) {
+    System.out.println(value);
+}`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">HashMap</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`Map<Integer, String> m = new HashMap<>();
+m.put(5, "Five");
+m.put(8, "Eight");
+m.put(6, "Six");
+m.put(4, "Four");
+m.put(2, "Two");
+
+// Retrieving
+System.out.println(m.get(6));
+
+// Lambda forEach
+m.forEach((key, value) -> {
+    String msg = key + ": " + value;
+    System.out.println(msg);
+});
+
+
+
+
+`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">HashSet</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`Set<String> set = new HashSet<>();
+if (set.isEmpty()) {
+    System.out.println("Empty!");
+}
+
+set.add("dog");
+set.add("cat");
+set.add("mouse");
+set.add("snake");
+set.add("bear");
+
+if (set.contains("cat")) {
+    System.out.println("Contains cat");
+}
+
+set.remove("cat");
+for (String element : set) {
+    System.out.println(element);
+}`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">ArrayDeque</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`Deque<String> a = new ArrayDeque<>();
+
+// Using add()
+a.add("Dog");
+
+// Using addFirst()
+a.addFirst("Cat");
+
+// Using addLast()
+a.addLast("Horse");
+
+// [Cat, Dog, Horse]
+System.out.println(a);
+
+// Access element
+System.out.println(a.peek());
+
+// Remove element
+System.out.println(a.pop());`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="row mt-5">
+        <div className="col-12 col-sm-12 col-md-12">
+          <h4>#Misc</h4>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-8">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Access Modifiers</div>
+              </h6>
+              <table className="table table-hover table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Modifier</th>
+                    <th>Class</th>
+                    <th>Package</th>
+                    <th>Subclass</th>
+                    <th>World</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>public</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>protected</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>no modifier</td>
+                    <td>Y</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>private</td>
+                    <td>Y</td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                    <td>
+                      <em>N</em>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">
+                  Regular expressions
+                </div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`String text = "I am learning Java";
+// Removing All Whitespace
+text.replaceAll("\\\\s+", "");
+
+// Splitting a String
+text.split("\\\\|");
+text.split(Pattern.quote("|"));
+`}
+                  language="java"
+                />
+              </p>
+            </div>
+
+            <div className="card-header">See: Regex in java</div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Comment</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`// I am a single line comment!
+ 
+/*
+And I am a 
+multi-line comment!
+*/
+
+/**
+ * This  
+ * is  
+ * documentation  
+ * comment 
+ */
+`}
+                  language="java"
+                />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-8 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Keywords</div>
+              </h6>
+              <table className="table table-hover table-bordered table-sm">
+                <tbody>
+                  <tr>
+                    <td>abstract</td>
+                    <td>continue</td>
+                    <td>for</td>
+                    <td>new</td>
+                    <td>switch</td>
+                    <td>assert</td>
+                  </tr>
+                  <tr>
+                    <td>default</td>
+                    <td>goto</td>
+                    <td>package</td>
+                    <td>synchronized</td>
+                    <td>boolean</td>
+                    <td>do</td>
+                  </tr>
+                  <tr>
+                    <td>if</td>
+                    <td>private</td>
+                    <td>this</td>
+                    <td>break</td>
+                    <td>double</td>
+                    <td>implements</td>
+                  </tr>
+                  <tr>
+                    <td>protected</td>
+                    <td>throw</td>
+                    <td>byte</td>
+                    <td>else</td>
+                    <td>import</td>
+                    <td>public</td>
+                  </tr>
+                  <tr>
+                    <td>throws</td>
+                    <td>case</td>
+                    <td>enum</td>
+                    <td>instanceof</td>
+                    <td>return</td>
+                    <td>transient</td>
+                  </tr>
+                  <tr>
+                    <td>catch</td>
+                    <td>extends</td>
+                    <td>int</td>
+                    <td>short</td>
+                    <td>try</td>
+                    <td>char</td>
+                  </tr>
+                  <tr>
+                    <td>final</td>
+                    <td>interface</td>
+                    <td>static</td>
+                    <td>void</td>
+                    <td>class</td>
+                    <td>finally</td>
+                  </tr>
+                  <tr>
+                    <td>long</td>
+                    <td>strictfp</td>
+                    <td>volatile</td>
+                    <td>const</td>
+                    <td>float</td>
+                    <td>native</td>
+                  </tr>
+                  <tr>
+                    <td>super</td>
+                    <td>while</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Math methods</div>
+              </h6>
+              <table className="table table-hover table-bordered table-sm">
+                <thead>
+                  <tr>
+                    <th>Method</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <code>Math.max(a,b)</code>
+                    </td>
+                    <td>Maximum of a and b</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.min(a,b)</code>
+                    </td>
+                    <td>Minimum of a and b</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.abs(a)</code>
+                    </td>
+                    <td>Absolute value a</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.sqrt(a)</code>
+                    </td>
+                    <td>Square-root of a</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.pow(a,b)</code>
+                    </td>
+                    <td>Power of b</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.round(a)</code>
+                    </td>
+                    <td>Closest integer</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.sin(ang)</code>
+                    </td>
+                    <td>Sine of ang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.cos(ang)</code>
+                    </td>
+                    <td>Cosine of ang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.tan(ang)</code>
+                    </td>
+                    <td>Tangent of ang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.asin(ang)</code>
+                    </td>
+                    <td>Inverse sine of ang</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.log(a)</code>
+                    </td>
+                    <td>Natural logarithm of a</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.toDegrees(rad)</code>
+                    </td>
+                    <td>Angle rad in degrees</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <code>Math.toRadians(deg)</code>
+                    </td>
+                    <td>Angle deg in radians</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-12 col-sm-12 col-md-4 mt-2">
+          <div className="card">
+            <div className="card-body">
+              <h6 className="card-title">
+                <div className="btn btn-sm btn-success">Try/Catch/Finally</div>
+              </h6>
+              <p className="card-text">
+                <Code
+                  code={`try {
+  // something
+} catch (Exception e) {
+  e.printStackTrace();
+} finally {
+  System.out.println("always printed");
+}`}
                   language="java"
                 />
               </p>

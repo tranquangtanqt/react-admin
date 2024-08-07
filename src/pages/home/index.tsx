@@ -44,11 +44,23 @@ export const Home = () => {
             href: 'https://10015.io/',
           },
         },
+        {
+          text: `quickref.me`,
+          links: {
+            href: 'https://quickref.me/',
+          },
+        },
       ],
     },
     {
       title: 'Algorithm',
       contents: [
+        {
+          text: `vnoi.info`,
+          links: {
+            href: 'https://wiki.vnoi.info/',
+          },
+        },
         {
           text: `TheAlgorithms`,
           links: {
