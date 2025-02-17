@@ -34,6 +34,7 @@ import { UtilitiesReadContentMultiFile } from 'pages/utilities/file/read-content
 import { UtilitiesTextCommon } from 'pages/utilities/text/common';
 import { UtilitiesTextRepeat } from 'pages/utilities/text/repeat';
 import { UtilitiesTextReplace } from 'pages/utilities/text/replace';
+import { UtilitiesTextReplace1 } from 'pages/utilities/text/replace1';
 import { SampleCRUDGoogleSheet } from 'pages/sample/crud-google-sheet';
 import { UtilitiesTextToHTMLTableGenerator } from 'pages/utilities/text/text-to-html-table-generator';
 import { UtilitiesTextRepeat2 } from 'pages/utilities/text/repeat2';
@@ -74,6 +75,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/text/repeat" element={<UtilitiesTextRepeat />} />
           <Route path="/utilities/text/repeat-2" element={<UtilitiesTextRepeat2 />} />
           <Route path="/utilities/text/replace" element={<UtilitiesTextReplace />} />
+          <Route path="/utilities/text/replace1" element={<UtilitiesTextReplace1 />} />
           <Route path="/utilities/text/to-html-table-generator" element={<UtilitiesTextToHTMLTableGenerator />} />
           <Route path="/utilities/sql/random-insert" element={<UtilitiesMakeInsertSQL />} />
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />

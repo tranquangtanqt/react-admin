@@ -43,6 +43,10 @@ export const Utilities = () => {
           text: 'To HTML Table Generator',
           path: '/utilities/text/to-html-table-generator',
         },
+        {
+          text: 'Replace - 1',
+          path: '/utilities/text/replace1',
+        },
       ],
     },
     {
