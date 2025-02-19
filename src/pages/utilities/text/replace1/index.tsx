@@ -13,7 +13,20 @@ export const UtilitiesTextReplace1 = () => {
 //= True)
 //= False)
 //= 0)
-//= 1)`);
+//= 1)
+ <> 
+ Or 
+ And 
+False
+True
+//Call FA
+//Else
+  & 
+Val(
+.Tag
+//Exit Sub
+//Exit For
+//Next`);
   const [replaceWith, setReplaceWith] = useState(`if (
 ) {
 }
@@ -22,25 +35,88 @@ case
 === true)
 === false)
 === 0)
-=== 1)`);
+=== 1)
+ !== 
+ || 
+ && 
+false
+true
+HOUSE_PRJ.ZAIMU.FMTM10.fa
+} else {
+ + 
+Number(
+_Tag
+return;
+break;
+}`);
 
   const renderText = () => {
     const arrFindText = findText.split('\n');
     const arrReplaceWith = replaceWith.split('\n');
 
-    let outputStr = input;
+    let outputStr1 = input;
     const regex = /^(\s*)/gm;
-    outputStr = outputStr.replace(regex, '$1//');
+    outputStr1 = outputStr1.replace(regex, '$1//');
     for (let i = 0; i < arrFindText.length; i++) {
       if (arrFindText[i] === '') {
         continue;
       }
-      outputStr = StringUtils.replaceAll(
-        outputStr,
+      outputStr1 = StringUtils.replaceAll(
+        outputStr1,
         arrFindText[i],
         arrReplaceWith[i],
       );
     }
+
+    let outputStr = '';
+    const lineArr = outputStr1.split('\n');
+    for (let index = 0; index < lineArr.length; index++) {
+      const line = lineArr[index];
+
+      let str = '';
+
+      let letter = '';
+
+      if (line.indexOf('.SetText') !== -1) {
+        letter = '//.SetText';
+      } else if (line.indexOf('.SetFloat') !== -1) {
+        letter = '//.SetFloat';
+      } else if (line.indexOf('.SetInteger') !== -1) {
+        letter = '//.SetInteger';
+      }
+
+      // console.log(line.split(/\+s/));
+      if (letter !== '') {
+        const arr = line.split(',');
+        console.log(arr);
+        str += arr[0].substring(0, line.indexOf(letter));
+        str += 'setCellValue(spd_Data,';
+        str += arr[1] + ', ';
+        str += arr[0].split(' ')[arr[0].split(' ').length - 1] + ',';
+        for (let j = 2; j < arr.length; j++) {
+          str += arr[j];
+        }
+        str += ');';
+        str = str.replace('Me_', 'FMTM10.CONSTANT.Me_');
+      } else {
+        if (line.indexOf('//Dim ') !== -1) {
+          const arrLine = line.split(/\s+/);
+          str += '    let ' + arrLine[2];
+        } else {
+          str = line;
+        }
+      }
+
+      str += '\n';
+      outputStr += str;
+    }
+
+    outputStr = StringUtils.replaceAll(
+      outputStr,
+      '.MaxRows',
+      'spd_Data_MaxRows',
+    );
+
     setOutput(outputStr);
   };
 
@@ -61,7 +137,7 @@ case
           />
         </div>
       </div>
-      <div className="row mt-2">
+      <div className="row mt-2 d-none">
         <div className="col-12 col-sm-6 col-md-6">
           <label htmlFor="find-text" className="form-label">
             Find text
