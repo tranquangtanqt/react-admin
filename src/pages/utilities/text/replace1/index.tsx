@@ -10,16 +10,17 @@ export const UtilitiesTextReplace1 = () => {
 //End If
 //Case 
 //End Select
-//= True)
-//= False)
-//= 0)
-//= 1)
+ = True)
+ = False)
+ = 0)
+ = 1)
  <> 
  Or 
  And 
 False
 True
 //Call FA
+//Call 
 //Else
   & 
 Val(
@@ -42,6 +43,7 @@ case
 false
 true
 HOUSE_PRJ.ZAIMU.FMTM10.fa
+HOUSE_PRJ.ZAIMU.FMTM10.
 } else {
  + 
 Number(
@@ -101,7 +103,7 @@ break;
       } else {
         if (line.indexOf('//Dim ') !== -1) {
           const arrLine = line.split(/\s+/);
-          str += '    let ' + arrLine[2];
+          str += '    let ' + arrLine[2] + ';';
         } else {
           str = line;
         }
@@ -113,7 +115,13 @@ break;
 
     outputStr = StringUtils.replaceAll(
       outputStr,
-      '.MaxRows',
+      'spd_Data.MaxRows',
+      'spd_Data_MaxRows',
+    );
+
+    outputStr = StringUtils.replaceAll(
+      outputStr,
+      ' .MaxRows',
       'spd_Data_MaxRows',
     );
 
