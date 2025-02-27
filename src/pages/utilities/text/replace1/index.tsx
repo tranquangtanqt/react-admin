@@ -19,7 +19,6 @@ export const UtilitiesTextReplace1 = () => {
  And 
 False
 True
-//Call FA
 //Call 
 //Else
   & 
@@ -42,8 +41,7 @@ case
  && 
 false
 true
-HOUSE_PRJ.ZAIMU.FMTM10.fa
-HOUSE_PRJ.ZAIMU.FMTM10.
+HOUSE_PRJ.ZAIMU.FMTK10
 } else {
  + 
 Number(
