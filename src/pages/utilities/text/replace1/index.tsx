@@ -26,7 +26,11 @@ Val(
 .Tag
 //Exit Sub
 //Exit For
-//Next`);
+//Next
+Me_Process.
+ProcessMode =
+Pe_ReadMode.
+ProcessStep =`);
   const [replaceWith, setReplaceWith] = useState(`if (
 ) {
 }
@@ -48,7 +52,11 @@ Number(
 _Tag
 return;
 break;
-}`);
+}
+FMTK10.CONSTANT.Me_Process.
+HOUSE_PRJ.ZAIMU.FMTK10.GetProcessMode() =
+FMTK10.CONSTANT.Pe_ReadMode.
+HOUSE_PRJ.ZAIMU.FMTK10.GetProcessStep() =`);
 
   const renderText = () => {
     const arrFindText = findText.split('\n');
