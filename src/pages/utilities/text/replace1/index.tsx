@@ -45,7 +45,7 @@ case
  && 
 false
 true
-HOUSE_PRJ.ZAIMU.FMTK10.
+HOUSE_PRJ.ZAIMU.FMTK20.
 } else {
  + 
 Number(
@@ -54,9 +54,9 @@ return;
 break;
 }
 FMTK10.CONSTANT.Me_Process.
-HOUSE_PRJ.ZAIMU.FMTK10.GetProcessMode() =
+HOUSE_PRJ.ZAIMU.FMTK20.GetProcessMode() =
 FMTK10.CONSTANT.Pe_ReadMode.
-HOUSE_PRJ.ZAIMU.FMTK10.GetProcessStep() =`);
+HOUSE_PRJ.ZAIMU.FMTK20.GetProcessStep() =`);
 
   const renderText = () => {
     const arrFindText = findText.split('\n');
