@@ -1,84 +1,68 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import StringUtils from 'utils/string-utils';
 import { PageTitle } from 'components/modules/page-title';
+import replaceData from './data.json';
 
 export const UtilitiesTextReplace1 = () => {
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
-  const [findText, setFindText] = useState(`//If 
- Then
-//End If
-//Case 
-//End Select
- = True)
- = False)
- = 0)
- = 1)
- <> 
- Or 
- And 
-False
-True
-//Call FA
-//Call 
-//Else
-  & 
-Val(
-.Tag
-//Exit Sub
-//Exit For
-//Next`);
-  const [replaceWith, setReplaceWith] = useState(`if (
-) {
-}
-case 
-}
-=== true)
-=== false)
-=== 0)
-=== 1)
- !== 
- || 
- && 
-false
-true
-HOUSE_PRJ.ZAIMU.FMTM10.fa
-HOUSE_PRJ.ZAIMU.FMTM10.
-} else {
- + 
-Number(
-_Tag
-return;
-break;
-}`);
+  const [languageOption, setLanguageOption] = useState('javascript'); // Default value
+  const [findText, setFindText] = useState(``);
+  const [replaceWith, setReplaceWith] = useState(``);
+  const [subSystem, setSubSystem] = useState(``);
+
+  const JAVA = 'java';
+  const JAVASCRIPT = 'javascript';
+
+  useEffect(() => {
+    const _language = localStorage.getItem('language');
+    if (_language) {
+      setLanguageOption(_language);
+    }
+
+    const _subSystem = localStorage.getItem('subSystem');
+    if (_subSystem) {
+      setSubSystem(_subSystem);
+    }
+  }, []);
 
   const renderText = () => {
-    const arrFindText = findText.split('\n');
-    const arrReplaceWith = replaceWith.split('\n');
+    let outputStr = '';
 
-    let outputStr1 = input;
+    console.log(languageOption);
+    const arrFindText = replaceData.vb6;
+    let arrReplaceWith: String[] = [];
+
+    if (languageOption == JAVASCRIPT) {
+      arrReplaceWith = replaceData.javascript;
+    } else if (languageOption == JAVA) {
+      arrReplaceWith = replaceData.java;
+    }
+
+    let strAddComment = input;
     const regex = /^(\s*)/gm;
-    outputStr1 = outputStr1.replace(regex, '$1//');
+    strAddComment = strAddComment.replace(regex, '$1//');
+
+    //Thay thế giá trị trong mảng data.json
     for (let i = 0; i < arrFindText.length; i++) {
       if (arrFindText[i] === '') {
         continue;
       }
-      outputStr1 = StringUtils.replaceAll(
-        outputStr1,
+      strAddComment = StringUtils.replaceAll(
+        strAddComment,
         arrFindText[i],
         arrReplaceWith[i],
       );
     }
 
-    let outputStr = '';
-    const lineArr = outputStr1.split('\n');
+    const lineArr = strAddComment.split('\n');
     for (let index = 0; index < lineArr.length; index++) {
       const line = lineArr[index];
 
       let str = '';
-
       let letter = '';
 
+      //spread set value
       if (line.indexOf('.SetText') !== -1) {
         letter = '//.SetText';
       } else if (line.indexOf('.SetFloat') !== -1) {
@@ -99,16 +83,39 @@ break;
           str += arr[j];
         }
         str += ');';
+
         str = str.replace('Me_', 'FMTM10.CONSTANT.Me_');
       } else {
+        //Khai báo giá trị
         if (line.indexOf('//Dim ') !== -1) {
-          const arrLine = line.split(/\s+/);
-          str += '    let ' + arrLine[2] + ';';
+          let arrLine = line.split(/\s+/);
+          arrLine = arrLine.filter((item) => item !== '');
+          console.log(arrLine);
+          if (languageOption == JAVASCRIPT) {
+            str += '    let ' + arrLine[1] + ';';
+          } else if (languageOption == JAVA) {
+            str += `    ${arrLine[3]} ${arrLine[1]};`;
+          }
         } else {
           str = line;
         }
       }
 
+      if (line.indexOf('switch') !== -1) {
+        str = line + ') {';
+      }
+
+      if (line.indexOf(' case ') !== -1) {
+        str = line + ':';
+      }
+
+      if (line.indexOf('case Else') !== -1) {
+        str = line.replace('case Else', 'default:');
+      }
+      console.log(subSystem);
+      if (languageOption == JAVASCRIPT && subSystem !== '') {
+        str = line.replace('FMTM10', subSystem);
+      }
       str += '\n';
       outputStr += str;
     }
@@ -128,9 +135,64 @@ break;
     setOutput(outputStr);
   };
 
+  const handleLanguageChange = (e: any) => {
+    setLanguageOption(e.target.value);
+    localStorage.setItem('language', e.target.value);
+  };
+
+  const handleChangeSubSystem = (e: any) => {
+    setSubSystem(e.target.value);
+    localStorage.setItem('subSystem', e.target.value);
+  };
+
   return (
     <>
       <PageTitle title="Replace"></PageTitle>
+      <div className="row mt-2">
+        <div className="col-6">
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="language"
+              id="javascript"
+              checked={languageOption === 'javascript'}
+              onChange={handleLanguageChange}
+              value={'javascript'}
+            />
+            <label className="form-check-label" htmlFor="javascript">
+              JavaScript
+            </label>
+          </div>
+          <div className="form-check form-check-inline">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="language"
+              id="java"
+              checked={languageOption === 'java'}
+              onChange={handleLanguageChange}
+              value={'java'}
+            />
+            <label className="form-check-label" htmlFor="java">
+              Java
+            </label>
+          </div>
+        </div>
+
+        <div className="col-2">
+          <label htmlFor="end" className="form-label">
+            Phân hệ
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            id="subSystem"
+            value={subSystem}
+            onChange={handleChangeSubSystem}
+          ></input>
+        </div>
+      </div>
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
           <label htmlFor="input" className="form-label">
