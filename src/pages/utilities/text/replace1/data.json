@@ -23,7 +23,11 @@
     "//Exit Sub",
     "//Exit For",
     "//Next",
-    "Select Case "
+    "Select Case ",
+    "Me_Process.",
+    "ProcessMode = ",
+    "Pe_ReadMode.",
+    "ProcessStep = "
   ],
   "javascript": [
     "if (",
@@ -49,7 +53,11 @@
     "return;",
     "break;",
     "}",
-    "switch ("
+    "switch (",
+    "FMTM10.CONSTANT.Me_Process.",
+    "HOUSE_PRJ.ZAIMU.FMTM10.GetProcessMode() = ",
+    "FMTM10.CONSTANT.Pe_ReadMode.",
+    "HOUSE_PRJ.ZAIMU.FMTK20.GetProcessStep() = "
   ],
   "java": [
     "if (",
@@ -75,6 +83,10 @@
     "return;",
     "break;",
     "}",
-    "switch ("
+    "switch (",
+    "Me_Process.",
+    "this.getProcessMode(form) == ",
+    "Pe_ReadMode.",
+    "this.getProcessStep(form) == "
   ]
 }
