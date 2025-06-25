@@ -132,7 +132,7 @@ export const UtilitiesTextReplace1 = () => {
       'spd_Data_MaxRows',
     );
 
-    setOutput(outputStr);
+    setOutput(outputStr.replace(/ {4}/g, '\t'));
   };
 
   const handleLanguageChange = (e: any) => {
