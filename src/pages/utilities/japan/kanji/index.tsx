@@ -1,0 +1,44 @@
+import { useNavigate } from 'react-router-dom';
+import { PageTitle } from 'components/modules/page-title';
+import { KANJI_CATEGORIES, getCategoryItemCount } from './data';
+
+export const UtilitiesJapanKanji = () => {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <PageTitle title="Học Kanji"></PageTitle>
+      <div className="row mt-2">
+        {KANJI_CATEGORIES.map((category) => (
+          <div key={category.id} className="col-12 col-sm-6 col-md-4 mt-2">
+            <div className="card h-100">
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">
+                  {category.name}
+                  {category.disabled && (
+                    <span className="badge bg-secondary ms-2">Sắp có</span>
+                  )}
+                </h5>
+                <p className="card-text text-muted mb-1">
+                  {getCategoryItemCount(category.id)}{' '}
+                  {category.id === 'radicals' ? 'bộ thủ' : 'Kanji'}
+                </p>
+                <p className="card-text flex-grow-1">{category.description}</p>
+                <button
+                  type="button"
+                  className="btn btn-primary btn-sm align-self-start"
+                  disabled={category.disabled}
+                  onClick={() =>
+                    navigate(`/utilities/japan/kanji/${category.id}`)
+                  }
+                >
+                  Xem chi tiết
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </>
+  );
+};

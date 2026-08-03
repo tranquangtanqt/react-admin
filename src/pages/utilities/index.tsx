@@ -95,6 +95,10 @@ export const Utilities = () => {
           path: '/utilities/japan/vocabulary',
         },
         {
+          text: 'Kanji Japanese',
+          path: '/utilities/japan/kanji',
+        },
+        {
           text: 'Make Json Vocabulary Japanese From Excel',
           path: '/utilities/excel/make-json-vocabulary-japanese',
         },

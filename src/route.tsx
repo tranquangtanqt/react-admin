@@ -26,6 +26,9 @@ import { UtilitiesCreateTableFromExcel } from 'pages/utilities/sql/create-table-
 import { UtilitiesFileMakeJsonFromExcel } from 'pages/utilities/file/make-json-from-excel';
 import { UtilitiesJapanVocabulary } from 'pages/utilities/japan/vocabulary';
 import { UtilitiesJapanVocabularyUnit } from 'pages/utilities/japan/vocabulary/unit';
+import { UtilitiesJapanKanji } from 'pages/utilities/japan/kanji';
+import { UtilitiesJapanKanjiDetail } from 'pages/utilities/japan/kanji/detail';
+import { UtilitiesJapanKanjiQuiz } from 'pages/utilities/japan/kanji/quiz';
 import { UtilitiesListFileSelected } from 'pages/utilities/file/list-file-selected';
 import { UtilitiesMakeInsertSQL } from 'pages/utilities/sql/make-insert-sql';
 import { UtilitiesMakeInsertSQLFromProcedure } from 'pages/utilities/sql/make-insert-procedure';
@@ -83,6 +86,9 @@ export const RoutesRoot = () => {
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
           <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
           <Route path="/utilities/japan/vocabulary/unit" element={<UtilitiesJapanVocabularyUnit />} />
+          <Route path="/utilities/japan/kanji" element={<UtilitiesJapanKanji />} />
+          <Route path="/utilities/japan/kanji/:categoryId" element={<UtilitiesJapanKanjiDetail />} />
+          <Route path="/utilities/japan/kanji/:categoryId/quiz" element={<UtilitiesJapanKanjiQuiz />} />
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
           <Route path="/utilities/app/project-info/:projectId" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />
