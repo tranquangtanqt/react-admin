@@ -165,7 +165,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
 
   const [choiceCount, setChoiceCount] = useState(DEFAULT_CHOICE_COUNT);
   const [readingAnswerMode, setReadingAnswerMode] =
-    useState<ReadingAnswerMode>('type');
+    useState<ReadingAnswerMode>('none');
 
   const allowedTypes = getAllowedTypes(isRadicals, readingAnswerMode);
 
