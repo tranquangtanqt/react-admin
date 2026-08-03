@@ -30,4 +30,6 @@ export interface RadicalDto {
   meaning: string;
   /** Co duoc dung nhu 1 chu doc lap co nghia trong tieng Nhat hien dai hay khong */
   standalone: boolean;
+  /** Bo thu thuong gap - xuat hien nhieu trong cac Kanji thong dung (Joyo) */
+  common: boolean;
 }

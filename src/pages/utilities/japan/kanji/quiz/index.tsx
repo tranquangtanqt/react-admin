@@ -16,6 +16,7 @@ interface QuizItem {
   readingDisplay?: string;
   readingText?: string;
   lesson?: number;
+  common?: boolean;
 }
 
 type ReadingAnswerMode = 'type' | 'choice' | 'none';
@@ -100,6 +101,8 @@ export const UtilitiesJapanKanjiQuiz = () => {
   const { categoryId } = useParams();
   const [searchParams] = useSearchParams();
   const isMistakeMode = searchParams.get('mode') === 'mistakes';
+  const initialRadicalScope: 'all' | 'common' =
+    searchParams.get('scope') === 'common' ? 'common' : 'all';
 
   const category = KANJI_CATEGORIES.find(
     (c) => c.id === categoryId && !c.disabled,
@@ -115,6 +118,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
         char: r.char,
         meaning: r.meaning,
         hanViet: r.hanViet,
+        common: r.common,
       }));
     }
     return getKanjiByCategory(categoryId).map((k) => ({
@@ -155,11 +159,12 @@ export const UtilitiesJapanKanjiQuiz = () => {
     // eslint-disable-next-line
   }, [categoryId, navigate]);
 
-  const [hasStarted, setHasStarted] = useState(isRadicals && !isMistakeMode);
+  const [hasStarted, setHasStarted] = useState(false);
   const [selectedLessons, setSelectedLessons] = useState<number[]>([]);
-  const [pool, setPool] = useState<QuizItem[]>(() =>
-    isRadicals && !isMistakeMode ? categoryPool : [],
+  const [radicalScope, setRadicalScope] = useState<'all' | 'common'>(
+    initialRadicalScope,
   );
+  const [pool, setPool] = useState<QuizItem[]>([]);
   const [mistakeIds, setMistakeIds] = useState<number[]>(() =>
     categoryId ? loadMistakes(categoryId) : [],
   );
@@ -293,11 +298,15 @@ export const UtilitiesJapanKanjiQuiz = () => {
   };
 
   const handleStartQuiz = () => {
-    if (selectedLessons.length === 0) return;
-    const filteredPool = categoryPool.filter(
-      (item) =>
-        item.lesson !== undefined && selectedLessons.includes(item.lesson),
-    );
+    if (!isRadicals && selectedLessons.length === 0) return;
+    const filteredPool = isRadicals
+      ? radicalScope === 'common'
+        ? categoryPool.filter((item) => item.common)
+        : categoryPool
+      : categoryPool.filter(
+          (item) =>
+            item.lesson !== undefined && selectedLessons.includes(item.lesson),
+        );
     setPool(filteredPool);
     setQuestions(
       buildQuestions(
@@ -350,40 +359,80 @@ export const UtilitiesJapanKanjiQuiz = () => {
     return (
       <>
         <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
-        <div className="row mt-2">
-          <div className="col-12">
-            <p className="text-muted">
-              Chọn các bài học muốn đưa vào bộ câu hỏi trắc nghiệm:
-            </p>
-          </div>
-        </div>
-        <div className="row">
-          {lessonOptions.map((lesson) => (
-            <div key={lesson} className="col-4 col-sm-3 col-md-2">
-              <div className="form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id={`lesson-${lesson}`}
-                  checked={selectedLessons.includes(lesson)}
-                  onChange={() => handleToggleLesson(lesson)}
-                />
-                <label
-                  className="form-check-label"
-                  htmlFor={`lesson-${lesson}`}
-                >
-                  Bài {lesson}
-                </label>
+        {isRadicals ? (
+          <>
+            <div className="row mt-2">
+              <div className="col-12">
+                <p className="text-muted">Chọn phạm vi bộ thủ:</p>
               </div>
             </div>
-          ))}
-        </div>
+            <div className="row">
+              <div className="col-12">
+                <div className="btn-group" role="group">
+                  <button
+                    type="button"
+                    className={`btn btn-sm ${
+                      radicalScope === 'all'
+                        ? 'btn-secondary'
+                        : 'btn-outline-secondary'
+                    }`}
+                    onClick={() => setRadicalScope('all')}
+                  >
+                    Tất cả ({RADICALS.length})
+                  </button>
+                  <button
+                    type="button"
+                    className={`btn btn-sm ${
+                      radicalScope === 'common'
+                        ? 'btn-secondary'
+                        : 'btn-outline-secondary'
+                    }`}
+                    onClick={() => setRadicalScope('common')}
+                  >
+                    Thường gặp ({RADICALS.filter((r) => r.common).length})
+                  </button>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="row mt-2">
+              <div className="col-12">
+                <p className="text-muted">
+                  Chọn các bài học muốn đưa vào bộ câu hỏi trắc nghiệm:
+                </p>
+              </div>
+            </div>
+            <div className="row">
+              {lessonOptions.map((lesson) => (
+                <div key={lesson} className="col-4 col-sm-3 col-md-2">
+                  <div className="form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      id={`lesson-${lesson}`}
+                      checked={selectedLessons.includes(lesson)}
+                      onChange={() => handleToggleLesson(lesson)}
+                    />
+                    <label
+                      className="form-check-label"
+                      htmlFor={`lesson-${lesson}`}
+                    >
+                      Bài {lesson}
+                    </label>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </>
+        )}
         <div className="row mt-2">
           <div className="col-12">
             <button
               type="button"
               className="btn btn-primary btn-sm"
-              disabled={selectedLessons.length === 0}
+              disabled={!isRadicals && selectedLessons.length === 0}
               onClick={handleStartQuiz}
             >
               Start

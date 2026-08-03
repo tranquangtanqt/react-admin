@@ -14,6 +14,7 @@ export const RadicalDetail = ({ category }: Props) => {
   const navigate = useNavigate();
 
   const [keyword, setKeyword] = useState('');
+  const [commonOnly, setCommonOnly] = useState(false);
   const [page, setPage] = useState(1);
   const [selectedRadical, setSelectedRadical] = useState<RadicalDto | null>(
     null,
@@ -21,15 +22,18 @@ export const RadicalDetail = ({ category }: Props) => {
 
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
-    if (kw === '') return RADICALS;
-    return RADICALS.filter(
+    const source = commonOnly
+      ? RADICALS.filter((item) => item.common)
+      : RADICALS;
+    if (kw === '') return source;
+    return source.filter(
       (item) =>
         item.char.includes(kw) ||
         item.hanViet.toLowerCase().includes(kw) ||
         item.meaning.toLowerCase().includes(kw) ||
         String(item.number) === kw,
     );
-  }, [keyword]);
+  }, [keyword, commonOnly]);
 
   const mistakeCount = loadMistakes(category.id).length;
 
@@ -42,6 +46,11 @@ export const RadicalDetail = ({ category }: Props) => {
 
   const handleSearch = (value: string) => {
     setKeyword(value);
+    setPage(1);
+  };
+
+  const handleToggleCommon = (value: boolean) => {
+    setCommonOnly(value);
     setPage(1);
   };
 
@@ -62,7 +71,11 @@ export const RadicalDetail = ({ category }: Props) => {
             type="button"
             className="btn btn-outline-primary btn-sm"
             onClick={() =>
-              navigate(`/utilities/japan/kanji/${category.id}/quiz`)
+              navigate(
+                `/utilities/japan/kanji/${category.id}/quiz${
+                  commonOnly ? '?scope=common' : ''
+                }`,
+              )
             }
           >
             Trắc nghiệm
@@ -81,6 +94,31 @@ export const RadicalDetail = ({ category }: Props) => {
           >
             Ôn lại câu sai ({mistakeCount})
           </button>
+        </div>
+      </div>
+
+      <div className="row mt-2">
+        <div className="col-12">
+          <div className="btn-group" role="group">
+            <button
+              type="button"
+              className={`btn btn-sm ${
+                !commonOnly ? 'btn-secondary' : 'btn-outline-secondary'
+              }`}
+              onClick={() => handleToggleCommon(false)}
+            >
+              Tất cả ({RADICALS.length})
+            </button>
+            <button
+              type="button"
+              className={`btn btn-sm ${
+                commonOnly ? 'btn-secondary' : 'btn-outline-secondary'
+              }`}
+              onClick={() => handleToggleCommon(true)}
+            >
+              Thường gặp ({RADICALS.filter((r) => r.common).length})
+            </button>
+          </div>
         </div>
       </div>
 

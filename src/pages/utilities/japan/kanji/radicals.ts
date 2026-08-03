@@ -238,6 +238,21 @@ const NOT_STANDALONE_RADICAL_NUMBERS = new Set<number>([
   165, 171, 172, 178, 181, 190, 192, 193, 197, 204, 205, 214,
 ]);
 
+/**
+ * Bo thu THUONG GAP: xuat hien lam thanh phan cau tao trong rat nhieu Kanji
+ * thong dung (Joyo), thuong duoc gioi thieu som trong cac giao trinh/tu dien
+ * Kanji cho nguoi hoc. Danh sach dua tren tan suat xuat hien pho bien cua bo
+ * thu (bao gom ca dang bien the nhu 亻氵扌忄灬艹辶阝礻衤罒etc.), khong phai
+ * tieu chi chinh thuc tuyet doi - can doi chieu them neu dung cho muc dich
+ * hoc thuat nghiem ngat.
+ */
+const COMMON_RADICAL_NUMBERS = new Set<number>([
+  1, 9, 18, 19, 24, 29, 30, 32, 37, 38, 39, 40, 42, 46, 50, 57, 61, 64, 72, 74,
+  75, 85, 86, 94, 96, 100, 102, 104, 106, 109, 112, 113, 118, 119, 120, 122,
+  123, 124, 125, 128, 130, 140, 142, 143, 145, 147, 149, 154, 156, 157, 159,
+  162, 163, 164, 167, 169, 170, 172, 173, 181, 184, 187, 195, 196,
+]);
+
 export const RADICALS: RadicalDto[] = RAW_RADICALS.map(
   ([number, char, strokes, hanViet, meaning]) => ({
     id: number,
@@ -247,5 +262,6 @@ export const RADICALS: RadicalDto[] = RAW_RADICALS.map(
     hanViet,
     meaning,
     standalone: !NOT_STANDALONE_RADICAL_NUMBERS.has(number),
+    common: COMMON_RADICAL_NUMBERS.has(number),
   }),
 );
