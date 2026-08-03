@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import NumberUtils from 'utils/number-utils';
 import {
@@ -8,6 +8,7 @@ import {
   getUnitsByLevel,
   getVocabularyByLevel,
 } from '../data';
+import { loadMistakes, recordAnswer } from '../mistakes';
 
 type Direction = 'vi-ja' | 'ja-vi' | 'mixed';
 type QuestionDirection = 'vi-ja' | 'ja-vi';
@@ -97,6 +98,8 @@ function clearProgress(level: string) {
 export const UtilitiesJapanVocabularyQuiz = () => {
   const navigate = useNavigate();
   const { level } = useParams();
+  const [searchParams] = useSearchParams();
+  const isMistakeMode = searchParams.get('mode') === 'mistakes';
 
   const category = VOCABULARY_CATEGORIES.find(
     (c) => c.id === level && !c.disabled,
@@ -128,6 +131,9 @@ export const UtilitiesJapanVocabularyQuiz = () => {
   const [wrongCount, setWrongCount] = useState(0);
   const [allTimeProgress, setAllTimeProgress] = useState(() =>
     level ? loadProgress(level) : { correct: 0, total: 0 },
+  );
+  const [mistakeIds, setMistakeIds] = useState<string[]>(() =>
+    level ? loadMistakes(level) : [],
   );
 
   const maxChoiceCount = Math.min(10, pool.length);
@@ -180,6 +186,10 @@ export const UtilitiesJapanVocabularyQuiz = () => {
       };
       setAllTimeProgress(updated);
       saveProgress(level, updated.correct, updated.total);
+
+      if (currentQuestion) {
+        setMistakeIds(recordAnswer(level, currentQuestion.target.id, correct));
+      }
     }
   };
 
@@ -221,11 +231,28 @@ export const UtilitiesJapanVocabularyQuiz = () => {
     setAllTimeProgress({ correct: 0, total: 0 });
   };
 
+  useEffect(() => {
+    if (!isMistakeMode || hasStarted || allVocabulary.length === 0) return;
+
+    const filteredPool = allVocabulary
+      .filter((item) => mistakeIds.includes(item.id))
+      .map(toQuizItem);
+    if (filteredPool.length < 2) {
+      alert('Chưa có đủ câu sai để ôn tập (cần ít nhất 2 câu).');
+      navigate(`/utilities/japan/vocabulary/${level}`);
+      return;
+    }
+    setPool(filteredPool);
+    setQuestions(buildQuestions(filteredPool, choiceCount, direction));
+    setHasStarted(true);
+    // eslint-disable-next-line
+  }, [isMistakeMode, allVocabulary, hasStarted]);
+
   if (!category) {
     return null;
   }
 
-  if (!hasStarted) {
+  if (!hasStarted && !isMistakeMode) {
     return (
       <>
         <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
@@ -312,7 +339,11 @@ export const UtilitiesJapanVocabularyQuiz = () => {
 
   return (
     <>
-      <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
+      <PageTitle
+        title={`Trắc nghiệm - ${category.name}${
+          isMistakeMode ? ' (Ôn lại câu sai)' : ''
+        }`}
+      ></PageTitle>
 
       <div className="row mt-2 align-items-center">
         <div className="col-12 col-md-8">

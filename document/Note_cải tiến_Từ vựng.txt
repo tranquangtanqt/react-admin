@@ -1,0 +1,10 @@
+Vài gợi ý theo mức độ giá trị/độ khó tăng dần, dựa trên những gì đã có (progress tracking, quiz đa dạng, search/filter):
+Giá trị cao, dễ làm:
+Ôn lại câu sai — hiện tại chỉ đếm đúng/sai, không lưu item nào sai. Lưu danh sách ID câu trả lời sai (localStorage), thêm nút "Ôn lại câu sai" ở trang danh sách/quiz để tạo bộ câu hỏi chỉ gồm những từ/kanji hay nhầm — thường là tính năng học tập có giá trị nhất vì tập trung đúng chỗ yếu.
+Liên kết Kanji ↔ Từ vựng — ở modal chi tiết Kanji, hiện danh sách từ vựng nào (trong bộ N5 đã có) dùng chữ Kanji đó, bấm vào nhảy sang từ vựng liên quan. Tận dụng dữ liệu đã có sẵn (trường kanji trong JSON từ vựng), không cần thêm data mới.
+Giá trị vừa, cần thêm công sức:
+3. Spaced repetition (SRS) đơn giản — thay vì random đều, ưu tiên hỏi lại các từ/kanji có tỉ lệ sai cao hơn (thuật toán kiểu Leitner cơ bản: từ sai xuất hiện lại sớm hơn, từ đúng nhiều lần giãn ra). Nâng cấp tự nhiên từ tính năng "Ôn lại câu sai" ở trên.
+4. Phát âm (TTS) — dùng window.speechSynthesis (API trình duyệt, không cần thư viện/API key) đọc to hiragana/kanji khi hiện đáp án — hữu ích cho luyện nghe, chi phí triển khai thấp vì là API có sẵn của trình duyệt.
+Rủi ro/công sức lớn, cân nhắc kỹ:
+5. Tập viết Kanji (stroke order + nhận diện) — đã bàn trước đó, vẫn là hạng mục nặng nếu làm thật.
+Tôi đề xuất bắt đầu với #1 (ôn lại câu sai) — giá trị học tập cao nhất, tận dụng được correctCount/wrongCount đã có sẵn, chỉ cần lưu thêm ID thay vì chỉ đếm số lượng. Bạn muốn làm cái này trước không, hay ưu tiên ý khác?

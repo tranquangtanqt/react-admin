@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import NumberUtils from 'utils/number-utils';
 import { KANJI_CATEGORIES, RADICALS, getKanjiByCategory } from '../data';
 import { getAcceptableReadings, normalizeReading } from '../reading-utils';
+import { loadMistakes, recordAnswer } from '../mistakes';
 
 type QuestionType = 'char-to-meaning' | 'meaning-to-char' | 'char-to-reading';
 
@@ -97,6 +98,8 @@ function clearProgress(categoryId: string) {
 export const UtilitiesJapanKanjiQuiz = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
+  const [searchParams] = useSearchParams();
+  const isMistakeMode = searchParams.get('mode') === 'mistakes';
 
   const category = KANJI_CATEGORIES.find(
     (c) => c.id === categoryId && !c.disabled,
@@ -152,10 +155,13 @@ export const UtilitiesJapanKanjiQuiz = () => {
     // eslint-disable-next-line
   }, [categoryId, navigate]);
 
-  const [hasStarted, setHasStarted] = useState(isRadicals);
+  const [hasStarted, setHasStarted] = useState(isRadicals && !isMistakeMode);
   const [selectedLessons, setSelectedLessons] = useState<number[]>([]);
   const [pool, setPool] = useState<QuizItem[]>(() =>
-    isRadicals ? categoryPool : [],
+    isRadicals && !isMistakeMode ? categoryPool : [],
+  );
+  const [mistakeIds, setMistakeIds] = useState<number[]>(() =>
+    categoryId ? loadMistakes(categoryId) : [],
   );
 
   const maxChoiceCount = Math.min(10, pool.length);
@@ -199,6 +205,12 @@ export const UtilitiesJapanKanjiQuiz = () => {
       };
       setAllTimeProgress(updated);
       saveProgress(categoryId, updated.correct, updated.total);
+
+      if (currentQuestion) {
+        setMistakeIds(
+          recordAnswer(categoryId, currentQuestion.target.id, correct),
+        );
+      }
     }
   };
 
@@ -306,11 +318,35 @@ export const UtilitiesJapanKanjiQuiz = () => {
     setHasStarted(true);
   };
 
+  useEffect(() => {
+    if (!isMistakeMode || hasStarted || categoryPool.length === 0) return;
+
+    const filteredPool = categoryPool.filter((item) =>
+      mistakeIds.includes(item.id),
+    );
+    if (filteredPool.length < 2) {
+      alert('Chưa có đủ câu sai để ôn tập (cần ít nhất 2 câu).');
+      navigate(`/utilities/japan/kanji/${categoryId}`);
+      return;
+    }
+    setPool(filteredPool);
+    setQuestions(
+      buildQuestions(
+        filteredPool,
+        allowedTypes,
+        choiceCount,
+        readingAnswerMode,
+      ),
+    );
+    setHasStarted(true);
+    // eslint-disable-next-line
+  }, [isMistakeMode, categoryPool, hasStarted]);
+
   if (!category) {
     return null;
   }
 
-  if (!hasStarted) {
+  if (!hasStarted && !isMistakeMode) {
     return (
       <>
         <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
@@ -364,7 +400,11 @@ export const UtilitiesJapanKanjiQuiz = () => {
 
   return (
     <>
-      <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
+      <PageTitle
+        title={`Trắc nghiệm - ${category.name}${
+          isMistakeMode ? ' (Ôn lại câu sai)' : ''
+        }`}
+      ></PageTitle>
 
       <div className="row mt-2 align-items-center">
         <div className="col-12 col-md-8">

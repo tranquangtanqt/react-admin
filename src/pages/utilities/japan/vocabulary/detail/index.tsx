@@ -7,6 +7,7 @@ import {
   getUnitsByLevel,
   getVocabularyByLevel,
 } from '../data';
+import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE = 20;
 
@@ -74,6 +75,8 @@ export const UtilitiesJapanVocabularyDetail = () => {
     return null;
   }
 
+  const mistakeCount = loadMistakes(category.id).length;
+
   return (
     <>
       <PageTitle title={category.name}></PageTitle>
@@ -112,6 +115,20 @@ export const UtilitiesJapanVocabularyDetail = () => {
             }
           >
             Trắc nghiệm
+          </button>
+        </div>
+        <div className="col-6 col-sm-3 col-md-3 mt-2">
+          <button
+            type="button"
+            className="btn btn-outline-warning btn-sm"
+            disabled={mistakeCount === 0}
+            onClick={() =>
+              navigate(
+                `/utilities/japan/vocabulary/${category.id}/quiz?mode=mistakes`,
+              )
+            }
+          >
+            Ôn lại câu sai ({mistakeCount})
           </button>
         </div>
       </div>

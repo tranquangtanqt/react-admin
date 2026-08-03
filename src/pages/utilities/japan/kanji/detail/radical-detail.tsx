@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RADICALS } from '../data';
 import { KanjiCategoryDto, RadicalDto } from '../dto';
+import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE = 20;
 
@@ -29,6 +30,8 @@ export const RadicalDetail = ({ category }: Props) => {
         String(item.number) === kw,
     );
   }, [keyword]);
+
+  const mistakeCount = loadMistakes(category.id).length;
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -63,6 +66,20 @@ export const RadicalDetail = ({ category }: Props) => {
             }
           >
             Trắc nghiệm
+          </button>
+        </div>
+        <div className="col-6 col-sm-3 col-md-3 mt-2">
+          <button
+            type="button"
+            className="btn btn-outline-warning btn-sm"
+            disabled={mistakeCount === 0}
+            onClick={() =>
+              navigate(
+                `/utilities/japan/kanji/${category.id}/quiz?mode=mistakes`,
+              )
+            }
+          >
+            Ôn lại câu sai ({mistakeCount})
           </button>
         </div>
       </div>
