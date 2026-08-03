@@ -53,11 +53,40 @@ export const UtilitiesJapanVocabularyUnit = () => {
   }
 
   /**
-   * Chi so dap an chinh xac trong mang chua cau tra loi (questions)
+   * Huong cau hoi: 'vi-ja' = cau hoi tieng Viet, dap an tieng Nhat (mac dinh)
+   * 'ja-vi' = cau hoi tieng Nhat, dap an tieng Viet
    */
-  const [answerCorrect, setAnswerCorrect] = useState(() => initAnswerCorrect());
-  function initAnswerCorrect() {
-    return NumberUtils.getRandomInt(questionTotal);
+  const [direction] = useState(() => initDirection());
+  function initDirection() {
+    const result = localStorage.getItem('japan-direction') || 'vi-ja';
+    localStorage.removeItem('japan-direction');
+    return result;
+  }
+
+  function renderJapanese(item: any, key: any) {
+    return item.kanji !== '' ? (
+      <b key={key}>
+        {item.hiragana} ({item.kanji})
+      </b>
+    ) : (
+      <b key={key}>{item.hiragana}</b>
+    );
+  }
+
+  function renderVietnamese(item: any, key: any) {
+    return <b key={key}>{item.translate}</b>;
+  }
+
+  function renderQuestionSide(item: any, key: any) {
+    return direction === 'ja-vi'
+      ? renderJapanese(item, key)
+      : renderVietnamese(item, key);
+  }
+
+  function renderAnswerSide(item: any, key: any) {
+    return direction === 'ja-vi'
+      ? renderVietnamese(item, key)
+      : renderJapanese(item, key);
   }
 
   /**
@@ -74,6 +103,23 @@ export const UtilitiesJapanVocabularyUnit = () => {
       }
       return arr;
     }
+    return arr;
+  }
+
+  /**
+   * So cau hoi thuc te co the tao ra, khong vuot qua tong so tu vung hien co
+   */
+  const effectiveQuestionTotal = Math.min(
+    questionTotal,
+    initVocabulary().length,
+  );
+
+  /**
+   * Chi so dap an chinh xac trong mang chua cau tra loi (questions)
+   */
+  const [answerCorrect, setAnswerCorrect] = useState(() => initAnswerCorrect());
+  function initAnswerCorrect() {
+    return NumberUtils.getRandomInt(effectiveQuestionTotal);
   }
 
   /**
@@ -83,7 +129,7 @@ export const UtilitiesJapanVocabularyUnit = () => {
   function initQuestion() {
     const vocabulary = initVocabulary();
     const result = [];
-    for (let i = 0; i < questionTotal; i++) {
+    for (let i = 0; i < effectiveQuestionTotal; i++) {
       const length = vocabulary.length;
       const rd = NumberUtils.getRandomInt(length);
       result.push(vocabulary[rd]);
@@ -91,6 +137,11 @@ export const UtilitiesJapanVocabularyUnit = () => {
     }
     return result;
   }
+
+  /**
+   * Hien thi danh sach dap an (nguoi dung bam nut de xem sau khi suy nghi)
+   */
+  const [isShowChoices, setIsShowChoices] = useState(false);
 
   /**
    * Hien thi mau nen cho dap an (Dung: xanh la, sai: do)
@@ -153,6 +204,7 @@ export const UtilitiesJapanVocabularyUnit = () => {
     setIsLoading(true);
     setIsEnableClick(true);
     setIsShowAnswer(false);
+    setIsShowChoices(false);
     setQuestions(initQuestion());
     setBackgroundColor(initBackgroundColor());
     setAnswerCorrect(initAnswerCorrect());
@@ -179,111 +231,118 @@ export const UtilitiesJapanVocabularyUnit = () => {
                   <p className="card-text text-center">
                     {questions
                       ?.slice(answerCorrect, answerCorrect + 1)
-                      .map((item: any, key: any) => (
-                        <b key={key}>{item.translate}</b>
-                      ))}
+                      .map((item: any, key: any) =>
+                        renderQuestionSide(item, key),
+                      )}
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {[...Array(questionTotal / 2)].map((value: any, index: any) => (
-            <Fragment key={index}>
-              <div className="row">
-                <div className="col-md-6 col-lg-6 col-xl-6">
-                  <div className="card cursor-pointer mb-2">
-                    <div
-                      className={`card-body padding-custom ${
-                        backgroundColor[index * 2]
-                      }`}
-                      onClick={() => answer(index * 2)}
-                    >
-                      <p className="card-text text-center">
-                        {questions
-                          ?.slice(index * 2, index * 2 + 1)
-                          .map((item: any, key: any) =>
-                            item.kanji !== '' ? (
-                              <b key={key}>
-                                {item.hiragana} ({item.kanji})
-                              </b>
-                            ) : (
-                              <b key={key}>{item.hiragana}</b>
-                            ),
-                          )}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-md-6 col-lg-6 col-xl-6">
-                  <div className="card cursor-pointer mb-2">
-                    <div
-                      className={`card-body padding-custom ${
-                        backgroundColor[index * 2 + 1]
-                      }`}
-                      onClick={() => answer(index * 2 + 1)}
-                    >
-                      <p className="card-text text-center">
-                        {questions
-                          ?.slice(index * 2 + 1, index * 2 + 2)
-                          .map((item: any, key: any) =>
-                            item.kanji !== '' ? (
-                              <b key={key}>
-                                {item.hiragana} ({item.kanji})
-                              </b>
-                            ) : (
-                              <b key={key}>{item.hiragana}</b>
-                            ),
-                          )}
-                      </p>
-                    </div>
+          {!isShowChoices && (
+            <div className="row">
+              <div className="col-4 offset-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
+                <div
+                  className="card text-white bg-info cursor-pointer mb-3"
+                  onClick={() => setIsShowChoices(true)}
+                >
+                  <div className="card-body padding-custom">
+                    <p className="card-text text-center">
+                      <b>Hiển thị đáp án</b>
+                    </p>
                   </div>
                 </div>
               </div>
-            </Fragment>
-          ))}
+            </div>
+          )}
 
-          <div className="row">
-            {isShowAnswer && (
-              <Fragment>
-                <div className="col-12 col-md-12 col-lg-12 col-xl-12">
+          {isShowChoices && (
+            <>
+              {[...Array(Math.ceil(effectiveQuestionTotal / 2))].map(
+                (value: any, index: any) => (
+                  <Fragment key={index}>
+                    <div className="row">
+                      <div className="col-md-6 col-lg-6 col-xl-6">
+                        <div className="card cursor-pointer mb-2">
+                          <div
+                            className={`card-body padding-custom ${
+                              backgroundColor[index * 2]
+                            }`}
+                            onClick={() => answer(index * 2)}
+                          >
+                            <p className="card-text text-center">
+                              {questions
+                                ?.slice(index * 2, index * 2 + 1)
+                                .map((item: any, key: any) =>
+                                  renderAnswerSide(item, key),
+                                )}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      {index * 2 + 1 < questions.length && (
+                        <div className="col-md-6 col-lg-6 col-xl-6">
+                          <div className="card cursor-pointer mb-2">
+                            <div
+                              className={`card-body padding-custom ${
+                                backgroundColor[index * 2 + 1]
+                              }`}
+                              onClick={() => answer(index * 2 + 1)}
+                            >
+                              <p className="card-text text-center">
+                                {questions
+                                  ?.slice(index * 2 + 1, index * 2 + 2)
+                                  .map((item: any, key: any) =>
+                                    renderAnswerSide(item, key),
+                                  )}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </Fragment>
+                ),
+              )}
+
+              <div className="row">
+                {isShowAnswer && (
+                  <Fragment>
+                    <div className="col-12 col-md-12 col-lg-12 col-xl-12">
+                      <div
+                        className={`card text-white ${
+                          isAnswerCorrect ? 'bg-success' : 'bg-danger'
+                        } mb-3`}
+                      >
+                        <div className="card-body padding-custom">
+                          <p className="card-text text-center">
+                            {questions
+                              ?.slice(answerCorrect, answerCorrect + 1)
+                              .map((item: any, key: any) =>
+                                renderAnswerSide(item, key),
+                              )}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </Fragment>
+                )}
+                <div className="col-4 offset-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
                   <div
-                    className={`card text-white ${
-                      isAnswerCorrect ? 'bg-success' : 'bg-danger'
-                    } mb-3`}
+                    className="card text-white bg-info cursor-pointer mb-3"
+                    onClick={() => nextQuestion()}
                   >
                     <div className="card-body padding-custom">
                       <p className="card-text text-center">
-                        {questions
-                          ?.slice(answerCorrect, answerCorrect + 1)
-                          .map((item: any, key: any) =>
-                            item.kanji !== '' ? (
-                              <b key={key}>
-                                {item.hiragana} ({item.kanji})
-                              </b>
-                            ) : (
-                              <b key={key}>{item.hiragana}</b>
-                            ),
-                          )}
+                        <b>Tiếp theo</b>
                       </p>
                     </div>
                   </div>
                 </div>
-              </Fragment>
-            )}
-            <div className="col-4 offset-4 col-md-4 offset-md-4 col-lg-4 offset-lg-4 col-xl-4 offset-xl-4">
-              <div
-                className="card text-white bg-info cursor-pointer mb-3"
-                onClick={() => nextQuestion()}
-              >
-                <div className="card-body padding-custom">
-                  <p className="card-text text-center">
-                    <b>Next</b>
-                  </p>
-                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
 
         <div className="col-md-4 col-lg-4 col-xl-4">

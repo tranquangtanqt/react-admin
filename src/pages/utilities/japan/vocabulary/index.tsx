@@ -19,6 +19,7 @@ export const UtilitiesJapanVocabulary = () => {
   const [checked, setChecked] = useState<string[]>([]);
   const [level, setLevel] = useState('N5');
   const [questionTotal, setQuestionTotal] = useState('4');
+  const [direction, setDirection] = useState('vi-ja');
 
   /**
    * Add/Remove checked item from list
@@ -47,14 +48,23 @@ export const UtilitiesJapanVocabulary = () => {
   };
 
   const openUnitPage = () => {
+    if (checked.length === 0) {
+      alert('Vui lòng chọn ít nhất 1 bài học!');
+      return;
+    }
     localStorage.setItem('japan-unit', JSON.stringify(checked));
     localStorage.setItem('japan-level', level);
     localStorage.setItem('japan-question-total', questionTotal);
+    localStorage.setItem('japan-direction', direction);
     navigate('/utilities/japan/vocabulary/unit');
   };
 
   const handleSelectQuestionTotal = (value: string) => {
     setQuestionTotal(value);
+  };
+
+  const handleSelectDirection = (value: string) => {
+    setDirection(value);
   };
 
   return (
@@ -69,8 +79,12 @@ export const UtilitiesJapanVocabulary = () => {
             onChange={(e) => handleSelectLevel(e.target.value)}
           >
             <option value="N5">N5</option>
-            <option value="N4">N4</option>
-            <option value="N3">N3</option>
+            <option value="N4" disabled>
+              N4 (sắp có)
+            </option>
+            <option value="N3" disabled>
+              N3 (sắp có)
+            </option>
           </select>
         </div>
 
@@ -84,6 +98,24 @@ export const UtilitiesJapanVocabulary = () => {
             <option value="4">4</option>
             <option value="6">6</option>
             <option value="8">8</option>
+          </select>
+        </div>
+      </div>
+
+      <div className="row mt-2">
+        <div className="col-12 col-sm-12 col-md-12">
+          <b>3. Chọn hình thức trắc nghiệm</b>
+          <select
+            className="form-select form-select-sm"
+            defaultValue={'vi-ja'}
+            onChange={(e) => handleSelectDirection(e.target.value)}
+          >
+            <option value="vi-ja">
+              Câu hỏi tiếng Việt - Đáp án tiếng Nhật
+            </option>
+            <option value="ja-vi">
+              Câu hỏi tiếng Nhật - Đáp án tiếng Việt
+            </option>
           </select>
         </div>
       </div>
@@ -112,7 +144,6 @@ export const UtilitiesJapanVocabulary = () => {
               </div>
             ),
         )}
-        {/* </div> */}
       </div>
 
       <div className="row mt-2">
@@ -120,6 +151,7 @@ export const UtilitiesJapanVocabulary = () => {
           <button
             type="button"
             className="btn btn-primary btn-sm"
+            disabled={checked.length === 0}
             onClick={() => openUnitPage()}
           >
             Start
