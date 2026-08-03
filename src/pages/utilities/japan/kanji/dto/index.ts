@@ -10,6 +10,8 @@ export interface KanjiDto {
   example: string;
   jlpt: JlptLevel;
   categoryId: string;
+  /** Bai hoc trong giao trinh Minna no Nihongo So cap I (1-25), 0 neu chua xac dinh */
+  lesson: number;
 }
 
 export interface KanjiCategoryDto {

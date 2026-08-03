@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { getKanjiByCategory } from '../data';
 import { KanjiCategoryDto, KanjiDto } from '../dto';
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 20;
 
 type Props = {
   category: KanjiCategoryDto;
@@ -19,8 +19,14 @@ export const KanjiDetail = ({ category }: Props) => {
 
   const [keyword, setKeyword] = useState('');
   const [jlptFilter, setJlptFilter] = useState('all');
+  const [lessonFilter, setLessonFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [selectedKanji, setSelectedKanji] = useState<KanjiDto | null>(null);
+
+  const lessonOptions = useMemo(() => {
+    const lessons = Array.from(new Set(allKanji.map((item) => item.lesson)));
+    return lessons.sort((a, b) => a - b);
+  }, [allKanji]);
 
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
@@ -33,9 +39,11 @@ export const KanjiDetail = ({ category }: Props) => {
         item.hanViet.toLowerCase().includes(kw) ||
         item.meaning.toLowerCase().includes(kw);
       const matchJlpt = jlptFilter === 'all' || item.jlpt === jlptFilter;
-      return matchKeyword && matchJlpt;
+      const matchLesson =
+        lessonFilter === 'all' || item.lesson === Number(lessonFilter);
+      return matchKeyword && matchJlpt && matchLesson;
     });
-  }, [allKanji, keyword, jlptFilter]);
+  }, [allKanji, keyword, jlptFilter, lessonFilter]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const currentPage = Math.min(page, totalPages);
@@ -54,6 +62,11 @@ export const KanjiDetail = ({ category }: Props) => {
     setPage(1);
   };
 
+  const handleFilterLesson = (value: string) => {
+    setLessonFilter(value);
+    setPage(1);
+  };
+
   return (
     <>
       <div className="row mt-2 align-items-center">
@@ -66,7 +79,7 @@ export const KanjiDetail = ({ category }: Props) => {
             onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
-        <div className="col-6 col-sm-3 col-md-3 mt-2">
+        <div className="col-6 col-sm-3 col-md-2 mt-2">
           <select
             className="form-select form-select-sm"
             value={jlptFilter}
@@ -77,6 +90,22 @@ export const KanjiDetail = ({ category }: Props) => {
             <option value="N4">N4</option>
           </select>
         </div>
+        {lessonOptions.length > 0 && (
+          <div className="col-6 col-sm-3 col-md-2 mt-2">
+            <select
+              className="form-select form-select-sm"
+              value={lessonFilter}
+              onChange={(e) => handleFilterLesson(e.target.value)}
+            >
+              <option value="all">Tất cả bài</option>
+              {lessonOptions.map((lesson) => (
+                <option key={lesson} value={lesson}>
+                  Bài {lesson}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
         <div className="col-6 col-sm-3 col-md-3 mt-2">
           <button
             type="button"
@@ -104,6 +133,7 @@ export const KanjiDetail = ({ category }: Props) => {
                   <th>Nghĩa</th>
                   <th>Ví dụ</th>
                   <th>JLPT</th>
+                  <th>Bài</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,11 +150,14 @@ export const KanjiDetail = ({ category }: Props) => {
                     <td>{item.meaning}</td>
                     <td>{item.example}</td>
                     <td>{item.jlpt}</td>
+                    <td className="text-center">
+                      {item.lesson > 0 ? item.lesson : '-'}
+                    </td>
                   </tr>
                 ))}
                 {pageItems.length === 0 && (
                   <tr>
-                    <td colSpan={7} className="text-center text-muted">
+                    <td colSpan={8} className="text-center text-muted">
                       Không tìm thấy Kanji phù hợp
                     </td>
                   </tr>
@@ -204,9 +237,15 @@ export const KanjiDetail = ({ category }: Props) => {
               <p className="mb-1">
                 <b>Ví dụ:</b> {selectedKanji.example}
               </p>
-              <p className="mb-3">
+              <p className="mb-1">
                 <b>JLPT:</b> {selectedKanji.jlpt}
               </p>
+              {selectedKanji.lesson > 0 && (
+                <p className="mb-3">
+                  <b>Bài học:</b> Bài {selectedKanji.lesson} (Minna no Nihongo
+                  Sơ cấp I)
+                </p>
+              )}
               <p className="text-muted font-size-14">
                 Tập viết Kanji (thứ tự nét): sắp ra mắt.
               </p>

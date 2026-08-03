@@ -14,6 +14,7 @@ interface QuizItem {
   hanViet: string;
   readingDisplay?: string;
   readingText?: string;
+  lesson?: number;
 }
 
 type ReadingAnswerMode = 'type' | 'choice' | 'none';
@@ -103,7 +104,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
 
   const isRadicals = categoryId === 'radicals';
 
-  const pool: QuizItem[] = useMemo(() => {
+  const categoryPool: QuizItem[] = useMemo(() => {
     if (!categoryId) return [];
     if (isRadicals) {
       return RADICALS.map((r) => ({
@@ -120,8 +121,19 @@ export const UtilitiesJapanKanjiQuiz = () => {
       hanViet: k.hanViet,
       readingDisplay: `On: ${k.onyomi}, Kun: ${k.kunyomi}`,
       readingText: k.onyomi,
+      lesson: k.lesson,
     }));
   }, [categoryId, isRadicals]);
+
+  const lessonOptions = useMemo(() => {
+    if (isRadicals) return [];
+    const lessons = Array.from(
+      new Set(
+        categoryPool.map((item) => item.lesson).filter((l): l is number => !!l),
+      ),
+    );
+    return lessons.sort((a, b) => a - b);
+  }, [categoryPool, isRadicals]);
 
   const readingLookup = useMemo(() => {
     if (!categoryId || isRadicals) return new Map<number, string[]>();
@@ -134,11 +146,17 @@ export const UtilitiesJapanKanjiQuiz = () => {
   }, [categoryId, isRadicals]);
 
   useEffect(() => {
-    if (!category || pool.length < 2) {
+    if (!category || categoryPool.length < 2) {
       navigate('/utilities/japan/kanji');
     }
     // eslint-disable-next-line
   }, [categoryId, navigate]);
+
+  const [hasStarted, setHasStarted] = useState(isRadicals);
+  const [selectedLessons, setSelectedLessons] = useState<number[]>([]);
+  const [pool, setPool] = useState<QuizItem[]>(() =>
+    isRadicals ? categoryPool : [],
+  );
 
   const maxChoiceCount = Math.min(10, pool.length);
   const choiceCountOptions = CHOICE_COUNT_OPTIONS.filter(
@@ -254,7 +272,93 @@ export const UtilitiesJapanKanjiQuiz = () => {
     setAllTimeProgress({ correct: 0, total: 0 });
   };
 
-  if (!category || !currentQuestion) {
+  const handleToggleLesson = (lesson: number) => {
+    setSelectedLessons((prev) =>
+      prev.includes(lesson)
+        ? prev.filter((l) => l !== lesson)
+        : [...prev, lesson],
+    );
+  };
+
+  const handleStartQuiz = () => {
+    if (selectedLessons.length === 0) return;
+    const filteredPool = categoryPool.filter(
+      (item) =>
+        item.lesson !== undefined && selectedLessons.includes(item.lesson),
+    );
+    setPool(filteredPool);
+    setQuestions(
+      buildQuestions(
+        filteredPool,
+        allowedTypes,
+        choiceCount,
+        readingAnswerMode,
+      ),
+    );
+    setCurrentIndex(0);
+    setIsAnswered(false);
+    setIsCorrect(false);
+    setIsShowChoices(false);
+    setSelectedChoiceId(null);
+    setReadingInput('');
+    setCorrectCount(0);
+    setWrongCount(0);
+    setHasStarted(true);
+  };
+
+  if (!category) {
+    return null;
+  }
+
+  if (!hasStarted) {
+    return (
+      <>
+        <PageTitle title={`Trắc nghiệm - ${category.name}`}></PageTitle>
+        <div className="row mt-2">
+          <div className="col-12">
+            <p className="text-muted">
+              Chọn các bài học muốn đưa vào bộ câu hỏi trắc nghiệm:
+            </p>
+          </div>
+        </div>
+        <div className="row">
+          {lessonOptions.map((lesson) => (
+            <div key={lesson} className="col-4 col-sm-3 col-md-2">
+              <div className="form-check">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id={`lesson-${lesson}`}
+                  checked={selectedLessons.includes(lesson)}
+                  onChange={() => handleToggleLesson(lesson)}
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor={`lesson-${lesson}`}
+                >
+                  Bài {lesson}
+                </label>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="row mt-2">
+          <div className="col-12">
+            <button
+              type="button"
+              className="btn btn-primary btn-sm"
+              disabled={selectedLessons.length === 0}
+              onClick={handleStartQuiz}
+            >
+              Start
+            </button>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  if (!currentQuestion) {
     return null;
   }
 
