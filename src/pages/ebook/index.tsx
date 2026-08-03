@@ -1,45 +1,28 @@
 import { useEffect, useState } from 'react';
 import { PageTitle } from 'components/modules/page-title';
-import useGoogleSheets from 'use-google-sheets';
 import { useParams } from 'react-router-dom';
 import { IEbookType, IEbook, IEBookDetail } from './dto';
 import { AccordionDetailDto, AccordionDto } from 'components/accordion/dto';
 import { Accordion } from 'components/accordion';
+import { useGoogleSheetsData } from 'hooks/use-google-sheets-data';
+import { attachDetails } from 'utils/attach-details';
+
+const GOOGLE_SHEETS_ID = '1ZlXZhdxb8CnJ4o0OtALd4McnZ2YPKnZrRvcvym81XSw';
 
 export const Ebook = () => {
-  const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
-  const REACT_APP_GOOGLE_SHEETS_ID =
-    '1ZlXZhdxb8CnJ4o0OtALd4McnZ2YPKnZrRvcvym81XSw';
   const param = useParams();
   const [accordions, setAccordions] = useState<AccordionDto[]>([]);
   const [pageTitle, setPageTitle] = useState('');
 
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: REACT_APP_GOOGLE_API_KEY,
-    sheetId: REACT_APP_GOOGLE_SHEETS_ID,
-  });
-
-  if (loading) {
-    console.log('loading....');
-  }
-
-  if (error) {
-    console.log('Error!');
-  }
+  const { data } = useGoogleSheetsData(GOOGLE_SHEETS_ID);
 
   useEffect(() => {
     if (data && data[0]) {
       const accordionDtos: AccordionDto[] = [];
       const accordionDetailDtos: AccordionDetailDto[] = [];
-      const ebookTypeDataApi = data[0].data;
-      let ebookType: IEbookType = {};
-      for (let i = 0; i < ebookTypeDataApi.length; i++) {
-        const element = ebookTypeDataApi[i] as IEbookType;
-        if (element.name === param.ebookType) {
-          ebookType = element;
-          break;
-        }
-      }
+      const ebookTypeDataApi = data[0].data as IEbookType[];
+      const ebookType: IEbookType =
+        ebookTypeDataApi.find((x) => x.name === param.ebookType) ?? {};
 
       if (Object.keys(ebookType).length === 0) {
         alert('Không tìm thấy trang!');
@@ -91,13 +74,11 @@ export const Ebook = () => {
             }
           }
 
-          for (let i = 0; i < accordionDtos.length; i++) {
-            const element = accordionDtos[i] as AccordionDto;
-            const details = accordionDetailDtos.filter(
-              (d) => d.accordionId === element.id,
-            );
-            element.details = details;
-          }
+          attachDetails(
+            accordionDtos,
+            accordionDetailDtos,
+            (d) => d.accordionId,
+          );
         }
       }
       setAccordions(accordionDtos);

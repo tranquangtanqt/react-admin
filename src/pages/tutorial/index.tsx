@@ -1,47 +1,29 @@
 import { useEffect, useState } from 'react';
 import { PageTitle } from 'components/modules/page-title';
-import useGoogleSheets from 'use-google-sheets';
 import { useParams } from 'react-router-dom';
 import { CategoryDetailDto, CategoryDto } from 'components/category/dto';
 import { ITutorial, ITutorialDetail, ISubTutorialDetail } from './dto';
 import { Category } from 'components/category';
+import { useGoogleSheetsData } from 'hooks/use-google-sheets-data';
+import { attachDetails } from 'utils/attach-details';
+
+const GOOGLE_SHEETS_ID = '1FOqSzRgkHEN2NV_WI8DZ1ZTxz1M4aRdqMN9W872yC18';
 
 export const Tutorial = () => {
-  const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
-  const REACT_APP_GOOGLE_SHEETS_ID =
-    '1FOqSzRgkHEN2NV_WI8DZ1ZTxz1M4aRdqMN9W872yC18';
-
   const param = useParams();
   const [categories, setCategories] = useState<CategoryDto[]>([]);
   const [pageTitle, setPageTitle] = useState('');
 
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: REACT_APP_GOOGLE_API_KEY,
-    sheetId: REACT_APP_GOOGLE_SHEETS_ID,
-  });
-
-  if (loading) {
-    console.log('loading....');
-  }
-
-  if (error) {
-    console.log('Error!');
-  }
+  const { data } = useGoogleSheetsData(GOOGLE_SHEETS_ID);
 
   useEffect(() => {
     if (data && data[0]) {
       const categoryDtos: CategoryDto[] = [];
       const categoryDetailDtos: CategoryDetailDto[] = [];
 
-      const tutorialDataApi = data[0].data;
-      let tutorial: ITutorial = {};
-      for (let i = 0; i < tutorialDataApi.length; i++) {
-        const element = tutorialDataApi[i] as ITutorial;
-        if (element.name === param.tutorial) {
-          tutorial = element;
-          break;
-        }
-      }
+      const tutorialDataApi = data[0].data as ITutorial[];
+      const tutorial: ITutorial =
+        tutorialDataApi.find((x) => x.name === param.tutorial) ?? {};
 
       if (tutorial && data[1]) {
         if (tutorial.display) {
@@ -85,14 +67,11 @@ export const Tutorial = () => {
               categoryDetailDtos.push(categoryDetailDto);
             }
 
-            for (let i = 0; i < categoryDtos.length; i++) {
-              const element = categoryDtos[i] as CategoryDto;
-              const details = categoryDetailDtos.filter(
-                (d) => d.categoryId === element.id,
-              );
-
-              element.details = details;
-            }
+            attachDetails(
+              categoryDtos,
+              categoryDetailDtos,
+              (d) => d.categoryId,
+            );
           }
         } else if (tutorial.type === 'special_link') {
           for (let i = 0; i < data.length; i++) {
@@ -112,14 +91,11 @@ export const Tutorial = () => {
                 categoryDetailDtos.push(categoryDetailDto);
               }
 
-              for (let i = 0; i < categoryDtos.length; i++) {
-                const element = categoryDtos[i] as CategoryDto;
-                const details = categoryDetailDtos.filter(
-                  (d) => d.categoryId === element.id,
-                );
-
-                element.details = details;
-              }
+              attachDetails(
+                categoryDtos,
+                categoryDetailDtos,
+                (d) => d.categoryId,
+              );
 
               break;
             }

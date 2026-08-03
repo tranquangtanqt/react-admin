@@ -2,6 +2,8 @@ export const CONSTANTS = {
   TABLE_SEPARATOR: '	',
 };
 
+export const GOOGLE_SHEETS_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
+
 export const TAG_NAME = {
   TITLE: 'title',
   DIV: 'div',

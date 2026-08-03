@@ -1,47 +1,29 @@
 import { useEffect, useState } from 'react';
 import { PageTitle } from 'components/modules/page-title';
-import useGoogleSheets from 'use-google-sheets';
 import { useParams } from 'react-router-dom';
 import { CategoryDetailDto, CategoryDto } from 'components/category/dto';
 import { IDatabase, IDatabaseDetail, ISubDatabaseDetail } from './dto';
 import { Category } from 'components/category';
+import { useGoogleSheetsData } from 'hooks/use-google-sheets-data';
+import { attachDetails } from 'utils/attach-details';
+
+const GOOGLE_SHEETS_ID = '1pURKSCnbm9eJfNq3b8p5ZXQ6gseJbLvfO7WMJJ4RUIg';
 
 export const Database = () => {
-  const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
-  const REACT_APP_GOOGLE_SHEETS_ID =
-    '1pURKSCnbm9eJfNq3b8p5ZXQ6gseJbLvfO7WMJJ4RUIg';
-
   const param = useParams();
   const [categories, setCategories] = useState<CategoryDto[]>([]);
   const [pageTitle, setPageTitle] = useState('');
 
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: REACT_APP_GOOGLE_API_KEY,
-    sheetId: REACT_APP_GOOGLE_SHEETS_ID,
-  });
-
-  if (loading) {
-    console.log('loading....');
-  }
-
-  if (error) {
-    console.log('Error!');
-  }
+  const { data } = useGoogleSheetsData(GOOGLE_SHEETS_ID);
 
   useEffect(() => {
     if (data && data[0]) {
       const categoryDtos: CategoryDto[] = [];
       const categoryDetailDtos: CategoryDetailDto[] = [];
 
-      const databaseDataApi = data[0].data;
-      let database: IDatabase = {};
-      for (let i = 0; i < databaseDataApi.length; i++) {
-        const element = databaseDataApi[i] as IDatabase;
-        if (element.name === param.database) {
-          database = element;
-          break;
-        }
-      }
+      const databaseDataApi = data[0].data as IDatabase[];
+      const database: IDatabase =
+        databaseDataApi.find((x) => x.name === param.database) ?? {};
 
       if (database && data[1]) {
         if (database.display) {
@@ -77,14 +59,7 @@ export const Database = () => {
             categoryDetailDtos.push(categoryDetailDto);
           }
 
-          for (let i = 0; i < categoryDtos.length; i++) {
-            const element = categoryDtos[i] as CategoryDto;
-            const details = categoryDetailDtos.filter(
-              (d) => d.categoryId === element.id,
-            );
-
-            element.details = details;
-          }
+          attachDetails(categoryDtos, categoryDetailDtos, (d) => d.categoryId);
         }
       }
 

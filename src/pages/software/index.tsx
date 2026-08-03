@@ -1,29 +1,17 @@
 import { PageTitle } from 'components/modules/page-title';
 import { useEffect, useState } from 'react';
 import { CategoryDetailDto, CategoryDto } from 'components/category/dto';
-import useGoogleSheets from 'use-google-sheets';
 import { ISoftware, ISoftwareDetail } from './dto';
 import { Category } from 'components/category';
+import { useGoogleSheetsData } from 'hooks/use-google-sheets-data';
+import { attachDetails } from 'utils/attach-details';
+
+const GOOGLE_SHEETS_ID = '1vkJYnzmB1sjULgobKgtpnlvLj0g-LPTtI2UoeENAY0w';
 
 export const Software = () => {
-  const REACT_APP_GOOGLE_API_KEY = 'AIzaSyDzMVLOCEoQjQes2bF0H9pc9HbzlKzOldQ';
-  const REACT_APP_GOOGLE_SHEETS_ID =
-    '1vkJYnzmB1sjULgobKgtpnlvLj0g-LPTtI2UoeENAY0w';
-
   const [categories, setCategories] = useState<CategoryDto[]>([]);
 
-  const { data, loading, error } = useGoogleSheets({
-    apiKey: REACT_APP_GOOGLE_API_KEY,
-    sheetId: REACT_APP_GOOGLE_SHEETS_ID,
-  });
-
-  if (loading) {
-    console.log('loading....');
-  }
-
-  if (error) {
-    console.log('Error!');
-  }
+  const { data } = useGoogleSheetsData(GOOGLE_SHEETS_ID);
 
   useEffect(() => {
     if (data && data[0]) {
@@ -55,14 +43,7 @@ export const Software = () => {
           categoryDetailDtos.push(categoryDetailDto);
         }
 
-        for (let i = 0; i < categoryDtos.length; i++) {
-          const element = categoryDtos[i] as CategoryDto;
-          const details = categoryDetailDtos.filter(
-            (d) => d.categoryId === element.id,
-          );
-
-          element.details = details;
-        }
+        attachDetails(categoryDtos, categoryDetailDtos, (d) => d.categoryId);
       }
 
       setCategories(categoryDtos);
