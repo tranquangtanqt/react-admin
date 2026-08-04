@@ -72,14 +72,27 @@ Tạo câu hỏi:
 Tạo đoạn văn ngắn giống JLPT N5.
 
 Chủ đề:
-- Gia đình
 - Trường học
-- Công việc
-- Lịch sinh hoạt
+- Gia đình
+- Văn phòng
+- Nhà ga
+- Nhà hàng
+- Siêu thị
+- Bệnh viện
+- Ngân hàng
+- Bưu điện
+- Khách sạn
+- Du lịch
 - Mua sắm
-- Đi lại
 - Thời tiết
-- Kế hoạch cuối tuần
+- Cuối tuần
+- Lễ hội
+- Sở thích
+- Phỏng vấn
+- Gọi điện
+- Hỏi đường
+- Thuê nhà
+- Đặt phòng
 ...
 Yêu cầu:
 - Đoạn văn ngắn
@@ -90,15 +103,57 @@ Yêu cầu:
 
 5. DẠNG CÂU HỎI
 
+Không được tạo các câu hỏi chỉ khác một hoặc hai từ.
+
+Mỗi câu phải khác nhau ít nhất một trong các yếu tố sau:
+- Ngữ cảnh
+- Nhân vật
+- Địa điểm
+- Thời gian
+- Hành động
+- Từ vựng trọng tâm
+- Mẫu ngữ pháp trọng tâm
+- Đáp án đúng
+
+Ưu tiên các tình huống thực tế:
+- Trường học
+- Gia đình
+- Văn phòng
+- Nhà ga
+- Nhà hàng
+- Siêu thị
+- Bệnh viện
+- Ngân hàng
+- Bưu điện
+- Khách sạn
+- Du lịch
+- Mua sắm
+- Thời tiết
+- Cuối tuần
+- Lễ hội
+- Sở thích
+- Phỏng vấn
+- Gọi điện
+- Hỏi đường
+- Thuê nhà
+- Đặt phòng
+
+Không tạo quá 2 câu có cùng ngữ cảnh liên tiếp.
 Bao gồm:
 
-- Chọn đáp án đúng
-- Điền vào chỗ trống
-- Chọn câu tương đương
-- Chọn cách sử dụng đúng
-- Chọn cách đọc Kanji
-- Chọn câu đúng ngữ pháp
-- Đọc đoạn văn và trả lời
+Trắc nghiệm chọn đáp án.
+Điền vào chỗ trống.
+Chọn trợ từ đúng.
+Chọn cách chia động từ đúng.
+Chọn câu đúng.
+Chọn câu sai.
+Chọn cách đọc Kanji.
+Chọn Kanji đúng theo cách đọc.
+Chọn nghĩa của từ.
+Đọc đoạn văn trả lời câu hỏi.
+Hội thoại ngắn.
+Sắp xếp câu (nếu app hỗ trợ).
+Ghép câu hỏi–đáp án.
 
 ==================================================
 ĐÁNH GIÁ ĐỘ QUAN TRỌNG
@@ -193,6 +248,30 @@ Schema:
     }
   ]
 }
+gợi ý thêm dạng
+{
+  "id": 1,
+  "lesson": 8,
+  "type": "grammar",
+  "subtype": "particle",
+  "topic": "shopping",
+  "grammar_point": "～を",
+  "vocabulary": [
+    "かばん",
+    "かいます"
+  ],
+  "kanji": [
+    "買"
+  ],
+  "jlpt_section": "文法",
+  "frequency": "high",
+  "difficulty": "normal",
+  "estimated_time": 30,
+  "question": "...",
+  "options": ["A", "B", "C", "D"],
+  "answer": 2,
+  "explanation": "..."
+}
 
 ==================================================
 QUY TẮC CHẤT LƯỢNG
@@ -206,3 +285,21 @@ QUY TẮC CHẤT LƯỢNG
 - Giải thích ngắn gọn, dễ hiểu.
 - Không dịch toàn bộ câu hỏi, chỉ giải thích đáp án.
 - Sử dụng Unicode tiếng Nhật đầy đủ.
+
+Mỗi bài tạo đúng 100 câu hỏi.
+
+Phân bổ:
+- 30 câu từ vựng
+- 35 câu ngữ pháp
+- 15 câu Kanji
+- 10 câu đọc hiểu
+- 10 câu hội thoại/tình huống
+
+Yêu cầu:
+- Không trùng nội dung giữa các câu trong cùng bài.
+- Không lặp lại cùng một mẫu câu quá 2 lần.
+- Mỗi câu hỏi có ngữ cảnh khác nhau.
+- Các đáp án nhiễu phải hợp lý và bám sát kiến thức của bài học.
+- Nếu nội dung thuộc nhiều bài trong Minna no Nihongo, chỉ sử dụng kiến thức đã học đến bài hiện tại.
+- Đối với bài đầu (ví dụ bài 1), không sử dụng ngữ pháp hoặc từ vựng xuất hiện ở các bài sau.
+- Với các bài sau, có thể ôn lại kiến thức của các bài trước nhưng ưu tiên kiến thức mới của bài hiện tại.

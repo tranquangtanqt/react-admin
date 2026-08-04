@@ -1,0 +1,2737 @@
+{
+  "lesson": 1,
+  "level": "N5",
+  "source": "Minna no Nihongo",
+  "questions": [
+    {
+      "id": 1,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "わたし"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "daily-life"
+      ],
+      "question": "「わたし」はどういう意味ですか。",
+      "options": [
+        "Tôi",
+        "Bạn",
+        "Anh ấy/Cô ấy",
+        "Mọi người"
+      ],
+      "answer": 0,
+      "explanation": "「わたし」là đại từ nhân xưng ngôi thứ nhất, nghĩa là \"tôi\"."
+    },
+    {
+      "id": 2,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "あなた"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "daily-life"
+      ],
+      "question": "「あなた」はどういう意味ですか。",
+      "options": [
+        "Bạn",
+        "Tôi",
+        "Anh ấy/Ông ấy",
+        "Ông ấy (kính trọng)"
+      ],
+      "answer": 0,
+      "explanation": "「あなた」là đại từ ngôi thứ hai, nghĩa là \"bạn/anh/chị\"."
+    },
+    {
+      "id": 3,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "あの人"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "daily-life"
+      ],
+      "question": "「あの人」はどういう意味ですか。",
+      "options": [
+        "Người kia (anh ấy/chị ấy)",
+        "Người này",
+        "Tôi",
+        "Mọi người"
+      ],
+      "answer": 0,
+      "explanation": "「あの人」dùng để chỉ người ở xa cả người nói và người nghe, nghĩa là \"người kia/anh ấy, chị ấy\"."
+    },
+    {
+      "id": 4,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "occupation",
+      "vocabulary": [
+        "先生"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "occupation"
+      ],
+      "question": "「先生」はどういう意味ですか。",
+      "options": [
+        "Giáo viên/thầy, cô",
+        "Học sinh",
+        "Bác sĩ",
+        "Nhân viên công ty"
+      ],
+      "answer": 0,
+      "explanation": "「先生」nghĩa là giáo viên, cũng dùng để gọi tôn kính bác sĩ, luật sư..."
+    },
+    {
+      "id": 5,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "occupation",
+      "vocabulary": [
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "occupation"
+      ],
+      "question": "「学生」はどういう意味ですか。",
+      "options": [
+        "Học sinh, sinh viên",
+        "Giáo viên",
+        "Nhân viên công ty",
+        "Bác sĩ"
+      ],
+      "answer": 0,
+      "explanation": "「学生」nghĩa là học sinh/sinh viên."
+    },
+    {
+      "id": 6,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "occupation",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "occupation"
+      ],
+      "question": "「会社員」はどういう意味ですか。",
+      "options": [
+        "Nhân viên công ty",
+        "Sinh viên",
+        "Giáo viên",
+        "Bác sĩ"
+      ],
+      "answer": 0,
+      "explanation": "「会社員」= 会社(công ty) + 員(thành viên) → nhân viên công ty."
+    },
+    {
+      "id": 7,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "occupation",
+      "vocabulary": [
+        "医者"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "occupation"
+      ],
+      "question": "「医者」はどういう意味ですか。",
+      "options": [
+        "Bác sĩ",
+        "Kỹ sư",
+        "Giáo viên",
+        "Nhân viên ngân hàng"
+      ],
+      "answer": 0,
+      "explanation": "「医者」nghĩa là bác sĩ."
+    },
+    {
+      "id": 8,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "occupation",
+      "vocabulary": [
+        "エンジニア"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "occupation",
+        "loanword"
+      ],
+      "question": "「エンジニア」はどういう意味ですか。",
+      "options": [
+        "Kỹ sư",
+        "Bác sĩ",
+        "Giáo viên",
+        "Sinh viên"
+      ],
+      "answer": 0,
+      "explanation": "「エンジニア」là từ mượn tiếng Anh \"engineer\", nghĩa là kỹ sư."
+    },
+    {
+      "id": 9,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "place",
+      "vocabulary": [
+        "大学"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "place"
+      ],
+      "question": "「大学」はどういう意味ですか。",
+      "options": [
+        "Trường đại học",
+        "Bệnh viện",
+        "Công ty",
+        "Nhà hàng"
+      ],
+      "answer": 0,
+      "explanation": "「大学」nghĩa là trường đại học."
+    },
+    {
+      "id": 10,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "place",
+      "vocabulary": [
+        "病院"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "place"
+      ],
+      "question": "「病院」はどういう意味ですか。",
+      "options": [
+        "Bệnh viện",
+        "Đại học",
+        "Công ty",
+        "Ngân hàng"
+      ],
+      "answer": 0,
+      "explanation": "「病院」nghĩa là bệnh viện."
+    },
+    {
+      "id": 11,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "workplace",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "occupation",
+        "fill-in-blank"
+      ],
+      "question": "ミラーさんは　IMCの　＿＿＿です。",
+      "options": [
+        "会社員",
+        "学生",
+        "医者",
+        "先生"
+      ],
+      "answer": 0,
+      "explanation": "Ông Miller làm việc ở công ty IMC nên là 「会社員」(nhân viên công ty)."
+    },
+    {
+      "id": 12,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "school",
+      "vocabulary": [
+        "大学"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "place",
+        "fill-in-blank"
+      ],
+      "question": "わたしは　＿＿＿の　学生です。",
+      "options": [
+        "大学",
+        "病院",
+        "会社",
+        "銀行"
+      ],
+      "answer": 0,
+      "explanation": "「学生」đi cùng nơi học là 「大学」(trường đại học)."
+    },
+    {
+      "id": 13,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "hospital",
+      "vocabulary": [
+        "医者"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "occupation",
+        "fill-in-blank"
+      ],
+      "question": "(Ông Wang là bác sĩ.) ワンさんは　＿＿＿です。",
+      "options": [
+        "医者",
+        "学生",
+        "会社員",
+        "先生"
+      ],
+      "answer": 0,
+      "explanation": "Bác sĩ tiếng Nhật là 「医者」."
+    },
+    {
+      "id": 14,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "workplace",
+      "vocabulary": [
+        "エンジニア"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "occupation",
+        "fill-in-blank"
+      ],
+      "question": "(Bà Mira là kỹ sư.) ミラーさんは　＿＿＿です。",
+      "options": [
+        "エンジニア",
+        "教師",
+        "医者",
+        "銀行員"
+      ],
+      "answer": 0,
+      "explanation": "Kỹ sư tiếng Nhật là 「エンジニア」."
+    },
+    {
+      "id": 15,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "workplace",
+      "vocabulary": [
+        "銀行員"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "occupation",
+        "fill-in-blank"
+      ],
+      "question": "(Anh Kim là nhân viên ngân hàng.) キムさんは　＿＿＿です。",
+      "options": [
+        "銀行員",
+        "学生",
+        "大学",
+        "病院"
+      ],
+      "answer": 0,
+      "explanation": "Nhân viên ngân hàng tiếng Nhật là 「銀行員」."
+    },
+    {
+      "id": 16,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "school",
+      "vocabulary": [
+        "先生"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "occupation",
+        "fill-in-blank"
+      ],
+      "question": "(Cô Carina là giáo viên.) カリナさんは　＿＿＿です。",
+      "options": [
+        "先生",
+        "学生",
+        "会社員",
+        "医者"
+      ],
+      "answer": 0,
+      "explanation": "Giáo viên tiếng Nhật là 「先生」."
+    },
+    {
+      "id": 17,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "わたし"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "fill-in-blank"
+      ],
+      "question": "(Tôi là học sinh.) ＿＿＿は　学生です。",
+      "options": [
+        "わたし",
+        "あなた",
+        "あの人",
+        "みなさん"
+      ],
+      "answer": 0,
+      "explanation": "Nói về bản thân dùng 「わたし」(tôi)."
+    },
+    {
+      "id": 18,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "あの人"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "fill-in-blank"
+      ],
+      "question": "(Vị kia có phải là giáo viên không?) ＿＿＿は　先生ですか。",
+      "options": [
+        "あの人",
+        "わたし",
+        "あなた",
+        "学生"
+      ],
+      "answer": 0,
+      "explanation": "Chỉ người ở xa (không phải người nói/nghe) dùng 「あの人」."
+    },
+    {
+      "id": 19,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "nationality",
+      "vocabulary": [
+        "アメリカ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "country",
+        "fill-in-blank"
+      ],
+      "question": "(Ông Miller đến từ Mỹ.) ミラーさんは　＿＿＿から　来ました。",
+      "options": [
+        "アメリカ",
+        "イギリス",
+        "中国",
+        "日本"
+      ],
+      "answer": 0,
+      "explanation": "Mỹ tiếng Nhật là 「アメリカ」."
+    },
+    {
+      "id": 20,
+      "type": "vocabulary",
+      "subtype": "fill-in-blank",
+      "topic": "nationality",
+      "vocabulary": [
+        "中国"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "country",
+        "fill-in-blank"
+      ],
+      "question": "(Ông Wang đến từ Trung Quốc.) ワンさんは　＿＿＿から　来ました。",
+      "options": [
+        "中国",
+        "インド",
+        "ブラジル",
+        "タイ"
+      ],
+      "answer": 0,
+      "explanation": "Trung Quốc tiếng Nhật là 「中国」."
+    },
+    {
+      "id": 21,
+      "type": "vocabulary",
+      "subtype": "distinguish",
+      "topic": "address-terms",
+      "vocabulary": [
+        "さん",
+        "ちゃん",
+        "様"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "address-terms",
+        "confusable"
+      ],
+      "question": "Khi gọi lịch sự một người lớn/khách hàng mới gặp lần đầu, KHÔNG nên dùng từ xưng hô nào sau tên?",
+      "options": [
+        "ちゃん",
+        "さん",
+        "様",
+        "先生"
+      ],
+      "answer": 0,
+      "explanation": "「ちゃん」chỉ dùng thân mật với trẻ em hoặc người rất thân thiết, không dùng khi mới gặp người lớn."
+    },
+    {
+      "id": 22,
+      "type": "vocabulary",
+      "subtype": "distinguish",
+      "topic": "occupation",
+      "vocabulary": [
+        "先生",
+        "教師"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "occupation",
+        "confusable"
+      ],
+      "question": "Khi tự giới thiệu nghề nghiệp của bản thân là giáo viên một cách khiêm tốn, nên nói 'わたしは＿＿＿です。' bằng từ nào?",
+      "options": [
+        "教師",
+        "先生",
+        "学生",
+        "生徒"
+      ],
+      "answer": 0,
+      "explanation": "「先生」là từ tôn kính dùng để GỌI người khác (hoặc chỉ chức danh), khi tự xưng nghề nghiệp của mình nên dùng 「教師」."
+    },
+    {
+      "id": 23,
+      "type": "vocabulary",
+      "subtype": "distinguish",
+      "topic": "workplace",
+      "vocabulary": [
+        "会社",
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "confusable"
+      ],
+      "question": "Từ nào có nghĩa là \"công ty\" (tổ chức), khác với \"nhân viên công ty\"?",
+      "options": [
+        "会社",
+        "会社員",
+        "銀行員",
+        "医者"
+      ],
+      "answer": 0,
+      "explanation": "「会社」= công ty (tổ chức); 「会社員」= người làm việc ở công ty đó."
+    },
+    {
+      "id": 24,
+      "type": "vocabulary",
+      "subtype": "distinguish",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "あなた",
+        "あの人"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "pronoun",
+        "confusable"
+      ],
+      "question": "Từ nào dùng để chỉ người đang nói chuyện trực tiếp với mình (ngôi thứ hai)?",
+      "options": [
+        "あなた",
+        "あの人",
+        "わたし",
+        "みなさん"
+      ],
+      "answer": 0,
+      "explanation": "「あなた」dùng để chỉ người đối diện đang nói chuyện với mình."
+    },
+    {
+      "id": 25,
+      "type": "vocabulary",
+      "subtype": "distinguish",
+      "topic": "place",
+      "vocabulary": [
+        "病院",
+        "大学",
+        "銀行",
+        "会社"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "place",
+        "confusable"
+      ],
+      "question": "Nơi làm việc phù hợp với nghề「医者」(bác sĩ) là đâu?",
+      "options": [
+        "病院",
+        "大学",
+        "銀行",
+        "会社"
+      ],
+      "answer": 0,
+      "explanation": "Bác sĩ thường làm việc ở 「病院」(bệnh viện)."
+    },
+    {
+      "id": 26,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "です"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "greeting"
+      ],
+      "question": "Câu nào dùng đúng mẫu giới thiệu bản thân theo bài 1?",
+      "options": [
+        "わたしはミラーです。",
+        "わたしはミラーでした。",
+        "わたしはミラーますです。",
+        "わたしはミラーいます。"
+      ],
+      "answer": 0,
+      "explanation": "Mẫu giới thiệu tên cơ bản là N1はN2です → 「わたしはミラーです」."
+    },
+    {
+      "id": 27,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "greeting",
+      "vocabulary": [
+        "初めまして"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "greeting"
+      ],
+      "question": "Câu chào nào phù hợp khi gặp ai đó lần đầu tiên?",
+      "options": [
+        "初めまして。",
+        "さようなら。",
+        "おやすみなさい。",
+        "いただきます。"
+      ],
+      "answer": 0,
+      "explanation": "「初めまして」dùng khi gặp mặt lần đầu."
+    },
+    {
+      "id": 28,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "greeting",
+      "vocabulary": [
+        "こちらこそ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "greeting"
+      ],
+      "question": "Ai đó nói với bạn「どうぞよろしくお願いします」, câu đáp lại lịch sự và tự nhiên nhất là gì?",
+      "options": [
+        "こちらこそ、どうぞよろしくお願いします。",
+        "いいえ、けっこうです。",
+        "すみません。",
+        "さあ。"
+      ],
+      "answer": 0,
+      "explanation": "「こちらこそ」nghĩa là \"chính tôi mới phải\", dùng để đáp lại lời chào làm quen."
+    },
+    {
+      "id": 29,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "greeting",
+      "vocabulary": [
+        "失礼ですが",
+        "お名前は"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "greeting",
+        "polite"
+      ],
+      "question": "Cách hỏi tên người khác một cách lịch sự khi mới gặp?",
+      "options": [
+        "失礼ですが、お名前は？",
+        "あなたは何ですか。",
+        "名前をください。",
+        "だれの名前？"
+      ],
+      "answer": 0,
+      "explanation": "「失礼ですが、お名前は？」là cách hỏi tên lịch sự, thường dùng trong giao tiếp trang trọng."
+    },
+    {
+      "id": 30,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "confirmation",
+      "vocabulary": [
+        "そうです"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "greeting"
+      ],
+      "question": "A:「ミラーさんはアメリカから来ましたか。」B:「＿＿＿」(đúng là vậy)",
+      "options": [
+        "はい、そうです。",
+        "はい、ちがいます。",
+        "いいえ、そうです。",
+        "はい、あります。"
+      ],
+      "answer": 0,
+      "explanation": "Khi xác nhận thông tin đúng, trả lời 「はい、そうです」."
+    },
+    {
+      "id": 31,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "self-introduction",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "は",
+        "です"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "copula"
+      ],
+      "question": "ミラーさん＿　IMCの　会社員です。",
+      "options": [
+        "は",
+        "が",
+        "を",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "Trợ từ đánh dấu chủ đề câu là 「は」(đọc là \"wa\")."
+    },
+    {
+      "id": 32,
+      "type": "grammar",
+      "subtype": "question-form",
+      "topic": "workplace",
+      "grammar_point": "N1は N2ですか",
+      "vocabulary": [
+        "ですか"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "question"
+      ],
+      "question": "サントスさんは　エンジニア＿。",
+      "options": [
+        "ですか",
+        "です",
+        "でした",
+        "ますか"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi lịch sự thêm 「か」sau 「です」: 「ですか」."
+    },
+    {
+      "id": 33,
+      "type": "grammar",
+      "subtype": "sentence-order",
+      "topic": "occupation",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "先生"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "Câu nào có nghĩa \"Cô Carina là giáo viên.\"?",
+      "options": [
+        "カリナさんは先生です。",
+        "カリナさんが先生です。",
+        "カリナさんを先生です。",
+        "カリナさんの先生です。"
+      ],
+      "answer": 0,
+      "explanation": "Mẫu câu cơ bản N1は N2です dùng trợ từ 「は」."
+    },
+    {
+      "id": 34,
+      "type": "grammar",
+      "subtype": "response",
+      "topic": "workplace",
+      "grammar_point": "N1は N2ですか → はい、N2です",
+      "vocabulary": [
+        "銀行員"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "question",
+        "response"
+      ],
+      "question": "Q: キムさんは銀行員ですか。(đúng như vậy) A: 「＿＿＿」",
+      "options": [
+        "はい、銀行員です。",
+        "いいえ、銀行員です。",
+        "はい、銀行員でした。",
+        "はい、銀行員がです。"
+      ],
+      "answer": 0,
+      "explanation": "Trả lời khẳng định cho câu hỏi hiện tại: 「はい、銀行員です」."
+    },
+    {
+      "id": 35,
+      "type": "grammar",
+      "subtype": "question-word",
+      "topic": "nationality",
+      "grammar_point": "何人ですか",
+      "vocabulary": [
+        "何人"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "question-word"
+      ],
+      "question": "Chọn câu hỏi phù hợp để hỏi quốc tịch của người khác.",
+      "options": [
+        "ワンさんは何人ですか。",
+        "ワンさんはだれですか。",
+        "ワンさんはどこですか。",
+        "ワンさんは何ですか。"
+      ],
+      "answer": 0,
+      "explanation": "「何人」(なにじん) dùng để hỏi ai đó là người nước nào."
+    },
+    {
+      "id": 36,
+      "type": "grammar",
+      "subtype": "alt-question",
+      "topic": "occupation",
+      "grammar_point": "N1ですか、N2ですか",
+      "vocabulary": [
+        "エンジニア"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "question",
+        "choice"
+      ],
+      "question": "(Ông Miller là nhân viên công ty hay là kỹ sư?) ミラーさんは　会社員ですか、＿＿＿ですか。",
+      "options": [
+        "エンジニア",
+        "学生",
+        "先生",
+        "医者"
+      ],
+      "answer": 0,
+      "explanation": "Mẫu N1ですか、N2ですか dùng để hỏi lựa chọn giữa hai phương án."
+    },
+    {
+      "id": 37,
+      "type": "grammar",
+      "subtype": "question-word",
+      "topic": "self-introduction",
+      "grammar_point": "だれですか",
+      "vocabulary": [
+        "だれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "question-word"
+      ],
+      "question": "Chọn câu hỏi đúng nghĩa \"Người kia là ai?\"",
+      "options": [
+        "あの人はだれですか。",
+        "あの人は何歳ですか。",
+        "あの人はどこですか。",
+        "あの人はいつですか。"
+      ],
+      "answer": 0,
+      "explanation": "「だれ」nghĩa là \"ai\", dùng để hỏi danh tính."
+    },
+    {
+      "id": 38,
+      "type": "grammar",
+      "subtype": "response",
+      "topic": "nationality",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "アメリカ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "response"
+      ],
+      "question": "Chọn cách trả lời phù hợp khi được hỏi「お国は？」(nếu là Mỹ).",
+      "options": [
+        "アメリカです。",
+        "アメリカでした。",
+        "アメリカだった。",
+        "アメリカました。"
+      ],
+      "answer": 0,
+      "explanation": "Trả lời với thể lịch sự hiện tại 「です」."
+    },
+    {
+      "id": 39,
+      "type": "grammar",
+      "subtype": "error-detection",
+      "topic": "self-introduction",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "を"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "error-detection",
+        "particle"
+      ],
+      "question": "Câu nào SAI ngữ pháp?",
+      "options": [
+        "わたしは学生をです。",
+        "わたしは学生です。",
+        "わたしは学生でした。",
+        "わたしは学生ですか。"
+      ],
+      "answer": 0,
+      "explanation": "「を」là trợ từ chỉ tân ngữ trực tiếp của động từ, không dùng trước 「です」."
+    },
+    {
+      "id": 40,
+      "type": "grammar",
+      "subtype": "usage",
+      "topic": "workplace",
+      "grammar_point": "失礼ですが",
+      "vocabulary": [
+        "お仕事"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "polite"
+      ],
+      "question": "Chọn câu hỏi lịch sự khi muốn xác nhận nghề nghiệp của người mới quen.",
+      "options": [
+        "失礼ですが、お仕事は？",
+        "あなたの仕事、何？",
+        "仕事は何だ？",
+        "お仕事、教えて。"
+      ],
+      "answer": 0,
+      "explanation": "「失礼ですが」đứng trước câu hỏi để thể hiện lịch sự khi hỏi thông tin cá nhân."
+    },
+    {
+      "id": 41,
+      "type": "grammar",
+      "subtype": "response",
+      "topic": "school",
+      "grammar_point": "はい、そうです",
+      "vocabulary": [
+        "そうです"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "response"
+      ],
+      "question": "Q: ワンさんは学生ですか。(đúng) A: 「＿＿＿」",
+      "options": [
+        "はい、そうです。",
+        "いいえ、そうです。",
+        "はい、ちがいます。",
+        "そうでした。"
+      ],
+      "answer": 0,
+      "explanation": "Trả lời khẳng định đơn giản cho câu hỏi xác nhận: 「はい、そうです」."
+    },
+    {
+      "id": 42,
+      "type": "grammar",
+      "subtype": "question-form",
+      "topic": "self-introduction",
+      "grammar_point": "N1は N2ですか",
+      "vocabulary": [
+        "ですか"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "question"
+      ],
+      "question": "すみません、ミラーさん＿。",
+      "options": [
+        "ですか",
+        "です",
+        "でした",
+        "ますか"
+      ],
+      "answer": 0,
+      "explanation": "Xác nhận danh tính ai đó dùng câu hỏi 「〜ですか」."
+    },
+    {
+      "id": 43,
+      "type": "grammar",
+      "subtype": "usage",
+      "topic": "self-introduction",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "usage"
+      ],
+      "question": "Chọn cách nói tự nhiên khi giới thiệu tên và nghề nghiệp trong hai câu ngắn.",
+      "options": [
+        "わたしはミラーです。会社員です。",
+        "わたしはミラー会社員です。",
+        "わたしのミラーは会社員です。",
+        "ミラーもわたしです。"
+      ],
+      "answer": 0,
+      "explanation": "Có thể tách thành hai câu: giới thiệu tên trước, sau đó giới thiệu nghề nghiệp."
+    },
+    {
+      "id": 44,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "nationality",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "から"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "サントスさんは　ブラジル＿　来ました。",
+      "options": [
+        "から",
+        "の",
+        "は",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「から」nghĩa là \"từ\", chỉ nơi xuất phát: 「ブラジルから来ました」."
+    },
+    {
+      "id": 45,
+      "type": "grammar",
+      "subtype": "usage",
+      "topic": "hospital",
+      "grammar_point": "N1は N2です",
+      "vocabulary": [
+        "医者"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "usage"
+      ],
+      "question": "Chọn câu đúng nghĩa \"Bà ấy là bác sĩ của bệnh viện Kobe.\"",
+      "options": [
+        "あの人は神戸病院の医者です。",
+        "あの人は神戸病院も医者です。",
+        "あの人は神戸病院が医者です。",
+        "あの人は神戸病院を医者です。"
+      ],
+      "answer": 0,
+      "explanation": "Dùng 「の」để nối \"bệnh viện Kobe\" và \"bác sĩ\": bác sĩ CỦA bệnh viện Kobe."
+    },
+    {
+      "id": 46,
+      "type": "grammar",
+      "subtype": "negation",
+      "topic": "occupation",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "じゃありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "negation"
+      ],
+      "question": "わたしは学生＿。会社員です。",
+      "options": [
+        "じゃありません",
+        "です",
+        "でした",
+        "ますか"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định lịch sự thể hiện tại của です là 「じゃありません」."
+    },
+    {
+      "id": 47,
+      "type": "grammar",
+      "subtype": "negation",
+      "topic": "formal-speech",
+      "grammar_point": "N ではありません",
+      "vocabulary": [
+        "ではありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "negation",
+        "polite"
+      ],
+      "question": "Dạng trang trọng hơn của 「じゃありません」là gì?",
+      "options": [
+        "ではありません",
+        "ではです",
+        "じゃです",
+        "でわありません"
+      ],
+      "answer": 0,
+      "explanation": "「では」là dạng trang trọng/viết của 「じゃ」, nên「ではありません」lịch sự/trang trọng hơn."
+    },
+    {
+      "id": 48,
+      "type": "grammar",
+      "subtype": "response",
+      "topic": "occupation",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "先生",
+        "エンジニア"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "negation",
+        "response"
+      ],
+      "question": "Q: ミラーさんは先生ですか。(không phải, là kỹ sư) A: 「＿＿＿」",
+      "options": [
+        "いいえ、先生じゃありません。エンジニアです。",
+        "はい、先生です。",
+        "いいえ、先生です。",
+        "いいえ、エンジニアじゃありません。"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định rồi bổ sung thông tin đúng: 「いいえ、〜じゃありません。〜です」."
+    },
+    {
+      "id": 49,
+      "type": "grammar",
+      "subtype": "negation",
+      "topic": "occupation",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "医者"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "negation"
+      ],
+      "question": "(Không phải là bác sĩ.) ワンさんは　＿＿＿。",
+      "options": [
+        "医者じゃありません",
+        "医者です",
+        "医者でした",
+        "医者ませんでした"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định thể lịch sự hiện tại: 「医者じゃありません」."
+    },
+    {
+      "id": 50,
+      "type": "grammar",
+      "subtype": "sentence-order",
+      "topic": "school",
+      "grammar_point": "N1の N2 じゃありません",
+      "vocabulary": [
+        "富士大学"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "negation"
+      ],
+      "question": "Câu nào có nghĩa \"Cô ấy không phải là sinh viên đại học Phú Sĩ.\"?",
+      "options": [
+        "あの人は富士大学の学生じゃありません。",
+        "あの人は富士大学の学生です。",
+        "あの人は富士大学の学生でした。",
+        "あの人は富士大学じゃ学生ありません。"
+      ],
+      "answer": 0,
+      "explanation": "Cấu trúc phủ định: N1の N2 + じゃありません."
+    },
+    {
+      "id": 51,
+      "type": "grammar",
+      "subtype": "register",
+      "topic": "formal-speech",
+      "grammar_point": "ではありません",
+      "vocabulary": [
+        "ではありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "low",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "negation",
+        "register"
+      ],
+      "question": "Trong văn viết/tình huống trang trọng (kinh doanh), nên ưu tiên dùng thể phủ định nào?",
+      "options": [
+        "ではありません",
+        "じゃありません",
+        "じゃない",
+        "でわない"
+      ],
+      "answer": 0,
+      "explanation": "「ではありません」trang trọng hơn 「じゃありません」, phù hợp văn viết/giao tiếp lịch sự cao."
+    },
+    {
+      "id": 52,
+      "type": "grammar",
+      "subtype": "negation",
+      "topic": "nationality",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "インド人",
+        "ブラジル人"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "negation"
+      ],
+      "question": "「サントスさんはインド人ですか。」「いいえ、＿＿＿。ブラジル人です。」",
+      "options": [
+        "インド人じゃありません",
+        "インド人です",
+        "インド人でした",
+        "インド人ませんでした"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định rồi nói quốc tịch đúng."
+    },
+    {
+      "id": 53,
+      "type": "grammar",
+      "subtype": "error-detection",
+      "topic": "workplace",
+      "grammar_point": "ではありません",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "low",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "error-detection",
+        "negation"
+      ],
+      "question": "Câu nào SAI ngữ pháp?",
+      "options": [
+        "わたしは会社員ではないでした。",
+        "わたしは会社員じゃありません。",
+        "わたしは会社員じゃないです。",
+        "わたしは会社員ではありません。"
+      ],
+      "answer": 0,
+      "explanation": "「ではないでした」không phải cách chia đúng; phủ định quá khứ đúng phải là「ではありませんでした」."
+    },
+    {
+      "id": 54,
+      "type": "grammar",
+      "subtype": "response",
+      "topic": "school",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "negation",
+        "response"
+      ],
+      "question": "Q: あなたは先生ですか。(là học sinh) A: 「＿＿＿」",
+      "options": [
+        "いいえ、先生じゃありません。学生です。",
+        "はい、先生じゃありません。",
+        "いいえ、先生です。",
+        "はい、学生じゃありません。"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định thông tin sai rồi nói thông tin đúng."
+    },
+    {
+      "id": 55,
+      "type": "grammar",
+      "subtype": "negation",
+      "topic": "hospital",
+      "grammar_point": "N じゃありません",
+      "vocabulary": [
+        "エンジニア",
+        "医者"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "negation"
+      ],
+      "question": "あの人はエンジニア＿。医者です。",
+      "options": [
+        "じゃありません",
+        "です",
+        "でした",
+        "ですか"
+      ],
+      "answer": 0,
+      "explanation": "Phủ định rồi bổ sung nghề đúng: 「じゃありません」."
+    },
+    {
+      "id": 56,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N1も N2です",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "ミラーさんはIMCの会社員です。サントスさんも＿＿＿。",
+      "options": [
+        "会社員です",
+        "会社員でした",
+        "会社員ですか",
+        "会社員がです"
+      ],
+      "answer": 0,
+      "explanation": "「も」thay thế 「は」khi thông tin giống với người/vật vừa nhắc trước đó."
+    },
+    {
+      "id": 57,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "school",
+      "grammar_point": "N1も N2です",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "(Tôi cũng là sinh viên - giống người vừa nhắc.) わたし＿学生です。",
+      "options": [
+        "も",
+        "は",
+        "の",
+        "が"
+      ],
+      "answer": 0,
+      "explanation": "「も」nghĩa là \"cũng\", dùng khi lặp lại cùng đặc điểm."
+    },
+    {
+      "id": 58,
+      "type": "grammar",
+      "subtype": "error-detection",
+      "topic": "nationality",
+      "grammar_point": "N1も N2です",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "error-detection",
+        "particle"
+      ],
+      "question": "Câu nào SAI ngữ pháp?",
+      "options": [
+        "ワンさんの中国人です。",
+        "ワンさんも中国人です。",
+        "ワンさんは中国人です。",
+        "ワンさんは中国人ですか。"
+      ],
+      "answer": 0,
+      "explanation": "「の」dùng để nối 2 danh từ, không dùng thay cho 「は/も」trước です khi nói về chủ ngữ."
+    },
+    {
+      "id": 59,
+      "type": "grammar",
+      "subtype": "usage",
+      "topic": "hospital",
+      "grammar_point": "N1も N2です",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "usage"
+      ],
+      "question": "A giới thiệu mình là bác sĩ. B cũng là bác sĩ. Chọn câu B nói đúng.",
+      "options": [
+        "わたしも医者です。",
+        "わたしは医者も。",
+        "わたしが医者も。",
+        "わたしの医者も。"
+      ],
+      "answer": 0,
+      "explanation": "「わたしも医者です」= \"Tôi cũng là bác sĩ\"."
+    },
+    {
+      "id": 60,
+      "type": "grammar",
+      "subtype": "meaning",
+      "topic": "workplace",
+      "grammar_point": "も",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "particle"
+      ],
+      "question": "Chọn nghĩa đúng của trợ từ「も」trong câu「あなたもエンジニアですか。」",
+      "options": [
+        "Cũng",
+        "Chỉ",
+        "Của",
+        "Và"
+      ],
+      "answer": 0,
+      "explanation": "「も」nghĩa là \"cũng\"."
+    },
+    {
+      "id": 61,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N1の N2",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "ミラーさんはIMC＿会社員です。",
+      "options": [
+        "の",
+        "は",
+        "も",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "「の」nối hai danh từ, ở đây là \"nhân viên CỦA công ty IMC\"."
+    },
+    {
+      "id": 62,
+      "type": "grammar",
+      "subtype": "meaning",
+      "topic": "school",
+      "grammar_point": "N1の N2",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "Chọn nghĩa đúng của「日本語の先生」",
+      "options": [
+        "Giáo viên (dạy) tiếng Nhật",
+        "Tiếng Nhật của giáo viên",
+        "Giáo viên là tiếng Nhật",
+        "Tiếng Nhật là giáo viên"
+      ],
+      "answer": 0,
+      "explanation": "N1の N2 ở đây bổ nghĩa cho danh từ sau: giáo viên (chuyên môn/dạy) tiếng Nhật."
+    },
+    {
+      "id": 63,
+      "type": "grammar",
+      "subtype": "error-detection",
+      "topic": "workplace",
+      "grammar_point": "N1の N2",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "error-detection"
+      ],
+      "question": "Câu nào dùng đúng trợ từ「の」để nối 2 danh từ, nghĩa \"công ty của Mỹ\"?",
+      "options": [
+        "アメリカの会社です。",
+        "アメリカも会社です。",
+        "アメリカは会社です。",
+        "アメリカを会社です。"
+      ],
+      "answer": 0,
+      "explanation": "「アメリカの会社」= công ty của Mỹ, dùng trợ từ「の」."
+    },
+    {
+      "id": 64,
+      "type": "grammar",
+      "subtype": "fill-in-blank",
+      "topic": "workplace",
+      "grammar_point": "N1の N2",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle"
+      ],
+      "question": "(Ông ấy là nhân viên của công ty IMC.) あの人はIMC＿会社員です。",
+      "options": [
+        "の",
+        "は",
+        "も",
+        "が"
+      ],
+      "answer": 0,
+      "explanation": "「の」nối 2 danh từ, thể hiện quan hệ sở hữu/thuộc về."
+    },
+    {
+      "id": 65,
+      "type": "grammar",
+      "subtype": "meaning",
+      "topic": "self-introduction",
+      "grammar_point": "は vs の",
+      "vocabulary": [
+        "は",
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 25,
+      "tags": [
+        "particle",
+        "confusable"
+      ],
+      "question": "「先生の電話」và「先生は電話です」khác nhau thế nào?",
+      "options": [
+        "「の」nối 2 danh từ (điện thoại CỦA giáo viên); 「は」đánh dấu chủ đề câu, nghĩa khác hẳn.",
+        "Cả hai đều có nghĩa giống nhau.",
+        "「の」chỉ dùng cho câu hỏi, 「は」chỉ dùng cho câu khẳng định.",
+        "「は」nối 2 danh từ, còn「の」đánh dấu chủ đề."
+      ],
+      "answer": 0,
+      "explanation": "「の」là trợ từ sở hữu/bổ nghĩa nối 2 danh từ, còn 「は」đánh dấu chủ đề của câu."
+    },
+    {
+      "id": 66,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "日"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「日」trong「日曜日」đọc là gì?",
+      "options": [
+        "にち",
+        "つき",
+        "ひ",
+        "び"
+      ],
+      "answer": 0,
+      "explanation": "「日曜日」(にちようび) - Chủ nhật, 「日」đọc âm On là「にち」."
+    },
+    {
+      "id": 67,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "月"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「月」trong「一月」(tháng Một) đọc là gì?",
+      "options": [
+        "がつ",
+        "げつ",
+        "つき",
+        "がっ"
+      ],
+      "answer": 0,
+      "explanation": "「一月」(いちがつ) - tháng Một, 「月」đọc là「がつ」khi chỉ tháng."
+    },
+    {
+      "id": 68,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "火"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「火」trong「火曜日」đọc là gì?",
+      "options": [
+        "か",
+        "ひ",
+        "かん",
+        "こ"
+      ],
+      "answer": 0,
+      "explanation": "「火曜日」(かようび) - thứ Ba."
+    },
+    {
+      "id": 69,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "水"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「水」trong「水曜日」đọc là gì?",
+      "options": [
+        "すい",
+        "みず",
+        "すいよう",
+        "みずよ"
+      ],
+      "answer": 0,
+      "explanation": "「水曜日」(すいようび) - thứ Tư."
+    },
+    {
+      "id": 70,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "木"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「木」trong「木曜日」đọc là gì?",
+      "options": [
+        "もく",
+        "き",
+        "ぼく",
+        "もっ"
+      ],
+      "answer": 0,
+      "explanation": "「木曜日」(もくようび) - thứ Năm."
+    },
+    {
+      "id": 71,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "金"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「金」trong「金曜日」đọc là gì?",
+      "options": [
+        "きん",
+        "かね",
+        "きんよ",
+        "こん"
+      ],
+      "answer": 0,
+      "explanation": "「金曜日」(きんようび) - thứ Sáu."
+    },
+    {
+      "id": 72,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "土"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「土」trong「土曜日」đọc là gì?",
+      "options": [
+        "ど",
+        "つち",
+        "とう",
+        "どう"
+      ],
+      "answer": 0,
+      "explanation": "「土曜日」(どようび) - thứ Bảy."
+    },
+    {
+      "id": 73,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "山"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「山」trong「富士山」đọc là gì?",
+      "options": [
+        "さん",
+        "やま",
+        "せん",
+        "さま"
+      ],
+      "answer": 0,
+      "explanation": "「富士山」(ふじさん) - núi Phú Sĩ."
+    },
+    {
+      "id": 74,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "川"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「川」đọc âm Kun (nghĩa \"con sông\") là gì?",
+      "options": [
+        "かわ",
+        "せん",
+        "がわ",
+        "かん"
+      ],
+      "answer": 0,
+      "explanation": "「川」âm Kun là「かわ」, nghĩa là con sông."
+    },
+    {
+      "id": 75,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "田"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「田」đọc âm Kun (nghĩa \"ruộng\") là gì?",
+      "options": [
+        "た",
+        "でん",
+        "たん",
+        "たた"
+      ],
+      "answer": 0,
+      "explanation": "「田」âm Kun là「た」, nghĩa là ruộng."
+    },
+    {
+      "id": 76,
+      "type": "kanji",
+      "subtype": "choose-kanji",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "山",
+        "川",
+        "田",
+        "木"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-meaning"
+      ],
+      "question": "Kanji nào có nghĩa \"núi\"?",
+      "options": [
+        "山",
+        "川",
+        "田",
+        "木"
+      ],
+      "answer": 0,
+      "explanation": "「山」(さん/やま) nghĩa là núi."
+    },
+    {
+      "id": 77,
+      "type": "kanji",
+      "subtype": "choose-kanji",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "水",
+        "火",
+        "木",
+        "金"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-meaning"
+      ],
+      "question": "Kanji nào có nghĩa \"nước\"?",
+      "options": [
+        "水",
+        "火",
+        "木",
+        "金"
+      ],
+      "answer": 0,
+      "explanation": "「水」(すい/みず) nghĩa là nước."
+    },
+    {
+      "id": 78,
+      "type": "kanji",
+      "subtype": "choose-kanji",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "田",
+        "山",
+        "川",
+        "土"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-meaning"
+      ],
+      "question": "Kanji nào có nghĩa \"ruộng\"?",
+      "options": [
+        "田",
+        "山",
+        "川",
+        "土"
+      ],
+      "answer": 0,
+      "explanation": "「田」(でん/た) nghĩa là ruộng."
+    },
+    {
+      "id": 79,
+      "type": "kanji",
+      "subtype": "choose-kanji",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "火",
+        "水",
+        "木",
+        "金"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-word"
+      ],
+      "question": "Kanji nào dùng trong từ「火曜日」(thứ Ba)?",
+      "options": [
+        "火",
+        "水",
+        "木",
+        "金"
+      ],
+      "answer": 0,
+      "explanation": "「火曜日」dùng chữ「火」."
+    },
+    {
+      "id": 80,
+      "type": "kanji",
+      "subtype": "choose-kanji",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "日",
+        "月",
+        "火",
+        "土"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-word"
+      ],
+      "question": "Từ nào viết đúng kanji cho \"Chủ nhật\"?",
+      "options": [
+        "日曜日",
+        "月曜日",
+        "火曜日",
+        "土曜日"
+      ],
+      "answer": 0,
+      "explanation": "Chủ nhật viết là「日曜日」(にちようび)."
+    },
+    {
+      "id": 81,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "アメリカ",
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "はじめまして。わたしはミラーです。アメリカから来ました。IMCの会社員です。どうぞよろしくお願いします。",
+      "question": "ミラーさんはどこの国から来ましたか。",
+      "options": [
+        "アメリカ",
+        "イギリス",
+        "中国",
+        "日本"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói rõ「アメリカから来ました」(đến từ Mỹ)."
+    },
+    {
+      "id": 82,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "はじめまして。わたしはミラーです。アメリカから来ました。IMCの会社員です。どうぞよろしくお願いします。",
+      "question": "ミラーさんの仕事は何ですか。",
+      "options": [
+        "会社員",
+        "学生",
+        "先生",
+        "医者"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói「IMCの会社員です」(là nhân viên công ty IMC)."
+    },
+    {
+      "id": 83,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "self-introduction",
+      "vocabulary": [
+        "会社員"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "はじめまして。わたしはミラーです。アメリカから来ました。IMCの会社員です。どうぞよろしくお願いします。",
+      "question": "ミラーさんは何の会社の人ですか。",
+      "options": [
+        "IMC",
+        "AKC",
+        "富士大学",
+        "神戸病院"
+      ],
+      "answer": 0,
+      "explanation": "「IMCの会社員」= nhân viên của công ty IMC."
+    },
+    {
+      "id": 84,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "school",
+      "vocabulary": [
+        "中国",
+        "大学",
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "わたしはワンです。中国人です。富士大学の学生です。エンジニアじゃありません。学生です。",
+      "question": "ワンさんは何人ですか。",
+      "options": [
+        "中国人",
+        "日本人",
+        "アメリカ人",
+        "韓国人"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói「中国人です」."
+    },
+    {
+      "id": 85,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "school",
+      "vocabulary": [
+        "大学",
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "わたしはワンです。中国人です。富士大学の学生です。エンジニアじゃありません。学生です。",
+      "question": "ワンさんはどこの大学の学生ですか。",
+      "options": [
+        "富士大学",
+        "さくら大学",
+        "神戸大学",
+        "京都大学"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói「富士大学の学生です」."
+    },
+    {
+      "id": 86,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "school",
+      "vocabulary": [
+        "エンジニア",
+        "じゃありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading",
+        "negation"
+      ],
+      "passage": "わたしはワンです。中国人です。富士大学の学生です。エンジニアじゃありません。学生です。",
+      "question": "ワンさんはエンジニアですか。",
+      "options": [
+        "いいえ、エンジニアじゃありません。",
+        "はい、エンジニアです。",
+        "いいえ、学生じゃありません。",
+        "はい、そうでした。"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn phủ định rõ「エンジニアじゃありません」."
+    },
+    {
+      "id": 87,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "school",
+      "vocabulary": [
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "わたしはワンです。中国人です。富士大学の学生です。エンジニアじゃありません。学生です。",
+      "question": "ワンさんの仕事は何ですか。",
+      "options": [
+        "学生",
+        "会社員",
+        "エンジニア",
+        "銀行員"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn kết luận「学生です」."
+    },
+    {
+      "id": 88,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "インドネシア",
+        "先生"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "カリナさんはインドネシア人です。AKCの先生です。日本語の先生じゃありません。英語の先生です。",
+      "question": "カリナさんは何人ですか。",
+      "options": [
+        "インドネシア人",
+        "タイ人",
+        "インド人",
+        "韓国人"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói「インドネシア人です」."
+    },
+    {
+      "id": 89,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "先生"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "カリナさんはインドネシア人です。AKCの先生です。日本語の先生じゃありません。英語の先生です。",
+      "question": "カリナさんはどこの先生ですか。",
+      "options": [
+        "AKC",
+        "IMC",
+        "富士大学",
+        "神戸病院"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn nói「AKCの先生です」."
+    },
+    {
+      "id": 90,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "英語",
+        "日本語"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading",
+        "negation"
+      ],
+      "passage": "カリナさんはインドネシア人です。AKCの先生です。日本語の先生じゃありません。英語の先生です。",
+      "question": "カリナさんは何語の先生ですか。",
+      "options": [
+        "英語",
+        "日本語",
+        "中国語",
+        "インドネシア語"
+      ],
+      "answer": 0,
+      "explanation": "Đoạn văn phủ định tiếng Nhật rồi khẳng định「英語の先生です」."
+    },
+    {
+      "id": 91,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "greeting",
+      "vocabulary": [
+        "こちらこそ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue",
+        "greeting"
+      ],
+      "passage": "ミラー: 「はじめまして。ミラーです。どうぞよろしくお願いします。」\nワン: 「＿＿＿」",
+      "question": "ワンさんの返事として自然なのはどれですか。",
+      "options": [
+        "こちらこそ、どうぞよろしくお願いします。",
+        "さようなら。",
+        "すみません。",
+        "いいえ、けっこうです。"
+      ],
+      "answer": 0,
+      "explanation": "Đáp lại lời chào làm quen bằng「こちらこそ、どうぞよろしくお願いします」."
+    },
+    {
+      "id": 92,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "greeting",
+      "vocabulary": [
+        "失礼ですが",
+        "お名前は"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A: 「失礼ですが、お名前は？」\nB: 「＿＿＿」",
+      "question": "Bさんの名前がサントスさんの場合、正しい答えはどれですか。",
+      "options": [
+        "サントスです。",
+        "サントスでした。",
+        "サントスをです。",
+        "サントスがです。"
+      ],
+      "answer": 0,
+      "explanation": "Trả lời tên bằng「Nでした」sai, đúng phải là「Nです」."
+    },
+    {
+      "id": 93,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "お仕事"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A: 「ミラーさんはアメリカ人ですか。」\nB: 「はい、そうです。」\nA: 「＿＿＿」",
+      "question": "次に仕事を聞く自然な質問はどれですか。",
+      "options": [
+        "お仕事は？",
+        "お名前は？",
+        "どこ？",
+        "いつ？"
+      ],
+      "answer": 0,
+      "explanation": "Sau khi xác nhận quốc tịch, tự nhiên hỏi tiếp về nghề nghiệp bằng「お仕事は？」."
+    },
+    {
+      "id": 94,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "hospital",
+      "vocabulary": [
+        "医者",
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue",
+        "negation"
+      ],
+      "passage": "A: 「あの人は医者ですか。」\nB: 「いいえ、医者じゃありません。学生です。」",
+      "question": "あの人の仕事は何ですか。",
+      "options": [
+        "学生",
+        "医者",
+        "先生",
+        "会社員"
+      ],
+      "answer": 0,
+      "explanation": "B trả lời phủ định bác sĩ rồi cho biết đúng là học sinh."
+    },
+    {
+      "id": 95,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue",
+        "particle"
+      ],
+      "passage": "A: 「わたしはIMCの会社員です。」\nB: 「わたしもIMCの会社員です。」",
+      "question": "AさんとBさんの関係で正しいのはどれですか。",
+      "options": [
+        "二人とも同じ会社の社員です。",
+        "二人は違う会社です。",
+        "Aは学生でBは会社員です。",
+        "Bは先生です。"
+      ],
+      "answer": 0,
+      "explanation": "「も」cho biết B cũng giống A: cả hai đều là nhân viên IMC."
+    },
+    {
+      "id": 96,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "nationality",
+      "vocabulary": [
+        "ブラジル"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A: 「サントスさんはブラジル人ですか、アメリカ人ですか。」\nB: 「ブラジル人です。」",
+      "question": "サントスさんは何人ですか。",
+      "options": [
+        "ブラジル人",
+        "アメリカ人",
+        "インド人",
+        "タイ人"
+      ],
+      "answer": 0,
+      "explanation": "B trả lời rõ「ブラジル人です」."
+    },
+    {
+      "id": 97,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "school",
+      "vocabulary": [
+        "学生"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "先生: 「あなたは学生ですか。」\n学生: 「はい、そうです。富士大学の学生です。」",
+      "question": "会話の内容と合っているのはどれですか。",
+      "options": [
+        "この人は富士大学の学生です。",
+        "この人は先生です。",
+        "この人は会社員です。",
+        "この人はエンジニアです。"
+      ],
+      "answer": 0,
+      "explanation": "Học sinh xác nhận là học sinh trường đại học Phú Sĩ."
+    },
+    {
+      "id": 98,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "銀行員"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A: 「キムさんの仕事は何ですか。」\nB: 「銀行員です。」\nA: 「そうですか。＿＿＿」",
+      "question": "自然な相づちを選んでください。",
+      "options": [
+        "すごいですね。",
+        "さようなら。",
+        "いただきます。",
+        "おやすみなさい。"
+      ],
+      "answer": 0,
+      "explanation": "「すごいですね」dùng để thể hiện sự ấn tượng nhẹ nhàng khi nghe thông tin mới."
+    },
+    {
+      "id": 99,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "初めまして"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue",
+        "greeting"
+      ],
+      "passage": "A: 「こちらはミラーさんです。IMCの会社員です。」\nミラー: 「＿＿＿」",
+      "question": "ミラーさんが言うべき言葉はどれですか。",
+      "options": [
+        "はじめまして。ミラーです。どうぞよろしくお願いします。",
+        "さようなら、ミラーです。",
+        "すみません、ミラーです。",
+        "ミラーはだれですか。"
+      ],
+      "answer": 0,
+      "explanation": "Khi được người khác giới thiệu, người được giới thiệu nên tự chào lại bằng「はじめまして」."
+    },
+    {
+      "id": 100,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "お仕事"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A: 「失礼ですが、お仕事は？」\nB: 「エンジニアです。」\nA: 「そうですか。どちらの会社ですか。」\nB: 「＿＿＿」",
+      "question": "会社の名前を答える自然な返事はどれですか。",
+      "options": [
+        "パワー電気です。",
+        "エンジニアです。",
+        "そうですか。",
+        "どうぞよろしく。"
+      ],
+      "answer": 0,
+      "explanation": "Câu hỏi 「どちらの会社ですか」cần trả lời bằng tên công ty."
+    }
+  ]
+}
