@@ -1,10 +1,22 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  ColumnVisibilityToggle,
+  useColumnVisibility,
+} from 'components/modules/column-visibility-toggle';
 import { RADICALS } from '../data';
 import { KanjiCategoryDto, RadicalDto } from '../dto';
 import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE = 20;
+
+const COLUMNS = [
+  { key: 'number', label: 'Số bộ' },
+  { key: 'char', label: 'Bộ thủ' },
+  { key: 'hanViet', label: 'Hán Việt' },
+  { key: 'meaning', label: 'Ý nghĩa' },
+  { key: 'strokes', label: 'Số nét' },
+];
 
 type Props = {
   category: KanjiCategoryDto;
@@ -19,6 +31,7 @@ export const RadicalDetail = ({ category }: Props) => {
   const [selectedRadical, setSelectedRadical] = useState<RadicalDto | null>(
     null,
   );
+  const columnVisibility = useColumnVisibility('japan-radical-detail-columns');
 
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
@@ -123,16 +136,26 @@ export const RadicalDetail = ({ category }: Props) => {
       </div>
 
       <div className="row mt-2">
+        <div className="col-12 d-flex justify-content-end">
+          <ColumnVisibilityToggle
+            columns={COLUMNS}
+            visible={columnVisibility.visible}
+            onChange={columnVisibility.onChange}
+          />
+        </div>
+      </div>
+
+      <div className="row mt-2">
         <div className="col-12">
           <div className="table-responsive">
             <table className="table table-bordered table-hover align-middle">
               <thead>
                 <tr>
-                  <th>Số bộ</th>
-                  <th>Bộ thủ</th>
-                  <th>Hán Việt</th>
-                  <th>Ý nghĩa</th>
-                  <th>Số nét</th>
+                  {columnVisibility.isVisible('number') && <th>Số bộ</th>}
+                  {columnVisibility.isVisible('char') && <th>Bộ thủ</th>}
+                  {columnVisibility.isVisible('hanViet') && <th>Hán Việt</th>}
+                  {columnVisibility.isVisible('meaning') && <th>Ý nghĩa</th>}
+                  {columnVisibility.isVisible('strokes') && <th>Số nét</th>}
                 </tr>
               </thead>
               <tbody>
@@ -142,19 +165,29 @@ export const RadicalDetail = ({ category }: Props) => {
                     className="cursor-pointer"
                     onClick={() => setSelectedRadical(item)}
                   >
-                    <td className="text-center">{item.number}</td>
-                    <td className="font-size-24 text-center">{item.char}</td>
-                    <td>{item.hanViet}</td>
-                    <td>
-                      {item.meaning}
-                      {!item.standalone && (
-                        <span className="text-muted font-size-13">
-                          {' '}
-                          (chỉ dùng làm bộ thủ)
-                        </span>
-                      )}
-                    </td>
-                    <td className="text-center">{item.strokes}</td>
+                    {columnVisibility.isVisible('number') && (
+                      <td className="text-center">{item.number}</td>
+                    )}
+                    {columnVisibility.isVisible('char') && (
+                      <td className="font-size-24 text-center">{item.char}</td>
+                    )}
+                    {columnVisibility.isVisible('hanViet') && (
+                      <td>{item.hanViet}</td>
+                    )}
+                    {columnVisibility.isVisible('meaning') && (
+                      <td>
+                        {item.meaning}
+                        {!item.standalone && (
+                          <span className="text-muted font-size-13">
+                            {' '}
+                            (chỉ dùng làm bộ thủ)
+                          </span>
+                        )}
+                      </td>
+                    )}
+                    {columnVisibility.isVisible('strokes') && (
+                      <td className="text-center">{item.strokes}</td>
+                    )}
                   </tr>
                 ))}
                 {pageItems.length === 0 && (

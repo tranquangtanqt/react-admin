@@ -96,6 +96,28 @@ function clearProgress(categoryId: string) {
   localStorage.removeItem(progressStorageKey(categoryId));
 }
 
+function lessonSelectionStorageKey(categoryId: string) {
+  return `japan-kanji-quiz-lessons-${categoryId}`;
+}
+
+function loadSelectedLessons(categoryId: string): number[] {
+  const raw = localStorage.getItem(lessonSelectionStorageKey(categoryId));
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function saveSelectedLessons(categoryId: string, lessons: number[]) {
+  localStorage.setItem(
+    lessonSelectionStorageKey(categoryId),
+    JSON.stringify(lessons),
+  );
+}
+
 export const UtilitiesJapanKanjiQuiz = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
@@ -159,8 +181,14 @@ export const UtilitiesJapanKanjiQuiz = () => {
     // eslint-disable-next-line
   }, [categoryId, navigate]);
 
+  useEffect(() => {
+    setSelectedLessons(categoryId ? loadSelectedLessons(categoryId) : []);
+  }, [categoryId]);
+
   const [hasStarted, setHasStarted] = useState(false);
-  const [selectedLessons, setSelectedLessons] = useState<number[]>([]);
+  const [selectedLessons, setSelectedLessons] = useState<number[]>(() =>
+    categoryId ? loadSelectedLessons(categoryId) : [],
+  );
   const [radicalScope, setRadicalScope] = useState<'all' | 'common'>(
     initialRadicalScope,
   );
@@ -290,11 +318,13 @@ export const UtilitiesJapanKanjiQuiz = () => {
   };
 
   const handleToggleLesson = (lesson: number) => {
-    setSelectedLessons((prev) =>
-      prev.includes(lesson)
+    setSelectedLessons((prev) => {
+      const next = prev.includes(lesson)
         ? prev.filter((l) => l !== lesson)
-        : [...prev, lesson],
-    );
+        : [...prev, lesson];
+      if (categoryId) saveSelectedLessons(categoryId, next);
+      return next;
+    });
   };
 
   const handleStartQuiz = () => {

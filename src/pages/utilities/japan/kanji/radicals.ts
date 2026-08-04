@@ -36,7 +36,7 @@ const RAW_RADICALS: Array<[number, string, number, string, string]> = [
   [26, '卩', 2, 'Tiết', 'Ấn tín'],
   [27, '厂', 2, 'Hán', 'Vách núi'],
   [28, '厶', 2, 'Khư', 'Riêng tư'],
-  [29, '又', 2, 'Hựu', 'Lại, tay phải'],
+  [29, '又', 2, 'Hựu', 'Lại còn; Ngoài ra; (Liên từ)'],
   [30, '口', 3, 'Khẩu', 'Miệng'],
   [31, '囗', 3, 'Vi', 'Vây quanh'],
   [32, '土', 3, 'Thổ', 'Đất'],

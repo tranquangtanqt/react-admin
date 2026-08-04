@@ -1,10 +1,25 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {
+  ColumnVisibilityToggle,
+  useColumnVisibility,
+} from 'components/modules/column-visibility-toggle';
 import { getKanjiByCategory } from '../data';
 import { KanjiCategoryDto, KanjiDto } from '../dto';
 import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE = 20;
+
+const COLUMNS = [
+  { key: 'kanji', label: 'Kanji' },
+  { key: 'onyomi', label: 'Âm On' },
+  { key: 'kunyomi', label: 'Âm Kun' },
+  { key: 'hanViet', label: 'Hán Việt' },
+  { key: 'meaning', label: 'Nghĩa' },
+  { key: 'example', label: 'Ví dụ' },
+  { key: 'jlpt', label: 'JLPT' },
+  { key: 'lesson', label: 'Bài' },
+];
 
 type Props = {
   category: KanjiCategoryDto;
@@ -23,6 +38,7 @@ export const KanjiDetail = ({ category }: Props) => {
   const [lessonFilter, setLessonFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [selectedKanji, setSelectedKanji] = useState<KanjiDto | null>(null);
+  const columnVisibility = useColumnVisibility('japan-kanji-detail-columns');
 
   const lessonOptions = useMemo(() => {
     const lessons = Array.from(new Set(allKanji.map((item) => item.lesson)));
@@ -138,19 +154,29 @@ export const KanjiDetail = ({ category }: Props) => {
       </div>
 
       <div className="row mt-2">
+        <div className="col-12 d-flex justify-content-end">
+          <ColumnVisibilityToggle
+            columns={COLUMNS}
+            visible={columnVisibility.visible}
+            onChange={columnVisibility.onChange}
+          />
+        </div>
+      </div>
+
+      <div className="row mt-2">
         <div className="col-12">
           <div className="table-responsive">
             <table className="table table-bordered table-hover align-middle">
               <thead>
                 <tr>
-                  <th>Kanji</th>
-                  <th>Âm On</th>
-                  <th>Âm Kun</th>
-                  <th>Hán Việt</th>
-                  <th>Nghĩa</th>
-                  <th>Ví dụ</th>
-                  <th>JLPT</th>
-                  <th>Bài</th>
+                  {columnVisibility.isVisible('kanji') && <th>Kanji</th>}
+                  {columnVisibility.isVisible('onyomi') && <th>Âm On</th>}
+                  {columnVisibility.isVisible('kunyomi') && <th>Âm Kun</th>}
+                  {columnVisibility.isVisible('hanViet') && <th>Hán Việt</th>}
+                  {columnVisibility.isVisible('meaning') && <th>Nghĩa</th>}
+                  {columnVisibility.isVisible('example') && <th>Ví dụ</th>}
+                  {columnVisibility.isVisible('jlpt') && <th>JLPT</th>}
+                  {columnVisibility.isVisible('lesson') && <th>Bài</th>}
                 </tr>
               </thead>
               <tbody>
@@ -160,16 +186,30 @@ export const KanjiDetail = ({ category }: Props) => {
                     className="cursor-pointer"
                     onClick={() => setSelectedKanji(item)}
                   >
-                    <td className="font-size-24 text-center">{item.kanji}</td>
-                    <td>{item.onyomi}</td>
-                    <td>{item.kunyomi}</td>
-                    <td>{item.hanViet}</td>
-                    <td>{item.meaning}</td>
-                    <td>{item.example}</td>
-                    <td>{item.jlpt}</td>
-                    <td className="text-center">
-                      {item.lesson > 0 ? item.lesson : '-'}
-                    </td>
+                    {columnVisibility.isVisible('kanji') && (
+                      <td className="font-size-24 text-center">{item.kanji}</td>
+                    )}
+                    {columnVisibility.isVisible('onyomi') && (
+                      <td>{item.onyomi}</td>
+                    )}
+                    {columnVisibility.isVisible('kunyomi') && (
+                      <td>{item.kunyomi}</td>
+                    )}
+                    {columnVisibility.isVisible('hanViet') && (
+                      <td>{item.hanViet}</td>
+                    )}
+                    {columnVisibility.isVisible('meaning') && (
+                      <td>{item.meaning}</td>
+                    )}
+                    {columnVisibility.isVisible('example') && (
+                      <td>{item.example}</td>
+                    )}
+                    {columnVisibility.isVisible('jlpt') && <td>{item.jlpt}</td>}
+                    {columnVisibility.isVisible('lesson') && (
+                      <td className="text-center">
+                        {item.lesson > 0 ? item.lesson : '-'}
+                      </td>
+                    )}
                   </tr>
                 ))}
                 {pageItems.length === 0 && (

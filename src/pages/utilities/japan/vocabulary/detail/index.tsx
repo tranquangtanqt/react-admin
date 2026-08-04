@@ -2,6 +2,10 @@ import { useEffect, useMemo, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import {
+  ColumnVisibilityToggle,
+  useColumnVisibility,
+} from 'components/modules/column-visibility-toggle';
+import {
   VOCABULARY_CATEGORIES,
   VocabularyRow,
   getUnitsByLevel,
@@ -10,6 +14,13 @@ import {
 import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE = 20;
+
+const COLUMNS = [
+  { key: 'hiragana', label: 'Hiragana' },
+  { key: 'kanji', label: 'Kanji' },
+  { key: 'translate', label: 'Nghĩa' },
+  { key: 'unitName', label: 'Bài' },
+];
 
 export const UtilitiesJapanVocabularyDetail = () => {
   const navigate = useNavigate();
@@ -40,6 +51,9 @@ export const UtilitiesJapanVocabularyDetail = () => {
   const [unitFilter, setUnitFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [selectedItem, setSelectedItem] = useState<VocabularyRow | null>(null);
+  const columnVisibility = useColumnVisibility(
+    'japan-vocabulary-detail-columns',
+  );
 
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
@@ -134,15 +148,25 @@ export const UtilitiesJapanVocabularyDetail = () => {
       </div>
 
       <div className="row mt-2">
+        <div className="col-12 d-flex justify-content-end">
+          <ColumnVisibilityToggle
+            columns={COLUMNS}
+            visible={columnVisibility.visible}
+            onChange={columnVisibility.onChange}
+          />
+        </div>
+      </div>
+
+      <div className="row mt-2">
         <div className="col-12">
           <div className="table-responsive">
             <table className="table table-bordered table-hover align-middle">
               <thead>
                 <tr>
-                  <th>Hiragana</th>
-                  <th>Kanji</th>
-                  <th>Nghĩa</th>
-                  <th>Bài</th>
+                  {columnVisibility.isVisible('hiragana') && <th>Hiragana</th>}
+                  {columnVisibility.isVisible('kanji') && <th>Kanji</th>}
+                  {columnVisibility.isVisible('translate') && <th>Nghĩa</th>}
+                  {columnVisibility.isVisible('unitName') && <th>Bài</th>}
                 </tr>
               </thead>
               <tbody>
@@ -152,10 +176,18 @@ export const UtilitiesJapanVocabularyDetail = () => {
                     className="cursor-pointer"
                     onClick={() => setSelectedItem(item)}
                   >
-                    <td>{item.hiragana}</td>
-                    <td>{item.kanji}</td>
-                    <td>{item.translate}</td>
-                    <td>{item.unitName}</td>
+                    {columnVisibility.isVisible('hiragana') && (
+                      <td>{item.hiragana}</td>
+                    )}
+                    {columnVisibility.isVisible('kanji') && (
+                      <td>{item.kanji}</td>
+                    )}
+                    {columnVisibility.isVisible('translate') && (
+                      <td>{item.translate}</td>
+                    )}
+                    {columnVisibility.isVisible('unitName') && (
+                      <td>{item.unitName}</td>
+                    )}
                   </tr>
                 ))}
                 {pageItems.length === 0 && (

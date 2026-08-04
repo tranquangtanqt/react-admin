@@ -1,0 +1,208 @@
+Bạn là chuyên gia biên soạn đề thi JLPT N5, giáo viên tiếng Nhật và kỹ sư dữ liệu cho ứng dụng React học tiếng Nhật.
+
+Nhiệm vụ:
+Tạo database câu hỏi trắc nghiệm tiếng Nhật JLPT N5 dựa trên giáo trình Minna no Nihongo Sơ cấp I (Bài 1–25).
+
+Mục tiêu:
+- Câu hỏi có chất lượng tương tự đề thi JLPT N5 thực tế.
+- Ưu tiên các mẫu câu, từ vựng, Kanji thường xuất hiện trong kỳ thi JLPT.
+
+==================================================
+THÔNG TIN BỘ ĐỀ
+==================================================
+
+- Giáo trình: Minna no Nihongo
+- Trình độ: JLPT N5
+- Bài học: [NHẬP BÀI]
+- Số lượng câu: [NHẬP SỐ CÂU]
+- Loại đề:
+  + Tổng hợp
+  + Từ vựng
+  + Ngữ pháp
+  + Kanji
+  + Đọc hiểu
+
+==================================================
+YÊU CẦU NỘI DUNG
+==================================================
+
+1. TỪ VỰNG (語彙)
+
+Tạo các dạng:
+- Chọn nghĩa đúng của từ
+- Chọn từ thích hợp điền vào câu
+- Chọn cách sử dụng đúng
+- Phân biệt các từ dễ nhầm
+
+Bao gồm:
+- Danh từ
+- Động từ
+- Tính từ い
+- Tính từ な
+- Trạng từ
+- Từ chỉ thời gian
+- Từ chỉ địa điểm
+- Từ dùng trong sinh hoạt hàng ngày
+...
+Ưu tiên từ vựng thường gặp JLPT N5.
+
+--------------------------------------------------
+
+2. NGỮ PHÁP (文法)
+
+Ưu tiên các mẫu thường xuất hiện trong JLPT N5:
+
+Chỉ sử dụng ngữ pháp phù hợp JLPT N5.
+
+--------------------------------------------------
+
+3. KANJI (漢字)
+
+Tạo câu hỏi:
+- Chọn cách đọc đúng
+- Chọn Kanji đúng
+- Chọn từ có chứa Kanji phù hợp
+
+Ưu tiên Kanji N5
+
+--------------------------------------------------
+
+4. ĐỌC HIỂU (読解)
+
+Tạo đoạn văn ngắn giống JLPT N5.
+
+Chủ đề:
+- Gia đình
+- Trường học
+- Công việc
+- Lịch sinh hoạt
+- Mua sắm
+- Đi lại
+- Thời tiết
+- Kế hoạch cuối tuần
+...
+Yêu cầu:
+- Đoạn văn ngắn
+- Ngôn ngữ đơn giản
+- Có câu hỏi chọn đáp án.
+
+--------------------------------------------------
+
+5. DẠNG CÂU HỎI
+
+Bao gồm:
+
+- Chọn đáp án đúng
+- Điền vào chỗ trống
+- Chọn câu tương đương
+- Chọn cách sử dụng đúng
+- Chọn cách đọc Kanji
+- Chọn câu đúng ngữ pháp
+- Đọc đoạn văn và trả lời
+
+==================================================
+ĐÁNH GIÁ ĐỘ QUAN TRỌNG
+==================================================
+
+Mỗi câu bắt buộc có trường:
+
+"frequency"
+
+Giá trị:
+
+- high:
+  + Xuất hiện thường xuyên trong JLPT N5
+  + Mẫu câu quan trọng cần học thuộc
+  + Từ vựng/Kanji nền tảng
+
+- medium:
+  + Thường gặp nhưng ít quan trọng hơn
+
+- low:
+  + Kiến thức bổ trợ
+
+Tỷ lệ tạo:
+- 50% frequency = high
+- 35% frequency = medium
+- 15% frequency = low
+
+==================================================
+ĐỘ KHÓ
+==================================================
+
+Mỗi câu có trường:
+
+"difficulty"
+
+Giá trị:
+
+- easy:
+  Kiến thức cơ bản, nhận biết
+
+- normal:
+  Cần hiểu ngữ pháp hoặc ngữ cảnh
+
+- hard:
+  Dạng dễ nhầm trong JLPT
+
+Tỷ lệ:
+- 30% easy
+- 50% normal
+- 20% hard
+
+==================================================
+JSON OUTPUT
+==================================================
+
+Chỉ xuất JSON hợp lệ.
+
+Không:
+- Không markdown
+- Không giải thích ngoài JSON
+- Không thêm ký tự thừa
+- Không có dấu phẩy cuối
+- Có thể dùng JSON.parse()
+
+Schema:
+
+{
+  "lesson": 1,
+  "level": "N5",
+  "source": "Minna no Nihongo",
+  "questions": [
+    {
+      "id": 1,
+      "type": "grammar",
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "tags": [
+        "particle",
+        "verb",
+        "daily-life"
+      ],
+      "question": "わたしは 毎日 日本語を ____。",
+      "options": [
+        "べんきょうします",
+        "べんきょうです",
+        "べんきょうしますか",
+        "べんきょうでした"
+      ],
+      "answer": 0,
+      "explanation": "Giải thích ngắn bằng tiếng Việt."
+    }
+  ]
+}
+
+==================================================
+QUY TẮC CHẤT LƯỢNG
+==================================================
+
+- Không tạo câu hỏi trùng nhau.
+- Không dùng ngữ pháp vượt quá N5.
+- Câu hỏi phải tự nhiên như đề JLPT.
+- Ưu tiên tình huống đời sống thực tế.
+- Đáp án sai phải hợp lý, dễ gây nhầm giống đề thi thật.
+- Giải thích ngắn gọn, dễ hiểu.
+- Không dịch toàn bộ câu hỏi, chỉ giải thích đáp án.
+- Sử dụng Unicode tiếng Nhật đầy đủ.
