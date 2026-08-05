@@ -41,6 +41,14 @@ const QUIZ_LENGTH = 10;
 const DEFAULT_CHOICE_COUNT = 4;
 const CHOICE_COUNT_OPTIONS = [2, 3, 4, 5, 6, 8, 10];
 
+function speak(text: string) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ja-JP';
+  window.speechSynthesis.speak(utterance);
+}
+
 function shuffle<T>(list: T[]): T[] {
   const result = [...list];
   for (let i = result.length - 1; i > 0; i--) {
@@ -667,7 +675,20 @@ export const UtilitiesJapanKanjiQuiz = () => {
                   {currentQuestion.target.hanViet})
                   {currentQuestion.target.readingDisplay
                     ? `, ${currentQuestion.target.readingDisplay}`
-                    : ''}
+                    : ''}{' '}
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-light py-0 px-1 ms-1"
+                    title="Nghe phát âm"
+                    onClick={() =>
+                      speak(
+                        currentQuestion.target.readingText ||
+                          currentQuestion.target.char,
+                      )
+                    }
+                  >
+                    🔊
+                  </button>
                 </p>
               </div>
             </div>

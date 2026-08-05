@@ -5,6 +5,7 @@ import {
   ColumnVisibilityToggle,
   useColumnVisibility,
 } from 'components/modules/column-visibility-toggle';
+import { PageSizeToggle } from 'components/modules/page-size-toggle';
 import {
   VOCABULARY_CATEGORIES,
   VocabularyRow,
@@ -13,10 +14,27 @@ import {
 } from '../data';
 import { loadMistakes } from '../mistakes';
 
-const PAGE_SIZE = 20;
+function speak(text: string) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ja-JP';
+  window.speechSynthesis.speak(utterance);
+}
+
+const PAGE_SIZE_OPTIONS = [10, 20, 30, 50];
+const DEFAULT_PAGE_SIZE = 20;
+const PAGE_SIZE_STORAGE_KEY = 'japan-vocabulary-detail-page-size';
+
+function loadPageSize(): number {
+  const raw = localStorage.getItem(PAGE_SIZE_STORAGE_KEY);
+  const parsed = raw ? Number(raw) : NaN;
+  return PAGE_SIZE_OPTIONS.includes(parsed) ? parsed : DEFAULT_PAGE_SIZE;
+}
 
 const COLUMNS = [
   { key: 'hiragana', label: 'Hiragana' },
+  { key: 'listen', label: 'Nghe' },
   { key: 'kanji', label: 'Kanji' },
   { key: 'translate', label: 'Nghĩa' },
   { key: 'unitName', label: 'Bài' },
@@ -50,6 +68,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
   const [keyword, setKeyword] = useState('');
   const [unitFilter, setUnitFilter] = useState('all');
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(loadPageSize);
   const [selectedItem, setSelectedItem] = useState<VocabularyRow | null>(null);
   const columnVisibility = useColumnVisibility(
     'japan-vocabulary-detail-columns',
@@ -68,11 +87,11 @@ export const UtilitiesJapanVocabularyDetail = () => {
     });
   }, [allVocabulary, keyword, unitFilter]);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const pageItems = filtered.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE,
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
   );
 
   const handleSearch = (value: string) => {
@@ -82,6 +101,12 @@ export const UtilitiesJapanVocabularyDetail = () => {
 
   const handleFilterUnit = (value: string) => {
     setUnitFilter(value);
+    setPage(1);
+  };
+
+  const handlePageSizeChange = (value: number) => {
+    setPageSize(value);
+    localStorage.setItem(PAGE_SIZE_STORAGE_KEY, String(value));
     setPage(1);
   };
 
@@ -148,7 +173,12 @@ export const UtilitiesJapanVocabularyDetail = () => {
       </div>
 
       <div className="row mt-2">
-        <div className="col-12 d-flex justify-content-end">
+        <div className="col-12 d-flex justify-content-end gap-2">
+          <PageSizeToggle
+            options={PAGE_SIZE_OPTIONS}
+            value={pageSize}
+            onChange={handlePageSizeChange}
+          />
           <ColumnVisibilityToggle
             columns={COLUMNS}
             visible={columnVisibility.visible}
@@ -164,6 +194,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
               <thead>
                 <tr>
                   {columnVisibility.isVisible('hiragana') && <th>Hiragana</th>}
+                  {columnVisibility.isVisible('listen') && <th>Nghe</th>}
                   {columnVisibility.isVisible('kanji') && <th>Kanji</th>}
                   {columnVisibility.isVisible('translate') && <th>Nghĩa</th>}
                   {columnVisibility.isVisible('unitName') && <th>Bài</th>}
@@ -179,6 +210,21 @@ export const UtilitiesJapanVocabularyDetail = () => {
                     {columnVisibility.isVisible('hiragana') && (
                       <td>{item.hiragana}</td>
                     )}
+                    {columnVisibility.isVisible('listen') && (
+                      <td>
+                        <button
+                          type="button"
+                          className="btn btn-sm btn-light py-0 px-1"
+                          title="Nghe phát âm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            speak(item.hiragana);
+                          }}
+                        >
+                          🔊
+                        </button>
+                      </td>
+                    )}
                     {columnVisibility.isVisible('kanji') && (
                       <td>{item.kanji}</td>
                     )}
@@ -192,7 +238,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
                 ))}
                 {pageItems.length === 0 && (
                   <tr>
-                    <td colSpan={4} className="text-center text-muted">
+                    <td colSpan={5} className="text-center text-muted">
                       Không tìm thấy từ vựng phù hợp
                     </td>
                   </tr>
@@ -249,7 +295,17 @@ export const UtilitiesJapanVocabularyDetail = () => {
           >
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start">
-                <h1 className="mb-0 font-size-30">{selectedItem.hiragana}</h1>
+                <h1 className="mb-0 font-size-30">
+                  {selectedItem.hiragana}
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-light py-0 px-1 ms-2 align-middle"
+                    title="Nghe phát âm"
+                    onClick={() => speak(selectedItem.hiragana)}
+                  >
+                    🔊
+                  </button>
+                </h1>
                 <button
                   type="button"
                   className="btn-close"

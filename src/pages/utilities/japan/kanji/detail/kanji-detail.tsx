@@ -4,11 +4,20 @@ import {
   ColumnVisibilityToggle,
   useColumnVisibility,
 } from 'components/modules/column-visibility-toggle';
+import { PageSizeToggle } from 'components/modules/page-size-toggle';
 import { getKanjiByCategory } from '../data';
 import { KanjiCategoryDto, KanjiDto } from '../dto';
 import { loadMistakes } from '../mistakes';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE_OPTIONS = [10, 20, 30, 50];
+const DEFAULT_PAGE_SIZE = 20;
+const PAGE_SIZE_STORAGE_KEY = 'japan-kanji-detail-page-size';
+
+function loadPageSize(): number {
+  const raw = localStorage.getItem(PAGE_SIZE_STORAGE_KEY);
+  const parsed = raw ? Number(raw) : NaN;
+  return PAGE_SIZE_OPTIONS.includes(parsed) ? parsed : DEFAULT_PAGE_SIZE;
+}
 
 const COLUMNS = [
   { key: 'kanji', label: 'Kanji' },
@@ -37,6 +46,7 @@ export const KanjiDetail = ({ category }: Props) => {
   const [jlptFilter, setJlptFilter] = useState('all');
   const [lessonFilter, setLessonFilter] = useState('all');
   const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(loadPageSize);
   const [selectedKanji, setSelectedKanji] = useState<KanjiDto | null>(null);
   const columnVisibility = useColumnVisibility('japan-kanji-detail-columns');
 
@@ -64,11 +74,11 @@ export const KanjiDetail = ({ category }: Props) => {
     });
   }, [allKanji, keyword, jlptFilter, lessonFilter]);
 
-  const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(page, totalPages);
   const pageItems = filtered.slice(
-    (currentPage - 1) * PAGE_SIZE,
-    currentPage * PAGE_SIZE,
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize,
   );
 
   const handleSearch = (value: string) => {
@@ -83,6 +93,12 @@ export const KanjiDetail = ({ category }: Props) => {
 
   const handleFilterLesson = (value: string) => {
     setLessonFilter(value);
+    setPage(1);
+  };
+
+  const handlePageSizeChange = (value: number) => {
+    setPageSize(value);
+    localStorage.setItem(PAGE_SIZE_STORAGE_KEY, String(value));
     setPage(1);
   };
 
@@ -154,7 +170,12 @@ export const KanjiDetail = ({ category }: Props) => {
       </div>
 
       <div className="row mt-2">
-        <div className="col-12 d-flex justify-content-end">
+        <div className="col-12 d-flex justify-content-end gap-2">
+          <PageSizeToggle
+            options={PAGE_SIZE_OPTIONS}
+            value={pageSize}
+            onChange={handlePageSizeChange}
+          />
           <ColumnVisibilityToggle
             columns={COLUMNS}
             visible={columnVisibility.visible}

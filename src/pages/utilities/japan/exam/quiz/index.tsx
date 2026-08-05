@@ -22,6 +22,14 @@ interface QuizQuestion {
   answerIndex: number;
 }
 
+function speak(text: string) {
+  if (!('speechSynthesis' in window)) return;
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'ja-JP';
+  window.speechSynthesis.speak(utterance);
+}
+
 function shuffle<T>(list: T[]): T[] {
   const result = [...list];
   for (let i = result.length - 1; i > 0; i--) {
@@ -383,7 +391,15 @@ export const UtilitiesJapanExamQuiz = () => {
               <div className="card-body">
                 <p className="card-text mb-1">
                   {isCorrect ? 'Chính xác!' : 'Chưa đúng.'} Đáp án:{' '}
-                  <b>{source.options[source.answer]}</b>
+                  <b>{source.options[source.answer]}</b>{' '}
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-light py-0 px-1 ms-1"
+                    title="Nghe phát âm"
+                    onClick={() => speak(source.options[source.answer])}
+                  >
+                    🔊
+                  </button>
                 </p>
                 <p className="card-text mb-0 font-size-14">
                   {source.explanation}
