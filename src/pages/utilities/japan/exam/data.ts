@@ -1,10 +1,14 @@
 import lesson01 from './n5/lesson-01.json';
+import lesson02 from './n5/lesson-02.json';
+import lesson03 from './n5/lesson-03.json';
 import { ExamCategoryDto, ExamLessonDto, ExamQuestionDto } from './dto';
 
 const TOTAL_LESSONS = 25;
 
 const LESSON_FILES: Partial<Record<number, ExamLessonDto>> = {
   1: lesson01 as ExamLessonDto,
+  2: lesson02 as ExamLessonDto,
+  3: lesson03 as ExamLessonDto,
 };
 
 export const EXAM_CATEGORIES: ExamCategoryDto[] = Array.from(

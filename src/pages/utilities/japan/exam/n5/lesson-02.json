@@ -1,0 +1,2739 @@
+{
+  "lesson": 2,
+  "level": "N5",
+  "source": "Minna no Nihongo",
+  "questions": [
+    {
+      "id": 1,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "これ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "demonstrative"
+      ],
+      "question": "「これ」はどういう意味ですか。",
+      "options": [
+        "Cái này (gần người nói)",
+        "Cái đó (gần người nghe)",
+        "Cái kia (xa cả hai)",
+        "Cái nào"
+      ],
+      "answer": 0,
+      "explanation": "「これ」dùng để chỉ vật ở gần người nói."
+    },
+    {
+      "id": 2,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "それ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "demonstrative"
+      ],
+      "question": "「それ」はどういう意味ですか。",
+      "options": [
+        "Cái đó (gần người nghe)",
+        "Cái này (gần người nói)",
+        "Cái kia (xa cả hai)",
+        "Cái nào"
+      ],
+      "answer": 0,
+      "explanation": "「それ」dùng để chỉ vật ở gần người nghe."
+    },
+    {
+      "id": 3,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "あれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "demonstrative"
+      ],
+      "question": "「あれ」はどういう意味ですか。",
+      "options": [
+        "Cái kia (xa cả người nói và người nghe)",
+        "Cái này",
+        "Cái đó",
+        "Cái nào"
+      ],
+      "answer": 0,
+      "explanation": "「あれ」dùng để chỉ vật ở xa cả người nói lẫn người nghe."
+    },
+    {
+      "id": 4,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "どれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "question-word"
+      ],
+      "question": "「どれ」はどういう意味ですか。",
+      "options": [
+        "Cái nào",
+        "Cái này",
+        "Cái đó",
+        "Cái kia"
+      ],
+      "answer": 0,
+      "explanation": "「どれ」là đại từ nghi vấn, dùng khi hỏi chọn trong 3 vật trở lên."
+    },
+    {
+      "id": 5,
+      "type": "vocabulary",
+      "subtype": "distinction",
+      "topic": "objects",
+      "vocabulary": [
+        "この",
+        "これ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "demonstrative"
+      ],
+      "question": "Từ nào dùng trước danh từ, ví dụ 「＿ 本」(quyển sách này)?",
+      "options": [
+        "この",
+        "これ",
+        "ここ",
+        "こちら"
+      ],
+      "answer": 0,
+      "explanation": "「この」+ danh từ, còn 「これ」đứng một mình thay cho danh từ."
+    },
+    {
+      "id": 6,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "その"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "demonstrative"
+      ],
+      "question": "「その ざっし」はどういう意味ですか。",
+      "options": [
+        "Tạp chí đó",
+        "Tạp chí này",
+        "Tạp chí kia",
+        "Tạp chí nào"
+      ],
+      "answer": 0,
+      "explanation": "「その」+ danh từ nghĩa là \"...đó\" (gần người nghe)."
+    },
+    {
+      "id": 7,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "objects",
+      "vocabulary": [
+        "あの"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "demonstrative"
+      ],
+      "question": "「あの ひと」はどういう意味ですか。",
+      "options": [
+        "Người kia (xa cả hai)",
+        "Người này",
+        "Người đó",
+        "Người nào"
+      ],
+      "answer": 0,
+      "explanation": "「あの」+ danh từ nghĩa là \"...kia\"."
+    },
+    {
+      "id": 8,
+      "type": "vocabulary",
+      "subtype": "distinction",
+      "topic": "objects",
+      "vocabulary": [
+        "どの"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "question-word"
+      ],
+      "question": "Muốn hỏi \"quyển sách nào\", nói thế nào?",
+      "options": [
+        "どの 本",
+        "どれ 本",
+        "どこ 本",
+        "どちら 本"
+      ],
+      "answer": 0,
+      "explanation": "「どの」+ danh từ, còn「どれ」đứng riêng không đi kèm danh từ."
+    },
+    {
+      "id": 9,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "ここ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "location"
+      ],
+      "question": "「ここ」はどういう意味ですか。",
+      "options": [
+        "Chỗ này, đây",
+        "Chỗ đó",
+        "Chỗ kia",
+        "Chỗ nào"
+      ],
+      "answer": 0,
+      "explanation": "「ここ」chỉ vị trí gần người nói."
+    },
+    {
+      "id": 10,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "そこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "location"
+      ],
+      "question": "「そこ」はどういう意味ですか。",
+      "options": [
+        "Chỗ đó, đấy",
+        "Chỗ này",
+        "Chỗ kia",
+        "Chỗ nào"
+      ],
+      "answer": 0,
+      "explanation": "「そこ」chỉ vị trí gần người nghe."
+    },
+    {
+      "id": 11,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "あそこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "location"
+      ],
+      "question": "「あそこ」はどういう意味ですか。",
+      "options": [
+        "Chỗ kia, đằng kia",
+        "Chỗ này",
+        "Chỗ đó",
+        "Chỗ nào"
+      ],
+      "answer": 0,
+      "explanation": "「あそこ」chỉ vị trí xa cả người nói lẫn người nghe."
+    },
+    {
+      "id": 12,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "どこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "location",
+        "question-word"
+      ],
+      "question": "「どこ」はどういう意味ですか。",
+      "options": [
+        "Ở đâu",
+        "Ở đây",
+        "Ở đó",
+        "Ở kia"
+      ],
+      "answer": 0,
+      "explanation": "「どこ」là từ nghi vấn hỏi về vị trí, nơi chốn."
+    },
+    {
+      "id": 13,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "workplace",
+      "vocabulary": [
+        "こちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "polite",
+        "direction"
+      ],
+      "question": "「こちら」を丁寧に使うとき、何を表しますか。",
+      "options": [
+        "Hướng/phía này, hoặc người này (lịch sự)",
+        "Chỉ dùng cho đồ vật",
+        "Chỉ dùng cho địa điểm",
+        "Chỉ dùng khi hỏi"
+      ],
+      "answer": 0,
+      "explanation": "「こちら」là cách nói lịch sự của「これ／ここ」, có thể dùng để giới thiệu người."
+    },
+    {
+      "id": 14,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "workplace",
+      "vocabulary": [
+        "そちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "polite",
+        "direction"
+      ],
+      "question": "「そちら」はどういう意味ですか。",
+      "options": [
+        "Phía đó (lịch sự)",
+        "Phía này (lịch sự)",
+        "Phía kia (lịch sự)",
+        "Phía nào (lịch sự)"
+      ],
+      "answer": 0,
+      "explanation": "「そちら」là dạng lịch sự của「それ／そこ」."
+    },
+    {
+      "id": 15,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "workplace",
+      "vocabulary": [
+        "あちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "polite",
+        "direction"
+      ],
+      "question": "「あちら」はどういう意味ですか。",
+      "options": [
+        "Phía kia (lịch sự)",
+        "Phía này (lịch sự)",
+        "Phía đó (lịch sự)",
+        "Phía nào (lịch sự)"
+      ],
+      "answer": 0,
+      "explanation": "「あちら」là dạng lịch sự của「あれ／あそこ」."
+    },
+    {
+      "id": 16,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "workplace",
+      "vocabulary": [
+        "どちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "polite",
+        "question-word"
+      ],
+      "question": "「お国は どちらですか」の「どちら」はどういう意味ですか。",
+      "options": [
+        "Đâu, nơi nào (cách hỏi lịch sự)",
+        "Cái nào",
+        "Ở đây",
+        "Ở đó"
+      ],
+      "answer": 0,
+      "explanation": "「どちら」lịch sự hơn 「どこ」, thường dùng khi hỏi quốc gia, công ty."
+    },
+    {
+      "id": 17,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "stationery",
+      "vocabulary": [
+        "本"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "stationery"
+      ],
+      "question": "「本」はどういう意味ですか。",
+      "options": [
+        "Sách",
+        "Vở",
+        "Báo",
+        "Tạp chí"
+      ],
+      "answer": 0,
+      "explanation": "「本」nghĩa là quyển sách."
+    },
+    {
+      "id": 18,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "stationery",
+      "vocabulary": [
+        "辞書"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "stationery"
+      ],
+      "question": "「辞書」はどういう意味ですか。",
+      "options": [
+        "Từ điển",
+        "Sách giáo khoa",
+        "Sổ tay",
+        "Tạp chí"
+      ],
+      "answer": 0,
+      "explanation": "「辞書」nghĩa là từ điển."
+    },
+    {
+      "id": 19,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "stationery",
+      "vocabulary": [
+        "雑誌"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "stationery"
+      ],
+      "question": "「雑誌」はどういう意味ですか。",
+      "options": [
+        "Tạp chí",
+        "Báo",
+        "Sách",
+        "Từ điển"
+      ],
+      "answer": 0,
+      "explanation": "「雑誌」nghĩa là tạp chí."
+    },
+    {
+      "id": 20,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "stationery",
+      "vocabulary": [
+        "新聞"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "stationery"
+      ],
+      "question": "「新聞」はどういう意味ですか。",
+      "options": [
+        "Báo (báo giấy)",
+        "Tạp chí",
+        "Sách",
+        "Thư"
+      ],
+      "answer": 0,
+      "explanation": "「新聞」nghĩa là tờ báo."
+    },
+    {
+      "id": 21,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "stationery",
+      "vocabulary": [
+        "ノート"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "stationery"
+      ],
+      "question": "「ノート」はどういう意味ですか。",
+      "options": [
+        "Vở, sổ ghi chép",
+        "Sách",
+        "Danh thiếp",
+        "Bút"
+      ],
+      "answer": 0,
+      "explanation": "「ノート」(note) nghĩa là quyển vở."
+    },
+    {
+      "id": 22,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "workplace",
+      "vocabulary": [
+        "名刺"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "workplace"
+      ],
+      "question": "「名刺」はどういう意味ですか。",
+      "options": [
+        "Danh thiếp",
+        "Hộ chiếu",
+        "Sổ tay",
+        "Vé"
+      ],
+      "answer": 0,
+      "explanation": "「名刺」nghĩa là tấm danh thiếp, dùng khi giới thiệu công việc."
+    },
+    {
+      "id": 23,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "daily-life",
+      "vocabulary": [
+        "かばん"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "daily-life"
+      ],
+      "question": "「かばん」はどういう意味ですか。",
+      "options": [
+        "Cặp/túi xách",
+        "Ví",
+        "Ô",
+        "Đồng hồ"
+      ],
+      "answer": 0,
+      "explanation": "「かばん」nghĩa là cái cặp/túi xách."
+    },
+    {
+      "id": 24,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "daily-life",
+      "vocabulary": [
+        "かさ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "daily-life"
+      ],
+      "question": "「かさ」はどういう意味ですか。",
+      "options": [
+        "Cái ô/dù",
+        "Cái cặp",
+        "Cái ví",
+        "Cái đồng hồ"
+      ],
+      "answer": 0,
+      "explanation": "「かさ」nghĩa là cái ô/dù."
+    },
+    {
+      "id": 25,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "daily-life",
+      "vocabulary": [
+        "とけい"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "daily-life"
+      ],
+      "question": "「とけい」はどういう意味ですか。",
+      "options": [
+        "Đồng hồ",
+        "Điện thoại",
+        "Máy tính",
+        "Ti vi"
+      ],
+      "answer": 0,
+      "explanation": "「とけい」nghĩa là đồng hồ."
+    },
+    {
+      "id": 26,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "office",
+      "vocabulary": [
+        "つくえ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "office"
+      ],
+      "question": "「つくえ」はどういう意味ですか。",
+      "options": [
+        "Cái bàn",
+        "Cái ghế",
+        "Cái tủ",
+        "Cái giường"
+      ],
+      "answer": 0,
+      "explanation": "「つくえ」nghĩa là cái bàn."
+    },
+    {
+      "id": 27,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "office",
+      "vocabulary": [
+        "いす"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "office"
+      ],
+      "question": "「いす」はどういう意味ですか。",
+      "options": [
+        "Cái ghế",
+        "Cái bàn",
+        "Cái tủ",
+        "Cái đèn"
+      ],
+      "answer": 0,
+      "explanation": "「いす」nghĩa là cái ghế."
+    },
+    {
+      "id": 28,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "electronics",
+      "vocabulary": [
+        "コンピューター"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "electronics"
+      ],
+      "question": "「コンピューター」はどういう意味ですか。",
+      "options": [
+        "Máy vi tính",
+        "Máy ảnh",
+        "Ti vi",
+        "Radio"
+      ],
+      "answer": 0,
+      "explanation": "「コンピューター」(computer) nghĩa là máy vi tính, cũng nói 「パソコン」."
+    },
+    {
+      "id": 29,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "shopping",
+      "vocabulary": [
+        "違います"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "verb",
+        "negation"
+      ],
+      "question": "相手の言ったことが間違っているとき、何と言いますか。",
+      "options": [
+        "違います",
+        "そうです",
+        "そうですね",
+        "いいですね"
+      ],
+      "answer": 0,
+      "explanation": "「違います」dùng để phủ nhận, nghĩa là \"không phải/sai rồi\"."
+    },
+    {
+      "id": 30,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "shopping",
+      "vocabulary": [
+        "や",
+        "など"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "particle",
+        "list"
+      ],
+      "question": "机の上に本や辞書などがあります。「や」の意味は何ですか。",
+      "options": [
+        "Liệt kê không đầy đủ (và, v.v.)",
+        "Liệt kê đầy đủ tất cả",
+        "Phủ định",
+        "So sánh"
+      ],
+      "answer": 0,
+      "explanation": "「や」dùng để liệt kê vài ví dụ trong nhiều thứ, thường đi cùng「など」(v.v.)."
+    },
+    {
+      "id": 31,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ + は + Nです",
+      "vocabulary": [
+        "これ",
+        "です"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "＿は 本です。（自分の近くにある本を指す）",
+      "options": [
+        "これ",
+        "それ",
+        "あれ",
+        "この"
+      ],
+      "answer": 0,
+      "explanation": "「これ」chỉ vật ở gần người nói."
+    },
+    {
+      "id": 32,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ + は + Nです",
+      "vocabulary": [
+        "それ",
+        "です"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "あなたの近くにある雑誌を指すとき：＿は 雑誌です。",
+      "options": [
+        "それ",
+        "これ",
+        "あれ",
+        "その"
+      ],
+      "answer": 0,
+      "explanation": "「それ」chỉ vật ở gần người nghe."
+    },
+    {
+      "id": 33,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ + は + Nです",
+      "vocabulary": [
+        "あれ",
+        "です"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "二人から遠い所にある建物を指すとき：＿は 会社です。",
+      "options": [
+        "あれ",
+        "これ",
+        "それ",
+        "あの"
+      ],
+      "answer": 0,
+      "explanation": "「あれ」chỉ vật ở xa cả hai người."
+    },
+    {
+      "id": 34,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "この/その/あの + N",
+      "vocabulary": [
+        "この"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "＿ かばんは わたしのです。（自分の近くにあるかばん）",
+      "options": [
+        "この",
+        "これ",
+        "ここ",
+        "こちら"
+      ],
+      "answer": 0,
+      "explanation": "「この」+ danh từ, không thể đứng một mình."
+    },
+    {
+      "id": 35,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "この/その/あの + N",
+      "vocabulary": [
+        "その"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "そのペン ＿ わたしのですか。",
+      "options": [
+        "は",
+        "に",
+        "を",
+        "で"
+      ],
+      "answer": 0,
+      "explanation": "Trợ từ 「は」đánh dấu chủ đề câu."
+    },
+    {
+      "id": 36,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "この/その/あの + N",
+      "vocabulary": [
+        "あの"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "＿ 建物は 銀行です。（遠くに見える建物）",
+      "options": [
+        "あの",
+        "あれ",
+        "あそこ",
+        "あちら"
+      ],
+      "answer": 0,
+      "explanation": "「あの」+ danh từ chỉ vật ở xa cả hai người."
+    },
+    {
+      "id": 37,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "どれ/どの",
+      "vocabulary": [
+        "どれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "ミラーさんのかばんは＿ですか。",
+      "options": [
+        "どれ",
+        "どの",
+        "どこ",
+        "どちら"
+      ],
+      "answer": 0,
+      "explanation": "「どれ」đứng riêng, hỏi chọn trong nhiều vật."
+    },
+    {
+      "id": 38,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "どれ/どの",
+      "vocabulary": [
+        "どの"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "＿ 本が　あなたのですか。",
+      "options": [
+        "どの",
+        "どれ",
+        "どこ",
+        "どちら"
+      ],
+      "answer": 0,
+      "explanation": "「どの」+ danh từ."
+    },
+    {
+      "id": 39,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "ここ/そこ/あそこ",
+      "vocabulary": [
+        "ここ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "教室は＿です。（今いる場所）",
+      "options": [
+        "ここ",
+        "そこ",
+        "あそこ",
+        "これ"
+      ],
+      "answer": 0,
+      "explanation": "「ここ」chỉ nơi gần người nói."
+    },
+    {
+      "id": 40,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "ここ/そこ/あそこ",
+      "vocabulary": [
+        "そこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "すみません、トイレは＿ですか。（相手の近く）",
+      "options": [
+        "そこ",
+        "ここ",
+        "あそこ",
+        "それ"
+      ],
+      "answer": 0,
+      "explanation": "「そこ」chỉ nơi gần người nghe."
+    },
+    {
+      "id": 41,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "ここ/そこ/あそこ",
+      "vocabulary": [
+        "あそこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "受付は＿です。（二人から遠い場所）",
+      "options": [
+        "あそこ",
+        "ここ",
+        "そこ",
+        "あれ"
+      ],
+      "answer": 0,
+      "explanation": "「あそこ」chỉ nơi xa cả hai người."
+    },
+    {
+      "id": 42,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "こちら/そちら/あちら（丁寧）",
+      "vocabulary": [
+        "こちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "会議室は＿です。（丁寧な言い方、近い場所）",
+      "options": [
+        "こちら",
+        "これ",
+        "ここ",
+        "この"
+      ],
+      "answer": 0,
+      "explanation": "「こちら」là cách nói lịch sự của「ここ」."
+    },
+    {
+      "id": 43,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "こちら＝人（紹介）",
+      "vocabulary": [
+        "こちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "「＿は 部長の田中です。」（人を紹介するとき）",
+      "options": [
+        "こちら",
+        "これ",
+        "この人",
+        "ここ"
+      ],
+      "answer": 0,
+      "explanation": "Khi giới thiệu người một cách lịch sự, dùng「こちら」thay vì「これ」."
+    },
+    {
+      "id": 44,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "possession",
+      "grammar_point": "Nの（所有）",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは わたし＿本です。",
+      "options": [
+        "の",
+        "は",
+        "が",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "「の」nối 2 danh từ, biểu thị sở hữu: \"sách của tôi\"."
+    },
+    {
+      "id": 45,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "possession",
+      "grammar_point": "Nの（所有）",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "それは 山田さん＿かさですか。",
+      "options": [
+        "の",
+        "を",
+        "で",
+        "に"
+      ],
+      "answer": 0,
+      "explanation": "「N1のN2」= N2 của N1."
+    },
+    {
+      "id": 46,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "Nの（所属）",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "わたしは IMC＿社員です。",
+      "options": [
+        "の",
+        "は",
+        "が",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「Nの」cũng dùng để chỉ nơi thuộc về/công ty của ai."
+    },
+    {
+      "id": 47,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "shopping",
+      "grammar_point": "Nの（省略）",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは だれの　かばんですか。」B：「わたし＿です。」",
+      "options": [
+        "の",
+        "は",
+        "を",
+        "に"
+      ],
+      "answer": 0,
+      "explanation": "「わたしの」= của tôi, có thể lược bỏ danh từ phía sau khi đã rõ ngữ cảnh."
+    },
+    {
+      "id": 48,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "何ですか",
+      "vocabulary": [
+        "何"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは＿ですか。」B：「辞書です。」",
+      "options": [
+        "何",
+        "だれ",
+        "どこ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「何ですか」dùng để hỏi đây/đó/kia là cái gì."
+    },
+    {
+      "id": 49,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "shopping",
+      "grammar_point": "だれの",
+      "vocabulary": [
+        "だれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは＿の　カメラですか。」B：「わたしのです。」",
+      "options": [
+        "だれ",
+        "何",
+        "どこ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「だれの」hỏi vật đó của ai."
+    },
+    {
+      "id": 50,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "confirmation",
+      "grammar_point": "そうです",
+      "vocabulary": [
+        "そう"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは 田中さんの本ですか。」B：「はい、＿です。」",
+      "options": [
+        "そう",
+        "これ",
+        "この",
+        "それ"
+      ],
+      "answer": 0,
+      "explanation": "「そうです」dùng để xác nhận đúng như câu hỏi."
+    },
+    {
+      "id": 51,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "confirmation",
+      "grammar_point": "そうじゃありません",
+      "vocabulary": [
+        "そう"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは 山田さんのですか。」B：「いいえ、＿じゃありません。」",
+      "options": [
+        "そう",
+        "これ",
+        "この",
+        "あれ"
+      ],
+      "answer": 0,
+      "explanation": "「そうじゃありません」= \"không phải vậy\" khi phủ định."
+    },
+    {
+      "id": 52,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "confirmation",
+      "grammar_point": "違います",
+      "vocabulary": [
+        "違います"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "A：「これは ワンさんのノートですか。」B：「いいえ、＿。」",
+      "options": [
+        "違います",
+        "そうです",
+        "いいです",
+        "大丈夫です"
+      ],
+      "answer": 0,
+      "explanation": "「違います」cũng dùng để phủ định trực tiếp, ngắn gọn hơn."
+    },
+    {
+      "id": 53,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "も",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは わたしの本です。それ＿わたしの本です。",
+      "options": [
+        "も",
+        "は",
+        "が",
+        "の"
+      ],
+      "answer": 0,
+      "explanation": "「も」nghĩa là \"cũng\", thay thế「は」khi thông tin giống câu trước."
+    },
+    {
+      "id": 54,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "も",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "ミラーさんは 会社員です。サントスさん＿会社員です。",
+      "options": [
+        "も",
+        "は",
+        "を",
+        "に"
+      ],
+      "answer": 0,
+      "explanation": "「も」biểu thị sự tương đồng, \"cũng vậy\"."
+    },
+    {
+      "id": 55,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "AとB",
+      "vocabulary": [
+        "と"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは 本＿雑誌です。",
+      "options": [
+        "と",
+        "や",
+        "の",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「AとB」liệt kê đầy đủ, chỉ có 2 vật đó."
+    },
+    {
+      "id": 56,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "AやBなど",
+      "vocabulary": [
+        "や",
+        "など"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "机の上に 本＿ 辞書＿があります。",
+      "options": [
+        "や／など",
+        "と／と",
+        "の／の",
+        "も／も"
+      ],
+      "answer": 0,
+      "explanation": "「AやBなど」liệt kê vài ví dụ tiêu biểu, ngụ ý còn nhiều thứ khác."
+    },
+    {
+      "id": 57,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ + は + N1のN2です",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは 私の 会社＿ かばんです。",
+      "options": [
+        "の",
+        "は",
+        "を",
+        "で"
+      ],
+      "answer": 0,
+      "explanation": "「会社のかばん」= cặp (đồ dùng) của công ty."
+    },
+    {
+      "id": 58,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N1は N2の Nです",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは スミスさんの 名刺です。スミスさんは 会社員＿。",
+      "options": [
+        "です",
+        "の",
+        "は",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "Kết thúc câu danh từ bằng「です」ở thể lịch sự."
+    },
+    {
+      "id": 59,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ の否定",
+      "vocabulary": [
+        "じゃありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは 雑誌＿。新聞です。",
+      "options": [
+        "じゃありません",
+        "です",
+        "ですか",
+        "でした"
+      ],
+      "answer": 0,
+      "explanation": "「Nじゃありません」là thể phủ định lịch sự của「Nです」."
+    },
+    {
+      "id": 60,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "疑問文（か）",
+      "vocabulary": [
+        "か"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "それは あなたの傘です＿。",
+      "options": [
+        "か",
+        "の",
+        "ね",
+        "よ"
+      ],
+      "answer": 0,
+      "explanation": "Thêm「か」cuối câu để tạo câu hỏi lịch sự."
+    },
+    {
+      "id": 61,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "shopping",
+      "grammar_point": "この/その/あの + N + は + どこの + Nですか",
+      "vocabulary": [
+        "どこの"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "このカメラは ＿会社のですか。",
+      "options": [
+        "どこの",
+        "どれの",
+        "だれの",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「どこの会社」hỏi xuất xứ, hãng sản xuất."
+    },
+    {
+      "id": 62,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "shopping",
+      "grammar_point": "国（産地）+ の + N",
+      "vocabulary": [
+        "の"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは ドイツ＿ 車です。",
+      "options": [
+        "の",
+        "は",
+        "を",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「Nの」cũng dùng để chỉ xuất xứ/quốc gia sản xuất."
+    },
+    {
+      "id": 63,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "この/その/あの + N + は + Nですか、Nですか",
+      "vocabulary": [
+        "それとも"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "low",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは 本ですか、＿ 雑誌ですか。",
+      "options": [
+        "それとも",
+        "そして",
+        "でも",
+        "だから"
+      ],
+      "answer": 0,
+      "explanation": "「それとも」dùng khi hỏi lựa chọn giữa A hoặc B."
+    },
+    {
+      "id": 64,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "これ/それ/あれ の 敬語",
+      "vocabulary": [
+        "こちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "（電話で）「＿は 田中です。」",
+      "options": [
+        "こちら",
+        "これ",
+        "ここ",
+        "この"
+      ],
+      "answer": 0,
+      "explanation": "Khi nói điện thoại tự giới thiệu, dùng「こちら」."
+    },
+    {
+      "id": 65,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N1は N2の Nです（説明の追加）",
+      "vocabulary": [
+        "の",
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "demonstrative"
+      ],
+      "question": "これは 私の 傘です。あれ＿ 私の 傘です。",
+      "options": [
+        "も",
+        "の",
+        "は",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "「も」dùng khi cùng một người sở hữu nhiều vật giống loại đã nói."
+    },
+    {
+      "id": 66,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "何"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「何」はひらがなで何と読みますか。",
+      "options": [
+        "なに",
+        "なん",
+        "いつ",
+        "どれ"
+      ],
+      "answer": 0,
+      "explanation": "「何」đọc là「なに」khi đứng riêng, đọc「なん」trước danh từ đếm được như「なんじ」."
+    },
+    {
+      "id": 67,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "本"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「本」はひらがなで何と読みますか。",
+      "options": [
+        "ほん",
+        "もと",
+        "ぶん",
+        "き"
+      ],
+      "answer": 0,
+      "explanation": "「本」(sách) đọc là「ほん」."
+    },
+    {
+      "id": 68,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "人"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「日本人」の「人」はひらがなで何と読みますか。",
+      "options": [
+        "じん",
+        "にん",
+        "ひと",
+        "びと"
+      ],
+      "answer": 0,
+      "explanation": "「日本人」(にほんじん) - người Nhật, 「人」đọc「じん」khi chỉ quốc tịch."
+    },
+    {
+      "id": 69,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "山"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「山田さん」の「山」はひらがなで何と読みますか。",
+      "options": [
+        "やま",
+        "さん",
+        "せん",
+        "かわ"
+      ],
+      "answer": 0,
+      "explanation": "「山田」(やまだ) là họ người Nhật, 「山」đọc là「やま」."
+    },
+    {
+      "id": 70,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "川"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「川」はひらがなで何と読みますか。",
+      "options": [
+        "かわ",
+        "やま",
+        "いけ",
+        "うみ"
+      ],
+      "answer": 0,
+      "explanation": "「川」(sông) đọc là「かわ」."
+    },
+    {
+      "id": 71,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "田"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「田中さん」の「田」はひらがなで何と読みますか。",
+      "options": [
+        "た",
+        "でん",
+        "たん",
+        "だ"
+      ],
+      "answer": 0,
+      "explanation": "「田中」(たなか) là họ người Nhật."
+    },
+    {
+      "id": 72,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "中"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「田中さん」の「中」はひらがなで何と読みますか。",
+      "options": [
+        "なか",
+        "ちゅう",
+        "じゅう",
+        "うち"
+      ],
+      "answer": 0,
+      "explanation": "「田中」(たなか), 「中」đọc là「なか」trong tên riêng này."
+    },
+    {
+      "id": 73,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "木"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「木村さん」の「木」はひらがなで何と読みますか。",
+      "options": [
+        "き",
+        "もく",
+        "こ",
+        "ぼく"
+      ],
+      "answer": 0,
+      "explanation": "「木村」(きむら) là họ người Nhật."
+    },
+    {
+      "id": 74,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "女"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「女の人」の「女」はひらがなで何と読みますか。",
+      "options": [
+        "おんな",
+        "じょ",
+        "め",
+        "にょ"
+      ],
+      "answer": 0,
+      "explanation": "「女の人」(おんなのひと) - người phụ nữ."
+    },
+    {
+      "id": 75,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "男"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「男の人」の「男」はひらがなで何と読みますか。",
+      "options": [
+        "おとこ",
+        "だん",
+        "なん",
+        "お"
+      ],
+      "answer": 0,
+      "explanation": "「男の人」(おとこのひと) - người đàn ông."
+    },
+    {
+      "id": 76,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "大"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「大きい」の「大」はひらがなで何と読みますか。",
+      "options": [
+        "おお",
+        "だい",
+        "たい",
+        "おう"
+      ],
+      "answer": 0,
+      "explanation": "「大きい」(おおきい) - to, lớn."
+    },
+    {
+      "id": 77,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "小"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「小さい」の「小」はひらがなで何と読みますか。",
+      "options": [
+        "ちい",
+        "しょう",
+        "こ",
+        "せい"
+      ],
+      "answer": 0,
+      "explanation": "「小さい」(ちいさい) - nhỏ."
+    },
+    {
+      "id": 78,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "上"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「机の上」の「上」はひらがなで何と読みますか。",
+      "options": [
+        "うえ",
+        "じょう",
+        "かみ",
+        "あ"
+      ],
+      "answer": 0,
+      "explanation": "「机の上」(つくえのうえ) - trên bàn."
+    },
+    {
+      "id": 79,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "下"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「机の下」の「下」はひらがなで何と読みますか。",
+      "options": [
+        "した",
+        "か",
+        "げ",
+        "しも"
+      ],
+      "answer": 0,
+      "explanation": "「机の下」(つくえのした) - dưới bàn."
+    },
+    {
+      "id": 80,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "会社"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「会社」はひらがなで何と読みますか。",
+      "options": [
+        "かいしゃ",
+        "かいや",
+        "あいしゃ",
+        "がいしゃ"
+      ],
+      "answer": 0,
+      "explanation": "「会社」(かいしゃ) - công ty."
+    },
+    {
+      "id": 81,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "office",
+      "vocabulary": [
+        "机",
+        "椅子"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "これは わたしの 机です。机の 上に 本や 辞書などが あります。あれは わたしの 椅子です。",
+      "question": "机の上に何がありますか。",
+      "options": [
+        "本や辞書など",
+        "本だけ",
+        "椅子",
+        "会社"
+      ],
+      "answer": 0,
+      "explanation": "文中に「机の上に本や辞書などがあります」とあります。"
+    },
+    {
+      "id": 82,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "名刺"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "ミラーさんは これを 見ました。「これは 田中さんの 名刺です。」",
+      "question": "これは何の名刺ですか。",
+      "options": [
+        "田中さんの名刺",
+        "ミラーさんの名刺",
+        "会社の名刺",
+        "サントスさんの名刺"
+      ],
+      "answer": 0,
+      "explanation": "「これは田中さんの名刺です」とあります。"
+    },
+    {
+      "id": 83,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "shopping",
+      "vocabulary": [
+        "かさ",
+        "だれの"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "A：「すみません、それは だれの かさですか。」\nB：「これは わたしの かさです。」",
+      "question": "かさはだれのですか。",
+      "options": [
+        "Bさんのかさ",
+        "Aさんのかさ",
+        "会社のかさ",
+        "だれのかさか分からない"
+      ],
+      "answer": 0,
+      "explanation": "Bが「これはわたしのかさです」と答えています。"
+    },
+    {
+      "id": 84,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "shopping",
+      "vocabulary": [
+        "コンピューター",
+        "どこの"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "このコンピューターは 日本の コンピューターです。あのコンピューターは アメリカの コンピューターです。",
+      "question": "このコンピューターはどこのですか。",
+      "options": [
+        "日本のコンピューター",
+        "アメリカのコンピューター",
+        "中国のコンピューター",
+        "ドイツのコンピューター"
+      ],
+      "answer": 0,
+      "explanation": "「このコンピューターは日本のコンピューターです」とあります。"
+    },
+    {
+      "id": 85,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "社員",
+        "会社"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "サントスさんは ブラジル人です。IMCの 社員です。ワンさんも IMCの 社員です。",
+      "question": "ワンさんはどこの社員ですか。",
+      "options": [
+        "IMCの社員",
+        "ブラジルの会社の社員",
+        "サントスさんの会社ではない",
+        "分からない"
+      ],
+      "answer": 0,
+      "explanation": "「ワンさんもIMCの社員です」とあります。"
+    },
+    {
+      "id": 86,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "objects",
+      "vocabulary": [
+        "本",
+        "雑誌",
+        "新聞"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "机の上に 本と 雑誌が あります。新聞は いすの 上に あります。",
+      "question": "新聞はどこにありますか。",
+      "options": [
+        "いすの上",
+        "机の上",
+        "机の下",
+        "本の下"
+      ],
+      "answer": 0,
+      "explanation": "「新聞はいすの上にあります」とあります。"
+    },
+    {
+      "id": 87,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "shopping",
+      "vocabulary": [
+        "財布",
+        "違います"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "A：「これは ワンさんの 財布ですか。」\nB：「いいえ、違います。それは 山田さんの 財布です。」",
+      "question": "財布はだれのですか。",
+      "options": [
+        "山田さんの財布",
+        "ワンさんの財布",
+        "Aさんの財布",
+        "分からない"
+      ],
+      "answer": 0,
+      "explanation": "Bが「いいえ、違います。それは山田さんの財布です」と答えています。"
+    },
+    {
+      "id": 88,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "名刺",
+        "こちら"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "田中：「こちらは わたしの 名刺です。どうぞ。」\nミラー：「ありがとうございます。」",
+      "question": "田中さんは何をミラーさんにあげましたか。",
+      "options": [
+        "名刺",
+        "本",
+        "かばん",
+        "かさ"
+      ],
+      "answer": 0,
+      "explanation": "「こちらはわたしの名刺です」と言って渡しています。"
+    },
+    {
+      "id": 89,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "objects",
+      "vocabulary": [
+        "カメラ",
+        "会社"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "これは 新しい カメラです。IMCの カメラです。あれは 古い カメラです。わたしの カメラです。",
+      "question": "新しいカメラはだれのですか。",
+      "options": [
+        "IMCのカメラ",
+        "わたしのカメラ",
+        "だれのカメラか分からない",
+        "古いカメラ"
+      ],
+      "answer": 0,
+      "explanation": "「これは新しいカメラです。IMCのカメラです」とあります。"
+    },
+    {
+      "id": 90,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "shopping",
+      "vocabulary": [
+        "ボールペン",
+        "鉛筆"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "これは ボールペンです。あれは 鉛筆です。ボールペンも 鉛筆も わたしのです。",
+      "question": "ボールペンと鉛筆はだれのですか。",
+      "options": [
+        "両方ともわたしのもの",
+        "ボールペンだけわたしのもの",
+        "鉛筆だけわたしのもの",
+        "どちらもわたしのものではない"
+      ],
+      "answer": 0,
+      "explanation": "「ボールペンも鉛筆もわたしのです」と、「も」を2回使って両方とも同じであることを示しています。"
+    },
+    {
+      "id": 91,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "objects",
+      "vocabulary": [
+        "何"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "ミラー：「これは 何ですか。」\nワン：「＿＿＿」",
+      "question": "ワンさんの答えとして自然なのはどれですか。",
+      "options": [
+        "それは 辞書です。",
+        "それは だれですか。",
+        "こちらこそ。",
+        "すみません。"
+      ],
+      "answer": 0,
+      "explanation": "「これは何ですか」には物の名前で答えます。"
+    },
+    {
+      "id": 92,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "shopping",
+      "vocabulary": [
+        "だれの"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「すみません、この かばんは だれのですか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "わたしのです。",
+        "かばんです。",
+        "これです。",
+        "そうですね。"
+      ],
+      "answer": 0,
+      "explanation": "「だれのですか」には所有者を答えます。"
+    },
+    {
+      "id": 93,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "confirmation",
+      "vocabulary": [
+        "そうです"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「これは 山田さんの 傘ですか。」\nB：「はい、＿＿＿」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "そうです。",
+        "そうですか。",
+        "いいですね。",
+        "どうも。"
+      ],
+      "answer": 0,
+      "explanation": "肯定の返事には「はい、そうです」と答えます。"
+    },
+    {
+      "id": 94,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "confirmation",
+      "vocabulary": [
+        "違います"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「これは 田中さんの 本ですか。」\nB：「いいえ、＿＿＿。それは 木村さんのです。」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "違います",
+        "そうです",
+        "いいです",
+        "すみません"
+      ],
+      "answer": 0,
+      "explanation": "否定するときは「いいえ、違います」と言います。"
+    },
+    {
+      "id": 95,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "こちら",
+        "紹介"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "田中：「＿＿＿は 部長の 木村です。」\n木村：「はじめまして、木村です。」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "こちら",
+        "これ",
+        "ここ",
+        "この人"
+      ],
+      "answer": 0,
+      "explanation": "人を紹介するとき丁寧に「こちら」を使います。"
+    },
+    {
+      "id": 96,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "location",
+      "vocabulary": [
+        "どこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「すみません、会議室は どこですか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "あそこです。",
+        "それです。",
+        "あの人です。",
+        "だれもいません。"
+      ],
+      "answer": 0,
+      "explanation": "「どこですか」には場所で答えます。"
+    },
+    {
+      "id": 97,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "shopping",
+      "vocabulary": [
+        "どこの"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「この 時計は どこのですか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "スイスのです。",
+        "とけいです。",
+        "これです。",
+        "だれのですか。"
+      ],
+      "answer": 0,
+      "explanation": "「どこのですか」には産地・国名で答えます。"
+    },
+    {
+      "id": 98,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "objects",
+      "vocabulary": [
+        "も"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「これは わたしの 傘です。」\nB：「あれも 傘ですか。」\nA：「＿＿＿」",
+      "question": "空欄に入る自然な返事はどれですか。",
+      "options": [
+        "はい、あれも わたしの 傘です。",
+        "いいえ、傘です。",
+        "あれは 傘は です。",
+        "それは 傘も です。"
+      ],
+      "answer": 0,
+      "explanation": "「も」を使って前と同じ内容を肯定する自然な返事です。"
+    },
+    {
+      "id": 99,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "shopping",
+      "vocabulary": [
+        "どれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「ワンさんの本は どれですか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "あれです。",
+        "あそこです。",
+        "あの人です。",
+        "あちらです。"
+      ],
+      "answer": 0,
+      "explanation": "「どれですか」には物を指す「これ／それ／あれ」で答えます。"
+    },
+    {
+      "id": 100,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "名刺",
+        "どうぞ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "田中：「これは わたしの 名刺です。＿＿＿」\nミラー：「どうも ありがとうございます。」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "どうぞ。",
+        "すみません。",
+        "違います。",
+        "そうですか。"
+      ],
+      "answer": 0,
+      "explanation": "物を渡すときに「どうぞ」と言います。"
+    }
+  ]
+}

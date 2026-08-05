@@ -1,0 +1,2760 @@
+{
+  "lesson": 3,
+  "level": "N5",
+  "source": "Minna no Nihongo",
+  "questions": [
+    {
+      "id": 1,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "上"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「上」はどういう意味ですか。",
+      "options": [
+        "Phía trên",
+        "Phía dưới",
+        "Bên trong",
+        "Bên ngoài"
+      ],
+      "answer": 0,
+      "explanation": "「上」nghĩa là phía trên."
+    },
+    {
+      "id": 2,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "下"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「下」はどういう意味ですか。",
+      "options": [
+        "Phía dưới",
+        "Phía trên",
+        "Bên cạnh",
+        "Ở giữa"
+      ],
+      "answer": 0,
+      "explanation": "「下」nghĩa là phía dưới."
+    },
+    {
+      "id": 3,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "前"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「前」はどういう意味ですか。",
+      "options": [
+        "Phía trước",
+        "Phía sau",
+        "Bên trong",
+        "Bên ngoài"
+      ],
+      "answer": 0,
+      "explanation": "「前」nghĩa là phía trước."
+    },
+    {
+      "id": 4,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "後ろ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「後ろ」はどういう意味ですか。",
+      "options": [
+        "Phía sau",
+        "Phía trước",
+        "Bên cạnh",
+        "Ở giữa"
+      ],
+      "answer": 0,
+      "explanation": "「後ろ」nghĩa là phía sau."
+    },
+    {
+      "id": 5,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "中"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「中」はどういう意味ですか。",
+      "options": [
+        "Bên trong",
+        "Bên ngoài",
+        "Phía trên",
+        "Phía dưới"
+      ],
+      "answer": 0,
+      "explanation": "「中」nghĩa là bên trong."
+    },
+    {
+      "id": 6,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "外"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「外」はどういう意味ですか。",
+      "options": [
+        "Bên ngoài",
+        "Bên trong",
+        "Ở giữa",
+        "Bên cạnh"
+      ],
+      "answer": 0,
+      "explanation": "「外」nghĩa là bên ngoài."
+    },
+    {
+      "id": 7,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "右"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「右」はどういう意味ですか。",
+      "options": [
+        "Bên phải",
+        "Bên trái",
+        "Ở giữa",
+        "Phía trước"
+      ],
+      "answer": 0,
+      "explanation": "「右」nghĩa là bên phải."
+    },
+    {
+      "id": 8,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "左"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「左」はどういう意味ですか。",
+      "options": [
+        "Bên trái",
+        "Bên phải",
+        "Ở giữa",
+        "Phía sau"
+      ],
+      "answer": 0,
+      "explanation": "「左」nghĩa là bên trái."
+    },
+    {
+      "id": 9,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "隣"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「隣」はどういう意味ですか。",
+      "options": [
+        "Bên cạnh, kế bên (cùng loại)",
+        "Đối diện",
+        "Ở giữa",
+        "Xa hơn"
+      ],
+      "answer": 0,
+      "explanation": "「隣」nghĩa là ngay bên cạnh, thường cùng loại (nhà cạnh nhà)."
+    },
+    {
+      "id": 10,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "近く"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「近く」はどういう意味ですか。",
+      "options": [
+        "Gần đây",
+        "Xa",
+        "Bên trong",
+        "Bên ngoài"
+      ],
+      "answer": 0,
+      "explanation": "「近く」nghĩa là ở gần, lân cận."
+    },
+    {
+      "id": 11,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "間"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「間」はどういう意味ですか。",
+      "options": [
+        "Ở giữa (khoảng giữa 2 vật)",
+        "Phía trên",
+        "Phía dưới",
+        "Bên ngoài"
+      ],
+      "answer": 0,
+      "explanation": "「AとBの間」nghĩa là khoảng giữa A và B."
+    },
+    {
+      "id": 12,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "location",
+      "vocabulary": [
+        "そば"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "position"
+      ],
+      "question": "「そば」はどういう意味ですか。",
+      "options": [
+        "Bên cạnh, gần kề",
+        "Phía trước",
+        "Phía sau",
+        "Bên trong"
+      ],
+      "answer": 0,
+      "explanation": "「そば」nghĩa gần giống「近く」, chỉ vị trí sát bên."
+    },
+    {
+      "id": 13,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "existence",
+      "vocabulary": [
+        "あります"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "verb",
+        "existence"
+      ],
+      "question": "「あります」は何に使いますか。",
+      "options": [
+        "Đồ vật, thực vật (vô tri)",
+        "Người, động vật (có sự sống)",
+        "Cả hai như nhau",
+        "Chỉ dùng cho nơi chốn"
+      ],
+      "answer": 0,
+      "explanation": "「あります」dùng để diễn tả sự tồn tại của vật vô tri, thực vật."
+    },
+    {
+      "id": 14,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "existence",
+      "vocabulary": [
+        "います"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "verb",
+        "existence"
+      ],
+      "question": "「います」は何に使いますか。",
+      "options": [
+        "Người, động vật (có sự sống)",
+        "Đồ vật vô tri",
+        "Cả hai như nhau",
+        "Chỉ dùng cho thực vật"
+      ],
+      "answer": 0,
+      "explanation": "「います」dùng để diễn tả sự tồn tại của người, động vật."
+    },
+    {
+      "id": 15,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "animals",
+      "vocabulary": [
+        "猫"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "animal"
+      ],
+      "question": "「猫」はどういう意味ですか。",
+      "options": [
+        "Con mèo",
+        "Con chó",
+        "Con chim",
+        "Con cá"
+      ],
+      "answer": 0,
+      "explanation": "「猫」nghĩa là con mèo."
+    },
+    {
+      "id": 16,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "animals",
+      "vocabulary": [
+        "犬"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "animal"
+      ],
+      "question": "「犬」はどういう意味ですか。",
+      "options": [
+        "Con chó",
+        "Con mèo",
+        "Con chim",
+        "Con cá"
+      ],
+      "answer": 0,
+      "explanation": "「犬」nghĩa là con chó."
+    },
+    {
+      "id": 17,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "animals",
+      "vocabulary": [
+        "鳥"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "animal"
+      ],
+      "question": "「鳥」はどういう意味ですか。",
+      "options": [
+        "Con chim",
+        "Con mèo",
+        "Con chó",
+        "Con cá"
+      ],
+      "answer": 0,
+      "explanation": "「鳥」nghĩa là con chim."
+    },
+    {
+      "id": 18,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "furniture",
+      "vocabulary": [
+        "テーブル"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "furniture"
+      ],
+      "question": "「テーブル」はどういう意味ですか。",
+      "options": [
+        "Cái bàn",
+        "Cái ghế",
+        "Cái tủ",
+        "Cái giường"
+      ],
+      "answer": 0,
+      "explanation": "「テーブル」(table) nghĩa là cái bàn."
+    },
+    {
+      "id": 19,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "appliance",
+      "vocabulary": [
+        "冷蔵庫"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "appliance"
+      ],
+      "question": "「冷蔵庫」はどういう意味ですか。",
+      "options": [
+        "Tủ lạnh",
+        "Tủ quần áo",
+        "Lò vi sóng",
+        "Máy giặt"
+      ],
+      "answer": 0,
+      "explanation": "「冷蔵庫」(れいぞうこ) nghĩa là tủ lạnh."
+    },
+    {
+      "id": 20,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "house",
+      "vocabulary": [
+        "ドア"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "house"
+      ],
+      "question": "「ドア」はどういう意味ですか。",
+      "options": [
+        "Cửa (ra vào)",
+        "Cửa sổ",
+        "Tường",
+        "Sàn nhà"
+      ],
+      "answer": 0,
+      "explanation": "「ドア」(door) nghĩa là cửa ra vào."
+    },
+    {
+      "id": 21,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "house",
+      "vocabulary": [
+        "まど"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "house"
+      ],
+      "question": "「まど」はどういう意味ですか。",
+      "options": [
+        "Cửa sổ",
+        "Cửa ra vào",
+        "Tường",
+        "Mái nhà"
+      ],
+      "answer": 0,
+      "explanation": "「まど」(窓) nghĩa là cửa sổ."
+    },
+    {
+      "id": 22,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "office",
+      "vocabulary": [
+        "はこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "object"
+      ],
+      "question": "「はこ」はどういう意味ですか。",
+      "options": [
+        "Cái hộp",
+        "Cái túi",
+        "Cái tủ",
+        "Cái giỏ"
+      ],
+      "answer": 0,
+      "explanation": "「はこ」(箱) nghĩa là cái hộp."
+    },
+    {
+      "id": 23,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "office",
+      "vocabulary": [
+        "ロッカー"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "furniture"
+      ],
+      "question": "「ロッカー」はどういう意味ですか。",
+      "options": [
+        "Tủ khóa (locker)",
+        "Tủ lạnh",
+        "Bàn làm việc",
+        "Ghế ngồi"
+      ],
+      "answer": 0,
+      "explanation": "「ロッカー」(locker) nghĩa là tủ có khóa để đồ."
+    },
+    {
+      "id": 24,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "furniture",
+      "vocabulary": [
+        "本棚"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "furniture"
+      ],
+      "question": "「本棚」はどういう意味ですか。",
+      "options": [
+        "Kệ sách",
+        "Bàn học",
+        "Tủ quần áo",
+        "Ghế sofa"
+      ],
+      "answer": 0,
+      "explanation": "「本棚」(ほんだな) nghĩa là kệ/giá sách."
+    },
+    {
+      "id": 25,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "places",
+      "vocabulary": [
+        "銀行"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "place"
+      ],
+      "question": "「銀行」はどういう意味ですか。",
+      "options": [
+        "Ngân hàng",
+        "Bưu điện",
+        "Bệnh viện",
+        "Công viên"
+      ],
+      "answer": 0,
+      "explanation": "「銀行」(ぎんこう) nghĩa là ngân hàng."
+    },
+    {
+      "id": 26,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "places",
+      "vocabulary": [
+        "郵便局"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "place"
+      ],
+      "question": "「郵便局」はどういう意味ですか。",
+      "options": [
+        "Bưu điện",
+        "Ngân hàng",
+        "Trường học",
+        "Nhà ga"
+      ],
+      "answer": 0,
+      "explanation": "「郵便局」(ゆうびんきょく) nghĩa là bưu điện."
+    },
+    {
+      "id": 27,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "places",
+      "vocabulary": [
+        "公園"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "place"
+      ],
+      "question": "「公園」はどういう意味ですか。",
+      "options": [
+        "Công viên",
+        "Bệnh viện",
+        "Siêu thị",
+        "Nhà hàng"
+      ],
+      "answer": 0,
+      "explanation": "「公園」(こうえん) nghĩa là công viên."
+    },
+    {
+      "id": 28,
+      "type": "vocabulary",
+      "subtype": "meaning",
+      "topic": "places",
+      "vocabulary": [
+        "スーパー"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "noun",
+        "place"
+      ],
+      "question": "「スーパー」はどういう意味ですか。",
+      "options": [
+        "Siêu thị",
+        "Cửa hàng tiện lợi",
+        "Bưu điện",
+        "Ngân hàng"
+      ],
+      "answer": 0,
+      "explanation": "「スーパー」(super market) nghĩa là siêu thị."
+    },
+    {
+      "id": 29,
+      "type": "vocabulary",
+      "subtype": "distinction",
+      "topic": "places",
+      "vocabulary": [
+        "だれか",
+        "だれも"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "question-word"
+      ],
+      "question": "「教室に だれか いますか」の「だれか」はどういう意味ですか。",
+      "options": [
+        "Có ai đó (không xác định)",
+        "Không có ai cả",
+        "Mọi người",
+        "Người đó"
+      ],
+      "answer": 0,
+      "explanation": "「だれか」nghĩa là \"có ai đó\", dùng trong câu hỏi khi chưa biết có người hay không."
+    },
+    {
+      "id": 30,
+      "type": "vocabulary",
+      "subtype": "usage",
+      "topic": "places",
+      "vocabulary": [
+        "なにも"
+      ],
+      "kanji": [],
+      "jlpt_section": "語彙",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "pronoun",
+        "negation"
+      ],
+      "question": "「はこの中に なにも ありません」の「なにも」の後ろは、どんな形になりますか。",
+      "options": [
+        "Thể phủ định (ありません)",
+        "Thể khẳng định (あります)",
+        "Thể nghi vấn",
+        "Thể quá khứ"
+      ],
+      "answer": 0,
+      "explanation": "「なにも」luôn đi cùng với thể phủ định, nghĩa là \"không có gì cả\"."
+    },
+    {
+      "id": 31,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "N(場所)に N(物)が あります",
+      "vocabulary": [
+        "に",
+        "が",
+        "あります"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "机の 上＿ 本＿ あります。",
+      "options": [
+        "に／が",
+        "で／を",
+        "へ／は",
+        "と／の"
+      ],
+      "answer": 0,
+      "explanation": "「場所に物があります」diễn tả vật tồn tại ở đâu."
+    },
+    {
+      "id": 32,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "N(場所)に N(人)が います",
+      "vocabulary": [
+        "に",
+        "が",
+        "います"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "教室＿ 学生＿ います。",
+      "options": [
+        "に／が",
+        "で／を",
+        "へ／の",
+        "と／は"
+      ],
+      "answer": 0,
+      "explanation": "「場所に人がいます」diễn tả người tồn tại ở đâu, dùng động từ「います」."
+    },
+    {
+      "id": 33,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "animals",
+      "grammar_point": "あります/います の使い分け",
+      "vocabulary": [
+        "います"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "公園に 犬が＿。",
+      "options": [
+        "います",
+        "あります",
+        "でした",
+        "です"
+      ],
+      "answer": 0,
+      "explanation": "Động vật (có sự sống) dùng「います」."
+    },
+    {
+      "id": 34,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "あります/います の使い分け",
+      "vocabulary": [
+        "あります"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "つくえの上に ノートが＿。",
+      "options": [
+        "あります",
+        "います",
+        "でした",
+        "です"
+      ],
+      "answer": 0,
+      "explanation": "Đồ vật vô tri dùng「あります」."
+    },
+    {
+      "id": 35,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "N(物)は N(場所)に あります",
+      "vocabulary": [
+        "は",
+        "に"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "本＿ つくえの上＿ あります。",
+      "options": [
+        "は／に",
+        "が／で",
+        "を／へ",
+        "の／と"
+      ],
+      "answer": 0,
+      "explanation": "Khi chủ đề là vật đã biết, dùng「Nは場所にあります」đảo trật tự."
+    },
+    {
+      "id": 36,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "N(人)は N(場所)に います",
+      "vocabulary": [
+        "は",
+        "に"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "田中さん＿ 会議室＿ います。",
+      "options": [
+        "は／に",
+        "が／で",
+        "を／へ",
+        "も／の"
+      ],
+      "answer": 0,
+      "explanation": "Khi chủ đề là người đã biết, dùng「Nは場所にいます」."
+    },
+    {
+      "id": 37,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（上）",
+      "vocabulary": [
+        "の",
+        "上"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "猫は テーブル＿ 上に います。",
+      "options": [
+        "の",
+        "は",
+        "に",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "「Nの上」nghĩa là \"trên N\"."
+    },
+    {
+      "id": 38,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（下）",
+      "vocabulary": [
+        "の",
+        "下"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "本は いす＿ 下に あります。",
+      "options": [
+        "の",
+        "は",
+        "に",
+        "を"
+      ],
+      "answer": 0,
+      "explanation": "「Nの下」nghĩa là \"dưới N\"."
+    },
+    {
+      "id": 39,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（前）",
+      "vocabulary": [
+        "の",
+        "前"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "銀行は 駅＿ 前に あります。",
+      "options": [
+        "の",
+        "は",
+        "に",
+        "で"
+      ],
+      "answer": 0,
+      "explanation": "「Nの前」nghĩa là \"phía trước N\"."
+    },
+    {
+      "id": 40,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（後ろ）",
+      "vocabulary": [
+        "の",
+        "後ろ"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "公園は 病院＿ 後ろに あります。",
+      "options": [
+        "の",
+        "は",
+        "に",
+        "で"
+      ],
+      "answer": 0,
+      "explanation": "「Nの後ろ」nghĩa là \"phía sau N\"."
+    },
+    {
+      "id": 41,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（中）",
+      "vocabulary": [
+        "の",
+        "中"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "かばんの＿に 財布が あります。",
+      "options": [
+        "中",
+        "上",
+        "下",
+        "外"
+      ],
+      "answer": 0,
+      "explanation": "「Nの中」nghĩa là \"bên trong N\"."
+    },
+    {
+      "id": 42,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（隣）",
+      "vocabulary": [
+        "の",
+        "隣"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "郵便局は 銀行の＿に あります。",
+      "options": [
+        "隣",
+        "中",
+        "上",
+        "下"
+      ],
+      "answer": 0,
+      "explanation": "「Nの隣」nghĩa là \"bên cạnh N\", cùng loại địa điểm."
+    },
+    {
+      "id": 43,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（近く）",
+      "vocabulary": [
+        "の",
+        "近く"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "駅の＿に コンビニが あります。",
+      "options": [
+        "近く",
+        "間",
+        "そば",
+        "外"
+      ],
+      "answer": 0,
+      "explanation": "「Nの近く」nghĩa là \"gần N\"."
+    },
+    {
+      "id": 44,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（間）",
+      "vocabulary": [
+        "と",
+        "の",
+        "間"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "銀行は 病院＿ 郵便局の間に あります。",
+      "options": [
+        "と",
+        "や",
+        "の",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「AとBの間」= khoảng giữa A và B."
+    },
+    {
+      "id": 45,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（右/左）",
+      "vocabulary": [
+        "の",
+        "右"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "トイレは かいだんの＿に あります。",
+      "options": [
+        "右",
+        "中",
+        "上",
+        "間"
+      ],
+      "answer": 0,
+      "explanation": "「Nの右」nghĩa là \"bên phải N\"."
+    },
+    {
+      "id": 46,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "ここ/そこ/あそこ + に + Nが あります/います",
+      "vocabulary": [
+        "ここ",
+        "に",
+        "が"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "ここ＿ 電話＿ あります。",
+      "options": [
+        "に／が",
+        "は／を",
+        "で／の",
+        "へ／と"
+      ],
+      "answer": 0,
+      "explanation": "「ここに」kết hợp với「Nがあります」diễn tả vật tồn tại tại đây."
+    },
+    {
+      "id": 47,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "疑問文（何がありますか）",
+      "vocabulary": [
+        "何",
+        "が"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "つくえの上に＿が ありますか。",
+      "options": [
+        "何",
+        "だれ",
+        "どこ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「何がありますか」hỏi có vật gì (đồ vật)."
+    },
+    {
+      "id": 48,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "疑問文（だれがいますか）",
+      "vocabulary": [
+        "だれ",
+        "が"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "教室に＿が いますか。",
+      "options": [
+        "だれ",
+        "何",
+        "どこ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「だれがいますか」hỏi có ai (người)."
+    },
+    {
+      "id": 49,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "疑問文（どこにありますか）",
+      "vocabulary": [
+        "どこ",
+        "に"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "すみません、トイレは＿に ありますか。",
+      "options": [
+        "どこ",
+        "何",
+        "だれ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「どこにありますか」hỏi vật ở đâu."
+    },
+    {
+      "id": 50,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "疑問文（どこにいますか）",
+      "vocabulary": [
+        "どこ",
+        "に"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "田中さんは＿に いますか。",
+      "options": [
+        "どこ",
+        "何",
+        "だれ",
+        "どの"
+      ],
+      "answer": 0,
+      "explanation": "「どこにいますか」hỏi người ở đâu."
+    },
+    {
+      "id": 51,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "AとB（列挙）",
+      "vocabulary": [
+        "と"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "つくえの上に 本＿ ノートが あります。",
+      "options": [
+        "と",
+        "や",
+        "の",
+        "も"
+      ],
+      "answer": 0,
+      "explanation": "「AとB」liệt kê đầy đủ, chỉ 2 vật đó."
+    },
+    {
+      "id": 52,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "listing",
+      "grammar_point": "AやBなど（列挙）",
+      "vocabulary": [
+        "や",
+        "など"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "はこの中に ペン＿ 消しゴム＿ あります。",
+      "options": [
+        "や／など",
+        "と／と",
+        "の／の",
+        "も／も"
+      ],
+      "answer": 0,
+      "explanation": "「AやBなど」liệt kê một vài ví dụ, ngụ ý còn nhiều thứ khác."
+    },
+    {
+      "id": 53,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "だれか + います",
+      "vocabulary": [
+        "だれか"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "教室に＿ いますか。",
+      "options": [
+        "だれか",
+        "だれも",
+        "何か",
+        "何も"
+      ],
+      "answer": 0,
+      "explanation": "「だれか」dùng khi hỏi \"có ai đó không\", chưa biết có người hay không."
+    },
+    {
+      "id": 54,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "だれも + いません",
+      "vocabulary": [
+        "だれも",
+        "いません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "教室に＿ いません。",
+      "options": [
+        "だれも",
+        "だれか",
+        "何も",
+        "何か"
+      ],
+      "answer": 0,
+      "explanation": "「だれも＋否定」nghĩa là \"không có ai cả\"."
+    },
+    {
+      "id": 55,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "何か + あります",
+      "vocabulary": [
+        "何か"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "かばんの中に＿ ありますか。",
+      "options": [
+        "何か",
+        "何も",
+        "だれか",
+        "だれも"
+      ],
+      "answer": 0,
+      "explanation": "「何か」dùng khi hỏi \"có gì đó không\"."
+    },
+    {
+      "id": 56,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "何も + ありません",
+      "vocabulary": [
+        "何も",
+        "ありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "はこの中に＿ ありません。",
+      "options": [
+        "何も",
+        "何か",
+        "だれも",
+        "だれか"
+      ],
+      "answer": 0,
+      "explanation": "「何も＋否定」nghĩa là \"không có gì cả\"."
+    },
+    {
+      "id": 57,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "あります の否定",
+      "vocabulary": [
+        "ありません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "つくえの上に 電話は＿。",
+      "options": [
+        "ありません",
+        "いません",
+        "ではありません",
+        "じゃないです"
+      ],
+      "answer": 0,
+      "explanation": "Thể phủ định của「あります」là「ありません」."
+    },
+    {
+      "id": 58,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "います の否定",
+      "vocabulary": [
+        "いません"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "会議室に 部長は＿。",
+      "options": [
+        "いません",
+        "ありません",
+        "ではありません",
+        "じゃないです"
+      ],
+      "answer": 0,
+      "explanation": "Thể phủ định của「います」là「いません」."
+    },
+    {
+      "id": 59,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N(人)は N(場所)に います（説明）",
+      "vocabulary": [
+        "に"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "木村さんは 今 会社＿ います。",
+      "options": [
+        "に",
+        "で",
+        "を",
+        "へ"
+      ],
+      "answer": 0,
+      "explanation": "Trợ từ「に」đánh dấu nơi tồn tại với động từ「います」."
+    },
+    {
+      "id": 60,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "shopping",
+      "grammar_point": "N(場所)に N(物)が あります（複数の場所）",
+      "vocabulary": [
+        "に",
+        "が"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "この 近く＿ 銀行＿ ありますか。",
+      "options": [
+        "に／が",
+        "で／を",
+        "へ／の",
+        "と／は"
+      ],
+      "answer": 0,
+      "explanation": "「この近くに」hỏi về sự tồn tại của địa điểm gần đây."
+    },
+    {
+      "id": 61,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "location",
+      "grammar_point": "位置名詞（そば）",
+      "vocabulary": [
+        "の",
+        "そば"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "low",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "電話は 受付の＿に あります。",
+      "options": [
+        "そば",
+        "間",
+        "外",
+        "中"
+      ],
+      "answer": 0,
+      "explanation": "「Nのそば」nghĩa gần giống「近く」, chỉ vị trí sát cạnh."
+    },
+    {
+      "id": 62,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "これ/それ/あれ との違い",
+      "vocabulary": [
+        "は",
+        "に",
+        "あります"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "low",
+      "difficulty": "hard",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "コンビニは どこに ありますか。＿駅の前にあります。",
+      "options": [
+        "あれは",
+        "これは",
+        "この",
+        "あの"
+      ],
+      "answer": 0,
+      "explanation": "「あれは」dùng để trả lời chỉ vật xa cả hai người khi trả lời câu hỏi về vị trí."
+    },
+    {
+      "id": 63,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "existence",
+      "grammar_point": "N1(人)とN2(人)が います",
+      "vocabulary": [
+        "と",
+        "が",
+        "います"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "教室に 田中さん＿ 山田さん＿ います。",
+      "options": [
+        "と／が",
+        "や／は",
+        "の／を",
+        "も／に"
+      ],
+      "answer": 0,
+      "explanation": "「N1とN2がいます」liệt kê đủ 2 người cùng tồn tại ở một nơi."
+    },
+    {
+      "id": 64,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "objects",
+      "grammar_point": "N(物)が 2つ あります（数を聞く前段階）",
+      "vocabulary": [
+        "が",
+        "あります"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "つくえの上に 本＿ 2冊 あります。",
+      "options": [
+        "が",
+        "は",
+        "を",
+        "に"
+      ],
+      "answer": 0,
+      "explanation": "Trợ từ「が」đánh dấu chủ thể tồn tại khi có số lượng đi kèm."
+    },
+    {
+      "id": 65,
+      "type": "grammar",
+      "subtype": "particle",
+      "topic": "workplace",
+      "grammar_point": "N(場所)に だれが いますか",
+      "vocabulary": [
+        "だれ",
+        "が",
+        "います"
+      ],
+      "kanji": [],
+      "jlpt_section": "文法",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 20,
+      "tags": [
+        "particle",
+        "existence"
+      ],
+      "question": "会議室に＿が いますか。「田中さんが　います。」",
+      "options": [
+        "だれ",
+        "何",
+        "どこ",
+        "いつ"
+      ],
+      "answer": 0,
+      "explanation": "Hỏi về người tồn tại ở một nơi dùng「だれがいますか」."
+    },
+    {
+      "id": 66,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "上"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「上」はひらがなで何と読みますか。",
+      "options": [
+        "うえ",
+        "した",
+        "なか",
+        "そと"
+      ],
+      "answer": 0,
+      "explanation": "「上」(うえ) - phía trên."
+    },
+    {
+      "id": 67,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "下"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「下」はひらがなで何と読みますか。",
+      "options": [
+        "した",
+        "うえ",
+        "まえ",
+        "あと"
+      ],
+      "answer": 0,
+      "explanation": "「下」(した) - phía dưới."
+    },
+    {
+      "id": 68,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "中"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「中」はひらがなで何と読みますか。",
+      "options": [
+        "なか",
+        "そと",
+        "うえ",
+        "した"
+      ],
+      "answer": 0,
+      "explanation": "「中」(なか) - bên trong."
+    },
+    {
+      "id": 69,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "外"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「外」はひらがなで何と読みますか。",
+      "options": [
+        "そと",
+        "なか",
+        "みぎ",
+        "ひだり"
+      ],
+      "answer": 0,
+      "explanation": "「外」(そと) - bên ngoài."
+    },
+    {
+      "id": 70,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "右"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「右」はひらがなで何と読みますか。",
+      "options": [
+        "みぎ",
+        "ひだり",
+        "まえ",
+        "うしろ"
+      ],
+      "answer": 0,
+      "explanation": "「右」(みぎ) - bên phải."
+    },
+    {
+      "id": 71,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "左"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「左」はひらがなで何と読みますか。",
+      "options": [
+        "ひだり",
+        "みぎ",
+        "まえ",
+        "うしろ"
+      ],
+      "answer": 0,
+      "explanation": "「左」(ひだり) - bên trái."
+    },
+    {
+      "id": 72,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "前"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「前」はひらがなで何と読みますか。",
+      "options": [
+        "まえ",
+        "うしろ",
+        "なか",
+        "そと"
+      ],
+      "answer": 0,
+      "explanation": "「前」(まえ) - phía trước."
+    },
+    {
+      "id": 73,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "後"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「後ろ」の「後」はひらがなで何と読みますか。",
+      "options": [
+        "うし",
+        "あと",
+        "ご",
+        "こう"
+      ],
+      "answer": 0,
+      "explanation": "「後ろ」(うしろ) - phía sau."
+    },
+    {
+      "id": 74,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "間"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「間」はひらがなで何と読みますか。",
+      "options": [
+        "あいだ",
+        "ま",
+        "かん",
+        "げん"
+      ],
+      "answer": 0,
+      "explanation": "「間」(あいだ) - khoảng giữa."
+    },
+    {
+      "id": 75,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "近"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「近く」の「近」はひらがなで何と読みますか。",
+      "options": [
+        "ちか",
+        "とお",
+        "きん",
+        "こん"
+      ],
+      "answer": 0,
+      "explanation": "「近く」(ちかく) - gần đây."
+    },
+    {
+      "id": 76,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "銀行"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「銀行」はひらがなで何と読みますか。",
+      "options": [
+        "ぎんこう",
+        "ぎんぎょう",
+        "きんこう",
+        "ぎんこ"
+      ],
+      "answer": 0,
+      "explanation": "「銀行」(ぎんこう) - ngân hàng."
+    },
+    {
+      "id": 77,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "病院"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「病院」はひらがなで何と読みますか。",
+      "options": [
+        "びょういん",
+        "びょうえん",
+        "へいいん",
+        "びょいん"
+      ],
+      "answer": 0,
+      "explanation": "「病院」(びょういん) - bệnh viện."
+    },
+    {
+      "id": 78,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "公園"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「公園」はひらがなで何と読みますか。",
+      "options": [
+        "こうえん",
+        "こうそつ",
+        "くうえん",
+        "こえん"
+      ],
+      "answer": 0,
+      "explanation": "「公園」(こうえん) - công viên."
+    },
+    {
+      "id": 79,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "駅"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「駅」はひらがなで何と読みますか。",
+      "options": [
+        "えき",
+        "まち",
+        "みち",
+        "いえ"
+      ],
+      "answer": 0,
+      "explanation": "「駅」(えき) - nhà ga."
+    },
+    {
+      "id": 80,
+      "type": "kanji",
+      "subtype": "reading",
+      "topic": "kanji",
+      "vocabulary": [],
+      "kanji": [
+        "大学"
+      ],
+      "jlpt_section": "漢字",
+      "frequency": "high",
+      "difficulty": "normal",
+      "estimated_time": 15,
+      "tags": [
+        "kanji-reading"
+      ],
+      "question": "「大学」はひらがなで何と読みますか。",
+      "options": [
+        "だいがく",
+        "たいがく",
+        "だいかく",
+        "おおがく"
+      ],
+      "answer": 0,
+      "explanation": "「大学」(だいがく) - trường đại học."
+    },
+    {
+      "id": 81,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "office",
+      "vocabulary": [
+        "机",
+        "電話"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "教室に 机が あります。机の 上に 電話が あります。電話の 隣に 本が あります。",
+      "question": "本はどこにありますか。",
+      "options": [
+        "電話の隣",
+        "机の下",
+        "教室の外",
+        "電話の中"
+      ],
+      "answer": 0,
+      "explanation": "「電話の隣に本があります」とあります。"
+    },
+    {
+      "id": 82,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "animals",
+      "vocabulary": [
+        "猫",
+        "いす"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "猫は いすの 下に います。犬は いすの 上に いません。犬は 外に います。",
+      "question": "猫はどこにいますか。",
+      "options": [
+        "いすの下",
+        "いすの上",
+        "外",
+        "机の中"
+      ],
+      "answer": 0,
+      "explanation": "「猫はいすの下にいます」とあります。"
+    },
+    {
+      "id": 83,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "places",
+      "vocabulary": [
+        "銀行",
+        "郵便局"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "銀行は 駅の 前に あります。郵便局は 銀行の 隣に あります。",
+      "question": "郵便局はどこにありますか。",
+      "options": [
+        "銀行の隣",
+        "駅の前",
+        "駅の中",
+        "銀行の前"
+      ],
+      "answer": 0,
+      "explanation": "「郵便局は銀行の隣にあります」とあります。"
+    },
+    {
+      "id": 84,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "shopping",
+      "vocabulary": [
+        "公園",
+        "スーパー"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "公園は 病院の 後ろに あります。スーパーは 公園の 近くに あります。",
+      "question": "スーパーはどこにありますか。",
+      "options": [
+        "公園の近く",
+        "病院の前",
+        "公園の中",
+        "病院の後ろ"
+      ],
+      "answer": 0,
+      "explanation": "「スーパーは公園の近くにあります」とあります。"
+    },
+    {
+      "id": 85,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "workplace",
+      "vocabulary": [
+        "田中さん",
+        "会議室"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "今、田中さんは 会議室に います。山田さんは 会議室に いません。会社の 外に います。",
+      "question": "山田さんは今どこにいますか。",
+      "options": [
+        "会社の外",
+        "会議室",
+        "田中さんの隣",
+        "銀行"
+      ],
+      "answer": 0,
+      "explanation": "「山田さんは...会社の外にいます」とあります。"
+    },
+    {
+      "id": 86,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "existence",
+      "vocabulary": [
+        "かばん",
+        "財布"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "かばんの中に 財布と 本が あります。ペンは ありません。何も ほかには ありません。",
+      "question": "かばんの中に何がありますか。",
+      "options": [
+        "財布と本",
+        "財布とペン",
+        "本とペン",
+        "何もありません"
+      ],
+      "answer": 0,
+      "explanation": "「かばんの中に財布と本があります」とあります。"
+    },
+    {
+      "id": 87,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "existence",
+      "vocabulary": [
+        "教室",
+        "だれも"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "今、教室に だれも いません。先生も 学生も いません。とても 静かです。",
+      "question": "教室に今だれがいますか。",
+      "options": [
+        "だれもいません",
+        "先生がいます",
+        "学生がいます",
+        "先生と学生がいます"
+      ],
+      "answer": 0,
+      "explanation": "「教室にだれもいません」とあります。"
+    },
+    {
+      "id": 88,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "places",
+      "vocabulary": [
+        "本棚",
+        "ロッカー"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "hard",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "本棚は まどの 右に あります。ロッカーは まどの 左に あります。テーブルは 本棚と ロッカーの 間に あります。",
+      "question": "テーブルはどこにありますか。",
+      "options": [
+        "本棚とロッカーの間",
+        "まどの右",
+        "まどの左",
+        "本棚の中"
+      ],
+      "answer": 0,
+      "explanation": "「テーブルは本棚とロッカーの間にあります」とあります。"
+    },
+    {
+      "id": 89,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "animals",
+      "vocabulary": [
+        "鳥",
+        "木"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "公園に 木が あります。木の 上に 鳥が います。木の 下に 犬が います。",
+      "question": "鳥はどこにいますか。",
+      "options": [
+        "木の上",
+        "木の下",
+        "公園の外",
+        "木の中"
+      ],
+      "answer": 0,
+      "explanation": "「木の上に鳥がいます」とあります。"
+    },
+    {
+      "id": 90,
+      "type": "reading",
+      "subtype": "comprehension",
+      "topic": "places",
+      "vocabulary": [
+        "駅",
+        "コンビニ"
+      ],
+      "kanji": [],
+      "jlpt_section": "読解",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "reading"
+      ],
+      "passage": "この近くに コンビニが あります。駅の 前です。コンビニの 隣に 花屋も あります。",
+      "question": "コンビニはどこにありますか。",
+      "options": [
+        "駅の前",
+        "駅の中",
+        "花屋の後ろ",
+        "公園の隣"
+      ],
+      "answer": 0,
+      "explanation": "「駅の前です」とコンビニの場所を説明しています。"
+    },
+    {
+      "id": 91,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "existence",
+      "vocabulary": [
+        "どこ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「すみません、トイレは どこに ありますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "あそこに あります。",
+        "あそこに います。",
+        "それは トイレです。",
+        "いいえ、違います。"
+      ],
+      "answer": 0,
+      "explanation": "場所を尋ねる質問には「あります」を使って場所で答えます。"
+    },
+    {
+      "id": 92,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "だれ"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「田中さんは どこに いますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "会議室に います。",
+        "会議室に あります。",
+        "これは 会議室です。",
+        "はい、そうです。"
+      ],
+      "answer": 0,
+      "explanation": "人の所在を尋ねる質問には「います」を使います。"
+    },
+    {
+      "id": 93,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "existence",
+      "vocabulary": [
+        "何"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「かばんの中に 何が ありますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "本と 辞書が あります。",
+        "本と 辞書が います。",
+        "かばんです。",
+        "だれも いません。"
+      ],
+      "answer": 0,
+      "explanation": "物の存在を尋ねる質問には「あります」で答えます。"
+    },
+    {
+      "id": 94,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "animals",
+      "vocabulary": [
+        "猫"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「猫は どこに いますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "いすの下に います。",
+        "いすの下に あります。",
+        "いすです。",
+        "いすの下は 猫です。"
+      ],
+      "answer": 0,
+      "explanation": "動物には「います」を使います。"
+    },
+    {
+      "id": 95,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "existence",
+      "vocabulary": [
+        "だれか"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「会議室に だれか いますか。」\nB：「いいえ、＿＿＿」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "だれも いません。",
+        "だれか います。",
+        "何も ありません。",
+        "そうです。"
+      ],
+      "answer": 0,
+      "explanation": "「だれかいますか」への否定は「だれもいません」です。"
+    },
+    {
+      "id": 96,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "shopping",
+      "vocabulary": [
+        "近く"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「この近くに 銀行が ありますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "はい、駅の前に あります。",
+        "はい、駅の前に います。",
+        "いいえ、銀行です。",
+        "それは 銀行です。"
+      ],
+      "answer": 0,
+      "explanation": "建物の存在を尋ねる質問には「あります」で答えます。"
+    },
+    {
+      "id": 97,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "existence",
+      "vocabulary": [
+        "何も"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「はこの中に 何が ありますか。」\nB：「＿＿＿」",
+      "question": "空欄に入る自然な言葉はどれですか。（箱は空っぽです）",
+      "options": [
+        "何も ありません。",
+        "何か あります。",
+        "何が あります。",
+        "だれも いません。"
+      ],
+      "answer": 0,
+      "explanation": "箱が空っぽのときは「何もありません」と答えます。"
+    },
+    {
+      "id": 98,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "location",
+      "vocabulary": [
+        "隣"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「郵便局は どこですか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "銀行の隣です。",
+        "銀行の隣に います。",
+        "銀行です。",
+        "いいえ、違います。"
+      ],
+      "answer": 0,
+      "explanation": "場所を説明するとき「Nの隣です」と簡潔に答えられます。"
+    },
+    {
+      "id": 99,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "workplace",
+      "vocabulary": [
+        "いません"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "high",
+      "difficulty": "easy",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「部長は 会社に いますか。」\nB：「いいえ、＿＿＿」",
+      "question": "空欄に入る自然な言葉はどれですか。",
+      "options": [
+        "いません。",
+        "ありません。",
+        "じゃありません。",
+        "違いません。"
+      ],
+      "answer": 0,
+      "explanation": "人の不在を答えるときは「いません」を使います。"
+    },
+    {
+      "id": 100,
+      "type": "dialogue",
+      "subtype": "situational",
+      "topic": "existence",
+      "vocabulary": [
+        "何がいますか"
+      ],
+      "kanji": [],
+      "jlpt_section": "会話",
+      "frequency": "medium",
+      "difficulty": "normal",
+      "estimated_time": 30,
+      "tags": [
+        "dialogue"
+      ],
+      "passage": "A：「公園に 何が いますか。」\nB：「＿＿＿」",
+      "question": "Bさんの答えとして自然なのはどれですか。",
+      "options": [
+        "犬が います。",
+        "犬が あります。",
+        "犬です。",
+        "犬は いません。"
+      ],
+      "answer": 0,
+      "explanation": "動物が主語のときは「が＋います」で答えます。"
+    }
+  ]
+}
