@@ -124,6 +124,17 @@ export const RadicalDetail = ({ category }: Props) => {
             Ôn lại câu sai ({mistakeCount})
           </button>
         </div>
+        <div className="col-6 col-sm-3 col-md-2 mt-2">
+          <button
+            type="button"
+            className="btn btn-outline-success btn-sm"
+            onClick={() =>
+              navigate(`/utilities/japan/kanji/${category.id}/writing`)
+            }
+          >
+            Tập viết bộ thủ
+          </button>
+        </div>
       </div>
 
       <div className="row mt-2">
@@ -298,15 +309,32 @@ export const RadicalDetail = ({ category }: Props) => {
                   hiện đại.
                 </p>
               )}
-              <button
-                type="button"
-                className="btn btn-primary btn-sm"
-                onClick={() =>
-                  navigate(`/utilities/japan/kanji/${category.id}/quiz`)
-                }
-              >
-                Trắc nghiệm nhóm này
-              </button>
+              <div className="d-flex gap-2 flex-wrap">
+                <button
+                  type="button"
+                  className="btn btn-primary btn-sm"
+                  onClick={() =>
+                    navigate(`/utilities/japan/kanji/${category.id}/quiz`)
+                  }
+                >
+                  Trắc nghiệm nhóm này
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary btn-sm"
+                  onClick={() =>
+                    navigate(
+                      `/utilities/japan/kanji/${
+                        category.id
+                      }/writing?char=${encodeURIComponent(
+                        selectedRadical.char,
+                      )}`,
+                    )
+                  }
+                >
+                  Tập viết bộ thủ này
+                </button>
+              </div>
             </div>
           </div>
         </div>

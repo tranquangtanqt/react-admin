@@ -34,9 +34,9 @@ function loadPageSize(): number {
 
 const COLUMNS = [
   { key: 'hiragana', label: 'Hiragana' },
-  { key: 'listen', label: 'Nghe' },
   { key: 'kanji', label: 'Kanji' },
   { key: 'translate', label: 'Nghĩa' },
+  { key: 'listen', label: 'Nghe' },
   { key: 'unitName', label: 'Bài' },
 ];
 
@@ -194,9 +194,9 @@ export const UtilitiesJapanVocabularyDetail = () => {
               <thead>
                 <tr>
                   {columnVisibility.isVisible('hiragana') && <th>Hiragana</th>}
-                  {columnVisibility.isVisible('listen') && <th>Nghe</th>}
                   {columnVisibility.isVisible('kanji') && <th>Kanji</th>}
                   {columnVisibility.isVisible('translate') && <th>Nghĩa</th>}
+                  {columnVisibility.isVisible('listen') && <th>Nghe</th>}
                   {columnVisibility.isVisible('unitName') && <th>Bài</th>}
                 </tr>
               </thead>
@@ -209,6 +209,12 @@ export const UtilitiesJapanVocabularyDetail = () => {
                   >
                     {columnVisibility.isVisible('hiragana') && (
                       <td>{item.hiragana}</td>
+                    )}
+                    {columnVisibility.isVisible('kanji') && (
+                      <td>{item.kanji}</td>
+                    )}
+                    {columnVisibility.isVisible('translate') && (
+                      <td>{item.translate}</td>
                     )}
                     {columnVisibility.isVisible('listen') && (
                       <td>
@@ -224,12 +230,6 @@ export const UtilitiesJapanVocabularyDetail = () => {
                           🔊
                         </button>
                       </td>
-                    )}
-                    {columnVisibility.isVisible('kanji') && (
-                      <td>{item.kanji}</td>
-                    )}
-                    {columnVisibility.isVisible('translate') && (
-                      <td>{item.translate}</td>
                     )}
                     {columnVisibility.isVisible('unitName') && (
                       <td>{item.unitName}</td>

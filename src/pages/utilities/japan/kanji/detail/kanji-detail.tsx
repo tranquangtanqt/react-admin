@@ -167,6 +167,18 @@ export const KanjiDetail = ({ category }: Props) => {
             Ôn lại câu sai ({mistakeCount})
           </button>
         </div>
+        <div className="col-6 col-sm-3 col-md-2 mt-2">
+          <button
+            type="button"
+            className="btn btn-outline-success btn-sm"
+            disabled={allKanji.length === 0}
+            onClick={() =>
+              navigate(`/utilities/japan/kanji/${category.id}/writing`)
+            }
+          >
+            Tập viết Kanji
+          </button>
+        </div>
       </div>
 
       <div className="row mt-2">
@@ -324,18 +336,32 @@ export const KanjiDetail = ({ category }: Props) => {
                   Sơ cấp I)
                 </p>
               )}
-              <p className="text-muted font-size-14">
-                Tập viết Kanji (thứ tự nét): sắp ra mắt.
-              </p>
-              <button
-                type="button"
-                className="btn btn-primary btn-sm"
-                onClick={() =>
-                  navigate(`/utilities/japan/kanji/${category.id}/quiz`)
-                }
-              >
-                Trắc nghiệm nhóm này
-              </button>
+              <div className="d-flex gap-2 flex-wrap">
+                <button
+                  type="button"
+                  className="btn btn-primary btn-sm"
+                  onClick={() =>
+                    navigate(`/utilities/japan/kanji/${category.id}/quiz`)
+                  }
+                >
+                  Trắc nghiệm nhóm này
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-outline-primary btn-sm"
+                  onClick={() =>
+                    navigate(
+                      `/utilities/japan/kanji/${
+                        category.id
+                      }/writing?char=${encodeURIComponent(
+                        selectedKanji.kanji,
+                      )}`,
+                    )
+                  }
+                >
+                  Tập viết chữ này
+                </button>
+              </div>
             </div>
           </div>
         </div>

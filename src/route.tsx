@@ -30,6 +30,7 @@ import { UtilitiesJapanVocabularyQuiz } from 'pages/utilities/japan/vocabulary/q
 import { UtilitiesJapanKanji } from 'pages/utilities/japan/kanji';
 import { UtilitiesJapanKanjiDetail } from 'pages/utilities/japan/kanji/detail';
 import { UtilitiesJapanKanjiQuiz } from 'pages/utilities/japan/kanji/quiz';
+import { UtilitiesJapanKanjiWriting } from 'pages/utilities/japan/kanji/writing';
 import { UtilitiesJapanExam } from 'pages/utilities/japan/exam';
 import { UtilitiesJapanExamQuiz } from 'pages/utilities/japan/exam/quiz';
 import { UtilitiesListFileSelected } from 'pages/utilities/file/list-file-selected';
@@ -93,6 +94,7 @@ export const RoutesRoot = () => {
           <Route path="/utilities/japan/kanji" element={<UtilitiesJapanKanji />} />
           <Route path="/utilities/japan/kanji/:categoryId" element={<UtilitiesJapanKanjiDetail />} />
           <Route path="/utilities/japan/kanji/:categoryId/quiz" element={<UtilitiesJapanKanjiQuiz />} />
+          <Route path="/utilities/japan/kanji/:categoryId/writing" element={<UtilitiesJapanKanjiWriting />} />
           <Route path="/utilities/japan/exam" element={<UtilitiesJapanExam />} />
           <Route path="/utilities/japan/exam/:lesson/quiz" element={<UtilitiesJapanExamQuiz />} />
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
