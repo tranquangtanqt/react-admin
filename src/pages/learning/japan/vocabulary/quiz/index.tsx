@@ -103,7 +103,7 @@ function clearProgress(level: string) {
   localStorage.removeItem(progressStorageKey(level));
 }
 
-export const UtilitiesJapanVocabularyQuiz = () => {
+export const LearningJapanVocabularyQuiz = () => {
   const navigate = useNavigate();
   const { level } = useParams();
   const [searchParams] = useSearchParams();
@@ -118,7 +118,7 @@ export const UtilitiesJapanVocabularyQuiz = () => {
 
   useEffect(() => {
     if (!category || allVocabulary.length < 2) {
-      navigate('/utilities/japan/vocabulary');
+      navigate('/learning/japan/vocabulary');
     }
     // eslint-disable-next-line
   }, [level, navigate]);
@@ -247,7 +247,7 @@ export const UtilitiesJapanVocabularyQuiz = () => {
       .map(toQuizItem);
     if (filteredPool.length < 2) {
       alert('Chưa có đủ câu sai để ôn tập (cần ít nhất 2 câu).');
-      navigate(`/utilities/japan/vocabulary/${level}`);
+      navigate(`/learning/japan/vocabulary/${level}`);
       return;
     }
     setPool(filteredPool);
@@ -395,10 +395,20 @@ export const UtilitiesJapanVocabularyQuiz = () => {
       <div className="row mt-2">
         <div className="col-12">
           <div className="card text-white bg-dark mb-3">
-            <div className="card-body text-center">
+            <div className="card-body text-center position-relative px-5">
               <p className="card-text mb-0">
                 <b>{questionText}</b>
               </p>
+              {currentQuestion.direction === 'ja-vi' && (
+                <button
+                  type="button"
+                  className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                  title="Nghe câu hỏi"
+                  onClick={() => speak(currentQuestion.target.hiragana)}
+                >
+                  🔊
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -432,12 +442,25 @@ export const UtilitiesJapanVocabularyQuiz = () => {
                   className={cardClass}
                   onClick={() => submitChoiceAnswer(choice)}
                 >
-                  <div className="card-body text-center padding-custom">
+                  <div className="card-body text-center padding-custom position-relative px-4">
                     <p className="mb-0">
                       {currentQuestion.direction === 'ja-vi'
                         ? choice.translate
                         : renderJapanese(choice)}
                     </p>
+                    {currentQuestion.direction === 'vi-ja' && (
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                        title="Nghe đáp án"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          speak(choice.hiragana);
+                        }}
+                      >
+                        🔊
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>

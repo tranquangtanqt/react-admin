@@ -40,7 +40,7 @@ const COLUMNS = [
   { key: 'unitName', label: 'Bài' },
 ];
 
-export const UtilitiesJapanVocabularyDetail = () => {
+export const LearningJapanVocabularyDetail = () => {
   const navigate = useNavigate();
   const { level } = useParams();
 
@@ -50,7 +50,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
 
   useEffect(() => {
     if (!category) {
-      navigate('/utilities/japan/vocabulary');
+      navigate('/learning/japan/vocabulary');
     }
     // eslint-disable-next-line
   }, [level, navigate]);
@@ -150,7 +150,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
             className="btn btn-outline-primary btn-sm"
             disabled={allVocabulary.length === 0}
             onClick={() =>
-              navigate(`/utilities/japan/vocabulary/${category.id}/quiz`)
+              navigate(`/learning/japan/vocabulary/${category.id}/quiz`)
             }
           >
             Trắc nghiệm
@@ -163,7 +163,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
             disabled={mistakeCount === 0}
             onClick={() =>
               navigate(
-                `/utilities/japan/vocabulary/${category.id}/quiz?mode=mistakes`,
+                `/learning/japan/vocabulary/${category.id}/quiz?mode=mistakes`,
               )
             }
           >
@@ -326,7 +326,7 @@ export const UtilitiesJapanVocabularyDetail = () => {
                 type="button"
                 className="btn btn-primary btn-sm"
                 onClick={() =>
-                  navigate(`/utilities/japan/vocabulary/${category.id}/quiz`)
+                  navigate(`/learning/japan/vocabulary/${category.id}/quiz`)
                 }
               >
                 Trắc nghiệm

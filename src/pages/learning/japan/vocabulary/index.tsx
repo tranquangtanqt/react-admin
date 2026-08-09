@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import { VOCABULARY_CATEGORIES, getCategoryItemCount } from './data';
 
-export const UtilitiesJapanVocabulary = () => {
+export const LearningJapanVocabulary = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,7 +28,7 @@ export const UtilitiesJapanVocabulary = () => {
                   className="btn btn-primary btn-sm align-self-start"
                   disabled={category.disabled}
                   onClick={() =>
-                    navigate(`/utilities/japan/vocabulary/${category.id}`)
+                    navigate(`/learning/japan/vocabulary/${category.id}`)
                   }
                 >
                   Xem chi tiết

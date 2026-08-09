@@ -94,7 +94,7 @@ const DIFFICULTY_LABEL: Record<string, string> = {
   hard: 'Khó',
 };
 
-export const UtilitiesJapanExamQuiz = () => {
+export const LearningJapanExamQuiz = () => {
   const navigate = useNavigate();
   const { lesson: lessonParam } = useParams();
   const [searchParams] = useSearchParams();
@@ -112,7 +112,7 @@ export const UtilitiesJapanExamQuiz = () => {
 
   useEffect(() => {
     if (!category || allQuestions.length < 2) {
-      navigate('/utilities/japan/exam');
+      navigate('/learning/japan/exam');
     }
     // eslint-disable-next-line
   }, [lesson, navigate]);
@@ -212,7 +212,7 @@ export const UtilitiesJapanExamQuiz = () => {
     const filteredPool = allQuestions.filter((q) => mistakeIds.includes(q.id));
     if (filteredPool.length < 2) {
       alert('Chưa có đủ câu sai để ôn tập (cần ít nhất 2 câu).');
-      navigate(`/utilities/japan/exam`);
+      navigate(`/learning/japan/exam`);
       return;
     }
     setPool(filteredPool);
@@ -342,7 +342,7 @@ export const UtilitiesJapanExamQuiz = () => {
       <div className="row mt-2">
         <div className="col-12">
           <div className="card text-white bg-dark mb-3">
-            <div className="card-body">
+            <div className="card-body position-relative pe-5">
               {source.passage && (
                 <p
                   className="card-text mb-2"
@@ -354,6 +354,20 @@ export const UtilitiesJapanExamQuiz = () => {
               <p className="card-text mb-0">
                 <b>{source.question}</b>
               </p>
+              <button
+                type="button"
+                className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                title="Nghe câu hỏi"
+                onClick={() =>
+                  speak(
+                    source.passage
+                      ? `${source.passage} ${source.question}`
+                      : source.question,
+                  )
+                }
+              >
+                🔊
+              </button>
             </div>
           </div>
         </div>
@@ -371,8 +385,19 @@ export const UtilitiesJapanExamQuiz = () => {
           return (
             <div key={index} className="col-12 col-md-6">
               <div className={cardClass} onClick={() => submitAnswer(index)}>
-                <div className="card-body">
+                <div className="card-body position-relative pe-5">
                   <p className="mb-0">{option}</p>
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                    title="Nghe đáp án"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(option);
+                    }}
+                  >
+                    🔊
+                  </button>
                 </div>
               </div>
             </div>

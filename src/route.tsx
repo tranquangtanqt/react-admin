@@ -18,21 +18,22 @@ import { SampleMonacoEditorPage } from 'pages/sample/monaco-editor';
 import { SampleGoogleSheet } from 'pages/sample/google-sheet';
 import { SampleCreateContentPage } from 'pages/sample/create-content-page';
 
+import { LearningJapanVocabulary } from 'pages/learning/japan/vocabulary';
+import { LearningJapanVocabularyDetail } from 'pages/learning/japan/vocabulary/detail';
+import { LearningJapanVocabularyQuiz } from 'pages/learning/japan/vocabulary/quiz';
+import { LearningJapanKanji } from 'pages/learning/japan/kanji';
+import { LearningJapanKanjiDetail } from 'pages/learning/japan/kanji/detail';
+import { LearningJapanKanjiQuiz } from 'pages/learning/japan/kanji/quiz';
+import { LearningJapanKanjiWriting } from 'pages/learning/japan/kanji/writing';
+import { LearningJapanExam } from 'pages/learning/japan/exam';
+import { LearningJapanExamQuiz } from 'pages/learning/japan/exam/quiz';
+
 import { Utilities } from 'pages/utilities';
 import { UtilitieAppProjectInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet';
 import { UtilitieAppProjectDetailInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet/project-detail';
 import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
 import { UtilitiesCreateTableFromExcel } from 'pages/utilities/sql/create-table-from-excel';
 import { UtilitiesFileMakeJsonFromExcel } from 'pages/utilities/file/make-json-from-excel';
-import { UtilitiesJapanVocabulary } from 'pages/utilities/japan/vocabulary';
-import { UtilitiesJapanVocabularyDetail } from 'pages/utilities/japan/vocabulary/detail';
-import { UtilitiesJapanVocabularyQuiz } from 'pages/utilities/japan/vocabulary/quiz';
-import { UtilitiesJapanKanji } from 'pages/utilities/japan/kanji';
-import { UtilitiesJapanKanjiDetail } from 'pages/utilities/japan/kanji/detail';
-import { UtilitiesJapanKanjiQuiz } from 'pages/utilities/japan/kanji/quiz';
-import { UtilitiesJapanKanjiWriting } from 'pages/utilities/japan/kanji/writing';
-import { UtilitiesJapanExam } from 'pages/utilities/japan/exam';
-import { UtilitiesJapanExamQuiz } from 'pages/utilities/japan/exam/quiz';
 import { UtilitiesListFileSelected } from 'pages/utilities/file/list-file-selected';
 import { UtilitiesMakeInsertSQL } from 'pages/utilities/sql/make-insert-sql';
 import { UtilitiesMakeInsertSQLFromProcedure } from 'pages/utilities/sql/make-insert-procedure';
@@ -71,6 +72,16 @@ export const RoutesRoot = () => {
           <Route path="/tutorial/:tutorial" element={<Tutorial />} />
           <Route path="/tutorial/:tutorial/:sheetId" element={<ContentGoogleSheet/>} />
 
+          <Route path="/learning/japan/vocabulary" element={<LearningJapanVocabulary />} />
+          <Route path="/learning/japan/vocabulary/:level" element={<LearningJapanVocabularyDetail />} />
+          <Route path="/learning/japan/vocabulary/:level/quiz" element={<LearningJapanVocabularyQuiz />} />
+          <Route path="/learning/japan/kanji" element={<LearningJapanKanji />} />
+          <Route path="/learning/japan/kanji/:categoryId" element={<LearningJapanKanjiDetail />} />
+          <Route path="/learning/japan/kanji/:categoryId/quiz" element={<LearningJapanKanjiQuiz />} />
+          <Route path="/learning/japan/kanji/:categoryId/writing" element={<LearningJapanKanjiWriting />} />
+          <Route path="/learning/japan/exam" element={<LearningJapanExam />} />
+          <Route path="/learning/japan/exam/:lesson/quiz" element={<LearningJapanExamQuiz />} />
+
           <Route path="/other" element={<Other />} />
           <Route path="/other/:sheetId" element={<ContentGoogleSheet />} />
          
@@ -88,15 +99,6 @@ export const RoutesRoot = () => {
           <Route path="/utilities/sql/make-insert-from-procedure" element={<UtilitiesMakeInsertSQLFromProcedure />} />
           <Route path="/utilities/sql/create-table-from-excel" element={<UtilitiesCreateTableFromExcel />} />
           <Route path="/utilities/excel/make-json-vocabulary-japanese" element={<UtilitiesMakeJsonVocabulary />} />
-          <Route path="/utilities/japan/vocabulary" element={<UtilitiesJapanVocabulary />} />
-          <Route path="/utilities/japan/vocabulary/:level" element={<UtilitiesJapanVocabularyDetail />} />
-          <Route path="/utilities/japan/vocabulary/:level/quiz" element={<UtilitiesJapanVocabularyQuiz />} />
-          <Route path="/utilities/japan/kanji" element={<UtilitiesJapanKanji />} />
-          <Route path="/utilities/japan/kanji/:categoryId" element={<UtilitiesJapanKanjiDetail />} />
-          <Route path="/utilities/japan/kanji/:categoryId/quiz" element={<UtilitiesJapanKanjiQuiz />} />
-          <Route path="/utilities/japan/kanji/:categoryId/writing" element={<UtilitiesJapanKanjiWriting />} />
-          <Route path="/utilities/japan/exam" element={<UtilitiesJapanExam />} />
-          <Route path="/utilities/japan/exam/:lesson/quiz" element={<UtilitiesJapanExamQuiz />} />
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
           <Route path="/utilities/app/project-info/:projectId" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />

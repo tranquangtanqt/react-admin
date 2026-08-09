@@ -126,7 +126,7 @@ function saveSelectedLessons(categoryId: string, lessons: number[]) {
   );
 }
 
-export const UtilitiesJapanKanjiQuiz = () => {
+export const LearningJapanKanjiQuiz = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
   const [searchParams] = useSearchParams();
@@ -184,7 +184,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
 
   useEffect(() => {
     if (!category || categoryPool.length < 2) {
-      navigate('/utilities/japan/kanji');
+      navigate('/learning/japan/kanji');
     }
     // eslint-disable-next-line
   }, [categoryId, navigate]);
@@ -373,7 +373,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
     );
     if (filteredPool.length < 2) {
       alert('Chưa có đủ câu sai để ôn tập (cần ít nhất 2 câu).');
-      navigate(`/utilities/japan/kanji/${categoryId}`);
+      navigate(`/learning/japan/kanji/${categoryId}`);
       return;
     }
     setPool(filteredPool);
@@ -555,7 +555,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
       <div className="row mt-2">
         <div className="col-12">
           <div className="card text-white bg-dark mb-3">
-            <div className="card-body text-center">
+            <div className="card-body text-center position-relative px-5">
               {currentQuestion.type === 'meaning-to-char' ? (
                 <p className="card-text mb-1">
                   Ký tự nào có nghĩa: <b>{currentQuestion.target.meaning}</b>{' '}
@@ -577,6 +577,21 @@ export const UtilitiesJapanKanjiQuiz = () => {
                     </p>
                   )}
                 </>
+              )}
+              {currentQuestion.type !== 'meaning-to-char' && (
+                <button
+                  type="button"
+                  className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                  title="Nghe phát âm"
+                  onClick={() =>
+                    speak(
+                      currentQuestion.target.readingText ||
+                        currentQuestion.target.char,
+                    )
+                  }
+                >
+                  🔊
+                </button>
               )}
             </div>
           </div>
@@ -638,7 +653,7 @@ export const UtilitiesJapanKanjiQuiz = () => {
                   className={cardClass}
                   onClick={() => submitChoiceAnswer(choice)}
                 >
-                  <div className="card-body text-center padding-custom">
+                  <div className="card-body text-center padding-custom position-relative px-4">
                     {currentQuestion.type === 'meaning-to-char' ? (
                       <p className="font-size-24 mb-0">{choice.char}</p>
                     ) : currentQuestion.type === 'char-to-reading' ? (
@@ -650,6 +665,23 @@ export const UtilitiesJapanKanjiQuiz = () => {
                           Hán Việt: {choice.hanViet}
                         </p>
                       </>
+                    )}
+                    {currentQuestion.type !== 'char-to-meaning' && (
+                      <button
+                        type="button"
+                        className="btn btn-sm btn-light position-absolute top-50 end-0 translate-middle-y me-1 py-0 px-1"
+                        title="Nghe phát âm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          speak(
+                            currentQuestion.type === 'meaning-to-char'
+                              ? choice.char
+                              : choice.readingText || choice.char,
+                          );
+                        }}
+                      >
+                        🔊
+                      </button>
                     )}
                   </div>
                 </div>

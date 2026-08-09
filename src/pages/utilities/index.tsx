@@ -91,18 +91,6 @@ export const Utilities = () => {
       title: 'Other',
       links: [
         {
-          text: 'Vocabulary Japanese',
-          path: '/utilities/japan/vocabulary',
-        },
-        {
-          text: 'Kanji Japanese',
-          path: '/utilities/japan/kanji',
-        },
-        {
-          text: 'Đề thi thử JLPT N5',
-          path: '/utilities/japan/exam',
-        },
-        {
           text: 'Make Json Vocabulary Japanese From Excel',
           path: '/utilities/excel/make-json-vocabulary-japanese',
         },

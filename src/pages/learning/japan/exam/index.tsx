@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import { EXAM_CATEGORIES, getQuestionsByLesson } from './data';
 
-export const UtilitiesJapanExam = () => {
+export const LearningJapanExam = () => {
   const navigate = useNavigate();
 
   return (
@@ -29,7 +29,7 @@ export const UtilitiesJapanExam = () => {
                   className="btn btn-primary btn-sm align-self-start"
                   disabled={category.disabled}
                   onClick={() =>
-                    navigate(`/utilities/japan/exam/${category.id}/quiz`)
+                    navigate(`/learning/japan/exam/${category.id}/quiz`)
                   }
                 >
                   Làm bài

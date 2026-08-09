@@ -20,7 +20,7 @@ type WritingItem = {
   meaning: string;
 };
 
-export const UtilitiesJapanKanjiWriting = () => {
+export const LearningJapanKanjiWriting = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -62,7 +62,7 @@ export const UtilitiesJapanKanjiWriting = () => {
 
   useEffect(() => {
     if (!category) {
-      navigate('/utilities/japan/kanji');
+      navigate('/learning/japan/kanji');
     }
     // eslint-disable-next-line
   }, [categoryId, navigate]);

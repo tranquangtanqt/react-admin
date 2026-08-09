@@ -5,13 +5,13 @@ import {
   useColumnVisibility,
 } from 'components/modules/column-visibility-toggle';
 import { PageSizeToggle } from 'components/modules/page-size-toggle';
-import { RADICALS } from '../data';
-import { KanjiCategoryDto, RadicalDto } from '../dto';
+import { getKanjiByCategory } from '../data';
+import { KanjiCategoryDto, KanjiDto } from '../dto';
 import { loadMistakes } from '../mistakes';
 
 const PAGE_SIZE_OPTIONS = [10, 20, 30, 50];
 const DEFAULT_PAGE_SIZE = 20;
-const PAGE_SIZE_STORAGE_KEY = 'japan-radical-detail-page-size';
+const PAGE_SIZE_STORAGE_KEY = 'japan-kanji-detail-page-size';
 
 function loadPageSize(): number {
   const raw = localStorage.getItem(PAGE_SIZE_STORAGE_KEY);
@@ -20,45 +20,59 @@ function loadPageSize(): number {
 }
 
 const COLUMNS = [
-  { key: 'number', label: 'Số bộ' },
-  { key: 'char', label: 'Bộ thủ' },
+  { key: 'kanji', label: 'Kanji' },
+  { key: 'onyomi', label: 'Âm On' },
+  { key: 'kunyomi', label: 'Âm Kun' },
   { key: 'hanViet', label: 'Hán Việt' },
-  { key: 'meaning', label: 'Ý nghĩa' },
-  { key: 'strokes', label: 'Số nét' },
+  { key: 'meaning', label: 'Nghĩa' },
+  { key: 'example', label: 'Ví dụ' },
+  { key: 'jlpt', label: 'JLPT' },
+  { key: 'lesson', label: 'Bài' },
 ];
 
 type Props = {
   category: KanjiCategoryDto;
 };
 
-export const RadicalDetail = ({ category }: Props) => {
+export const KanjiDetail = ({ category }: Props) => {
   const navigate = useNavigate();
 
+  const allKanji = useMemo(
+    () => getKanjiByCategory(category.id),
+    [category.id],
+  );
+
   const [keyword, setKeyword] = useState('');
-  const [commonOnly, setCommonOnly] = useState(false);
+  const [jlptFilter, setJlptFilter] = useState('all');
+  const [lessonFilter, setLessonFilter] = useState('all');
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(loadPageSize);
-  const [selectedRadical, setSelectedRadical] = useState<RadicalDto | null>(
-    null,
-  );
-  const columnVisibility = useColumnVisibility('japan-radical-detail-columns');
+  const [selectedKanji, setSelectedKanji] = useState<KanjiDto | null>(null);
+  const columnVisibility = useColumnVisibility('japan-kanji-detail-columns');
+
+  const lessonOptions = useMemo(() => {
+    const lessons = Array.from(new Set(allKanji.map((item) => item.lesson)));
+    return lessons.sort((a, b) => a - b);
+  }, [allKanji]);
+
+  const mistakeCount = loadMistakes(category.id).length;
 
   const filtered = useMemo(() => {
     const kw = keyword.trim().toLowerCase();
-    const source = commonOnly
-      ? RADICALS.filter((item) => item.common)
-      : RADICALS;
-    if (kw === '') return source;
-    return source.filter(
-      (item) =>
-        item.char.includes(kw) ||
+    return allKanji.filter((item) => {
+      const matchKeyword =
+        kw === '' ||
+        item.kanji.includes(kw) ||
+        item.onyomi.toLowerCase().includes(kw) ||
+        item.kunyomi.toLowerCase().includes(kw) ||
         item.hanViet.toLowerCase().includes(kw) ||
-        item.meaning.toLowerCase().includes(kw) ||
-        String(item.number) === kw,
-    );
-  }, [keyword, commonOnly]);
-
-  const mistakeCount = loadMistakes(category.id).length;
+        item.meaning.toLowerCase().includes(kw);
+      const matchJlpt = jlptFilter === 'all' || item.jlpt === jlptFilter;
+      const matchLesson =
+        lessonFilter === 'all' || item.lesson === Number(lessonFilter);
+      return matchKeyword && matchJlpt && matchLesson;
+    });
+  }, [allKanji, keyword, jlptFilter, lessonFilter]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const currentPage = Math.min(page, totalPages);
@@ -72,8 +86,13 @@ export const RadicalDetail = ({ category }: Props) => {
     setPage(1);
   };
 
-  const handleToggleCommon = (value: boolean) => {
-    setCommonOnly(value);
+  const handleFilterJlpt = (value: string) => {
+    setJlptFilter(value);
+    setPage(1);
+  };
+
+  const handleFilterLesson = (value: string) => {
+    setLessonFilter(value);
     setPage(1);
   };
 
@@ -90,21 +109,45 @@ export const RadicalDetail = ({ category }: Props) => {
           <input
             type="text"
             className="form-control form-control-sm"
-            placeholder="Tìm kiếm bộ thủ, số bộ, Hán Việt, nghĩa..."
+            placeholder="Tìm kiếm Kanji, âm đọc, Hán Việt, nghĩa..."
             value={keyword}
             onChange={(e) => handleSearch(e.target.value)}
           />
         </div>
+        <div className="col-6 col-sm-3 col-md-2 mt-2">
+          <select
+            className="form-select form-select-sm"
+            value={jlptFilter}
+            onChange={(e) => handleFilterJlpt(e.target.value)}
+          >
+            <option value="all">Tất cả JLPT</option>
+            <option value="N5">N5</option>
+            <option value="N4">N4</option>
+          </select>
+        </div>
+        {lessonOptions.length > 0 && (
+          <div className="col-6 col-sm-3 col-md-2 mt-2">
+            <select
+              className="form-select form-select-sm"
+              value={lessonFilter}
+              onChange={(e) => handleFilterLesson(e.target.value)}
+            >
+              <option value="all">Tất cả bài</option>
+              {lessonOptions.map((lesson) => (
+                <option key={lesson} value={lesson}>
+                  Bài {lesson}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
         <div className="col-6 col-sm-3 col-md-3 mt-2">
           <button
             type="button"
             className="btn btn-outline-primary btn-sm"
+            disabled={allKanji.length === 0}
             onClick={() =>
-              navigate(
-                `/utilities/japan/kanji/${category.id}/quiz${
-                  commonOnly ? '?scope=common' : ''
-                }`,
-              )
+              navigate(`/learning/japan/kanji/${category.id}/quiz`)
             }
           >
             Trắc nghiệm
@@ -117,7 +160,7 @@ export const RadicalDetail = ({ category }: Props) => {
             disabled={mistakeCount === 0}
             onClick={() =>
               navigate(
-                `/utilities/japan/kanji/${category.id}/quiz?mode=mistakes`,
+                `/learning/japan/kanji/${category.id}/quiz?mode=mistakes`,
               )
             }
           >
@@ -128,37 +171,13 @@ export const RadicalDetail = ({ category }: Props) => {
           <button
             type="button"
             className="btn btn-outline-success btn-sm"
+            disabled={allKanji.length === 0}
             onClick={() =>
-              navigate(`/utilities/japan/kanji/${category.id}/writing`)
+              navigate(`/learning/japan/kanji/${category.id}/writing`)
             }
           >
-            Tập viết bộ thủ
+            Tập viết Kanji
           </button>
-        </div>
-      </div>
-
-      <div className="row mt-2">
-        <div className="col-12">
-          <div className="btn-group" role="group">
-            <button
-              type="button"
-              className={`btn btn-sm ${
-                !commonOnly ? 'btn-secondary' : 'btn-outline-secondary'
-              }`}
-              onClick={() => handleToggleCommon(false)}
-            >
-              Tất cả ({RADICALS.length})
-            </button>
-            <button
-              type="button"
-              className={`btn btn-sm ${
-                commonOnly ? 'btn-secondary' : 'btn-outline-secondary'
-              }`}
-              onClick={() => handleToggleCommon(true)}
-            >
-              Thường gặp ({RADICALS.filter((r) => r.common).length})
-            </button>
-          </div>
         </div>
       </div>
 
@@ -183,11 +202,14 @@ export const RadicalDetail = ({ category }: Props) => {
             <table className="table table-bordered table-hover align-middle">
               <thead>
                 <tr>
-                  {columnVisibility.isVisible('number') && <th>Số bộ</th>}
-                  {columnVisibility.isVisible('char') && <th>Bộ thủ</th>}
+                  {columnVisibility.isVisible('kanji') && <th>Kanji</th>}
+                  {columnVisibility.isVisible('onyomi') && <th>Âm On</th>}
+                  {columnVisibility.isVisible('kunyomi') && <th>Âm Kun</th>}
                   {columnVisibility.isVisible('hanViet') && <th>Hán Việt</th>}
-                  {columnVisibility.isVisible('meaning') && <th>Ý nghĩa</th>}
-                  {columnVisibility.isVisible('strokes') && <th>Số nét</th>}
+                  {columnVisibility.isVisible('meaning') && <th>Nghĩa</th>}
+                  {columnVisibility.isVisible('example') && <th>Ví dụ</th>}
+                  {columnVisibility.isVisible('jlpt') && <th>JLPT</th>}
+                  {columnVisibility.isVisible('lesson') && <th>Bài</th>}
                 </tr>
               </thead>
               <tbody>
@@ -195,37 +217,38 @@ export const RadicalDetail = ({ category }: Props) => {
                   <tr
                     key={item.id}
                     className="cursor-pointer"
-                    onClick={() => setSelectedRadical(item)}
+                    onClick={() => setSelectedKanji(item)}
                   >
-                    {columnVisibility.isVisible('number') && (
-                      <td className="text-center">{item.number}</td>
+                    {columnVisibility.isVisible('kanji') && (
+                      <td className="font-size-24 text-center">{item.kanji}</td>
                     )}
-                    {columnVisibility.isVisible('char') && (
-                      <td className="font-size-24 text-center">{item.char}</td>
+                    {columnVisibility.isVisible('onyomi') && (
+                      <td>{item.onyomi}</td>
+                    )}
+                    {columnVisibility.isVisible('kunyomi') && (
+                      <td>{item.kunyomi}</td>
                     )}
                     {columnVisibility.isVisible('hanViet') && (
                       <td>{item.hanViet}</td>
                     )}
                     {columnVisibility.isVisible('meaning') && (
-                      <td>
-                        {item.meaning}
-                        {!item.standalone && (
-                          <span className="text-muted font-size-13">
-                            {' '}
-                            (chỉ dùng làm bộ thủ)
-                          </span>
-                        )}
-                      </td>
+                      <td>{item.meaning}</td>
                     )}
-                    {columnVisibility.isVisible('strokes') && (
-                      <td className="text-center">{item.strokes}</td>
+                    {columnVisibility.isVisible('example') && (
+                      <td>{item.example}</td>
+                    )}
+                    {columnVisibility.isVisible('jlpt') && <td>{item.jlpt}</td>}
+                    {columnVisibility.isVisible('lesson') && (
+                      <td className="text-center">
+                        {item.lesson > 0 ? item.lesson : '-'}
+                      </td>
                     )}
                   </tr>
                 ))}
                 {pageItems.length === 0 && (
                   <tr>
-                    <td colSpan={5} className="text-center text-muted">
-                      Không tìm thấy bộ thủ phù hợp
+                    <td colSpan={8} className="text-center text-muted">
+                      Không tìm thấy Kanji phù hợp
                     </td>
                   </tr>
                 )}
@@ -261,9 +284,9 @@ export const RadicalDetail = ({ category }: Props) => {
         </div>
       )}
 
-      {selectedRadical && (
+      {selectedKanji && (
         <div
-          onClick={() => setSelectedRadical(null)}
+          onClick={() => setSelectedKanji(null)}
           style={{
             position: 'fixed',
             inset: 0,
@@ -281,32 +304,36 @@ export const RadicalDetail = ({ category }: Props) => {
           >
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-start">
-                <h1 className="mb-0">{selectedRadical.char}</h1>
+                <h1 className="mb-0">{selectedKanji.kanji}</h1>
                 <button
                   type="button"
                   className="btn-close"
                   aria-label="Đóng"
-                  onClick={() => setSelectedRadical(null)}
+                  onClick={() => setSelectedKanji(null)}
                 ></button>
               </div>
               <p className="mt-2 mb-1">
-                <b>Số bộ:</b> {selectedRadical.number}
+                <b>Âm On:</b> {selectedKanji.onyomi}
               </p>
               <p className="mb-1">
-                <b>Số nét:</b> {selectedRadical.strokes}
+                <b>Âm Kun:</b> {selectedKanji.kunyomi}
               </p>
               <p className="mb-1">
-                <b>Hán Việt:</b> {selectedRadical.hanViet}
+                <b>Hán Việt:</b> {selectedKanji.hanViet}
               </p>
-              {selectedRadical.standalone ? (
+              <p className="mb-1">
+                <b>Nghĩa:</b> {selectedKanji.meaning}
+              </p>
+              <p className="mb-1">
+                <b>Ví dụ:</b> {selectedKanji.example}
+              </p>
+              <p className="mb-1">
+                <b>JLPT:</b> {selectedKanji.jlpt}
+              </p>
+              {selectedKanji.lesson > 0 && (
                 <p className="mb-3">
-                  <b>Ý nghĩa:</b> {selectedRadical.meaning}
-                </p>
-              ) : (
-                <p className="mb-3 text-muted">
-                  <b>Ghi chú:</b> Mô tả hình dạng "{selectedRadical.meaning}" -
-                  chỉ dùng làm bộ thủ, không phải chữ độc lập trong tiếng Nhật
-                  hiện đại.
+                  <b>Bài học:</b> Bài {selectedKanji.lesson} (Minna no Nihongo
+                  Sơ cấp I)
                 </p>
               )}
               <div className="d-flex gap-2 flex-wrap">
@@ -314,7 +341,7 @@ export const RadicalDetail = ({ category }: Props) => {
                   type="button"
                   className="btn btn-primary btn-sm"
                   onClick={() =>
-                    navigate(`/utilities/japan/kanji/${category.id}/quiz`)
+                    navigate(`/learning/japan/kanji/${category.id}/quiz`)
                   }
                 >
                   Trắc nghiệm nhóm này
@@ -324,15 +351,15 @@ export const RadicalDetail = ({ category }: Props) => {
                   className="btn btn-outline-primary btn-sm"
                   onClick={() =>
                     navigate(
-                      `/utilities/japan/kanji/${
+                      `/learning/japan/kanji/${
                         category.id
                       }/writing?char=${encodeURIComponent(
-                        selectedRadical.char,
+                        selectedKanji.kanji,
                       )}`,
                     )
                   }
                 >
-                  Tập viết bộ thủ này
+                  Tập viết chữ này
                 </button>
               </div>
             </div>

@@ -5,7 +5,7 @@ import { KANJI_CATEGORIES } from '../data';
 import { KanjiDetail } from './kanji-detail';
 import { RadicalDetail } from './radical-detail';
 
-export const UtilitiesJapanKanjiDetail = () => {
+export const LearningJapanKanjiDetail = () => {
   const navigate = useNavigate();
   const { categoryId } = useParams();
 
@@ -15,7 +15,7 @@ export const UtilitiesJapanKanjiDetail = () => {
 
   useEffect(() => {
     if (!category) {
-      navigate('/utilities/japan/kanji');
+      navigate('/learning/japan/kanji');
     }
     // eslint-disable-next-line
   }, [categoryId, navigate]);
