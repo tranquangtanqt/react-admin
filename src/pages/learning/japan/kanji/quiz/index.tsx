@@ -5,6 +5,7 @@ import NumberUtils from 'utils/number-utils';
 import { KANJI_CATEGORIES, RADICALS, getKanjiByCategory } from '../data';
 import { getAcceptableReadings, normalizeReading } from '../reading-utils';
 import { loadMistakes, recordAnswer } from '../mistakes';
+import { loadMastered, recordMastered, clearMastered } from '../mastered';
 
 type QuestionType = 'char-to-meaning' | 'meaning-to-char' | 'char-to-reading';
 
@@ -77,31 +78,6 @@ function buildQuestions(
     );
     return { type, target, choices: shuffle([target, ...distractors]) };
   });
-}
-
-function progressStorageKey(categoryId: string) {
-  return `japan-kanji-progress-${categoryId}`;
-}
-
-function loadProgress(categoryId: string) {
-  const raw = localStorage.getItem(progressStorageKey(categoryId));
-  if (!raw) return { correct: 0, total: 0 };
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return { correct: 0, total: 0 };
-  }
-}
-
-function saveProgress(categoryId: string, correct: number, total: number) {
-  localStorage.setItem(
-    progressStorageKey(categoryId),
-    JSON.stringify({ correct, total }),
-  );
-}
-
-function clearProgress(categoryId: string) {
-  localStorage.removeItem(progressStorageKey(categoryId));
 }
 
 function lessonSelectionStorageKey(categoryId: string) {
@@ -227,9 +203,14 @@ export const LearningJapanKanjiQuiz = () => {
   const [selectedChoiceId, setSelectedChoiceId] = useState<number | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
-  const [allTimeProgress, setAllTimeProgress] = useState(() =>
-    categoryId ? loadProgress(categoryId) : { correct: 0, total: 0 },
+  const [masteredIds, setMasteredIds] = useState<number[]>(() =>
+    categoryId ? loadMastered(categoryId) : [],
   );
+
+  const scopeTotal = pool.length;
+  const scopeMastered = pool.filter((item) =>
+    masteredIds.includes(item.id),
+  ).length;
 
   const currentQuestion = questions[currentIndex];
 
@@ -239,19 +220,13 @@ export const LearningJapanKanjiQuiz = () => {
     setCorrectCount((value) => (correct ? value + 1 : value));
     setWrongCount((value) => (correct ? value : value + 1));
 
-    if (categoryId) {
-      const updated = {
-        correct: allTimeProgress.correct + (correct ? 1 : 0),
-        total: allTimeProgress.total + 1,
-      };
-      setAllTimeProgress(updated);
-      saveProgress(categoryId, updated.correct, updated.total);
-
-      if (currentQuestion) {
-        setMistakeIds(
-          recordAnswer(categoryId, currentQuestion.target.id, correct),
-        );
+    if (categoryId && currentQuestion) {
+      if (correct) {
+        setMasteredIds(recordMastered(categoryId, currentQuestion.target.id));
       }
+      setMistakeIds(
+        recordAnswer(categoryId, currentQuestion.target.id, correct),
+      );
     }
   };
 
@@ -321,8 +296,8 @@ export const LearningJapanKanjiQuiz = () => {
   const handleClearProgress = () => {
     if (!categoryId) return;
     if (!window.confirm('Xoá toàn bộ tiến độ đã lưu của mục này?')) return;
-    clearProgress(categoryId);
-    setAllTimeProgress({ correct: 0, total: 0 });
+    clearMastered(categoryId);
+    setMasteredIds([]);
   };
 
   const handleToggleLesson = (lesson: number) => {
@@ -502,12 +477,11 @@ export const LearningJapanKanjiQuiz = () => {
         </div>
         <div className="col-12 col-md-4 text-md-end">
           <p className="text-muted mb-1">
-            Tiến độ đã lưu: {allTimeProgress.correct}/{allTimeProgress.total}{' '}
-            câu đúng{' '}
+            Tiến độ bài đã chọn: {scopeMastered}/{scopeTotal} đã thuộc{' '}
             <button
               type="button"
               className="btn btn-outline-danger btn-sm"
-              disabled={allTimeProgress.total === 0}
+              disabled={scopeMastered === 0}
               onClick={handleClearProgress}
             >
               Xoá tiến độ

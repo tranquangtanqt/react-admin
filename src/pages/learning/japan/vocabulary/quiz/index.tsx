@@ -9,6 +9,7 @@ import {
   getVocabularyByLevel,
 } from '../data';
 import { loadMistakes, recordAnswer } from '../mistakes';
+import { loadMastered, recordMastered, clearMastered } from '../mastered';
 
 type Direction = 'vi-ja' | 'ja-vi' | 'mixed';
 type QuestionDirection = 'vi-ja' | 'ja-vi';
@@ -78,31 +79,6 @@ function renderJapanese(item: QuizItem) {
   return item.kanji !== '' ? `${item.hiragana} (${item.kanji})` : item.hiragana;
 }
 
-function progressStorageKey(level: string) {
-  return `japan-vocabulary-progress-${level}`;
-}
-
-function loadProgress(level: string) {
-  const raw = localStorage.getItem(progressStorageKey(level));
-  if (!raw) return { correct: 0, total: 0 };
-  try {
-    return JSON.parse(raw);
-  } catch {
-    return { correct: 0, total: 0 };
-  }
-}
-
-function saveProgress(level: string, correct: number, total: number) {
-  localStorage.setItem(
-    progressStorageKey(level),
-    JSON.stringify({ correct, total }),
-  );
-}
-
-function clearProgress(level: string) {
-  localStorage.removeItem(progressStorageKey(level));
-}
-
 export const LearningJapanVocabularyQuiz = () => {
   const navigate = useNavigate();
   const { level } = useParams();
@@ -137,12 +113,17 @@ export const LearningJapanVocabularyQuiz = () => {
   const [selectedChoiceId, setSelectedChoiceId] = useState<string | null>(null);
   const [correctCount, setCorrectCount] = useState(0);
   const [wrongCount, setWrongCount] = useState(0);
-  const [allTimeProgress, setAllTimeProgress] = useState(() =>
-    level ? loadProgress(level) : { correct: 0, total: 0 },
+  const [masteredIds, setMasteredIds] = useState<string[]>(() =>
+    level ? loadMastered(level) : [],
   );
   const [mistakeIds, setMistakeIds] = useState<string[]>(() =>
     level ? loadMistakes(level) : [],
   );
+
+  const scopeTotal = pool.length;
+  const scopeMastered = pool.filter((item) =>
+    masteredIds.includes(item.id),
+  ).length;
 
   const maxChoiceCount = Math.min(10, pool.length);
   const choiceCountOptions = CHOICE_COUNT_OPTIONS.filter(
@@ -187,17 +168,11 @@ export const LearningJapanVocabularyQuiz = () => {
     setCorrectCount((value) => (correct ? value + 1 : value));
     setWrongCount((value) => (correct ? value : value + 1));
 
-    if (level) {
-      const updated = {
-        correct: allTimeProgress.correct + (correct ? 1 : 0),
-        total: allTimeProgress.total + 1,
-      };
-      setAllTimeProgress(updated);
-      saveProgress(level, updated.correct, updated.total);
-
-      if (currentQuestion) {
-        setMistakeIds(recordAnswer(level, currentQuestion.target.id, correct));
+    if (level && currentQuestion) {
+      if (correct) {
+        setMasteredIds(recordMastered(level, currentQuestion.target.id));
       }
+      setMistakeIds(recordAnswer(level, currentQuestion.target.id, correct));
     }
   };
 
@@ -235,8 +210,8 @@ export const LearningJapanVocabularyQuiz = () => {
   const handleClearProgress = () => {
     if (!level) return;
     if (!window.confirm('Xoá toàn bộ tiến độ đã lưu của mục này?')) return;
-    clearProgress(level);
-    setAllTimeProgress({ correct: 0, total: 0 });
+    clearMastered(level);
+    setMasteredIds([]);
   };
 
   useEffect(() => {
@@ -362,12 +337,11 @@ export const LearningJapanVocabularyQuiz = () => {
         </div>
         <div className="col-12 col-md-4 text-md-end">
           <p className="text-muted mb-1">
-            Tiến độ đã lưu: {allTimeProgress.correct}/{allTimeProgress.total}{' '}
-            câu đúng{' '}
+            Tiến độ bài đã chọn: {scopeMastered}/{scopeTotal} từ đã thuộc{' '}
             <button
               type="button"
               className="btn btn-outline-danger btn-sm"
-              disabled={allTimeProgress.total === 0}
+              disabled={scopeMastered === 0}
               onClick={handleClearProgress}
             >
               Xoá tiến độ
