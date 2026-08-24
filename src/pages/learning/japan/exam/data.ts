@@ -13,6 +13,16 @@ import lesson12 from './n5/lesson-12.json';
 import lesson13 from './n5/lesson-13.json';
 import lesson14 from './n5/lesson-14.json';
 import lesson15 from './n5/lesson-15.json';
+import lesson16 from './n5/lesson-16.json';
+import lesson17 from './n5/lesson-17.json';
+import lesson18 from './n5/lesson-18.json';
+import lesson19 from './n5/lesson-19.json';
+import lesson20 from './n5/lesson-20.json';
+import lesson21 from './n5/lesson-21.json';
+import lesson22 from './n5/lesson-22.json';
+import lesson23 from './n5/lesson-23.json';
+import lesson24 from './n5/lesson-24.json';
+import lesson25 from './n5/lesson-25.json';
 import { ExamCategoryDto, ExamLessonDto, ExamQuestionDto } from './dto';
 
 const TOTAL_LESSONS = 25;
@@ -33,6 +43,16 @@ const LESSON_FILES: Partial<Record<number, ExamLessonDto>> = {
   13: lesson13 as ExamLessonDto,
   14: lesson14 as ExamLessonDto,
   15: lesson15 as ExamLessonDto,
+  16: lesson16 as ExamLessonDto,
+  17: lesson17 as ExamLessonDto,
+  18: lesson18 as ExamLessonDto,
+  19: lesson19 as ExamLessonDto,
+  20: lesson20 as ExamLessonDto,
+  21: lesson21 as ExamLessonDto,
+  22: lesson22 as ExamLessonDto,
+  23: lesson23 as ExamLessonDto,
+  24: lesson24 as ExamLessonDto,
+  25: lesson25 as ExamLessonDto,
 };
 
 export const EXAM_CATEGORIES: ExamCategoryDto[] = Array.from(
