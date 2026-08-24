@@ -87,11 +87,20 @@ export const MasterLayout = (props: masterLayoutProps) => {
     }
     el.children[childId].active = true;
     setNavbarLefts(navbarLeftTemp);
+    closeSidebarOnMobile();
     return navigate(childLink);
   };
 
   const toggleLeftMenu = () => {
     setIsSidebarActive(!isSidebarActive);
+  };
+
+  const MOBILE_BREAKPOINT = 991.98;
+
+  const closeSidebarOnMobile = () => {
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+      setIsSidebarActive(false);
+    }
   };
 
   return (
@@ -146,7 +155,10 @@ export const MasterLayout = (props: masterLayoutProps) => {
                   ) : (
                     <Link
                       to={navbar.link}
-                      onClick={(e) => showDropDownLeft(e, navbar.id)}
+                      onClick={(e) => {
+                        showDropDownLeft(e, navbar.id);
+                        closeSidebarOnMobile();
+                      }}
                     >
                       {navbar.text}
                     </Link>
