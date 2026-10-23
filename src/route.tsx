@@ -32,6 +32,7 @@ import { Utilities } from 'pages/utilities';
 import { UtilitieAppProjectInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet';
 import { UtilitieAppProjectDetailInfoGoogleSheet } from 'pages/utilities/app/project-info-google-sheet/project-detail';
 import { UtilitieAppSearchTable } from 'pages/utilities/app/search-table';
+import { UtilitieAppGoogleDriveExplorer } from 'pages/utilities/app/google-drive-explorer';
 import { UtilitiesCreateTableFromExcel } from 'pages/utilities/sql/create-table-from-excel';
 import { UtilitiesFileMakeJsonFromExcel } from 'pages/utilities/file/make-json-from-excel';
 import { UtilitiesListFileSelected } from 'pages/utilities/file/list-file-selected';
@@ -102,6 +103,8 @@ export const RoutesRoot = () => {
           <Route path="/utilities/app/project-info" element={<UtilitieAppProjectInfoGoogleSheet />} />
           <Route path="/utilities/app/project-info/:projectId" element={<UtilitieAppProjectDetailInfoGoogleSheet />} />
           <Route path="/utilities/app/search-table" element={<UtilitieAppSearchTable />} />
+          <Route path="/utilities/app/drive-explorer" element={<UtilitieAppGoogleDriveExplorer />} />
+          <Route path="/utilities/app/drive-explorer/:folderId" element={<UtilitieAppGoogleDriveExplorer />} />
 
           <Route path="/sample/create-content-page" element={<SampleCreateContentPage />} />
           <Route path="/sample/content-page" element={<SampleContentPage />} />

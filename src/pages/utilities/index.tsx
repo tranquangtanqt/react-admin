@@ -61,6 +61,10 @@ export const Utilities = () => {
           path: '/utilities/app/search-table',
         },
         {
+          text: 'Google Drive',
+          path: '/utilities/app/drive-explorer',
+        },
+        {
           text: 'TinyMCE_1',
           path: 'https://codepen.io/tinymce/pen/QWNpjbg',
         },
