@@ -4,6 +4,7 @@ import { PageTitle } from 'components/modules/page-title';
 import {
   IDriveFile,
   MIME_FOLDER,
+  apiMediaUrl,
   MIME_SHEET,
   ROOT_FOLDER_ID,
   clearStoredToken,
@@ -12,6 +13,7 @@ import {
   getStoredToken,
   imageUrl,
   isImage,
+  thumbnailUrl,
   listFiles,
   requestAccessToken,
   trashFile,
@@ -25,6 +27,19 @@ const folderPath = (folderId: string) =>
 
 const fileLink = (file: IDriveFile) =>
   file.webViewLink || `https://drive.google.com/open?id=${file.id}`;
+
+const THUMB_WIDTH_STORAGE_KEY = 'drive-explorer-thumb-width';
+const DEFAULT_THUMB_WIDTH = 350;
+const THUMB_WIDTH_PRESETS = [150, 200, 350, 500, 800, 1200, 2000];
+
+const loadThumbWidth = () => {
+  try {
+    const value = +(localStorage.getItem(THUMB_WIDTH_STORAGE_KEY) || '');
+    return THUMB_WIDTH_PRESETS.includes(value) ? value : DEFAULT_THUMB_WIDTH;
+  } catch {
+    return DEFAULT_THUMB_WIDTH;
+  }
+};
 
 const formatDate = (value?: string) =>
   value ? new Date(value).toLocaleString('vi-VN') : '';
@@ -49,6 +64,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const [created, setCreated] = useState<IDriveFile[]>([]);
   const [deleted, setDeleted] = useState('');
   const [copied, setCopied] = useState('');
+  const [thumbWidth, setThumbWidth] = useState(loadThumbWidth());
 
   const loadFolder = useCallback(async () => {
     setLoading(true);
@@ -172,6 +188,20 @@ export const UtilitieAppGoogleDriveExplorer = () => {
       setSaving(false);
     }
   };
+
+  /**
+   * Change the thumbnail width for all images and remember it for next time
+   */
+  const changeThumbWidth = (width: number) => {
+    setThumbWidth(width);
+    try {
+      localStorage.setItem(THUMB_WIDTH_STORAGE_KEY, width.toString());
+    } catch {
+      // ignore
+    }
+  };
+
+  const hasImages = files.some(isImage);
 
   const copy = async (text: string) => {
     try {
@@ -373,12 +403,30 @@ export const UtilitieAppGoogleDriveExplorer = () => {
 
       <div className="row mt-3">
         <div className="col-12 col-sm-12 col-md-12">
-          <input
-            className="form-control mb-2"
-            placeholder="Tìm theo tên..."
-            value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
-          />
+          <div className="d-flex flex-wrap gap-2 mb-2">
+            <input
+              className="form-control flex-grow-1 w-auto"
+              placeholder="Tìm theo tên..."
+              value={keyword}
+              onChange={(e) => setKeyword(e.target.value)}
+            />
+            {hasImages && (
+              <div className="input-group w-auto">
+                <span className="input-group-text">Độ rộng thu nhỏ</span>
+                <select
+                  className="form-select"
+                  value={thumbWidth}
+                  onChange={(e) => changeThumbWidth(+e.target.value)}
+                >
+                  {THUMB_WIDTH_PRESETS.map((w) => (
+                    <option key={w} value={w}>
+                      {w}px{w === DEFAULT_THUMB_WIDTH ? ' (mặc định)' : ''}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
+          </div>
 
           <div className="card">
             <ul className="list-group list-group-flush">
@@ -395,15 +443,23 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                   <li className="list-group-item" key={file.id}>
                     <div className="d-flex flex-wrap justify-content-between align-items-center gap-2">
                       <div className="d-flex align-items-center gap-2 text-break">
-                        {isImage(file) ? (
+                        {isImage(file) && apiMediaUrl(file) ? (
                           <img
-                            src={imageUrl(file)}
+                            src={apiMediaUrl(file)}
                             alt=""
                             width={40}
                             height={40}
                             className="rounded border"
                             style={{ objectFit: 'cover' }}
                             loading="lazy"
+                            onError={(e) => {
+                              // fall back to the file-type icon
+                              const img = e.currentTarget;
+                              if (file.iconLink && img.src !== file.iconLink) {
+                                img.src = file.iconLink;
+                                img.style.objectFit = 'none';
+                              }
+                            }}
                           />
                         ) : (
                           file.iconLink && (
@@ -430,7 +486,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                         )}
                       </div>
 
-                      <div className="d-flex align-items-center gap-2">
+                      <div className="d-flex flex-wrap align-items-center gap-2">
                         <small className="text-secondary">
                           {formatDate(file.modifiedTime)}
                         </small>
@@ -445,6 +501,19 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                                 {copied === imageUrl(file)
                                   ? 'Đã copy'
                                   : 'Copy link ảnh'}
+                              </button>
+                            )}
+                            {isImage(file) && (
+                              <button
+                                className="btn btn-sm btn-outline-secondary"
+                                title={`Ảnh thu nhỏ do Drive tạo, rộng ${thumbWidth}px`}
+                                onClick={() =>
+                                  copy(thumbnailUrl(file, thumbWidth))
+                                }
+                              >
+                                {copied === thumbnailUrl(file, thumbWidth)
+                                  ? 'Đã copy'
+                                  : `Copy thu nhỏ ${thumbWidth}px`}
                               </button>
                             )}
                             <button
