@@ -44,13 +44,65 @@ const loadThumbWidth = () => {
 const formatDate = (value?: string) =>
   value ? new Date(value).toLocaleString('vi-VN') : '';
 
+interface ICrumb {
+  id: string;
+  name: string;
+}
+
+// Without sign-in the API key cannot read parent folders, so the path
+// taken to reach each folder is remembered here: { folderId: ICrumb[] }
+const PATHS_STORAGE_KEY = 'drive-explorer-paths';
+const ROOT_CRUMB: ICrumb = { id: ROOT_FOLDER_ID, name: 'react-admin-data' };
+
+const loadPaths = (): Record<string, ICrumb[]> => {
+  try {
+    return JSON.parse(localStorage.getItem(PATHS_STORAGE_KEY) || '{}');
+  } catch {
+    return {};
+  }
+};
+
+const rememberPath = (path: ICrumb[]) => {
+  if (path[0]?.id !== ROOT_FOLDER_ID) return;
+  try {
+    const paths = loadPaths();
+    paths[path[path.length - 1].id] = path.map(({ id, name }) => ({
+      id,
+      name,
+    }));
+    localStorage.setItem(PATHS_STORAGE_KEY, JSON.stringify(paths));
+  } catch {
+    // ignore
+  }
+};
+
+/**
+ * Full path from the root folder: from the API when it could read every
+ * parent, otherwise the remembered path, otherwise root + current folder
+ */
+const resolveBreadcrumb = (folderId: string, apiPath: ICrumb[]): ICrumb[] => {
+  if (apiPath[0]?.id === ROOT_FOLDER_ID) return apiPath;
+
+  const current = apiPath[apiPath.length - 1];
+  const remembered = loadPaths()[folderId];
+  if (remembered?.length) {
+    // keep the latest name of the current folder (it may have been renamed)
+    return current
+      ? [...remembered.slice(0, -1), { id: folderId, name: current.name }]
+      : remembered;
+  }
+
+  if (folderId === ROOT_FOLDER_ID) return current ? [current] : [ROOT_CRUMB];
+  return current ? [ROOT_CRUMB, current] : [ROOT_CRUMB];
+};
+
 export const UtilitieAppGoogleDriveExplorer = () => {
   const params = useParams();
   const folderId = params.folderId || ROOT_FOLDER_ID;
 
   const [token, setToken] = useState(getStoredToken());
   const [files, setFiles] = useState<IDriveFile[]>([]);
-  const [breadcrumb, setBreadcrumb] = useState<IDriveFile[]>([]);
+  const [breadcrumb, setBreadcrumb] = useState<ICrumb[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [keyword, setKeyword] = useState('');
@@ -69,15 +121,20 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const loadFolder = useCallback(async () => {
     setLoading(true);
     setError('');
+    // read from storage: the token may have been renewed since this render,
+    // and an expired one is dropped so the list falls back to the API key
+    const currentToken = token ? getStoredToken() : '';
     try {
       const [list, path] = await Promise.all([
-        listFiles(folderId, token),
-        getBreadcrumb(folderId, token).catch(() => []),
+        listFiles(folderId, currentToken),
+        getBreadcrumb(folderId, currentToken).catch(() => []),
       ]);
       setFiles(list);
-      setBreadcrumb(path);
+      const fullPath = resolveBreadcrumb(folderId, path);
+      setBreadcrumb(fullPath);
+      rememberPath(fullPath);
     } catch (e: any) {
-      if (e.status === 401 && token) {
+      if (e.status === 401 && currentToken) {
         // token expired -> sign out and read again with the API key
         clearStoredToken();
         setToken('');
@@ -97,10 +154,13 @@ export const UtilitieAppGoogleDriveExplorer = () => {
 
   useEffect(() => {
     loadFolder();
+  }, [loadFolder]);
+
+  useEffect(() => {
     setKeyword('');
     setCreated([]);
     setDeleted('');
-  }, [loadFolder]);
+  }, [folderId]);
 
   const login = async () => {
     setError('');
@@ -114,6 +174,40 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const logout = () => {
     clearStoredToken();
     setToken('');
+  };
+
+  /**
+   * Open the sign-in popup again when the session has expired
+   */
+  const renewToken = async () => {
+    try {
+      const newToken = await requestAccessToken();
+      setToken(newToken);
+      return newToken;
+    } catch (e: any) {
+      clearStoredToken();
+      setToken('');
+      // the upload panel is hidden while signed out -> clear the selection
+      setUploadInput([]);
+      setUploadInputKey((k) => k + 1);
+      throw new Error(
+        `Phiên đăng nhập Google đã hết hạn (${e.message}). Bấm "Đăng nhập Google" rồi thử lại.`,
+      );
+    }
+  };
+
+  /**
+   * Call the Drive API with a valid token: renew it first when it has
+   * expired, and once more if Google still answers 401
+   */
+  const withToken = async <T,>(action: (token: string) => Promise<T>) => {
+    const currentToken = getStoredToken() || (await renewToken());
+    try {
+      return await action(currentToken);
+    } catch (e: any) {
+      if (e.status !== 401) throw e;
+      return action(await renewToken());
+    }
   };
 
   /**
@@ -141,14 +235,18 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const createSheet = () => {
     if (!newName.trim()) return;
     save(async () => [
-      await createFile(newName.trim(), MIME_SHEET, folderId, token),
+      await withToken((t) =>
+        createFile(newName.trim(), MIME_SHEET, folderId, t),
+      ),
     ]);
   };
 
   const createFolder = () => {
     if (!newName.trim()) return;
     save(async () => [
-      await createFile(newName.trim(), MIME_FOLDER, folderId, token),
+      await withToken((t) =>
+        createFile(newName.trim(), MIME_FOLDER, folderId, t),
+      ),
     ]);
   };
 
@@ -157,7 +255,9 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     save(async () => {
       const result: IDriveFile[] = [];
       for (const file of uploadInput) {
-        result.push(await uploadFile(file, folderId, convertToSheet, token));
+        result.push(
+          await withToken((t) => uploadFile(file, folderId, convertToSheet, t)),
+        );
       }
       return result;
     });
@@ -175,7 +275,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     setCreated([]);
     setDeleted('');
     try {
-      await trashFile(file.id, token);
+      await withToken((t) => trashFile(file.id, t));
       setDeleted(file.name);
       setFiles((list) => list.filter((f) => f.id !== file.id));
     } catch (e: any) {
@@ -202,6 +302,13 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   };
 
   const hasImages = files.some(isImage);
+
+  /**
+   * Remember the path to a sub folder before opening it
+   */
+  const openFolder = (folder: IDriveFile) => {
+    rememberPath([...breadcrumb, { id: folder.id, name: folder.name }]);
+  };
 
   const copy = async (text: string) => {
     try {
@@ -373,7 +480,9 @@ export const UtilitieAppGoogleDriveExplorer = () => {
             <div key={file.id}>
               Đã tạo <b>{file.name}</b>.{' '}
               {file.mimeType === MIME_FOLDER ? (
-                <Link to={folderPath(file.id)}>Mở thư mục</Link>
+                <Link to={folderPath(file.id)} onClick={() => openFolder(file)}>
+                  Mở thư mục
+                </Link>
               ) : (
                 <a href={fileLink(file)} target="_blank" rel="noreferrer">
                   Mở để chỉnh sửa
@@ -472,7 +581,10 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                           )
                         )}
                         {file.mimeType === MIME_FOLDER ? (
-                          <Link to={folderPath(file.id)}>
+                          <Link
+                            to={folderPath(file.id)}
+                            onClick={() => openFolder(file)}
+                          >
                             <b>{file.name}</b>
                           </Link>
                         ) : (
