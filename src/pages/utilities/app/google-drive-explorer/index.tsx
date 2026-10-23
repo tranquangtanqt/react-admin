@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { PageTitle } from 'components/modules/page-title';
 import {
@@ -43,6 +43,22 @@ const loadThumbWidth = () => {
 
 const formatDate = (value?: string) =>
   value ? new Date(value).toLocaleString('vi-VN') : '';
+
+/**
+ * Screenshots pasted from the clipboard are all called "image.png":
+ * give them a unique name like paste-20261023-143005.png
+ */
+const renamePasted = (file: File, index: number) => {
+  if (file.name && !/^image\.\w+$/i.test(file.name)) return file;
+  const ext = file.type.split('/')[1]?.replace('jpeg', 'jpg') || 'png';
+  const pad = (n: number) => n.toString().padStart(2, '0');
+  const d = new Date();
+  const stamp =
+    `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}` +
+    `-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+  const name = `paste-${stamp}${index ? `-${index + 1}` : ''}.${ext}`;
+  return new File([file], name, { type: file.type });
+};
 
 interface ICrumb {
   id: string;
@@ -117,6 +133,8 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const [deleted, setDeleted] = useState('');
   const [copied, setCopied] = useState('');
   const [thumbWidth, setThumbWidth] = useState(loadThumbWidth());
+  const [progress, setProgress] = useState('');
+  const [dragging, setDragging] = useState(false);
 
   const loadFolder = useCallback(async () => {
     setLoading(true);
@@ -227,8 +245,14 @@ export const UtilitieAppGoogleDriveExplorer = () => {
       await loadFolder();
     } catch (e: any) {
       setError(e.message);
+      // some files of a multi-file upload may already be on Drive
+      if (e.uploaded?.length) {
+        setCreated(e.uploaded);
+        await loadFolder();
+      }
     } finally {
       setSaving(false);
+      setProgress('');
     }
   };
 
@@ -250,18 +274,104 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     ]);
   };
 
-  const upload = () => {
-    if (!uploadInput.length) return;
+  /**
+   * Upload files one by one (from the file input, Ctrl+V or drag & drop)
+   */
+  const uploadFiles = (list: File[]) => {
+    if (!list.length || saving) return;
+    if (!token) {
+      setError('Đăng nhập Google để tải file lên.');
+      return;
+    }
     save(async () => {
       const result: IDriveFile[] = [];
-      for (const file of uploadInput) {
-        result.push(
-          await withToken((t) => uploadFile(file, folderId, convertToSheet, t)),
-        );
+      try {
+        for (let i = 0; i < list.length; i++) {
+          setProgress(`Đang tải ${i + 1}/${list.length}: ${list[i].name}`);
+          result.push(
+            await withToken((t) =>
+              uploadFile(list[i], folderId, convertToSheet, t),
+            ),
+          );
+        }
+      } catch (e: any) {
+        e.uploaded = result;
+        throw e;
       }
       return result;
     });
   };
+
+  const upload = () => uploadFiles(uploadInput);
+
+  // paste / drop listeners are registered once -> always call the latest version
+  const uploadFilesRef = useRef(uploadFiles);
+  uploadFilesRef.current = uploadFiles;
+
+  // Ctrl+V anywhere on the page uploads the pasted files (e.g. screenshots)
+  useEffect(() => {
+    const onPaste = (e: ClipboardEvent) => {
+      const files = Array.from(e.clipboardData?.files || []);
+      if (!files.length) return;
+      // pasting text into an input keeps working as usual
+      const target = e.target as HTMLElement;
+      if (
+        target.closest?.('input, textarea') &&
+        e.clipboardData?.types.includes('text/plain')
+      ) {
+        return;
+      }
+      e.preventDefault();
+      uploadFilesRef.current(files.map(renamePasted));
+    };
+    document.addEventListener('paste', onPaste);
+    return () => document.removeEventListener('paste', onPaste);
+  }, []);
+
+  // drag & drop files anywhere on the page
+  useEffect(() => {
+    let depth = 0;
+    const hasFiles = (e: DragEvent) =>
+      !!e.dataTransfer?.types.includes('Files');
+
+    const onDragEnter = (e: DragEvent) => {
+      if (!hasFiles(e)) return;
+      depth++;
+      setDragging(true);
+    };
+    const onDragOver = (e: DragEvent) => {
+      if (hasFiles(e)) e.preventDefault();
+    };
+    const onDragLeave = (e: DragEvent) => {
+      if (!hasFiles(e)) return;
+      depth = Math.max(0, depth - 1);
+      if (!depth) setDragging(false);
+    };
+    const onDrop = (e: DragEvent) => {
+      if (!hasFiles(e)) return;
+      e.preventDefault();
+      depth = 0;
+      setDragging(false);
+      // folders are not supported -> skip them
+      const files = Array.from(e.dataTransfer?.items || [])
+        .filter((item) => item.kind === 'file')
+        .filter((item) => !item.webkitGetAsEntry()?.isDirectory)
+        .map((item) => item.getAsFile())
+        .filter((file): file is File => !!file);
+      uploadFilesRef.current(files);
+    };
+
+    window.addEventListener('dragenter', onDragEnter);
+    window.addEventListener('dragover', onDragOver);
+    window.addEventListener('dragleave', onDragLeave);
+    window.addEventListener('drop', onDrop);
+    return () => {
+      window.removeEventListener('dragenter', onDragEnter);
+      window.removeEventListener('dragover', onDragOver);
+      window.removeEventListener('dragleave', onDragLeave);
+      window.removeEventListener('drop', onDrop);
+    };
+  }, []);
 
   const remove = async (file: IDriveFile) => {
     const isFolder = file.mimeType === MIME_FOLDER;
@@ -327,6 +437,29 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   return (
     <>
       <PageTitle title="Google Drive"></PageTitle>
+
+      {dragging && (
+        <div
+          className="position-fixed top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center"
+          style={{
+            zIndex: 2000,
+            background: 'rgba(13, 110, 253, 0.12)',
+            border: '4px dashed #0d6efd',
+            pointerEvents: 'none',
+          }}
+        >
+          <div className="bg-white rounded shadow px-4 py-3 fs-5 text-center">
+            {token ? (
+              <>
+                Thả file để tải lên thư mục{' '}
+                <b>{breadcrumb[breadcrumb.length - 1]?.name}</b>
+              </>
+            ) : (
+              'Đăng nhập Google để tải file lên'
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="row mt-2">
         <div className="col-12 col-sm-12 col-md-12">
@@ -460,6 +593,10 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                     Tải lên
                   </button>
                 </div>
+                <small className="text-secondary d-block mt-2">
+                  Hoặc dán ảnh (Ctrl+V) / kéo thả file vào bất kỳ đâu trên trang
+                  để tải lên ngay.
+                </small>
               </div>
             </div>
           </div>
@@ -471,7 +608,9 @@ export const UtilitieAppGoogleDriveExplorer = () => {
       )}
 
       {saving && (
-        <div className="alert alert-info mt-3 mb-0 py-2">Đang xử lý...</div>
+        <div className="alert alert-info mt-3 mb-0 py-2">
+          {progress || 'Đang xử lý...'}
+        </div>
       )}
 
       {created.length > 0 && (
@@ -487,6 +626,14 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                 <a href={fileLink(file)} target="_blank" rel="noreferrer">
                   Mở để chỉnh sửa
                 </a>
+              )}
+              {isImage(file) && (
+                <button
+                  className="btn btn-sm btn-outline-success ms-2 py-0"
+                  onClick={() => copy(imageUrl(file))}
+                >
+                  {copied === imageUrl(file) ? 'Đã copy' : 'Copy link ảnh'}
+                </button>
               )}
             </div>
           ))}
