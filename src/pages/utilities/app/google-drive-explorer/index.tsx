@@ -15,6 +15,7 @@ import {
   isImage,
   thumbnailUrl,
   listFiles,
+  renameFile,
   requestAccessToken,
   trashFile,
   uploadFile,
@@ -31,6 +32,52 @@ const fileLink = (file: IDriveFile) =>
 const THUMB_WIDTH_STORAGE_KEY = 'drive-explorer-thumb-width';
 const DEFAULT_THUMB_WIDTH = 350;
 const THUMB_WIDTH_PRESETS = [150, 200, 350, 500, 800, 1200, 2000];
+
+const SORT_STORAGE_KEY = 'drive-explorer-sort';
+const SORT_OPTIONS = {
+  'name-asc': 'Tên A → Z',
+  'name-desc': 'Tên Z → A',
+  'modified-desc': 'Sửa gần nhất',
+  'modified-asc': 'Sửa cũ nhất',
+};
+type SortOption = keyof typeof SORT_OPTIONS;
+const DEFAULT_SORT: SortOption = 'name-asc';
+
+const loadSort = (): SortOption => {
+  try {
+    const value = localStorage.getItem(SORT_STORAGE_KEY) || '';
+    return value in SORT_OPTIONS ? (value as SortOption) : DEFAULT_SORT;
+  } catch {
+    return DEFAULT_SORT;
+  }
+};
+
+/**
+ * Folders first, then by the chosen order.
+ * Names use natural order: "chapter-1_2" comes before "chapter-1_10".
+ */
+const sortFiles = (list: IDriveFile[], sort: SortOption) => {
+  const byName = (a: IDriveFile, b: IDriveFile) =>
+    a.name.localeCompare(b.name, 'vi', { numeric: true, sensitivity: 'base' });
+  const byModified = (a: IDriveFile, b: IDriveFile) =>
+    (a.modifiedTime || '').localeCompare(b.modifiedTime || '');
+
+  return [...list].sort((a, b) => {
+    const folderFirst =
+      +(b.mimeType === MIME_FOLDER) - +(a.mimeType === MIME_FOLDER);
+    if (folderFirst) return folderFirst;
+    switch (sort) {
+      case 'name-desc':
+        return byName(b, a);
+      case 'modified-desc':
+        return byModified(b, a) || byName(a, b);
+      case 'modified-asc':
+        return byModified(a, b) || byName(a, b);
+      default:
+        return byName(a, b);
+    }
+  });
+};
 
 const loadThumbWidth = () => {
   try {
@@ -93,6 +140,23 @@ const rememberPath = (path: ICrumb[]) => {
 };
 
 /**
+ * Update the name of a renamed folder in every remembered path
+ */
+const renameInPaths = (folderId: string, name: string) => {
+  try {
+    const paths = loadPaths();
+    Object.values(paths).forEach((path) =>
+      path.forEach((crumb) => {
+        if (crumb.id === folderId) crumb.name = name;
+      }),
+    );
+    localStorage.setItem(PATHS_STORAGE_KEY, JSON.stringify(paths));
+  } catch {
+    // ignore
+  }
+};
+
+/**
  * Full path from the root folder: from the API when it could read every
  * parent, otherwise the remembered path, otherwise root + current folder
  */
@@ -133,7 +197,15 @@ export const UtilitieAppGoogleDriveExplorer = () => {
   const [deleted, setDeleted] = useState('');
   const [copied, setCopied] = useState('');
   const [thumbWidth, setThumbWidth] = useState(loadThumbWidth());
-  const [progress, setProgress] = useState('');
+  const [sort, setSort] = useState(loadSort());
+  const [progress, setProgress] = useState<{
+    done: number;
+    total: number;
+    name: string;
+  } | null>(null);
+  // inline rename: id of the file being renamed + the name being typed
+  const [renamingId, setRenamingId] = useState('');
+  const [renameValue, setRenameValue] = useState('');
   const [dragging, setDragging] = useState(false);
 
   const loadFolder = useCallback(async () => {
@@ -178,6 +250,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     setKeyword('');
     setCreated([]);
     setDeleted('');
+    setRenamingId('');
   }, [folderId]);
 
   const login = async () => {
@@ -252,7 +325,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
       }
     } finally {
       setSaving(false);
-      setProgress('');
+      setProgress(null);
     }
   };
 
@@ -287,7 +360,7 @@ export const UtilitieAppGoogleDriveExplorer = () => {
       const result: IDriveFile[] = [];
       try {
         for (let i = 0; i < list.length; i++) {
-          setProgress(`Đang tải ${i + 1}/${list.length}: ${list[i].name}`);
+          setProgress({ done: i, total: list.length, name: list[i].name });
           result.push(
             await withToken((t) =>
               uploadFile(list[i], folderId, convertToSheet, t),
@@ -373,6 +446,51 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     };
   }, []);
 
+  const startRename = (file: IDriveFile) => {
+    setRenamingId(file.id);
+    setRenameValue(file.name);
+  };
+
+  const cancelRename = () => {
+    setRenamingId('');
+    setRenameValue('');
+  };
+
+  const saveRename = async (file: IDriveFile) => {
+    const name = renameValue.trim();
+    if (!name || name === file.name) {
+      cancelRename();
+      return;
+    }
+
+    setSaving(true);
+    setError('');
+    setCreated([]);
+    setDeleted('');
+    try {
+      const updated = await withToken((t) => renameFile(file.id, name, t));
+      setFiles((list) =>
+        list.map((f) => (f.id === file.id ? { ...f, ...updated } : f)),
+      );
+      if (file.mimeType === MIME_FOLDER) renameInPaths(file.id, name);
+      cancelRename();
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  /**
+   * Select the name without its extension, like Drive / Explorer do
+   */
+  const selectBaseName = (input: HTMLInputElement, file: IDriveFile) => {
+    const dot = input.value.lastIndexOf('.');
+    const end =
+      file.mimeType !== MIME_FOLDER && dot > 0 ? dot : input.value.length;
+    input.setSelectionRange(0, end);
+  };
+
   const remove = async (file: IDriveFile) => {
     const isFolder = file.mimeType === MIME_FOLDER;
     const message = isFolder
@@ -411,6 +529,15 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     }
   };
 
+  const changeSort = (value: SortOption) => {
+    setSort(value);
+    try {
+      localStorage.setItem(SORT_STORAGE_KEY, value);
+    } catch {
+      // ignore
+    }
+  };
+
   const hasImages = files.some(isImage);
 
   /**
@@ -430,8 +557,11 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     setTimeout(() => setCopied(''), 1500);
   };
 
-  const filteredFiles = files.filter((f) =>
-    f.name.toLowerCase().includes(keyword.trim().toLowerCase()),
+  const filteredFiles = sortFiles(
+    files.filter((f) =>
+      f.name.toLowerCase().includes(keyword.trim().toLowerCase()),
+    ),
+    sort,
   );
 
   return (
@@ -609,7 +739,23 @@ export const UtilitieAppGoogleDriveExplorer = () => {
 
       {saving && (
         <div className="alert alert-info mt-3 mb-0 py-2">
-          {progress || 'Đang xử lý...'}
+          {progress ? (
+            <>
+              Đang tải {progress.done + 1}/{progress.total}:{' '}
+              <b>{progress.name}</b>
+              <div className="progress mt-2" style={{ height: 6 }}>
+                <div
+                  className="progress-bar"
+                  role="progressbar"
+                  style={{
+                    width: `${(progress.done / progress.total) * 100}%`,
+                  }}
+                />
+              </div>
+            </>
+          ) : (
+            'Đang xử lý...'
+          )}
         </div>
       )}
 
@@ -661,13 +807,27 @@ export const UtilitieAppGoogleDriveExplorer = () => {
         <div className="col-12 col-sm-12 col-md-12">
           <div className="d-flex flex-wrap gap-2 mb-2">
             <input
-              className="form-control flex-grow-1 w-auto"
+              className="form-control form-control-sm flex-grow-1 w-auto"
               placeholder="Tìm theo tên..."
               value={keyword}
               onChange={(e) => setKeyword(e.target.value)}
             />
+            <div className="input-group input-group-sm w-auto">
+              <span className="input-group-text">Sắp xếp</span>
+              <select
+                className="form-select"
+                value={sort}
+                onChange={(e) => changeSort(e.target.value as SortOption)}
+              >
+                {Object.entries(SORT_OPTIONS).map(([value, label]) => (
+                  <option key={value} value={value}>
+                    {label}
+                  </option>
+                ))}
+              </select>
+            </div>
             {hasImages && (
-              <div className="input-group w-auto">
+              <div className="input-group input-group-sm w-auto">
                 <span className="input-group-text">Độ rộng thu nhỏ</span>
                 <select
                   className="form-select"
@@ -727,7 +887,43 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                             />
                           )
                         )}
-                        {file.mimeType === MIME_FOLDER ? (
+                        {renamingId === file.id ? (
+                          <form
+                            className="d-flex gap-1"
+                            onSubmit={(e) => {
+                              e.preventDefault();
+                              saveRename(file);
+                            }}
+                          >
+                            <input
+                              className="form-control form-control-sm"
+                              style={{ minWidth: 260 }}
+                              value={renameValue}
+                              autoFocus
+                              onFocus={(e) => selectBaseName(e.target, file)}
+                              onChange={(e) => setRenameValue(e.target.value)}
+                              onKeyDown={(e) =>
+                                e.key === 'Escape' && cancelRename()
+                              }
+                              disabled={saving}
+                            />
+                            <button
+                              type="submit"
+                              className="btn btn-sm btn-primary"
+                              disabled={saving || !renameValue.trim()}
+                            >
+                              Lưu
+                            </button>
+                            <button
+                              type="button"
+                              className="btn btn-sm btn-outline-secondary"
+                              onClick={cancelRename}
+                              disabled={saving}
+                            >
+                              Huỷ
+                            </button>
+                          </form>
+                        ) : file.mimeType === MIME_FOLDER ? (
                           <Link
                             to={folderPath(file.id)}
                             onClick={() => openFolder(file)}
@@ -791,6 +987,15 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                               {copied === file.id ? 'Đã copy' : 'Copy ID'}
                             </button>
                           </>
+                        )}
+                        {token && (
+                          <button
+                            className="btn btn-sm btn-outline-secondary"
+                            onClick={() => startRename(file)}
+                            disabled={saving || renamingId === file.id}
+                          >
+                            Đổi tên
+                          </button>
                         )}
                         {token && (
                           <button

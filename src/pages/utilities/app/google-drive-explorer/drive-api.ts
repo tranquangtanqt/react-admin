@@ -219,6 +219,25 @@ export const trashFile = (
   );
 };
 
+/**
+ * Rename a file or folder
+ */
+export const renameFile = (
+  fileId: string,
+  name: string,
+  token: string,
+): Promise<IDriveFile> => {
+  return request(
+    `${DRIVE_URL}/${fileId}?fields=${FILE_FIELDS}&supportsAllDrives=true`,
+    token,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name }),
+    },
+  );
+};
+
 const SPREADSHEET_EXT = /\.(xlsx|xls|csv)$/i;
 
 export const isSpreadsheetFile = (name: string) => SPREADSHEET_EXT.test(name);
