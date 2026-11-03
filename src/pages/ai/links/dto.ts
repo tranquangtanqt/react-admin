@@ -11,5 +11,5 @@ export interface AiLinkDto {
   name: string;
   url: string;
   description: string;
-  pricing: AiLinkPricing;
+  pricing?: AiLinkPricing;
 }
