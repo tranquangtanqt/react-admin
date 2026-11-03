@@ -24,3 +24,6 @@ yarn-error.log*
 document.txt
 # local notes (contains OAuth client secret)
 document/Note.txt
+
+# Google OAuth client secret files
+client_secret_*.json

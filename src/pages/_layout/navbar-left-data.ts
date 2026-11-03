@@ -101,13 +101,36 @@ export const NAVBAR_LEFT = [
   {
     id: 3,
     active: false,
+    open: false,
+    link: '',
+    text: 'AI',
+    linkClass: 'dropdown-toggle collapsed',
+    ulClass: 'collapse list-unstyled',
+    children: [
+      {
+        id: 0,
+        link: '/ai/tips',
+        text: 'Thủ thuật',
+        active: false,
+      },
+      {
+        id: 1,
+        link: '/ai/links',
+        text: 'Links',
+        active: false,
+      },
+    ],
+  },
+  {
+    id: 4,
+    active: false,
     link: '/software',
     text: 'Software',
     children: [],
   },
 
   {
-    id: 4,
+    id: 5,
     active: false,
     open: false,
     link: '',
@@ -142,7 +165,7 @@ export const NAVBAR_LEFT = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     active: false,
     open: false,
     link: '',
@@ -171,7 +194,7 @@ export const NAVBAR_LEFT = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     active: false,
     open: false,
     link: 'utilities',
@@ -179,7 +202,7 @@ export const NAVBAR_LEFT = [
     children: [],
   },
   {
-    id: 7,
+    id: 8,
     active: false,
     open: false,
     link: 'other',
@@ -187,7 +210,7 @@ export const NAVBAR_LEFT = [
     children: [],
   },
   {
-    id: 8,
+    id: 9,
     active: false,
     open: false,
     link: '',
@@ -220,7 +243,7 @@ export const NAVBAR_LEFT = [
         active: false,
       },
       {
-        id: 3,
+        id: 4,
         link: '/sample/crud-google-sheet',
         text: 'CRUD Google sheet',
         active: false,

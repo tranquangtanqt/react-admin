@@ -8,6 +8,9 @@ import { Programming } from 'pages/programming';
 import { ContentGoogleSheet } from 'components/content-google-sheet';
 
 
+import { AiTips } from 'pages/ai/tips';
+import { AiLinks } from 'pages/ai/links';
+
 import { Software } from 'pages/software';
 import { Tutorial } from 'pages/tutorial';
 import { Ebook } from 'pages/ebook';
@@ -66,6 +69,9 @@ export const RoutesRoot = () => {
           <Route path="/programming/:program" element={<Programming/>} />
           <Route path="/programming/:program/:sheetId" element={<ContentGoogleSheet/>} />
           <Route path="/programming/java/cheatsheet" element={<ProgrammingJavaCheatSheet />} />
+
+          <Route path="/ai/tips" element={<AiTips />} />
+          <Route path="/ai/links" element={<AiLinks />} />
 
           <Route path="/software" element={<Software />} />
           <Route path="/software/:sheetId" element={<ContentGoogleSheet/>} />
