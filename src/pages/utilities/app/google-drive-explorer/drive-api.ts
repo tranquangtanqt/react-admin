@@ -238,6 +238,26 @@ export const renameFile = (
   );
 };
 
+/**
+ * Duplicate a file into a folder (Drive cannot copy folders)
+ */
+export const copyFile = (
+  fileId: string,
+  name: string,
+  folderId: string,
+  token: string,
+): Promise<IDriveFile> => {
+  return request(
+    `${DRIVE_URL}/${fileId}/copy?fields=${FILE_FIELDS}&supportsAllDrives=true`,
+    token,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, parents: [folderId] }),
+    },
+  );
+};
+
 const SPREADSHEET_EXT = /\.(xlsx|xls|csv)$/i;
 
 export const isSpreadsheetFile = (name: string) => SPREADSHEET_EXT.test(name);

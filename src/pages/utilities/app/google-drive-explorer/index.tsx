@@ -8,6 +8,7 @@ import {
   MIME_SHEET,
   ROOT_FOLDER_ID,
   clearStoredToken,
+  copyFile,
   createFile,
   getBreadcrumb,
   getStoredToken,
@@ -105,6 +106,24 @@ const renamePasted = (file: File, index: number) => {
     `-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
   const name = `paste-${stamp}${index ? `-${index + 1}` : ''}.${ext}`;
   return new File([file], name, { type: file.type });
+};
+
+/**
+ * Name for a duplicate that is unique in the folder and sorts right after
+ * the original: "a.png" -> "a (copy).png" -> "a (copy 2).png"
+ */
+const copyName = (file: IDriveFile, siblings: IDriveFile[]) => {
+  // Google Docs/Sheets have no extension: a dot is part of their name
+  const dot = file.mimeType.startsWith('application/vnd.google-apps.')
+    ? -1
+    : file.name.lastIndexOf('.');
+  const base = dot > 0 ? file.name.slice(0, dot) : file.name;
+  const ext = dot > 0 ? file.name.slice(dot) : '';
+
+  const names = new Set(siblings.map((f) => f.name));
+  let name = `${base} (copy)${ext}`;
+  for (let i = 2; names.has(name); i++) name = `${base} (copy ${i})${ext}`;
+  return name;
 };
 
 interface ICrumb {
@@ -489,6 +508,27 @@ export const UtilitieAppGoogleDriveExplorer = () => {
     const end =
       file.mimeType !== MIME_FOLDER && dot > 0 ? dot : input.value.length;
     input.setSelectionRange(0, end);
+  };
+
+  const duplicate = async (file: IDriveFile) => {
+    setSaving(true);
+    setError('');
+    setCreated([]);
+    setDeleted('');
+    try {
+      const newFile = await withToken((t) =>
+        copyFile(file.id, copyName(file, files), folderId, t),
+      );
+      setCreated([newFile]);
+      // skip if the user has already moved to another folder
+      setFiles((list) =>
+        list.some((f) => f.id === file.id) ? [...list, newFile] : list,
+      );
+    } catch (e: any) {
+      setError(e.message);
+    } finally {
+      setSaving(false);
+    }
   };
 
   const remove = async (file: IDriveFile) => {
@@ -986,6 +1026,16 @@ export const UtilitieAppGoogleDriveExplorer = () => {
                             >
                               {copied === file.id ? 'Đã copy' : 'Copy ID'}
                             </button>
+                            {token && (
+                              <button
+                                className="btn btn-sm btn-outline-secondary"
+                                title="Tạo bản sao của file trong thư mục này"
+                                onClick={() => duplicate(file)}
+                                disabled={saving}
+                              >
+                                Tạo bản sao
+                              </button>
+                            )}
                           </>
                         )}
                         {token && (
